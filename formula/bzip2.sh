@@ -1,0 +1,6 @@
+package set summary "Burrows–Wheeler-based data compression library and utilities with high compression ratio"
+package set webpage "https://sourceware.org/bzip2"
+package set src.url "https://github.com/leleliu008/bzip2/archive/refs/tags/1.0.8.tar.gz"
+package set src.sum "4d31e706117f928663be16c29ee7a13c81f90a790e2afd2abf1bb567f52eb8d3"
+package set license "bzip2-1.0.6"
+package set bsystem "cmake"

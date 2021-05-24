@@ -1,0 +1,7 @@
+package set summary "Improved tinyxml (in memory efficiency and size)"
+package set webpage "http://grinninglizard.com/tinyxml2"
+package set src.git "https://github.com/leethomason/tinyxml2.git"
+package set src.url "https://github.com/leethomason/tinyxml2/archive/8.0.0.tar.gz"
+package set src.sum "6ce574fbb46751842d23089485ae73d3db12c1b6639cda7721bf3a7ee862012c"
+package set license "Zlib"
+package set bsystem "cmake"
