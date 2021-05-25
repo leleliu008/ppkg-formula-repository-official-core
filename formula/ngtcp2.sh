@@ -12,5 +12,5 @@ build() {
         -DENABLE_OPENSSL=OFF \
         -DENABLE_LIB_ONLY=OFF \
         -DLIBEV_INCLUDE_DIR="$libev_INCLUDE_DIR" \
-        -DLIBEV_LIBRARY="$libev_LIBRARY_DIR/libev.so"
+        -DLIBEV_LIBRARY="$libev_LIBRARY_DIR/libev.a"
 }

@@ -8,13 +8,13 @@ package set dep.pkg "ncurses libiconv gettext"
 package set bsystem "configure"
 
 build() {
-    export LDFLAGS="$LDFLAGS $gettext_LIBRARY_DIR/libintl.so $libiconv_LIBRARY_DIR/libiconv.so"
+    export LDFLAGS="$LDFLAGS $gettext_LIBRARY_DIR/libintl.so $libiconv_LIBRARY_DIR/libiconv.a"
     configure \
         --with-bash-completion \
         --with-ncurses \
         --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
         --with-libintl-prefix="$gettext_INSTALL_DIR" \
-        CURSES_LIBS="$ncurses_LIBRARY_DIR/libncurses.so" \
-        PANEL_LIBS="$ncurses_LIBRARY_DIR/libpanel.so" \
-        MENU_LIBS="$ncurses_LIBRARY_DIR/libmenu.so"
+        CURSES_LIBS="$ncurses_LIBRARY_DIR/libncurses.a" \
+        PANEL_LIBS="$ncurses_LIBRARY_DIR/libpanel.a" \
+        MENU_LIBS="$ncurses_LIBRARY_DIR/libmenu.a"
 }

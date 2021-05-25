@@ -9,5 +9,5 @@ build() {
     cmakew \
         -DTEST=OFF \
         -DJPEG_INCLUDE_DIR="$libjpeg_turbo_INCLUDE_DIR" \
-        -DJPEG_LIBRARY_RELEASE="$libjpeg_turbo_LIBRARY_DIR/libjpeg.so"
+        -DJPEG_LIBRARY_RELEASE="$libjpeg_turbo_LIBRARY_DIR/libjpeg.a"
 }

@@ -14,11 +14,11 @@ build() {
     -DFT_WITH_HARFBUZZ=OFF \
     -DCMAKE_DISABLE_FIND_PACKAGE_HarfBuzz=TRUE \
     -DBROTLIDEC_INCLUDE_DIRS="$brotli_INCLUDE_DIR" \
-    -DBROTLIDEC_LIBRARIES="$brotli_LIBRARY_DIR/libbrotlidec.so" \
+    -DBROTLIDEC_LIBRARIES="$brotli_LIBRARY_DIR/libbrotlidec.a" \
     -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
-    -DBZIP2_LIBRARIES="$bzip2_LIBRARY_DIR/libbz2.so" \
+    -DBZIP2_LIBRARIES="$bzip2_LIBRARY_DIR/libbz2.a" \
     -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-    -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so" \
+    -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.a" \
     -DPNG_PNG_INCLUDE_DIR="$libpng_INCLUDE_DIR" \
-    -DPNG_LIBRARY_RELEASE="$libpng_LIBRARY_DIR/libpng.so"
+    -DPNG_LIBRARY_RELEASE="$libpng_LIBRARY_DIR/libpng.a"
 }

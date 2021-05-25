@@ -41,7 +41,7 @@ build_with_cmake() {
         -DBUILD_TYPE=Static \
         -DBoost_INCLUDE_DIR="$boost_INCLUDE_DIR" \
         -DJsonCpp_INCLUDE_DIR="$jsoncpp_INCLUDE_DIR" \
-        -DJsonCpp_LIBRARY="$jsoncpp_LIBRARY_DIR/libjsoncpp.so" \
+        -DJsonCpp_LIBRARY="$jsoncpp_LIBRARY_DIR/libjsoncpp.a" \
         -DZLIB_INCLUDE_DIR="$SYSTEM_INCLUDE_DIR" \
-        -DZLIB_LIBRARIES="$zlib_LIBRARY_DIR/libz.so"
+        -DZLIB_LIBRARIES="$zlib_LIBRARY_DIR/libz.a"
 }

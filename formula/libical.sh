@@ -25,6 +25,6 @@ build() {
         -DUSE_BUILTIN_TZDATA=OFF \
         -DWITH_CXX_BINDINGS=ON \
         -DICU_INCLUDE_DIR="$icu4c_INCLUDE_DIR" \
-        -DICU_LIBRARY="$icu4c_LIBRARY_DIR/libicuuc.so" \
-        -DICU_I18N_LIBRARY="$icu4c_LIBRARY_DIR/libicui18n.so"
+        -DICU_LIBRARY="$icu4c_LIBRARY_DIR/libicuuc.a" \
+        -DICU_I18N_LIBRARY="$icu4c_LIBRARY_DIR/libicui18n.a"
 }

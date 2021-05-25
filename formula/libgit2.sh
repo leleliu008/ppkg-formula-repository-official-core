@@ -23,7 +23,7 @@ build() {
     -DUSE_BUNDLED_ZLIB=OFF \
     -DREGEX_BACKEND=pcre2 \
     -DPCRE2_INCLUDE_DIR="$pcre2_INCLUDE_DIR" \
-    -DPCRE2_LIBRARY="$pcre2_LIBRARY_DIR/libpcre2-8.so" \
+    -DPCRE2_LIBRARY="$pcre2_LIBRARY_DIR/libpcre2-8.a" \
     -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-    -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.so"
+    -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.a"
 }
