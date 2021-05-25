@@ -17,7 +17,7 @@ build() {
 
     run ./bootstrap.sh || return 1
 
-    case $TARGET_OS_ARCH in
+    case $NATIVE_OS_ARCH in
         armv7a)
             address_model=32
             architecture=arm

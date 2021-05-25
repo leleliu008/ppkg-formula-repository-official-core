@@ -6,10 +6,6 @@ package set license "GPL-2.0-or-later"
 package set bsystem "configure"
 package set dep.pkg "gmp"
 
-prepare() {
-    sed_in_place '/cat >conftest.c <<EOF/a #include<stdlib.h>' configure
-}
-
 build() {
     configure \
         --with-include-path="$gmp_INCLUDE_DIR" \

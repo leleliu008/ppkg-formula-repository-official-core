@@ -3,8 +3,8 @@ package set webpage "https://ccache.dev"
 package set src.url "https://github.com/ccache/ccache/releases/download/v4.0/ccache-4.0.tar.xz"
 package set src.sum "ac1b82fe0a5e39905945c4d68fcb24bd0f32344869faf647a1b8d31e544dcb88"
 package set license "GPL-3.0-or-later"
-package set bsystem "cmake"
 package set dep.pkg "zstd blake3"
+package set bsystem "cmake"
 
 prepare() {
     sed_in_place 's|ifdef HAVE_AVX2|if 0|g'    src/hashutil.cpp &&
@@ -21,5 +21,5 @@ build() {
         -DWARNINGS_AS_ERRORS=OFF \
         -DZSTD_FROM_INTERNET=OFF \
         -DZSTD_INCLUDE_DIR="$zstd_INCLUDE_DIR" \
-        -DZSTD_LIBRARY="$zstd_LIBRARY_DIR/libzstd.so"
+        -DZSTD_LIBRARY="$zstd_LIBRARY_DIR/libzstd.a"
 }

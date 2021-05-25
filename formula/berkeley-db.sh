@@ -7,10 +7,6 @@ package set bsystem "configure"
 package set dep.pkg "openssl"
 package set sourced "dist"
 
-prepare() {
-    sed_in_place 's| install_docs||' Makefile.in
-}
-
 build() {
     configure \
         --enable-cxx \
@@ -18,6 +14,5 @@ build() {
         --enable-dbm \
         --enable-hash \
         --enable-compat185 \
-        --enable-smallbuild \
-        db_cv_atomic=gcc-builtin
+        --enable-smallbuild
 }

@@ -6,7 +6,5 @@ package set license "GPL-3.0"
 package set bsystem "configure"
 
 build() {
-    configure \
-        --with-included-regex \
-        --enable-threads=posix
+    configure --with-included-regex --enable-threads=posix
 }

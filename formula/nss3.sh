@@ -13,12 +13,10 @@ prepare() {
 
 build() {
     "$SOURCE_DIR/build.sh" \
-        -DOS=android \
-        -DSHARED_LIB_SUFFIX=.so \
+        -DSHARED_LIB_SUFFIX=$SHARED_LIBRARY_EXT \
         -c \
         -v \
         --opt \
-        --target="$TARGET_OS_ARCH" \
         --disable-tests \
         --with-nspr="$nspr_INCLUDE_DIR/nspr:$nspr_LIBRARY_DIR"
 }

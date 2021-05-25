@@ -5,6 +5,7 @@ package set src.url "https://downloads.sourceforge.net/project/expect/Expect/${P
 package set src.sum "49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34"
 package set dep.cmd "make"
 package set dep.pkg "tcl-core"
+package set bsystem "configure"
 
 build() {
     configure \
