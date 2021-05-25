@@ -11,12 +11,12 @@ package set <KEY> <VALUE>
 |KEY|required?|overview|
 |-|-|-|
 |`summary`|required|the summary of this package.|
-|`webpage`|required|the home webpage of this package.|
-|`version`|optional|the version of this package. If this function is not invoked, it will be calculated from `src.url`.|
+|`webpage`|optional|the home webpage of this package.<br>If this key is not present, `src.git` must be present.|
+|`version`|optional|the version of this package.<br>If this key is not present, it will be calculated from `src.url`|
 |`license`|optional|the license of this package.|
-|`src.git`|optional|the source code git repository.|
-|`src.url`|required|the source code download url of this package. the argument of `src.url` must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`. `src.url` also support format like `dir://DIR`|
-|`src.sum`|optional|the `sha256sum` of source code. If the argument of `src.url` end with `.git`, this function is optional, otherwise, this function must be invoked.|
+|`src.git`|optional|the source code git repository.<br>must end with `.git`|
+|`src.url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
+|`src.sum`|optional|the `sha256sum` of source code.<br>If the value of `src.url` end with `.git`, this key is optional, otherwise, this key must be present.|
 |`dep.cmd`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
 |`dep.pkg`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
 |`patches`|optional|the patches. `URL` `SHA256` pairs. [example](https://github.com/leleliu008/zpkg-formula/blob/master/unzip.sh#L8-L9)|
@@ -24,15 +24,15 @@ package set <KEY> <VALUE>
 |`ccflags`|optional|`CFLAGS`|
 |`xxflags`|optional|`CXXFLAGS`|
 |`ldflags`|optional|`LDFLAGS`|
-|`sourced`|optional|the source directory, relative to `WORKING_DIR`, which contains `configure`, `CMakeLists.txt`, etc.|
+|`sourced`|optional|the source directory, relative to `WORKING_DIR` which contains build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
 |`binsrcd`|optional|build in source directory, otherwise build out-of source directory.|
-|`bsystem`|optional|build system.<br>autogen<br>autotools<br>configure<br>cmake<br>cmake-make<br>cmake-ninja<br>meson<br>make<br>ninja<br>cargo<br>go|
+|`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-make` `cmake-ninja` `meson` `make` `ninja` `cargo` `go`|
 
 ## the function can be declared in a formula
 |function|required?|overview|
 |-|-|-|
 |`prepare(){}`|optional|this function only run once.|
-|`build(){}`|required|this function only run once. |
+|`build(){}`|optional|this function only run once. If this function is not declared, we will call default build command according to `bsystem`|
 
 ## the function can be invoked in a formula at anywhere
 |function|example|
