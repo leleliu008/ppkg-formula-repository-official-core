@@ -10,6 +10,5 @@ build() {
         --without-selinux \
         --with-included-regex \
         --disable-acl \
-        --disable-assert \
-        --disable-gcc-warnings
+        --disable-assert
 }
