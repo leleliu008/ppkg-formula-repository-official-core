@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15]
-        pkg: [google-test,gperf,graphite2,grep,gzip,help2man,htop,hugo,hwloc,id3lib,ideviceinstaller,jq,json-glib,jsoncpp,krb5,less,libaio,libao,libarchive,libass]
+        os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
+        pkg: [flex,folly,gawk,gdbm,gh,git,gmake,gnu-coreutils,gnu-which,gnupg,gnutls,gobject-introspection,gogs,gomobile,google-benchmark,gperf,graphite2,grep,gsed,gtar]
 
     runs-on: ${{ matrix.os }}
 
@@ -30,7 +30,7 @@ jobs:
 
     - uses: actions/checkout@v2
 
-    - run: install -d ~/.zpkg/repos.d/offical/
-    - run: mv *       ~/.zpkg/repos.d/offical/
+    - run: install -d ~/.zpkg/repos.d/offical
+    - run: mv *       ~/.zpkg/repos.d/offical
 
     - run: zpkg install ${{ matrix.pkg }}

@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15]
-        pkg: [double-conversion,faac,faad2,fdk-aac,ffmpeg,findutils,fish,flex,fmt,gawk,gdbm,gh,glog,gnu-coreutils,gnu-sed,gnu-which,gnupg,gnutls,gogs,google-benchmark]
+        os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
+        pkg: [cpio,cppcheck,cpu_features,crosstool-ng,ctop,dash,deno,diffutils,dmalloc,e2fsprogs,elfutils,esbuild,eudev,expect,faac,faad2,fdk-aac,ffmpeg,findutils,fish]
 
     runs-on: ${{ matrix.os }}
 
@@ -30,7 +30,7 @@ jobs:
 
     - uses: actions/checkout@v2
 
-    - run: install -d ~/.zpkg/repos.d/offical/
-    - run: mv *       ~/.zpkg/repos.d/offical/
+    - run: install -d ~/.zpkg/repos.d/offical
+    - run: mv *       ~/.zpkg/repos.d/offical
 
     - run: zpkg install ${{ matrix.pkg }}

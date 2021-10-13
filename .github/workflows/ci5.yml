@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15]
-        pkg: [libsigsegv,libsmi,libtool,libtorrent-rasterbar,libxslt,links,lmdb,lodepng,lsof,lynx,lzip,gmake,mbedtls,mediainfo,mesalink,mpg123,mpir,nasm,neofetch,nginx]
+        os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
+        pkg: [libcaca,libcap-ng,libcddb,libcdio,libcroco,libexif,libgit2,libglob,libical,libimagequant,libirecovery,libisoburn,libmetalink,libnl,libphonenumber,libpipeline,libpsl,libsamplerate,libseccomp,libsigsegv]
 
     runs-on: ${{ matrix.os }}
 
@@ -30,7 +30,7 @@ jobs:
 
     - uses: actions/checkout@v2
 
-    - run: install -d ~/.zpkg/repos.d/offical/
-    - run: mv *       ~/.zpkg/repos.d/offical/
+    - run: install -d ~/.zpkg/repos.d/offical
+    - run: mv *       ~/.zpkg/repos.d/offical
 
     - run: zpkg install ${{ matrix.pkg }}
