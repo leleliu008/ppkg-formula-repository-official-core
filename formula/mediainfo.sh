@@ -6,5 +6,5 @@ package set license "BSD-2-Clause"
 package set dep.cmd "pkg-config libtoolize libtool"
 package set dep.pkg "libmediainfo"
 package set sourced "Project/GNU/CLI"
-package set binsrcd 'true'
+package set binsrcd 'YES'
 package set bsystem "autogen"

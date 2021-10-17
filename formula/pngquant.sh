@@ -5,7 +5,7 @@ package set src.sum "3638936cf6270eeeaabcee42e10768d78e4dc07cac9310307835c1f58b1
 package set dep.cmd "pkg-config"
 package set dep.pkg "libpng lcms2"
 package set bsystem "make"
-package set binsrcd 'true'
+package set binsrcd 'YES'
 
 build() {
     run ./configure \

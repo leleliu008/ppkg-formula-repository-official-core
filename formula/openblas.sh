@@ -5,7 +5,7 @@ package set src.url "https://github.com/xianyi/OpenBLAS/archive/v0.3.14.tar.gz"
 package set src.sum "d381935d26f9cae8e4bbd7d7f278435adf8e3a90920edf284bb9ad789ee9ad60"
 package set license "BSD-3-Clause"
 package set bsystem "make"
-package set binsrcd true
+package set binsrcd 'YES'
 
 build() {
     # https://github.com/xianyi/OpenBLAS/wiki/How-to-build-OpenBLAS-for-Android

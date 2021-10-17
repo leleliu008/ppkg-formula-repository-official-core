@@ -7,7 +7,7 @@ package set license "MIT"
 package set dep.cmd "pkg-config"
 package set dep.pkg "zlib openssl"
 package set bsystem "cargo"
-package set binsrcd true
+package set binsrcd 'YES'
 
 build() {
     run cargo clean &&

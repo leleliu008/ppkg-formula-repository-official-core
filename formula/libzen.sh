@@ -6,4 +6,4 @@ package set license "BSD-2-Clause"
 package set dep.cmd "libtoolize libtool"
 package set sourced "Project/GNU/Library"
 package set bsystem "autogen"
-package set binsrcd 'true'
+package set binsrcd 'YES'

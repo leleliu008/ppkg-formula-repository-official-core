@@ -7,4 +7,4 @@ package set dep.cmd "pkg-config"
 package set dep.pkg "libzen zlib curl"
 package set sourced "Project/GNU/Library"
 package set bsystem "autogen"
-package set binsrcd 'true'
+package set binsrcd 'YES'

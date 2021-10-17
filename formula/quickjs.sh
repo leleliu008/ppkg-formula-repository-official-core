@@ -5,7 +5,7 @@ package set src.url "https://bellard.org/quickjs/quickjs-${PACKAGE_VERSION}.tar.
 package set src.sum "2e9d63dab390a95ed365238f21d8e9069187f7ed195782027f0ab311bb64187b"
 package set license "MIT"
 package set bsystem "make"
-package set binsrcd 'true'
+package set binsrcd 'YES'
 
 build() {
     makew clean &&
