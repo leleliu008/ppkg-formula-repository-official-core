@@ -6,7 +6,7 @@ formula is a POSIX sh script used to config a package infomation and describe ho
 
 ## the function must be invoked on top of the formula
 ```
-package set <KEY> <VALUE>
+pkg_set <KEY> <VALUE>
 ```
 |KEY|required?|overview|
 |-|-|-|
