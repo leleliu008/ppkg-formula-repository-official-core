@@ -1,5 +1,5 @@
 # ppkg-formula-repository
-the formula repository for [ppkg](https://github.com/leleliu008/ppkg)
+the offical formula repository for [ppkg](https://github.com/leleliu008/ppkg)
 
 ## what's formula
 formula is a POSIX sh script used to config a package infomation and describe how to compile a package for [ppkg](https://github.com/leleliu008/ppkg).
@@ -19,7 +19,7 @@ package set <KEY> <VALUE>
 |`src.sum`|optional|the `sha256sum` of source code.<br>If the value of `src.url` end with `.git`, this key is optional, otherwise, this key must be present.|
 |`dep.cmd`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
 |`dep.pkg`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
-|`patches`|optional|the patches. `URL` `SHA256` pairs. [example](https://github.com/leleliu008/ppkg-formula/blob/master/unzip.sh#L8-L9)|
+|`patches`|optional|the patches. `URL` `SHA256` pairs. [example](https://github.com/leleliu008/ppkg-formula-repository/blob/master/unzip.sh#L8-L9)|
 |`cdefine`|optional|append to `CPPFLAGS`|
 |`ccflags`|optional|`CFLAGS`|
 |`xxflags`|optional|`CXXFLAGS`|
