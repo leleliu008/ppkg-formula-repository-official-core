@@ -1,8 +1,8 @@
-# zpkg-formula-repository
-the formula repository for [zpkg](https://github.com/leleliu008/zpkg)
+# ppkg-formula-repository
+the formula repository for [ppkg](https://github.com/leleliu008/ppkg)
 
 ## what's formula
-formula is a POSIX sh script used to config a package infomation and describe how to compile a package for [zpkg](https://github.com/leleliu008/zpkg).
+formula is a POSIX sh script used to config a package infomation and describe how to compile a package for [ppkg](https://github.com/leleliu008/ppkg).
 
 ## the function must be invoked on top of the formula
 ```
@@ -19,7 +19,7 @@ package set <KEY> <VALUE>
 |`src.sum`|optional|the `sha256sum` of source code.<br>If the value of `src.url` end with `.git`, this key is optional, otherwise, this key must be present.|
 |`dep.cmd`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
 |`dep.pkg`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
-|`patches`|optional|the patches. `URL` `SHA256` pairs. [example](https://github.com/leleliu008/zpkg-formula/blob/master/unzip.sh#L8-L9)|
+|`patches`|optional|the patches. `URL` `SHA256` pairs. [example](https://github.com/leleliu008/ppkg-formula/blob/master/unzip.sh#L8-L9)|
 |`cdefine`|optional|append to `CPPFLAGS`|
 |`ccflags`|optional|`CFLAGS`|
 |`xxflags`|optional|`CXXFLAGS`|
@@ -71,11 +71,11 @@ package set <KEY> <VALUE>
 |`NATIVE_OS_VERS`|current machine os version.|
 |`NATIVE_OS_ARCH`|current machine os arch.|
 |||
-|`MY_VERSION`|the version of `zpkg`.|
-|`MY_HOME_DIR`|the home directory of `zpkg`.|
-|`MY_HOME_PAGE`|the home webpage of `zpkg`.|
-|`MY_CACHED_DIR`|the downloads directory of `zpkg`.|
-|`MY_INSTALL_DIR`|the installed directory of `zpkg`.|
+|`MY_VERSION`|the version of `ppkg`.|
+|`MY_HOME_DIR`|the home directory of `ppkg`.|
+|`MY_HOME_PAGE`|the home webpage of `ppkg`.|
+|`MY_CACHED_DIR`|the downloads directory of `ppkg`.|
+|`MY_INSTALL_DIR`|the installed directory of `ppkg`.|
 
 ## the variable can be used in prepare and build function
 |variable|overview|

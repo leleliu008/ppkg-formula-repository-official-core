@@ -20,17 +20,17 @@ jobs:
       HOMEBREW_NO_INSTALL_CLEANUP: set
 
     steps:
-    - name: install zpkg
+    - name: install ppkg
       run: |
-        curl -LO https://raw.githubusercontent.com/leleliu008/zpkg/master/bin/zpkg
-        chmod u+x zpkg
-        mv zpkg $(brew --prefix)/bin
+        curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/bin/ppkg
+        chmod u+x ppkg
+        mv ppkg $(brew --prefix)/bin
 
-    - run: zpkg --version
+    - run: ppkg --version
 
     - uses: actions/checkout@v2
 
-    - run: install -d ~/.zpkg/repos.d/offical
-    - run: mv *       ~/.zpkg/repos.d/offical
+    - run: install -d ~/.ppkg/repos.d/offical
+    - run: mv *       ~/.ppkg/repos.d/offical
 
-    - run: zpkg install ${{ matrix.pkg }}
+    - run: ppkg install ${{ matrix.pkg }}
