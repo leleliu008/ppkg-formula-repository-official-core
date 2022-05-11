@@ -1,10 +1,10 @@
-package set summary "Zstandard is a real-time compression algorithm"
-package set webpage "https://facebook.github.io/zstd"
-package set src.url "https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
-package set src.sum "98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e"
-package set bsystem "cmake"
-package set dep.pkg "xz zlib"
-package set sourced "build/cmake"
+pkg_set summary "Zstandard is a real-time compression algorithm"
+pkg_set webpage "https://facebook.github.io/zstd"
+pkg_set src.url "https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
+pkg_set src.sha "98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e"
+pkg_set bsystem "cmake"
+pkg_set dep.pkg "xz zlib"
+pkg_set sourced "build/cmake"
 
 build() {
     cmakew \

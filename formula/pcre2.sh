@@ -1,9 +1,9 @@
-package set summary "Perl compatible regular expressions library with a new API"
-package set webpage "https://www.pcre.org"
-package set src.url "https://ftp.pcre.org/pub/pcre/pcre2-10.35.tar.bz2"
-package set src.sum "9ccba8e02b0ce78046cdfb52e5c177f0f445e421059e43becca4359c669d4613"
-package set bsystem "cmake"
-package set dep.pkg "zlib bzip2 readline"
+pkg_set summary "Perl compatible regular expressions library with a new API"
+pkg_set webpage "https://www.pcre.org"
+pkg_set src.url "https://ftp.pcre.org/pub/pcre/pcre2-10.35.tar.bz2"
+pkg_set src.sha "9ccba8e02b0ce78046cdfb52e5c177f0f445e421059e43becca4359c669d4613"
+pkg_set bsystem "cmake"
+pkg_set dep.pkg "zlib bzip2 readline"
 
 build() {
     cmakew \

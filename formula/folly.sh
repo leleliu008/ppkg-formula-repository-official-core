@@ -1,11 +1,11 @@
-package set summary "Collection of reusable C++ library artifacts developed at Facebook"
-package set src.git "https://github.com/facebook/folly.git"
-package set src.url "https://github.com/facebook/folly/archive/v2020.11.09.00.tar.gz"
-package set src.sum "24d5df65d4ef21b229b7396605a7375b753ca8950fe655ea33fdf1e2d5218dff"
-package set license "Apache-2.0"
-package set dep.cmd "pkg-config"
-package set dep.pkg "boost double-conversion fmt glog libevent openssl libaio bzip2 lz4 xz zstd snappy"
-package set bsystem "cmake"
+pkg_set summary "Collection of reusable C++ library artifacts developed at Facebook"
+pkg_set git.url "https://github.com/facebook/folly.git"
+pkg_set src.url "https://github.com/facebook/folly/archive/v2020.11.09.00.tar.gz"
+pkg_set src.sha "24d5df65d4ef21b229b7396605a7375b753ca8950fe655ea33fdf1e2d5218dff"
+pkg_set license "Apache-2.0"
+pkg_set dep.cmd "pkg-config"
+pkg_set dep.pkg "boost double-conversion fmt glog libevent openssl libaio bzip2 lz4 xz zstd snappy"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

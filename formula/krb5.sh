@@ -1,11 +1,11 @@
-package set summary "Network authentication protocol"
-package set webpage "https://web.mit.edu/kerberos"
-package set src.url "https://kerberos.org/dist/krb5/1.18/krb5-1.18.3.tar.gz"
-package set src.sum "e61783c292b5efd9afb45c555a80dd267ac67eebabca42185362bee6c4fbd719"
-package set sourced "src"
-package set bsystem "configure"
-package set dep.pkg "readline openssl berkeley-db"
-package set ldflags "-lncurses"
+pkg_set summary "Network authentication protocol"
+pkg_set webpage "https://web.mit.edu/kerberos"
+pkg_set src.url "https://kerberos.org/dist/krb5/1.18/krb5-1.18.3.tar.gz"
+pkg_set src.sha "e61783c292b5efd9afb45c555a80dd267ac67eebabca42185362bee6c4fbd719"
+pkg_set sourced "src"
+pkg_set bsystem "configure"
+pkg_set dep.pkg "readline openssl berkeley-db"
+pkg_set ldflags "-lncurses"
 
 build() {
     configure \

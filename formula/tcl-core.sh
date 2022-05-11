@@ -1,11 +1,11 @@
-package set summary "Tool Command Language"
-package set webpage "https://www.tcl-lang.org"
-package set version "8.6.10"
-package set src.url "https://downloads.sourceforge.net/project/tcl/Tcl/${PACKAGE_VERSION}/tcl${PACKAGE_VERSION}-src.tar.gz"
-package set src.sum "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
-package set license "TCL"
-package set bsystem "configure"
-package set sourced "unix"
+pkg_set summary "Tool Command Language"
+pkg_set webpage "https://www.tcl-lang.org"
+pkg_set version "8.6.10"
+pkg_set src.url "https://downloads.sourceforge.net/project/tcl/Tcl/${PACKAGE_VERSION}/tcl${PACKAGE_VERSION}-src.tar.gz"
+pkg_set src.sha "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
+pkg_set license "TCL"
+pkg_set bsystem "configure"
+pkg_set sourced "unix"
 
 build() {
     unset EXTRA_CONFIGURE_FLAGS

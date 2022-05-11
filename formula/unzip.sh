@@ -1,17 +1,17 @@
-package set summary "Extraction utility for .zip compressed archives"
-package set webpage "https://infozip.sourceforge.io/UnZip.html"
-package set src.url "https://downloads.sourceforge.net/project/infozip/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz"
-package set src.sum "036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37"
-package set version "6.0-26"
-package set bsystem "make"
-package set dep.pkg "zip bzip2"
-package set binsrcd 'YES'
-package set patches "https://deb.debian.org/debian/pool/main/u/unzip/unzip_${PACKAGE_VERSION}.debian.tar.xz" \
+pkg_set summary "Extraction utility for .zip compressed archives"
+pkg_set webpage "https://infozip.sourceforge.io/UnZip.html"
+pkg_set src.url "https://downloads.sourceforge.net/project/infozip/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz"
+pkg_set src.sha "036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37"
+pkg_set version "6.0-26"
+pkg_set bsystem "make"
+pkg_set dep.pkg "zip bzip2"
+pkg_set binbstd 'YES'
+pkg_set patches "https://deb.debian.org/debian/pool/main/u/unzip/unzip_${PACKAGE_VERSION}.debian.tar.xz" \
                     "88cb7c0f1fd13252b662dfd224b64b352f9e75cd86389557fcb23fa6d2638599"
 # https://packages.debian.org/buster/unzip
 
 prepare() {
-    tar xf $PACKAGE_PATCHES -C "$SOURCE_DIR" || return 1
+    tar xf $PACKAGE_PATCHES -C "$PACKAGE_BSCRIPT_DIR" || return 1
     while read patch
     do
         patch -p1 < "debian/patches/$patch" || return 1

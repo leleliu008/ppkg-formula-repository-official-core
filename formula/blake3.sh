@@ -1,8 +1,8 @@
-package set summary "Rust and C implementations of the BLAKE3 cryptographic hash function"
-package set src.git "https://github.com/BLAKE3-team/BLAKE3.git"
-package set src.url "https://github.com/BLAKE3-team/BLAKE3/archive/0.3.7.tar.gz"
-package set src.sum "304b3608770cc91a151c7c4af5541dd6dd29716bad449ae5a418643ef15bcc5b"
-package set sourced "c"
+pkg_set summary "Rust and C implementations of the BLAKE3 cryptographic hash function"
+pkg_set git.url "https://github.com/BLAKE3-team/BLAKE3.git"
+pkg_set src.url "https://github.com/BLAKE3-team/BLAKE3/archive/0.3.7.tar.gz"
+pkg_set src.sha "304b3608770cc91a151c7c4af5541dd6dd29716bad449ae5a418643ef15bcc5b"
+pkg_set sourced "c"
 
 build() {
     SRCS='blake3.c blake3_dispatch.c blake3_portable.c'
@@ -29,13 +29,13 @@ build() {
                 blake3_avx2.c)   export CFLAGS="$CFLAGS -mavx2"   ;;
                 blake3_avx512.c) export CFLAGS="$CFLAGS -mavx512f -mavx512vl"
             esac
-            run $CC $CFLAGS $CPPFLAGS -c -o $item.o $SOURCE_DIR/$item || return 1
+            run $CC $CFLAGS $CPPFLAGS -c -o $item.o $PACKAGE_BSCRIPT_DIR/$item || return 1
         )
         OBJS="$item.o $OBJS"
     done
     
     run $CC $LDFLAGS -shared -o libblake3.so $OBJS &&
     run $AR rsc libblake3.a $OBJS &&
-    run install_incs "$SOURCE_DIR/blake3.h" &&
+    run install_incs "$PACKAGE_BSCRIPT_DIR/blake3.h" &&
     run install_libs libblake3.a libblake3.so
 }

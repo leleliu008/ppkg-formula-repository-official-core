@@ -1,9 +1,9 @@
-package set summary "C library includes YUV conpackage set version and scaling functionality"
-package set webpage "https://chromium.googlesource.com/external/libyuv"
-package set src.git "https://github.com/Bilibili/libyuv.git"
-package set bsystem "cmake"
-package set dep.pkg "libjpeg-turbo"
-package set cdefine "LIBYUV_DISABLE_NEON"
+pkg_set summary "C library includes YUV conpackage set version and scaling functionality"
+pkg_set webpage "https://chromium.googlesource.com/external/libyuv"
+pkg_set git.url "https://github.com/Bilibili/libyuv.git"
+pkg_set bsystem "cmake"
+pkg_set dep.pkg "libjpeg-turbo"
+pkg_set cdefine "LIBYUV_DISABLE_NEON"
 
 build() {
     cmakew \

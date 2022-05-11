@@ -1,11 +1,11 @@
-package set summary "Free lossless audio codec"
-package set webpage "https://xiph.org/flac"
-package set src.git "https://github.com/xiph/flac.git"
-package set src.url "https://github.com/xiph/flac/archive/1.3.3.tar.gz"
-package set src.sum "668cdeab898a7dd43cf84739f7e1f3ed6b35ece2ef9968a5c7079fe9adfe1689"
-package set dep.cmd "libtoolize libtool"
-package set dep.pkg "libogg libiconv"
-package set bsystem "autogen"
+pkg_set summary "Free lossless audio codec"
+pkg_set webpage "https://xiph.org/flac"
+pkg_set git.url "https://github.com/xiph/flac.git"
+pkg_set src.url "https://github.com/xiph/flac/archive/1.3.3.tar.gz"
+pkg_set src.sha "668cdeab898a7dd43cf84739f7e1f3ed6b35ece2ef9968a5c7079fe9adfe1689"
+pkg_set dep.cmd "libtoolize libtool"
+pkg_set dep.pkg "libogg libiconv"
+pkg_set bsystem "autogen"
 
 build() {
     build_with_configure

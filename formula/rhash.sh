@@ -1,11 +1,11 @@
-package set summary "Utility for computing and verifying hash sums of files"
-package set webpage "http://rhash.sourceforge.net"
-package set src.url "https://github.com/rhash/RHash/archive/v1.4.0.tar.gz"
-package set src.sum "2ea39540f5c580da0e655f7b483c19e0d31506aed4202d88e8459fa7aeeb8861"
-package set license "0BSD"
-package set bsystem "make"
+pkg_set summary "Utility for computing and verifying hash sums of files"
+pkg_set webpage "http://rhash.sourceforge.net"
+pkg_set src.url "https://github.com/rhash/RHash/archive/v1.4.0.tar.gz"
+pkg_set src.sha "2ea39540f5c580da0e655f7b483c19e0d31506aed4202d88e8459fa7aeeb8861"
+pkg_set license "0BSD"
+pkg_set bsystem "make"
 
-package set binsrcd 'YES'
+pkg_set binbstd 'YES'
 
 build() {
     run ./configure \

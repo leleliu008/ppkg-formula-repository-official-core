@@ -1,9 +1,9 @@
-package set summary "Not Too Bad TLS library"
-package set webpage "https://gnupg.org/software/ntbtls/index.html"
-package set src.url "https://gnupg.org/ftp/gcrypt/ntbtls/ntbtls-0.2.0.tar.bz2"
-package set src.sum "649fe74a311d13e43b16b26ebaa91665ddb632925b73902592eac3ed30519e17"
-package set dep.pkg "zlib libgpg-error libgcrypt libksba"
-package set bsystem "configure"
+pkg_set summary "Not Too Bad TLS library"
+pkg_set webpage "https://gnupg.org/software/ntbtls/index.html"
+pkg_set src.url "https://gnupg.org/ftp/gcrypt/ntbtls/ntbtls-0.2.0.tar.bz2"
+pkg_set src.sha "649fe74a311d13e43b16b26ebaa91665ddb632925b73902592eac3ed30519e17"
+pkg_set dep.pkg "zlib libgpg-error libgcrypt libksba"
+pkg_set bsystem "configure"
 
 build() {
     configure \

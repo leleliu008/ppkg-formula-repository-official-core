@@ -1,7 +1,7 @@
-package set summary "HTTP-server to execute shell commands."
-package set src.git "https://github.com/adnanh/webhook.git"
-package set license "MIT"
-package set bsystem "go"
+pkg_set summary "HTTP-server to execute shell commands."
+pkg_set git.url "https://github.com/adnanh/webhook.git"
+pkg_set license "MIT"
+pkg_set bsystem "go"
 
 build() {
     run go build -v -trimpath -o webhook &&

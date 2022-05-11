@@ -1,13 +1,13 @@
-package set summary "C++ Phone Number library by Google"
-package set src.git "https://github.com/google/libphonenumber.git"
-package set src.url "https://github.com/google/libphonenumber/archive/v8.12.13.tar.gz"
-package set src.sum "4d202b3d20c545d39a9a0bbaf0f7f26e64a8875429bfadf36f7015adb9bada37"
-package set license "Apache-2.0"
-package set dep.cmd "pkg-config protoc"
-package set dep.pkg "boost icu4c protobuf google-test"
-package set ldflags "-lz -licudata -lstdc++"
-package set sourced "cpp"
-package set bsystem "cmake"
+pkg_set summary "C++ Phone Number library by Google"
+pkg_set git.url "https://github.com/google/libphonenumber.git"
+pkg_set src.url "https://github.com/google/libphonenumber/archive/v8.12.13.tar.gz"
+pkg_set src.sha "4d202b3d20c545d39a9a0bbaf0f7f26e64a8875429bfadf36f7015adb9bada37"
+pkg_set license "Apache-2.0"
+pkg_set dep.cmd "pkg-config protoc"
+pkg_set dep.pkg "boost icu4c protobuf google-test"
+pkg_set ldflags "-lz -licudata -lstdc++"
+pkg_set sourced "cpp"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

@@ -1,8 +1,8 @@
-package set summary "C library for encoding, decoding, and manipulating JSON"
-package set webpage "https://digip.org/jansson"
-package set src.url "https://digip.org/jansson/releases/jansson-2.13.1.tar.gz"
-package set src.sum "f4f377da17b10201a60c1108613e78ee15df6b12016b116b6de42209f47a474f"
-package set bsystem "cmake"
+pkg_set summary "C library for encoding, decoding, and manipulating JSON"
+pkg_set webpage "https://digip.org/jansson"
+pkg_set src.url "https://digip.org/jansson/releases/jansson-2.13.1.tar.gz"
+pkg_set src.sha "f4f377da17b10201a60c1108613e78ee15df6b12016b116b6de42209f47a474f"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

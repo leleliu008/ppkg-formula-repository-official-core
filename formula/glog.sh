@@ -1,10 +1,10 @@
-package set summary "Application-level logging library"
-package set src.git "https://github.com/google/glog.git"
-package set src.url "https://github.com/google/glog/archive/v0.4.0.tar.gz"
-package set src.sum "f28359aeba12f30d73d9e4711ef356dc842886968112162bc73002645139c39c"
-package set license "BSD-3-Clause"
-package set bsystem "cmake"
-package set dep.pkg "gflags"
+pkg_set summary "Application-level logging library"
+pkg_set git.url "https://github.com/google/glog.git"
+pkg_set src.url "https://github.com/google/glog/archive/v0.4.0.tar.gz"
+pkg_set src.sha "f28359aeba12f30d73d9e4711ef356dc842886968112162bc73002645139c39c"
+pkg_set license "BSD-3-Clause"
+pkg_set bsystem "cmake"
+pkg_set dep.pkg "gflags"
 
 build() {
     cmakew \

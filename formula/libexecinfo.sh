@@ -1,3 +1,3 @@
-package set summary "a quick-n-dirty BSD licensed clone of backtrace facility found in the GNU libc"
-package set src.git "https://github.com/leleliu008/libexecinfo.git"
-package set bsystem "cmake"
+pkg_set summary "a quick-n-dirty BSD licensed clone of backtrace facility found in the GNU libc"
+pkg_set git.url "https://github.com/leleliu008/libexecinfo.git"
+pkg_set bsystem "cmake"

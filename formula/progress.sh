@@ -1,13 +1,13 @@
-package set summary "Coreutils progress viewer"
-package set src.git "https://github.com/Xfennec/progress.git"
-package set src.url "https://github.com/Xfennec/progress/archive/v0.15.tar.gz"
-package set src.sum "1ed0ac65a912ef1aa605d524eaddaacae92079cf71182096a7c65cbc61687d1b"
-package set license "GPL-3.0"
-package set bsystem "make"
-package set dep.cmd "pkg-config"
-package set dep.pkg "ncurses libwordexp"
+pkg_set summary "Coreutils progress viewer"
+pkg_set git.url "https://github.com/Xfennec/progress.git"
+pkg_set src.url "https://github.com/Xfennec/progress/archive/v0.15.tar.gz"
+pkg_set src.sha "1ed0ac65a912ef1aa605d524eaddaacae92079cf71182096a7c65cbc61687d1b"
+pkg_set license "GPL-3.0"
+pkg_set bsystem "make"
+pkg_set dep.cmd "pkg-config"
+pkg_set dep.pkg "ncurses libwordexp"
 
-package set binsrcd 'YES'
+pkg_set binbstd 'YES'
 
 build() {
     makew clean &&

@@ -1,9 +1,9 @@
-package set summary "High quality, portable, open source libm implementation"
-package set webpage "https://openlibm.org"
-package set src.git "https://github.com/JuliaMath/openlibm.git"
-package set src.url "https://github.com/JuliaMath/openlibm/archive/v0.7.3.tar.gz"
-package set src.sum "d3bcc4ef21c033a0cc408a30186bb3dbe21219e0c52d328ca70eb688cf867354"
-package set bsystem "make"
+pkg_set summary "High quality, portable, open source libm implementation"
+pkg_set webpage "https://openlibm.org"
+pkg_set git.url "https://github.com/JuliaMath/openlibm.git"
+pkg_set src.url "https://github.com/JuliaMath/openlibm/archive/v0.7.3.tar.gz"
+pkg_set src.sha "d3bcc4ef21c033a0cc408a30186bb3dbe21219e0c52d328ca70eb688cf867354"
+pkg_set bsystem "make"
 
 prepare() {
     sed_in_place 's|-mhard-float||g' Make.inc
@@ -15,8 +15,8 @@ build() {
     else
         LONG_DOUBLE_NOT_DOUBLE=0
     fi
-    makew -C "$SOURCE_DIR" clean &&
-    makew -C "$SOURCE_DIR" install \
+    makew -C "$PACKAGE_BSCRIPT_DIR" clean &&
+    makew -C "$PACKAGE_BSCRIPT_DIR" install \
         prefix="$PACKAGE_INSTALL_DIR" \
         CC="$CC" \
         CFLAGS="\"$CFLAGS\"" \

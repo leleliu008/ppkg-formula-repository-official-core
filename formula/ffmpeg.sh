@@ -1,10 +1,10 @@
-package set summary "Play, record, convert, and stream audio and video"
-package set webpage "https://ffmpeg.org"
-package set src.url "https://ffmpeg.org/releases/ffmpeg-4.2.3.tar.xz"
-package set src.sum "9df6c90aed1337634c1fb026fb01c154c29c82a64ea71291ff2da9aacb9aad31"
-package set bsystem "make"
-package set dep.pkg "sdl2 opus libwebp libvorbis libtheora speex x264 x265 lame"
-package set binsrcd 'YES'
+pkg_set summary "Play, record, convert, and stream audio and video"
+pkg_set webpage "https://ffmpeg.org"
+pkg_set src.url "https://ffmpeg.org/releases/ffmpeg-4.2.3.tar.xz"
+pkg_set src.sha "9df6c90aed1337634c1fb026fb01c154c29c82a64ea71291ff2da9aacb9aad31"
+pkg_set bsystem "make"
+pkg_set dep.pkg "sdl2 opus libwebp libvorbis libtheora speex x264 x265 lame"
+pkg_set binbstd 'YES'
 
 build() {
     run ./configure \

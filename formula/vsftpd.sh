@@ -1,11 +1,11 @@
-package set summary "Secure FTP server for UNIX"
-package set webpage "https://security.appspot.com/vsftpd.html"
-package set src.url "https://security.appspot.com/downloads/vsftpd-3.0.3.tar.gz"
-package set src.sum "9d4d2bf6e6e2884852ba4e69e157a2cecd68c5a7635d66a3a8cf8d898c955ef7"
-package set license "GPL-2.0-only"
-package set dep.pkg "openssl libcap libcrypt"
-package set binsrcd 'YES'
-package set bsystem "make"
+pkg_set summary "Secure FTP server for UNIX"
+pkg_set webpage "https://security.appspot.com/vsftpd.html"
+pkg_set src.url "https://security.appspot.com/downloads/vsftpd-3.0.3.tar.gz"
+pkg_set src.sha "9d4d2bf6e6e2884852ba4e69e157a2cecd68c5a7635d66a3a8cf8d898c955ef7"
+pkg_set license "GPL-2.0-only"
+pkg_set dep.pkg "openssl libcap libcrypt"
+pkg_set binbstd 'YES'
+pkg_set bsystem "make"
 
 build() {
     makew clean &&

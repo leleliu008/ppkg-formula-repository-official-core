@@ -1,11 +1,11 @@
-package set summary "Optimized BLAS library"
-package set webpage "https://www.openblas.net"
-package set src.git "https://github.com/xianyi/OpenBLAS.git"
-package set src.url "https://github.com/xianyi/OpenBLAS/archive/v0.3.14.tar.gz"
-package set src.sum "d381935d26f9cae8e4bbd7d7f278435adf8e3a90920edf284bb9ad789ee9ad60"
-package set license "BSD-3-Clause"
-package set bsystem "make"
-package set binsrcd 'YES'
+pkg_set summary "Optimized BLAS library"
+pkg_set webpage "https://www.openblas.net"
+pkg_set git.url "https://github.com/xianyi/OpenBLAS.git"
+pkg_set src.url "https://github.com/xianyi/OpenBLAS/archive/v0.3.14.tar.gz"
+pkg_set src.sha "d381935d26f9cae8e4bbd7d7f278435adf8e3a90920edf284bb9ad789ee9ad60"
+pkg_set license "BSD-3-Clause"
+pkg_set bsystem "make"
+pkg_set binbstd 'YES'
 
 build() {
     # https://github.com/xianyi/OpenBLAS/wiki/How-to-build-OpenBLAS-for-Android

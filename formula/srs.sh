@@ -1,13 +1,13 @@
-package set summary "Simple Realtime Server"
-package set webpage "https://ossrs.net"
-package set src.git "https://github.com/ossrs/srs.git"
-package set version "3.0-r3"
-package set src.url "https://github.com/ossrs/srs/archive/v${PACKAGE_VERSION}.tar.gz"
-package set src.sum "a28a3b152dd51e58ad96caefa71c4310d29adbb0d1623581c13a5521afe04724"
-package set license "MIT"
-package set bsystem "make"
-package set sourced "trunk"
-package set binsrcd 'YES'
+pkg_set summary "Simple Realtime Server"
+pkg_set webpage "https://ossrs.net"
+pkg_set git.url "https://github.com/ossrs/srs.git"
+pkg_set version "3.0-r3"
+pkg_set src.url "https://github.com/ossrs/srs/archive/v${PACKAGE_VERSION}.tar.gz"
+pkg_set src.sha "a28a3b152dd51e58ad96caefa71c4310d29adbb0d1623581c13a5521afe04724"
+pkg_set license "MIT"
+pkg_set bsystem "make"
+pkg_set sourced "trunk"
+pkg_set binbstd 'YES'
 
 build() {
     export SRS_EXTRA_FLAGS="$CFLAGS $CPPFLAGS"

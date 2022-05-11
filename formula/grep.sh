@@ -1,9 +1,9 @@
-package set summary "GNU grep, egrep and fgrep"
-package set webpage "https://www.gnu.org/software/grep"
-package set src.url "https://ftp.gnu.org/gnu/grep/grep-3.4.tar.xz"
-package set src.sum "58e6751c41a7c25bfc6e9363a41786cff3ba5709cf11d5ad903cf7cce31cc3fb"
-package set license "GPL-3.0-or-later"
-package set bsystem "configure"
+pkg_set summary "GNU grep, egrep and fgrep"
+pkg_set webpage "https://www.gnu.org/software/grep"
+pkg_set src.url "https://ftp.gnu.org/gnu/grep/grep-3.7.tar.xz"
+pkg_set src.sha "5c10da312460aec721984d5d83246d24520ec438dd48d7ab5a05dbc0d6d6823c"
+pkg_set license "GPL-3.0-or-later"
+pkg_set bsystem "configure"
 
 build() {
     configure \

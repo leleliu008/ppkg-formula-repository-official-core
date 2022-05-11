@@ -1,10 +1,10 @@
-package set summary "User-friendly command-line shell for UNIX-like operating systems"
-package set webpage "https://fishshell.com"
-package set src.url "https://github.com/fish-shell/fish-shell/releases/download/3.1.2/fish-3.1.2.tar.gz"
-package set src.sum "d5b927203b5ca95da16f514969e2a91a537b2f75bec9b21a584c4cd1c7aa74ed"
-package set license "GPL-2.0"
-package set bsystem "cmake"
-package set dep.pkg "pcre2 bzip2 ncurses readline"
+pkg_set summary "User-friendly command-line shell for UNIX-like operating systems"
+pkg_set webpage "https://fishshell.com"
+pkg_set src.url "https://github.com/fish-shell/fish-shell/releases/download/3.1.2/fish-3.1.2.tar.gz"
+pkg_set src.sha "d5b927203b5ca95da16f514969e2a91a537b2f75bec9b21a584c4cd1c7aa74ed"
+pkg_set license "GPL-2.0"
+pkg_set bsystem "cmake"
+pkg_set dep.pkg "pcre2 bzip2 ncurses readline"
 
 build() {
     cmakew \

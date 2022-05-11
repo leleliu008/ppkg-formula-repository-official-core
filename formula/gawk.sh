@@ -1,10 +1,10 @@
-package set summary "GNU awk utility"
-package set webpage "https://www.gnu.org/software/gawk"
-package set src.url "https://ftp.gnu.org/gnu/gawk/gawk-5.1.0.tar.xz"
-package set src.sum "cf5fea4ac5665fd5171af4716baab2effc76306a9572988d5ba1078f196382bd"
-package set license "GPL-3.0"
-package set bsystem "configure"
-package set dep.pkg "readline mpfr"
+pkg_set summary "GNU awk utility"
+pkg_set webpage "https://www.gnu.org/software/gawk"
+pkg_set src.url "https://ftp.gnu.org/gnu/gawk/gawk-5.1.0.tar.xz"
+pkg_set src.sha "cf5fea4ac5665fd5171af4716baab2effc76306a9572988d5ba1078f196382bd"
+pkg_set license "GPL-3.0"
+pkg_set bsystem "configure"
+pkg_set dep.pkg "readline mpfr"
 
 build() {
     configure \

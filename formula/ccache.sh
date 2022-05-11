@@ -1,10 +1,10 @@
-package set summary "Object-file caching compiler wrapper"
-package set webpage "https://ccache.dev"
-package set src.url "https://github.com/ccache/ccache/releases/download/v4.0/ccache-4.0.tar.xz"
-package set src.sum "ac1b82fe0a5e39905945c4d68fcb24bd0f32344869faf647a1b8d31e544dcb88"
-package set license "GPL-3.0-or-later"
-package set dep.pkg "zstd blake3"
-package set bsystem "cmake"
+pkg_set summary "Object-file caching compiler wrapper"
+pkg_set webpage "https://ccache.dev"
+pkg_set src.url "https://github.com/ccache/ccache/releases/download/v4.0/ccache-4.0.tar.xz"
+pkg_set src.sha "ac1b82fe0a5e39905945c4d68fcb24bd0f32344869faf647a1b8d31e544dcb88"
+pkg_set license "GPL-3.0-or-later"
+pkg_set dep.pkg "zstd blake3"
+pkg_set bsystem "cmake"
 
 prepare() {
     sed_in_place 's|ifdef HAVE_AVX2|if 0|g'    src/hashutil.cpp &&

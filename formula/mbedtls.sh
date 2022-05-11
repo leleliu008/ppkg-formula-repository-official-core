@@ -1,8 +1,8 @@
-package set summary "Cryptographic & SSL/TLS library"
-package set webpage "https://tls.mbed.org"
-package set src.url "https://github.com/ARMmbed/mbedtls/archive/mbedtls-2.23.0.tar.gz"
-package set src.sum "5c8998217402aa1fc734f4afaeac38fad2421470fac4b3abc112bd46391054fe"
-package set bsystem "cmake"
+pkg_set summary "Cryptographic & SSL/TLS library"
+pkg_set webpage "https://tls.mbed.org"
+pkg_set src.url "https://github.com/ARMmbed/mbedtls/archive/mbedtls-2.23.0.tar.gz"
+pkg_set src.sha "5c8998217402aa1fc734f4afaeac38fad2421470fac4b3abc112bd46391054fe"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \

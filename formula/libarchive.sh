@@ -1,9 +1,9 @@
-package set summary "Multi-format archive and compression library"
-package set webpage "https://www.libarchive.org"
-package set src.url "https://www.libarchive.org/downloads/libarchive-3.4.3.tar.xz"
-package set src.sum "0bfc3fd40491768a88af8d9b86bf04a9e95b6d41a94f9292dbc0ec342288c05f"
-package set dep.pkg "libiconv expat openssl xz bzip2 lz4 lzo zstd"
-package set bsystem "configure"
+pkg_set summary "Multi-format archive and compression library"
+pkg_set webpage "https://www.libarchive.org"
+pkg_set src.url "https://www.libarchive.org/downloads/libarchive-3.4.3.tar.xz"
+pkg_set src.sha "0bfc3fd40491768a88af8d9b86bf04a9e95b6d41a94f9292dbc0ec342288c05f"
+pkg_set dep.pkg "libiconv expat openssl xz bzip2 lz4 lzo zstd"
+pkg_set bsystem "configure"
 
 build() {
     configure \
