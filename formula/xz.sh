@@ -9,5 +9,10 @@ build() {
         --disable-external-sha256 \
         --disable-werror \
         --enable-assembler \
-        --enable-threads=posix
+        --enable-threads=posix && {
+        for item in xzmore xzdiff xzdiff xzless xzgrep
+        do
+            sed_in_place '1c #!/usr/bin/env bash' "$PACKAGE_INSTALL_DIR/bin/$item" || return 1
+        done
+    }
 }

@@ -7,6 +7,7 @@ pkg_set license "OpenSSL"
 #pkg_set depends "perl:build"
 pkg_set bsystem "make"
 pkg_set binbstd 'yes'
+#pkg_set ldflags "-Wl,-z,muldefs"
 
 #注意：1.0.2以上的openssl不支持openssl-fips，从openssl3.0开始支持新设计的openssl-fips
 #https://github.com/openssl/openssl/issues/7582

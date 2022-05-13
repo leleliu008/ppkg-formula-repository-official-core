@@ -1,9 +1,10 @@
 pkg_set summary "Perl compatible regular expressions library with a new API"
-pkg_set webpage "https://www.pcre.org"
-pkg_set src.url "https://ftp.pcre.org/pub/pcre/pcre2-10.35.tar.bz2"
-pkg_set src.sha "9ccba8e02b0ce78046cdfb52e5c177f0f445e421059e43becca4359c669d4613"
-pkg_set bsystem "cmake"
+pkg_set webpage "https://www.pcre.org" 
+pkg_set git.url "https://github.com/PhilipHazel/pcre2.git"
+pkg_set src.url "https://github.com/PhilipHazel/pcre2/releases/download/pcre2-10.40/pcre2-10.40.tar.bz2"
+pkg_set src.sha "14e4b83c4783933dc17e964318e6324f7cae1bc75d8f3c79bc6969f00c159d68"
 pkg_set dep.pkg "zlib bzip2 readline"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \
@@ -17,11 +18,5 @@ build() {
         -DPCRE2_SUPPORT_UNICODE=ON \
         -DPCRE2_SUPPORT_LIBZ=ON \
         -DPCRE2_SUPPORT_LIBBZ2=ON \
-        -DPCRE2_SUPPORT_LIBREADLINE=ON \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.a" \
-        -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
-        -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.a" \
-        -DREADLINE_INCLUDE_DIR="$readline_INCLUDE_DIR" \
-        -DREADLINE_LIBRARY="$readline_LIBRARY_DIR/libreadline.a"
+        -DPCRE2_SUPPORT_LIBREADLINE=ON
 }

@@ -10,5 +10,7 @@ build() {
         --enable-threads=posix \
         --disable-assert \
         --disable-gcc-warnings \
-        --with-included-regex
+        --with-included-regex &&
+    sed_in_place 's|bash|sh|' "$PACKAGE_INSTALL_DIR/bin/egrep" &&
+    sed_in_place 's|bash|sh|' "$PACKAGE_INSTALL_DIR/bin/fgrep"
 }

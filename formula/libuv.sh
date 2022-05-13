@@ -1,7 +1,8 @@
 pkg_set summary "Multi-platform support library with a focus on asynchronous I/O"
 pkg_set webpage "https://libuv.org"
-pkg_set src.url "https://github.com/libuv/libuv/archive/v1.40.0.tar.gz"
-pkg_set src.sha "70fe1c9ba4f2c509e8166c0ca2351000237da573bb6c82092339207a9715ba6b"
+pkg_set git.url "https://github.com/libuv/libuv.git"
+pkg_set src.url "https://github.com/libuv/libuv/archive/v1.44.1.tar.gz"
+pkg_set src.sha "e91614e6dc2dd0bfdd140ceace49438882206b7a6fb00b8750914e67a9ed6d6b"
 pkg_set license "MIT"
 pkg_set bsystem "cmake"
 
@@ -10,5 +11,5 @@ build() {
         -DLIBUV_BUILD_TESTS=OFF \
         -DLIBUV_BUILD_BENCH=OFF \
         -DQEMU=OFF &&
-    mv "$PACKAGE_LIBRARY_DIR/libuv_a.a" "$PACKAGE_LIBRARY_DIR/libuv.a"
+    mv "$PACKAGE_INSTALL_DIR/lib/libuv_a.a" "$PACKAGE_INSTALL_DIR/lib/libuv.a"
 }

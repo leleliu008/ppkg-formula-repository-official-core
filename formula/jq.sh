@@ -3,7 +3,7 @@ pkg_set webpage "https://stedolan.github.io/jq"
 pkg_set src.url "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-1.6.tar.gz"
 pkg_set src.sha "5de8c8e29aaa3fb9cc6b47bb27299f271354ebb72514e3accadc7d38b5bbaa72"
 pkg_set license "MIT"
-pkg_set dep.pkg "oniguruma"
+pkg_set depends "oniguruma bison"
 pkg_set bsystem "configure"
 
 build() {
