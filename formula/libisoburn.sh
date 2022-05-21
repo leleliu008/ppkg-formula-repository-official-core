@@ -4,7 +4,7 @@ pkg_set src.url "http://files.libburnia-project.org/releases/libisoburn-1.5.2.ta
 pkg_set src.sha "cc720bc9511d8e0b09365e2c8b0e40817986be308cd96ca2705c807c955590ec"
 pkg_set license "LGPL-2.1-or-later"
 pkg_set bsystem "configure"
-pkg_set dep.pkg "libisofs libburn"
+pkg_set depends "libisofs libburn"
 
 build() {
     configure --enable-xattr --enable-zlib

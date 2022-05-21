@@ -3,7 +3,7 @@ pkg_set webpage "https://libtiff.gitlab.io/libtiff"
 pkg_set src.url "https://download.osgeo.org/libtiff/tiff-4.1.0.tar.gz"
 pkg_set src.sha "5d29f32517dadb6dbcd1255ea5bbc93a2b54b94fbf83653b4d65c7d6775b8634"
 pkg_set bsystem "cmake"
-pkg_set dep.pkg "zlib zstd xz"
+pkg_set depends "zlib zstd xz"
 
 build() {
     cmakew \

@@ -4,7 +4,7 @@ pkg_set src.url "https://mirrors.tuna.tsinghua.edu.cn/gnu/readline/readline-8.0.
 pkg_set src.sha "e339f51971478d369f8a053a330a190781acb9864cf4c541060f12078948e461"
 pkg_set license "GPL-3.0-or-later"
 pkg_set bsystem "configure"
-pkg_set dep.pkg "ncurses"
+pkg_set depends "ncurses"
 
 build() {
     configure \

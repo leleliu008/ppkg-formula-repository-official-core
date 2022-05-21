@@ -4,8 +4,8 @@ pkg_set src.url "https://downloads.xvid.com/downloads/xvidcore-1.3.7.tar.bz2"
 pkg_set src.sha "aeeaae952d4db395249839a3bd03841d6844843f5a4f84c271ff88f7aa1acff7"
 pkg_set license "GPL-2.0"
 pkg_set bsystem "configure"
-pkg_set sourced "build/generic"
-pkg_set binbstd 'YES'
+pkg_set bscript "build/generic"
+pkg_set binbstd "yes"
 
 build() {
     configure \

@@ -1,9 +1,11 @@
 pkg_set summary "C library for the arithmetic of high precision complex numbers"
 pkg_set webpage "http://www.multiprecision.org/mpc"
-pkg_set src.url "https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz"
-pkg_set src.sha "6985c538143c1208dcb1ac42cedad6ff52e267b47e5f970183a3e75125b43c2e"
+pkg_set git.url "https://gitlab.inria.fr/mpc/mpc.git"
+pkg_set src.url "https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz"
+pkg_set src.sha "17503d2c395dfcf106b622dc142683c1199431d095367c6aacba6eec30340459"
+pkg_set license "LGPL-3.0-or-later"
+pkg_set depends "gmp mpfr"
 pkg_set bsystem "configure"
-pkg_set dep.pkg "gmp mpfr"
 
 build() {
     configure \

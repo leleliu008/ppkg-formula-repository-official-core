@@ -9,5 +9,5 @@ pkg_set bsystem "cargo"
 
 build() {
     run cargo clean &&
-    run cargo install -vv --locked --path "$PACKAGE_BSCRIPT_DIR/cli" --root="$PACKAGE_INSTALL_DIR"
+    run cargo install -vv --locked --path "$PACKAGE_INSTALLING_BST_DIR/cli" --root="$PACKAGE_INSTALL_DIR"
 }

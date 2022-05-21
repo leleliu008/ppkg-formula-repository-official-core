@@ -5,4 +5,4 @@ pkg_set src.url "https://downloads.sourceforge.net/project/lcms/lcms/2.12/lcms2-
 pkg_set src.sha "18663985e864100455ac3e507625c438c3710354d85e5cbb7cd4043e11fe10f5"
 pkg_set license "MIT"
 pkg_set bsystem "configure"
-pkg_set dep.pkg "libtiff libjpeg-turbo zlib"
+pkg_set depends "libtiff libjpeg-turbo zlib"

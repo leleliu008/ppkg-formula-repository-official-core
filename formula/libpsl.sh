@@ -4,7 +4,7 @@ pkg_set src.url "https://github.com/rockdaboot/libpsl/releases/download/0.21.1/l
 pkg_set src.sha "ac6ce1e1fbd4d0254c4ddb9d37f1fa99dec83619c1253328155206b896210d4c"
 pkg_set license "MIT"
 pkg_set bsystem "configure"
-pkg_set dep.pkg "libidn2"
+pkg_set depends "libidn2"
 pkg_set ldflags "-lunistring -liconv"
 
 build() {

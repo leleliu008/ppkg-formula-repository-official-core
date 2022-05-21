@@ -3,8 +3,7 @@ pkg_set webpage "https://crosstool-ng.github.io"
 pkg_set src.url "http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.24.0.tar.xz"
 pkg_set src.sha "804ced838ea7fe3fac1e82f0061269de940c82b05d0de672e7d424af98f22d2d"
 pkg_set license "LGPL-2.1"
-pkg_set dep.cmd "libtoolize libtool help2man objcopy"
-pkg_set dep.pkg "ncurses libiconv gettext"
+pkg_set depends "help2man ncurses libiconv gettext"
 pkg_set bsystem "configure"
 
 build() {

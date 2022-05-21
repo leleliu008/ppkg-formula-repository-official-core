@@ -11,22 +11,31 @@ pkg_set <KEY> <VALUE>
 |KEY|required?|overview|
 |-|-|-|
 |`summary`|required|the summary of this package.|
-|`webpage`|optional|the home webpage of this package.<br>If this key is not present, `src.git` must be present.|
+|`webpage`|optional|the home webpage of this package.<br>If this key is not present, `git.url` must be present.|
 |`version`|optional|the version of this package.<br>If this key is not present, it will be calculated from `src.url`|
 |`license`|optional|the license of this package.|
-|`src.git`|optional|the source code git repository.<br>must end with `.git`|
+||||
+|`git.url`|optional|the source code git repository.<br>must end with `.git`|
+|`git.sha`|optional|the full git commit id, 40-byte hexadecimal string, which to be fetched as source code|
+|`git.tag`|optional|the git tag name, which to be fetched as source code|
+||||
 |`src.url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
-|`src.sum`|optional|the `sha256sum` of source code.<br>If the value of `src.url` end with `.git`, this key is optional, otherwise, this key must be present.|
-|`dep.cmd`|optional|the commands will be used when installing. If specify multiple values, separate them with spaces.|
-|`dep.pkg`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
-|`patches`|optional|the patches. `URL` `SHA256` pairs. [example](https://github.com/leleliu008/ppkg-formula-repository/blob/master/formula/unzip.sh#L9-L10)|
+|`src.sha`|optional|the `sha256sum` of source code.<br>If the value of `src.url` end with `.git`, this key is optional, otherwise, this key must be present.|
+||||
+|`fix.url`|optional|the patch file download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
+|`fix.sha`|optional|the `sha256sum` of patch file.|
+||||
+|`depends`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
+||||
 |`cdefine`|optional|append to `CPPFLAGS`|
 |`ccflags`|optional|`CFLAGS`|
 |`xxflags`|optional|`CXXFLAGS`|
 |`ldflags`|optional|`LDFLAGS`|
-|`sourced`|optional|the source directory, relative to `WORKING_DIR` which contains build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
-|`binsrcd`|optional|build in source directory, otherwise build out-of source directory.|
-|`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-make` `cmake-ninja` `meson` `make` `ninja` `cargo` `go`|
+||||
+|`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go`|
+|`bscript`|optional|the build script directory, relative to `PACKAGE_WORKING_DIR` which contains build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
+|`binbstd`|optional|whether build in build script directory, otherwise build in build directory.|
+
 
 ## the function can be declared in a formula
 |function|required?|overview|
@@ -37,14 +46,12 @@ pkg_set <KEY> <VALUE>
 ## the function can be invoked in a formula at anywhere
 |function|example|
 |-|-|
-|`print`|`print 'your message.'`|
 |`echo`|`echo 'your message.'`|
 |`info`|`info 'your infomation.'`|
 |`warn`|`warn "no package manager found."`|
 |`error`|`error 'error message.'`|
 |`die`|`die "please specify a package name."`|
 |`success`|`success "build success."`|
-|`nproc`|`make --directory="$BUILD_DIR" -j$(nproc)`|
 |`sed_in_place`|`sed_in_place 's/-mandroid//g' Configure`|
 |`format_unix_timestamp`|`format_unix_timestamp "$TIMESTAMP_UNIX" '+%Y/%m/%d %H:%M:%S'`|
 |`getvalue`|`VALUE=$(getvalue --key=value)`|
@@ -58,14 +65,12 @@ pkg_set <KEY> <VALUE>
 |`configure`|`configure --enable-pic`|
 |`mesonw`|`mesonw -Dneon=disabled -Darm-simd=disabled`|
 |`cmakew`|`cmakew -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON`|
-|`makew`|`makew`|
+|`gmakew`|`gmakew`|
 |`cargo`|`cargo`|
 
 ## the variable can be used in a formula at anywhere
 |variable|overview|
 |-|-|
-|`DEBUG`|`[ "$DEBUG" = 'true' ] && echo xx`|
-|||
 |`NATIVE_OS_TYPE`|current machine os type.|
 |`NATIVE_OS_NAME`|current machine os name.|
 |`NATIVE_OS_VERS`|current machine os version.|
@@ -80,12 +85,6 @@ pkg_set <KEY> <VALUE>
 ## the variable can be used in prepare and build function
 |variable|overview|
 |-|-|
-|`TIMESTAMP_UNIX`|the unix timestamp of this installation.|
-|||
-|`WORKING_DIR`|the direcotory where the source code tarball uncompressed to or copy to.|
-|`SOURCE_DIR`|the source code directory of this installation. `the source code direcotory` is the direcotory who contains `Makefile` or `configure` or `CMakeLists.txt` or `meson.build` or `Cargo.toml`|
-|`BUILD_DIR`|the build directory of this package.|
-|||
 |`CC`|the C Compiler.|
 |`CFLAGS`|the flags of `CC`.|
 |`CXX`|the C++ Compiler.|
@@ -100,12 +99,15 @@ pkg_set <KEY> <VALUE>
 |`NM`|a command line tool to list symbols from object files.|
 |`STRIP`|a command line tool to discard symbols and other data from object files.|
 |||
-|`PACKAGE_INSTALL_DIR`|the installation directory of this package.|
-|`PACKAGE_BINARY__DIR`|the `bin` directory of this package of this package.|
-|`PACKAGE_INCLUDE_DIR`|the `include` directory of this package of this package.|
-|`PACKAGE_LIBRARY_DIR`|the `lib` directory of this package of this package.|
-|`PACKAGE_PKGCONF_DIR`|the `pkgconfig` directory of this package of this package.|
+|`TIMESTAMP_UNIX`|the unix timestamp of this installation.|
 |||
-|`x_INSTALL_DIR`|the installation directory of x package of this package.|
-|`x_INCLUDE_DIR`|the `include` directory of x package of this package.|
-|`x_LIBRARY_DIR`|the `lib` directory of x package of this package.|
+|`PACKAGE_INSTALLING_TOP_DIR`|the directory used when installing.|
+|`PACKAGE_INSTALLING_SRC_DIR`|the directory where the source code tarball uncompressed to or copy to.|
+|`PACKAGE_INSTALLING_BST_DIR`|the directory where the build script (`Makefile`, `configure`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`) is located in.|
+|`PACKAGE_INSTALLING_TMP_DIR`|the directory where the tmp files are stored in when run build script.|
+|||
+|`PACKAGE_INSTALL_DIR`|the directory where the output files will be installed to.|
+|||
+|`x_INSTALL_DIR`|the installation directory of x package.|
+|`x_INCLUDE_DIR`|`$x_INSTALL_DIR/include`|
+|`x_LIBRARY_DIR`|`$x_INSTALL_DIR/lib`|

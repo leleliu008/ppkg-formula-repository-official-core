@@ -7,6 +7,6 @@ pkg_set bsystem "cargo"
 
 build() {
     run cargo clean &&
-    run cargo install -vv --path "$PACKAGE_BSCRIPT_DIR" --root="$PACKAGE_INSTALL_DIR" &&
-    install_mans $(find "$PACKAGE_BSCRIPT_DIR/target/$CARGO_TARGET/release/build" -name 'bat.1') 
+    run cargo install -vv --path "$PACKAGE_INSTALLING_BST_DIR" --root="$PACKAGE_INSTALL_DIR" &&
+    install_mans $(find "$PACKAGE_INSTALLING_BST_DIR/target/$CARGO_TARGET/release/build" -name 'bat.1') 
 }

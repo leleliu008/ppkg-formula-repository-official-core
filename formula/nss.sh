@@ -3,8 +3,8 @@ pkg_set webpage "https://developer.mozilla.org/docs/NSS"
 pkg_set src.url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_57_RTM/src/nss-3.57.tar.gz"
 pkg_set src.sha "55a86c01be860381d64bb4e5b94eb198df9b0f098a8af0e58c014df398bdc382"
 pkg_set license "MPL-2.0"
-pkg_set dep.pkg "nspr"
-pkg_set sourced "nss"
+pkg_set depends "nspr"
+pkg_set bscript "nss"
 
 prepare() {
     sed_in_place 's/$(AR)/$(AR) rs $@/g' coreconf/rules.mk &&
@@ -30,18 +30,18 @@ prepare_includes() {
     done
 }
 
-pkg_set binbstd 'YES'
+pkg_set binbstd "yes"
 
 build() {
-    makew clean &&
-    makew \
+    gmakew clean &&
+    gmakew \
         -C coreconf/nsinstall \
         USE_64=1 \
         OBJDIR_NAME=build \
         CC="$CC_FOR_BUILD" \
         CFLAGS='-v' \
         LDFLAGS='-v' &&
-    makew \
+    gmakew \
         OBJDIR_NAME=build \
         OS_TARGET=Linux \
         CPU_ARCH="$TARGET_OS_ARCH" \
@@ -65,15 +65,15 @@ build() {
 }
 
 install_files() {
-    mkdir -p $PACKAGE_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}            || return 1
+    mkdir -p $PACKAGE_INSTALL_DIR/{bin,lib/pkgconfig,include/nss}                      || return 1
     
-    install -v -m755 Linux*/lib/*.so              $PACKAGE_LIBRARY_DIR       || return 1
-    install -v -m644 Linux*/lib/{*.chk,libcrmf.a} $PACKAGE_LIBRARY_DIR       || return 1
+    install -v -m755 Linux*/lib/*.so                $PACKAGE_INSTALL_DIR/lib           || return 1
+    install -v -m644 Linux*/lib/{*.chk,libcrmf.a}   $PACKAGE_INSTALL_DIR/lib           || return 1
     
-    cp -v -RL {public,private}/nss/*              $PACKAGE_INCLUDE_DIR/nss   || return 1
-    chmod -v 644                                  $PACKAGE_INCLUDE_DIR/nss/* || return 1
+    cp -v -RL {public,private}/nss/*                $PACKAGE_INSTALL_DIR/include/nss   || return 1
+    chmod -v 644                                    $PACKAGE_INSTALL_DIR/include/nss/* || return 1
     
-    install -v -m755 Linux*/bin/{certutil,pk12util} $PACKAGE_BINARY__DIR     || return 1
+    install -v -m755 Linux*/bin/{certutil,pk12util} $PACKAGE_INSTALL_DIR/bin           || return 1
 }
 
 install_pc_files() {

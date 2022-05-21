@@ -3,7 +3,7 @@ pkg_set webpage "https://id3lib.sourceforge.io"
 pkg_set src.url "https://downloads.sourceforge.net/project/id3lib/id3lib/3.8.3/id3lib-3.8.3.tar.gz"
 pkg_set src.sha "2749cc3c0cd7280b299518b1ddf5a5bcfe2d1100614519b68702230e26c7d079"
 pkg_set bsystem "configure"
-pkg_set dep.pkg "libiconv"
+pkg_set depends "libiconv"
 
 prepare() {
     sed_in_place 's/iomanip.h/iomanip/g' configure || return 1

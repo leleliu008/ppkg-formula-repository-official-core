@@ -1,12 +1,12 @@
 pkg_set summary "Object-file caching compiler wrapper"
 pkg_set webpage "https://ccache.dev"
-pkg_set src.url "https://github.com/ccache/ccache/releases/download/v4.0/ccache-4.0.tar.xz"
-pkg_set src.sha "ac1b82fe0a5e39905945c4d68fcb24bd0f32344869faf647a1b8d31e544dcb88"
+pkg_set src.url "https://github.com/ccache/ccache/releases/download/v4.6.1/ccache-4.6.1.tar.xz"
+pkg_set src.sha "e5d47bd3cbb504ada864124690e7c0d28ecb1f9aeac22a9976025aed9633f3d1"
 pkg_set license "GPL-3.0-or-later"
-pkg_set dep.pkg "zstd blake3"
+pkg_set depends "hiredis zstd"
 pkg_set bsystem "cmake"
 
-prepare() {
+prepare2() {
     sed_in_place 's|ifdef HAVE_AVX2|if 0|g'    src/hashutil.cpp &&
     sed_in_place 's|third_party/blake3/||'     src/Hash.hpp &&
     sed_in_place '/add_subdirectory(blake3)/d' src/third_party/CMakeLists.txt
@@ -19,7 +19,5 @@ build() {
         -DENABLE_IPO=OFF \
         -DENABLE_TRACING=OFF \
         -DWARNINGS_AS_ERRORS=OFF \
-        -DZSTD_FROM_INTERNET=OFF \
-        -DZSTD_INCLUDE_DIR="$zstd_INCLUDE_DIR" \
-        -DZSTD_LIBRARY="$zstd_LIBRARY_DIR/libzstd.a"
+        -DZSTD_FROM_INTERNET=OFF
 }

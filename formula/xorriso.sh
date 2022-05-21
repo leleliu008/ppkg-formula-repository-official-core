@@ -4,7 +4,7 @@ pkg_set src.url "https://ftp.gnu.org/gnu/xorriso/xorriso-1.5.2.tar.gz"
 pkg_set src.sha "3b69f5c93ae7c40c5bbe4a847fa3963f5efc9c565551622f77121c5792fc17e7"
 pkg_set license "GPL-2.0-or-later"
 pkg_set bsystem "configure"
-pkg_set dep.pkg "libiconv"
+pkg_set depends "libiconv"
 
 build() {
     configure \

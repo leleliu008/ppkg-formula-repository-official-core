@@ -2,7 +2,7 @@ pkg_set summary "Bytecode optimizer for Android apps"
 pkg_set webpage "https://fbredex.com"
 pkg_set git.url "https://github.com/facebook/redex.git"
 pkg_set license "MIT"
-pkg_set dep.pkg "boost jsoncpp libexecinfo"
+pkg_set depends "boost jsoncpp libexecinfo"
 pkg_set bsystem "autotools"
 
 prepare() {

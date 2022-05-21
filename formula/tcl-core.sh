@@ -5,7 +5,7 @@ pkg_set src.url "https://downloads.sourceforge.net/project/tcl/Tcl/${PACKAGE_VER
 pkg_set src.sha "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
 pkg_set license "TCL"
 pkg_set bsystem "configure"
-pkg_set sourced "unix"
+pkg_set bscript "unix"
 
 build() {
     unset EXTRA_CONFIGURE_FLAGS

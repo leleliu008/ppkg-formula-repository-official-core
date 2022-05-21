@@ -8,5 +8,5 @@ pkg_set bsystem "cargo"
 
 build() {
     run cargo clean &&
-    run cargo install -vv -j 1 --path "$PACKAGE_BSCRIPT_DIR" --root="$PACKAGE_INSTALL_DIR" 
+    run cargo install -vv -j 1 --path "$PACKAGE_INSTALLING_BST_DIR" --root="$PACKAGE_INSTALL_DIR" 
 }

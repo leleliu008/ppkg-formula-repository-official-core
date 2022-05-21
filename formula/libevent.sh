@@ -3,7 +3,7 @@ pkg_set webpage "https://libevent.org"
 pkg_set version "2.1.12"
 pkg_set src.url "https://github.com/libevent/libevent/releases/download/release-${PACKAGE_VERSION}-stable/libevent-${PACKAGE_VERSION}-stable.tar.gz"
 pkg_set src.sha "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb"
-pkg_set dep.pkg "openssl"
+pkg_set depends "openssl"
 pkg_set bsystem "cmake"
 
 build() {

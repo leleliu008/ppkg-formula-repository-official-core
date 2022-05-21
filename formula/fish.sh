@@ -4,7 +4,7 @@ pkg_set src.url "https://github.com/fish-shell/fish-shell/releases/download/3.1.
 pkg_set src.sha "d5b927203b5ca95da16f514969e2a91a537b2f75bec9b21a584c4cd1c7aa74ed"
 pkg_set license "GPL-2.0"
 pkg_set bsystem "cmake"
-pkg_set dep.pkg "pcre2 bzip2 ncurses readline"
+pkg_set depends "pcre2 bzip2 ncurses readline"
 
 build() {
     cmakew \

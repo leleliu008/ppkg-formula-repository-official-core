@@ -4,8 +4,8 @@ pkg_set src.url "https://fossies.org/linux/misc/db-18.1.40.tar.gz"
 pkg_set src.sha "0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8"
 pkg_set license "BSD 3-Clause"
 pkg_set bsystem "configure"
-pkg_set dep.pkg "openssl"
-pkg_set sourced "dist"
+pkg_set depends "openssl"
+pkg_set bscript "dist"
 
 build() {
     configure \

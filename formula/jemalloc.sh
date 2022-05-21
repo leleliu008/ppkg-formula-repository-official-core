@@ -4,7 +4,7 @@ pkg_set src.url "https://github.com/jemalloc/jemalloc/releases/download/5.2.1/je
 pkg_set src.sha "34330e5ce276099e2e8950d9335db5a875689a4c6a56751ef3b1d8c537f887f6"
 pkg_set license "BSD-2-Clause"
 pkg_set bsystem 'configure'
-pkg_set binbstd 'YES'
+pkg_set binbstd "yes"
 
 build() {
     configure \

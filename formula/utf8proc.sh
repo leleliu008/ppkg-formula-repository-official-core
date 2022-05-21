@@ -10,6 +10,6 @@ build() {
     cmakew \
         -DUTF8PROC_INSTALL=ON \
         -DUTF8PROC_ENABLE_TESTING=OFF &&
-    makew -C "$PACKAGE_BSCRIPT_DIR" libutf8proc.pc prefix="$PACKAGE_INSTALL_DIR" &&
-    install_pcfs "$PACKAGE_BSCRIPT_DIR/libutf8proc.pc"
+    gmakew -C "$PACKAGE_INSTALLING_BST_DIR" libutf8proc.pc prefix="$PACKAGE_INSTALL_DIR" &&
+    install_pcfs "$PACKAGE_INSTALLING_BST_DIR/libutf8proc.pc"
 }

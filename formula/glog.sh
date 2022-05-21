@@ -4,7 +4,7 @@ pkg_set src.url "https://github.com/google/glog/archive/v0.4.0.tar.gz"
 pkg_set src.sha "f28359aeba12f30d73d9e4711ef356dc842886968112162bc73002645139c39c"
 pkg_set license "BSD-3-Clause"
 pkg_set bsystem "cmake"
-pkg_set dep.pkg "gflags"
+pkg_set depends "gflags"
 
 build() {
     cmakew \

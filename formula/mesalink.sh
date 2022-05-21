@@ -2,7 +2,7 @@ pkg_set summary "memory-safe and OpenSSL-compatible TLS library"
 pkg_set webpage "https://mesalink.io"
 pkg_set git.url "https://github.com/mesalock-linux/mesalink.git"
 pkg_set bsystem "cargo"
-pkg_set binbstd 'YES'
+pkg_set binbstd "yes"
 
 build() {
     run cargo clean &&

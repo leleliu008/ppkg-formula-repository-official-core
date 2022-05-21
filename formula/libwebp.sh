@@ -2,7 +2,7 @@ pkg_set summary "Image format providing lossless and lossy compression for web i
 pkg_set webpage "https://developers.google.com/speed/webp"
 pkg_set src.url "http://downloads.webmproject.org/releases/webp/libwebp-1.1.0.tar.gz"
 pkg_set src.sha "98a052268cc4d5ece27f76572a7f50293f439c17a98e67c4ea0c7ed6f50ef043"
-pkg_set dep.pkg "libpng libtiff libjpeg-turbo giflib"
+pkg_set depends "libpng libtiff libjpeg-turbo giflib"
 pkg_set ldflags "-llzma -lzstd"
 pkg_set bsystem "cmake"
 

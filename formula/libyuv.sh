@@ -2,7 +2,7 @@ pkg_set summary "C library includes YUV conpackage set version and scaling funct
 pkg_set webpage "https://chromium.googlesource.com/external/libyuv"
 pkg_set git.url "https://github.com/Bilibili/libyuv.git"
 pkg_set bsystem "cmake"
-pkg_set dep.pkg "libjpeg-turbo"
+pkg_set depends "libjpeg-turbo"
 pkg_set cdefine "LIBYUV_DISABLE_NEON"
 
 build() {

@@ -4,8 +4,8 @@ pkg_set git.url "https://github.com/libjpeg-turbo/libjpeg-turbo.git"
 pkg_set src.url "https://downloads.sourceforge.net/project/libjpeg-turbo/2.0.6/libjpeg-turbo-2.0.6.tar.gz"
 pkg_set src.sha "d74b92ac33b0e3657123ddcf6728788c90dc84dcb6a52013d758af3c4af481bb"
 pkg_set license "IJG"
+pkg_set depends "nasm"
 pkg_set bsystem "cmake"
-pkg_set dep.cmd "nasm"
 
 build() {
     cmakew \

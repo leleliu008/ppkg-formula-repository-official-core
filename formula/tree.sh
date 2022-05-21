@@ -1,14 +1,16 @@
 pkg_set summary "Display directories as trees (with optional color/HTML output)"
 pkg_set webpage "http://mama.indstate.edu/users/ice/tree"
-pkg_set src.url "https://deb.debian.org/debian/pool/main/t/tree/tree_1.8.0.orig.tar.gz"
-pkg_set src.sha "715d5d4b434321ce74706d0dd067505bb60c5ea83b5f0b3655dae40aa6f9b7c2"
-pkg_set license "GPL-2.0"
-pkg_set bsystem "make"
+pkg_set src.url "http://mama.indstate.edu/users/ice/tree/src/tree-2.0.2.tgz"
+pkg_set src.sha "7d693a1d88d3c4e70a73e03b8dbbdc12c2945d482647494f2f5bd83a479eeeaf"
+pkg_set license "GPL-2.0-or-later"
+pkg_set bsystem "gmake"
+pkg_set binbstd "yes"
 
 build() {
-    makew -C "$PACKAGE_BSCRIPT_DIR" clean &&
-    makew -C "$PACKAGE_BSCRIPT_DIR" install \
-        prefix="$PACKAGE_INSTALL_DIR" \
+    gmakew clean &&
+    gmakew install \
+        PREFIX="$PACKAGE_INSTALL_DIR" \
+        MANDIR="$PACKAGE_INSTALL_DIR/share/man" \
         CC="$CC" \
         CFLAGS="'$CFLAGS $CPPFLAGS'" \
         LDFLAGS="'$LDFLAGS'"

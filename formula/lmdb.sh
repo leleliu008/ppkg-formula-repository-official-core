@@ -4,12 +4,12 @@ pkg_set src.url "https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.2
 pkg_set src.sha "54f4a3a927793db950288e9254c0dfe35afc75af12cd92b8aaae0d1e990186c0"
 pkg_set license "OLDAP-2.8"
 pkg_set cdefine "MDB_USE_ROBUST=0"
-pkg_set sourced "libraries/liblmdb"
-pkg_set bsystem "make"
-pkg_set binbstd 'YES'
+pkg_set bscript "libraries/liblmdb"
+pkg_set bsystem "gmake"
+pkg_set binbstd "yes"
 
 build() {
-    makew clean &&
-    makew CC="$CC" XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" &&
-    makew install prefix="$PACKAGE_INSTALL_DIR"
+    gmakew clean &&
+    gmakew CC="$CC" XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" &&
+    gmakew install prefix="$PACKAGE_INSTALL_DIR"
 }

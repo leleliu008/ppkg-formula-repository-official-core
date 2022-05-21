@@ -4,7 +4,7 @@ pkg_set src.url "https://ftp.gnu.org/gnu/binutils/binutils-2.35.tar.xz"
 pkg_set src.sha "1b11659fb49e20e18db460d44485f09442c8c56d5df165de9461eb09c8302f85"
 pkg_set license "GPL-2.0"
 pkg_set bsystem "configure"
-pkg_set dep.pkg "isl gmp libmpc mpfr"
+pkg_set depends "isl gmp libmpc mpfr"
 pkg_set ldflags "-lm"
 
 build() {

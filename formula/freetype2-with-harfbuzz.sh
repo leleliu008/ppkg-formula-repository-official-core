@@ -3,7 +3,7 @@ pkg_set webpage "https://www.freetype.org"
 pkg_set src.url "https://downloads.sourceforge.net/project/freetype/freetype2/2.10.2/freetype-2.10.2.tar.xz"
 pkg_set src.sha "1543d61025d2e6312e0a1c563652555f17378a204a61e99928c9fcef030a2d8b"
 pkg_set bsystem "cmake"
-pkg_set dep.pkg "brotli bzip2 libpng harfbuzz"
+pkg_set depends "brotli bzip2 libpng harfbuzz"
 
 build() {
     cmakew \

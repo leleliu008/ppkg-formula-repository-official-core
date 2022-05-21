@@ -3,7 +3,7 @@ pkg_set webpage "https://openlibm.org"
 pkg_set git.url "https://github.com/JuliaMath/openlibm.git"
 pkg_set src.url "https://github.com/JuliaMath/openlibm/archive/v0.7.3.tar.gz"
 pkg_set src.sha "d3bcc4ef21c033a0cc408a30186bb3dbe21219e0c52d328ca70eb688cf867354"
-pkg_set bsystem "make"
+pkg_set bsystem "gmake"
 
 prepare() {
     sed_in_place 's|-mhard-float||g' Make.inc
@@ -15,8 +15,8 @@ build() {
     else
         LONG_DOUBLE_NOT_DOUBLE=0
     fi
-    makew -C "$PACKAGE_BSCRIPT_DIR" clean &&
-    makew -C "$PACKAGE_BSCRIPT_DIR" install \
+    gmakew -C "$PACKAGE_INSTALLING_BST_DIR" clean &&
+    gmakew -C "$PACKAGE_INSTALLING_BST_DIR" install \
         prefix="$PACKAGE_INSTALL_DIR" \
         CC="$CC" \
         CFLAGS="\"$CFLAGS\"" \
