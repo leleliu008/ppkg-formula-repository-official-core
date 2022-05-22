@@ -40,8 +40,8 @@ install_links() {
     cd "$PACKAGE_INSTALL_DIR/lib" || return 1
     for item in libncurses libpanel libmenu libform
     do
-        ln -s "${item}w$STATIC_LIBRARY_SUFFIX" "${item}$STATIC_LIBRARY_EXT" || return 1
-        ln -s "${item}w$SHARED_LIBRARY_SUFFIX" "${item}$SHARED_LIBRARY_EXT" || return 1
+        ln -s "${item}w$STATIC_LIBRARY_SUFFIX" "${item}$STATIC_LIBRARY_SUFFIX" || return 1
+        ln -s "${item}w$SHARED_LIBRARY_SUFFIX" "${item}$SHARED_LIBRARY_SUFFIX" || return 1
     done
     ln -s libncurses++w.a libncurses++.a || return 1
 
