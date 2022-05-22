@@ -6,9 +6,9 @@ pkg_set version "1"
 
 build() {
     run $CC $CFLAGS $CPPFLAGS -c -o crypt.o $PACKAGE_INSTALLING_BST_DIR/libcrypt-${PACKAGE_VERSION}.c &&
-    run $CC $LDFLAGS -shared -o libcrypt$SHARED_LIBRARY_EXT crypt.o &&
+    run $CC $LDFLAGS -shared -o libcrypt$SHARED_LIBRARY_SUFFIX crypt.o &&
     run $AR rsc libcrypt.a crypt.o &&
     echo "char* crypt(char* key, char* salt);" > crypt.h &&
     run install_incs crypt.h &&
-    run install_libs libcrypt.a libcrypt$SHARED_LIBRARY_EXT
+    run install_libs libcrypt.a libcrypt$SHARED_LIBRARY_SUFFIX
 }

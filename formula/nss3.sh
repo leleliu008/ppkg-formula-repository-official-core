@@ -13,7 +13,7 @@ prepare() {
 
 build() {
     "$PACKAGE_INSTALLING_BST_DIR/build.sh" \
-        -DSHARED_LIB_SUFFIX=$SHARED_LIBRARY_EXT \
+        -DSHARED_LIB_SUFFIX=$SHARED_LIBRARY_SUFFIX \
         -c \
         -v \
         --opt \
