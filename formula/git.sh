@@ -7,11 +7,16 @@ pkg_set license "GPL-2.0-only"
 pkg_set depends "gettext expat curl pcre2 libidn2"
 pkg_set bsystem "configure"
 pkg_set binbstd "yes"
-pkg_set ldflags "-Wl,-z,muldefs"
 
 build() {
+    # musl libc
     export ac_cv_c_regex_with_reg_startend=no
     export ac_cv_lib_curl_curl_global_init=yes
+
+    case $NATIVE_OS_KIND in
+        darwin) export LDFLAGS="$LDFLAGS -framework SystemConfiguration" ;;
+        *)      export LDFLAGS="$LDFLAGS -Wl,-z,muldefs"
+    esac
 
     configure \
         --with-zlib="$zlib_INSTALL_DIR" \

@@ -7,19 +7,22 @@ pkg_set license "OpenSSL"
 pkg_set depends "perl"
 pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
-pkg_set ldflags "-Wl,-z,muldefs"
 
 #注意：1.0.2以上的openssl不支持openssl-fips，从openssl3.0开始支持新设计的openssl-fips
 #https://github.com/openssl/openssl/issues/7582
 build() {
+    case $NATIVE_OS_KIND in
+        darwin) export LDFLAGS="$LDFLAGS -Wl,-z,muldefs"
+    esac
+
     run ./config \
         no-shared \
+        no-engine \
         no-ssl2 \
         no-ssl3 \
         no-comp \
-        no-hw \
-        no-engine \
         no-asm \
+        no-hw \
         --prefix="$PACKAGE_INSTALL_DIR" &&
     gmakew clean &&
     gmakew &&
