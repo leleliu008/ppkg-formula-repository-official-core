@@ -55,7 +55,7 @@ build_on_macos() {
 }
 
 build() {
-    case $NATIVE_OS_KIND in
+    case $NATIVE_OS_TYPE in
         macos) build_on_macos ;;
         *)     build_on_linux ;;
     esac
