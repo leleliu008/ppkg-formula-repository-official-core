@@ -16,13 +16,13 @@ pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
 
 prepare() {
-    while read PATCH
+    for patchfile in $(cat ../patches/series)
     do
-        patch -p1 < "$PACKAGE_INSTALLING_FIX_DIR/patches/$PATCH" || return 1
-    done < "$PACKAGE_INSTALLING_FIX_DIR/patches/series"
+        patch -p1 < ../patches/$patchfile || return 1
+    done
 }
 
-build() {
+build_on_linux() {
     gmakew -f unix/Makefile clean &&
     gmakew -f unix/Makefile generic \
         CC="$CC" \
@@ -34,4 +34,29 @@ build() {
     gmakew -f unix/Makefile install \
         prefix="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"
+}
+
+build_on_macos() {
+    gmakew -f unix/Makefile clean &&
+    gmakew -f unix/Makefile macosx \
+        CC="$CC" \
+        CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
+        AS="$AS" \
+        LD="'$CC'" \
+        STRIP="$STRIP" \
+        LOCAL_UNZIP="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
+        LOC=-DLARGE_FILE_SUPPORT \
+        D_USE_BZ2=-DUSE_BZIP2 \
+        L_BZ2=-lbz2 \
+        LFLAGS1=-liconv &&
+    gmakew -f unix/Makefile install \
+        prefix="$PACKAGE_INSTALL_DIR" \
+        MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"
+}
+
+build() {
+    case $NATIVE_OS_KIND in
+        macos) build_on_macos ;;
+        *)     build_on_linux ;;
+    esac
 }
