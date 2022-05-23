@@ -18,8 +18,8 @@ fi
 
 prepare() {
     if [ "$NATIVE_OS_KIND" = darwin ] ; then
-        patch -p1 < ../fix/*
-        patch -p1 < ../res/*
+        patch -p1 < ../fix/478b9d477ecdd8f4e3a7b488524e1d4c6a113525.patch
+        patch -p1 < ../res/3671d4a878fb58aa953810ecf9af41809317294f.patch
     fi
 }
 
