@@ -16,9 +16,9 @@ pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
 
 prepare() {
-    for patchfile in $(cat ../patches/series)
+    for patchfile in $(cat ../fix/patches/series)
     do
-        patch -p1 < ../patches/$patchfile || return 1
+        patch -p1 < ../fix/patches/$patchfile || return 1
     done
 }
 

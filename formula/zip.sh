@@ -15,10 +15,10 @@ pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
 
 prepare() {
-    while read PATCH
-    do
-        patch -p1 < "$PACKAGE_INSTALLING_FIX_DIR/patches/$PATCH" || return 1
-    done < "$PACKAGE_INSTALLING_FIX_DIR/patches/series"
+    for patchfile in $(cat ../fix/patches/series)
+    do  
+        patch -p1 < ../fix/patches/$patchfile || return 1
+    done
 }
 
 build() {
