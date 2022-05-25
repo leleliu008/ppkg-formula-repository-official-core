@@ -5,7 +5,7 @@ pkg_set src.url "https://mirrors.tuna.tsinghua.edu.cn/gnu/bash/bash-5.0.tar.gz"
 pkg_set src.sha "b4a80f2ac66170b2913efbfb9f2594f1f76c7b1afd11f799e22035d63077fb4d"
 pkg_set version "5.0.16"
 pkg_set license "GPL-3.0-or-later"
-pkg_set depends "readline"
+pkg_set depends "readline patch"
 pkg_set bsystem "configure"
 
 prepare() {
@@ -21,7 +21,7 @@ prepare() {
 
         fetch "https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-$PATCH_ITEM_INDEX" --sha256="$PATCH_ITEM_SHA256" --output-path="$PATCH_ITEM_FILEPATH"
 
-        run "patch -p0 < $PATCH_ITEM_FILEPATH"
+        run "patch -p0 < $PATCH_ITEM_FILEPATH" || true
     done <<EOF
 001 ebb07b3dbadd98598f078125d0ae0d699295978a5cdaef6282fe19adef45b5fa
 002 15ea6121a801e48e658ceee712ea9b88d4ded022046a6147550790caf04f5dbe

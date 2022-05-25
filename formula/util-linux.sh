@@ -3,7 +3,7 @@ pkg_set git.url "https://github.com/karelzak/util-linux.git"
 pkg_set src.url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.tar.xz"
 pkg_set src.sha "6d111cbe4d55b336db2f1fbeffbc65b89908704c01136371d32aa9bec373eb64"
 pkg_set license "GPL-2.0-or-later"
-pkg_set depends "readline"
+pkg_set depends "readline automake libtool pkg-config"
 pkg_set bsystem "configure"
 
 if [ "$NATIVE_OS_KIND" = darwin ] ; then
@@ -23,11 +23,47 @@ prepare() {
     fi
 }
 
-build() {
+build_for_linux() {
     configure \
         --without-python \
         --without-systemd \
-        --without-ncursesw \
         --enable-widechar \
-        --enable-libuuid
+        --enable-libuuid \
+        --disable-use-tty-group \
+        --disable-chfn-chsh \
+        --disable-login \
+        --disable-su \
+        --disable-runuser \
+        --disable-makeinstall-chown \
+        --disable-makeinstall-setuid
+}
+
+build_for_macos() {
+    configure \
+        --without-python \
+        --without-systemd \
+        --enable-widechar \
+        --enable-libuuid \
+        --disable-libmount \
+        --disable-ipcrm \
+        --disable-ipcs \
+        --disable-wall \
+        --disable-use-tty-group \
+        --disable-chfn-chsh \
+        --disable-login \
+        --disable-su \
+        --disable-runuser \
+        --disable-makeinstall-chown \
+        --disable-makeinstall-setuid
+}
+
+build() {
+    export AUTOMAKE=$(command -v automake)
+    export ACLOCAL=$(command -v aclocal)
+    export ACLOCAL_PATH="$pkg_config_INSTALL_DIR/share/aclocal:$ACLOCAL_PATH"
+
+    case $NATIVE_OS_KIND in
+        darwin) build_for_macos ;;
+        linux)  build_for_linux ;;
+    esac
 }
