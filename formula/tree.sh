@@ -11,7 +11,7 @@ build() {
     gmakew install \
         PREFIX="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man" \
-        CC="$CC" \
+        CC="'$CC'" \
         CFLAGS="'$CFLAGS $CPPFLAGS'" \
         LDFLAGS="'$LDFLAGS'"
 }
