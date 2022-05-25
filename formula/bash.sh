@@ -17,9 +17,11 @@ prepare() {
         PATCH_ITEM_INDEX="$( printf '%s\n' "$patchitem" | cut -d ' ' -f1)"
         PATCH_ITEM_SHA256="$(printf '%s\n' "$patchitem" | cut -d ' ' -f2)"
 
-        fetch "https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-$PATCH_ITEM_INDEX" --output-dir="$MY_CACHE_DIR/fix/$PACKAGE_NAME"
+        PATCH_ITEM_FILEPATH="$MY_HOME_DIR/patch.d/$PACKAGE_NAME/bash51-$PATCH_ITEM_INDEX"
 
-        patch -p1 < "$MY_CACHE_DIR/fix/$PACKAGE_NAME/bash51-$PATCH_ITEM_INDEX"
+        fetch "https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-$PATCH_ITEM_INDEX" --sha256="$PATCH_ITEM_SHA256" --output-path="$PATCH_ITEM_FILEPATH"
+
+        run "patch -p0 < $PATCH_ITEM_FILEPATH"
     done <<EOF
 001 ebb07b3dbadd98598f078125d0ae0d699295978a5cdaef6282fe19adef45b5fa
 002 15ea6121a801e48e658ceee712ea9b88d4ded022046a6147550790caf04f5dbe
