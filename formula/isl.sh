@@ -6,6 +6,7 @@ pkg_set src.sha "fcf78dd9656c10eb8cf9fbd5f59a0b6b01386205fe1934b3b287a0a1898145c
 pkg_set license "MIT"
 pkg_set depends "gmp"
 pkg_set bsystem "configure"
+pkg_set cdefine "_GNU_SOURCE"
 
 build() {
     configure \

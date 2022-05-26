@@ -1,9 +1,9 @@
 pkg_set summary "Perl compatible regular expressions library"
 pkg_set webpage "https://www.pcre.org"
-pkg_set src.url "https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2"
-pkg_set src.sha "19108658b23b3ec5058edc9f66ac545ea19f9537234be1ec62b714c84399366d"
-pkg_set bsystem "cmake"
+pkg_set src.url "https://downloads.sourceforge.net/project/pcre/pcre/8.45/pcre-8.45.tar.bz2"
+pkg_set src.sha "4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8"
 pkg_set depends "zlib bzip2 readline"
+pkg_set bsystem "cmake"
 
 build() {
     cmakew \
@@ -16,13 +16,7 @@ build() {
         -DPCRE_SUPPORT_VALGRIND=OFF \
         -DPCRE_SUPPORT_LIBZ=ON \
         -DPCRE_SUPPORT_LIBBZ2=ON \
-        -DPCRE_SUPPORT_LIBREADLINE=ON \
-        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
-        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.a" \
-        -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
-        -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.a" \
-        -DREADLINE_INCLUDE_DIR="$readline_INCLUDE_DIR" \
-        -DREADLINE_LIBRARY="$readline_LIBRARY_DIR/libreadline.a" &&
+        -DPCRE_SUPPORT_LIBREADLINE=ON &&
     install_pc_files
 }
 
