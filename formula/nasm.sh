@@ -6,6 +6,8 @@ pkg_set license "BSD-2-Clause"
 pkg_set bsystem "configure"
 
 build() {
+    export ac_cv_prog_AR="$AR"
+    export ac_cv_prog_RANLIB="$RANLIB"
     configure \
         --disable-profiling \
         --enable-lto \

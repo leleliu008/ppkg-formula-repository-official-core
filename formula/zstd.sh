@@ -1,9 +1,10 @@
 pkg_set summary "Zstandard is a real-time compression algorithm"
 pkg_set webpage "https://facebook.github.io/zstd"
-pkg_set src.url "https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
-pkg_set src.sha "98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e"
-pkg_set bsystem "cmake"
+pkg_set git.url "https://github.com/facebook/zstd.git"
+pkg_set src.url "https://github.com/facebook/zstd/archive/v1.5.2.tar.gz"
+pkg_set src.sha "f7de13462f7a82c29ab865820149e778cbfe01087b3a55b5332707abf9db4a6e"
 pkg_set depends "xz zlib"
+pkg_set bsystem "cmake"
 pkg_set bscript "build/cmake"
 
 build() {
