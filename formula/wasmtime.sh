@@ -1,0 +1,7 @@
+pkg_set summary "Standalone JIT-style runtime for WebAssembly, using Cranelift"
+pkg_set webpage "https://wasmtime.dev/"
+pkg_set git.url "https://github.com/bytecodealliance/wasmtime.git"
+pkg_set src.url "https://github.com/bytecodealliance/wasmtime/archive/refs/tags/v0.37.0.tar.gz"
+pkg_set src.sha "e54c805d511303295c690527d5e544b5dd919c7f"
+pkg_set license "Apache-2.0"
+pkg_set bsystem "cargo"

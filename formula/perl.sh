@@ -11,6 +11,9 @@ build() {
     run ./Configure \
         -des \
         -Dprefix=$PACKAGE_INSTALL_DIR \
+        -Dcc="'$CC'" \
+        -Dar="'$AR'" \
+        -Dnm="'$NM'" \
         -Duseshrplib \
         -Duselargefiles \
         -Dusethreads &&
