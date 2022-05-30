@@ -7,6 +7,11 @@ pkg_set license "GPL-3.0-or-later"
 pkg_set depends "isl libmpc zlib"
 pkg_set bsystem "configure"
 
+prepare() {
+    sed_in_place 's|sub/conftest.c|sub/conftest.cc|g'    gcc/configure
+    sed_in_place 's|sub/conftest.c|sub/conftest.cc|g' libcpp/configure
+}
+
 build() {
     configure \
         --with-isl=$isl_INSTALL_DIR \
