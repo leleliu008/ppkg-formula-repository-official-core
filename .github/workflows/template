@@ -30,6 +30,8 @@ jobs:
           with:
             repository: leleliu008/ppkg
 
+        - run: ls
+
         - run: bin/ppkg env
 
         - run: bin/ppkg setup
