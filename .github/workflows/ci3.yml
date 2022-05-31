@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow3
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
         os: [ubuntu-20.04]
-        pkg: [PKGLIST]
+        pkg: [libunwind,libwordexp,libxslt,libyuv,links,lmdb,lodepng,lsof,lynx,lzip,mbedtls,mediainfo,mesalink,mosh,mpg123,mpir,musl,neofetch,nginx,ngtcp2,ninja,nodejs,nss3,nss,ntbtls,numactl,nushell,openblas,openlibm,openmpi,openssl-fips,p7zip,packcc,pango,patchelf,pkgconf,pngquant,progress,pth,putty,qrencode,quiche,quickjs,redex,redis,rhash,rlwrap,rsync,rtmpdump,rtorrent]
 
     runs-on: ${{ matrix.os }}
 

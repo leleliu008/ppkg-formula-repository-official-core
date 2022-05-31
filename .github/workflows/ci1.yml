@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow1
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
         os: [ubuntu-20.04]
-        pkg: [PKGLIST]
+        pkg: [acl,archiver,aria2,axel,base64,bash,bat,bcrypt,bc,bear,bind,blake3,cairo,ccache,cdrtools,cgit,check,cjson,cpio,cppcheck,cpu_features,crosstool-ng,ctop,dash,deno,diffutils,dmalloc,e2fsprogs,elfutils,esbuild,eudev,expect,faac,faad2,fdk-aac,ffmpeg,findutils,fish,folly,gawk,gcc,gdbm,gh,gmake,gnu-binutils,gnu-coreutils,gnupg,gnutls,gnu-which,gobject-introspection]
 
     runs-on: ${{ matrix.os }}
 
