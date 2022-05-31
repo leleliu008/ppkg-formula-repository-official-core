@@ -26,6 +26,9 @@ jobs:
             repository: leleliu008/ppkg-formula-repository
             path: ppkg-formula-repository
 
+        - run: install -d /opt/ppkg/repos.d
+        - run: mv ppkg-formula-repository /opt/ppkg/repos.d/offical
+
         - uses: actions/checkout@v3
           with:
             repository: leleliu008/ppkg
@@ -33,8 +36,5 @@ jobs:
         - run: bin/ppkg env
 
         - run: bin/ppkg setup
-
-        - run: install -d /opt/ppkg/repos.d
-        - run: mv ppkg-formula-repository /opt/ppkg/repos.d/offical
 
         - run: bin/ppkg install ${{ matrix.pkg }}
