@@ -4,4 +4,4 @@ pkg_set src.url "https://github.com/libimobiledevice/ideviceinstaller/releases/d
 pkg_set src.sha "deb883ec97f2f88115aab39f701b83c843e9f2b67fe02f5e00a9a7d6196c3063"
 pkg_set license "GPL-2.0"
 pkg_set bsystem "configure"
-pkg_set depends "libimobiledevice libzip"
+pkg_set dep.pkg "libimobiledevice libzip"

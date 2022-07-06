@@ -1,0 +1,7 @@
+pkg_set summary "Very fast implementation of tldr in Rust"
+pkg_set git.url "https://github.com/dbrgn/tealdeer.git"
+pkg_set src.url "https://github.com/dbrgn/tealdeer/archive/v1.5.0.tar.gz"
+pkg_set src.sha "00902a50373ab75fedec4578c6c2c02523fad435486918ad9a86ed01f804358a"
+pkg_set license "Apache-2.0"
+pkg_set dep.pkg "openssl"
+pkg_set bsystem "cargo"

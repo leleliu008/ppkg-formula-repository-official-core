@@ -4,7 +4,7 @@ pkg_set git.url "https://github.com/arvidn/libtorrent.git"
 pkg_set src.url "https://github.com/arvidn/libtorrent/releases/download/v2.0.3/libtorrent-rasterbar-2.0.3.tar.gz"
 pkg_set src.sha "59bfc7654bccaa2735353fb21e503ed6f66f1964150b70799150ed3f2403bcc5"
 pkg_set bsystem "cmake"
-pkg_set depends "openssl boost"
+pkg_set dep.pkg "openssl boost"
 
 build() {
     cmakew \

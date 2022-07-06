@@ -4,7 +4,7 @@ pkg_set src.url "https://download.savannah.nongnu.org/releases/libunwind/libunwi
 pkg_set src.sha "90337653d92d4a13de590781371c604f9031cdb50520366aa1e3a91e1efb1017"
 pkg_set license "MIT"
 pkg_set bsystem "configure"
-pkg_set depends "xz zlib"
+pkg_set dep.pkg "xz zlib"
 
 build() {
     configure --disable-tests --disable-coredump

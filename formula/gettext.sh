@@ -3,7 +3,7 @@ pkg_set webpage "https://www.gnu.org/software/gettext"
 pkg_set src.url "https://ftp.gnu.org/gnu/gettext/gettext-0.21.tar.xz"
 pkg_set src.sha "d20fcbb537e02dcf1383197ba05bd0734ef7bf5db06bdb241eb69b7d16b73192"
 pkg_set license "GPL-3.0-or-later"
-pkg_set depends "ncurses libiconv"
+pkg_set dep.pkg "ncurses libiconv"
 pkg_set bsystem "configure"
 
 build() {

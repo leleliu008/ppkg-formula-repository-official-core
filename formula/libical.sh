@@ -3,7 +3,7 @@ pkg_set webpage "https://libical.github.io/libical"
 pkg_set src.url "https://github.com/libical/libical/releases/download/v3.0.8/libical-3.0.8.tar.gz"
 pkg_set src.sha "09fecacaf75ba5a242159e3a9758a5446b5ce4d0ab684f98a7040864e1d1286f"
 pkg_set license "LGPL-2.1-or-later"
-pkg_set depends "icu4c libxml2 glib"
+pkg_set dep.pkg "icu4c libxml2 glib"
 pkg_set bsystem "cmake"
 
 build() {

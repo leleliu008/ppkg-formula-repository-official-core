@@ -3,7 +3,7 @@ pkg_set webpage "https://www.zsh.org"
 pkg_set git.url "https://github.com/zsh-users/zsh.git"
 pkg_set src.url "https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz"
 pkg_set src.sha "9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5"
-pkg_set depends "ncurses pcre"
+pkg_set dep.pkg "ncurses pcre"
 pkg_set bsystem "configure"
 
 build() {

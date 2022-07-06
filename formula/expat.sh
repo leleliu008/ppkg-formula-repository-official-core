@@ -15,7 +15,6 @@ build() {
         -DEXPAT_BUILD_TOOLS=OFF"
 
     case $INSTALL_LIB in
-        yes)    cmakew $CMAKE_COMMON_OPTIONS -DEXPAT_SHARED_LIBS=ON  ;;  
         static) cmakew $CMAKE_COMMON_OPTIONS -DEXPAT_SHARED_LIBS=OFF ;;
         shared) cmakew $CMAKE_COMMON_OPTIONS -DEXPAT_SHARED_LIBS=ON  ;;  
         both)   cmakew $CMAKE_COMMON_OPTIONS -DEXPAT_SHARED_LIBS=OFF

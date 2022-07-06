@@ -3,7 +3,7 @@ pkg_set webpage "https://ccache.dev"
 pkg_set src.url "https://github.com/ccache/ccache/releases/download/v4.6.1/ccache-4.6.1.tar.xz"
 pkg_set src.sha "e5d47bd3cbb504ada864124690e7c0d28ecb1f9aeac22a9976025aed9633f3d1"
 pkg_set license "GPL-3.0-or-later"
-pkg_set depends "hiredis zstd"
+pkg_set dep.pkg "hiredis zstd"
 pkg_set bsystem "cmake"
 
 prepare2() {

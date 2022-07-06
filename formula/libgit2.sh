@@ -4,7 +4,7 @@ pkg_set git.url "https://github.com/libgit2/libgit2.git"
 pkg_set src.url "https://github.com/libgit2/libgit2/archive/v1.3.0.tar.gz"
 pkg_set src.sha "192eeff84596ff09efb6b01835a066f2df7cd7985e0991c79595688e6b36444e"
 pkg_set license "GPL-2.0-only"
-pkg_set depends "libssh2 pcre2"
+pkg_set dep.pkg "libssh2 pcre2"
 pkg_set bsystem "cmake"
 
 build() {

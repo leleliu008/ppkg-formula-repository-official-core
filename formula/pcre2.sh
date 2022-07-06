@@ -3,7 +3,7 @@ pkg_set webpage "https://www.pcre.org"
 pkg_set git.url "https://github.com/PhilipHazel/pcre2.git"
 pkg_set src.url "https://github.com/PhilipHazel/pcre2/releases/download/pcre2-10.40/pcre2-10.40.tar.bz2"
 pkg_set src.sha "14e4b83c4783933dc17e964318e6324f7cae1bc75d8f3c79bc6969f00c159d68"
-pkg_set depends "zlib bzip2 readline"
+pkg_set dep.pkg "zlib bzip2 readline"
 pkg_set bsystem "cmake"
 
 build() {

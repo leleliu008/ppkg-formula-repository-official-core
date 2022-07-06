@@ -4,7 +4,7 @@ pkg_set git.url "https://github.com/git/git.git"
 pkg_set src.url "https://www.kernel.org/pub/software/scm/git/git-2.36.1.tar.xz"
 pkg_set src.sha "405d4a0ff6e818d1f12b3e92e1ac060f612adcb454f6299f70583058cb508370"
 pkg_set license "GPL-2.0-only"
-pkg_set depends "gettext expat curl pcre2 libidn2"
+pkg_set dep.pkg "gettext expat curl pcre2 libidn2"
 pkg_set bsystem "configure"
 pkg_set binbstd "yes"
 

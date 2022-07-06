@@ -3,7 +3,7 @@ pkg_set webpage "https://facebook.github.io/zstd"
 pkg_set git.url "https://github.com/facebook/zstd.git"
 pkg_set src.url "https://github.com/facebook/zstd/archive/v1.5.2.tar.gz"
 pkg_set src.sha "f7de13462f7a82c29ab865820149e778cbfe01087b3a55b5332707abf9db4a6e"
-pkg_set depends "xz zlib"
+pkg_set dep.pkg "xz zlib"
 pkg_set bsystem "cmake"
 pkg_set bscript "build/cmake"
 

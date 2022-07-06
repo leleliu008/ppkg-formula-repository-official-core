@@ -4,7 +4,7 @@ pkg_set version "1.73.0"
 pkg_set src.url "https://boostorg.jfrog.io/artifactory/main/release/${PACKAGE_VERSION}/source/boost_$(echo ${PACKAGE_VERSION} | tr . _).tar.bz2"
 pkg_set src.sha "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
 pkg_set license "BSL-1.0"
-pkg_set depends "xz bzip2 zstd icu4c libiconv"
+pkg_set dep.pkg "xz bzip2 zstd icu4c libiconv"
 pkg_set binbstd "yes"
 
 # https://boostorg.github.io/build/manual/master/index.html

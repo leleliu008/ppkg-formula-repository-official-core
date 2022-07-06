@@ -1,14 +1,8 @@
 pkg_set summary "Modern shell for the GitHub era"
 pkg_set webpage "https://www.nushell.sh"
 pkg_set git.url "https://github.com/nushell/nushell.git"
-pkg_set src.url "https://github.com/nushell/nushell/archive/0.26.0.tar.gz"
-pkg_set src.sha "66fbfe1297997a3f6b2181cd723816150ad2453527c7cab6c83a9c67b9af2478"
+pkg_set src.url "https://github.com/nushell/nushell/archive/0.64.0.tar.gz"
+pkg_set src.sha "7adcc49bca0748dba680a2e118e158faae7bc14fb2e32b0056866d356b48d879"
 pkg_set license "MIT"
-pkg_set depends "zlib openssl"
+pkg_set dep.pkg "zlib openssl"
 pkg_set bsystem "cargo"
-pkg_set binbstd "yes"
-
-build() {
-    run cargo clean &&
-    run cargo install -vv --path "$PACKAGE_INSTALLING_BST_DIR" --root="$PACKAGE_INSTALL_DIR"
-}

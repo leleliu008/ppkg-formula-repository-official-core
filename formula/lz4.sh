@@ -1,14 +1,23 @@
 pkg_set summary "Extremely Fast Compression algorithm"
 pkg_set webpage "https://lz4.org"
 pkg_set git.url "https://github.com/lz4/lz4.git"
-pkg_set src.url "https://github.com/lz4/lz4/archive/v1.9.2.tar.gz"
-pkg_set src.sha "658ba6191fa44c92280d4aa2c271b0f4fbc0e34d249578dd05e50e76d0e5efcc"
+pkg_set src.url "https://github.com/lz4/lz4/archive/v1.9.3.tar.gz"
+pkg_set src.sha "030644df4611007ff7dc962d981f390361e6c97a34e5cbc393ddfbe019ffe2c1"
 pkg_set license "BSD-2-Clause"
 pkg_set bsystem "gmake"
+pkg_set binbstd "yes"
+pkg_set ccflags "-fvisibility=hidden"
+
+prepare() {
+    cat > include.h <<EOF
+#define LZ4LIB_VISIBILITY __attribute__ ((visibility ("default")))
+EOF
+}
 
 build() {
-    gmakew -C "$PACKAGE_INSTALLING_BST_DIR" clean   &&
-    gmakew -C "$PACKAGE_INSTALLING_BST_DIR" install \
+    export CPPFLAGS="$CPPFLAGS -include $PACKAGE_INSTALLING_SRC_DIR/include.h"
+    gmakew clean   &&
+    gmakew install \
         PREFIX="$PACKAGE_INSTALL_DIR" \
         CC="$CC" \
         CFLAGS="'$CFLAGS'" \

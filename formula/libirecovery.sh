@@ -4,5 +4,5 @@ pkg_set src.url "https://github.com/libimobiledevice/libirecovery/releases/downl
 pkg_set src.sha "cda0aba10a5b6fc2e1d83946b009e3e64d0be36912a986e35ad6d34b504ad9b4"
 pkg_set license "LGPL-2.1-only"
 pkg_set bsystem "configure"
-pkg_set depends "libusb readline"
+pkg_set dep.pkg "libusb readline"
 pkg_set ldflags "-lncurses"

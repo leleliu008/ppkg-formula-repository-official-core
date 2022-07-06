@@ -10,3 +10,10 @@ pkg_set developer "Jean-loup+Gailly|jloup@gailly.net Mark+Adler|madler@alumni.ca
 prepare() {
     sed_in_place 's|/share/pkgconfig|/lib/pkgconfig|' CMakeLists.txt
 }
+
+build() {
+    export  CFLAGS="$(printf '%s\n'  "$CFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+
+    cmakew
+}

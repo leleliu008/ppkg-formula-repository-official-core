@@ -4,7 +4,7 @@ pkg_set git.url "https://github.com/grpc/grpc.git"
 pkg_set src.url "https://github.com/grpc/grpc/archive/refs/tags/v1.46.0.tar.gz"
 pkg_set src.sha "67423a4cd706ce16a88d1549297023f0f9f0d695a96dd684adc21e67b021f9bc"
 pkg_set license "Apache-2.0"
-pkg_set depends "abseil c-ares openssl protobuf re2"
+pkg_set dep.pkg "abseil c-ares openssl protobuf re2"
 pkg_set bsystem "cmake"
 
 build() {

@@ -1,11 +1,12 @@
 pkg_set summary "Extremely fast non-cryptographic hash algorithm"
 pkg_set git.url "https://github.com/Cyan4973/xxHash.git"
-pkg_set src.url "https://github.com/Cyan4973/xxHash/archive/v0.8.0.tar.gz"
-pkg_set src.sha "7054c3ebd169c97b64a92d7b994ab63c70dd53a06974f1f630ab782c28db0f4f"
+pkg_set src.url "https://github.com/Cyan4973/xxHash/archive/v0.8.1.tar.gz"
+pkg_set src.sha "3bb6b7d6f30c591dd65aaaff1c8b7a5b94d81687998ca9400082c739a690436c"
 pkg_set license "BSD-2-Clause"
 pkg_set bsystem "gmake"
+pkg_set binbstd "yes"
 
 build() {
-    gmakew -C "$PACKAGE_INSTALLING_BST_DIR" clean   &&
-    gmakew -C "$PACKAGE_INSTALLING_BST_DIR" install PREFIX="$PACKAGE_INSTALL_DIR" CC="$CC" CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS -shared'" AR="$AR"
+    gmakew clean   &&
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" CC="$CC" CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" SONAME_FLAGS=-shared
 }

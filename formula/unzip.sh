@@ -11,7 +11,7 @@ pkg_set fix.sha "88cb7c0f1fd13252b662dfd224b64b352f9e75cd86389557fcb23fa6d263859
 pkg_set version "6.0.26"
 
 pkg_set license "Info-ZIP"
-pkg_set depends "bzip2"
+pkg_set dep.pkg "bzip2"
 pkg_set bsystem "gmake"
 pkg_set binbstd "yes"
 

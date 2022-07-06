@@ -2,7 +2,7 @@ pkg_set summary "Linux Capability Library"
 pkg_set webpage "https://git.kernel.org/pub/scm/libs/libcap/libcap.git"
 pkg_set src.url "https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/libcap-2.45.tar.gz"
 pkg_set src.sha "bf0496f7af816f20ccbad6a3e5e9714aa5da658fcb0804209137e4920417e33f"
-pkg_set depends "gperf"
+pkg_set dep.pkg "gperf"
 pkg_set bsystem "gmake"
 
 # int getgrnam_r(const char* __name, struct group* __group, char* __buf, size_t __n, struct group** __result) __INTRODUCED_IN(24);

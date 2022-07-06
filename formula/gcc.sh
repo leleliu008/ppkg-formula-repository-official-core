@@ -4,7 +4,7 @@ pkg_set git.url "https://gcc.gnu.org/git/gcc.git"
 pkg_set src.url "https://ftp.gnu.org/gnu/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
 pkg_set src.sha "b47cf2818691f5b1e21df2bb38c795fac2cfbd640ede2d0a5e1c89e338a3ac39"
 pkg_set license "GPL-3.0-or-later"
-pkg_set depends "isl libmpc zlib"
+pkg_set dep.pkg "isl libmpc zlib"
 pkg_set bsystem "configure"
 
 prepare() {

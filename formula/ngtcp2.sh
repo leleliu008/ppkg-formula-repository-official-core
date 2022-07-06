@@ -1,7 +1,7 @@
 pkg_set summary "QUIC library written in C"
 pkg_set git.url "https://github.com/ngtcp2/ngtcp2.git"
 pkg_set bsystem "cmake"
-pkg_set depends "libev nghttp3"
+pkg_set dep.pkg "libev nghttp3"
 
 build() {
     cmakew \

@@ -3,7 +3,7 @@ pkg_set webpage "https://developer.mozilla.org/docs/NSS"
 pkg_set src.url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_58_RTM/src/nss-3.58.tar.gz"
 pkg_set src.sha "9f73cf789b5f109b978e5239551b609b0cafa88d18f0bc8ce3f976cb629353c0"
 pkg_set license "MPL-2.0"
-pkg_set depends "nspr"
+pkg_set dep.pkg "nspr"
 pkg_set bscript "nss"
 
 prepare() {
