@@ -1,8 +1,0 @@
-pkg_set summary "Static analysis of C and C++ code"
-pkg_set webpage "https://sourceforge.net/projects/cppcheck"
-pkg_set git.url "https://github.com/danmar/cppcheck.git"
-pkg_set src.url "https://github.com/danmar/cppcheck/archive/2.4.1.tar.gz"
-pkg_set src.sha "11a9d9fe5305a105561655c45d2cd83cb30fbc87b41d0569de1b00a1a314867f"
-pkg_set license "GPL-3.0-or-later"
-pkg_set dep.pkg "pcre libxml2"
-pkg_set bsystem "cmake"

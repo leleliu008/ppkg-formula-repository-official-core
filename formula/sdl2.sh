@@ -1,6 +1,0 @@
-pkg_set summary "Low-level access to audio, keyboard, mouse, joystick and graphics"
-pkg_set webpage "https://www.libsdl.org"
-pkg_set src.url "https://libsdl.org/release/SDL2-2.0.12.tar.gz"
-pkg_set src.sha "349268f695c02efbc9b9148a70b85e58cefbbf704abd3e91be654db7f1e2c863"
-pkg_set license "Zlib"
-pkg_set bsystem "cmake"

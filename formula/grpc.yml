@@ -1,0 +1,23 @@
+summary: Next generation open source RPC library and framework
+webpage: https://grpc.io
+git-url: https://github.com/grpc/grpc.git
+src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.47.0.tar.gz
+src-sha: 271bdc890bf329a8de5b65819f0f9590a5381402429bca37625b63546ed19e54
+license: Apache-2.0
+dep-pkg: abseil c-ares openssl protobuf re2
+
+install:
+    bsystem: cmake
+    actions: |
+        cmakew \
+            -DCMAKE_CXX_STANDARD=17 \
+            -DCMAKE_CXX_STANDARD_REQUIRED=TRUE \
+            -DBUILD_SHARED_LIBS=OFF \
+            -DgRPC_BUILD_TESTS=OFF \
+            -DgRPC_INSTALL=ON \
+            -DgRPC_ABSL_PROVIDER=package \
+            -DgRPC_CARES_PROVIDER=package \
+            -DgRPC_PROTOBUF_PROVIDER=package \
+            -DgRPC_SSL_PROVIDER=package \
+            -DgRPC_ZLIB_PROVIDER=package \
+            -DgRPC_RE2_PROVIDER=package

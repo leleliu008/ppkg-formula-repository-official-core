@@ -1,0 +1,14 @@
+summary: Cross-platform build utility based on Lua
+webpage: https://xmake.io/
+git-url: https://github.com/xmake-io/xmake.git
+src-url: https://github.com/xmake-io/xmake/releases/download/v2.6.6/xmake-v2.6.6.tar.gz
+src-sha: 02267dc2af26088275661c4c6d986af0cdc283ff7684910bee3d8ab45c30389d
+license: Apache-2.0
+
+install:
+    bsystem: gmake
+    binbstd: yes
+    actions: |
+        gmakew clean
+        gmakew
+        gmakew install prefix=$PACKAGE_INSTALL_DIR

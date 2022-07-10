@@ -13,10 +13,9 @@ build() {
         --enable-bsdcat=static \
         --enable-bsdcpio=static \
         --without-xml2 \
-        --with-expat \
-        --with-openssl \
         --without-mbedtls \
         --without-nettle \
+        --without-libb2 \
         --without-cng \
         --with-zlib \
         --with-lzma \
@@ -24,6 +23,7 @@ build() {
         --with-lz4 \
         --with-lzo2 \
         --with-zstd \
-        --without-libb2 \
-        --with-iconv
+        --with-iconv \
+        --with-expat \
+        --with-openssl
 }

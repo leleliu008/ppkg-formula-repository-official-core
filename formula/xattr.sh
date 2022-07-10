@@ -1,5 +1,0 @@
-pkg_set summary "C library and utilities for Manipulating Filesystem Extended Attributes"
-pkg_set webpage "https://savannah.nongnu.org/projects/attr"
-pkg_set src.url "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/a/attr/attr_2.4.48.orig.tar.gz"
-pkg_set src.sha "5ead72b358ec709ed00bbf7a9eaef1654baad937c001c044fe8b74c57f5324e7"
-pkg_set bsystem "configure"

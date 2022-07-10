@@ -1,0 +1,15 @@
+summary: Utility for directing compilation
+webpage: https://www.gnu.org/software/make
+src-url: https://ftp.gnu.org/gnu/make/make-4.3.tar.gz
+src-sha: e05fdde47c5f7ca45cb697e973894ff4f5d79e13b750ed57d7b66d8defc78e19
+git-url: https://git.savannah.gnu.org/git/make.git
+license: GPL-3.0-or-later
+
+install:
+    bsystem: configure
+    actions: |
+        configure --program-prefix=g --without-guile --without-dmalloc
+        (
+            run cd $PACKAGE_INSTALL_DIR/bin
+            ln -s gmake make
+        )

@@ -1,0 +1,13 @@
+summary: Lightning Network Daemon
+webpage: http://dev.lightning.community/
+git-url: https://github.com/lightningnetwork/lnd.git
+src-url: https://github.com/lightningnetwork/lnd/archive/refs/tags/v0.15.0-beta.tar.gz
+src-sha: 79f217376e6046bea59e1e80562a637b5e51a1e78e9f07c6a77e737ad112ab90
+version: 0.15.0
+license: MIT
+
+install:
+    bsystem: go
+    actions: |
+        gow -tags linux -X github.com/lightningnetwork/lnd/build.Commit=v$PACKAGE_VERSION ./cmd/lnd &&
+        gow -tags linux -X github.com/lightningnetwork/lnd/build.Commit=v$PACKAGE_VERSION ./cmd/lncli

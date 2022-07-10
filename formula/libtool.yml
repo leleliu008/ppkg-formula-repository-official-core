@@ -1,0 +1,10 @@
+summary: Generic library support script
+webpage: https://www.gnu.org/software/libtool
+src-url: https://ftp.gnu.org/gnu/libtool/libtool-2.4.7.tar.xz
+src-sha: 4f7f217f057ce655ff22559ad221a0fd8ef84ad1fc5fcb6990cecc333aa1635d
+git-url: https://git.savannah.gnu.org/git/libtool.git
+license: GPL-2.0-or-later
+
+install:
+    bsystem: configure
+    actions: configure --enable-ltdl-install

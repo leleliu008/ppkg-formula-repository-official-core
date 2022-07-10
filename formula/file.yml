@@ -1,0 +1,15 @@
+summary: Utility to determine file types
+webpage: https://www.darwinsys.com/file
+git-url: https://github.com/file/file.git
+src-url: https://astron.com/pub/file/file-5.41.tar.gz
+src-sha: 13e532c7b364f7d57e23dfeea3147103150cb90593a57af86c10e4f6e411603f
+license: BSD-2-Clause
+dep-pkg: zlib
+
+install:
+    bsystem: configure
+    actions: |
+        configure \
+            --enable-zlib \
+            --disable-bzlib \
+            --disable-xzlib
