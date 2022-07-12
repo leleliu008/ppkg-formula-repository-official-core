@@ -5,7 +5,4 @@ src-sha: 5af07de982ba658fd91a03170c945f99c971f6955bc79df3266544373e39869c
 version: 3.38.5
 git-url: https://github.com/sqlite/sqlite.git
 dep-pkg: readline zlib
-
-install:
-    bsystem: configure
-    actions: configure --disable-editline --enable-readline --enable-static-shell
+install: configure --disable-editline --enable-readline --enable-static-shell

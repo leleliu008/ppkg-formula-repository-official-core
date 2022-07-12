@@ -3,6 +3,4 @@ git-url: https://github.com/ducaale/xh.git
 src-url: https://github.com/ducaale/xh/archive/refs/tags/v0.16.1.tar.gz
 src-sha: c1fd4f33be96ba1c19580fc66dd9d059a716f00f532a516e159ce9342e50cd43
 license: MIT
-
-install:
-    bsystem: cargo
+bsystem: cargo

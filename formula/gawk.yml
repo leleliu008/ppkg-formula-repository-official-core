@@ -6,13 +6,11 @@ git-url: https://git.savannah.gnu.org/git/gawk.git
 license: GPL-3.0-or-later
 dep-pkg: mpfr
 
-install:
-    bsystem: configure
-    actions: |
-        configure \
-            --without-readline \
-            --with-mpfr=$mpfr_INSTALL_DIR \
-            --enable-extensions \
-            --enable-lint \
-            --enable-mpfr \
-            --disable-builtin-intdiv0
+install: |
+    configure \
+        --without-readline \
+        --with-mpfr=$mpfr_INSTALL_DIR \
+        --enable-extensions \
+        --enable-lint \
+        --enable-mpfr \
+        --disable-builtin-intdiv0

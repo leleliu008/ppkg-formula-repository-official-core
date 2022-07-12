@@ -1,0 +1,19 @@
+summary: Low-level cryptographic library
+webpage: https://www.lysator.liu.se/~nisse/nettle
+git-url: https://git.lysator.liu.se/nettle/nettle
+src-url: https://ftp.gnu.org/gnu/nettle/nettle-3.8.tar.gz
+src-sha: 7576c68481c198f644b08c160d1a4850ba9449e308069455b5213319f234e8e6
+license: GPL-2.0-or-later
+dep-pkg: gmp
+
+use-zig: no
+install: |
+    configure \
+        --with-include-path=$gmp_INCLUDE_DIR \
+        --with-lib-path=$gmp_LIBRARY_DIR \
+        --disable-fat \
+        --disable-gcov \
+        --disable-openssl \
+        --disable-mini-gmp \
+        --enable-assembler \
+        --enable-documentation

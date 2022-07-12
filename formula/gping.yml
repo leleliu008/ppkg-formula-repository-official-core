@@ -3,7 +3,5 @@ git-url: https://github.com/orf/gping.git
 src-url: https://github.com/orf/gping/archive/refs/tags/gping-v1.3.2.tar.gz
 src-sha: 1ab71ca45cb5da317d77774eff96d5868486d03ea1cedff008cbafcaf880332b
 license: MIT
-
-install:
-    bsystem: cargo
-    bscript: gping
+bscript: gping
+bsystem: cargo

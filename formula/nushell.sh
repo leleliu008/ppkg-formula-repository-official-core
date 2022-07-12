@@ -1,8 +1,0 @@
-pkg_set summary "Modern shell for the GitHub era"
-pkg_set webpage "https://www.nushell.sh"
-pkg_set git.url "https://github.com/nushell/nushell.git"
-pkg_set src.url "https://github.com/nushell/nushell/archive/0.64.0.tar.gz"
-pkg_set src.sha "7adcc49bca0748dba680a2e118e158faae7bc14fb2e32b0056866d356b48d879"
-pkg_set license "MIT"
-pkg_set dep.pkg "zlib openssl"
-pkg_set bsystem "cargo"

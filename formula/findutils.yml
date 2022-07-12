@@ -5,13 +5,11 @@ src-sha: a2bfb8c09d436770edc59f50fa483e785b161a3b7b9d547573cb08065fd462fe
 git-url: https://git.savannah.gnu.org/git/findutils.git
 license: GPL-3.0-or-later
 
-install:
-    bsystem: configure
-    actions: |
-        configure \
-            --without-selinux \
-            --with-included-regex \
-            --enable-threads=posix \
-            --enable-leaf-optimisation \
-            --enable-d_type-optimisation \
-            --disable-assert
+install: |
+    configure \
+        --without-selinux \
+        --with-included-regex \
+        --enable-threads=posix \
+        --enable-leaf-optimisation \
+        --enable-d_type-optimisation \
+        --disable-assert

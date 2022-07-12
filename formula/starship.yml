@@ -1,0 +1,8 @@
+summary: Cross-shell prompt for astronauts
+webpage: https://starship.rs
+git-url: https://github.com/starship/starship.git
+src-url: https://github.com/starship/starship/archive/v1.9.1.tar.gz
+src-sha: 2b54bee07bf67504a1bb170d37dc8d6accab4594d35731bbdf0e8a631c8d1585
+dep-pkg: openssl
+license: ISC
+bsystem: cargo

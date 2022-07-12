@@ -1,7 +1,0 @@
-pkg_set summary "Improved tinyxml (in memory efficiency and size)"
-pkg_set webpage "http://grinninglizard.com/tinyxml2"
-pkg_set git.url "https://github.com/leethomason/tinyxml2.git"
-pkg_set src.url "https://github.com/leethomason/tinyxml2/archive/8.0.0.tar.gz"
-pkg_set src.sha "6ce574fbb46751842d23089485ae73d3db12c1b6639cda7721bf3a7ee862012c"
-pkg_set license "Zlib"
-pkg_set bsystem "cmake"

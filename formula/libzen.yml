@@ -5,7 +5,6 @@ src-sha: bd2772ab1ae4e375cdbbbdd114ad8471ebe67bf78c76e3812d66c7d462ed8ae7
 dep-pkg: libtool
 license: BSD-2-Clause
 
-install:
-    bscript: Project/GNU/Library
-    bsystem: autogen
-    binbstd: yes
+bscript: Project/GNU/Library
+bsystem: autogen
+binbstd: yes

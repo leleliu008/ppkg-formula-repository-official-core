@@ -3,14 +3,12 @@ webpage: http://www.multiprecision.org/mpc
 git-url: https://gitlab.inria.fr/mpc/mpc.git
 src-url: https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz
 src-sha: 17503d2c395dfcf106b622dc142683c1199431d095367c6aacba6eec30340459
-license: LGPL-3.0-or-later
 dep-pkg: mpfr
+license: LGPL-3.0-or-later
 
-install:
-    bsystem: configure
-    actions: |
-        configure \
-            --with-gmp=$gmp_INSTALL_DIR \
-            --with-mpfr=$mpfr_INSTALL_DIR \
-            --disable-valgrind-tests \
-            --disable-logging
+install: |
+    configure \
+        --with-gmp=$gmp_INSTALL_DIR \
+        --with-mpfr=$mpfr_INSTALL_DIR \
+        --disable-valgrind-tests \
+        --disable-logging

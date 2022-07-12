@@ -6,10 +6,8 @@ git-url: https://github.com/torvalds/linux.git
 license: GPL-2.0 WITH Linux-syscall-note
 dep-upp: rsync
 
-install:
-    use-zig: no
-    bsystem: gmake
-    binbstd: yes
-    actions: |
-        gmakew mrproper &&
-        gmakew INSTALL_HDR_PATH=$PACKAGE_INSTALL_DIR headers_install
+use-zig: no
+binbstd: yes
+install: |
+    gmakew mrproper &&
+    gmakew INSTALL_HDR_PATH=$PACKAGE_INSTALL_DIR headers_install

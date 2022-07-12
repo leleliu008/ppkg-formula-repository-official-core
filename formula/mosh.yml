@@ -6,8 +6,5 @@ git-url: https://github.com/mobile-shell/mosh.git
 license: GPL-3.0-or-later
 dep-pkg: zlib openssl ncurses protobuf
 
-install:
-    bsystem: configure
-    actions: |
-        sed_in_place 's|if ( bind|if (::bind|' $PACKAGE_INSTALLING_SRC_DIR/src/network/network.cc
-        configure --with-ncurses
+prepare: sed_in_place 's|if ( bind|if (::bind|' src/network/network.cc
+install: configure --with-ncurses

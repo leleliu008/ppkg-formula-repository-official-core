@@ -3,7 +3,4 @@ git-url: https://github.com/xyproto/algernon.git
 src-url: https://github.com/xyproto/algernon/archive/refs/tags/v1.13.0.tar.gz
 src-sha: 8327c1687990386eb5a48d15fd46fc69e17d400c29d726b34f6087c9c4887b9c
 license: MIT
-
-install:
-    bsystem: go
-    actions: gow -mod vendor
+install: gow -mod vendor

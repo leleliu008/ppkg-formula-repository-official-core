@@ -2,7 +2,4 @@ summary: HTTP-server to execute shell commands.
 git-url: https://github.com/msoap/shell2http.git
 version: 0
 license: MIT
-
-install:
-    bsystem: go
-    actions: gow && run install_mans shell2http.1
+install: gow && run install_mans shell2http.1

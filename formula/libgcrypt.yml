@@ -1,0 +1,13 @@
+summary: Cryptographic library based on the code from GnuPG
+webpage: https://www.gnupg.org/related_software/libgcrypt/
+git-url: https://dev.gnupg.org/source/libgcrypt.git
+src-url: https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.1.tar.bz2
+src-sha: ef14ae546b0084cd84259f61a55e07a38c3b53afc0f546bffcef2f01baffe9de
+license: LGPL-2.1-or-later
+dep-pkg: libgpg-error
+
+install: |
+    configure \
+        --with-libgpg-error-prefix=$libgpg_error_INSTALL_DIR \
+        --enable-optimization \
+        --disable-doc

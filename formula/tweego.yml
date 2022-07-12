@@ -4,10 +4,9 @@ src-url: https://github.com/tmedwards/tweego/archive/refs/tags/v2.1.1.tar.gz
 src-sha: f58991ff0b5b344ebebb5677b7c21209823fa6d179397af4a831e5ef05f28b02
 license: BSD-2-Clause
 
-install:
-    bsystem: go
-    actions: |
-        run rm go.mod
-        run go mod init github.com/tmedwards/tweego
-        run go mod tidy
-        gow
+bsystem: go
+install: |
+    run rm go.mod
+    run go mod init github.com/tmedwards/tweego
+    run go mod tidy
+    gow

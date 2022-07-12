@@ -1,0 +1,20 @@
+summary: Object-file caching compiler wrapper
+webpage: https://ccache.dev
+git-url: https://github.com/ccache/ccache.git
+src-url: https://github.com/ccache/ccache/releases/download/v4.6.1/ccache-4.6.1.tar.xz
+src-sha: e5d47bd3cbb504ada864124690e7c0d28ecb1f9aeac22a9976025aed9633f3d1
+dep-pkg: hiredis zstd
+license: GPL-3.0-or-later
+
+install: |
+    cmakew \
+        -DENABLE_COVERAGE=OFF \
+        -DENABLE_CPPCHECK=OFF \
+        -DENABLE_IPO=OFF \
+        -DENABLE_TRACING=OFF \
+        -DWARNINGS_AS_ERRORS=OFF \
+        -DZSTD_FROM_INTERNET=OFF \
+        -DZSTD_INCLUDE_DIR=$zstd_INCLUDE_DIR \
+        -DZSTD_LIBRARY=$zstd_LIBRARY_DIR/libzstd.a \
+        -DHIREDIS_INCLUDE_DIR=$hiredis_INCLUDE_DIR \
+        -DHIREDIS_LIBRARY=$hiredis_LIBRARY_DIR/libhiredis.a

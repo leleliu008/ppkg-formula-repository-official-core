@@ -4,7 +4,4 @@ src-url: https://ftp.gnu.org/gnu/patch/patch-2.7.6.tar.xz
 src-sha: ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
 git-url: https://git.savannah.gnu.org/git/patch.git
 license: GPL-3.0-or-later
-
-install:
-    bsystem: configure
-    actions: configure --enable-xattr --disable-gcc-warnings
+install: configure --enable-xattr --disable-gcc-warnings

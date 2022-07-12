@@ -6,10 +6,8 @@ src-sha: 467b310903832b033fe56cd37720d1b73a6a3bd0171dbf6ff0b620385f4f76d0
 dep-pkg: nasm
 license: IJG
 
-install:
-    bsystem: cmake
-    actions: |
-        cmakew \
-            -DENABLE_STATIC=ON \
-            -DENABLE_SHARED=ON \
-            -DWITH_JAVA=OFF
+install: |
+    cmakew \
+        -DENABLE_STATIC=ON \
+        -DENABLE_SHARED=ON \
+        -DWITH_JAVA=OFF

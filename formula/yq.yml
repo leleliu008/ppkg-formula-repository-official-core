@@ -4,7 +4,4 @@ git-url: https://github.com/mikefarah/yq.git
 src-url: https://github.com/mikefarah/yq/archive/v4.25.3.tar.gz
 src-sha: 30309ae4efbe8b4f0a26e3c878bac72288faa0ba54f544c7fecdb3e0373966eb
 license: MIT
-
-install:
-    bsystem: go
-    actions: gow -tags release
+install: gow -tags release

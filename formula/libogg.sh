@@ -1,6 +1,0 @@
-pkg_set summary "Ogg Bitstream Library"
-pkg_set webpage "https://www.xiph.org/ogg"
-pkg_set git.url "https://github.com/xiph/ogg.git"
-pkg_set src.url "https://github.com/xiph/ogg/releases/download/v1.3.4/libogg-1.3.4.tar.xz"
-pkg_set src.sha "c163bc12bc300c401b6aa35907ac682671ea376f13ae0969a220f7ddf71893fe"
-pkg_set bsystem "cmake"

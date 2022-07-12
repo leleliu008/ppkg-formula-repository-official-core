@@ -5,10 +5,9 @@ src-url: https://github.com/ethereum/go-ethereum/archive/refs/tags/v1.10.20.tar.
 src-sha: 15ff54f0a4444eb9faa7c1f6219d3a1db5d547178b4eef6679bb601abc681f9d
 license: LGPL-3.0-or-later
 
-install:
-    bsystem: go
-    actions: |
-        for item in geth abigen bootnode ethkey evm rlpdump puppeth
-        do
-            gow ./cmd/$item || return 1
-        done
+bsystem: go
+install: |
+    for item in geth abigen bootnode ethkey evm rlpdump puppeth
+    do
+        gow ./cmd/$item || return 1
+    done

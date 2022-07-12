@@ -5,10 +5,8 @@ src-url: https://download.osgeo.org/libtiff/tiff-4.4.0.tar.gz
 src-sha: 917223b37538959aca3b790d2d73aa6e626b688e02dcda272aec24c2f498abed
 dep-pkg: zlib zstd xz
 
-install:
-    bsystem: cmake
-    actions: |
-        cmakew \
+install: |
+    cmakew \
         -Dzlib=ON \
         -Dzstd=ON \
         -Dlzma=ON \

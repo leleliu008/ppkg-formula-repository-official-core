@@ -6,11 +6,9 @@ git-url: https://github.com/curl/curl.git
 dep-pkg: openssl zlib
 license: curl
 
-install:
-    bsystem: configure
-    actions: |
-        configure \
-            --enable-optimize \
-            --enable-pthreads \
-            --with-default-ssl-backend=openssl \
-            --with-ssl=$openssl_INSTALL_DIR
+install: |
+    configure \
+        --enable-optimize \
+        --enable-pthreads \
+        --with-default-ssl-backend=openssl \
+        --with-ssl=$openssl_INSTALL_DIR

@@ -6,23 +6,22 @@ git-url: https://github.com/openssl/openssl.git
 dep-pkg: perl
 license: OpenSSL
 
-install:
-    bsystem: gmake
-    binbstd: yes
-    actions: |
-        case $NATIVE_OS_KIND in
-            darwin) export LDFLAGS=$LDFLAGS -Wl,-z,muldefs
-        esac
+bsystem: gmake
+binbstd: yes
+install: |
+    case $NATIVE_OS_KIND in
+        darwin) export LDFLAGS=$LDFLAGS -Wl,-z,muldefs
+    esac
 
-        run ./config \
-            no-shared \
-            no-engine \
-            no-ssl2 \
-            no-ssl3 \
-            no-comp \
-            no-asm \
-            no-hw \
-            --prefix=$PACKAGE_INSTALL_DIR &&
-        gmakew clean &&
-        gmakew &&
-        gmakew install
+    run ./config \
+        no-shared \
+        no-engine \
+        no-ssl2 \
+        no-ssl3 \
+        no-comp \
+        no-asm \
+        no-hw \
+        --prefix=$PACKAGE_INSTALL_DIR &&
+    gmakew clean &&
+    gmakew &&
+    gmakew install

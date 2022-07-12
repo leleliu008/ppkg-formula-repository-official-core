@@ -6,20 +6,18 @@ git-url: https://sourceware.org/git/binutils-gdb.git
 license: GPL-2.0-or-later
 dep-pkg: isl libmpc zlib
 
-install:
-    bsystem: configure
-    actions: |
-        configure \
-            --with-isl="$isl_INSTALL_DIR" \
-            --with-gmp="$gmp_INSTALL_DIR" \
-            --with-mpc="$libmpc_INSTALL_DIR" \
-            --with-mpfr="$mpfr_INSTALL_DIR" \
-            --with-system-zlib \
-            --disable-werror \
-            --disable-nls \
-            --enable-interwork \
-            --enable-multilib \
-            --enable-targets=all
+install: |
+    configure \
+        --with-isl="$isl_INSTALL_DIR" \
+        --with-gmp="$gmp_INSTALL_DIR" \
+        --with-mpc="$libmpc_INSTALL_DIR" \
+        --with-mpfr="$mpfr_INSTALL_DIR" \
+        --with-system-zlib \
+        --disable-werror \
+        --disable-nls \
+        --enable-interwork \
+        --enable-multilib \
+        --enable-targets=all
 
-            # https://www.mail-archive.com/bug-binutils@gnu.org/msg38641.html
-            #--enable-gold \
+        # https://www.mail-archive.com/bug-binutils@gnu.org/msg38641.html
+        #--enable-gold \

@@ -6,10 +6,8 @@ git-url: https://git.savannah.gnu.org/git/readline.git
 license: GPL-3.0-or-later
 dep-pkg: ncurses
 
-install:
-    bsystem: configure
-    actions: |
-        configure \
-            --with-curses=$ncurses_INSTALL_DIR \
-            --enable-multibyte \
-            --enable-install-examples
+install: |
+    configure \
+        --with-curses=$ncurses_INSTALL_DIR \
+        --enable-multibyte \
+        --enable-install-examples

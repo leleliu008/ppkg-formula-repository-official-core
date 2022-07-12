@@ -5,7 +5,5 @@ src-sha: 6792a6a992050762edcca28ff3318cdb7de37dccf7bc30db59fcd7017eed13c5
 license: BSD-3-Clause
 dep-pkg: ncurses
 
-install:
-    ccflags: -include stdc-predef.h
-    bsystem: configure
-    actions: configure --disable-examples
+ccflags: -include stdc-predef.h
+install: configure --disable-examples

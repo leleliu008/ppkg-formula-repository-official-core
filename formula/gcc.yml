@@ -3,21 +3,17 @@ webpage: https://gcc.gnu.org/
 git-url: https://gcc.gnu.org/git/gcc.git
 src-url: https://ftp.gnu.org/gnu/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz
 src-sha: b47cf2818691f5b1e21df2bb38c795fac2cfbd640ede2d0a5e1c89e338a3ac39
-license: GPL-3.0-or-later
 dep-pkg: isl libmpc zlib linux-headers
+license: GPL-3.0-or-later
 
-install:
-    use-zig: no
-    ccflags: -Wno-error=unused-variable
-    bsystem: configure
-    actions: |
-        #sed_in_place 's|sub/conftest.c|sub/conftest.cc|g'    gcc/configure
-        #sed_in_place 's|sub/conftest.c|sub/conftest.cc|g' libcpp/configure
-        configure \
-            --with-isl=$isl_INSTALL_DIR \
-            --with-gmp=$gmp_INSTALL_DIR \
-            --with-mpc=$libmpc_INSTALL_DIR \
-            --with-mpfr=$mpfr_INSTALL_DIR \
-            --with-system-zlib \
-            --enable-languages=c++ \
-            --disable-multilib
+use-zig: no
+ccflags: -Wno-error=unused-variable
+install: |
+    configure \
+        --with-isl=$isl_INSTALL_DIR \
+        --with-gmp=$gmp_INSTALL_DIR \
+        --with-mpc=$libmpc_INSTALL_DIR \
+        --with-mpfr=$mpfr_INSTALL_DIR \
+        --with-system-zlib \
+        --enable-languages=c++ \
+        --disable-multilib

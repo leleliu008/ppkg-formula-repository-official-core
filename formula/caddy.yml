@@ -4,7 +4,4 @@ git-url: https://github.com/caddyserver/caddy.git
 src-url: https://github.com/caddyserver/caddy/archive/v2.5.1.tar.gz
 src-sha: 841f5524e2e107bff278b604c544843564a4a1ef0c3803eeae588e79e4ea5d06
 license: Apache-2.0
-
-install:
-    bsystem: go
-    actions: gow ./cmd/caddy
+install: gow ./cmd/caddy

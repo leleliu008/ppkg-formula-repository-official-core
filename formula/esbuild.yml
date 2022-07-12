@@ -4,7 +4,4 @@ git-url: https://github.com/evanw/esbuild.git
 src-url: https://github.com/evanw/esbuild/archive/v0.14.48.tar.gz
 src-sha: fbc63176242509f1b4a3738b1cb1d340fb608374cf0647e45e83f95227fceabc
 license: MIT
-
-install:
-    bsystem: go
-    actions: gow ./cmd/esbuild
+install: gow ./cmd/esbuild

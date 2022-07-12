@@ -5,13 +5,11 @@ src-sha: 03d908cf5768cfe6b7ad588c921c6ed21acabfb2b79b788d1330453507647aed
 git-url: https://git.savannah.gnu.org/git/tar.git
 license: GPL-3.0-or-later
 
-install:
-    bsystem: configure
-    actions: |
-        configure \
-            --with-included-regex \
-            --with-xattrs \
-            --without-posix-acls \
-            --without-selinux \
-            --disable-acl \
-            --disable-gcc-warnings
+install: |
+    configure \
+        --with-included-regex \
+        --with-xattrs \
+        --without-posix-acls \
+        --without-selinux \
+        --disable-acl \
+        --disable-gcc-warnings

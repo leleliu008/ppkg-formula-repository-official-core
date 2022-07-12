@@ -5,17 +5,16 @@ src-sha: 3caf6729c1073bf96629b57cee31eeb54f4f8129b01902c73428836550b30a3f
 git-url: https://github.com/netwide-assembler/nasm.git
 license: BSD-2-Clause
 
-install:
-    bsystem: configure
-    actions: |
-        export ac_cv_prog_AR="$AR"
-        export ac_cv_prog_RANLIB="$RANLIB"
+bsystem: configure
+install: |
+    export ac_cv_prog_AR="$AR"
+    export ac_cv_prog_RANLIB="$RANLIB"
 
-        configure \
-            --disable-profiling \
-            --enable-lto \
-            --enable-sanitizer \
-            --enable-suggestions \
-            --disable-pedantic \
-            --disable-werror \
-            --disable-pdf-compression
+    configure \
+        --disable-profiling \
+        --enable-lto \
+        --enable-sanitizer \
+        --enable-suggestions \
+        --disable-pedantic \
+        --disable-werror \
+        --disable-pdf-compression

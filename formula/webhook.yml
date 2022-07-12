@@ -3,6 +3,4 @@ git-url: https://github.com/adnanh/webhook.git
 src-url: https://github.com/adnanh/webhook/archive/2.8.0.tar.gz
 src-sha: c521558083f96bcefef16575a6f3f98ac79c0160fd0073be5e76d6645e068398
 license: MIT
-
-install:
-    bsystem: go
+install: gow

@@ -1,8 +1,0 @@
-pkg_set summary "Secure runtime for JavaScript and TypeScript"
-pkg_set webpage "https://deno.land"
-pkg_set git.url "https://github.com/denoland/deno.git"
-pkg_set version "1.23.2"
-pkg_set src.url "https://github.com/denoland/deno/releases/download/v${PACKAGE_VERSION}/deno_src.tar.gz"
-pkg_set src.sha "e3214064ccf9a2d25d483571b889ce459a3fb74a186171a81d551e0ef2752939"
-pkg_set license "MIT"
-pkg_set bsystem "cargo"

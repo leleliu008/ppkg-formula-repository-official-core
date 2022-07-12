@@ -4,10 +4,8 @@ src-url: https://downloads.sourceforge.net/sourceforge/lame/lame-3.100.tar.gz
 src-sha: ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
 license: LGPL-2.0-or-later
 
-install:
-    bsystem: configure
-    actions: |
-        configure \
-            --without-dmalloc \
-            --disable-frontend \
-            --enable-nasm
+install: |
+    configure \
+        --without-dmalloc \
+        --disable-frontend \
+        --enable-nasm

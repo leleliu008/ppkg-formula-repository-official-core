@@ -1,5 +1,0 @@
-pkg_set summary "Audio codec"
-pkg_set webpage "https://www.opus-codec.org"
-pkg_set src.url "https://archive.mozilla.org/pub/opus/opus-1.3.1.tar.gz"
-pkg_set src.sha "65b58e1e25b2a114157014736a3d9dfeaad8d41be1c8179866f144a2fb44ff9d"
-pkg_set bsystem "configure"
