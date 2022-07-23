@@ -1,0 +1,28 @@
+summary: Distributed revision control system
+webpage: https://git-scm.com
+git-url: https://github.com/git/git.git
+src-url: https://www.kernel.org/pub/software/scm/git/git-2.36.1.tar.xz
+src-sha: 405d4a0ff6e818d1f12b3e92e1ac060f612adcb454f6299f70583058cb508370
+license: GPL-2.0-only
+dep-pkg: gettext expat curl pcre2 libidn2
+
+bsystem: configure
+binbstd: yes
+install: |
+    # musl libc
+    export ac_cv_c_regex_with_reg_startend=no
+    export ac_cv_lib_curl_curl_global_init=yes
+
+    case $NATIVE_OS_KIND in
+        darwin) export LDFLAGS=$LDFLAGS -framework SystemConfiguration ;;
+        *)      export LDFLAGS=$LDFLAGS -Wl,-z,muldefs
+    esac
+
+    configure \
+        --with-zlib=$zlib_INSTALL_DIR \
+        --with-curl=$curl_INSTALL_DIR \
+        --with-expat=$expat_INSTALL_DIR \
+        --with-iconv=$libiconv_INSTALL_DIR \
+        --with-openssl=$openssl_INSTALL_DIR \
+        --with-libpcre2=$pcre2_INSTALL_DIR \
+        --without-tcltk

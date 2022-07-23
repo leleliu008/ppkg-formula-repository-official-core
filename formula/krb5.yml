@@ -1,0 +1,18 @@
+summary: Network authentication protocol
+webpage: https://web.mit.edu/kerberos
+git-url: https://github.com/krb5/krb5.git
+src-url: https://kerberos.org/dist/krb5/1.20/krb5-1.20.tar.gz
+src-sha: 7e022bdd3c851830173f9faaa006a230a0e0fdad4c953e85bff4bf0da036e12f
+dep-pkg: readline openssl berkeley-db
+
+ldflags: -lncurses
+bscript: src
+install: |
+    configure \
+        --disable-shared \
+        --enable-dns-for-realm \
+        --without-system-verto \
+        --with-readline \
+        --with-netlib=-lc \
+        --with-size-optimizations \
+        --with-system-db

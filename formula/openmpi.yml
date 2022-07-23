@@ -1,0 +1,20 @@
+summary: High performance message passing library
+webpage: https://www.open-mpi.org
+git-url: https://github.com/open-mpi/ompi.git
+src-url: https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.4.tar.bz2
+src-sha: 92912e175fd1234368c8730c03f4996fe5942e7479bb1d10059405e7f2b3930d
+dep-pkg: libevent
+license: BSD-3-Clause
+
+install: |
+    configure \
+        --disable-coverage \
+        --disable-mpi-fortran \
+        --disable-oshmem-fortran \
+        --disable-builtin-atomics \
+        --enable-sysv-shmem=no \
+        --enable-sysv-sshmem=no \
+        --enable-binaries \
+        --enable-mpi-java \
+        --with-libevent=$libevent_INSTALL_DIR \
+        FC=''

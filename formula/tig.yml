@@ -1,0 +1,9 @@
+summary: Text interface for Git repositories
+webpage: https://jonas.github.io/tig
+git-url: https://github.com/jonas/tig.git
+src-url: https://github.com/jonas/tig/releases/download/tig-2.5.6/tig-2.5.6.tar.gz
+src-sha: 50bb5f33369b50b77748115c730c52b13e79b2de49cba7167bb634eb683d965f
+license: GPL-2.0-or-later
+dep-pkg: readline libiconv
+bsystem: configure
+binbstd: yes

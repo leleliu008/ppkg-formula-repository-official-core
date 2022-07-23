@@ -1,0 +1,30 @@
+summary: Highly capable, feature-rich programming language
+webpage: https://www.perl.org
+git-url: https://github.com/perl/perl5.git
+src-url: https://www.cpan.org/src/5.0/perl-5.36.0.tar.xz
+src-sha: 0f386dccbee8e26286404b2cca144e1005be65477979beb9b1ba272d4819bcf0
+license: GPL-1.0-or-later
+
+use-zig: no
+binbstd: yes
+install: |
+    export  CFLAGS="$(printf '%s\n'  "$CFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+
+    run ./Configure \
+        -des \
+        -Dprefix=$PACKAGE_INSTALL_DIR \
+        -Dcc="'$CC'" \
+        -Dar="'$AR'" \
+        -Dnm="'$NM'" \
+        -Dccflags="'$CFLAGS'" \
+        -Dldflags="'$LDFLAGS'" \
+        -Dcppflags="'$CPPFLAGS'" \
+        -Dlibs="'-lpthread -ldl -lm -lcrypt -lutil -lc'" \
+        -Duserelocatableinc \
+        -Dusenm=false \
+        -Dusedl=true \
+        -Duselargefiles \
+        -Dusethreads &&
+    gmakew &&
+    gmakew install

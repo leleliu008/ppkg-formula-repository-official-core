@@ -6,6 +6,7 @@ src-sha: 78d599a133dba7fe2036dfa8db8fb6131ab9642783fc9578b07a20995252d2de
 dep-pkg: gettext libffi pcre
 license: LGPL-2.1-or-later
 
+ldflags: -lintl
 install: |
     mesonw \
         -Dnls=disabled \

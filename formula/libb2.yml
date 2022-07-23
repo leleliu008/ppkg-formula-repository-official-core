@@ -1,0 +1,14 @@
+summary: Secure hashing function
+webpage: https://blake2.net
+git-url: https://github.com/BLAKE2/libb2.git
+src-url: https://github.com/BLAKE2/libb2/releases/download/v0.98.1/libb2-0.98.1.tar.gz
+src-sha: 53626fddce753c454a3fea581cbbc7fe9bbcf0bc70416d48fdbbf5d87ef6c72e
+license: CC0-1.0
+dep-pkg: autoconf automake
+
+use-zig: no
+install: |
+    configure \
+        --disable-openmp \
+        --disable-fat \
+        --enable-native

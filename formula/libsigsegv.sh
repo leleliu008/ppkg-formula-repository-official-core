@@ -1,6 +1,0 @@
-pkg_set summary "Library for handling page faults in user mode"
-pkg_set webpage "https://www.gnu.org/software/libsigsegv"
-pkg_set src.url "https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.12.tar.gz"
-pkg_set src.sha "3ae1af359eebaa4ffc5896a1aee3568c052c99879316a1ab57f8fe1789c390b6"
-pkg_set license "GPL-2.0"
-pkg_set bsystem "configure"

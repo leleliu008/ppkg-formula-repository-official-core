@@ -1,8 +1,0 @@
-pkg_set summary "USB multiplexor library for iOS devices"
-pkg_set webpage "https://www.libimobiledevice.org"
-pkg_set git.url "https://github.com/libimobiledevice/libusbmuxd.git"
-pkg_set src.url "https://github.com/libimobiledevice/libusbmuxd/archive/2.0.2.tar.gz"
-pkg_set src.sha "8ae3e1d9340177f8f3a785be276435869363de79f491d05d8a84a59efc8a8fdc"
-pkg_set license "LGPL-2.1"
-pkg_set dep.pkg "libplist"
-pkg_set bsystem "autogen"

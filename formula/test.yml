@@ -1,0 +1,14 @@
+summary: C test project
+git-url: https://github.com/leleliu008/C.git
+src-url: dir:///home/leleliu008/Downloads/ddd
+dep-pkg: libgit2
+bsystem: gmake
+binbstd: yes
+install: |
+    #WHICH=standard/posix/sys/stat.h
+    #WHICH=standard/iso/variable/__thread
+    #WHICH=standard/iso/header/stdio.h/fprintf
+    
+    #gmakew -C $PACKAGE_INSTALLING_BST_DIR/$WHICH clean
+    #gmakew -C $PACKAGE_INSTALLING_BST_DIR/$WHICH
+    run $CC $CFLAGS $CPPFLAGS $LDFLAGS -lgit2 -lssh2 -lssl -lcrypto -lz -lpcre2-8 -o git-init git-init.c

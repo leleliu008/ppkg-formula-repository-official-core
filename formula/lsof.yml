@@ -1,0 +1,23 @@
+summary: Utility to list open files
+webpage: https://people.freebsd.org/~abe
+git-url: https://github.com/lsof-org/lsof.git
+src-url: https://github.com/lsof-org/lsof/archive/4.95.0.tar.gz
+src-sha: 8ff4c77736cc7d9556da9e2c7614cc4292a12f1979f20bd520d3c6f64b66a4d7
+dep-pkg: libtirpc
+license: Zlib
+
+bsystem: gmake
+binbstd: yes
+install: |
+    export LSOF_MAKE=gmake
+    export LSOF_CC="$CC"
+    export LSOF_AR="$AR rsc"
+    export LSOF_RANLIB="$RANLIB"
+    export LSOF_CFGF="$CFLAGS $CPPFLAGS"
+    export LSOF_CFGL="$LDFLAGS"
+    
+    run ./Configure -clean &&
+    run ./Configure -n linux &&
+    gmakew &&
+    run install_bins lsof &&
+    run install_mans Lsof.8

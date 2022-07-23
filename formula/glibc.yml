@@ -1,0 +1,16 @@
+summary: GNU C Library
+webpage: https://www.gnu.org/software/libc
+src-url: https://ftp.gnu.org/gnu/glibc/glibc-2.23.tar.gz
+src-sha: 2bd08abb24811cda62e17e61e9972f091f02a697df550e2e44ddcfb2255269d2
+license: GPL-2.0-or-later LGPL-2.1-or-later
+dep-pkg: gcc
+
+use-zig: no
+ccflags: -Wno-error
+install: |
+    export  CFLAGS="$(printf '%s\n'  "$CFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+    configure \
+        --enable-timezone-tools=yes \
+        --with-headers=$linux_headers_INCLUDE_DIR \
+        --without-selinux

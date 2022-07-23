@@ -6,4 +6,4 @@ git-url: git://git.musl-libc.org/musl
 license: MIT
 
 use-zig: no
-install: configure
+install: configure --disable-shared

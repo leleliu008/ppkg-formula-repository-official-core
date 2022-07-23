@@ -1,0 +1,29 @@
+summary: Linux Capability Library
+webpage: https://git.kernel.org/pub/scm/libs/libcap/libcap.git
+src-url: https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/libcap-2.64.tar.gz
+src-sha: 0e47f5a88d0a296db279793d1ff525d7cc9b77887e50a0faf764b44f8cd7e85d"
+license: BSD-3-Clause GPL-2.0-or-later
+dep-pkg: gperf
+
+bscript: libcap
+binbstd: yes
+
+prepare: |
+    sed_in_place 's/indent -kr/indent -br/'    Make.Rules &&
+    sed_in_place 's/-i $@/-i".bak" $@/'        libcap/Makefile &&
+    sed_in_place 's|size_t len/|size_t len/g|' libcap/Makefile
+
+install: |
+    gmakew clean &&
+    gmakew install \
+        prefix="$PACKAGE_INSTALL_DIR" \
+        lib=lib \
+        PAM_CAP=no \
+        GOLANG=no \
+        BUILD_CC="$CC" \
+        BUILD_CFLAGS="'$CFLAGS $CPPFLAGS'" \
+        CC="$CC" \
+        CFLAGS="'$CFLAGS $CPPFLAGS'" \
+        LDFLAGS="'$LDFLAGS'" \
+        AR="$AR" \
+        RANLIB="$RANLIB"

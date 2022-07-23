@@ -1,0 +1,13 @@
+summary: C++ network packet sniffing and crafting library
+webpage: https://libtins.github.io/
+git-url: https://github.com/mfontanini/libtins.git
+src-url: https://github.com/mfontanini/libtins/archive/v4.4.tar.gz
+src-sha: ff0121b4ec070407e29720c801b7e1a972042300d37560a62c57abadc9635634
+license: BSD-2-Clause
+dep-pkg: libpcap
+install: |
+    cmakew \
+        -DLIBTINS_BUILD_SHARED=OFF \
+        -DLIBTINS_BUILD_EXAMPLES=OFF \
+        -DLIBTINS_BUILD_TESTS=OFF \
+        -DLIBTINS_ENABLE_PCAP=ON

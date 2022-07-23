@@ -1,0 +1,12 @@
+summary: Netlink Library based Linux kernel interfaces
+git-url: https://github.com/thom311/libnl.git
+src-url: https://github.com/thom311/libnl/releases/download/libnl3_6_0/libnl-3.6.0.tar.gz
+src-sha: 532155fd011e5a805bd67121b87a01c757e2bb24112ac17e69cb86013b970009
+dep-pkg: flex bison libtool
+license: LGPL-2.1-or-later
+
+bsystem: autotools
+install: |
+    configure \
+        --enable-pthreads \
+        --enable-cli

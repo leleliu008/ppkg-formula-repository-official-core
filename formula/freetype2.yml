@@ -3,7 +3,7 @@ webpage: https://www.freetype.org
 git-url: https://gitlab.freedesktop.org/freetype/freetype.git
 src-url: https://downloads.sourceforge.net/project/freetype/freetype2/2.12.1/freetype-2.12.1.tar.xz
 src-sha: 4766f20157cc4cf0cd292f80bf917f92d1c439b243ac3018debf6b9140c41a7f
-dep-pkg: brotli bzip2 libpng harfbuzz
+dep-pkg: brotli bzip2 libpng
 license: FTL
 
 install: |
@@ -12,7 +12,8 @@ install: |
         -DFT_WITH_BZIP2=ON \
         -DFT_WITH_ZLIB=ON \
         -DFT_WITH_PNG=ON \
-        -DFT_WITH_HARFBUZZ=ON \
+        -DFT_WITH_HARFBUZZ=OFF \
+        -DCMAKE_DISABLE_FIND_PACKAGE_HarfBuzz=TRUE \
         -DBROTLIDEC_INCLUDE_DIRS=$brotli_INCLUDE_DIR \
         -DBROTLIDEC_LIBRARIES=$brotli_LIBRARY_DIR/libbrotlidec.a \
         -DBZIP2_INCLUDE_DIR=$bzip2_INCLUDE_DIR \
@@ -20,6 +21,4 @@ install: |
         -DZLIB_INCLUDE_DIR=$zlib_INCLUDE_DIR \
         -DZLIB_LIBRARY_RELEASE=$zlib_LIBRARY_DIR/libz.a \
         -DPNG_PNG_INCLUDE_DIR=$libpng_INCLUDE_DIR \
-        -DPNG_LIBRARY_RELEASE=$libpng_LIBRARY_DIR/libpng.a \
-        -DHARFBUZZ_INCLUDE_DIRS=$harfbuzz_INCLUDE_DIR/harfbuzz \
-        -DHARFBUZZ_LIBRARIES=$harfbuzz_LIBRARY_DIR/libharfbuzz.a
+        -DPNG_LIBRARY_RELEASE=$libpng_LIBRARY_DIR/libpng.a
