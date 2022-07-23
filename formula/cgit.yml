@@ -1,0 +1,11 @@
+summary: Hyperfast web frontend for Git repositories written in C
+webpage: https://git.zx2c4.com/cgit
+src-url: https://git.zx2c4.com/cgit/snapshot/cgit-1.2.3.tar.xz
+src-sha: 5a5f12d2f66bd3629c8bc103ec8ec2301b292e97155d30a9a61884ea414a6da4
+license: GPL-2.0-only
+dep-pkg: openssl gettext git
+binbstd: yes
+install: |
+    gmakew clean &&
+    gmakew &&
+    gmakew install prefix=$PACKAGE_INSTALL_DIR

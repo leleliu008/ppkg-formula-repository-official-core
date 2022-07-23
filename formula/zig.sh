@@ -1,7 +1,0 @@
-pkg_set summary "Programming language designed for robustness, optimality, and clarity"
-pkg_set webpage "https://ziglang.org/"
-pkg_set src.url "https://ziglang.org/download/0.9.1/zig-0.9.1.tar.xz"
-pkg_set src.sha "38cf4e84481f5facc766ba72783e7462e08d6d29a5d47e3b75c8ee3142485210"
-pkg_set git.url "https://github.com/ziglang/zig.git"
-pkg_set license "MIT"
-pkg_set bsystem "cmake"

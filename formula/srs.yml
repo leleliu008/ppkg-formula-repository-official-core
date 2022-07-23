@@ -1,0 +1,25 @@
+summary: Simple Realtime Server
+webpage: https://ossrs.net
+git-url: https://github.com/ossrs/srs.git
+src-url: https://github.com/ossrs/srs/archive/v4.0-r1.tar.gz
+src-sha: 185069639b835646370102c23c884aac624771b59276e0dffa91e68008cfed4f
+version: 4.0.1
+license: MIT
+
+bsystem: gmake
+bscript: trunk
+binbstd: yes
+install: |
+    export SRS_EXTRA_FLAGS="$CFLAGS $CPPFLAGS"
+    
+    run ./configure \
+        --prefix=$PACKAGE_INSTALL_DIR \
+        --static \
+        --cc=$CC \
+        --cxx=$CXX \
+        --ar=$AR \
+        --ld=$LD \
+        --randlib=$RANLIB &&
+    gmakew clean &&
+    gmakew &&
+    gmakew install

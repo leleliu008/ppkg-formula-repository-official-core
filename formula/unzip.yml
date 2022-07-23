@@ -1,0 +1,44 @@
+summary: a command-line tool for extracting zip-compressed archives(.zip files)
+webpage: https://infozip.sourceforge.io/UnZip.html
+
+src-url: https://downloads.sourceforge.net/project/infozip/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz
+src-sha: 036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
+
+# https://packages.debian.org/buster/unzip
+fix-url: https://deb.debian.org/debian/pool/main/u/unzip/unzip_6.0-26.debian.tar.xz
+fix-sha: 88cb7c0f1fd13252b662dfd224b64b352f9e75cd86389557fcb23fa6d2638599
+
+version: 6.0.26
+license: Info-ZIP
+dep-pkg: bzip2
+binbstd: yes
+ccflags: -include time.h
+prepare: |
+    for patchfile in $(cat ../fix/patches/series)
+    do
+        patch -p1 < ../fix/patches/$patchfile || return 1
+    done
+
+install: |
+    unset TARGET_COMPILE
+
+    case $NATIVE_OS_TYPE in
+        macos) TARGET_COMPILE=macosx  ;;
+        *)     TARGET_COMPILE=generic ;;
+    esac
+
+    gmakew -f unix/Makefile clean &&
+    gmakew -f unix/Makefile macosx \
+        CC="$CC" \
+        CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
+        AS="$AS" \
+        LD="'$CC'" \
+        STRIP="$STRIP" \
+        LOCAL_UNZIP="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
+        LOC=-DLARGE_FILE_SUPPORT \
+        D_USE_BZ2=-DUSE_BZIP2 \
+        L_BZ2=-lbz2 \
+        LFLAGS1=-liconv &&
+    gmakew -f unix/Makefile install \
+        prefix="$PACKAGE_INSTALL_DIR" \
+        MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"

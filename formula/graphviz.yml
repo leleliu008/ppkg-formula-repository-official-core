@@ -1,0 +1,9 @@
+summary: Graph visualization software from AT&T and Bell Labs
+webpage: https://www.graphviz.org
+git-url: https://gitlab.com/graphviz/graphviz.git
+src-url: https://gitlab.com/graphviz/graphviz/-/archive/5.0.0/graphviz-5.0.0.tar.bz2
+src-sha: ddda3cd0e9bc60c9fb56b4bf4a02eb60ecbfb4405c6758553f7d2668633b4262
+dep-pkg: fontconfig libpng expat libtool python3 flex bison gawk git
+license: EPL-1.0
+bsystem: autotools
+install: configure --disable-swig

@@ -1,0 +1,13 @@
+summary: Persistent key-value database, with built-in net interface
+webpage: https://redis.io
+git-url: https://github.com/redis/redis.git
+src-url: https://download.redis.io/releases/redis-7.0.3.tar.gz
+src-sha: 2cde7d17214ffe305953da9fff12333e8a72caa57fd4923e4872f6362a208e73
+license: BSD-3-Clause
+dep-pkg: openssl
+
+binbstd: yes
+install: |
+    gmakew clean &&
+    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" RANLIB="$RANLIB" BUILD_TLS=yes USE_JEMALLOC=no &&
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

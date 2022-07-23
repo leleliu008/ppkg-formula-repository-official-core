@@ -1,0 +1,8 @@
+summary: Generate introspection data for GObject libraries
+webpage: https://gi.readthedocs.io
+git-url: https://gitlab.gnome.org/GNOME/gobject-introspection.git
+src-url: https://download.gnome.org/sources/gobject-introspection/1.72/gobject-introspection-1.72.0.tar.xz
+src-sha: 02fe8e590861d88f83060dd39cda5ccaa60b2da1d21d0f95499301b186beaabc
+license: MIT
+dep-pkg: glib python3
+install: mesonw -Dgi_cross_use_prebuilt_gi=true

@@ -1,0 +1,14 @@
+summary: Optimized BLAS library
+webpage: https://www.openblas.net
+git-url: https://github.com/xianyi/OpenBLAS.git
+src-url: https://github.com/xianyi/OpenBLAS/archive/v0.3.20.tar.gz
+src-sha: 8495c9affc536253648e942908e88e097f2ec7753ede55aca52e5dead3029e3c
+license: BSD-3-Clause
+
+use-zig: no
+binbstd: yes
+install: |
+    #export USE_OPENMP=1
+    gmakew clean HOSTCC="$CC_FOR_BUILD" &&
+    gmakew       HOSTCC="$CC_FOR_BUILD" FC=gfortran CC="$CC" AR="$AR" &&
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

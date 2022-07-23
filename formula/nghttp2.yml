@@ -3,10 +3,10 @@ webpage: https://nghttp2.org
 git-url: https://github.com/nghttp2/nghttp2.git
 src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.48.0/nghttp2-1.48.0.tar.gz
 src-sha: 66d4036f9197bbe3caba9c2626c4565b92662b3375583be28ef136d62b092998
-dep-pkg: libevent libev openssl jansson libxml2 c-ares cunit
+dep-pkg: libevent libev jansson libxml2 c-ares cunit
 license: MIT
 
-#use-zig: no
+use-zig: no
 ldflags: -liconv
 install: |
     configure \
