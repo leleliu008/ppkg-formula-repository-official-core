@@ -2,30 +2,29 @@
 the offical formula repository for [ppkg](https://github.com/leleliu008/ppkg)
 
 ## what's formula
-formula is a POSIX sh script used to config a package infomation and describe how to compile a package for [ppkg](https://github.com/leleliu008/ppkg).
+formula is a YAML format file which is used to config a package infomation and describe how to compile a package for [ppkg](https://github.com/leleliu008/ppkg).
 
-## the function must be invoked on top of the formula
-```
-pkg_set <KEY> <VALUE>
-```
 |KEY|required?|overview|
 |-|-|-|
 |`summary`|required|the summary of this package.|
-|`webpage`|optional|the home webpage of this package.<br>If this key is not present, `git.url` must be present.|
-|`version`|optional|the version of this package.<br>If this key is not present, it will be calculated from `src.url`|
+|`webpage`|optional|the home webpage of this package.<br>If this key is not present, `git-url` must be present.|
+|`version`|optional|the version of this package.<br>If this key is not present, it will be calculated from `src-url`|
 |`license`|optional|the license of this package.|
 ||||
-|`git.url`|optional|the source code git repository.<br>must end with `.git`|
-|`git.sha`|optional|the full git commit id, 40-byte hexadecimal string, which to be fetched as source code|
-|`git.tag`|optional|the git tag name, which to be fetched as source code|
+|`git-url`|optional|the source code git repository.<br>must end with `.git`|
+|`git-sha`|optional|the full git commit id, 40-byte hexadecimal string, which to be fetched as source code|
+|`git-tag`|optional|the git tag name, which to be fetched as source code|
 ||||
-|`src.url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
-|`src.sha`|optional|the `sha256sum` of source code.<br>If the value of `src.url` end with `.git`, this key is optional, otherwise, this key must be present.|
+|`src-url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
+|`src-sha`|optional|the `sha256sum` of source code.<br>If the value of `src-url` end with `.git`, this key is optional, otherwise, this key must be present.|
 ||||
-|`fix.url`|optional|the patch file download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
-|`fix.sha`|optional|the `sha256sum` of patch file.|
+|`fix-url`|optional|the patch file download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
+|`fix-sha`|optional|the `sha256sum` of patch file.|
 ||||
-|`depends`|optional|the packages will be used when installing and runtime. If specify multiple values, separate them with spaces.|
+|`res-url`|optional|other resource download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
+|`res-sha`|optional|the `sha256sum` of resource file.|
+||||
+|`dep-pkg`|optional|space-separated packages that will be used when installing or runtime.|
 ||||
 |`cdefine`|optional|append to `CPPFLAGS`|
 |`ccflags`|optional|`CFLAGS`|
@@ -35,16 +34,11 @@ pkg_set <KEY> <VALUE>
 |`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go`|
 |`bscript`|optional|the build script directory, relative to `PACKAGE_WORKING_DIR` which contains build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
 |`binbstd`|optional|whether build in build script directory, otherwise build in build directory.|
+|`prepare`|optional|bash shell code to be run before installing.|
+|`install`|optional|bash shell code to be run when user run `ndk-pkg install <PKG>`. If this key is not present, I will run default install code according to `bsystem`|
 
-
-## the function can be declared in a formula
-|function|required?|overview|
-|-|-|-|
-|`prepare(){}`|optional|this function only run once.|
-|`build(){}`|optional|this function only run once. If this function is not declared, we will call default build command according to `bsystem`|
-
-## the function can be invoked in a formula at anywhere
-|function|example|
+## the commands can be invoked in prepare and install block
+|command|usage-example|
 |-|-|
 |`echo`|`echo 'your message.'`|
 |`info`|`info 'your infomation.'`|
@@ -59,16 +53,18 @@ pkg_set <KEY> <VALUE>
 |`is_sha256sum_match`|`is_sha256sum_match FILEPATH SHA256SUM`|
 |`fetch`|`fetch URL [--sha256=SHA256] --output-path=PATH`<br>`fetch URL [--sha256=SHA256] --output-dir=DIR --output-name=NAME`<br>`fetch URL [--sha256=SHA256] --output-dir=DIR [--output-name=NAME]`<br>`fetch URL [--sha256=SHA256] [--output-dir=DIR] --output-name=NAME`|
 
-## the function can be invoked in build function only
-|function|example|
+## the commands can be invoked in install block only
+|command|usage-example|
 |-|-|
 |`configure`|`configure --enable-pic`|
 |`mesonw`|`mesonw -Dneon=disabled -Darm-simd=disabled`|
 |`cmakew`|`cmakew -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON`|
 |`gmakew`|`gmakew`|
-|`cargo`|`cargo`|
+|`xmakew`|`xmakew`|
+|`cargow`|`cargow`|
+|`gow`|`gow`|
 
-## the variable can be used in a formula at anywhere
+## the variable can be used in prepare and install block
 |variable|overview|
 |-|-|
 |`NATIVE_OS_TYPE`|current machine os type.|
@@ -81,9 +77,6 @@ pkg_set <KEY> <VALUE>
 |`MY_HOME_PAGE`|the home webpage of `ppkg`.|
 |`MY_CACHED_DIR`|the downloads directory of `ppkg`.|
 |`MY_INSTALL_DIR`|the installed directory of `ppkg`.|
-
-## the variable can be used in prepare and build function
-|variable|overview|
 |-|-|
 |`CC`|the C Compiler.|
 |`CFLAGS`|the flags of `CC`.|
