@@ -35,7 +35,7 @@ formula is a YAML format file which is used to config a package infomation and d
 |`bscript`|optional|the build script directory, relative to `PACKAGE_WORKING_DIR` which contains build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
 |`binbstd`|optional|whether build in build script directory, otherwise build in build directory.|
 |`prepare`|optional|bash shell code to be run before installing.|
-|`install`|optional|bash shell code to be run when user run `ndk-pkg install <PKG>`. If this key is not present, I will run default install code according to `bsystem`|
+|`install`|optional|bash shell code to be run when user run `ppkg install <PKG>`. If this key is not present, I will run default install code according to `bsystem`|
 
 ## the commands can be invoked in prepare and install block
 |command|usage-example|
@@ -77,7 +77,7 @@ formula is a YAML format file which is used to config a package infomation and d
 |`MY_HOME_PAGE`|the home webpage of `ppkg`.|
 |`MY_CACHED_DIR`|the downloads directory of `ppkg`.|
 |`MY_INSTALL_DIR`|the installed directory of `ppkg`.|
-|-|-|
+|||
 |`CC`|the C Compiler.|
 |`CFLAGS`|the flags of `CC`.|
 |`CXX`|the C++ Compiler.|
