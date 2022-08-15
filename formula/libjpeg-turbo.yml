@@ -9,5 +9,5 @@ license: IJG
 install: |
     cmakew \
         -DENABLE_STATIC=ON \
-        -DENABLE_SHARED=ON \
+        -DENABLE_SHARED=OFF \
         -DWITH_JAVA=OFF

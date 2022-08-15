@@ -7,9 +7,14 @@ license: GPL-3.0-or-later
 
 install: |
     configure \
+        --program-prefix=g \
         --with-included-regex \
         --with-xattrs \
         --without-posix-acls \
         --without-selinux \
         --disable-acl \
         --disable-gcc-warnings
+    (
+        run cd $PACKAGE_INSTALL_DIR/bin
+        ln -s gtar tar
+    )

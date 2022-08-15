@@ -3,7 +3,7 @@ git-url: https://github.com/leleliu008/uppm.git
 #src-url: dir:///home/leleliu008/uppm
 license: Apache-2.0
 bsystem: cmake
-ldflags: -llz4 -lzstd -llzo2 -liconv -lpcre2-8 -lssh2
+ldflags: -llz4 -lzstd -llzo2 -liconv -lpcre2-8 -lssh2 -lssl
 dep-pkg: curl libgit2 libarchive libyaml jansson
 
 install: |

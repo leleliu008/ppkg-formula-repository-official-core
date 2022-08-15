@@ -6,13 +6,15 @@ git-url: https://git.savannah.gnu.org/git/libidn/libidn2.git
 license: GPL-2.0-or-later LGPL-3.0-or-later
 dep-pkg: libunistring
 
-use-zig: no
 install: |
-    #export LDFLAGS="$LDFLAGS $libiconv_LIBRARY_DIR/libiconv.a $libunistring_LIBRARY_DIR/libunistring.a"
-    export CFLAGS="$CFLAGS -l:libiconv.a"
+    "$AR" x ../lib/libiconv.a
+    "$AR" x ../lib/libunistring.a
+    "$AR" crs ../lib/libunistring.a *.o
+    rm -f *.o
     configure \
         --with-libunistring-prefix=$libunistring_INSTALL_DIR \
         --disable-valgrind-tests \
         --disable-code-coverage \
-        --disable-gcc-warnings \
-        --enable-doc
+        --disable-doc \
+        --enable-gcc-warnings \
+        --enable-rpath

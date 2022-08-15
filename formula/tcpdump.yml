@@ -6,7 +6,6 @@ git-url: https://github.com/the-tcpdump-group/tcpdump.git
 license: BSD-3-Clause
 dep-pkg: libpcap
 
-use-zig: no
 prepare: |
     cat > "$PACKAGE_INSTALLING_BST_DIR/cmake/Modules/FindPCAP.cmake" <<EOF
     set(PCAP_FOUND TRUE)

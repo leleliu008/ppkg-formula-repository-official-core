@@ -6,7 +6,6 @@ git-url: https://github.com/torvalds/linux.git
 license: GPL-2.0 WITH Linux-syscall-note
 dep-upp: rsync
 
-use-zig: no
 binbstd: yes
 install: |
     gmakew mrproper &&

@@ -1,5 +1,6 @@
 summary: Dynamic analysis tools (memory, debug, profiling)
-webpage: https://www.valgrind.org
+webpage: https://valgrind.org/
+git-url: https://sourceware.org/git/valgrind.git
 src-url: https://sourceware.org/pub/valgrind/valgrind-3.17.0.tar.bz2
 src-sha: ad3aec668e813e40f238995f60796d9590eee64a16dff88421430630e69285a2
 license: GPL-2.0-or-later

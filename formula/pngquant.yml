@@ -5,7 +5,6 @@ src-sha: a27cf0e64db499ccb3ddae9b36036e881f78293e46ec27a9e7a86a3802fcda66
 git-url: https://github.com/kornelski/pngquant.git
 dep-pkg: libpng lcms2
 
-use-zig: no
 bsystem: gmake
 binbstd: yes
 install: |

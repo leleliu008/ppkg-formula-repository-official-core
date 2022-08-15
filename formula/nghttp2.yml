@@ -6,7 +6,6 @@ src-sha: 66d4036f9197bbe3caba9c2626c4565b92662b3375583be28ef136d62b092998
 dep-pkg: libevent libev jansson libxml2 c-ares cunit
 license: MIT
 
-use-zig: no
 ldflags: -liconv
 install: |
     configure \

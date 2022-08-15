@@ -28,7 +28,7 @@ install: |
     esac
 
     gmakew -f unix/Makefile clean &&
-    gmakew -f unix/Makefile macosx \
+    gmakew -f unix/Makefile $TARGET_COMPILE \
         CC="$CC" \
         CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
         AS="$AS" \

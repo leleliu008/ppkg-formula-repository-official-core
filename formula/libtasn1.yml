@@ -5,7 +5,6 @@ src-sha: 4365c154953563d64c67a024b607d1ee75c6db76e0d0f65709ea80a334cd1898
 git-url: https://gitlab.com/gnutls/libtasn1.git
 license: LGPL-2.1-or-later
 
-use-zig: no
 install: |
     configure \
         --without-gcov \

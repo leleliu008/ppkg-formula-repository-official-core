@@ -4,18 +4,20 @@ git-url: https://github.com/git/git.git
 src-url: https://www.kernel.org/pub/software/scm/git/git-2.36.1.tar.xz
 src-sha: 405d4a0ff6e818d1f12b3e92e1ac060f612adcb454f6299f70583058cb508370
 license: GPL-2.0-only
-dep-pkg: gettext expat curl pcre2 libidn2
+dep-pkg: gettext expat curl pcre2
 
 bsystem: configure
 binbstd: yes
 install: |
     # musl libc
-    export ac_cv_c_regex_with_reg_startend=no
-    export ac_cv_lib_curl_curl_global_init=yes
+    if [ "$NATIVE_OS_LIBC" = musl ] ; then
+        export ac_cv_c_regex_with_reg_startend=no
+        export ac_cv_lib_curl_curl_global_init=yes
+    fi
 
     case $NATIVE_OS_KIND in
-        darwin) export LDFLAGS=$LDFLAGS -framework SystemConfiguration ;;
-        *)      export LDFLAGS=$LDFLAGS -Wl,-z,muldefs
+        darwin) export LDFLAGS="$LDFLAGS -framework SystemConfiguration" ;;
+        *)      export LDFLAGS="$LDFLAGS -Wl,-z,muldefs -lssl -lcrypto"
     esac
 
     configure \

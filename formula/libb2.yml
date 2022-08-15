@@ -6,7 +6,6 @@ src-sha: 53626fddce753c454a3fea581cbbc7fe9bbcf0bc70416d48fdbbf5d87ef6c72e
 license: CC0-1.0
 dep-pkg: autoconf automake
 
-use-zig: no
 install: |
     configure \
         --disable-openmp \
