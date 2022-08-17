@@ -7,6 +7,9 @@ dep-pkg: zlib openssl
 license: BSD-3-Clause
 
 install: |
+    export  CFLAGS="$(printf '%s\n'  "$CFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+
     configure \
         --disable-examples-build \
         --disable-werror \
