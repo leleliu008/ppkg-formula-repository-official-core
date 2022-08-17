@@ -7,10 +7,13 @@ license: GPL-2.0-or-later LGPL-3.0-or-later
 dep-pkg: libunistring
 
 install: |
-    "$AR" x ../lib/libiconv.a
-    "$AR" x ../lib/libunistring.a
-    "$AR" crs ../lib/libunistring.a *.o
-    rm -f *.o
+    if [ -L ../lib/libiconv.a ] ; then
+        "$AR" x ../lib/libiconv.a
+        "$AR" x ../lib/libunistring.a
+        "$AR" crs ../lib/libunistring.a *.o
+        rm -f *.o
+    fi
+
     configure \
         --with-libunistring-prefix=$libunistring_INSTALL_DIR \
         --disable-valgrind-tests \
