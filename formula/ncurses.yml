@@ -7,6 +7,9 @@ license: MIT
 
 binbstd: yes
 install: |
+    export  CFLAGS="$(printf '%s\n'  "$CFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+
     run install -d "$PACKAGE_INSTALL_DIR/lib/pkgconfig" || return 1
 
     configure \
