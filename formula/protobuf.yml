@@ -5,9 +5,16 @@ src-sha: 7ba0cb2ecfd9e5d44a6fa9ce05f254b7e5cd70ec89fafba0b07448f3e258310c
 license: BSD-3-Clause
 dep-pkg: zlib
 
-bscript: cmake
 install: |
+    # https://cmake.org/cmake/help/latest/variable/CMAKE_SKIP_INSTALL_RPATH.html
+    if printf '%s\n' '$LDFLAGS' | grep -q '\--static' ; then
+        CMAKE_SKIP_INSTALL_RPATH=TRUE
+    else
+        CMAKE_SKIP_INSTALL_RPATH=FALSE
+    fi
+
     cmakew \
+        -DCMAKE_SKIP_INSTALL_RPATH="$CMAKE_SKIP_INSTALL_RPATH" \
         -Dprotobuf_BUILD_TESTS=OFF \
         -Dprotobuf_BUILD_EXAMPLES=OFF \
         -Dprotobuf_BUILD_SHARED_LIBS=OFF \
