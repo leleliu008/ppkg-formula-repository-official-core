@@ -38,7 +38,7 @@ install: |
         LOC=-DLARGE_FILE_SUPPORT \
         D_USE_BZ2=-DUSE_BZIP2 \
         L_BZ2=-lbz2 \
-        LFLAGS1=-liconv &&
+        LFLAGS1="'-static -liconv'" &&
     gmakew -f unix/Makefile install \
         prefix="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"

@@ -6,6 +6,10 @@ bsystem: cmake
 ldflags: -llz4 -lzstd -llzo2 -liconv -lpcre2-8 -lssh2 -lssl
 dep-pkg: curl libgit2 libarchive libyaml jansson
 
-install: |
+install2: |
     cmakew \
-        -DZLIB_LIBRARIY_RELEASE="$zlib_LIBRARY_DIR/libz.a"
+        -DZLIB_INCLUDE_DIR="$zlib_INCLUDE_DIR" \
+        -DZLIB_LIBRARY_RELEASE="$zlib_LIBRARY_DIR/libz.a" \
+        -DBZIP2_INCLUDE_DIR="$bzip2_INCLUDE_DIR" \
+        -DBZIP2_LIBRARY_RELEASE="$bzip2_LIBRARY_DIR/libbz2.a" \
+        -DCURL_LIBRARY_RELEASE="$curl_LIBRARY_DIR/libcurl.a"

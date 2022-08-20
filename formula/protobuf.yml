@@ -1,7 +1,7 @@
 summary: data interchange format by Google
 git-url: https://github.com/protocolbuffers/protobuf.git
-src-url: https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protobuf-all-3.13.0.tar.gz
-src-sha: 465fd9367992a9b9c4fba34a549773735da200903678b81b25f367982e8df376
+src-url: https://github.com/protocolbuffers/protobuf/releases/download/v21.5/protobuf-all-21.5.tar.gz
+src-sha: 7ba0cb2ecfd9e5d44a6fa9ce05f254b7e5cd70ec89fafba0b07448f3e258310c
 license: BSD-3-Clause
 dep-pkg: zlib
 
