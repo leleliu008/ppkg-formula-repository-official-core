@@ -7,5 +7,10 @@ license: Apache-2.0
 
 install: |
     cmakew \
+        -DBUILD_SHARED_LIBS=ON \
+        -DCMAKE_CXX_STANDARD=17 \
+        -DCMAKE_CXX_STANDARD_REQUIRED=TRUE &&
+    cmakew \
+        -DBUILD_SHARED_LIBS=OFF \
         -DCMAKE_CXX_STANDARD=17 \
         -DCMAKE_CXX_STANDARD_REQUIRED=TRUE
