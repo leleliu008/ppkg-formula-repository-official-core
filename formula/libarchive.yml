@@ -2,6 +2,7 @@ summary: Multi-format archive and compression library
 webpage: https://www.libarchive.org
 src-url: https://www.libarchive.org/downloads/libarchive-3.6.1.tar.xz
 src-sha: 5a411aceb978f43e626f0c2d1812ddd8807b645ed892453acabd532376c148e6
+git-url: https://github.com/libarchive/libarchive.git
 dep-pkg: libiconv expat openssl xz bzip2 lz4 lzo zstd
 license: BSD-2-Clause
 
@@ -25,4 +26,5 @@ install: |
         --with-zstd \
         --with-iconv \
         --with-expat \
-        --with-openssl
+        --with-openssl &&
+    sed_in_place 's|-lcrypto|-lcrypto -liconv|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libarchive.pc"
