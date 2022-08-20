@@ -7,7 +7,7 @@ dep-pkg: zlib
 
 install: |
     # https://cmake.org/cmake/help/latest/variable/CMAKE_SKIP_INSTALL_RPATH.html
-    if printf '%s\n' '$LDFLAGS' | grep -q '\--static' ; then
+    if printf '%s\n' "$LDFLAGS" | grep -q '\--static' ; then
         CMAKE_SKIP_INSTALL_RPATH=TRUE
     else
         CMAKE_SKIP_INSTALL_RPATH=FALSE
