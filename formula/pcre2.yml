@@ -6,9 +6,6 @@ src-sha: 14e4b83c4783933dc17e964318e6324f7cae1bc75d8f3c79bc6969f00c159d68
 dep-pkg: zlib bzip2 readline
 
 install: |
-    export  CFLAGS="$(printf '%s\n'  "$CFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
-    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
-
     cmakew \
         -DPCRE2_BUILD_PCRE2_8=ON \
         -DPCRE2_BUILD_PCRE2_16=ON \
