@@ -11,7 +11,4 @@ install: |
         --enable-optimize \
         --enable-pthreads \
         --with-default-ssl-backend=openssl \
-        --with-ssl=$openssl_INSTALL_DIR \
-        --with-ca-fallback \
-        --without-ca-bundle \
-        --without-ca-path
+        --with-ssl=$openssl_INSTALL_DIR
