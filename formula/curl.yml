@@ -11,4 +11,10 @@ install: |
         --enable-optimize \
         --enable-pthreads \
         --with-default-ssl-backend=openssl \
-        --with-ssl=$openssl_INSTALL_DIR
+        --with-ssl=$openssl_INSTALL_DIR \
+        --without-nghttp2 \
+        --without-nghttp3 \
+        --without-ngtcp2 \
+        --without-quiche \
+        --without-librtmp \
+        --without-libidn2
