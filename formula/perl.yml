@@ -10,6 +10,7 @@ install: |
     export  CFLAGS="$(printf '%s\n'  "$CFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
     export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
 
+    # https://perldoc.perl.org/Config
     #-Duserelocatableinc \
     run ./Configure \
         -des \
@@ -23,6 +24,7 @@ install: |
         -Dlibs="'-lpthread -ldl -lm -lcrypt -lutil -lc'" \
         -Dusenm=false \
         -Dusedl=true \
+        -Dmake=gmake \
         -Duselargefiles \
         -Duseshrplib \
         -Dusethreads &&
