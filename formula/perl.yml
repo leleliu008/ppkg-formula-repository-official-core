@@ -24,6 +24,7 @@ install: |
         -Dusenm=false \
         -Dusedl=true \
         -Duselargefiles \
+        -Duseshrplib \
         -Dusethreads &&
     gmakew &&
     gmakew install
