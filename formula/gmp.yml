@@ -6,7 +6,9 @@ dep-pkg: m4
 license: LGPL-3.0-or-later
 
 install: |
+    export CC_FOR_BUILD="$CC_FOR_BUILD $CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD"
     configure \
+        --with-pic \
         --without-readline \
         --disable-profiling \
         --disable-assert \
