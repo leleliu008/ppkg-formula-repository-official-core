@@ -18,6 +18,11 @@ install: |
         -DBUILD_QtDialog=OFF \
         -DBUILD_CursesDialog=ON \
         -DCMAKE_USE_OPENSSL=ON \
-        -DOPENSSL_USE_STATIC_LIBS=ON &&
+        -DOPENSSL_USE_STATIC_LIBS=ON \
+        -DCMAKE_FIND_ROOT_PATH="'$ncurses_INSTALL_DIR;$openssl_INSTALL_DIR'" \
+        -DCURSES_INCLUDE_PATH="i$ncurses_INCLUDE_DIR" \
+        -DCURSES_FORM_LIBRARY="$ncurses_LIBRARY_DIR/libform.a" \
+        -DCURSES_EXTRA_LIBRARY="$ncurses_LIBRARY_DIR/libncurses.a" \
+        -DCURSES_NCURSES_LIBRARY="$ncurses_LIBRARY_DIR/libncurses.a" &&
     gmakew &&
     gmakew install
