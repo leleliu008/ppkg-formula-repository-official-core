@@ -7,13 +7,6 @@ license: BSD-2-Clause
 
 binbstd: yes
 install: |
-    if [ "$NATIVE_OS_KIND" != 'darwin' ] ; then
-        sed_in_place 's|-o |-static -o |' programs/Makefile
-    fi
-
-    export  CFLAGS="$(printf '%s\n'  "$CFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
-    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
-
     gmakew clean
     gmakew install \
         PREFIX="$PACKAGE_INSTALL_DIR" \
