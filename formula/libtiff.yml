@@ -13,6 +13,7 @@ install: |
         -Dlzw=ON \
         -Dwebp=OFF \
         -Djpeg=OFF \
+        -DBUILD_SHARED_LIBS=OFF \
         -DZLIB_INCLUDE_DIR=$zlib_INCLUDE_DIR \
         -DZLIB_LIBRARY_RELEASE=$zlib_LIBRARY_DIR/libz.a \
         -DZSTD_INCLUDE_DIR=$zstd_INCLUDE_DIR \
