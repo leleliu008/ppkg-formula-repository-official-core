@@ -9,4 +9,4 @@ license: MIT
 binbstd: yes
 install: |
     gmakew clean &&
-    gmakew install CC=$CC AR=$AR STRIP=$STRIP prefix=$PACKAGE_INSTALL_DIR
+    gmakew install CC=$CC AR=$AR STRIP=$STRIP LDFLAGS="'$LDFLAGS'" prefix=$PACKAGE_INSTALL_DIR
