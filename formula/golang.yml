@@ -1,0 +1,17 @@
+summary: Open source programming language to build simple/reliable/efficient software
+webpage: https://go.dev/
+src-url: https://go.dev/dl/go1.19.src.tar.gz
+src-sha: 9419cc70dc5a2523f29a77053cafff658ed21ef3561d9b6b020280ebceab28b9
+git-url: https://github.com/golang/go.git
+license: BSD-3-Clause
+version: 1.19
+dep-pkg: bash
+binbstd: yes
+bscript: src
+bsystem: go
+install: |
+    export GOROOT_BOOTSTRAP="$(go env GOROOT)"
+
+    run ./make.bash &&
+    run rm -rf pkg/obj &&
+    run cp -r .. "$PACKAGE_INSTALL_DIR"
