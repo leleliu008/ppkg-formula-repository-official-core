@@ -1,7 +1,7 @@
 summary: Extract, view, and test RAR archives
 webpage: https://www.rarlab.com
-src-url: https://www.rarlab.com/rar/unrarsrc-6.0.2.tar.gz
-src-sha: 81bf188333f89c976780a477af27f651f54aa7da9312303d8d1a804696d3edd3
+src-url: https://www.rarlab.com/rar/unrarsrc-6.1.7.tar.gz
+src-sha: de75b6136958173fdfc530d38a0145b72342cf0d3842bf7bb120d336602d88ed
 
 parallel: no
 binbstd: yes
