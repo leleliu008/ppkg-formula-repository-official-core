@@ -9,8 +9,8 @@ license: BSD-3-Clause
 install: |
     cmakew \
         -DINET6=ON \
-        -DENABLE_REMOTE=ON \
         -DBDEBUG=OFF \
+        -DENABLE_REMOTE=OFF \
         -DDISABLE_USB=OFF \
         -DDISABLE_SEPTEL=OFF \
         -DDISABLE_NETMAP=OFF \
