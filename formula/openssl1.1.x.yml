@@ -3,7 +3,7 @@ webpage: https://www.openssl.org/
 src-url: https://www.openssl.org/source/openssl-1.1.1q.tar.gz
 src-sha: d7939ce614029cdff0b6c20f0e2e5703158a489a72b2507b8bd51bf8c8fd10ca
 git-url: https://github.com/openssl/openssl.git
-#dep-pkg: perl
+dep-pkg: perl
 license: OpenSSL
 
 bsystem: gmake
