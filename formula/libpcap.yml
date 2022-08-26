@@ -6,11 +6,12 @@ git-url: https://github.com/the-tcpdump-group/libpcap.git
 dep-pkg: flex bison openssl
 license: BSD-3-Clause
 
+prepare: sed_in_place 's|${OPENSSL_LIBRARIES}|OpenSSL::SSL OpenSSL::Crypto|g' CMakeLists.txt
 install: |
     cmakew \
         -DINET6=ON \
         -DBDEBUG=OFF \
-        -DENABLE_REMOTE=OFF \
+        -DENABLE_REMOTE=ON \
         -DDISABLE_USB=OFF \
         -DDISABLE_SEPTEL=OFF \
         -DDISABLE_NETMAP=OFF \
@@ -18,4 +19,6 @@ install: |
         -DDISABLE_BLUETOOTH=OFF \
         -DDISABLE_DAG=ON \
         -DDISABLE_TC=ON \
-        -DDISABLE_SNF=ON
+        -DDISABLE_SNF=ON &&
+    sed_in_place 's|-lOpenSSL::SSL|-lssl|'       "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libpcap.pc" &&
+    sed_in_place 's|-lOpenSSL::Crypto|-lcrypto|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libpcap.pc"
