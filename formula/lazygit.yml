@@ -3,4 +3,4 @@ git-url: https://github.com/jesseduffield/lazygit.git
 src-url: https://github.com/jesseduffield/lazygit/archive/v0.35.tar.gz
 src-sha: fe5b2278d7b5b22058d139ec8961a09197d8fd26d7432d263a583fa9c1599d6d
 license: MIT
-install: gow -mod vendor -X main.version=$PACKAGE_VERSION -X main.buildSource=ppkg
+install: gow -mod vendor -X main.version=$PACKAGE_VERSION -X main.buildSource=ppkg -X main.date=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
