@@ -8,6 +8,7 @@ license: IJG
 
 install: |
     cmakew \
+        -DCMAKE_INSTALL_LIBDIR="$PACKAGE_INSTALL_DIR/lib" \
         -DENABLE_STATIC=ON \
         -DENABLE_SHARED=OFF \
         -DWITH_JAVA=OFF

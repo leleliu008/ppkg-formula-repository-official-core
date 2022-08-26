@@ -13,8 +13,8 @@ install: |
     configure \
         --disable-profiling \
         --enable-lto \
-        --enable-sanitizer \
         --enable-suggestions \
+        --disable-sanitizer \
         --disable-pedantic \
         --disable-werror \
         --disable-pdf-compression
