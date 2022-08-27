@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         #os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        os: [ubuntu-20.04]
+        os: [ubuntu-22.04]
         pkg: [pup,putty,qpdf,quiche,quickjs,rclone,redis,restic,rhash,rlwrap,rsync,rtmpdump,rtorrent,rust-analyzer,scc,shared-mime-info,shell2http,shiori,srs,starship,strace,supervisord,suricata,swig,syncthing,tbb,tcpdump]
 
     runs-on: ${{ matrix.os }}

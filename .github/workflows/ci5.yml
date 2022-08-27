@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         #os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
-        os: [ubuntu-20.04]
+        os: [ubuntu-22.04]
         pkg: [json-glib,jsoncpp,jump,kcptun,keybase,krb5,lazygit,less,lf,libao,libass,libatomic_ops,libb2,libbcrypt,libcaca,libcap-ng,libcddb,libcdio,libcroco,libcrypt,libexecinfo,libexif,libglob,libical]
 
     runs-on: ${{ matrix.os }}
