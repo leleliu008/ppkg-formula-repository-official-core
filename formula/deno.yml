@@ -1,8 +1,0 @@
-summary: Secure runtime for JavaScript and TypeScript
-webpage: https://deno.land
-git-url: https://github.com/denoland/deno.git
-src-url: https://github.com/denoland/deno/releases/download/v1.23.3/deno_src.tar.gz
-src-sha: 1f2df9477c44e48e67a93a8d424ae2e9ca59075ab20f3470ccb391e146c6ef0b
-version: 1.23.2
-license: MIT
-bsystem: cargo
