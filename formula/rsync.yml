@@ -6,5 +6,5 @@ git-url: https://github.com/WayneD/rsync.git
 license: GPL-3.0-or-later
 dep-pkg: openssl popt lz4 zstd zlib xxhash libiconv
 
-ccflags: -Wmacro-redefined
+#ccflags: -Wmacro-redefined
 install: configure --disable-simd

@@ -1,7 +1,7 @@
 summary: C++ microbenchmark support library
 git-url: https://github.com/google/benchmark.git
-src-url: https://github.com/google/benchmark/archive/v1.6.1.tar.gz
-src-sha: 6132883bc8c9b0df5375b16ab520fac1a85dc9e4cf5be59480448ece74b278d4
+src-url: https://github.com/google/benchmark/archive/v1.7.0.tar.gz
+src-sha: 3aff99169fa8bdee356eaa1f691e835a6e57b1efeadb8a0f9f228531158246ac
 license: Apache-2.0
 
 install: |

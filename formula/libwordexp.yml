@@ -1,5 +1,4 @@
 summary: wordexp(3) implementation
 webpage: https://linux.die.net/man/3/wordexp
 git-url: https://github.com/leleliu008/libwordexp.git
-dep-pkg: musl-libc
 bsystem: cmake

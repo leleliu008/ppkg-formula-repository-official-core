@@ -4,6 +4,7 @@ src-url: https://github.com/google/libphonenumber/archive/v8.12.49.tar.gz
 src-sha: e328b46ca043fb6b3f1044b1e639967845bfb24c823ae6345ad54a1d50cdf187
 dep-pkg: boost icu4c protobuf google-test abseil
 license: Apache-2.0
+bsystem: cmake-gmake
 bscript: cpp
 
 prepare: |

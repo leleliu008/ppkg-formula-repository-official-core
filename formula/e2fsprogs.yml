@@ -1,8 +1,8 @@
 summary: Utilities for the ext2, ext3, and ext4 file systems
 webpage: https://e2fsprogs.sourceforge.io/
 git-url: https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git
-src-url: https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.46.4/e2fsprogs-1.46.4.tar.gz
-src-sha: 7524520b291e901431ce59ea085955b601126de371bf3cfc0f5e4fad78684265
+src-url: https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.46.5/e2fsprogs-1.46.5.tar.gz
+src-sha: b7430d1e6b7b5817ce8e36d7c8c7c3249b3051d0808a96ffd6e5c398e4e2fbb9
 license: GPL-2.0-or-later
 dep-pkg: gettext libiconv
 
@@ -10,4 +10,5 @@ install: |
     configure \
         --disable-e2initrd-helper \
         --with-libiconv-prefix=$libiconv_INSTALL_DIR \
-        --with-libintl-prefix=$gettext_INSTALL_DIR
+        --with-libintl-prefix=$gettext_INSTALL_DIR \
+        MKDIR_P="'mkdir -p'"

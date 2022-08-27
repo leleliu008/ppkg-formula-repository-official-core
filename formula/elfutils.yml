@@ -8,6 +8,8 @@ dep-pkg: bzip2 xz zlib
 
 install: |
     configure \
+        --disable-libdebuginfod \
+        --disable-debuginfod \
         --enable-install-elfh \
         --with-lzma=$xz_INSTALL_DIR \
         --with-zlib=$zlib_INSTALL_DIR \
