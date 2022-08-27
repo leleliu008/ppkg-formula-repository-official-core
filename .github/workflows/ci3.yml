@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
         os: [ubuntu-22.04]
-        pkg: [folly,fselect,gbt,gdbm,gdu,germanium,geth,gh,git-lfs,glibc,glow,gmake,gn,gnu-binutils,gnu-coreutils,gnu-which,gnupg,gnutls,gobject-introspection,godu,gogs,golang,gomobile,google-benchmark]
+        pkg: [folly,fselect,gbt,gcc,gdbm,gdu,germanium,geth,gh,git-lfs,glow,gmake,gn,gnu-binutils,gnu-coreutils,gnu-which,gnupg,gnutls,gobject-introspection,godu,gogs,golang,gomobile,goreleaser,gosh]
 
     runs-on: ${{ matrix.os }}
 

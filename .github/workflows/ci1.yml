@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
         os: [ubuntu-22.04]
-        pkg: [acl,age,algernon,antibody,aptly,archiver,aria2,axel,b3sum,base64,bat,bc,bcrypt,bear,bind,blake3,brook,c-examples,caddy,cargo-c,ccache,cflow,cgit,cheat,check,chezmoi,chicken,cjson,clash]
+        pkg: [acl,age,algernon,antibody,aptly,archiver,aria2,axel,b3sum,base64,bat,bc,bcrypt,bear,bind,blake3,brook,c-examples,caddy,cargo-c,ccache,cflow,cheat,check,chezmoi,chicken,cjson,clash,cmake]
 
     runs-on: ${{ matrix.os }}
 

@@ -8,5 +8,5 @@ license: GPL-2.0-only
 binbstd: yes
 install: |
     gmakew clean &&
-    gmakew CC=$CC CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" &&
+    gmakew CC=$CC CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" LIBS="'-lcap -lssl -lcrypto'" &&
     install_bins vsftpd

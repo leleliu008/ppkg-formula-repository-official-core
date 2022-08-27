@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
         os: [ubuntu-22.04]
-        pkg: [goreleaser,gosh,gotop,gotty,gox,gping,grep,grex,gron,gsed,gtar,gzip,helm,htop,hugo,hwloc,hydroxide,hyperfine,id3lib,ideviceinstaller,jemalloc,jfrog-cli,jq,json-glib,jsoncpp,jump]
+        pkg: [gotop,gotty,gox,gping,grep,grex,gron,gsed,gtar,gzip,helm,htop,hugo,hwloc,hydroxide,hyperfine,ideviceinstaller,itstool,jemalloc,jfrog-cli,jq,json-glib,jsoncpp,jump,kcptun,keybase,krb5]
 
     runs-on: ${{ matrix.os }}
 

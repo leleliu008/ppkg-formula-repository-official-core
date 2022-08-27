@@ -9,6 +9,7 @@ dep-pkg: json-c libxml2 libidn2 libuv openssl zlib
 install: |
     configure \
         --disable-linux-caps \
+        --disable-static \
         --without-python \
         --with-zlib \
         --with-json-c \

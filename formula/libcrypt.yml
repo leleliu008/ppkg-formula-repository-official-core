@@ -7,7 +7,7 @@ version: 1
 install: |
     run $CC $CFLAGS $CPPFLAGS -c -o crypt.o $PACKAGE_INSTALLING_BST_DIR/libcrypt-${PACKAGE_VERSION}.c &&
     run $CC $LDFLAGS -shared -o libcrypt$SHARED_LIBRARY_SUFFIX crypt.o &&
-    run $AR rsc libcrypt.a crypt.o &&
-    echo char* crypt(char* key, char* salt); > crypt.h &&
+    run $AR crs libcrypt.a crypt.o &&
+    run echo "'char* crypt(char* key, char* salt);'" > crypt.h &&
     run install_incs crypt.h &&
     run install_libs libcrypt.a libcrypt$SHARED_LIBRARY_SUFFIX
