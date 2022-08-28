@@ -13,7 +13,7 @@ install: |
         --prefix=$PACKAGE_INSTALL_DIR \
         --ar=$AR \
         --as=$AS \
-        --ld=$LD \
+        --ld=$CC \
         --cc=$CC \
         --cxx=$CXX \
         --nm=$NM \
@@ -27,4 +27,4 @@ install: |
         --disable-debug &&
     gmakew clean &&
     gmakew install &&
-    cp ffbuild/config.log $BUILD_DIR
+    cp ffbuild/config.log $PACKAGE_INSTALLING_TMP_DIR

@@ -18,4 +18,5 @@ install: |
         -Dglib_assert=false \
         -Dtests=false \
         -Dinstalled_tests=false \
-        -Dbsymbolic_functions=false
+        -Dbsymbolic_functions=false &&
+    sed_in_place '/Libs: /s|$| -lintl|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/glib-2.0.pc"
