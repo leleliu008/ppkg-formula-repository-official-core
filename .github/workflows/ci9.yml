@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
         os: [ubuntu-22.04]
-        pkg: [restic,rhash,rlwrap,rsync,rtmpdump,rtorrent,rust-analyzer,scc,shell2http,shiori,srs,starship,strace,supervisord,suricata,swig,syncthing,tbb,tcl-core,tcpdump,tdu,tealdeer,tengo,tig,tinyxml2,tmux,tree,ttygif,ttyrec,tweego,unbound]
+        pkg: [rhash,rlwrap,rsync,rtmpdump,rtorrent,rust-analyzer,scc,shell2http,shiori,srs,starship,strace,supervisord,suricata,swig,syncthing,tbb,tcl-core,tcpdump,tdu,tealdeer,tengo,tig,tinyxml2,tmux,tree,ttygif,ttyrec,tweego,unbound,universal-ctags]
 
     runs-on: ${{ matrix.os }}
 

@@ -12,8 +12,8 @@ formula is a YAML format file which is used to config a package infomation and d
 |`license`|optional|the license of this package.|
 ||||
 |`git-url`|optional|the source code git repository.<br>must end with `.git`|
-|`git-sha`|optional|the full git commit id, 40-byte hexadecimal string, which to be fetched as source code|
-|`git-tag`|optional|the git tag name, which to be fetched as source code|
+|`git-ref`|optional|reference: https://git-scm.com/book/en/v2/Git-Internals-Git-References <br>example values: `HEAD` `refs/heads/master` `refs/heads/main` `refs/tags/v1`, default value is `HEAD`|
+|`git-sha`|optional|the full git commit id, 40-byte hexadecimal string, if `git-ref` and `git-sha` both are given, `git-sha` takes precedence over `git-ref`|
 ||||
 |`src-url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
 |`src-sha`|optional|the `sha256sum` of source code.<br>If the value of `src-url` end with `.git`, this key is optional, otherwise, this key must be present.|
@@ -31,9 +31,13 @@ formula is a YAML format file which is used to config a package infomation and d
 |`xxflags`|optional|`CXXFLAGS`|
 |`ldflags`|optional|`LDFLAGS`|
 ||||
+|`toolset`|optional|C and C++ toolchain name.<br>values can be `system` `gcc` `llvm` `zig`. `system` means follow system. If this key is not present, `zig` will be used. this key only affects GNU/Linux system.|
+|`cstdlib`|optional|C standard library name.<br>values can be `system` `glibc` `musl-libc`. `system` means follow system. If this key is not present, `musl-libc` will be used. this key only affects GNU/Linux system.|
+|`exetype`|optional|indicates whether can be built statically-linked executable.<br>values can be `statically-linked` `dynamically-linked`. If this key is not present, `statically-linked` will be used. this key only affects `GNU/Linux` system.|
+||||
 |`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go`|
-|`bscript`|optional|the build script directory, relative to `PACKAGE_WORKING_DIR` which contains build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
-|`binbstd`|optional|whether build in build script directory, otherwise build in build directory.|
+|`bscript`|optional|the directory where the build script is located in, relative to `PACKAGE_INSTALLING_TOP_DIR`. build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
+|`binbstd`|optional|whether build in the directory where the build script is located in, otherwise build in other directory.|
 |`prepare`|optional|bash shell code to be run before installing.|
 |`install`|optional|bash shell code to be run when user run `ppkg install <PKG>`. If this key is not present, I will run default install code according to `bsystem`|
 

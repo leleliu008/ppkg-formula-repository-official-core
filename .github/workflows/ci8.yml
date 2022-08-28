@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
         os: [ubuntu-22.04]
-        pkg: [ntbtls,numactl,nushell,obfs4proxy,openblas,openlibm,openmpi,packcc,pango,patch,patchelf,pget,pkg-config,pkgconf,pngquant,procs,progress,proot,pup,putty,qpdf,quiche,quickjs,rclone,redis]
+        pkg: [numactl,nushell,obfs4proxy,openblas,openlibm,openmpi,packcc,pango,patch,patchelf,pget,pkg-config,pkgconf,pngquant,procs,progress,proot,pup,putty,qpdf,quiche,quickjs,rclone,redis,restic]
 
     runs-on: ${{ matrix.os }}
 

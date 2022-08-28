@@ -5,14 +5,21 @@ src-url: https://kerberos.org/dist/krb5/1.20/krb5-1.20.tar.gz
 src-sha: 7e022bdd3c851830173f9faaa006a230a0e0fdad4c953e85bff4bf0da036e12f
 dep-pkg: readline openssl berkeley-db
 
-ldflags: -lncurses
+ldflags: -lncurses -ldb
 bscript: src
+prepare: |
+    for item in $(grep '<db.h>' -rl plugins/kdb/db2)
+    do
+        sed_in_place 's|<db.h>|<db_185.h>|g' "$item" || return 1
+    done
+
 install: |
     configure \
         --disable-shared \
         --enable-dns-for-realm \
         --without-system-verto \
+        --without-system-db \
+        --without-keyutils \
         --with-readline \
         --with-netlib=-lc \
-        --with-size-optimizations \
-        --with-system-db
+        --with-size-optimizations
