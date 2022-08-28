@@ -8,4 +8,4 @@ license: BSD-3-Clause
 
 ldflags: -lz
 prepare: sed_in_place 's|CMAKE_INSTALL_DATADIR|CMAKE_INSTALL_LIBDIR|' CMakeLists.txt
-install: cmakew
+install: cmakew -DWEBP_LINK_STATIC=ON
