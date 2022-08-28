@@ -11,5 +11,5 @@ prepare: fetch 'https://raw.githubusercontent.com/openembedded/openembedded-core
 binbstd: yes
 install: |
     gmakew -C src clean &&
-    gmakew -C src build.h proot V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP &&
+    gmakew -C src build.h proot V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP HAS_SWIG= HAS_PYTHON_CONFIG= PYTHON=true GIT=true &&
     gmakew -C src install PREFIX=$PACKAGE_INSTALL_DIR DESTDIR=
