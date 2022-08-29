@@ -8,6 +8,9 @@ license: BSD-3-Clause
 bsystem: go
 bscript: go
 install: |
+    # https://github.com/keybase/client/issues/11481
+    export KEYBASE_ALLOW_ROOT=1
+
     for item in keybase kbfs/kbfsfuse kbfs/kbfsgit/git-remote-keybase
     do
         gow -tags production ./$item || return 1

@@ -1,6 +1,5 @@
 summary: a command line tool for XML parsing
 git-url: https://github.com/ericchiang/xpup.git
-version: 0
 license: Apache-2.0
 
 bsystem: go

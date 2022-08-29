@@ -1,0 +1,7 @@
+summary: Used as a compiler wrapper and avoids compilation when possible
+git-url: https://github.com/mozilla/sccache.git
+src-url: https://github.com/mozilla/sccache/archive/v0.3.0.tar.gz
+src-sha: 26585447d07f67d0336125816680a2a5f7381065a03de3fd423a3b5c41eb637c
+license: Apache-2.0
+dep-pkg: openssl
+install: cargow install --features all
