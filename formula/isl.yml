@@ -1,8 +1,8 @@
 summary: Integer Set Library for the polyhedral model
 webpage: https://isl.gforge.inria.fr
 git-url: https://github.com/Meinersbur/isl.git
-src-url: https://downloads.sourceforge.net/project/libisl/isl-0.24.tar.bz2
-src-sha: fcf78dd9656c10eb8cf9fbd5f59a0b6b01386205fe1934b3b287a0a1898145c0
+src-url: https://downloads.sourceforge.net/project/libisl/isl-0.25.tar.bz2
+src-sha: be7b210647ccadf90a2f0b000fca11a4d40546374a850db67adb32fad4b230d9
 dep-pkg: gmp
 license: MIT
 

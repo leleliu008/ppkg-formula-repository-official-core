@@ -1,7 +1,7 @@
 summary: Automatically generate simple man pages
 webpage: https://www.gnu.org/software/help2man
-src-url: https://ftp.gnu.org/gnu/help2man/help2man-1.47.17.tar.xz
-src-sha: da3a35c50b1e1f8c8fa322d69fa47c9011ce443a8fb8d1d671b1f01b8b0008eb
+src-url: https://ftp.gnu.org/gnu/help2man/help2man-1.49.2.tar.xz
+src-sha: 9e2e0e213a7e0a36244eed6204d902b6504602a578b6ecd15268b1454deadd36
 dep-pkg: perl
 license: GPL-3.0-or-later
 install: configure

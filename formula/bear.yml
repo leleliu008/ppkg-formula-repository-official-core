@@ -1,7 +1,7 @@
 summary: Generate compilation database for clang tooling
 git-url: https://github.com/rizsotto/Bear.git
-src-url: https://github.com/rizsotto/Bear/archive/3.0.19.tar.gz
-src-sha: 2fcfe2c6e029182cfc54ed26b3505c0ef12b0f43df03fb587f335afdc2ca9431
+src-url: https://github.com/rizsotto/Bear/archive/3.0.20.tar.gz
+src-sha: 45cfcdab07f824f6c06c9776701156f7a04b23eadd25ecbc88c188789a447cc7
 dep-pkg: grpc nlohmann-json spdlog
 license: GPL-3.0-or-later
 
