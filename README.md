@@ -2,7 +2,7 @@
 the offical formula repository for [ppkg](https://github.com/leleliu008/ppkg)
 
 ## what's formula
-formula is a YAML format file which is used to config a package infomation and describe how to compile a package for [ppkg](https://github.com/leleliu008/ppkg).
+a formula is a YAML format file which is used to configure a ppkg's package infomation and describe how to compile a package for [ppkg](https://github.com/leleliu008/ppkg).
 
 |KEY|required?|overview|
 |-|-|-|
@@ -16,6 +16,7 @@ formula is a YAML format file which is used to config a package infomation and d
 |`git-sha`|optional|the full git commit id, 40-byte hexadecimal string, if `git-ref` and `git-sha` both are given, `git-sha` takes precedence over `git-ref`|
 ||||
 |`src-url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
+|`src-uri`|optional|the mirror of `src-url`.|
 |`src-sha`|optional|the `sha256sum` of source code.<br>If the value of `src-url` end with `.git`, this key is optional, otherwise, this key must be present.|
 ||||
 |`fix-url`|optional|the patch file download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
@@ -24,7 +25,10 @@ formula is a YAML format file which is used to config a package infomation and d
 |`res-url`|optional|other resource download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
 |`res-sha`|optional|the `sha256sum` of resource file.|
 ||||
-|`dep-pkg`|optional|space-separated packages that will be used when installing or runtime.|
+|`dep-pkg`|optional|space-separated   `ppkg packages` that are depended by this package when installing and/or runtime, which will be installed via [ppkg](https://github.com/leleliu008/ppkg).|
+|`dep-upp`|optional|space-separated   `ppkg packages` that are depended by this package when installing and/or runtime, which will be installed via [uppm](https://github.com/leleliu008/uppm).|
+|`dep-pym`|optional|space-separated `python packages` that are depended by this package when installing and/or runtime, which will be installed via `pip3`.|
+|`dep-plm`|optional|space-separated    `perl modules` that are depended by this package when installing and/or runtime, which will be installed via `cpan`.|
 ||||
 |`cdefine`|optional|append to `CPPFLAGS`|
 |`ccflags`|optional|`CFLAGS`|

@@ -1,7 +1,7 @@
 summary: Linux Capability Library
 webpage: https://git.kernel.org/pub/scm/libs/libcap/libcap.git
 src-url: https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/libcap-2.65.tar.gz
-src-sha: 73e350020cc31fe15360879d19384ffa3395a825f065fcf6bda3a5cdf965bebd
+src-sha: b0c770a99f978ca32ce58fb72b23d2a883b160aa30ee909fb83ba4003efc771c
 license: BSD-3-Clause GPL-2.0-or-later
 dep-pkg: gperf
 
