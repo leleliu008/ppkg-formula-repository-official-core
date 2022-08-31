@@ -19,5 +19,5 @@ install: |
         SYS=posix
     fi
     gmakew clean   SYS=$SYS &&
-    gmakew         SYS=$SYS CC=$CC LD=$LD CRYPTO=OPENSSL OPT= THREADLIB_posix= XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS -lpthread'" &&
+    gmakew         SYS=$SYS CC=$CC LD=$LD CRYPTO=OPENSSL OPT= THREADLIB_posix=-lpthread XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'" &&
     gmakew install SYS=$SYS prefix="$PACKAGE_INSTALL_DIR" mandir="$PACKAGE_INSTALL_DIR/share/man"
