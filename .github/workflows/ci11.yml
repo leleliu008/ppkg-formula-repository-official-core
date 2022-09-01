@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-20.04, ubuntu-22.04, macos-10.11, macos-12]
         os: [ubuntu-20.04, ubuntu-22.04]
-        pkg: [zsh,zsync]
+        pkg: [zsync]
 
     runs-on: ${{ matrix.os }}
 

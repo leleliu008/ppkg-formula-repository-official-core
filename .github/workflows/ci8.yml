@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-20.04, ubuntu-22.04, macos-10.11, macos-12]
         os: [ubuntu-20.04, ubuntu-22.04]
-        pkg: [nginx,ngtcp2,ninja,ntbtls,numactl,nushell,obfs4proxy,openblas,openlibm,openmpi,p7zip,packcc,pango,patch,patchelf,pget,pkg-config,pkgconf,pngquant,procs,progress,proot,pup,putty,qpdf]
+        pkg: [ngtcp2,ninja,ntbtls,numactl,nushell,obfs4proxy,openblas,openlibm,openmpi,p7zip,packcc,pango,patch,patchelf,pget,pkg-config,pkgconf,pngquant,procs,progress,proot,pup,putty,qpdf,quiche]
 
     runs-on: ${{ matrix.os }}
 

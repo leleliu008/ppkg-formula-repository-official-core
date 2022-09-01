@@ -13,7 +13,7 @@ jobs:
       matrix:
         #os: [ubuntu-20.04, ubuntu-22.04, macos-10.11, macos-12]
         os: [ubuntu-20.04, ubuntu-22.04]
-        pkg: [libwordexp,libxslt,libyuv,links,livego,lmdb,lnd,lodepng,lrzip,lsd,lsof,lynx,lzip,lzop,mbedtls,md4c,mediainfo,mesalink,mm-wiki,mosh,mpg123,mpir,musl-libc,navi,neofetch]
+        pkg: [libwordexp,libxslt,libyuv,links,livego,lmdb,lnd,lodepng,lrzip,lsd,lsof,lynx,lzip,lzop,mbedtls,md4c,mediainfo,mesalink,mm-wiki,mosh,mpg123,mpir,musl-libc,navi,neofetch,nginx]
 
     runs-on: ${{ matrix.os }}
 

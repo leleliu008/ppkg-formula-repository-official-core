@@ -13,8 +13,8 @@ install: |
         darwin) export LDFLAGS=$LDFLAGS -Wl,-z,muldefs
     esac
 
+    #no-shared \
     run ./config \
-        no-shared \
         no-engine \
         no-ssl2 \
         no-ssl3 \
