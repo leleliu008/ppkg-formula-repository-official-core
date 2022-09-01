@@ -8,6 +8,10 @@ license: GPL-2.0-or-later
 bsystem: gmake
 binbstd: yes
 install: |
+    OPENSSL_LIBS="$(pkg-config --libs openssl)"
+    printf 'OPENSSL_LIBS=%s\n' "$OPENSSL_LIBS"
+    sed_in_place "s|-lssl -lcrypto|$OPENSSL_LIBS|" configure || return 1
+
     # configure [options] [host]
     run ./configure \
         --prefix=$PACKAGE_INSTALL_DIR \

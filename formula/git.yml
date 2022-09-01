@@ -15,9 +15,12 @@ install: |
         export ac_cv_lib_curl_curl_global_init=yes
     fi
 
+    OPENSSL_LIBS="$(pkg-config --libs openssl)"
+    printf 'OPENSSL_LIBS=%s\n' "$OPENSSL_LIBS"
+
     case $NATIVE_OS_KIND in
         darwin) export LDFLAGS="$LDFLAGS -framework SystemConfiguration" ;;
-        *)      export LDFLAGS="$LDFLAGS -Wl,-z,muldefs -lssl -lcrypto"
+        *)      export LDFLAGS="$LDFLAGS $OPENSSL_LIBS"
     esac
 
     configure \
