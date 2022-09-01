@@ -1,7 +1,7 @@
 summary: GNU binary tools for native development
 webpage: https://www.gnu.org/software/binutils/binutils.html
-src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.37.tar.xz
-src-sha: 820d9724f020a3e69cb337893a0b63c2db161dadcb0e06fc11dc29eb1e84a32c
+src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.39.tar.xz
+src-sha: 645c25f563b8adc0a81dbd6a41cffbf4d37083a382e02d5d3df4f65c09516d00
 git-url: https://sourceware.org/git/binutils-gdb.git
 license: GPL-2.0-or-later
 dep-pkg: isl libmpc zlib
@@ -15,9 +15,9 @@ install: |
         --with-system-zlib \
         --disable-werror \
         --disable-nls \
+        --enable-gold \
         --enable-interwork \
         --enable-multilib \
         --enable-targets=all
 
         # https://www.mail-archive.com/bug-binutils@gnu.org/msg38641.html
-        #--enable-gold \

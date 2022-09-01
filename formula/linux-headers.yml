@@ -1,7 +1,7 @@
 summary: linux headers
-webpage: https://mirrors.tuna.tsinghua.edu.cn/kernel/
-src-url: https://mirrors.tuna.tsinghua.edu.cn/kernel/v5.x/linux-5.15.17.tar.xz
-src-sha: 2787f5c0cc59984902fd97916dc604f39718c73817497c25f963141bfb70abde
+webpage: https://www.kernel.org/
+src-url: https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.19.5.tar.xz
+src-sha: 8c3f1cc4f93e50056bb0a8c15a41a8eb6acc7fd71bff6de60b1ef8c4532537bd
 git-url: https://github.com/torvalds/linux.git
 license: GPL-2.0 WITH Linux-syscall-note
 dep-upp: rsync

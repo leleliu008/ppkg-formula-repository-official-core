@@ -6,20 +6,23 @@ src-sha: 14dd5654e369227afebfba5198793a1788a0af9d30cddb19af3ec275d110a7a6
 dep-pkg: libevent libev jansson libxml2 c-ares cunit
 license: MIT
 
-ldflags: -liconv
 install: |
-    configure \
-        --enable-threads \
-        --enable-app \
-        --enable-examples \
-        --enable-hpack-tools \
-        --disable-asio-lib \
-        --disable-python-bindings \
-        --disable-lib-only \
-        --disable-werror \
-        --disable-assert \
-        --without-systemd \
-        --without-jemalloc \
-        --with-libxml2 \
-        ZLIB_CFLAGS='-lz' \
-        ZLIB_LIBS='-lz'
+    cmakew \
+        -DENABLE_DEBUG=OFF \
+        -DENABLE_WERROR=OFF \
+        -DENABLE_THREADS=ON \
+        -DENABLE_APP=ON \
+        -DENABLE_HTTP3=OFF \
+        -DENABLE_EXAMPLES=ON \
+        -DENABLE_HPACK_TOOLS=ON \
+        -DENABLE_ASIO_LIB=OFF \
+        -DENABLE_STATIC_LIB=ON \
+        -DENABLE_SHARED_LIB=ON \
+        -DENABLE_LIB_ONLY=OFF \
+        -DENABLE_PYTHON_BINDINGS=OFF \
+        -DENABLE_FAILMALLOC=ON \
+        -DWITH_LIBXML2=ON \
+        -DWITH_JEMALLOC=OFF \
+        -DWITH_NEVERBLEED=OFF \
+        -DWITH_LIBBPF=OFF \
+        -DWITH_MRUBY=OFF

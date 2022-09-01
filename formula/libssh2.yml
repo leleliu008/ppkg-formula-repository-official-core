@@ -7,13 +7,9 @@ dep-pkg: zlib openssl
 license: BSD-3-Clause
 
 install: |
-    export  CFLAGS="$(printf '%s\n'  "$CFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
-    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
-
-    configure \
-        --disable-examples-build \
-        --disable-werror \
-        --with-crypto=openssl \
-        --with-libssl-prefix=$openssl_INSTALL_DIR \
-        --with-libz \
-        --with-libz-prefix=$zlib_INSTALL_DIR
+    cmakew \
+        -DLINT=OFF \
+        -DBUILD_TESTING=OFF \
+        -DBUILD_EXAMPLES=OFF \
+        -DCRYPTO_BACKEND=OpenSSL \
+        -DENABLE_ZLIB_COMPRESSION=ON
