@@ -33,7 +33,7 @@ jobs:
         - run: bin/ppkg env
 
         - run: apt -y update
-        - run: apt -y install curl
+        - run: apt -y install curl g++ linux-headers-generic
 
         - run: bin/ppkg setup
 
