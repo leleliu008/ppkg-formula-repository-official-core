@@ -13,4 +13,9 @@ install: |
         --disable-assert \
         --disable-gcc-warnings \
         --without-dmalloc \
-        --with-included-regex
+        --with-included-regex \
+        --program-prefix=g &&
+    (
+        run cd $PACKAGE_INSTALL_DIR/bin
+        ln -s gm4 m4
+    )

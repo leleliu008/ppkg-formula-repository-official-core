@@ -11,7 +11,7 @@ install: |
         --without-selinux \
         --with-included-regex \
         --disable-acl \
-        --disable-assert
+        --disable-assert &&
     (
         run cd $PACKAGE_INSTALL_DIR/bin
         ln -s gsed sed
