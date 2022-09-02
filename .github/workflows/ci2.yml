@@ -32,6 +32,9 @@ jobs:
 
         - run: bin/ppkg env
 
+        - run: apt -y update
+        - run: apt -y install curl
+
         - run: bin/ppkg setup
 
         - run: bin/ppkg install ${{ matrix.pkg }}
