@@ -7,18 +7,15 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  ubuntu:
     strategy:
       fail-fast: false
       matrix:
-        #os: [ubuntu-20.04, ubuntu-22.04, macos-10.11, macos-12]
-        os: [ubuntu-20.04, ubuntu-22.04]
-        pkg: [acl,age,algernon,antibody,aptly,archiver,aria2,axel,b3sum,base64,bat,bc,bcrypt,bear,berkeley-db,bind,blake3,brook,c-examples,caddy,cargo-c,ccache,cflow,cheat,check,chezmoi,chicken,cjson,clash,cmake]
+        tag: [18.04, 20.04, 22.04]
+        pkg: [acl,age,algernon,antibody,aptly,archiver,aria2,axel,b3sum,base64,bat,bc,bcrypt,bear,berkeley-db,bind,binocle,blake3,brook,broot,c-examples,caddy,cargo-c,ccache,cflow,cheat,check,chezmoi,chicken,choose]
 
-    runs-on: ${{ matrix.os }}
-
-    env:
-      HOMEBREW_NO_INSTALL_CLEANUP: set
+    runs-on:   ubuntu-latest
+    container: ubuntu:${{ matrix.tag }}
 
     steps:
         - uses: actions/checkout@v3

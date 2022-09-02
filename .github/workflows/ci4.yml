@@ -7,18 +7,15 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  ubuntu:
     strategy:
       fail-fast: false
       matrix:
-        #os: [ubuntu-20.04, ubuntu-22.04, macos-10.11, macos-12]
-        os: [ubuntu-20.04, ubuntu-22.04]
-        pkg: [goreleaser,gosh,gotop,gotty,gox,gping,grep,grex,gron,gsed,gtar,gzip,helm,htop,hugo,hwloc,hydroxide,hyperfine,ideviceinstaller,jemalloc,jfrog-cli,jq,json-glib,jsoncpp,jump,kcptun]
+        tag: [18.04, 20.04, 22.04]
+        pkg: [godu,gogs,golang,gomobile,goreleaser,gosh,gotop,gotty,gox,gping,grep,grex,gron,gsed,gtar,gzip,helm,htop,hugo,hwloc,hydroxide,hyperfine,ideviceinstaller,jemalloc,jfrog-cli,jq,json-glib]
 
-    runs-on: ${{ matrix.os }}
-
-    env:
-      HOMEBREW_NO_INSTALL_CLEANUP: set
+    runs-on:   ubuntu-latest
+    container: ubuntu:${{ matrix.tag }}
 
     steps:
         - uses: actions/checkout@v3
