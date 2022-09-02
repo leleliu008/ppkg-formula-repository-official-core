@@ -5,6 +5,6 @@ src-url: https://gitlab.com/graphviz/graphviz/-/archive/5.0.1/graphviz-5.0.1.tar
 src-sha: c01a174a8f468f05ac5ff17a1923e51275e332a95b7f549552593c46091b27a3
 license: EPL-1.0
 dep-pkg: fontconfig libpng expat libtool python3
-dep-upp: flex bison gawk git
+dep-upp: gm4 flex bison gawk git
 bsystem: autogen
 install: configure --disable-swig

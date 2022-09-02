@@ -15,5 +15,5 @@ install: |
         --disable-gcov \
         --disable-openssl \
         --disable-mini-gmp \
-        --disble-documentation \
+        --disable-documentation \
         --enable-assembler
