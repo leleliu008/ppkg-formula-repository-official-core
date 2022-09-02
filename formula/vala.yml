@@ -4,5 +4,6 @@ git-url: https://github.com/GNOME/vala.git
 src-url: https://download.gnome.org/sources/vala/0.56/vala-0.56.2.tar.xz
 src-sha: 66c9619bb17859fd1ac3aba0a57970613e38fd2a1ee30541174260c9fb90124c
 license: LGPL-2.1-or-later
-dep-pkg: glib graphviz flex bison
+dep-pkg: glib graphviz
+dep-upp: flex bison
 install: configure --with-cgraph

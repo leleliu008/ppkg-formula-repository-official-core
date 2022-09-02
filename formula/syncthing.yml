@@ -5,6 +5,7 @@ src-url: https://github.com/syncthing/syncthing/archive/v1.20.4.tar.gz
 src-sha: 0a2a26188d30bcb92a14c7f795790df9f44157118248dc4c9faca42967ce7ce7
 license: MPL-2.0
 binbstd: yes
+bsystem: go
 install: |
         run go run build.go --version v$PACKAGE_VERSION build &&
         run install_bins syncthing &&

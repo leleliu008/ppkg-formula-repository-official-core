@@ -9,12 +9,11 @@ license: BSD-3-Clause
 install: |
     configure \
         --disable-coverage \
+        --disable-mpi-java \
         --disable-mpi-fortran \
         --disable-oshmem-fortran \
         --disable-builtin-atomics \
         --enable-sysv-shmem=no \
         --enable-sysv-sshmem=no \
         --enable-binaries \
-        --enable-mpi-java \
-        --with-libevent=$libevent_INSTALL_DIR \
-        FC=''
+        --with-libevent=$libevent_INSTALL_DIR

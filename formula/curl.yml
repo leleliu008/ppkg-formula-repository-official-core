@@ -5,7 +5,7 @@ src-sha: 702fb26e73190a3bd77071aa146f507b9817cc4dfce218d2ab87f00cd3bc059d
 git-url: https://github.com/curl/curl.git
 dep-pkg: openssl zlib
 license: curl
-
+bsystem: configure cmake
 install: |
     configure \
         --enable-optimize \

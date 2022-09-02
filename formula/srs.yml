@@ -5,7 +5,7 @@ src-url: https://github.com/ossrs/srs/archive/v4.0-r1.tar.gz
 src-sha: 185069639b835646370102c23c884aac624771b59276e0dffa91e68008cfed4f
 version: 4.0.1
 license: MIT
-
+dep-pkg: perl
 bsystem: gmake
 bscript: trunk
 binbstd: yes

@@ -4,6 +4,7 @@ git-url: https://github.com/NLnetLabs/unbound.git
 src-url: https://nlnetlabs.nl/downloads/unbound/unbound-1.16.2.tar.gz
 src-sha: 2e32f283820c24c51ca1dd8afecfdb747c7385a137abe865c99db4b257403581
 dep-pkg: openssl libmnl libevent expat nghttp2 libtool
+dep-upp: bison
 license: BSD-3-Clause
 
 install: |
