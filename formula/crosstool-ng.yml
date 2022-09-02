@@ -3,7 +3,7 @@ webpage: https://crosstool-ng.github.io
 git-url: https://github.com/crosstool-ng/crosstool-ng.git
 src-url: http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.25.0.tar.xz
 src-sha: 68162f342243cd4189ed7c1f4e3bb1302caa3f2cbbf8331879bd01fe06c60cd3
-dep-pkg: ncurses libiconv gettext libtool help2man texinfo
+dep-pkg: ncurses libiconv gettext libtool help2man texinfo file
 dep-upp: flex
 license: LGPL-2.1-or-later
 

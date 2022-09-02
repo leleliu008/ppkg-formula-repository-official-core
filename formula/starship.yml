@@ -3,6 +3,7 @@ webpage: https://starship.rs
 git-url: https://github.com/starship/starship.git
 src-url: https://github.com/starship/starship/archive/v1.10.2.tar.gz
 src-sha: b3833c3b23906db778bd0d9a7d87ed232745739e47ce59bcfa8e92c7f0f930e9
-dep-pkg: openssl
 license: ISC
+dep-pkg: openssl
+bsystem: cargo cmake
 install: cargow install --locked
