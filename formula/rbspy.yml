@@ -1,0 +1,11 @@
+summary: Sampling profiler for Ruby
+webpage: https://rbspy.github.io/
+git-url: https://github.com/rbspy/rbspy.git
+src-url: https://github.com/rbspy/rbspy/archive/v0.12.1.tar.gz
+src-sha: 4476bbafa4c387af82804ffc89564a214bf8a8ad8d9910235b2f4016130a7c07
+license: MIT
+bsystem: cargo
+
+# Support rust 1.62+, remove after next release
+fix-url: https://github.com/rbspy/rbspy/commit/f5a8eecfbf2ad0b3ff9105115988478fb760d54d.patch?full_index=1
+fix-sha: 17a1c7d6d0eea2bbeb811f1bbe18534249553b61bedb69710b28a5ed9d4f9e2e

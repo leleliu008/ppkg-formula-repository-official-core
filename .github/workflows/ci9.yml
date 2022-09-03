@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [pup,putty,qpdf,quiche,quickjs,rclone,redis,restic,rhash,rlwrap,rsync,rtmpdump,rtorrent,rust-analyzer,scc,sccache,shell2http,shiori,srs,starship,strace,supervisord,suricata,syncthing,tbb,tcl-core,tcpdump]
+        pkg: [patchelf,pget,pkg-config,pkgconf,pngquant,procs,progress,proot,pup,putty,qpdf,quiche,quickjs,rbspy,rclone,redis,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,rust-analyzer,scc,sccache,sd,shell2http]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

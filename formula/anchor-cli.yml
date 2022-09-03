@@ -1,0 +1,9 @@
+summary: Anchor developer tools
+git-url: https://github.com/coral-xyz/anchor.git
+src-url: https://github.com/coral-xyz/anchor/archive/refs/tags/v0.25.0.tar.gz
+src-sha: a94274d2299d2d15ae9ade0deb8d656fea4e5e27f701ca7b7b48a44a07facb72
+license: Apache-2.0
+dep-pkg: openssl
+install: |
+    cargow build &&
+    run install_bins target/$RUST_TARGET/release/anchor

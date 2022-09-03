@@ -4,7 +4,22 @@ shallow: no
 dep-pkg: python3
 
 binbstd: yes
+bsystem: ninja
 install: |
-    run python3 build/gen.py
-    run ninja -C out/
+    # c++: error: unrecognized command line option '-Wextra-semi'
+    # https://github.com/randombit/botan/issues/2239
+
+    if "$CXX" --version | grep -q 'Free Software Foundation' ; then
+        unset GCC_VERSION_MAJOR
+
+        # https://gcc.gnu.org/onlinedocs/cpp/Common-Predefined-Macros.html
+        GCC_VERSION_MAJOR=$("$CXX" -E -dM - < /dev/null | grep __GNUC__ | cut -d ' ' -f3)
+
+        if [ -n "$GCC_VERSION_MAJOR" ] && [ "$GCC_VERSION_MAJOR=" -le 7 ] ; then
+            sed_in_place "s|'-Wextra-semi'||" build/gen.py
+        fi
+    fi
+
+    run python3 build/gen.py &&
+    run ninja -C out/ &&
     run install_bins out/gn

@@ -15,5 +15,5 @@ install: |
         --with-mpc=$libmpc_INSTALL_DIR \
         --with-mpfr=$mpfr_INSTALL_DIR \
         --with-system-zlib \
-        --enable-languages=c++ \
+        --enable-languages=c,c++,fortran \
         --disable-multilib

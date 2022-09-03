@@ -1,0 +1,6 @@
+summary: Cross-platform ncurses Spotify client written in Rust
+git-url: https://github.com/hrkfdn/ncspot.git
+src-url: https://github.com/hrkfdn/ncspot/archive/v0.11.0.tar.gz
+src-sha: 9843f344406c47bcdefa6ae0591542cdd787d685fb01a3db4fb2812681f6fcaa
+license: BSD-2-Clause
+bsystem: cargo
