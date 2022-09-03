@@ -5,6 +5,23 @@ src-sha: 45cfcdab07f824f6c06c9776701156f7a04b23eadd25ecbc88c188789a447cc7
 dep-pkg: grpc nlohmann-json spdlog
 license: GPL-3.0-or-later
 
+prepare: |
+    # https://github.com/nlohmann/json/issues/3090
+
+    if "$CXX" --version | grep -q 'Free Software Foundation' ; then
+        unset GCC_VERSION_MAJOR
+
+        # https://gcc.gnu.org/onlinedocs/cpp/Common-Predefined-Macros.html
+        GCC_VERSION_MAJOR=$("$CXX" -E -dM - < /dev/null | grep __GNUC__ | cut -d ' ' -f3)
+
+        if [ -n "$GCC_VERSION_MAJOR" ] && [ "$GCC_VERSION_MAJOR" -le 7 ] ; then
+            for file in $(grep '<filesystem>' -rl .)
+            do
+                sed_in_place 's|<filesystem>|<experimental/filesystem>|' "$file"
+            done
+        fi
+    fi
+
 install: |
     cmakew \
         -DENABLE_UNIT_TESTS=OFF \
