@@ -33,7 +33,7 @@ jobs:
         - run: bin/ppkg env
 
         - run: apt -y update
-        - run: apt -y install curl g++ gfortran-10 linux-headers-generic
+        - run: apt -y install curl g++ gfortran linux-headers-generic
 
         - run: bin/ppkg setup
 
