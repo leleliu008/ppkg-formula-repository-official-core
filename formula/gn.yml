@@ -15,7 +15,7 @@ install: |
         # https://gcc.gnu.org/onlinedocs/cpp/Common-Predefined-Macros.html
         GCC_VERSION_MAJOR=$("$CXX" -E -dM - < /dev/null | grep __GNUC__ | cut -d ' ' -f3)
 
-        if [ -n "$GCC_VERSION_MAJOR" ] && [ "$GCC_VERSION_MAJOR=" -le 7 ] ; then
+        if [ -n "$GCC_VERSION_MAJOR" ] && [ "$GCC_VERSION_MAJOR" -le 7 ] ; then
             sed_in_place "s|'-Wextra-semi'||" build/gen.py
         fi
     fi

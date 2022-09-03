@@ -1,0 +1,19 @@
+summary: Cryptographic algorithms and formats library in C++
+webpage: https://botan.randombit.net/
+src-url: https://botan.randombit.net/releases/Botan-2.19.2.tar.xz
+src-sha: 3af5f17615c6b5cd8b832d269fb6cb4d54ec64f9eb09ddbf1add5093941b4d75
+git-url: https://github.com/randombit/botan.git
+license: BSD-2-Clause
+dep-pkg: python3 sqlite bzip2 zlib
+bsystem: gmake
+binbstd: yes
+install: |
+    export CXXFLAGS="$CXXFLAGS $CPPFLAGS"
+    python3 configure.py \
+        --prefix=$PACKAGE_INSTALL_DIR \
+        --docdir=share/doc \
+        --cc=gcc \
+        --with-zlib \
+        --with-bzip2 \
+        --with-sqlite3 &&
+    gmakew install
