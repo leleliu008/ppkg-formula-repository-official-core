@@ -6,4 +6,7 @@ license: GPL-2.0-or-later
 dep-pkg: xorg-libxmu
 binbstd: yes
 bsystem: autotools
-install: export CFLAGS="$CFLAGS $CPPFLAGS"; configure
+install: |
+    export CFLAGS="$CFLAGS $CPPFLAGS"
+    export LIBS="$(pkg-config --libs xmu)"
+    configure

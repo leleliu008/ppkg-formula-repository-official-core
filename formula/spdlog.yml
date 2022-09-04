@@ -7,7 +7,8 @@ dep-pkg: fmt
 
 install: |
     cmakew \
+        -DBUILD_SHARED_LIBS=OFF \
         -DSPDLOG_BUILD_BENCH=OFF \
         -DSPDLOG_BUILD_TESTS=OFF \
-        -DSPDLOG_BUILD_SHARED=ON \
+        -DSPDLOG_BUILD_EXAMPLE=OFF \
         -DSPDLOG_FMT_EXTERNAL=ON

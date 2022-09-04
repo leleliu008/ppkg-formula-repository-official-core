@@ -6,6 +6,8 @@ dep-pkg: grpc nlohmann-json spdlog
 license: GPL-3.0-or-later
 
 prepare: |
+    sed_in_place '/-DPKG_CONFIG_EXECUTABLE/a -DCMAKE_PROJECT_INCLUDE=${CMAKE_PROJECT_INCLUDE}' CMakeLists.txt
+
     # https://github.com/nlohmann/json/issues/3090
 
     if "$CXX" --version | grep -q 'Free Software Foundation' ; then
