@@ -3,7 +3,7 @@ webpage: https://www.libjpeg-turbo.org
 git-url: https://github.com/libjpeg-turbo/libjpeg-turbo.git
 src-url: https://downloads.sourceforge.net/project/libjpeg-turbo/2.1.4/libjpeg-turbo-2.1.4.tar.gz
 src-sha: d3ed26a1131a13686dfca4935e520eb7c90ae76fbc45d98bb50a8dc86230342b
-dep-pkg: nasm
+dep-upp: nasm
 license: IJG
 
 install: |

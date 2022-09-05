@@ -22,6 +22,6 @@ install: |
         -DDISABLE_SNF=ON &&
     (
         cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig" &&
-        sed_in_place 's|-l/opt/ppkg/installed/openssl/lib/libssl.a|-lssl|'       libpcap.pc &&
-        sed_in_place 's|-l/opt/ppkg/installed/openssl/lib/libcrypto.a|-lcrypto|' libpcap.pc
+        sed_in_place 's@-l/opt/ppkg/installed/openssl/lib/libssl.\(a\|so\)@-lssl@g'        libpcap.pc &&
+        sed_in_place 's@-l/opt/ppkg/installed/openssl/lib/libcrypto.\(a\|so\)@-lcrypto@g'  libpcap.pc
     )

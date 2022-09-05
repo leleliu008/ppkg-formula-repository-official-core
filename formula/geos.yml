@@ -1,0 +1,7 @@
+summary: Geometry Engine
+webpage: https://trac.osgeo.org/geos
+git-url: https://github.com/libgeos/geos.git
+src-url: https://download.osgeo.org/geos/geos-3.11.0.tar.bz2
+src-sha: 79ab8cabf4aa8604d161557b52e3e4d84575acdc0d08cb09ab3f7aaefa4d858a
+license: LGPL-2.1-or-later
+bsystem: cmake
