@@ -7,7 +7,6 @@ dep-upp: gm4 flex bison
 dep-pkg: openssl
 license: BSD-3-Clause
 
-prepare: sed_in_place 's|${OPENSSL_LIBRARIES}|OpenSSL::SSL OpenSSL::Crypto|g' CMakeLists.txt
 install: |
     cmakew \
         -DINET6=ON \
@@ -21,5 +20,8 @@ install: |
         -DDISABLE_DAG=ON \
         -DDISABLE_TC=ON \
         -DDISABLE_SNF=ON &&
-    sed_in_place 's|-lOpenSSL::SSL|-lssl|'       "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libpcap.pc" &&
-    sed_in_place 's|-lOpenSSL::Crypto|-lcrypto|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libpcap.pc"
+    (
+        cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig" &&
+        sed_in_place 's|-l/opt/ppkg/installed/openssl/lib/libssl.a|-lssl|'       libpcap.pc &&
+        sed_in_place 's|-l/opt/ppkg/installed/openssl/lib/libcrypto.a|-lcrypto|' libpcap.pc
+    )

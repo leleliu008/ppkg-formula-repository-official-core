@@ -17,6 +17,4 @@ install: |
         -DCMAKE_SKIP_INSTALL_RPATH="$CMAKE_SKIP_INSTALL_RPATH" \
         -Dprotobuf_BUILD_TESTS=OFF \
         -Dprotobuf_BUILD_EXAMPLES=OFF \
-        -Dprotobuf_BUILD_SHARED_LIBS=OFF \
-        -DZLIB_INCLUDE_DIR=$zlib_INCLUDE_DIR \
-        -DZLIB_LIBRARY_RELEASE=$zlib_LIBRARY_DIR/libz.a
+        -Dprotobuf_BUILD_SHARED_LIBS=OFF

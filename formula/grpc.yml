@@ -18,6 +18,4 @@ install: |
         -DgRPC_PROTOBUF_PROVIDER=package \
         -DgRPC_SSL_PROVIDER=package \
         -DgRPC_ZLIB_PROVIDER=package \
-        -DgRPC_RE2_PROVIDER=package \
-        -DZLIB_INCLUDE_DIR=$zlib_INCLUDE_DIR \
-        -DZLIB_LIBRARY_RELEASE=$zlib_LIBRARY_DIR/libz.a
+        -DgRPC_RE2_PROVIDER=package

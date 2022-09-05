@@ -13,8 +13,4 @@ install: |
         -DENABLE_IPO=OFF \
         -DENABLE_TRACING=OFF \
         -DWARNINGS_AS_ERRORS=OFF \
-        -DZSTD_FROM_INTERNET=OFF \
-        -DZSTD_INCLUDE_DIR=$zstd_INCLUDE_DIR \
-        -DZSTD_LIBRARY=$zstd_LIBRARY_DIR/libzstd.a \
-        -DHIREDIS_INCLUDE_DIR=$hiredis_INCLUDE_DIR \
-        -DHIREDIS_LIBRARY=$hiredis_LIBRARY_DIR/libhiredis.a
+        -DZSTD_FROM_INTERNET=OFF

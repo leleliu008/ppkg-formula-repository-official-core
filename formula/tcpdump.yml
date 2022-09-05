@@ -5,40 +5,6 @@ src-sha: 79b36985fb2703146618d87c4acde3e068b91c553fb93f021a337f175fd10ebe
 git-url: https://github.com/the-tcpdump-group/tcpdump.git
 license: BSD-3-Clause
 dep-pkg: libpcap
-
-prepare: |
-    cat > "$PACKAGE_INSTALLING_BST_DIR/cmake/Modules/FindPCAP.cmake" <<EOF
-    set(PCAP_FOUND TRUE)
-    set(PCAP_INCLUDE_DIRS "$libpcap_INCLUDE_DIR")
-    set(PCAP_LIBRARIES "$libpcap_LIBRARY_DIR/libpcap.a;$openssl_LIBRARY_DIR/libssl.a")
-
-    find_package(OpenSSL REQUIRED)
-
-    if (NOT TARGET  PCAP::libpcap)
-        add_library(PCAP::libpcap UNKNOWN IMPORTED)
-        set_target_properties(PCAP::libpcap PROPERTIES
-            IMPORTED_LOCATION             "$libpcap_LIBRARY_DIR/libpcap.a"
-            INTERFACE_INCLUDE_DIRECTORIES "${PCAP_INCLUDE_DIRS}"
-        )
-    endif()
-
-    if (NOT TARGET  PCAP::PCAP)
-        add_library(PCAP::PCAP INTERFACE IMPORTED)
-        set_target_properties(PCAP::PCAP PROPERTIES
-            INTERFACE_INCLUDE_DIRECTORIES "${PCAP_INCLUDE_DIRS}"
-            INTERFACE_LINK_LIBRARIES      "PCAP::libpcap;OpenSSL::SSL"
-        )
-    endif()
-
-    include(FindPackageHandleStandardArgs)
-    find_package_handle_standard_args(PCAP REQUIRED_VARS PCAP_LIBRARIES PCAP_INCLUDE_DIRS)
-
-    mark_as_advanced(PCAP_INCLUDE_DIRS PCAP_LIBRARIES)
-    EOF
-
-    sed_in_place 's|${PCAP_LIBRARIES}|PCAP::PCAP|'        CMakeLists.txt
-    sed_in_place 's|${CRYPTO_LIBRARIES}|OpenSSL::Crypto|' CMakeLists.txt
-
 install: |
     cmakew \
         -DWITH_CRYPTO=ON \
