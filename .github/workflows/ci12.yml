@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [zola,zsh,zsync]
+        pkg: [wasmtime,watchexec,webhook,wget,wolfssl,wuzz,xclip,xh,xmake,xorriso,xpup,xvid,yaml-cpp,yasm,youtubedr,yq,zeromq,zip,zlib-ng,zola]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

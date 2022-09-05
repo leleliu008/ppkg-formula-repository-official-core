@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [cheat,check,chezmoi,chicken,choose,cjson,clash,cmake,cpio,cppcheck,cpu_features,croc,crosstool-ng,crowbook,ctop,cue,curlie,darkhttpd,dasel,dash,delta,diffutils,distcc,dmalloc,dog,dos2unix,dua,duf,dufs,dust,ed,elvish,epsilon,esbuild,ethereum,eudev]
+        pkg: [c-examples,caddy,ccache,cflow,cgif,cheat,check,chezmoi,chicken,choose,cjson,clash,cmake,cpio,cppcheck,cppunit,cpu_features,cpuinfo,crc32c,croc,crosstool-ng,crowbook,ctop,cue,curlie,darkhttpd,dasel,dash,dav1d,delta,diffutils,distcc,dmalloc,dog]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

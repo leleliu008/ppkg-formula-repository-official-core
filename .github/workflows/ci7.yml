@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [libsodium,libtins,libtorrent-rasterbar,libunwind,libwordexp,libxslt,libyuv,links,livego,lmdb,lnd,lodepng,lrzip,lsd,lsof,lunatic,lychee,lynx,lzip,lzop]
+        pkg: [libmd,libmetalink,libnl,libnsl,libphonenumber,libpipeline,libpsl,libressl,libsamplerate,libseccomp,libsigsegv,libsmi,libtins,libtorrent-rasterbar,libunwind]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

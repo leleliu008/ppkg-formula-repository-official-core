@@ -1,4 +1,4 @@
-name: workflow1
+name: workflow13
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [aalib,acl,ag,age,alass,algernon,anchor-cli,antibody,aom,apkeep,aptly,archiver,args,aria2,async++,axel,b3sum,bandwhich,base64,bat,bc,bcrypt,bear,berkeley-db,binaryen,bind,binocle,bison,bk,blake3,botan,bottom,brook,broot]
+        pkg: [zoxide,zsh,zsync]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

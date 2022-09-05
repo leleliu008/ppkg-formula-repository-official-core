@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [libexecinfo,libexif,libglob,libical,libidn,libimagequant,libirecovery,libisoburn,libmetalink,libnl,libnsl,libphonenumber,libpipeline,libpsl,libressl,libsamplerate,libseccomp,libsigsegv,libsmi]
+        pkg: [libao,libass,libatomic_ops,libb2,libbcrypt,libbpf,libcaca,libcap-ng,libcbor,libcddb,libcdio,libcroco,libcrypt,libexecinfo,libexif,libglob,libical,libidn,libimagequant,libirecovery,libisoburn]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

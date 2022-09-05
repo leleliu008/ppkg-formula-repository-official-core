@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [patch,patchelf,pget,pkg-config,pkgconf,pngquant,procs,progress,proot,pup,putty,qpdf,quiche,quickjs,rclone,redis,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,rust-analyzer,scc,sccache,sd,shell2http]
+        pkg: [nginx,ngtcp2,ninja,nsh,ntbtls,numactl,nushell,obfs4proxy,openblas,openlibm,openmpi,p7zip,packcc,pango,patch,patchelf,pget,pkg-config,pkgconf,pngquant,procs,progress,proot,pup]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
