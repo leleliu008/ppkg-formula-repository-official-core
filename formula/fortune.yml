@@ -1,0 +1,12 @@
+summary: a tool for displaying a random quotation
+git-url: https://github.com/shlomif/fortune-mod.git
+src-url: https://github.com/shlomif/fortune-mod/releases/download/fortune-mod-3.12.0/fortune-mod-3.12.0.tar.xz
+src-sha: 7d5aed7cb9998950d349eba83a5b57fefba71928b34b0f998508419fdb740b71
+dep-pkg: libxslt
+dep-plm: App::Cpan Path::Tiny App::Docmake
+bsystem: cmake
+prepare: |
+    # http://www.xmlsoft.org/xmlcatalog_man.html
+    # https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/docbook-xsl.rb
+    export XML_CATALOG_FILES=$(brew --prefix)/etc/xml/catalog
+    echo XML_CATALOG_FILES=$XML_CATALOG_FILES

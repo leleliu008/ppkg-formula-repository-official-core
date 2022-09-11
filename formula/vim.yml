@@ -1,0 +1,24 @@
+summary: Vi IMproved - enhanced vi editor
+webpage: https://www.vim.org/
+git-url: https://github.com/vim/vim.git
+src-url: https://github.com/vim/vim/archive/v9.0.0000.tar.gz
+src-sha: 1b3cd3732eb7039cf58a9321de26ab1a12d81c2f6760eb03c5d7b60d548f4587
+license: Vim
+dep-pkg: gettext python3 perl lua
+bsystem: configure
+binbstd: yes
+install: |
+    configure \
+        --with-lua-prefix=$lua_INSTALL_DIR \
+        --with-tlib=ncursesw \
+        --with-compiledby=ppkg \
+        --with-features=huge \
+        --without-x \
+        --enable-cscope \
+        --enable-terminal \
+        --enable-multibyte \
+        --enable-perlinterp \
+        --enable-rubyinterp=no \
+        --enable-python3interp \
+        --enable-luainterp \
+        --enable-gui=no

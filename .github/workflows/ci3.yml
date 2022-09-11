@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [dos2unix,dua,duf,dufs,dust,ed,elvish,epsilon,esbuild,ethereum,eudev,exa,faac,faad2,fakeroot,fcp,fd,fdk-aac,fdroidcl,fff,findutils,fish,flex,folly,fselect,fzf,garble,gawk]
+        pkg: [curlie,cxxopts,darkhttpd,dasel,dash,dav1d,delta,diffutils,distcc,dmalloc,dns2tcp,dnsmap,docbook,dog,dos2unix,dua,duf,dufs,dust,ed,eigen,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,faac,faad2,fakeroot,fcp,fd,fdk-aac,fdroidcl,fff]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

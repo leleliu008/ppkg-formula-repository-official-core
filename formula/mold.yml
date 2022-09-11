@@ -1,0 +1,18 @@
+summary: Modern Linker
+git-url: https://github.com/rui314/mold.git
+src-url: https://github.com/rui314/mold/archive/v1.4.2.tar.gz
+src-sha: 47e6c48d20f49e5b47dfb8197dd9ffcb11a8833d614f7a03bd29741c658a69cd
+license: AGPL-3.0-only
+dep-pkg: tbb xxhash zlib openssl
+binbstd: yes
+install: |
+    gmakew clean &&
+    gmakew install \
+        PREFIX=$PACKAGE_INSTALL_DIR \
+        STRIP=true \
+        LTO=1 \
+        USE_MIMALLOC=0 \
+        SYSTEM_TBB=1 \
+        SYSTEM_XXHASH=1 \
+        CFLAGS="'$CFLAGS $CPPFLAGS'" \
+        CXXFLAGS="'$CXXFLAGS $CPPFLAGS'"

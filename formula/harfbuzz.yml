@@ -2,7 +2,7 @@ summary: OpenType text shaping engine
 git-url: https://github.com/harfbuzz/harfbuzz.git
 src-url: https://github.com/harfbuzz/harfbuzz/archive/4.3.0.tar.gz
 src-sha: 32184860ddc0b264ff95010e1c64e596bd746fe4c2e34014a1185340cdddeba6
-dep-pkg: icu4c glib graphite2
+dep-pkg: icu4c gobject-introspection graphite2
 license: MIT
 
 prepare: sed_in_place "/subdir('util')/d" meson.build
@@ -14,8 +14,8 @@ install: |
         -Dfreetype=enabled \
         -Dgraphite=disabled \
         -Dgraphite2=enabled \
-        -Dgobject=disabled \
-        -Dintrospection=disabled \
+        -Dgobject=enabled \
+        -Dintrospection=enabled \
         -Ddocs=disabled \
         -Dtests=disabled \
         -Dbenchmark=disabled

@@ -1,0 +1,14 @@
+summary: Free (GNU) replacement for the Pico text editor
+webpage: https://www.nano-editor.org/
+src-url: https://www.nano-editor.org/dist/v6/nano-6.4.tar.xz
+src-sha: 4199ae8ca78a7796de56de1a41b821dc47912c0307e9816b56cc317df34661c0
+git-url: https://git.savannah.gnu.org/git/nano.git
+license: GPL-3.0-or-later
+dep-pkg: gettext file
+install: |
+    configure \
+        --enable-utf8 \
+        --enable-color \
+        --enable-extra \
+        --enable-nanorc \
+        --enable-multibuffer

@@ -1,0 +1,32 @@
+summary: VP8/VP9 video codec
+webpage: https://www.webmproject.org/code/
+git-url: https://github.com/webmproject/libvpx.git
+src-url: https://github.com/webmproject/libvpx/archive/v1.12.0.tar.gz
+src-sha: f1acc15d0fd0cb431f4bf6eac32d5e932e40ea1186fe78e074254d6d003957bb
+license: BSD-3-Clause
+dep-upp: nasm
+bsystem: gmake
+install: |
+    case $NATIVE_OS_ARCH in
+        i686)    export AS=nasm ;;
+        x86_64)  export AS=nasm ;;
+    esac
+
+    case $NATIVE_OS_KIND-$NATIVE_OS_ARCH in
+        linux-x86_64)  TARGET=x86_64-linux-gcc ;;
+        linux-arm64)   TARGET=arm64-linux-gcc  ;;
+        darwin-x86_64) TARGET=x86_64-darwin20-gcc ;;
+        datwin-arm64)  TARGET=arm64-darwin20-gcc  ;;
+        *) unset TARGET
+    esac
+
+    run $PACKAGE_INSTALLING_BST_DIR/configure \
+        --prefix=$PACKAGE_INSTALL_DIR \
+        --target=$TARGET \
+        --disable-examples \
+        --disable-unit-tests \
+        --disable-realtime-only \
+        --enable-pic \
+        --enable-vp9-highbitdepth &&
+    gmakew
+    gmakew install

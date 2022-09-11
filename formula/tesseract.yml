@@ -1,0 +1,14 @@
+summary: OCR (Optical Character Recognition) engine
+git-url: https://github.com/tesseract-ocr/tesseract.git
+src-url: https://github.com/tesseract-ocr/tesseract/archive/5.2.0.tar.gz
+src-sha: eba4deb2f92a3f89a6623812074af8c53b772079525b3c263aa70bbf7b748b3c
+license: Apache-2.0
+dep-pkg: leptonica icu4c pango libarchive curl
+install: |
+    cmakew \
+        -DENABLE_LTO=ON \
+        -DUSE_SYSTEM_ICU=ON \
+        -DDISABLE_ARCHIVE=OFF \
+        -DDISABLE_CURL=OFF \
+        -DBUILD_TESTS=OFF \
+        -DBUILD_TRAINING_TOOLS=ON

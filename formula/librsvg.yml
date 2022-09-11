@@ -1,0 +1,14 @@
+summary: Library to render SVG files using Cairo
+webpage: https://wiki.gnome.org/Projects/LibRsvg
+git-url: https://gitlab.gnome.org/GNOME/librsvg.git
+src-url: https://download.gnome.org/sources/librsvg/2.54/librsvg-2.54.5.tar.xz
+src-sha: 4f03190f45324d1fa1f52a79dfcded1f64eaf49b3ae2f88eedab0c07617cae6e
+license: LGPL-2.1-or-later
+dep-pkg: gdk-pixbuf pango
+bsystem: configure cargo
+install: |
+    configure \
+        --enable-tools=yes \
+        --enable-pixbuf-loader=yes \
+        --enable-introspection=yes \
+        --disable-static

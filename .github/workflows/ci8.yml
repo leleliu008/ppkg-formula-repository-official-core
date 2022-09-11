@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [libwordexp,libxslt,libyuv,links,livego,lmdb,lnd,lodepng,lrzip,lsd,lsof,lunatic,lychee,lynx,lzip,lzop,mbedtls,mcfly,md4c,mdbook,mediainfo,mesalink,mm-wiki,mosh,mpg123,mpir,musl-libc,nasm,navi]
+        pkg: [libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmd,libmetalink,libmill,libnl,libnsl,libphonenumber,libpipeline,libpsl,libqalculate,libraqm,librasterlite,libraw,libressl,libsamplerate,libseccomp,libsigsegv]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

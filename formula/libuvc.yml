@@ -1,0 +1,7 @@
+summary: Cross-platform library for USB video devices
+git-url: https://github.com/libuvc/libuvc.git
+src-url: https://github.com/libuvc/libuvc/archive/v0.0.6.tar.gz
+src-sha: 42175a53c1c704365fdc782b44233925e40c9344fbb7f942181c1090f06e2873
+license: BSD-3-Clause
+dep-pkg: libusb
+bsystem: cmake

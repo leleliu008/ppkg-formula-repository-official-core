@@ -1,0 +1,11 @@
+summary: Seamless operability between C++11 and Python
+git-url: https://github.com/pybind/pybind11.git
+src-url: https://github.com/pybind/pybind11/archive/v2.10.0.tar.gz
+src-sha: eacf582fa8f696227988d08cfc46121770823839fe9e301a20fbce67e7cd70ec
+license: BSD-3-Clause
+install: |
+    cmakew \
+        -DPYBIND11_TEST=OFF \
+        -DPYBIND11_INSTALL=ON \
+        -DPYBIND11_NOPYTHON=ON \
+        -DCMAKE_INSTALL_DATAROOTDIR=$PACKAGE_INSTALL_DIR/lib

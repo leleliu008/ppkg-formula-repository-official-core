@@ -1,0 +1,15 @@
+summary: Audio metadata library
+webpage: https://taglib.org/
+src-url: https://taglib.github.io/releases/taglib-1.12.tar.gz
+src-sha: 7fccd07669a523b07a15bd24c8da1bbb92206cb19e9366c3692af3d79253b703
+git-url: https://github.com/taglib/taglib.git
+dep-pkg: zlib
+license: LGPL-2.1-or-later
+install: |
+    case $INSTALL_LIB in
+        yes)    cmakew                         -DWITH_MP4=ON -DWITH_ASF=ON ;;
+        static) cmakew -DBUILD_SHARED_LIBS=OFF -DWITH_MP4=ON -DWITH_ASF=ON ;;
+        shared) cmakew -DBUILD_SHARED_LIBS=ON  -DWITH_MP4=ON -DWITH_ASF=ON ;;
+        both)   cmakew -DBUILD_SHARED_LIBS=OFF -DWITH_MP4=ON -DWITH_ASF=ON
+                cmakew -DBUILD_SHARED_LIBS=ON  -DWITH_MP4=ON -DWITH_ASF=ON
+    esac

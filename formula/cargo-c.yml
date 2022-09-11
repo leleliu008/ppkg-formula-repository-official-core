@@ -3,9 +3,9 @@ git-url: https://github.com/lu-zero/cargo-c.git
 src-url: https://github.com/lu-zero/cargo-c/archive/v0.9.12.tar.gz
 src-sha: d700c6cc93d06c5ed7a887f51d87d47e88e783dfc1b28d00b951625c4d3ce509
 license: MIT
-dep-pkg: curl libgit2
+dep-pkg: libgit2
 install: |
-    export LIBCURL_SYS_USE_PKG_CONFIG=1
+    #export LIBCURL_SYS_USE_PKG_CONFIG=1
     export LIBGIT2_SYS_USE_PKG_CONFIG=1
     export LIBSSH2_SYS_USE_PKG_CONFIG=1
     cargow install

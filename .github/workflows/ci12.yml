@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [wabt,wasm3,wasmer,wasmtime,watchexec,webhook,wget,wolfssl,wuzz,xclip,xh,xmake,xorriso,xpup,xvid,yaml-cpp,yasm,youtubedr,yq,yyjson,zeromq]
+        pkg: [patch,patchelf,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,pngquant,poco,procs,progress,proj,proot,pup,putty,pybind11,qpdf,quiche,quickjs,ragel,rang,rapidjson,rclone,re2c]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

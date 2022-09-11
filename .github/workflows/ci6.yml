@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [libao,libass,libatomic_ops,libb2,libbcrypt,libbpf,libcaca,libcap-ng,libcbor,libcddb,libcdio,libcroco,libcrypt,libexecinfo,libexif,libglob,libheif,libical,libidn,libimagequant,libirecovery,libisoburn]
+        pkg: [helm,hexyl,htop,htslib,hugo,hunspell,hwloc,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jemalloc,jfrog-cli,jpeg,jq,json-glib,jsoncpp,jump,kcp,kcptun,lazygit,lcov,ldns,less,leveldb]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
