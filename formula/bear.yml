@@ -28,3 +28,7 @@ install: |
     cmakew \
         -DENABLE_UNIT_TESTS=OFF \
         -DENABLE_FUNC_TESTS=OFF
+
+# ubuntu-18.04
+# /opt/ppkg/installing/bear/src/source/libsys/include/libsys/Path.h:29:21: error: 'filesystem' is not a namespace-name
+# namespace fs = std::filesystem;

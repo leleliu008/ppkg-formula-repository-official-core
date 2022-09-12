@@ -16,3 +16,7 @@ install: |
         SYSTEM_XXHASH=1 \
         CFLAGS="'$CFLAGS $CPPFLAGS'" \
         CXXFLAGS="'$CXXFLAGS $CPPFLAGS'"
+
+# c++: error: unrecognized command line option '-std=c++20'; did you mean '-std=c++2a'?
+# gmake: *** [Makefile:153: out/compress.o] Error 1
+# gmake: *** Waiting for unfinished jobs....

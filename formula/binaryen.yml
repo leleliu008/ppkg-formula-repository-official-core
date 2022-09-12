@@ -5,3 +5,7 @@ src-url: https://github.com/WebAssembly/binaryen/archive/version_110.tar.gz
 src-sha: 0f80250a02b94dd81bdedeae029eb805abf607fcdadcfee5ca8b5e6b77035601
 license: Apache-2.0
 install: cmakew -DBUILD_TESTS=OFF
+
+# ubuntu-18.04
+# cc1plus: error: unrecognized command line option '-Wno-unknown-warning-option' [-Werror]
+# cc1plus: error: unrecognized command line option '-Wno-implicit-int-float-conversion' [-Werror]
