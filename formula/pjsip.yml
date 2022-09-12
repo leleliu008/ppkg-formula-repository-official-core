@@ -8,4 +8,5 @@ dep-pkg: openssl ffmpeg
 binbstd: yes
 install: |
     export LD=$CC
+    export CFLAGS="$CFLAGS $CPPFLAGS"
     configure --disable-libwebrtc

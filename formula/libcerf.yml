@@ -7,6 +7,6 @@ install: |
     cmakew \
         -DPEDANTIC=ON \
         -DWERROR=OFF \
-        -DLIB_MAN=ON \
+        -DLIB_MAN=OFF \
         -DLIB_RUN=ON \
         -DCERF_CPP=OFF

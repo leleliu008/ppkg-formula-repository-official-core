@@ -5,7 +5,6 @@ src-sha: d700c6cc93d06c5ed7a887f51d87d47e88e783dfc1b28d00b951625c4d3ce509
 license: MIT
 dep-pkg: libgit2
 install: |
-    #export LIBCURL_SYS_USE_PKG_CONFIG=1
     export LIBGIT2_SYS_USE_PKG_CONFIG=1
     export LIBSSH2_SYS_USE_PKG_CONFIG=1
     cargow install

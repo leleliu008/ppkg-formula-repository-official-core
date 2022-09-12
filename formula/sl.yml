@@ -7,6 +7,6 @@ dep-pkg: ncurses
 binbstd: yes
 install: |
     run rm -rf sl &&
-    run $CC $CFLAGS $CPPFLAGS $LDFLAGS -lncurses -o sl sl.c &&
+    run $CC $CFLAGS $CPPFLAGS $LDFLAGS -o sl sl.c -lncurses &&
     run install_bins sl &&
     run install_mans sl.1

@@ -9,7 +9,10 @@ install: |
     gmakew clean &&
     gmakew all \
         CC=$CC \
-        REAL_CFLAGS="'$CPPFLAGS $CFLAGS'" \
-        REAL_LDFLAGS="'$LDFLAGS'" \
+        CFLAGS="'$CPPFLAGS $CFLAGS'" \
+        LDFLAGS="'$LDFLAGS'" \
+        OPTIMIZATION= \
+        WARNINGS= \
+        DEBUG= \
         STLIB_MAKE_CMD="'$AR rcs libzlog.a'" &&
     gmakew install PREFIX=$PACKAGE_INSTALL_DIR

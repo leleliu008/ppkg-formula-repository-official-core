@@ -20,10 +20,7 @@ prepare: |
     rm -rf tesseract
 
 install: |
-    #export PATH=$PWD:$PATH
-    #export CPPFLAGS=$CPPFLAGS -I$freetype2_with_harfbuzz_INCLUDE_DIR/freetype2
-
-    export CFLAGS="$CFLAGS $LDFLAGS"
+    export CFLAGS="$CFLAGS $CPPFLAGS $LDFLAGS"
 
     configure \
         --disable-compile-inits \

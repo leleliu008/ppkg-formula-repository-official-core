@@ -3,6 +3,6 @@ webpage: https://www.winimage.com/zLibDll/minizip.html
 src-url: https://zlib.net/zlib-1.2.12.tar.gz
 src-sha: 91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9
 license: Zlib
-dep-pkg: libtool
+dep-pkg: libtool zlib
 bsystem: autotools
 bscript: contrib/minizip
