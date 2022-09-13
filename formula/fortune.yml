@@ -5,8 +5,3 @@ src-sha: 7d5aed7cb9998950d349eba83a5b57fefba71928b34b0f998508419fdb740b71
 dep-pkg: libxslt docbook
 dep-plm: App::Cpan Path::Tiny Class::XSAccessor App::Docmake
 bsystem: cmake
-prepare: |
-    # http://www.xmlsoft.org/xmlcatalog_man.html
-    # https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/docbook-xsl.rb
-    export XML_CATALOG_FILES="$docbook_INSTALL_DIR/catalog.xml"
-    echo XML_CATALOG_FILES=$XML_CATALOG_FILES

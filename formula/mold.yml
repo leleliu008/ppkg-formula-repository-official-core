@@ -17,6 +17,8 @@ install: |
         CFLAGS="'$CFLAGS $CPPFLAGS'" \
         CXXFLAGS="'$CXXFLAGS $CPPFLAGS'"
 
+# ubuntu-18.04
+# ubuntu-20.04
 # c++: error: unrecognized command line option '-std=c++20'; did you mean '-std=c++2a'?
 # gmake: *** [Makefile:153: out/compress.o] Error 1
 # gmake: *** Waiting for unfinished jobs....
