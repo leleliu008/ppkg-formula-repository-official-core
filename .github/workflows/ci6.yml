@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [helm,hexyl,htop,htslib,hugo,hunspell,hwloc,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jemalloc,jfrog-cli,jpeg,jq,json-glib,jsoncpp,jump,kcp,kcptun,lazygit,lcov,ldns,less,leveldb]
+        pkg: [helm,hexyl,htop,htslib,hugo,hunspell,hwloc,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jemalloc,jfrog-cli,jpeg,jq,json-glib,jsoncpp,jump,kcp,kcptun,lazygit,lcov,less]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

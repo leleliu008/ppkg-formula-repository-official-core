@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libunwind,libupnp,libuvc,libvpx,libwebm,libwordexp,libyuv,lighttpd,links]
+        pkg: [libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libunwind,libupnp,libuvc,libvpx,libwebm,libwordexp,libyuv,lighttpd]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
