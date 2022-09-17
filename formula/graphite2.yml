@@ -7,5 +7,5 @@ license: LGPL-2.1-or-later
 dep-pkg: freetype2
 prepare: sed_in_place '/add_subdirectory(tests)/d' CMakeLists.txt
 install: |
-    cmakew -DBUILD_SHARED_LIBS=ON &&
-    cmakew -DBUILD_SHARED_LIBS=OFF
+    cmakew -DGRAPHITE2_NFILEFACE=ON -DBUILD_SHARED_LIBS=ON &&
+    cmakew -DGRAPHITE2_NFILEFACE=ON -DBUILD_SHARED_LIBS=OFF
