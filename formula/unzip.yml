@@ -20,12 +20,56 @@ prepare: |
     done
 
 install: |
+    if [ "$NATIVE_OS_KIND" = openbsd ] ; then
+        # https://www.gnu.org/software/gnulib/manual/html_node/sys_002ftimeb_002eh.html
+        # https://github.com/facebook/zstd/issues/319
+        mkdir sys
+        cat > sys/timeb.h <<EOF
+    #ifndef _SYS_TIMEB_H
+    #define _SYS_TIMEB_H
+    #include <sys/time.h>
+    struct timeb {
+        time_t          time;
+        unsigned short  millitm;
+        short           timezone;
+        short           dstflag;
+    };
+    extern int  ftime(struct timeb*  timebuf);
+    #endif
+    EOF
+
+        cat > ftime.c <<EOF
+    #include <sys/timeb.h>
+    #include <sys/time.h>
+    int ftime(struct timeb *tb)
+    {
+        struct timeval  tv;
+        struct timezone tz;
+        if (gettimeofday (&tv, &tz) < 0)
+            return -1;
+        tb->time    = tv.tv_sec;
+        tb->millitm = (tv.tv_usec + 500) / 1000;
+        if (tb->millitm == 1000) {
+            ++tb->time;
+            tb->millitm = 0;
+        }
+        tb->timezone = tz.tz_minuteswest;
+        tb->dstflag  = tz.tz_dsttime;
+        return 0;
+    }
+    EOF
+
+        run $CC $CFLAGS $CPPFLAGS -I. -c -o ftime.o ftime.c
+        sed_in_place 's|LFLAGS2="-s"|LFLAGS2="ftime.o -s -static"|' unix/configure
+    fi
+
     unset TARGET_COMPILE
 
-    case $NATIVE_OS_TYPE in
-        macos) TARGET_COMPILE=macosx  ;;
-        *)     TARGET_COMPILE=generic ;;
-    esac
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        TARGET_COMPILE=macosx
+    else
+        TARGET_COMPILE=generic
+    fi
 
     gmakew -f unix/Makefile clean &&
     gmakew -f unix/Makefile $TARGET_COMPILE \

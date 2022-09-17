@@ -18,6 +18,7 @@ install: |
 
     run ./config \
         no-engine \
+        no-tests \
         no-ssl2 \
         no-ssl3 \
         no-comp \
