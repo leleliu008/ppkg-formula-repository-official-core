@@ -1,0 +1,40 @@
+name: workflow11
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  ubuntu:
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [18.04, 20.04, 22.04]
+        pkg: [msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,open264,openal-soft,openblas,opencolorio,openfst,openlibm,openmpi]
+
+    runs-on:   ubuntu-latest
+    container: ubuntu:${{ matrix.tag }}
+
+    steps:
+        - uses: actions/checkout@v3
+          with:
+            repository: leleliu008/ppkg-formula-repository
+            path: ppkg-formula-repository
+
+        - run: install -d /opt/ppkg/repos.d
+        - run: mv ppkg-formula-repository /opt/ppkg/repos.d/offical
+
+        - uses: actions/checkout@v3
+          with:
+            repository: leleliu008/ppkg
+
+        - run: bin/ppkg env
+
+        - run: apt -y update
+        - run: apt -y install curl g++ gfortran linux-headers-generic
+
+        - run: bin/ppkg setup
+
+        - run: bin/ppkg install ${{ matrix.pkg }}

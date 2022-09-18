@@ -1,0 +1,40 @@
+name: workflow10
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  ubuntu:
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [18.04, 20.04, 22.04]
+        pkg: [links,livego,llhttp,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mimalloc,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir]
+
+    runs-on:   ubuntu-latest
+    container: ubuntu:${{ matrix.tag }}
+
+    steps:
+        - uses: actions/checkout@v3
+          with:
+            repository: leleliu008/ppkg-formula-repository
+            path: ppkg-formula-repository
+
+        - run: install -d /opt/ppkg/repos.d
+        - run: mv ppkg-formula-repository /opt/ppkg/repos.d/offical
+
+        - uses: actions/checkout@v3
+          with:
+            repository: leleliu008/ppkg
+
+        - run: bin/ppkg env
+
+        - run: apt -y update
+        - run: apt -y install curl g++ gfortran linux-headers-generic
+
+        - run: bin/ppkg setup
+
+        - run: bin/ppkg install ${{ matrix.pkg }}
