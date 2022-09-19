@@ -8,8 +8,7 @@ dep-pkg: libevent libzmq boost libtool
 bsystem: autotools
 install: |
     # error: Cannot compile without assertions!
-    export CFLAGS="$(printf '%s\n' "$CFLAGS" | sed 's|-DNDEBUG||g')"
-    export CXXFLAGS="$(printf '%s\n' "$CXXFLAGS" | sed 's|-DNDEBUG||g')"
+    export CPPFLAGS="$(printf '%s\n' "$CPPFLAGS" | sed 's|-DNDEBUG||g')"
 
     configure \
         --with-boost=$boost_INSTALL_DIR \

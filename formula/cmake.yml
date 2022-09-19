@@ -5,24 +5,9 @@ src-url: https://github.com/Kitware/CMake/releases/download/v3.24.1/cmake-3.24.1
 src-sha: 4931e277a4db1a805f13baa7013a7757a0cbfe5b7932882925c7061d9d1fa82b
 license: BSD-3-Clause
 dep-pkg: ncurses openssl
-
-bsystem: gmake
-binbstd: yes
 install: |
-    run ./bootstrap \
-        --prefix=$PACKAGE_INSTALL_DIR \
-        --no-system-libs \
-        --parallel=$BUILD_NJOBS \
-        -- \
+    cmakew \
+        -DCMAKE_USE_OPENSSL=ON \
         -DCMake_BUILD_LTO=ON \
         -DBUILD_QtDialog=OFF \
-        -DBUILD_CursesDialog=ON \
-        -DCMAKE_USE_OPENSSL=ON \
-        -DOPENSSL_USE_STATIC_LIBS=ON \
-        -DCMAKE_FIND_ROOT_PATH="'$ncurses_INSTALL_DIR;$openssl_INSTALL_DIR'" \
-        -DCURSES_INCLUDE_PATH="$ncurses_INCLUDE_DIR" \
-        -DCURSES_FORM_LIBRARY="$ncurses_LIBRARY_DIR/libform.a" \
-        -DCURSES_EXTRA_LIBRARY="$ncurses_LIBRARY_DIR/libncurses.a" \
-        -DCURSES_NCURSES_LIBRARY="$ncurses_LIBRARY_DIR/libncurses.a" &&
-    gmakew &&
-    gmakew install
+        -DBUILD_CursesDialog=ON
