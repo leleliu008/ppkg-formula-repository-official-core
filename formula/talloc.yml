@@ -8,7 +8,6 @@ dep-pkg: python3
 bsystem: gmake
 binbstd: yes
 install: |
-    export  CFLAGS="$(printf '%s\n'  "$CFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
     export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
 
     ./configure build \

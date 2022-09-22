@@ -5,8 +5,13 @@ src-url: https://github.com/libgit2/libgit2/archive/v1.4.4.tar.gz
 src-sha: e9923e9916a32f54c661d55d79c28fa304cb23617639e68bff9f94d3e18f2d4b
 dep-pkg: libssh2 pcre2
 license: GPL-2.0-only
+prepare: |
+    # https://github.com/libgit2/libgit2/issues/6280
+    if [ "$NATIVE_OS_KIND" = openbsd ] ; then
+        sed_in_place 's|sys/random.h|unistd.h|' src/util/rand.c
+    fi
 
-install:
+install: |
     cmakew \
         -DBUILD_CLAR=OFF \
         -DBUILD_TESTS=OFF \
