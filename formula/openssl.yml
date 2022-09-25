@@ -10,7 +10,7 @@ bsystem: gmake
 binbstd: yes
 install: |
     case $NATIVE_OS_KIND in
-        darwin)  export LDFLAGS=$LDFLAGS -Wl,-z,muldefs ;;
+        darwin)  export LDFLAGS="$LDFLAGS -Wl,-z,muldefs" ;;
         openbsd) sed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
     esac
 
