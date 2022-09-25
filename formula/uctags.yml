@@ -4,3 +4,9 @@ git-url: https://github.com/universal-ctags/ctags.git
 dep-pkg: jansson libyaml libxml2
 license: GPL-2.0-only
 bsystem: autogen
+install: |
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        configure --disable-static
+    else
+        configure
+    fi
