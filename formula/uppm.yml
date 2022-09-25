@@ -6,7 +6,7 @@ dep-pkg: curl libgit2 libarchive libyaml jansson
 
 install: |
     if [ "$NATIVE_OS_KIND" = darwin ] ; then
-        export LDFLAGS="$LDFLAGS -framework CoreFoundation -framework Security"
+        export LDFLAGS="$LDFLAGS -liconv -framework CoreFoundation -framework Security"
     fi
 
     if [ "$NATIVE_OS_LIBC" = musl ] ; then
