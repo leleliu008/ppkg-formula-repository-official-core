@@ -4,15 +4,15 @@ git-url: https://gitlab.gnome.org/GNOME/libxml2.git
 src-url: https://download.gnome.org/sources/libxml2/2.10/libxml2-2.10.2.tar.xz
 src-sha: d240abe6da9c65cb1900dd9bf3a3501ccf88b3c2a1cb98317d03f272dda5b265
 license: MIT
-dep-pkg: libiconv zlib python3
+dep-pkg: libiconv zlib
 
 install: |
     configure \
         --with-iconv=$libiconv_INSTALL_DIR \
         --with-zlib \
-        --with-python \
         --without-lzma \
+        --without-python \
         --without-readline \
-        --without-debug \
         --without-coverage \
+        --without-debug \
         --enable-ipv6

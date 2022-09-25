@@ -5,6 +5,10 @@ license: Apache-2.0
 dep-pkg: curl libgit2 libarchive libyaml jansson
 
 install: |
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        export LDFLAGS="$LDFLAGS -framework CoreFoundation -framework Security"
+    fi
+
     if [ "$NATIVE_OS_LIBC" = musl ] ; then
         cmakew -DBUILD_STATICALLY_LINKED_EXECUTABLE=ON
     else
