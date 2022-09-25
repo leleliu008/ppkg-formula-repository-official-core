@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [p7zip,packcc,patch,patchelf,pget,physfs,pigz,pjsip,pkg-config,pkgconf,plog,pngquant,poco,procs,progress,proj,proot,pup,putty,pybind11,qpdf,quiche,quickjs,ragel,rang,rapidjson,rclone]
+        pkg: [p7zip,packcc,patch,patchelf,pget,physfs,pigz,pkg-config,pkgconf,plog,pngquant,poco,procs,progress,proj,proot,pup,putty,pybind11,qpdf,quiche,quickjs,ragel,rang]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,open264,openal-soft,openblas,opencolorio,openfst,openlibm,openmpi]
+        pkg: [mpg123,mpir,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,open264,openal-soft,openblas,opencolorio,openfst,openlibm,openmpi]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

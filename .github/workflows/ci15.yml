@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [vsftpd,wabt,wasm3,wasmer,wasmtime,watchexec,webhook,wget,wolfssl,wuzz,xclip,xh,xmake,xmlto,xorriso,xpup,xvid,yasm,youtubedr]
+        pkg: [valgrind,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,wasmer,wasmtime,watchexec,webhook,websocketpp,wget,wolfssl,wuzz,xclip,xh,xmake,xmlto,xorriso,xpup,xvid]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

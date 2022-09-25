@@ -1,0 +1,6 @@
+summary: Library of Unicode names and annotation data
+git-url: https://github.com/fontforge/libuninameslist.git
+src-url: https://github.com/fontforge/libuninameslist/releases/download/20211114/libuninameslist-dist-20211114.tar.gz
+src-sha: f5f69090de4a483721207a9df7de5327c13c812a1d23de074d8f0496bc2b740d
+license: BSD-3-Clause
+bsystem: configure
