@@ -6,4 +6,4 @@ install: |
     cargow build --package quiche &&
     install_incs quiche/include/quiche.h &&
     install_libs target/$RUST_TARGET/release/libquiche.a &&
-    install_libs target/$RUST_TARGET/release/libquiche.so
+    install_libs target/$RUST_TARGET/release/libquiche$SHARED_LIBRARY_SUFFIX

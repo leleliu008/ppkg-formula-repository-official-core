@@ -10,5 +10,8 @@ install: |
     configure \
         --with-curses=$ncurses_INSTALL_DIR \
         --enable-multibyte \
-        --enable-install-examples &&
-    patchelf --add-needed libncurses.so "$PACKAGE_INSTALL_DIR/lib/libreadline.so"
+        --enable-install-examples && {
+        if [ -e "$PACKAGE_INSTALL_DIR/lib/libreadline.so" ] ; then
+            patchelf --add-needed libncurses.so "$PACKAGE_INSTALL_DIR/lib/libreadline.so"
+        fi
+    }
