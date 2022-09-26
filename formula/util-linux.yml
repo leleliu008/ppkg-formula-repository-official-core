@@ -5,18 +5,13 @@ src-sha: 60492a19b44e6cf9a3ddff68325b333b8b52b6c59ce3ebd6a0ecaa4c5117e84f
 license: GPL-2.0-or-later
 dep-pkg: readline automake libtool
 
-# Fix ./include/statfs_magic.h:4:10: fatal error: 'sys/statfs.h' file not found
-fix-url: https://github.com/util-linux/util-linux/commit/478b9d477ecdd8f4e3a7b488524e1d4c6a113525.patch?full_index=1
-fix-sha: 576c26c3d15642f1c44548d0120b192b855cceeebf8ad97fb5e300350e88a3f7
-
 # Fix lib/procfs.c:9:10: fatal error: 'sys/vfs.h' file not found
-res-url: https://github.com/util-linux/util-linux/commit/3671d4a878fb58aa953810ecf9af41809317294f.patch?full_index=1
-res-sha: d38c9ae06c387da151492dd5862c58551559dd6d2b1877c74cc1e11754221fe4
+fix-url: https://github.com/util-linux/util-linux/commit/3671d4a878fb58aa953810ecf9af41809317294f.patch?full_index=1
+fix-sha: d38c9ae06c387da151492dd5862c58551559dd6d2b1877c74cc1e11754221fe4
 
 prepare: |
     if [ "$NATIVE_OS_KIND" = darwin ] ; then
-        patch -p1 < ../fix/478b9d477ecdd8f4e3a7b488524e1d4c6a113525.patch
-        patch -p1 < ../res/3671d4a878fb58aa953810ecf9af41809317294f.patch
+        patch -p1 < ../fix/3671d4a878fb58aa953810ecf9af41809317294f.patch
     fi
 
 install: |
