@@ -5,12 +5,18 @@ src-sha: 5bac17218d3911834520dad13cd1f85ab944e1c09ae1aba55906be1f8192f558
 git-url: https://git.savannah.gnu.org/git/bash.git
 license: GPL-3.0-or-later
 dep-pkg: readline
-
+bsystem: configure
 install: |
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        CONFIGURE_OPTIONS_EXTRA=--disable-static-link
+    else
+        CONFIGURE_OPTIONS_EXTRA=--enable-static-link
+    fi
+
     configure \
         --without-bash-malloc \
         --disable-profiling \
         --enable-readline \
         --enable-select \
         --enable-history \
-        --enable-static-link
+        $CONFIGURE_OPTIONS_EXTRA
