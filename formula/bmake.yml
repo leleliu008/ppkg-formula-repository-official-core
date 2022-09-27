@@ -1,0 +1,10 @@
+summary: Portable version of NetBSD make(1)
+webpage: https://www.crufty.net/help/sjg/bmake.html
+src-url: https://www.crufty.net/ftp/pub/sjg/bmake-20220909.tar.gz
+src-sha: 34e9704a93fc183e3f1d87a81f9eabeba3200052f57fed4a751a5968d6b70225
+license: BSD-3-Clause
+binbstd: yes
+install: |
+    sed_in_place 's|MANTARGET?|MANTARGET|' mk/man.mk &&
+    sh boot-strap --prefix=$PACKAGE_INSTALL_DIR --install BROKEN_TESTS=shell-ksh &&
+    install_mans bmake.1
