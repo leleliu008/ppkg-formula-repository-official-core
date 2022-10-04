@@ -8,15 +8,6 @@ license: Python-2.0
 
 exetype: dynamically-linked
 install: |
-    unset LD_LIBRARY_PATH
-
-    for DEP_PKG_NAME in $RECURSIVE_DEPENDENT_PACKAGES
-    do
-        LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$MY_INSTALL_DIR/$DEP_PKG_NAME/lib"
-    done
-
-    export LD_LIBRARY_PATH
-
     export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
 
     unset PYTHONHOME

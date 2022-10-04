@@ -3,5 +3,5 @@ git-url: https://gitlab.com/procps-ng/procps.git
 src-url: https://gitlab.com/procps-ng/procps/-/archive/v4.0.0/procps-v4.0.0.tar.gz
 src-sha: dea39e0e7b1367e28c887d736d1a9783df617497538603cdff432811a1016945
 license: GPL-2.0-or-later
-dep-pkg: ncurses gettext
+dep-pkg: ncurses gettext libtool
 bsystem: autogen
