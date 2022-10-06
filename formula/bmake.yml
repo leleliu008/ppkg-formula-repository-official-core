@@ -5,6 +5,9 @@ src-sha: 34e9704a93fc183e3f1d87a81f9eabeba3200052f57fed4a751a5968d6b70225
 license: BSD-3-Clause
 binbstd: yes
 install: |
-    sed_in_place 's|MANTARGET?|MANTARGET|' mk/man.mk &&
-    sh boot-strap --prefix=$PACKAGE_INSTALL_DIR --install BROKEN_TESTS=shell-ksh &&
+    sed_in_place 's|MANTARGET?|MANTARGET|'   mk/man.mk &&
+    sed_in_place '/deptgt-delete_on_error/d' unit-tests/Makefile &&
+    sed_in_place '/shell-ksh/d'              unit-tests/Makefile &&
+    sh boot-strap op=build &&
+    install_bins ../*/bmake &&
     install_mans bmake.1
