@@ -1,4 +1,4 @@
-summary: Tools for and transforming and inspecting PDF files
+summary: a command-line tool and C++ library that performs content-preserving transformations on PDF files
 git-url: https://github.com/qpdf/qpdf.git
 src-url: https://github.com/qpdf/qpdf/releases/download/release-qpdf-10.6.3/qpdf-10.6.3.tar.gz
 src-sha: e8fc23b2a584ea68c963a897515d3eb3129186741dd19d13c86d31fa33493811
