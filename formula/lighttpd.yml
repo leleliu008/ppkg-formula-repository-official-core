@@ -3,7 +3,7 @@ webpage: https://www.lighttpd.net/
 src-url: https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.66.tar.xz
 src-sha: 47ac6e60271aa0196e65472d02d019556dc7c6d09df3b65df2c1ab6866348e3b
 license: BSD-3-Clause
-dep-pkg: openssl zlib bzip2 pcre libtool
+dep-pkg: openssl zlib libbz2 pcre libtool
 bsystem: autogen
 install: |
     configure \

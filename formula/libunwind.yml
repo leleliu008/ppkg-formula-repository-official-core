@@ -4,5 +4,5 @@ src-url: https://download.savannah.nongnu.org/releases/libunwind/libunwind-1.6.2
 src-sha: 4a6aec666991fb45d0889c44aede8ad6eb108071c3554fcdff671f9c94794976
 git-url: https://github.com/libunwind/libunwind.git
 license: MIT
-dep-pkg: xz zlib
+dep-pkg: zlib liblzma
 install: configure --disable-tests --disable-coredump

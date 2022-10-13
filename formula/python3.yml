@@ -3,7 +3,7 @@ webpage: https://www.python.org/
 src-url: https://www.python.org/ftp/python/3.10.6/Python-3.10.6.tgz
 src-sha: 848cb06a5caa85da5c45bd7a9221bb821e33fc2bdcba088c127c58fad44e6343
 git-url: https://github.com/python/cpython.git
-dep-pkg: expat libffi openssl sqlite bzip2 xz
+dep-pkg: expat libffi openssl sqlite libbz2
 license: Python-2.0
 
 exetype: dynamically-linked

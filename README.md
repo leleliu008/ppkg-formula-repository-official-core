@@ -14,6 +14,7 @@ a formula is a YAML format file which is used to configure a ppkg's package info
 |`git-url`|optional|the source code git repository.<br>must end with `.git`|
 |`git-ref`|optional|reference: https://git-scm.com/book/en/v2/Git-Internals-Git-References <br>example values: `HEAD` `refs/heads/master` `refs/heads/main` `refs/tags/v1`, default value is `HEAD`|
 |`git-sha`|optional|the full git commit id, 40-byte hexadecimal string, if `git-ref` and `git-sha` both are given, `git-sha` takes precedence over `git-ref`|
+|`shallow`|optional|whether do a git shallow fetch. values can be `yes` or `no`. default value is `yes`.|
 ||||
 |`src-url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
 |`src-uri`|optional|the mirror of `src-url`.|
@@ -31,9 +32,9 @@ a formula is a YAML format file which is used to configure a ppkg's package info
 |`dep-plm`|optional|space-separated    `perl modules` that are depended by this package when installing and/or runtime, which will be installed via `cpan`.|
 ||||
 |`cdefine`|optional|append to `CPPFLAGS`|
-|`ccflags`|optional|`CFLAGS`|
-|`xxflags`|optional|`CXXFLAGS`|
-|`ldflags`|optional|`LDFLAGS`|
+|`ccflags`|optional|append to `CFLAGS`|
+|`xxflags`|optional|append to `CXXFLAGS`|
+|`ldflags`|optional|append to `LDFLAGS`|
 ||||
 |`toolset`|optional|C and C++ toolchain name.<br>values can be `system` `gcc` `llvm` `zig`. `system` means follow system. If this key is not present, `zig` will be used. this key only affects GNU/Linux system.|
 |`cstdlib`|optional|C standard library name.<br>values can be `system` `glibc` `musl-libc`. `system` means follow system. If this key is not present, `musl-libc` will be used. this key only affects GNU/Linux system.|
@@ -41,9 +42,10 @@ a formula is a YAML format file which is used to configure a ppkg's package info
 ||||
 |`bsystem`|optional|build system.<br>values can be `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go`|
 |`bscript`|optional|the directory where the build script is located in, relative to `PACKAGE_INSTALLING_TOP_DIR`. build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
-|`binbstd`|optional|whether build in the directory where the build script is located in, otherwise build in other directory.|
-|`prepare`|optional|bash shell code to be run before installing.|
+|`binbstd`|optional|whether build in the directory where the build script is located in, otherwise build in other directory. values can be `yes` or `no`. default value is `no`.|
+|`prepare`|optional|bash shell code to be run before `install`. `pwd` is `PACKAGE_INSTALLING_BST_DIR`|
 |`install`|optional|bash shell code to be run when user run `ppkg install <PKG>`. If this key is not present, I will run default install code according to `bsystem`|
+|`symlink`|optional|whether symlink installed files to `/opt/ppkg/symlinked/*`. values can be `yes` or `no`. default value is `yes`.|
 
 ## the commands can be invoked in prepare and install block
 |command|usage-example|

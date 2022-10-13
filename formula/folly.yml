@@ -3,5 +3,5 @@ git-url: https://github.com/facebook/folly.git
 src-url: https://github.com/facebook/folly/archive/v2022.08.22.00.tar.gz
 src-sha: e24a25c65b373da26863b389dcadf89d24bb85389a176cf4443d4d3aba22a9c5
 license: Apache-2.0
-dep-pkg: boost double-conversion fmt glog libevent openssl libaio bzip2 lz4 xz zstd snappy
+dep-pkg: boost double-conversion fmt glog libevent openssl libaio libbz2 lz4 liblzma libzstd snappy
 install: cmakew

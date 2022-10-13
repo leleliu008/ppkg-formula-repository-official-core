@@ -4,5 +4,5 @@ src-url: https://rsync.samba.org/ftp/rsync/rsync-3.2.6.tar.gz
 src-sha: fb3365bab27837d41feaf42e967c57bd3a47bc8f10765a3671efd6a3835454d3
 git-url: https://github.com/WayneD/rsync.git
 license: GPL-3.0-or-later
-dep-pkg: openssl popt lz4 zstd zlib xxhash libiconv
+dep-pkg: openssl popt lz4 libzstd zlib xxhash libiconv
 install: configure --disable-simd

@@ -10,7 +10,7 @@ fix-sha: 67bde7c71d52afd61aa936d4415c8d12fd90ca26e9637a3cd67cae9b71298c12
 
 version: 6.0.27
 license: Info-ZIP
-dep-pkg: bzip2
+dep-pkg: libbz2
 binbstd: yes
 ccflags: -include time.h
 prepare: |

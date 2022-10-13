@@ -15,4 +15,6 @@ install: |
         do
             sed_in_place '1c #!/usr/bin/env bash' $PACKAGE_INSTALL_DIR/bin/$item || return 1
         done
-    }
+    } &&
+    rm -rf "$PACKAGE_INSTALL_DIR/include" &&
+    rm -rf "$PACKAGE_INSTALL_DIR/lib"

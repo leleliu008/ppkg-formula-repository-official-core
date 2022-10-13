@@ -11,8 +11,5 @@ install: |
         --enable-zlib \
         --disable-bzlib \
         --disable-xzlib &&
-    (
-        cd "$PACKAGE_INSTALL_DIR" &&
-        rm -rf bin &&
-        rm -rf share/man/man1
-    )
+    rm -rf "$PACKAGE_INSTALL_DIR/bin" &&
+    rm -rf "$PACKAGE_INSTALL_DIR/share/man/man1"

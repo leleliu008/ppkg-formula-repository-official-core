@@ -6,7 +6,7 @@ git-url: https://github.com/xz-mirror/xz.git
 license: LGPL-2.1-or-later
 
 install: |
-    configure \
+    configure_only \
         --disable-external-sha256 \
         --disable-werror \
         --enable-assembler \
