@@ -3,4 +3,5 @@ git-url: https://github.com/leleliu008/C-examples.git
 #src-url: dir:///home/leleliu008/C
 license: Apache-2.0
 bsystem: cmake
+symlink: no
 dep-pkg: curl libgit2 libyaml libarchive qrencode
