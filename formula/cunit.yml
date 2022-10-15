@@ -22,4 +22,5 @@ install: |
         --enable-curses \
         --enable-console \
         --enable-memtrace \
-        --enable-automated
+        --enable-automated &&
+    mv "$PACKAGE_INSTALL_DIR/doc" "$PACKAGE_INSTALL_DIR/share/"

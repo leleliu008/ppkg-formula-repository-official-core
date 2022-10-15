@@ -14,6 +14,8 @@ install: |
     run ./Configure \
         -des \
         -Dprefix=$PACKAGE_INSTALL_DIR \
+        -Dman1dir=$PACKAGE_INSTALL_DIR/share/man/man1 \
+        -Dman3dir=$PACKAGE_INSTALL_DIR/share/man/man3 \
         -Dcc="'$CC'" \
         -Dar="'$AR'" \
         -Dnm="'$NM'" \
