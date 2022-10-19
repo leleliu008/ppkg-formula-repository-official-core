@@ -1,6 +1,6 @@
 summary: A minimalist svn client to checkout/update Subversion repositories.
 git-url: https://github.com/rofl0r/svn-lite.git
-dep-pkg: openssl1.1.x
+dep-pkg: openssl@1.1
 binbstd: yes
 install: |
     run rm -f svn

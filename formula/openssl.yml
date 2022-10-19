@@ -13,7 +13,10 @@ install: |
         openbsd) sed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
     esac
 
-    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+    if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
+        export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+        sed_in_place 's|BIN_EX_LIBS=|BIN_EX_LIBS=-static |' Configurations/unix-Makefile.tmpl
+    fi
 
     run ./config \
         no-engine \
