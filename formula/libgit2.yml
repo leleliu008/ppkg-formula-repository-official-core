@@ -1,5 +1,5 @@
 summary: C library of Git core methods that is re-entrant and linkable
-webpage: https://libgit2.github.com
+web-url: https://libgit2.github.com
 git-url: https://github.com/libgit2/libgit2.git
 src-url: https://github.com/libgit2/libgit2/archive/v1.4.4.tar.gz
 src-sha: e9923e9916a32f54c661d55d79c28fa304cb23617639e68bff9f94d3e18f2d4b

@@ -1,5 +1,5 @@
 summary: Network IDS, IPS, and security monitoring engine
-webpage: https://suricata-ids.org
+web-url: https://suricata-ids.org
 git-url: https://github.com/OISF/suricata.git
 src-url: https://www.openinfosecfoundation.org/download/suricata-6.0.6.tar.gz
 src-sha: 00173634fa76aee636e38a90b1c02616c903e42173107d47b4114960b5fbe839

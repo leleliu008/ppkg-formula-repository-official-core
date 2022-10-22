@@ -1,5 +1,5 @@
 summary: Free lossless audio codec
-webpage: https://xiph.org/flac
+web-url: https://xiph.org/flac
 git-url: https://github.com/xiph/flac.git
 src-url: https://github.com/xiph/flac/archive/1.3.4.tar.gz
 src-sha: 53e9dbe3ae54a9f42c1e65afe7f516c02d8393c0c6d56bc455c15e1e044069a9

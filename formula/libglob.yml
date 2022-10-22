@@ -1,4 +1,4 @@
 summary: glob(3) implementation
-webpage: https://linux.die.net/man/3/glob
+web-url: https://linux.die.net/man/3/glob
 git-url: https://github.com/leleliu008/libglob.git
 bsystem: cmake

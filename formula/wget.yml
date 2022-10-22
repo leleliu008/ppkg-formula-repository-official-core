@@ -1,5 +1,5 @@
 summary: Internet file retriever
-webpage: https://www.gnu.org/software/wget
+web-url: https://www.gnu.org/software/wget
 src-url: https://ftp.gnu.org/gnu/wget/wget-1.21.3.tar.gz
 src-sha: 5726bb8bc5ca0f6dc7110f6416e4bb7019e2d2ff5bf93d1ca2ffcc6656f220e5
 git-url: https://git.savannah.gnu.org/git/wget.git

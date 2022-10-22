@@ -1,5 +1,5 @@
 summary: Static analysis of C and C++ code
-webpage: https://sourceforge.net/projects/cppcheck
+web-url: https://sourceforge.net/projects/cppcheck
 git-url: https://github.com/danmar/cppcheck.git
 src-url: https://github.com/danmar/cppcheck/archive/2.8.2.tar.gz
 src-sha: 30ba99ab54089c44b83f02e2453da046a7edff5237950d4a0eb1eba4afcb4f45

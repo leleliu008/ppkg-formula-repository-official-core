@@ -1,5 +1,5 @@
 summary: a command-line tool for simulating superuser privileges
-webpage: https://tracker.debian.org/pkg/fakeroot
+web-url: https://tracker.debian.org/pkg/fakeroot
 src-url: https://deb.debian.org/debian/pool/main/f/fakeroot/fakeroot_1.29.orig.tar.gz
 src-sha: 8fbbafb780c9173e3ace4a04afbc1d900f337f3216883939f5c7db3431be7c20
 license: GPL-3.0-or-later

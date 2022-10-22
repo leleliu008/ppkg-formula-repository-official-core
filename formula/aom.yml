@@ -1,5 +1,5 @@
 summary: Codec library for encoding and decoding AV1 video streams
-webpage: https://aomedia.googlesource.com/aom
+web-url: https://aomedia.googlesource.com/aom
 git-url: https://github.com/jbeich/aom.git
 src-url: https://github.com/jbeich/aom/archive/refs/tags/v3.4.0.tar.gz
 src-sha: 831ff8d1fe379beb2074722dd6bef253a2444965c2784a267ffab9183163e700

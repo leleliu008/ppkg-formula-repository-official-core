@@ -1,5 +1,5 @@
 summary: Distributed revision control system
-webpage: https://git-scm.com
+web-url: https://git-scm.com
 git-url: https://github.com/git/git.git
 src-url: https://www.kernel.org/pub/software/scm/git/git-2.37.3.tar.xz
 src-sha: 814641d7f61659cfbc17825d0462499ca1403e39ff53d76a8512050e6483e87a

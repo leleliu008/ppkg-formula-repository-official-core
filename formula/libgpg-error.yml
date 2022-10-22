@@ -1,5 +1,5 @@
 summary: Common error values for all GnuPG components
-webpage: https://www.gnupg.org/related_software/libgpg-error
+web-url: https://www.gnupg.org/related_software/libgpg-error
 git-url: https://dev.gnupg.org/source/libgpg-error.git
 src-url: https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.45.tar.bz2
 src-sha: 570f8ee4fb4bff7b7495cff920c275002aea2147e9a1d220c068213267f80a26

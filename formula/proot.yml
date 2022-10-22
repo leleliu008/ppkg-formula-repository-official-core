@@ -1,5 +1,5 @@
 summary: a user-space implementation of chroot, mount --bind, and binfmt_misc.
-webpage: https://proot-me.github.io/
+web-url: https://proot-me.github.io/
 git-url: https://github.com/proot-me/proot.git
 src-url: https://github.com/proot-me/proot/archive/refs/tags/v5.3.1.tar.gz
 src-sha: 966afe32bf9a9d0e80836a8874d4dd829c51750060d9e0f30d330b1ed7eec8c2

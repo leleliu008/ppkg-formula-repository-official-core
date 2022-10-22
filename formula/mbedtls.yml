@@ -1,5 +1,5 @@
 summary: Cryptographic and SSL/TLS library
-webpage: https://tls.mbed.org
+web-url: https://tls.mbed.org
 git-url: https://github.com/Mbed-TLS/mbedtls.git
 src-url: https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v3.0.0.tar.gz
 src-sha: 525bfde06e024c1218047dee1c8b4c89312df1a4b5658711009086cda5dfaa55

@@ -1,5 +1,5 @@
 summary: X.Org Inter-Client Exchange Library
-webpage: https://www.x.org/
+web-url: https://www.x.org/
 src-url: https://www.x.org/archive/individual/lib/libICE-1.0.10.tar.bz2
 src-sha: 6f86dce12cf4bcaf5c37dddd8b1b64ed2ddf1ef7b218f22b9942595fb747c348
 license: MIT

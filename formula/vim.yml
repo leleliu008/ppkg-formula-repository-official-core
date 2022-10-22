@@ -1,5 +1,5 @@
 summary: Vi IMproved - enhanced vi editor
-webpage: https://www.vim.org/
+web-url: https://www.vim.org/
 git-url: https://github.com/vim/vim.git
 src-url: https://github.com/vim/vim/archive/v9.0.0350.tar.gz
 src-sha: 36c211d34beb734fa322975daa170868d7172b1a5f9605257d532cebf956f708

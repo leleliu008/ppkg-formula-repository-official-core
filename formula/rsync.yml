@@ -1,8 +1,8 @@
 summary: Utility that provides fast incremental file transfer
-webpage: https://rsync.samba.org/
+git-url: https://github.com/WayneD/rsync.git
+web-url: https://rsync.samba.org/
 src-url: https://rsync.samba.org/ftp/rsync/rsync-3.2.7.tar.gz
 src-sha: 4e7d9d3f6ed10878c58c5fb724a67dacf4b6aac7340b13e488fb2dc41346f2bb
-git-url: https://github.com/WayneD/rsync.git
 license: GPL-3.0-or-later
-dep-pkg: openssl popt lz4 libzstd zlib xxhash libiconv
+dep-pkg: openssl popt lz4 libzstd xxhash libiconv
 install: configure --disable-simd

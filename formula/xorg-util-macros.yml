@@ -1,5 +1,5 @@
 summary: a set of autoconf macros used to build other xorg packages
-webpage: https://www.x.org/
+web-url: https://www.x.org/
 src-url: https://www.x.org/archive/individual/util/util-macros-1.19.3.tar.bz2
 src-sha: 0f812e6e9d2786ba8f54b960ee563c0663ddbe2434bf24ff193f5feab1f31971
 license: MIT

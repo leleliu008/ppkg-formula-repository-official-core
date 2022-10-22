@@ -1,5 +1,5 @@
 summary: Interpreted, interactive, object-oriented programming language
-webpage: https://www.python.org/
+web-url: https://www.python.org/
 src-url: https://www.python.org/ftp/python/3.10.6/Python-3.10.6.tgz
 src-sha: 848cb06a5caa85da5c45bd7a9221bb821e33fc2bdcba088c127c58fad44e6343
 git-url: https://github.com/python/cpython.git

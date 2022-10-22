@@ -1,5 +1,5 @@
 summary: Optimized BLAS library
-webpage: https://www.openblas.net
+web-url: https://www.openblas.net
 git-url: https://github.com/xianyi/OpenBLAS.git
 src-url: https://github.com/xianyi/OpenBLAS/archive/v0.3.21.tar.gz
 src-sha: f36ba3d7a60e7c8bcc54cd9aaa9b1223dd42eaf02c811791c37e8ca707c241ca

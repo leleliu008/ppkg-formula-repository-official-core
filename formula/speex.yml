@@ -1,5 +1,5 @@
 summary: Audio codec designed for speech
-webpage: https://speex.org
+web-url: https://speex.org
 git-url: https://github.com/xiph/speex.git
 src-url: https://github.com/xiph/speex/archive/refs/tags/Speex-1.2.1.tar.gz
 src-sha: beaf2642e81a822eaade4d9ebf92e1678f301abfc74a29159c4e721ee70fdce0

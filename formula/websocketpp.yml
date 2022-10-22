@@ -1,5 +1,5 @@
 summary: C++ websocket client/server library
-webpage: https://www.zaphoyd.com/projects/websocketpp/
+web-url: https://www.zaphoyd.com/projects/websocketpp/
 git-url: https://github.com/zaphoyd/websocketpp.git
 src-url: https://github.com/zaphoyd/websocketpp/archive/refs/tags/0.8.2.tar.gz
 src-sha: 6ce889d85ecdc2d8fa07408d6787e7352510750daa66b5ad44aacb47bea76755

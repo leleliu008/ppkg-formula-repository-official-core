@@ -1,5 +1,5 @@
 summary: Tools and libraries to manipulate images in many formats
-webpage: https://imagemagick.org/
+web-url: https://imagemagick.org/
 src-url: https://imagemagick.org/archive/releases/ImageMagick-7.1.0-39.tar.xz
 git-url: https://github.com/ImageMagick/ImageMagick.git
 version: 7.1.0.39

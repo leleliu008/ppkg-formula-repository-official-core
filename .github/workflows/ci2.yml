@@ -1,0 +1,40 @@
+name: workflow2
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  ubuntu:
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [18.04, 20.04, 22.04]
+        pkg: [botan,bottom,boxes,brook,broot,bullet,bzip2,c-examples,caddy,catch2,ccache,cereal,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,cjson,clash,cli11,cmake,coreutils,cpio,cppcheck,cppunit,cpu_features,cpuinfo,croc,crosstool-ng,crowbook,ctop]
+
+    runs-on:   ubuntu-latest
+    container: ubuntu:${{ matrix.tag }}
+
+    steps:
+        - uses: actions/checkout@v3
+          with:
+            repository: leleliu008/ppkg-formula-repository
+            path: ppkg-formula-repository
+
+        - run: install -d /opt/ppkg/repos.d
+        - run: mv ppkg-formula-repository /opt/ppkg/repos.d/offical
+
+        - uses: actions/checkout@v3
+          with:
+            repository: leleliu008/ppkg
+
+        - run: bin/ppkg env
+
+        - run: apt -y update
+        - run: apt -y install curl xz-utils g++ gfortran linux-headers-generic
+
+        - run: bin/ppkg setup
+
+        - run: bin/ppkg install ${{ matrix.pkg }}

@@ -1,5 +1,5 @@
 summary: Platform-neutral API for system-level and libc-like functions
-webpage: https://developer.mozilla.org/docs/Mozilla/Projects/NSPR
+web-url: https://developer.mozilla.org/docs/Mozilla/Projects/NSPR
 src-url: https://archive.mozilla.org/pub/nspr/releases/v4.34/src/nspr-4.34.tar.gz
 src-sha: beef011cd15d8f40794984d17014366513cec5719bf1a78f5e8a3e3a1cebf99c
 license: MPL-2.0

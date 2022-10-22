@@ -1,5 +1,5 @@
 summary: C library and utilities for Manipulating POSIX Access Control Lists
-webpage: https://savannah.nongnu.org/projects/acl
+web-url: https://savannah.nongnu.org/projects/acl
 git-url: https://git.savannah.nongnu.org/git/acl.git
 src-url: https://download.savannah.nongnu.org/releases/acl/acl-2.3.1.tar.gz
 src-sha: 760c61c68901b37fdd5eefeeaf4c0c7a26bdfdd8ac747a1edff1ce0e243c11af

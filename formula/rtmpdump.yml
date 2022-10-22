@@ -1,5 +1,5 @@
 summary: a command-line tool for downloading RTMP streaming media
-webpage: https://rtmpdump.mplayerhq.hu
+web-url: https://rtmpdump.mplayerhq.hu
 git-url: https://git.ffmpeg.org/rtmpdump.git
 
 src-url: https://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1.orig.tar.gz

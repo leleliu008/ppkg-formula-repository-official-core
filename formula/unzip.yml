@@ -1,5 +1,5 @@
 summary: a command-line tool for extracting zip-compressed archives(.zip files)
-webpage: https://infozip.sourceforge.io/UnZip.html
+web-url: https://infozip.sourceforge.io/UnZip.html
 
 src-url: https://downloads.sourceforge.net/project/infozip/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz
 src-sha: 036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
@@ -60,7 +60,7 @@ install: |
     EOF
 
         run $CC $CFLAGS $CPPFLAGS -I. -c -o ftime.o ftime.c
-        sed_in_place 's|LFLAGS2="-s"|LFLAGS2="ftime.o -s -static"|' unix/configure
+        sed_in_place 's|^LFLAGS2="|LFLAGS2="ftime.o |' unix/configure
     fi
 
     unset TARGET_COMPILE
@@ -69,6 +69,10 @@ install: |
         TARGET_COMPILE=macosx
     else
         TARGET_COMPILE=generic
+    fi
+
+    if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
+        sed_in_place 's|^LFLAGS2="|LFLAGS2="-static |' unix/configure
     fi
 
     gmakew -f unix/Makefile clean &&

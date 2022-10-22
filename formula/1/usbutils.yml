@@ -1,5 +1,5 @@
 summary: utilities used to display information about USB buses in the system and the devices connected to them
-webpage: http://www.linux-usb.org
+web-url: http://www.linux-usb.org
 git-url: https://github.com/gregkh/usbutils.git
 src-url: https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-014.tar.xz
 src-sha: 3a079cfad60560227b67192482d7813bf96326fcbb66c04254839715f276fc69

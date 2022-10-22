@@ -1,5 +1,5 @@
 summary: Asynchronous event library
-webpage: https://libevent.org/
+web-url: https://libevent.org/
 git-url: https://github.com/libevent/libevent.git
 src-url: https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
 src-sha: 92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb

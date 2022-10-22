@@ -1,5 +1,5 @@
 summary: Diagnostic, instructional, and debugging tool for the Linux kernel
-webpage: https://strace.io/
+web-url: https://strace.io/
 git-url: https://github.com/strace/strace.git
 src-url: https://github.com/strace/strace/releases/download/v5.19/strace-5.19.tar.xz
 src-sha: aa3dc1c8e60e4f6ff3d396514aa247f3c7bf719d8a8dc4dd4fa793be786beca3

@@ -1,5 +1,5 @@
 summary: Object-file caching compiler wrapper
-webpage: https://ccache.dev
+web-url: https://ccache.dev
 git-url: https://github.com/ccache/ccache.git
 src-url: https://github.com/ccache/ccache/releases/download/v4.6.3/ccache-4.6.3.tar.xz
 src-sha: 1e3a251bb112632553b8255a78661fe526c3a16598496d51128c32b218fd8b22

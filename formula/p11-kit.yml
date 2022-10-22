@@ -1,5 +1,5 @@
 summary: Library to load and enumerate PKCS#11 modules
-webpage: https://p11-glue.freedesktop.org
+web-url: https://p11-glue.freedesktop.org
 git-url: https://github.com/p11-glue/p11-kit.git
 src-url: https://github.com/p11-glue/p11-kit/releases/download/0.24.1/p11-kit-0.24.1.tar.xz
 src-sha: d8be783efd5cd4ae534cee4132338e3f40f182c3205d23b200094ec85faaaef8

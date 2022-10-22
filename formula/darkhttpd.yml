@@ -1,5 +1,5 @@
 summary: Small static webserver without CGI
-webpage: https://unix4lyfe.org/darkhttpd/
+web-url: https://unix4lyfe.org/darkhttpd/
 git-url: https://github.com/emikulic/darkhttpd.git
 src-url: https://github.com/emikulic/darkhttpd/archive/v1.13.tar.gz
 src-sha: 1d88c395ac79ca9365aa5af71afe4ad136a4ed45099ca398168d4a2014dc0fc2

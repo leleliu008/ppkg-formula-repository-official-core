@@ -1,5 +1,5 @@
 summary: command-line interface for SQLite
-webpage: https://sqlite.org
+web-url: https://sqlite.org
 src-url: https://sqlite.org/2022/sqlite-autoconf-3390200.tar.gz
 src-sha: 852be8a6183a17ba47cee0bbff7400b7aa5affd283bf3beefc34fcd088a239de
 version: 3.39.2

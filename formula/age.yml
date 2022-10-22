@@ -1,5 +1,5 @@
 summary: Simple, modern, secure file encryption
-webpage: https://filippo.io/age
+web-url: https://filippo.io/age
 git-url: https://github.com/FiloSottile/age.git
 src-url: https://github.com/FiloSottile/age/archive/v1.0.0.tar.gz
 src-sha: 8d27684f62f9dc74014035e31619e2e07f8b56257b1075560456cbf05ddbcfce

@@ -1,5 +1,5 @@
 summary: a Sample Authorization Protocol for X
-webpage: https://www.x.org/
+web-url: https://www.x.org/
 src-url: https://www.x.org/archive/individual/lib/libXau-1.0.10.tar.xz
 src-sha: 8be6f292334d2f87e5b919c001e149a9fdc27005d6b3e053862ac6ebbf1a0c0a
 license: MIT

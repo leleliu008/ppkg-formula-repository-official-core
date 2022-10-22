@@ -1,5 +1,5 @@
 summary: Open video compression format
-webpage: https://www.theora.org
+web-url: https://www.theora.org
 git-url: https://github.com/xiph/theora.git
 src-url: https://github.com/xiph/theora/archive/refs/tags/v1.1.1.tar.gz
 src-sha: 1d5c3b25bbced448f3e741c42df6796e3d5e57136a74bcd68262318290ec2982

@@ -1,5 +1,5 @@
 summary: a command-line tool for spawning and running containers according to the OCI specification
-webpage: https://opencontainers.org/
+web-url: https://opencontainers.org/
 git-url: https://github.com/opencontainers/runc.git
 src-url: https://github.com/opencontainers/runc/archive/refs/tags/v1.1.4.tar.gz
 src-sha: 4f02077432642eebd768fc857318ae7929290b3a3511eb1be338005e360cfa34

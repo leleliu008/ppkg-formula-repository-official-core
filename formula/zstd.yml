@@ -1,5 +1,5 @@
 summary: Zstandard is a real-time compression algorithm
-webpage: https://facebook.github.io/zstd
+web-url: https://facebook.github.io/zstd
 git-url: https://github.com/facebook/zstd.git
 src-url: https://github.com/facebook/zstd/archive/v1.5.2.tar.gz
 src-sha: f7de13462f7a82c29ab865820149e778cbfe01087b3a55b5332707abf9db4a6e

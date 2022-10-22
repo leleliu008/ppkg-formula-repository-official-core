@@ -1,5 +1,5 @@
 summary: Get a file from an HTTP, HTTPS or FTP server
-webpage: https://curl.haxx.se
+web-url: https://curl.haxx.se
 src-url: https://curl.haxx.se/download/curl-7.85.0.tar.bz2
 src-sha: 21a7e83628ee96164ac2b36ff6bf99d467c7b0b621c1f7e317d8f0d96011539c
 git-url: https://github.com/curl/curl.git

@@ -1,5 +1,5 @@
 summary: Open source continuous file synchronization application
-webpage: https://syncthing.net/
+web-url: https://syncthing.net/
 git-url: https://github.com/syncthing/syncthing.git
 src-url: https://github.com/syncthing/syncthing/archive/v1.21.0.tar.gz
 src-sha: ea7506249b407da930fdf8c7ce5f2f74940a2ad20f57d58b1b36d2b63aeebe69

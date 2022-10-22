@@ -1,5 +1,5 @@
 summary: A post-modern modal text editor.
-webpage: https://helix-editor.com/
+web-url: https://helix-editor.com/
 git-url: https://github.com/helix-editor/helix.git
 src-url: https://github.com/helix-editor/helix/releases/download/22.08.1/helix-22.08.1-source.tar.xz
 src-sha: 962cfb913b40b6b5e3896fce5d52590d83fa2e9c35dfba45fdfa26bada54f343

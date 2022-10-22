@@ -1,5 +1,5 @@
 summary: utilities and libraries to read, create and modify ELF binary files
-webpage: https://sourceware.org/elfutils
+web-url: https://sourceware.org/elfutils
 src-url: https://sourceware.org/elfutils/ftp/0.187/elfutils-0.187.tar.bz2
 src-sha: e70b0dfbe610f90c4d1fe0d71af142a4e25c3c4ef9ebab8d2d72b65159d454c8
 git-url: git://sourceware.org/git/elfutils.git

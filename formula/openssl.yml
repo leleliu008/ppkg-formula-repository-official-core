@@ -1,5 +1,5 @@
 summary: Cryptography and SSL/TLS Toolkit
-webpage: https://www.openssl.org/
+web-url: https://www.openssl.org/
 src-url: https://www.openssl.org/source/openssl-3.0.5.tar.gz
 src-sha: aa7d8d9bef71ad6525c55ba11e5f4397889ce49c2c9349dcea6d3e4f0b024a7a
 git-url: https://github.com/openssl/openssl.git

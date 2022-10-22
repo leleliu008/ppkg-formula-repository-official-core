@@ -1,5 +1,5 @@
 summary: A universal runtime for fast, robust and scalable server-side applications.
-webpage: https://lunatic.solutions
+web-url: https://lunatic.solutions
 git-url: https://github.com/lunatic-solutions.git
 src-url: https://github.com/lunatic-solutions/lunatic/archive/refs/tags/v0.10.0.tar.gz
 src-sha: 69554bae268fd399fde67afbdaa9b3d547624dadae021dd9b22dbc6b2ef67553

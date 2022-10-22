@@ -1,5 +1,5 @@
 summary: X.Org Protocol Headers
-webpage: https://www.x.org/
+web-url: https://www.x.org/
 src-url: https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2022.2.tar.gz
 src-sha: da351a403d07a7006d7bdc8dcfc14ddc1b588b38fb81adab9989a8eef605757b
 license: MIT

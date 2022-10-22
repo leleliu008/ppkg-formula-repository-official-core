@@ -1,0 +1,40 @@
+name: workflow3
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  ubuntu:
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [18.04, 20.04, 22.04]
+        pkg: [cue,curlie,cxxopts,darkhttpd,dasel,dash,dav1d,delta,diffutils,distcc,dmalloc,dns2tcp,dnsmap,dog,dos2unix,dua,duf,dufs,dust,ed,eigen,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,faac,faad2,fakeroot,fcp,fd,fdk-aac]
+
+    runs-on:   ubuntu-latest
+    container: ubuntu:${{ matrix.tag }}
+
+    steps:
+        - uses: actions/checkout@v3
+          with:
+            repository: leleliu008/ppkg-formula-repository
+            path: ppkg-formula-repository
+
+        - run: install -d /opt/ppkg/repos.d
+        - run: mv ppkg-formula-repository /opt/ppkg/repos.d/offical
+
+        - uses: actions/checkout@v3
+          with:
+            repository: leleliu008/ppkg
+
+        - run: bin/ppkg env
+
+        - run: apt -y update
+        - run: apt -y install curl xz-utils g++ gfortran linux-headers-generic
+
+        - run: bin/ppkg setup
+
+        - run: bin/ppkg install ${{ matrix.pkg }}

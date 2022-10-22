@@ -1,5 +1,5 @@
 summary: OpenBSD freely-licensed SSH connectivity tools
-webpage: https://www.openssh.com/
+web-url: https://www.openssh.com/
 src-url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.0p1.tar.gz
 src-sha: 03974302161e9ecce32153cfa10012f1e65c8f3750f573a73ab1befd5972a28a
 git-url: https://github.com/openssh/openssh-portable.git

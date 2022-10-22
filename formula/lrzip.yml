@@ -1,5 +1,5 @@
 summary: Compression program with a very high compression ratio
-webpage: http://lrzip.kolivas.org
+web-url: http://lrzip.kolivas.org
 git-url: https://github.com/ckolivas/lrzip.git
 src-url: http://ck.kolivas.org/apps/lrzip/lrzip-0.651.tar.xz
 src-sha: 48bd8decb097c1596c9b3777959cd3e332819434ed77a2823e65aa436f1602f9

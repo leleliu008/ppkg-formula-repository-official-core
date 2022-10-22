@@ -1,5 +1,5 @@
 summary: General-purpose data compression with high compression ratio
-webpage: https://tukaani.org/xz
+web-url: https://tukaani.org/xz
 src-url: https://tukaani.org/xz/xz-5.2.6.tar.gz
 src-sha: a2105abee17bcd2ebd15ced31b4f5eda6e17efd6b10f921a01cda4a44c91b3a0
 git-url: https://github.com/xz-mirror/xz.git
