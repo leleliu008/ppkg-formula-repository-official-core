@@ -16,4 +16,8 @@ install: |
         --without-ngtcp2 \
         --without-quiche \
         --without-librtmp \
-        --without-libidn2
+        --without-libidn2 && {
+        if [ "$NATIVE_OS_KIND" = darwin ] ; then
+            sed_in_place '/^Libs:/s|$| -lCoreFoundation -lSystemConfiguration|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libcurl.pc"
+        fi
+    }
