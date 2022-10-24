@@ -18,6 +18,11 @@ prepare: |
         patch -p1 < ../fix/patches/$patchfile || return 1
     done
 
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        sed_in_place '/-DZMEM/c true' unix/configure &&
+        sed_in_place '/-DNO_/c  true' unix/configure
+    fi
+
 install: |
     gmakew -f unix/Makefile clean &&
     gmakew -f unix/Makefile generic \
@@ -25,7 +30,8 @@ install: |
         CPP="'$CPP'" \
         AS="$AS" \
         AR="$AR" \
-        CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" &&
+        LOCAL_ZIP="'$CFLAGS $CPPFLAGS'" \
+        LFLAGS2="'$LDFLAGS'" &&
     gmakew -f unix/Makefile install \
         prefix="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"
