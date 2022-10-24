@@ -10,6 +10,7 @@ fix-sha: c5c0714a88592f9e02146bfe4a8d26cd9bd97e8d33b1efc8b37784997caa40ed
 
 version: 3.0.11
 license: Info-ZIP
+dep-pkg: libbz2
 binbstd: yes
 
 prepare: |
