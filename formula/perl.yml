@@ -1,5 +1,5 @@
 summary: Highly capable, feature-rich programming language
-web-url: https://www.perl.org
+web-url: https://www.perl.org/
 git-url: https://github.com/perl/perl5.git
 src-url: https://www.cpan.org/src/5.0/perl-5.36.0.tar.xz
 src-sha: 0f386dccbee8e26286404b2cca144e1005be65477979beb9b1ba272d4819bcf0
@@ -8,6 +8,12 @@ license: GPL-1.0-or-later
 binbstd: yes
 install: |
     export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        LIBS='-lpthread -ldl -lm -lc -lutil'
+    else
+        LIBS='-lpthread -ldl -lm -lc -lutil -lcrypt'
+    fi
 
     # https://perldoc.perl.org/Config
     #-Duserelocatableinc \
@@ -22,7 +28,7 @@ install: |
         -Dccflags="'$CFLAGS'" \
         -Dldflags="'$LDFLAGS'" \
         -Dcppflags="'$CPPFLAGS'" \
-        -Dlibs="'-lpthread -ldl -lm -lcrypt -lutil -lc'" \
+        -Dlibs="'$LIBS'" \
         -Dusenm=false \
         -Dusedl=true \
         -Dmake=gmake \
