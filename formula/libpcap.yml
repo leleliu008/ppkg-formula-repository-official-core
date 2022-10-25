@@ -1,13 +1,20 @@
 summary: Packet(TCP/IP) Capture libray
-web-url: https://www.tcpdump.org
+git-url: https://github.com/the-tcpdump-group/libpcap.git
+web-url: https://www.tcpdump.org/
 src-url: https://www.tcpdump.org/release/libpcap-1.10.1.tar.gz
 src-sha: ed285f4accaf05344f90975757b3dbfe772ba41d1c401c2648b7fa45b711bdd4
-git-url: https://github.com/the-tcpdump-group/libpcap.git
 dep-upp: gm4 flex bison
 dep-pkg: openssl
 license: BSD-3-Clause
 
 install: |
+    # Due to freedesktop.org bug 74029, D-Bus capture support is not available on macOS
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        DISABLE_DBUS=OFF
+    else
+        DISABLE_DBUS=ON
+    fi
+
     cmakew \
         -DINET6=ON \
         -DBDEBUG=OFF \
@@ -15,7 +22,7 @@ install: |
         -DDISABLE_USB=OFF \
         -DDISABLE_SEPTEL=OFF \
         -DDISABLE_NETMAP=OFF \
-        -DDISABLE_DBUS=OFF \
+        -DDISABLE_DBUS=$DISABLE_DBUS \
         -DDISABLE_BLUETOOTH=OFF \
         -DDISABLE_DAG=ON \
         -DDISABLE_TC=ON \
