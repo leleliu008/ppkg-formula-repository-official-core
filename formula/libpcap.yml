@@ -10,9 +10,9 @@ license: BSD-3-Clause
 install: |
     # Due to freedesktop.org bug 74029, D-Bus capture support is not available on macOS
     if [ "$NATIVE_OS_KIND" = darwin ] ; then
-        DISABLE_DBUS=OFF
-    else
         DISABLE_DBUS=ON
+    else
+        DISABLE_DBUS=OFF
     fi
 
     cmakew \

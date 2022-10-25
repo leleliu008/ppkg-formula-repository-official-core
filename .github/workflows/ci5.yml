@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow5
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,folly,fortune,fselect,fsmon,fzf,fzy,garble,gawk,gbt,gcc,gd,gdbm]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -43,7 +43,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12, 11]
-        pkg: [PKGLIST]
+        pkg: [fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,folly,fortune,fselect,fsmon,fzf,fzy,garble,gawk,gbt,gcc,gd,gdbm]
 
     runs-on: macos-${{ matrix.tag }}
 

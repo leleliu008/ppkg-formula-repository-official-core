@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow14
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mftrace,mimalloc,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -43,7 +43,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12, 11]
-        pkg: [PKGLIST]
+        pkg: [magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink,mftrace,mimalloc,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch]
 
     runs-on: macos-${{ matrix.tag }}
 

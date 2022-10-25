@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow10
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [libexecinfo,libexif,libglob,libical,libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmd]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -43,7 +43,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12, 11]
-        pkg: [PKGLIST]
+        pkg: [libexecinfo,libexif,libglob,libical,libilbc,libimagequant,libirecovery,libisoburn,libmaxminddb,libmd]
 
     runs-on: macos-${{ matrix.tag }}
 
