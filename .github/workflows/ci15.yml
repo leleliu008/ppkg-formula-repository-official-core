@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow15
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [unrar,unzip,uppm,utf8.h,utfcpp,vala,valgrind,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,wasmer,wasmtime,watchexec,webhook,websocketpp,wget,wolfssl,wuzz,xclip,xh,xmake,xmlto]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -43,7 +43,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12, 11]
-        pkg: [PKGLIST]
+        pkg: [unrar,unzip,uppm,utf8.h,utfcpp,vala,valgrind,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,wasmer,wasmtime,watchexec,webhook,websocketpp,wget,wolfssl,wuzz,xclip,xh,xmake,xmlto]
 
     runs-on: macos-${{ matrix.tag }}
 

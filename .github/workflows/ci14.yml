@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow14
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,szip,taglib,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -43,7 +43,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12, 11]
-        pkg: [PKGLIST]
+        pkg: [srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,szip,taglib,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tig,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,uctags,unbound]
 
     runs-on: macos-${{ matrix.tag }}
 

@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow2
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [botan,bottom,boxes,brook,broot,bullet,bzip2,c-examples,caddy,catch2,ccache,cereal,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,cjson,clash,cli11,cmake,coreutils,cpio,cppcheck,cppunit,cpu_features,cpuinfo,croc,crosstool-ng,crowbook,ctop]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -43,7 +43,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12, 11]
-        pkg: [PKGLIST]
+        pkg: [botan,bottom,boxes,brook,broot,bullet,bzip2,c-examples,caddy,catch2,ccache,cereal,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,cjson,clash,cli11,cmake,coreutils,cpio,cppcheck,cppunit,cpu_features,cpuinfo,croc,crosstool-ng,crowbook,ctop]
 
     runs-on: macos-${{ matrix.tag }}
 
