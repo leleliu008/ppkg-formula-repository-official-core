@@ -51,6 +51,8 @@ jobs:
         ACLOCAL_PATH: /usr/local/share/aclocal
 
     steps:
+        - run: brew uninstall go@1.17
+
         - uses: actions/checkout@v3
           with:
             repository: leleliu008/ppkg-formula-repository-offical-core
