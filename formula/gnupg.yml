@@ -8,7 +8,7 @@ license: GPL-3.0-or-later
 
 prepare: |
     if [ "$NATIVE_OS_KIND" = darwin ] ; then
-        sed_in_place "s|\$(CC_FOR_BUILD)|\$(CC_FOR_BUILD) -isysroot $SYSROOT|" doc/Makefile.in
+        sed_in_place "s|\$(CC_FOR_BUILD)|\$(CC_FOR_BUILD) -isysroot $SDKROOT|" doc/Makefile.in
     fi
 
 install: |
