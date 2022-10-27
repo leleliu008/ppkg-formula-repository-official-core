@@ -7,6 +7,7 @@ license: MIT
 dep-pkg: libiconv zlib python3
 
 install: |
+    export PYTHON="$(command -v python3)"
     configure \
         --with-iconv=$libiconv_INSTALL_DIR \
         --with-zlib \
