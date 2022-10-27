@@ -7,5 +7,6 @@ license: GPL-3.0-or-later
 dep-pkg: libxml2-python3
 bsystem: autogen
 install: |
+    export PYTHON="$(command -v python3)"
     export PYTHONPATH="$(ls -d $libxml2_python3_INSTALL_DIR/lib/python*/site-packages)"
     configure
