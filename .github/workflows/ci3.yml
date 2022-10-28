@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow3
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [cue,curlie,cxxopts,darkhttpd,dasel,dash,dav1d,delta,diffutils,distcc,dmalloc,dns2tcp,dnsmap,dog,dos2unix,dua,duf,dufs,dust,ed,eigen,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,faac,faad2,fakeroot,fcp,fd,fdk-aac]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -44,7 +44,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12, 11]
-        pkg: [PKGLIST]
+        pkg: [cue,curlie,cxxopts,darkhttpd,dasel,dash,dav1d,delta,diffutils,distcc,dmalloc,dns2tcp,dnsmap,dog,dos2unix,dua,duf,dufs,dust,ed,eigen,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,faac,faad2,fakeroot,fcp,fd,fdk-aac]
 
     runs-on: macos-${{ matrix.tag }}
 

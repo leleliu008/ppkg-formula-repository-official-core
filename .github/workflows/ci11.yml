@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow11
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,open264,openal-soft,openblas,opencolorio]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -44,7 +44,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12, 11]
-        pkg: [PKGLIST]
+        pkg: [minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,open264,openal-soft,openblas,opencolorio]
 
     runs-on: macos-${{ matrix.tag }}
 

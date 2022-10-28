@@ -4,14 +4,9 @@ git-url: https://git.code.sf.net/p/giflib/code.git
 src-url: https://downloads.sourceforge.net/project/giflib/giflib-5.2.1.tar.gz
 src-sha: 31da5562f44c5f15d63340a09a4fd62b48c45620cd302f77a6d9acf0077879bd
 
-# Makefile doesn't work on macOS.
-# https://sourceforge.net/p/giflib/bugs/133/
-fix-url: https://sourceforge.net/p/giflib/bugs/_discuss/thread/4e811ad29b/c323/attachment/Makefile.patch
-fix-sha: a94e7bdd8840a31cecacc301684dfdbf7b98773ad824aeaab611fabfdc513036
-
 parallel: no
 binbstd: yes
 install: |
-    patch -p0 < ../fix/Makefile.patch &&
+    sed_in_place 's#$(MAKE) -C doc#@mkdir -p doc \&\& ([ -f doc/giflib.1 ] || touch doc/giflib.1)#' Makefile
     gmakew clean &&
     gmakew install PREFIX=$PACKAGE_INSTALL_DIR CC=$CC AR=$AR CFLAGS="'$CFLAGS'"
