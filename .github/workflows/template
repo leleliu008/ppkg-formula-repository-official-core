@@ -29,9 +29,9 @@ jobs:
         - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/bin/ppkg
         - run: chmod a+x ppkg
 
-        - run: ./ppkg env
-
         - run: ./ppkg setup
+
+        - run: ./ppkg env
 
         - run: install -d /opt/ppkg/repos.d
         - run: mv ppkg-formula-repository-offical-core /opt/ppkg/repos.d/offical-core
@@ -61,9 +61,9 @@ jobs:
         - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/bin/ppkg
         - run: chmod a+x ppkg
 
-        - run: ./ppkg env
-
         - run: ./ppkg setup --use-system-package-manager
+
+        - run: ./ppkg env
 
         - run: install -d /opt/ppkg/repos.d
         - run: mv ppkg-formula-repository-offical-core /opt/ppkg/repos.d/offical-core
