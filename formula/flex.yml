@@ -6,7 +6,7 @@ license: BSD-2-Clause
 dep-pkg: gm4
 install: |
     # https://github.com/westes/flex/issues/428
-    if [ "$NATIVE_OS_TYPE" = ubuntu ] && version_match "$NATIVE_OS_VERS" le 18.04 ; then
+    if [ "$NATIVE_OS_NAME" = Ubuntu ] && version_match "$NATIVE_OS_VERS" le 18.04 ; then
         export CFLAGS="$(printf '%s\n' "$CFLAGS" | sed 's|-Os||')"
         export CFLAGS="$CFLAGS -g -O2 -D_GNU_SOURCE"
     fi

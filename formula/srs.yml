@@ -12,6 +12,12 @@ binbstd: yes
 install: |
     export SRS_EXTRA_FLAGS="$CFLAGS $CPPFLAGS"
     
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        CONFIGURE_EXTRA_ARGS=--osx
+    else
+        CONFIGURE_EXTRA_ARGS=
+    fi
+
     run ./configure \
         --prefix=$PACKAGE_INSTALL_DIR \
         --static \
@@ -19,7 +25,7 @@ install: |
         --cxx=$CXX \
         --ar=$AR \
         --ld=$LD \
-        --randlib=$RANLIB &&
+        --randlib=$RANLIB $CONFIGURE_EXTRA_ARGS &&
     gmakew clean &&
     gmakew &&
     gmakew install
