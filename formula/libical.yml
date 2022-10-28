@@ -1,8 +1,8 @@
 summary: Implementation of iCalendar protocols and data formats
 web-url: https://libical.github.io/libical
 git-url: https://github.com/libical/libical.git
-src-url: https://github.com/libical/libical/releases/download/v3.0.14/libical-3.0.14.tar.gz
-src-sha: 4284b780356f1dc6a01f16083e7b836e63d3815e27ed0eaaad684712357ccc8f
+src-url: https://github.com/libical/libical/releases/download/v3.0.16/libical-3.0.16.tar.gz
+src-sha: b44705dd71ca4538c86fb16248483ab4b48978524fb1da5097bd76aa2e0f0c33
 license: LGPL-2.1-or-later
 dep-pkg: icu4c libxml2 glib
 
@@ -22,7 +22,4 @@ install: |
         -DSTATIC_ONLY=OFF \
         -DTHREAD_SANITIZER=OFF \
         -DUSE_BUILTIN_TZDATA=OFF \
-        -DWITH_CXX_BINDINGS=ON \
-        -DICU_INCLUDE_DIR=$icu4c_INCLUDE_DIR \
-        -DICU_LIBRARY=$icu4c_LIBRARY_DIR/libicuuc.a \
-        -DICU_I18N_LIBRARY=$icu4c_LIBRARY_DIR/libicui18n.a
+        -DWITH_CXX_BINDINGS=ON

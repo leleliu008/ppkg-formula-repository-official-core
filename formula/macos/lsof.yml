@@ -3,7 +3,6 @@ web-url: https://people.freebsd.org/~abe
 git-url: https://github.com/lsof-org/lsof.git
 src-url: https://github.com/lsof-org/lsof/archive/4.96.4.tar.gz
 src-sha: b5a052cac8d6b2726bbb1de2b98c6d9204c7619263fb63e9b6b1bd6bbb37bf14
-dep-pkg: libtirpc
 license: Zlib
 
 bsystem: gmake
@@ -17,7 +16,7 @@ install: |
     export LSOF_CFGL="$LDFLAGS"
     
     run ./Configure -clean &&
-    run ./Configure -n linux &&
+    run ./Configure -n darwin &&
     gmakew &&
     run install_bins lsof &&
     run install_mans Lsof.8
