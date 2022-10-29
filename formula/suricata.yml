@@ -1,12 +1,17 @@
 summary: Network IDS, IPS, and security monitoring engine
 web-url: https://suricata-ids.org
 git-url: https://github.com/OISF/suricata.git
-src-url: https://www.openinfosecfoundation.org/download/suricata-6.0.6.tar.gz
-src-sha: 00173634fa76aee636e38a90b1c02616c903e42173107d47b4114960b5fbe839
+src-url: https://www.openinfosecfoundation.org/download/suricata-6.0.8.tar.gz
+src-sha: 253ce3cc0df967ad9371d6ea8d4eed91ec593df3ed04e08229c7cf85780c91a3
 license: GPL-2.0-or-later
 dep-pkg: jansson file libnet libpcap libyaml lz4 pcre libiconv
 bsystem: configure cargo
 install: |
     export CARGO_BUILD_TARGET="$RUST_TARGET"
     export RUST_TARGET="--target $RUST_TARGET"
+
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        export LIBS=-liconv
+    fi
+
     configure --enable-pie
