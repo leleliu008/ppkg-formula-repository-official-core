@@ -25,4 +25,6 @@ prepare: |
     sed_in_place '1i #include <string.h>' src/aakbdreg.c   &&
     sed_in_place '1i #include <string.h>' src/aamoureg.c
 
+    export CPPFLAGS="$CPPFLAGS -include stdlib.h -include string.h"
+
 install: configure --without-x --with-ncurses=$ncurses_INSTALL_DIR
