@@ -8,6 +8,7 @@ license: Zlib
 bsystem: gmake
 binbstd: yes
 install: |
+    export LSOF_INCLUDE="$SDKROOT/usr/include"
     export LSOF_MAKE=gmake
     export LSOF_CC="$CC"
     export LSOF_AR="$AR rsc"
