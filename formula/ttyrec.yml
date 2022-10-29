@@ -4,7 +4,14 @@ src-url: http://0xcc.net/ttyrec/ttyrec-1.0.8.tar.gz
 src-sha: ef5e9bf276b65bb831f9c2554cd8784bd5b4ee65353808f82b7e2aef851587ec
 
 binbstd: yes
-prepare: sed_in_place 's|union wait status|int status|' ttyrec.c
+prepare: |
+    sed_in_place 's|union wait status|int status|' ttyrec.c
+
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        sed_in_place 's|libutil\.h|util.h' ttyrec.c
+        export CPPFLAGS="$CPPFLAGS -DHAVE_openpty -Dset_progname=setprogname -include signal.h"
+    fi
+
 install: |
     gmakew clean &&
     gmakew CC=$CC CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" &&
