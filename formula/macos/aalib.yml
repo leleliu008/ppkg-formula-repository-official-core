@@ -1,0 +1,22 @@
+summary: Portable ASCII art graphics library
+web-url: https://aa-project.sourceforge.io/aalib/
+
+src-url: https://downloads.sourceforge.net/project/aa-project/aa-lib/1.4rc5/aalib-1.4rc5.tar.gz
+src-sha: fbddda9230cf6ee2a4f5706b4b11e2190ae45f5eda1f0409dc4f99b35e0a70ee
+
+fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/6e23dfb/aalib/1.4rc5.patch
+fix-sha: 54aeff2adaea53902afc2660afb9534675b3ea522c767cbc24a5281080457b2c
+
+license: GPL-2.0-or-later
+dep-pkg: ncurses libtool
+bsystem: autotools
+
+prepare: |
+    run "patch -p1 < ../fix/1.4rc5.patch" &&
+    run autoreconf -ivf &&
+    sed_in_place '203c return 0;'         src/aalinuxkbd.c &&
+    sed_in_place '1i #include <stdlib.h>' src/aalinuxkbd.c &&
+    sed_in_place 's|exit(1)|return 1|'    src/aasavefont.c &&
+    sed_in_place 's|exit(1)|return 1|'    src/aainfo.c
+
+install: configure --without-x --with-ncurses=$ncurses_INSTALL_DIR
