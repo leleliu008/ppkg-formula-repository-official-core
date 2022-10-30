@@ -13,17 +13,17 @@ bsystem: autotools
 
 prepare: |
     run "patch -p1 < ../fix/1.4rc5.patch" &&
-    run autoreconf -ivf &&
-    sed_in_place '203c return 0;'         src/aalinuxkbd.c &&
-    sed_in_place '1i #include <stdlib.h>' src/aalinuxkbd.c &&
-    sed_in_place 's|exit(1)|return 1|'    src/aasavefont.c &&
-    sed_in_place 's|exit(1)|return 1|'    src/aainfo.c     &&
-    sed_in_place 's|exit(1)|return 1|'    src/aatest.c     &&
-    sed_in_place 's|exit(2)|return 2|'    src/aatest.c     &&
-    sed_in_place '1i #include <string.h>' src/aatest.c     &&
-    sed_in_place '1i #include <string.h>' src/aaregist.c   &&
-    sed_in_place '1i #include <string.h>' src/aakbdreg.c   &&
-    sed_in_place '1i #include <string.h>' src/aamoureg.c
+    run autoreconf -ivf
+    #sed_in_place '203c return 0;'         src/aalinuxkbd.c &&
+    #sed_in_place '1i #include <stdlib.h>' src/aalinuxkbd.c &&
+    #sed_in_place 's|exit(1)|return 1|'    src/aasavefont.c &&
+    #sed_in_place 's|exit(1)|return 1|'    src/aainfo.c     &&
+    #sed_in_place 's|exit(1)|return 1|'    src/aatest.c     &&
+    #sed_in_place 's|exit(2)|return 2|'    src/aatest.c     &&
+    #sed_in_place '1i #include <string.h>' src/aatest.c     &&
+    #sed_in_place '1i #include <string.h>' src/aaregist.c   &&
+    #sed_in_place '1i #include <string.h>' src/aakbdreg.c   &&
+    #sed_in_place '1i #include <string.h>' src/aamoureg.c
 
     export CPPFLAGS="$CPPFLAGS -include stdlib.h -include string.h"
 
