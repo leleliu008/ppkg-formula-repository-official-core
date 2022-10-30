@@ -6,6 +6,6 @@ src-sha: 7bf5a8a28cc69bcfa8cb214f2c3095703c6b73ac5fba4d5480c205331d9494df
 dep-pkg: libpng libtiff libjpeg-turbo giflib
 license: BSD-3-Clause
 
-ldflags: -lz
+#ldflags: -lz
 prepare: sed_in_place 's|CMAKE_INSTALL_DATADIR|CMAKE_INSTALL_LIBDIR|' CMakeLists.txt
 install: cmakew -DWEBP_LINK_STATIC=ON
