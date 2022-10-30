@@ -5,4 +5,9 @@ src-sha: 110ee6be3a5d02b32803a91e480cbfc9d423ef72e0830703fc0bc97b9569923f
 license: GPL-2.0-or-later
 dep-pkg: glib popt readline
 binbstd: yes
-install: configure --disable-gui
+install: |
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        # https://sourceforge.net/p/gpsim/bugs/245/
+        sed_in_place '/error\.h/d' src/modules.cc
+    fi
+    configure --disable-gui
