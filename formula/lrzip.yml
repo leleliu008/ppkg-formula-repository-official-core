@@ -3,6 +3,11 @@ web-url: http://lrzip.kolivas.org
 git-url: https://github.com/ckolivas/lrzip.git
 src-url: http://ck.kolivas.org/apps/lrzip/lrzip-0.651.tar.xz
 src-sha: 48bd8decb097c1596c9b3777959cd3e332819434ed77a2823e65aa436f1602f9
-dep-pkg: zlib libbz2 lz4 lzo perl
 license: GPL-2.0-or-later
+dep-pkg: zlib libbz2 lz4 lzo libtool
+bsystem: autotools
+prepare: |
+    sed_in_place 's|SUBDIRS = C ASM/x86|SUBDIRS = C|' lzma/Makefile.am
+    run autoreconf -ivf
+
 install: configure --disable-asm
