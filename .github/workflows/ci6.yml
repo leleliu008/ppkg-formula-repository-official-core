@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow6
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [mftrace,mimalloc,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,open264,openal-soft,openblas,opencolorio,openfst,openlibm,openmpi,p7zip,packcc,patch,patchelf,pget,physfs,pigz,pkg-config,pkgconf,plog,pngquant,poco,procps,procs,progress,proj,proot]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -44,7 +44,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [mftrace,mimalloc,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,open264,openal-soft,openblas,opencolorio,openfst,openlibm,openmpi,p7zip,packcc,patch,patchelf,pget,physfs,pigz,pkg-config,pkgconf,plog,pngquant,poco,procps,procs,progress,proj,proot]
 
     runs-on: macos-${{ matrix.tag }}
 

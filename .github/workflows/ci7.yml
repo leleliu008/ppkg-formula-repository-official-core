@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow7
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [pup,putty,pybind11,qpdf,quiche,quickjs,ragel,rang,rapidjson,rclone,re2c,redis,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,rust-analyzer,sassc,scc,sccache,sd,shc,shell2http,shiori,silicon,sl,soundtouch,srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,szip,taglib,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tig,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -44,7 +44,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [pup,putty,pybind11,qpdf,quiche,quickjs,ragel,rang,rapidjson,rclone,re2c,redis,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtmpdump,rtorrent,rust-analyzer,sassc,scc,sccache,sd,shc,shell2http,shiori,silicon,sl,soundtouch,srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,szip,taglib,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,tig,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif]
 
     runs-on: macos-${{ matrix.tag }}
 

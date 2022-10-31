@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow5
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [libsamplerate,libseccomp,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libunwind,libupnp,libuvc,libvpx,libwebm,libwordexp,libxcrypt,libyuv,lighttpd,lima,links,livego,llhttp,lm-sensors,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -44,7 +44,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [libsamplerate,libseccomp,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libunwind,libupnp,libuvc,libvpx,libwebm,libwordexp,libxcrypt,libyuv,lighttpd,lima,links,livego,llhttp,lm-sensors,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lychee,lynx,lzip,lzop,magic_enum,mcfly,md4c,mdbook,mediainfo,mesalink]
 
     runs-on: macos-${{ matrix.tag }}
 

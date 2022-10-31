@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow8
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [ttyrec,tweego,uctags,unbound,unrar,unzip,uppm,utf8.h,utfcpp,vala,valgrind,vde,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,wasmer,wasmtime,watchexec,webhook,websocketpp,wget,wolfssl,wuzz,xclip,xh,xmake,xmlto,xorriso,xpup,xvid,xxd,xz,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -44,7 +44,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [ttyrec,tweego,uctags,unbound,unrar,unzip,uppm,utf8.h,utfcpp,vala,valgrind,vde,vegeta,vim,virustotal-cli,vsftpd,wabt,wasm3,wasmer,wasmtime,watchexec,webhook,websocketpp,wget,wolfssl,wuzz,xclip,xh,xmake,xmlto,xorriso,xpup,xvid,xxd,xz,yasm,youtubedr,yq,yyjson,zeromq,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
 
     runs-on: macos-${{ matrix.tag }}
 

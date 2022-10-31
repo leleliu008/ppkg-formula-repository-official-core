@@ -1,0 +1,7 @@
+summary: Linux virtual machines
+git-url: https://github.com/lima-vm/lima.git
+src-url: https://github.com/lima-vm/lima/archive/v0.13.0.tar.gz
+src-sha: 2df48d219bd8f67a3d7cfe43770f768aeb20a1b2242aaba18c58d441d5bd0d0e
+license: Apache-2.0
+dep-pkg: golang qemu
+install: gmakew clean binaries VERSION=$PACKAGE_VERSION

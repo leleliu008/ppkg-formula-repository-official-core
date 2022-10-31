@@ -1,0 +1,7 @@
+summary: Multi-platform, multi-architecture disassembly framework
+web-url: https://www.capstone-engine.org/
+git-url: https://github.com/capstone-engine/capstone.git
+src-url: https://github.com/capstone-engine/capstone/archive/4.0.2.tar.gz
+src-sha: 7c81d798022f81e7507f1a60d6817f63aa76e489aa4e7055255f21a22f5e526a
+license: BSD-3-Clause
+bsystem: cmake
