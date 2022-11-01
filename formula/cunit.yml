@@ -15,12 +15,17 @@ prepare: |
     sed_in_place 's/install-data-am: install-dochdrDATA/install-data-am: /' doc/headers/Makefile.in
 
 install: |
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        CONFIGURE_EXTRA_ARGS=--disable-curses
+    else
+        CONFIGURE_EXTRA_ARGS=--enable-curses
+    fi
+
     configure \
         --disable-examples \
         --disable-test \
         --enable-basic \
-        --enable-curses \
         --enable-console \
         --enable-memtrace \
-        --enable-automated &&
+        --enable-automated $CONFIGURE_EXTRA_ARGS &&
     mv "$PACKAGE_INSTALL_DIR/doc" "$PACKAGE_INSTALL_DIR/share/"
