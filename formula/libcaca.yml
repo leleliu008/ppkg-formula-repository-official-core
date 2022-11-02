@@ -12,6 +12,7 @@ install: |
         --disable-csharp \
         --disable-python \
         --disable-slang \
+        --disable-cocoa \
         --disable-java \
         --disable-ruby \
         --disable-x11 \
