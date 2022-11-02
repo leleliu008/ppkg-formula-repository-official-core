@@ -12,7 +12,7 @@ install: |
     fi
 
     if [ "$NATIVE_OS_KIND" = darwin ] ; then
-    #export LDFLAGS="$LDFLAGS -Wl,-undefined -Wl,dynamic_lookup"
+        export LDFLAGS="$LDFLAGS -Wl,-undefined -Wl,dynamic_lookup"
         export ac_cv_func_reallocarray=no
     fi
 
