@@ -26,6 +26,8 @@ prepare: |
 
             set(TIFF_LIBRARIES )
 
+            message("PKG_CONFIG_TIFF_LINK_LIBRARIES=\${PKG_CONFIG_TIFF_LINK_LIBRARIES}")
+
             foreach(item \${PKG_CONFIG_TIFF_LINK_LIBRARIES})
                 # https://sourceware.org/bugzilla/show_bug.cgi?id=21264
                     if(item MATCHES ".*libm\\.a")
