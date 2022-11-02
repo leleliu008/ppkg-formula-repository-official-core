@@ -11,4 +11,8 @@ install: |
         export CFLAGS="$CFLAGS -g -O2 -D_GNU_SOURCE"
     fi
 
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        export LDFLAGS="$LDFLAGS -Wl,-undefined -Wl,dynamic_lookup"
+    fi
+
     configure --enable-warnings
