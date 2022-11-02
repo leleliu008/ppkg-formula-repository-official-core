@@ -5,8 +5,6 @@ src-url: https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.14
 src-sha: dcbeb84c9c74bbfdb133d535fe1c7bedc9f2221a8daf3914b984c44c520e9bac
 dep-pkg: gettext libiconv util-linux json-c expat freetype2-with-harfbuzz gperf
 license: MIT
-
-#ldflags: -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng -lharfbuzz -lglib-2.0 -liconv -lintl -lpcre -lfreetype
 install: |
     configure \
         --enable-iconv \

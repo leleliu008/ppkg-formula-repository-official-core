@@ -9,6 +9,7 @@ dep-pkg: libedit
 install: |
     configure \
         --with-libedit=$libedit_INSTALL_DIR \
+        --disable-static \
         --enable-glob=no \
         --enable-test-workaround=no \
         --enable-fnmatch \
