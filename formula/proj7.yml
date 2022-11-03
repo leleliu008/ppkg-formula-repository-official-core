@@ -30,7 +30,7 @@ prepare: |
                 # https://sourceware.org/bugzilla/show_bug.cgi?id=21264
                     if(item MATCHES ".*libm\\.a")
                 elseif(item MATCHES ".*libpthread\\.a")
-                else()
+                elseif(item MATCHES "/.*")
                     get_filename_component(LIBRARIE_FILENAME \${item} NAME)
 
                     if (NOT TARGET  TIFF::\${LIBRARIE_FILENAME})
