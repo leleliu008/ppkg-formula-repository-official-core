@@ -1,0 +1,72 @@
+name: workflow6
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  ubuntu:
+    if: ${{ false }}
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [18.04, 20.04, 22.04]
+        pkg: [mesalink,mftrace,mimalloc,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,open264,openal-soft,openblas,opencolorio,openfst,openlibm,openmpi,p7zip,packcc,patch,patchelf,pget,physfs,pigz,pkg-config,pkgconf,plog,pngquant,poco,procps,procs,progress,proj,proot]
+
+    runs-on:   ubuntu-latest
+    container: ubuntu:${{ matrix.tag }}
+
+    steps:
+        - uses: actions/checkout@v3
+          with:
+            repository: leleliu008/ppkg-formula-repository-offical-core
+            path: ppkg-formula-repository-offical-core
+
+        - run: apt -y update
+        - run: apt -y install curl xz-utils g++ gfortran linux-headers-generic
+
+        - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/bin/ppkg
+        - run: chmod a+x ppkg
+
+        - run: ./ppkg setup
+
+        - run: ./ppkg env
+
+        - run: install -d /opt/ppkg/repos.d
+        - run: mv ppkg-formula-repository-offical-core /opt/ppkg/repos.d/offical-core
+
+        - run: ./ppkg install ${{ matrix.pkg }}
+
+  macos:
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [12]
+        pkg: [mesalink,mftrace,mimalloc,miniz,minizip-ng,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,open264,openal-soft,openblas,opencolorio,openfst,openlibm,openmpi,p7zip,packcc,patch,patchelf,pget,physfs,pigz,pkg-config,pkgconf,plog,pngquant,poco,procps,procs,progress,proj,proot]
+
+    runs-on: macos-${{ matrix.tag }}
+
+    env:
+        ACLOCAL_PATH: /usr/local/share/aclocal
+
+    steps:
+        - run: brew uninstall go@1.17
+
+        - uses: actions/checkout@v3
+          with:
+            repository: leleliu008/ppkg-formula-repository-offical-core
+            path: ppkg-formula-repository-offical-core
+
+        - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/bin/ppkg
+        - run: chmod a+x ppkg
+
+        - run: ./ppkg setup --use-system-package-manager
+
+        - run: ./ppkg env
+
+        - run: install -d /opt/ppkg/repos.d
+        - run: mv ppkg-formula-repository-offical-core /opt/ppkg/repos.d/offical-core
+
+        - run: ./ppkg install ${{ matrix.pkg }}

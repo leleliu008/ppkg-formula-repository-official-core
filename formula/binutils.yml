@@ -17,6 +17,8 @@ install: |
         --disable-werror \
         --disable-nls \
         --enable-gold \
+        --enable-64-bit-bfd \
+        --enable-plugins \
         --enable-interwork \
         --enable-multilib \
         --enable-targets=all
