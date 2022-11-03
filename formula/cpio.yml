@@ -4,4 +4,8 @@ web-url: https://www.gnu.org/software/cpio
 src-url: https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2
 src-sha: eab5bdc5ae1df285c59f2a4f140a98fc33678a0bf61bdba67d9436ae26b46f6d
 license: GPL-3.0-or-later
-install: configure --disable-mt
+install: |
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        export CFLAGS="$CFLAGS -fcommon"
+    fi
+    configure --disable-mt
