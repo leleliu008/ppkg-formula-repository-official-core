@@ -5,7 +5,7 @@ src-url: https://github.com/libical/libical/releases/download/v3.0.16/libical-3.
 src-sha: b44705dd71ca4538c86fb16248483ab4b48978524fb1da5097bd76aa2e0f0c33
 license: LGPL-2.1-or-later
 dep-pkg: icu4c libxml2 glib
-
+prepare: sed_in_place 's|_pc_glib_LDFLAGS|_pc_glib_LINK_LIBRARIES|' cmake/modules/FindGLib.cmake
 install: |
     cmakew \
         -DPACKAGE_DUMPER=OFF \
