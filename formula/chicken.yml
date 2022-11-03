@@ -9,8 +9,8 @@ parallel: no
 binbstd: yes
 install: |
     case $NATIVE_OS_KIND in
-        linux) PLATFORM=linux ;;
-        macos) PLATFORM=macosx;;
+        linux)  PLATFORM=linux ;;
+        darwin) PLATFORM=macosx;;
     esac
 
     gmakew clean &&
