@@ -7,9 +7,10 @@ license: GPL-2.0-only
 dep-pkg: pcre2 libunistring
 dep-upp: gm4 flex bison
 binbstd: yes
-prepare: sed_in_place 's|STRIP=true||' src/Makefile
 install: |
-    export CPPFLAGS="$CPPFLAGS -I. -I../src"
+    sed_in_place 's|STRIP=true||' src/Makefile
+
+    export CPPFLAGS="$CPPFLAGS -I. -I../src -include string.h"
 
     gmakew clean &&
     gmakew CC=$CC CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
