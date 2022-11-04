@@ -5,6 +5,7 @@ src-sha: f21accdadb1bb328ea3f8a13fc34d715baac6e2db66065898346322c725754d3
 license: TCL BSD-3-Clause Beerware
 dep-pkg: libtool
 bsystem: autotools
+binsrcd: yes
 prepare: |
     if [ "$NATIVE_OS_KIND" = darwin ] ; then
         sed_in_place '$i void createIdentifierRef(_YangNode *node, char* prefix, char* ident);' lib/yang-data.h &&
