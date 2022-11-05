@@ -7,7 +7,7 @@ dep-pkg: libpng
 dep-upp: nasm
 install: |
     cmakew \
-        -DENABLE_STATIC=ON \
+        -DENABLE_STATIC=OFF \
         -DENABLE_SHARED=ON \
         -DPNG_SUPPORTED=ON \
         -DWITH_JAVA=OFF \
