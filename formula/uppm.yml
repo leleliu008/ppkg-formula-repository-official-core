@@ -3,10 +3,4 @@ git-url: https://github.com/leleliu008/uppm.git
 #src-url: dir:///home/leleliu008/uppm
 license: Apache-2.0
 dep-pkg: curl libgit2 libarchive libyaml jansson
-
-install: |
-    if [ "$NATIVE_OS_LIBC" = musl ] ; then
-        cmakew -DBUILD_STATICALLY_LINKED_EXECUTABLE=ON
-    else
-        cmakew -DBUILD_STATICALLY_LINKED_EXECUTABLE=OFF
-    fi
+install: cmakew -DFIND_STATIC_LIBS=ON
