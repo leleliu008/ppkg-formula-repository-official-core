@@ -9,7 +9,7 @@ fix-sha: 8c0ec267c62a91fe6c21d43467fee736fb5431bd9e604dc930cc71048f4e3452
 
 license: GPL-3.0-or-later
 dep-upp: yasm gm4
-
+dep-pkg: libtool
 bsystem: autotools
 
 prepare: |
