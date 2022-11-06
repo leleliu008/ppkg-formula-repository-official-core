@@ -1,0 +1,7 @@
+summary: C language header files for the OpenCL API
+web-url: https://www.khronos.org/registry/OpenCL/
+git-url: https://github.com/KhronosGroup/OpenCL-Headers.git
+src-url: https://github.com/KhronosGroup/OpenCL-Headers/archive/refs/tags/v2022.09.30.tar.gz
+src-sha: 0ae857ecb28af95a420c800b21ed2d0f437503e104f841ab8db249df5f4fbe5c
+license: Apache-2.0
+bsystem: cmake
