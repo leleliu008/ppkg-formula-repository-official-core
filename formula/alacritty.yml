@@ -1,0 +1,8 @@
+summary: GPU-accelerated terminal emulator
+webpage: https://alacritty.org/
+git-url: https://github.com/alacritty/alacritty.git
+src-url: https://github.com/alacritty/alacritty/archive/refs/tags/v0.11.0.tar.gz
+src-sha: 0fb3370c662f5b87d1b9a487aef999195212b192e08f6f68a572fed8fd637e07
+license: Apache-2.0
+dep-pkg: cmake python3 fontconfig freetype2
+bsystem: cargo

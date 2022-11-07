@@ -1,8 +1,8 @@
 summary: Interpreted, interactive, object-oriented programming language
-web-url: https://www.python.org/
-src-url: https://www.python.org/ftp/python/3.10.6/Python-3.10.6.tgz
-src-sha: 848cb06a5caa85da5c45bd7a9221bb821e33fc2bdcba088c127c58fad44e6343
 git-url: https://github.com/python/cpython.git
+web-url: https://www.python.org/
+src-url: https://www.python.org/ftp/python/3.10.8/Python-3.10.8.tgz
+src-sha: f400c3fb394b8bef1292f6dc1292c5fadc3533039a5bc0c3e885f3e16738029a
 dep-pkg: expat libffi openssl sqlite libbz2
 license: Python-2.0
 
