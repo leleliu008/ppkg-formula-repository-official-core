@@ -20,5 +20,6 @@ install: |
         --with-ensurepip=yes \
         --with-lto \
         --enable-ipv6 \
+        --enable-shared \
         --enable-loadable-sqlite-extensions \
         --disable-profiling
