@@ -6,5 +6,5 @@ license: GPL-2.0-only
 binbstd: yes
 install: |
     gmakew clean &&
-    gmakew CC=$CC &&
+    gmakew CC=$CC ARCH_FLAGS="'-arch $NATIVE_OS_ARCH'" &&
     gmakew install PREFIX=$PACKAGE_INSTALL_DIR
