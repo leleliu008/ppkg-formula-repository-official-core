@@ -24,7 +24,7 @@ install: |
         cat > "$LDCMD" <<EOF
         #!/bin/sh
         $CC \$(printf '%s\n' "\$*" | sed -e 's|-lssl|./libssl.a|g' -e 's|-lcrypto|./libcrypto.a|g')
-        EOF
+    EOF
 
         chmod +x "$LDCMD"
     fi
