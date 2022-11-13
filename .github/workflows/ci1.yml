@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow1
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [aalib,acl,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,b3sum,bandwhich,base64,basis_universal,bat,bc,bcrypt]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [aalib,acl,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,b3sum,bandwhich,base64,basis_universal,bat,bc,bcrypt]
 
     runs-on: macos-${{ matrix.tag }}
 

@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow8
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [gtar,gumbo-parser,gzip,hashcat,helix,helm,hexyl,htop,htslib,hugo,hunspell,hunter,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [gtar,gumbo-parser,gzip,hashcat,helix,helm,hexyl,htop,htslib,hugo,hunspell,hunter,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket]
 
     runs-on: macos-${{ matrix.tag }}
 

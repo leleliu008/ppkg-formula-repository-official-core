@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow17
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [open264,openal-soft,openblas,opencolorio,openfst,openlibm,openmpi,openslide,p7zip,packcc,patch,patchelf,pget,physfs,pigz]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [open264,openal-soft,openblas,opencolorio,openfst,openlibm,openmpi,openslide,p7zip,packcc,patch,patchelf,pget,physfs,pigz]
 
     runs-on: macos-${{ matrix.tag }}
 

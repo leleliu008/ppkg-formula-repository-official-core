@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow12
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [libnl,libnsl,libphonenumber,libpipeline,libqalculate,libraqm,librasterlite,libraw,libressl,librsync,libsamplerate,libseccomp,libsigsegv,libslirp,libsmi]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [libnl,libnsl,libphonenumber,libpipeline,libqalculate,libraqm,librasterlite,libraw,libressl,librsync,libsamplerate,libseccomp,libsigsegv,libslirp,libsmi]
 
     runs-on: macos-${{ matrix.tag }}
 

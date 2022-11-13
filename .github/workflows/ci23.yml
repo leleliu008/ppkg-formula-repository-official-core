@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow23
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [xorg-libxdamage,xorg-libxxf86vm,xorg-xinput,xorriso,xpup,xvid,xxd,xz,yasm,youtubedr,yq,yyjson]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [xorg-libxdamage,xorg-libxxf86vm,xorg-xinput,xorriso,xpup,xvid,xxd,xz,yasm,youtubedr,yq,yyjson]
 
     runs-on: macos-${{ matrix.tag }}
 

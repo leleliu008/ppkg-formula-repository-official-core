@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow9
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jsoncpp,jump,k9s,kcp,kcptun,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao,libass]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jsoncpp,jump,k9s,kcp,kcptun,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao,libass]
 
     runs-on: macos-${{ matrix.tag }}
 

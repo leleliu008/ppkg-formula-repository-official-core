@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow2
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [18.04, 20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [bear,berkeley-db,binaryen,bind,binocle,bison,bitcoin,bk,blake3,bmake,botan,bottom,boxes,brook,broot,bullet,bzip2,c-examples,caddy,capstone,catch2,catimg,ccache,cdrtools]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [bear,berkeley-db,binaryen,bind,binocle,bison,bitcoin,bk,blake3,bmake,botan,bottom,boxes,brook,broot,bullet,bzip2,c-examples,caddy,capstone,catch2,catimg,ccache,cdrtools]
 
     runs-on: macos-${{ matrix.tag }}
 
