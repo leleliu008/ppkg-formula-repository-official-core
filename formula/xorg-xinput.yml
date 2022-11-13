@@ -1,0 +1,7 @@
+summary: Utility to configure and test X input devices
+git-url: https://gitlab.freedesktop.org/xorg/app/xinput.git
+src-url: https://www.x.org/pub/individual/app/xinput-1.6.3.tar.bz2
+src-sha: 35a281dd3b9b22ea85e39869bb7670ba78955d5fec17c6ef7165d61e5aeb66ed
+license: MIT
+dep-pkg: xorg-libxi xorg-libxinerama xorg-libxrandr
+bsystem: configure

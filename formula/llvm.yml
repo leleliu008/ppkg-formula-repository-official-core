@@ -1,0 +1,33 @@
+summary: Next-gen compiler infrastructure
+web-url: https://llvm.org/
+git-url: https://github.com/llvm/llvm-project.git
+src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.3/llvm-project-15.0.3.src.tar.xz
+src-sha: dd07bdab557866344d85ae21bbeca5259d37b4b0e2ebf6e0481f42d1ba0fee88
+license: Apache-2.0 with LLVM-exception
+dep-pkg: binutils elfutils swig six z3 libedit libffi ncurses zlib libzstd
+bscript: llvm
+install: |
+    cmakew \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DLLVM_LINK_LLVM_DYLIB=ON \
+        -DLLVM_ENABLE_PROJECTS="'clang;clang-tools-extra;lld;lldb;mlir;polly;openmp'" \
+        -DLLVM_ENABLE_RUNTIMES="'compiler-rt;libcxx;libcxxabi;libunwind'" \
+        -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
+        -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
+        -DLLVM_ENABLE_EH=ON \
+        -DLLVM_ENABLE_FFI=ON \
+        -DLLVM_ENABLE_RTTI=ON \
+        -DLLVM_INCLUDE_DOCS=OFF \
+        -DLLVM_INCLUDE_TESTS=OFF \
+        -DLLVM_INSTALL_UTILS=ON \
+        -DLLVM_ENABLE_Z3_SOLVER=ON \
+        -DLLVM_OPTIMIZED_TABLEGEN=ON \
+        -DLLVM_TARGETS_TO_BUILD=all \
+        -DLLDB_USE_SYSTEM_DEBUGSERVER=ON \
+        -DLLDB_ENABLE_PYTHON=ON \
+        -DLLDB_ENABLE_LUA=OFF \
+        -DLLDB_ENABLE_LZMA=ON \
+        -DLLDB_USE_SYSTEM_SIX=ON \
+        -DLIBOMP_INSTALL_ALIASES=OFF \
+        -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
+        -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF

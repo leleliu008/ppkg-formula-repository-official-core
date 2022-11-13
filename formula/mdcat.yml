@@ -1,0 +1,7 @@
+summary: Show markdown documents on text terminals
+git-url: https://codeberg.org/flausch/mdcat.git
+src-url: https://codeberg.org/flausch/mdcat/archive/mdcat-0.28.0.tar.gz
+src-sha: 5d7b4f4b4c1066a679cd171e7d784b4ab8cad37c44d1e1b4250a21683abff9ca
+license: MPL-2.0
+bsystem: cargo cmake
+install: cargow install

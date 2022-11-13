@@ -1,0 +1,6 @@
+summary: Simple terminal image viewer written in Rust
+git-url: https://github.com/atanunq/viu.git
+src-url: https://github.com/atanunq/viu/archive/refs/tags/v1.4.0.tar.gz
+src-sha: 9b359c2c7e78d418266654e4c94988b0495ddea62391fcf51512038dd3109146
+license: MIT
+bsystem: cargo

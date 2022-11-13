@@ -1,0 +1,11 @@
+summary: Collection of PostScript document handling utilities
+web-url: http://knackered.org/angus/psutils/
+src-url: ftp://ftp.knackered.org/pub/psutils/psutils-p17.tar.gz
+src-sha: 3853eb79584ba8fbe27a815425b65a9f7f15b258e0d43a05a856bdb75d588ae4
+version: p17
+license: psutils
+binbstd: yes
+install: |
+    MANDIR=$PACKAGE_INSTALL_DIR/share/man/man1
+    run install -d $MANDIR
+    gmakew -f Makefile.unix install BINDIR=$PACKAGE_INSTALL_DIR/bin INCLUDEDIR=$PACKAGE_INSTALL_DIR/include MANDIR=$MANDIR PERL=$(command -v perl) CC=$CC CCFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'"

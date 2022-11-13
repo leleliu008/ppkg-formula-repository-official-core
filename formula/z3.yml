@@ -1,0 +1,18 @@
+summary: High-performance theorem prover
+git-url: https://github.com/Z3Prover/z3.git
+src-url: https://github.com/Z3Prover/z3/archive/z3-4.11.2.tar.gz
+src-sha: e3a82431b95412408a9c994466fad7252135c8ed3f719c986cd75c8c5f234c7e
+license: MIT
+dep-pkg: python3
+install: |
+    cmakew \
+        -DZ3_USE_LIB_GMP=OFF \
+        -DZ3_LINK_TIME_OPTIMIZATION=ON \
+        -DZ3_INCLUDE_GIT_HASH=OFF \
+        -DZ3_INCLUDE_GIT_DESCRIBE=OFF \
+        -DZ3_BUILD_EXECUTABLE=ON \
+        -DZ3_BUILD_TEST_EXECUTABLES=OFF \
+        -DZ3_BUILD_JAVA_BINDINGS=OFF \
+        -DZ3_BUILD_DOTNET_BINDINGS=OFF \
+        -DZ3_BUILD_PYTHON_BINDINGS=ON \
+        -DZ3_INSTALL_PYTHON_BINDINGS=ON

@@ -1,24 +1,19 @@
 summary: Free lossless audio codec
-web-url: https://xiph.org/flac
+web-url: https://xiph.org/flac/
 git-url: https://github.com/xiph/flac.git
-src-url: https://github.com/xiph/flac/archive/1.3.4.tar.gz
-src-sha: 53e9dbe3ae54a9f42c1e65afe7f516c02d8393c0c6d56bc455c15e1e044069a9
+src-url: https://github.com/xiph/flac/releases/download/1.4.2/flac-1.4.2.tar.xz
+src-sha: e322d58a1f48d23d9dd38f432672865f6f79e73a6f9cc5a5f57fcaa83eb5a8e4
 license: GFDL-1.2-or-later
-dep-pkg: libogg libiconv libtool gettext
-
-bsystem: autogen
-prepare: |
-    sed_in_place 's/printf(usage)/printf("%s", usage)/g'                   src/utils/flacdiff/main.cpp &&
-    sed_in_place 's/fprintf(stderr, usage)/fprintf(stderr, "%s", usage)/g' src/utils/flacdiff/main.cpp &&
-    run ./autogen.sh
+dep-pkg: libogg libiconv gettext
 
 install: |
-    configure \
-        --with-ogg=$libogg_INSTALL_DIR \
-        --disable-oggtest \
-        --disable-valgrind-testing \
-        --disable-thorough-tests \
-        --disable-exhaustive-tests \
-        --disable-examples \
-        --disable-xmms-plugin \
-        --disable-doxygen-docs
+    cmakew \
+        -DWITH_OGG=ON \
+        -DBUILD_CXXLIBS=ON \
+        -DBUILD_PROGRAMS=ON \
+        -DBUILD_EXAMPLES=ON \
+        -DBUILD_TESTING=OFF \
+        -DBUILD_DOCS=OFF \
+        -DINSTALL_MANPAGES=ON \
+        -DINSTALL_PKGCONFIG_MODULES=ON \
+        -DINSTALL_CMAKE_CONFIG_MODULE=ON

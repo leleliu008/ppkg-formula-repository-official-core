@@ -1,9 +1,11 @@
 summary: C++ microbenchmark support library
 git-url: https://github.com/google/benchmark.git
-src-url: https://github.com/google/benchmark/archive/v1.7.0.tar.gz
-src-sha: 3aff99169fa8bdee356eaa1f691e835a6e57b1efeadb8a0f9f228531158246ac
+src-url: https://github.com/google/benchmark/archive/v1.7.1.tar.gz
+src-sha: 6430e4092653380d9dc4ccb45a1e2dc9259d581f4866dc0759713126056bc1d7
 license: Apache-2.0
 
+# https://github.com/google/benchmark/issues/315
+#-DBENCHMARK_USE_LIBCXX=ON \
 install: |
     cmakew \
         -DBENCHMARK_ENABLE_TESTING=OFF \
@@ -12,5 +14,4 @@ install: |
         -DBENCHMARK_ENABLE_EXCEPTIONS=ON \
         -DBENCHMARK_ENABLE_INSTALL=ON \
         -DBENCHMARK_ENABLE_LTO=ON \
-        -DBENCHMARK_USE_LIBCXX=ON \
         -DBENCHMARK_DOWNLOAD_DEPENDENCIES=OFF

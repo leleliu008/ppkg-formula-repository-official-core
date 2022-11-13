@@ -1,0 +1,7 @@
+summary: X.Org API for Xinerama extension to X11 Protocol
+web-url: https://www.x.org/
+src-url: https://www.x.org/archive/individual/lib/libXinerama-1.1.5.tar.xz
+src-sha: 5094d1f0fcc1828cb1696d0d39d9e866ae32520c54d01f618f1a3c1e30c2085c
+license: MIT
+dep-pkg: xorg-libx11 xorg-libxext
+bsystem: configure

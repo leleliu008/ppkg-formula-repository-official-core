@@ -1,0 +1,11 @@
+summary: Network related modules for glib
+web-url: https://gitlab.gnome.org/GNOME/glib-networking.git
+src-url: https://download.gnome.org/sources/glib-networking/2.74/glib-networking-2.74.0.tar.xz
+src-sha: 1f185aaef094123f8e25d8fa55661b3fd71020163a0174adb35a37685cda613b
+license: LGPL-2.1-or-later
+dep-pkg: gsettings-desktop-schemas gnutls
+install: |
+    mesonw \
+        -Dopenssl=disabled \
+        -Dlibproxy=disabled \
+        -Dgnome_proxy=disabled

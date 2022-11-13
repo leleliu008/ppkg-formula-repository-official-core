@@ -1,0 +1,6 @@
+summary: Encoding detector library
+git-url: https://gitlab.freedesktop.org/uchardet/uchardet.git
+web-url: https://www.freedesktop.org/wiki/Software/uchardet/
+src-url: https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.7.tar.xz
+src-sha: 3fc79408ae1d84b406922fa9319ce005631c95ca0f34b205fad867e8b30e45b1
+bsystem: cmake

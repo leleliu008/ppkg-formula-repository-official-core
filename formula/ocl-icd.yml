@@ -1,0 +1,8 @@
+summary: OpenCL ICD loader
+git-url: https://github.com/OCL-dev/ocl-icd.git
+src-url: https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.1.tar.gz
+src-sha: a32b67c2d52ffbaf490be9fc18b46428ab807ab11eff7664d7ff75e06cfafd6d
+license: BSD-2-Clause
+dep-pkg: opencl-headers docbook libtool
+bsystem: autotools
+prepare: ./bootstrap
