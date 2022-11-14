@@ -11,8 +11,8 @@ binbstd: yes
 install: |
     export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
 
+    #no-engine \
     run ./config \
-        no-engine \
         no-tests \
         no-ssl2 \
         no-ssl3 \

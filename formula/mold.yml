@@ -1,21 +1,18 @@
 summary: Modern Linker
 git-url: https://github.com/rui314/mold.git
-src-url: https://github.com/rui314/mold/archive/v1.4.2.tar.gz
-src-sha: 47e6c48d20f49e5b47dfb8197dd9ffcb11a8833d614f7a03bd29741c658a69cd
+src-url: https://github.com/rui314/mold/archive/v1.6.0.tar.gz
+src-sha: 59cd3ea1a2a5fb50d0d97faddd8bff4c7e71054a576c00a87b17f56ecbd88729
 license: AGPL-3.0-only
-dep-pkg: tbb xxhash zlib openssl
-binbstd: yes
+dep-pkg: tbb xxhash zlib libzstd openssl
 install: |
-    gmakew clean &&
-    gmakew install \
-        PREFIX=$PACKAGE_INSTALL_DIR \
-        STRIP=true \
-        LTO=1 \
-        USE_MIMALLOC=0 \
-        SYSTEM_TBB=1 \
-        SYSTEM_XXHASH=1 \
-        CFLAGS="'$CFLAGS $CPPFLAGS'" \
-        CXXFLAGS="'$CXXFLAGS $CPPFLAGS'"
+    cmakew \
+        -DMOLD_LTO=ON \
+        -DMOLD_USE_ASAN=OFF \
+        -DMOLD_USE_TSAN=OFF \
+        -DMOLD_USE_MIMALLOC=ON \
+        -DMOLD_USE_SYSTEM_MIMALLOC=OFF \
+        -DMOLD_USE_SYSTEM_TBB=OFF \
+        -DCMAKE_SKIP_INSTALL_RULES=OFF
 
 # ubuntu-18.04
 # ubuntu-20.04
