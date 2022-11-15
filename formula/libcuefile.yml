@@ -1,0 +1,7 @@
+summary: Library to work with CUE files
+web-url: https://www.musepack.net/
+src-url: https://files.musepack.net/source/libcuefile_r475.tar.gz
+src-sha: b681ca6772b3f64010d24de57361faecf426ee6182f5969fcf29b3f649133fe7
+version: r475
+license: GPL-2.0
+install: cmakew && cp -r "$PACKAGE_INSTALLING_SRC_DIR/include" "$PACKAGE_INSTALL_DIR"

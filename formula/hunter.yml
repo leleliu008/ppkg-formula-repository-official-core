@@ -1,4 +1,4 @@
 summary: The fastest file manager in the galaxy!
 git-url: https://github.com/rabite0/hunter.git
-dep-pkg: libsixel gst-plugins-good
+dep-pkg: libsixel gst-plugins-good gst-plugins-bad
 bsystem: cargo

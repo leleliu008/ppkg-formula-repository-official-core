@@ -1,0 +1,7 @@
+summary: GLib ICE implementation
+web-url: https://wiki.freedesktop.org/nice/
+src-url: https://nice.freedesktop.org/releases/libnice-0.1.19.tar.gz
+src-sha: 6747af710998cf708a2e8ceef51cccd181373d94201dd4b8d40797a070ed47cc
+license: LGPL-2.1-only MPL-1.1
+dep-pkg: gstreamer gnutls intltool
+bsystem: meson
