@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [18.04, 20.04, 22.04]
-        pkg: [mpir,msgpack-c,mujs,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,onefetch]
+        tag: [20.04, 22.04]
+        pkg: [srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,szip,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [mpir,msgpack-c,mujs,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,onefetch]
+        pkg: [srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,szip,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec]
 
     runs-on: macos-${{ matrix.tag }}
 

@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [18.04, 20.04, 22.04]
-        pkg: [gtar,gumbo-parser,gzip,hashcat,helix,helm,hexyl,htop,htslib,hugo,hunspell,hunter,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket]
+        tag: [20.04, 22.04]
+        pkg: [libavif,libb2,libbcrypt,libbpf,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcrypt,libcuefile,libdeflate,libdv,libexecinfo,libglob,libgphoto2,libical]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [gtar,gumbo-parser,gzip,hashcat,helix,helm,hexyl,htop,htslib,hugo,hunspell,hunter,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket]
+        pkg: [libavif,libb2,libbcrypt,libbpf,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcrypt,libcuefile,libdeflate,libdv,libexecinfo,libglob,libgphoto2,libical]
 
     runs-on: macos-${{ matrix.tag }}
 

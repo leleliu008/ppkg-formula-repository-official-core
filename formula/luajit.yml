@@ -1,0 +1,21 @@
+summary: Just-In-Time Compiler (JIT) for the Lua programming language
+web-url: https://luajit.org/
+git-url: https://github.com/LuaJIT/LuaJIT.git
+git-sha: a91d0d9d3bba1a936669cfac3244509a0f2ac0e3
+version: 2.1.0
+license: MIT
+binbstd: yes
+install: |
+    gmakew clean install \
+        PREFIX="$PACKAGE_INSTALL_DIR" \
+        CC="$CC" \
+        LD="$CC" \
+        CFLAGS="'$CFLAGS'" \
+        LDFLAGS="'$LDFLAGS'" \
+        HOST_CC="'$CC_FOR_BUILD'" \
+        HOST_LD="$CC_FOR_BUILD" \
+        TARGET_CC="$CC" \
+        TARGET_LD="$CC" \
+        TARGET_AR="'$AR rcus'" \
+        TARGET_STRIP="$STRIP" \
+        Q=

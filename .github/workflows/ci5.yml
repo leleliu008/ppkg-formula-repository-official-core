@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [18.04, 20.04, 22.04]
-        pkg: [faac,faad2,fakeroot,fcp,fd,fdk-aac,fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,folly,fortune,fselect,fsmon,fzf,fzy]
+        tag: [20.04, 22.04]
+        pkg: [gdbm,gdu,geographiclib,germanium,gh,git,git-lfs,gitui,glow,gmake,gn,gnu-barcode,gnu-which,gnupg,gnuplot,godu,gogs,golang,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [faac,faad2,fakeroot,fcp,fd,fdk-aac,fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,folly,fortune,fselect,fsmon,fzf,fzy]
+        pkg: [gdbm,gdu,geographiclib,germanium,gh,git,git-lfs,gitui,glow,gmake,gn,gnu-barcode,gnu-which,gnupg,gnuplot,godu,gogs,golang,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox]
 
     runs-on: macos-${{ matrix.tag }}
 

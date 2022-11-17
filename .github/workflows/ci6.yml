@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [18.04, 20.04, 22.04]
-        pkg: [garble,gawk,gbt,gcc,gdbm,gdu,geographiclib,germanium,gh,git,git-lfs,gitui,glow,glslang,gmake,gn,gnu-barcode,gnu-which]
+        tag: [20.04, 22.04]
+        pkg: [gping,gpsim,gputils,grep,grex,groff,gron,gsed,gtar,gumbo-parser,gzip,hashcat,helix,helm,hexyl,htop,htslib,hugo,hunspell,hunter,hydroxide,hyperfine,ideviceinstaller,imagemagick]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [garble,gawk,gbt,gcc,gdbm,gdu,geographiclib,germanium,gh,git,git-lfs,gitui,glow,glslang,gmake,gn,gnu-barcode,gnu-which]
+        pkg: [gping,gpsim,gputils,grep,grex,groff,gron,gsed,gtar,gumbo-parser,gzip,hashcat,helix,helm,hexyl,htop,htslib,hugo,hunspell,hunter,hydroxide,hyperfine,ideviceinstaller,imagemagick]
 
     runs-on: macos-${{ matrix.tag }}
 

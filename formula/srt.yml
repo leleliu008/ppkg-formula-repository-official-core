@@ -1,0 +1,14 @@
+summary: Secure Reliable Transport
+web-url: https://www.srtalliance.org/
+git-url: https://github.com/Haivision/srt.git
+src-url: https://github.com/Haivision/srt/archive/v1.5.1.tar.gz
+src-sha: af891e7a7ffab61aa76b296982038b3159da690f69ade7c119f445d924b3cf53
+license: MPL-2.0
+dep-pkg: openssl@1.1
+install: |
+    cmakew \
+        -DWITH_OPENSSL_INCLUDEDIR=$openssl_1_1_INSTALL_DIR/include \
+        -DWITH_OPENSSL_LIBDIR=$openssl_1_1_INSTALL_DIR/lib \
+        -DCMAKE_INSTALL_BINDIR=bin \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_INSTALL_INCLUDEDIR=include

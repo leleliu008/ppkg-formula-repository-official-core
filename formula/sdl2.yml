@@ -1,7 +1,14 @@
 summary: Low-level access to audio, keyboard, mouse, joystick and graphics
 git-url: https://github.com/libsdl-org/SDL.git
 web-url: https://www.libsdl.org/
-src-url: https://www.libsdl.org/release/SDL2-2.24.1.tar.gz
-src-sha: bc121588b1105065598ce38078026a414c28ea95e66ed2adab4c44d80b309e1b
+src-url: https://www.libsdl.org/release/SDL2-2.24.2.tar.gz
+src-sha: b35ef0a802b09d90ed3add0dcac0e95820804202914f5bb7b0feb710f1a1329f
 license: Zlib
-install: cmakew
+dep-pkg: pulseaudio xorg-libice xorg-libxcursor xorg-libxscrnsaver xorg-libxxf86vm xorg-xinput
+install: |
+    cmakew \
+        -DSDL_X11=ON \
+        -DSDL_WAYLAND=ON \
+        -DSDL_SHARED=ON \
+        -DSDL_STATIC=ON \
+        -DSDL_TESTS=OFF

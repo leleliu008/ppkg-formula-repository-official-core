@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [18.04, 20.04, 22.04]
-        pkg: [gnupg,gnuplot,godu,gogs,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gping,gpsim,gputils,grep,grex,groff,gron,gsed]
+        tag: [20.04, 22.04]
+        pkg: [iputils,itstool,ixwebsocket,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jsoncpp,jump,k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [gnupg,gnuplot,godu,gogs,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gping,gpsim,gputils,grep,grex,groff,gron,gsed]
+        pkg: [iputils,itstool,ixwebsocket,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jsoncpp,jump,k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao]
 
     runs-on: macos-${{ matrix.tag }}
 

@@ -1,10 +1,10 @@
 summary: Play, record, convert, and stream audio and video
-web-url: https://ffmpeg.org
-src-url: https://ffmpeg.org/releases/ffmpeg-5.1.tar.xz
-src-sha: 55eb6aab5ee235550fa54a33eaf8bf1b4ec66c01453182b12f6a993d75698b03
 git-url: https://github.com/FFmpeg/FFmpeg.git
-dep-pkg: sdl2 opus libwebp libvorbis theora speex x264 x265 lame
+web-url: https://ffmpeg.org/
+src-url: https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.xz
+src-sha: 619e706d662c8420859832ddc259cd4d4096a48a2ce1eefd052db9e440eef3dc
 license: GPL-2.0-or-later
+dep-pkg: gnutls aom dav1d rav1e opus libvpx theora speex x264 x265 lame frei0r libass libbluray librist libsoxr libvidstab opencore-amr rubberband snappy srt tesseract xvid zeromq zimg alsa-lib xorg-libxv
 
 bsystem: gmake
 binbstd: yes
@@ -19,12 +19,52 @@ install: |
         --nm=$NM \
         --ranlib=$RANLIB \
         --strip=$STRIP \
+        --enable-pic \
         --enable-static \
         --enable-shared \
-        --enable-pic \
+        --enable-pthreads \
+        --enable-version3 \
         --disable-asm \
         --disable-doc \
-        --disable-debug &&
+        --disable-debug \
+        --enable-ffplay \
+        --enable-gnutls \
+        --enable-gpl \
+        --enable-libaom \
+        --enable-libbluray \
+        --enable-libdav1d \
+        --enable-libmp3lame \
+        --enable-libopus \
+        --enable-librav1e \
+        --enable-librist \
+        --enable-librubberband \
+        --enable-libsnappy \
+        --enable-libsrt \
+        --enable-libtesseract \
+        --enable-libtheora \
+        --enable-libvidstab \
+        --enable-libvmaf \
+        --enable-libvorbis \
+        --enable-libvpx \
+        --enable-libwebp \
+        --enable-libx264 \
+        --enable-libx265 \
+        --enable-libxml2 \
+        --enable-libxvid \
+        --enable-lzma \
+        --enable-libfontconfig \
+        --enable-libfreetype \
+        --enable-frei0r \
+        --enable-libass \
+        --enable-libopencore-amrnb \
+        --enable-libopencore-amrwb \
+        --enable-libopenjpeg \
+        --enable-libspeex \
+        --enable-libsoxr \
+        --enable-libzmq \
+        --enable-libzimg \
+        --disable-libjack \
+        --disable-indev=jack &&
     gmakew clean &&
     gmakew install &&
     cp ffbuild/config.log $PACKAGE_INSTALLING_TMP_DIR

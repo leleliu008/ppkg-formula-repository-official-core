@@ -1,0 +1,9 @@
+summary: Vulkan ICD Loader
+web-url: https://github.com/KhronosGroup/Vulkan-Loader
+src-url: https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.234.tar.gz
+src-sha: aa4a24b162e8b719c0137b090dadd16970e71e2e3a33e5426607a42142ca4a19
+license: Apache-2.0
+dep-pkg: python3 vulkan-headers wayland xorg-libxrandr
+install: |
+    cmakew &&
+    sed_in_place '/^Cflags/c Requires: VulkanHeaders' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/vulkan.pc"

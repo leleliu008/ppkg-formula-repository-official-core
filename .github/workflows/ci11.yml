@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [18.04, 20.04, 22.04]
-        pkg: [libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmaxminddb,libmetalink,libmill,libmnl]
+        tag: [20.04, 22.04]
+        pkg: [libuvc,libwebm,libwordexp,libxcrypt,libyuv,lighttpd,lima,links,livego,llhttp,lm-sensors,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmaxminddb,libmetalink,libmill,libmnl]
+        pkg: [libuvc,libwebm,libwordexp,libxcrypt,libyuv,lighttpd,lima,links,livego,llhttp,lm-sensors,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic]
 
     runs-on: macos-${{ matrix.tag }}
 

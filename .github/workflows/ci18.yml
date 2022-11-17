@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [18.04, 20.04, 22.04]
-        pkg: [pkg-config,pkgconf,plog,pngquant,pocl,poco,procps,procs,progress,proj,proot,pup,putty,pybind11,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson]
+        tag: [20.04, 22.04]
+        pkg: [xclip,xh,xmake,xmlto,xorg-libxdamage,xorriso,xpup,xxd,xz]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [pkg-config,pkgconf,plog,pngquant,pocl,poco,procps,procs,progress,proj,proot,pup,putty,pybind11,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson]
+        pkg: [xclip,xh,xmake,xmlto,xorg-libxdamage,xorriso,xpup,xxd,xz]
 
     runs-on: macos-${{ matrix.tag }}
 

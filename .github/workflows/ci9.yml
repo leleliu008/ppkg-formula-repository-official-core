@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [18.04, 20.04, 22.04]
-        pkg: [jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jsoncpp,jump,k9s,kcp,kcptun,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao,libass]
+        tag: [20.04, 22.04]
+        pkg: [libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmaxminddb,libmetalink,libmill,libmnl,libnl,libnsl,libphonenumber,libpipeline,libqalculate,libraqm,librasterlite,libraw,libreplaygain,libressl]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jsoncpp,jump,k9s,kcp,kcptun,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao,libass]
+        pkg: [libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmaxminddb,libmetalink,libmill,libmnl,libnl,libnsl,libphonenumber,libpipeline,libqalculate,libraqm,librasterlite,libraw,libreplaygain,libressl]
 
     runs-on: macos-${{ matrix.tag }}
 

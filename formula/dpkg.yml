@@ -1,0 +1,7 @@
+summary: Debian package management system
+web-url: https://wiki.debian.org/Teams/Dpkg
+src-url: https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.21.9.tar.xz
+src-sha: a0aba375625459260cbc89933a12b3188a713c840e3aaefc14bf2d9adee19642
+license: GPL-2.0-only
+dep-pkg: gettext liblzma libbz2 zlib perl
+install: configure --disable-shared

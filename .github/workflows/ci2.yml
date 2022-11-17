@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [18.04, 20.04, 22.04]
-        pkg: [bear,berkeley-db,binaryen,bind,binocle,bison,bitcoin,bk,blake3,bmake,botan,bottom,boxes,brook,broot,bullet,bzip2,c-examples,caddy,capstone,catch2,catimg,ccache,cdrtools]
+        tag: [20.04, 22.04]
+        pkg: [blake3,bmake,botan,bottom,boxes,brook,broot,bullet,bzip2,c-examples,caddy,cargo-deb,catch2,catimg,ccache,cdrtools,cereal,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,clash,cli11,cmake,coreutils,cpio,cppcheck]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [bear,berkeley-db,binaryen,bind,binocle,bison,bitcoin,bk,blake3,bmake,botan,bottom,boxes,brook,broot,bullet,bzip2,c-examples,caddy,capstone,catch2,catimg,ccache,cdrtools]
+        pkg: [blake3,bmake,botan,bottom,boxes,brook,broot,bullet,bzip2,c-examples,caddy,cargo-deb,catch2,catimg,ccache,cdrtools,cereal,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,clash,cli11,cmake,coreutils,cpio,cppcheck]
 
     runs-on: macos-${{ matrix.tag }}
 

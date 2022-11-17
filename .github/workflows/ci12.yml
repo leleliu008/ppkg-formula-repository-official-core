@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [18.04, 20.04, 22.04]
-        pkg: [libnl,libnsl,libphonenumber,libpipeline,libqalculate,libraqm,librasterlite,libraw,libressl,librsync,libsamplerate,libseccomp,libsigsegv,libslirp,libsmi]
+        tag: [20.04, 22.04]
+        pkg: [lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mesalink,mftrace,midnight-commander,mimalloc,miniz,minizip-ng,mkcert,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [libnl,libnsl,libphonenumber,libpipeline,libqalculate,libraqm,librasterlite,libraw,libressl,librsync,libsamplerate,libseccomp,libsigsegv,libslirp,libsmi]
+        pkg: [lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mesalink,mftrace,midnight-commander,mimalloc,miniz,minizip-ng,mkcert,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu]
 
     runs-on: macos-${{ matrix.tag }}
 

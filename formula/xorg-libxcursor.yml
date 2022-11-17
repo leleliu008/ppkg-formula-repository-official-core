@@ -1,0 +1,7 @@
+summary: X.Org X Window System Cursor management library
+web-url: https://www.x.org/
+src-url: https://www.x.org/archive/individual/lib/libXcursor-1.2.1.tar.xz
+src-sha: 46c143731610bafd2070159a844571b287ac26192537d047a39df06155492104
+license: MIT
+dep-pkg: xorg-libxfixes xorg-libxrender
+bsystem: configure
