@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [iputils,itstool,ixwebsocket,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jsoncpp,jump,k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao]
+        pkg: [hugo,hunspell,hunter,hydroxide,hyperfine,ideviceinstaller,imagemagick,iputils,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jsoncpp,jump,k9s,kcp,kcptun,krb5,lazygit,lcov]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [iputils,itstool,ixwebsocket,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jsoncpp,jump,k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lf,libaec,libaio,libao]
+        pkg: [hugo,hunspell,hunter,hydroxide,hyperfine,ideviceinstaller,imagemagick,iputils,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jsoncpp,jump,k9s,kcp,kcptun,krb5,lazygit,lcov]
 
     runs-on: macos-${{ matrix.tag }}
 

@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openlibm,openmpi,openslide,p7zip,packcc]
+        pkg: [mimalloc,miniz,minizip-ng,mkcert,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openlibm,openmpi,openslide,p7zip,packcc]
+        pkg: [mimalloc,miniz,minizip-ng,mkcert,mm-wiki,mold,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy]
 
     runs-on: macos-${{ matrix.tag }}
 

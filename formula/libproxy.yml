@@ -1,0 +1,13 @@
+summary: Library that provides automatic proxy configuration management
+web-url: https://libproxy.github.io/libproxy/
+git-url: https://github.com/libproxy/libproxy.git
+src-url: https://github.com/libproxy/libproxy/archive/0.4.17.tar.gz
+src-sha: 88c624711412665515e2800a7e564aabb5b3ee781b9820eca9168035b0de60a9
+license: LGPL-2.1-or-later
+dep-pkg: python3 glib dbus
+install: |
+    cmakew \
+        -DWITH_VALA=ON \
+        -DWITH_PERL=OFF \
+        -DWITH_PYTHON3=ON \
+        -DWITH_PYTHON2=OFF

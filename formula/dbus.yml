@@ -1,0 +1,19 @@
+summary: Message bus system, providing inter-application communication
+git-url: https://gitlab.freedesktop.org/dbus/dbus.git
+web-url: https://wiki.freedesktop.org/www/Software/dbus
+src-url: https://dbus.freedesktop.org/releases/dbus/dbus-1.14.4.tar.xz
+src-sha: 7c0f9b8e5ec0ff2479383e62c0084a3a29af99edf1514e9f659b81b30d4e353e
+license: GPL-2.0-or-later
+dep-pkg: xmlto expat
+
+# https://bugs.freedesktop.org/show_bug.cgi?id=94494
+fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/0a8a55872e/d-bus/org.freedesktop.dbus-session.plist.osx.diff
+fix-sha: a8aa6fe3f2d8f873ad3f683013491f5362d551bf5d4c3b469f1efbc5459a20dc
+
+install: |
+    export TMPDIR=/tmp
+    configure \
+        --disable-tests \
+        --enable-xml-docs \
+        --disable-doxygen-docs \
+        --without-x

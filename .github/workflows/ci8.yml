@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [libavif,libb2,libbcrypt,libbpf,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcrypt,libcuefile,libdeflate,libdv,libexecinfo,libglob,libgphoto2,libical]
+        pkg: [less,leveldb,lf,libaec,libaio,libao,libavif,libb2,libbcrypt,libbpf,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcrypt,libcuefile,libdeflate,libdv,libdvdnav]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [libavif,libb2,libbcrypt,libbpf,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcrypt,libcuefile,libdeflate,libdv,libexecinfo,libglob,libgphoto2,libical]
+        pkg: [less,leveldb,lf,libaec,libaio,libao,libavif,libb2,libbcrypt,libbpf,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcrypt,libcuefile,libdeflate,libdv,libdvdnav]
 
     runs-on: macos-${{ matrix.tag }}
 

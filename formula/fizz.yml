@@ -1,0 +1,8 @@
+summary: C++14 implementation of the TLS-1.3 standard
+web-url: https://github.com/facebookincubator/fizz.git
+src-url: https://github.com/facebookincubator/fizz/archive/refs/tags/v2022.11.14.00.tar.gz
+src-sha: 8a5e4d854be78ca965bed630b84b4e26cafe29b99e5701c3630fb3cea1104b7c
+license: BSD-2-Clause
+dep-pkg: folly libsodium
+bscript: fizz
+install: cmakew -DBUILD_TESTS=OFF

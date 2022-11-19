@@ -1,0 +1,8 @@
+summary: Open-source alternative to the OpenGL Utility Toolkit (GLUT) library
+web-url: https://freeglut.sourceforge.io/
+git-url: https://github.com/FreeGLUTProject/freeglut.git
+src-url: https://github.com/FreeGLUTProject/freeglut/releases/download/v3.4.0/freeglut-3.4.0.tar.gz
+src-sha: 3c0bcb915d9b180a97edaebd011b7a1de54583a838644dcd42bb0ea0c6f3eaec
+license: MIT
+dep-pkg: mesa-glu xorg-xinput xorg-libxrandr xorg-libxxf86vm xorg-libxi
+install: cmakew -DFREEGLUT_BUILD_DEMOS=OFF

@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [yasm,youtubedr,yq,yyjson,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
+        pkg: [xorriso,xpup,xxd,xz,yasm,youtubedr,yq,yyjson]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [yasm,youtubedr,yq,yyjson,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
+        pkg: [xorriso,xpup,xxd,xz,yasm,youtubedr,yq,yyjson]
 
     runs-on: macos-${{ matrix.tag }}
 

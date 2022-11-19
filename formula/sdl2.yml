@@ -4,11 +4,17 @@ web-url: https://www.libsdl.org/
 src-url: https://www.libsdl.org/release/SDL2-2.24.2.tar.gz
 src-sha: b35ef0a802b09d90ed3add0dcac0e95820804202914f5bb7b0feb710f1a1329f
 license: Zlib
-dep-pkg: pulseaudio xorg-libice xorg-libxcursor xorg-libxscrnsaver xorg-libxxf86vm xorg-xinput
+dep-pkg: pulseaudio mesa libxkbcommon xorg-libice xorg-libxcursor xorg-libxscrnsaver xorg-libxxf86vm xorg-xinput libdecor
 install: |
     cmakew \
-        -DSDL_X11=ON \
-        -DSDL_WAYLAND=ON \
+        -DSDL_TESTS=OFF \
         -DSDL_SHARED=ON \
         -DSDL_STATIC=ON \
-        -DSDL_TESTS=OFF
+        -DSDL_VULKAN=ON \
+        -DSDL_OPENGL=ON \
+        -DSDL_OPENGLES=ON \
+        -DSDL_PTHREADS=ON \
+        -DSDL_PULSEAUDIO=ON \
+        -DSDL_PULSEAUDIO_SHARED=ON \
+        -DSDL_WAYLAND=ON \
+        -DSDL_X11=ON

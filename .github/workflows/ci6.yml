@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [gping,gpsim,gputils,grep,grex,groff,gron,gsed,gtar,gumbo-parser,gzip,hashcat,helix,helm,hexyl,htop,htslib,hugo,hunspell,hunter,hydroxide,hyperfine,ideviceinstaller,imagemagick]
+        pkg: [golang,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gping,gpsim,gputils,grep,grex,groff,gron,gsed,gtar,gumbo-parser,gzip,hashcat,helix,helm,hexyl,htop,htslib]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [gping,gpsim,gputils,grep,grex,groff,gron,gsed,gtar,gumbo-parser,gzip,hashcat,helix,helm,hexyl,htop,htslib,hugo,hunspell,hunter,hydroxide,hyperfine,ideviceinstaller,imagemagick]
+        pkg: [golang,gomobile,google-benchmark,goreleaser,gosh,gotop,gotty,gox,gping,gpsim,gputils,grep,grex,groff,gron,gsed,gtar,gumbo-parser,gzip,hashcat,helix,helm,hexyl,htop,htslib]
 
     runs-on: macos-${{ matrix.tag }}
 

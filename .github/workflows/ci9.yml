@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmaxminddb,libmetalink,libmill,libmnl,libnl,libnsl,libphonenumber,libpipeline,libqalculate,libraqm,librasterlite,libraw,libreplaygain,libressl]
+        pkg: [libexecinfo,libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmaxminddb,libmetalink,libmill,libmnl]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmaxminddb,libmetalink,libmill,libmnl,libnl,libnsl,libphonenumber,libpipeline,libqalculate,libraqm,librasterlite,libraw,libreplaygain,libressl]
+        pkg: [libexecinfo,libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmaxminddb,libmetalink,libmill,libmnl]
 
     runs-on: macos-${{ matrix.tag }}
 

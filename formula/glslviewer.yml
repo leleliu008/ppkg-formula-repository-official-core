@@ -1,0 +1,7 @@
+summary: Live-coding console tool that renders GLSL Shaders
+git-url: https://github.com/patriciogonzalezvivo/glslViewer.git
+git-sha: b1a9a41f77c535e58e5dd31a71afa7c24f9d313f
+version: 3.0.7
+license: BSD-3-Clause
+dep-pkg: glfw ffmpeg
+bsystem: cmake

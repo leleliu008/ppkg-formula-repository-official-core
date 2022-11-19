@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,folly,fortune,fselect,fsmon,fzf,fzy,garble,gawk,gbt,gcc]
+        pkg: [epsilon,esbuild,ethereum,eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,fortune,fselect,fsmon]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,folly,fortune,fselect,fsmon,fzf,fzy,garble,gawk,gbt,gcc]
+        pkg: [epsilon,esbuild,ethereum,eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,fortune,fselect,fsmon]
 
     runs-on: macos-${{ matrix.tag }}
 

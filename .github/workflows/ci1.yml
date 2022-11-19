@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [aalib,acl,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,b3sum,bandwhich,base64,basis_universal,bat,bc,bcrypt,bear,berkeley-db,binaryen,bind,binocle,bison,bitcoin,bk]
+        pkg: [aalib,acl,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,b3sum,bandwhich,base64,basis_universal,bat,bc,bcrypt,bear,binaryen,bind,binocle,bison,bitcoin,bk]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [aalib,acl,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,b3sum,bandwhich,base64,basis_universal,bat,bc,bcrypt,bear,berkeley-db,binaryen,bind,binocle,bison,bitcoin,bk]
+        pkg: [aalib,acl,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,aptly,archiver,args,aria2,async++,autossh,axel,b3sum,bandwhich,base64,basis_universal,bat,bc,bcrypt,bear,binaryen,bind,binocle,bison,bitcoin,bk]
 
     runs-on: macos-${{ matrix.tag }}
 

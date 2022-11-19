@@ -3,9 +3,26 @@ web-url: https://mpv.io
 git-url: https://github.com/mpv-player/mpv.git
 src-url: https://github.com/mpv-player/mpv/archive/v0.35.0.tar.gz
 src-sha: dc411c899a64548250c142bf1fa1aa7528f1b4398a24c86b816093999049ec00
-dep-pkg: libplacebo libjpeg-turbo libarchive libass lcms2 luajit mujs uchardet vapoursynth alsa-lib
+dep-pkg: libplacebo libjpeg-turbo libarchive libass lcms2 luajit mujs uchardet vapoursynth alsa-lib xorg-libxpresent
 binbstd: yes
 install: |
+    mesonw \
+        -Dtests=false \
+        -Dlibmpv=true \
+        -Dcplayer=true \
+        -Dx11=enabled \
+        -Dsdl2=enabled \
+        -Dpulse=enabled \
+        -Dvulkan=enabled \
+        -Dwayland=enabled \
+        -Duchardet=enabled \
+        -Dlibbluray=enabled \
+        -Dlibplacebo=enabled \
+        -Dlibarchive=enabled \
+        -Djavascript=enabled \
+        -Dlua=luajit
+
+install2: |
     python3 bootstrap.py &&
     python3 waf configure \
         --prefix=$PACKAGE_INSTALL_DIR \
@@ -13,8 +30,10 @@ install: |
         --enable-javascript \
         --enable-libmpv-shared \
         --enable-lua \
+        --enable-sdl2 \
+        --enable-vulkan \
+        --enable-libplacebo \
         --enable-libarchive \
         --enable-uchardet \
-        --enable-sdl2 \
         --lua=luajit &&
     python3 waf install

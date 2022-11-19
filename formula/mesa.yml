@@ -1,0 +1,25 @@
+summary: Graphics Library
+web-url: https://www.mesa3d.org/
+git-url: https://gitlab.freedesktop.org/mesa/mesa.git
+src-url: https://mesa.freedesktop.org/archive/mesa-22.2.3.tar.xz
+src-sha: ee7d026f7b1991dbae0861d359b671145c3a86f2a731353b885d2ea2d5c098d6
+license: MIT
+dep-pym: Mako MarkupSafe
+dep-upp: gm4 flex bison
+dep-pkg: llvm glslang gettext xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxshmfence libvdpau libva elfutils libdrm wayland-protocols lm-sensors
+install: |
+    mesonw \
+        -Db_ndebug=true \
+        -Dplatforms=x11,wayland \
+        -Dglx=auto \
+        -Ddri3=true \
+        -Dgallium-drivers=auto \
+        -Dgallium-omx=disabled \
+        -Degl=enabled \
+        -Dgbm=enabled \
+        -Dopengl=true \
+        -Dgles1=enabled \
+        -Dgles2=enabled \
+        -Dgallium-xvmc=disabled \
+        -Dvalgrind=false \
+        -Dtools=drm-shim,etnaviv,freedreno,glsl,nir,nouveau,xvmc,lima

@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,szip,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec]
+        pkg: [rust-analyzer,sassc,scc,sccache,sd,shaderc,shc,shell2http,shiori,silicon,sl,socat,soundtouch,spirv-tools,srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,systemd,szip]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,szip,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec]
+        pkg: [rust-analyzer,sassc,scc,sccache,sd,shaderc,shc,shell2http,shiori,silicon,sl,socat,soundtouch,spirv-tools,srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,systemd,szip]
 
     runs-on: macos-${{ matrix.tag }}
 

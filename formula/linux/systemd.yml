@@ -1,0 +1,17 @@
+summary: System and service manager
+web-url: https://wiki.freedesktop.org/www/Software/systemd/
+git-url: https://github.com/systemd/systemd.git
+src-url: https://github.com/systemd/systemd/archive/v252.tar.gz
+src-sha: 113a9342ddf89618a17c4056c2dd72c4b20b28af8da135786d7e9b4f1d18acfb
+license: GPL-2.0-or-later LGPL-2.1-or-later
+dep-pym: jinja2-cli
+dep-upp: gm4 gperf rsync
+dep-pkg: docbook gettext intltool libgpg-error libcap util-linux libzstd lz4 libxslt
+ldflags: -lintl
+install: |
+    mesonw \
+        -Drootprefix=/ \
+        -Dlz4=true \
+        -Dhwdb=false \
+        -Dgcrypt=false \
+        -Dcreate-log-dirs=false
