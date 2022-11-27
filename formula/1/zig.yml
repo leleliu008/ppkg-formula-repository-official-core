@@ -1,7 +1,0 @@
-summary: Programming language designed for robustness, optimality, and clarity
-web-url: https://ziglang.org/
-src-url: https://ziglang.org/download/0.9.1/zig-0.9.1.tar.xz
-src-sha: 38cf4e84481f5facc766ba72783e7462e08d6d29a5d47e3b75c8ee3142485210
-git-url: https://github.com/ziglang/zig.git
-license: MIT
-bsystem: cmake

@@ -1,0 +1,7 @@
+summary: Fast and lightweight fully featured OCI runtime and C library
+git-url: https://github.com/containers/crun.git
+src-url: https://github.com/containers/crun/releases/download/1.7.1/crun-1.7.1.tar.xz
+src-sha: bceade123d27ce31ab31bca14351e0cf4951e57b5b45de7a2dd3d512ef17912f
+license: GPL-2.0-or-later LGPL-2.1-or-later
+dep-pkg: go-md2man libtool python3 libcap libseccomp systemd yajl
+bsystem: autotools

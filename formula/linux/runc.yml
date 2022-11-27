@@ -4,4 +4,6 @@ git-url: https://github.com/opencontainers/runc.git
 src-url: https://github.com/opencontainers/runc/archive/refs/tags/v1.1.4.tar.gz
 src-sha: 4f02077432642eebd768fc857318ae7929290b3a3511eb1be338005e360cfa34
 dep-pkg: libseccomp
-install: gow -tags seccomp -X main.gitCommit=$PACKAGE_GIT_SHA -X main.version=$PACKAGE_VERSION
+install: |
+    export CGO_ENABLED=1
+    gow -tags seccomp -X main.gitCommit=$PACKAGE_GIT_SHA -X main.version=$PACKAGE_VERSION

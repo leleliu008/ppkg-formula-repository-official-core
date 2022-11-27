@@ -1,0 +1,7 @@
+summary: FUSE implementation for overlayfs
+git-url: https://github.com/containers/fuse-overlayfs.git
+src-url: https://github.com/containers/fuse-overlayfs/archive/refs/tags/v1.9.tar.gz
+src-sha: 6a2ff4cb3d32bdedb7986bcb0430ce8e5c44f0e3e71b8c7be558451032fc27f4
+license: GPL-3.0-or-later
+dep-pkg: libfuse
+bsystem: autotools

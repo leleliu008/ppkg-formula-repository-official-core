@@ -1,0 +1,10 @@
+summary: OCI container runtime monitor
+git-url: https://github.com/containers/conmon.git
+src-url: https://github.com/containers/conmon/archive/refs/tags/v2.1.5.tar.gz
+src-sha: ee3179ee2b9a9107acec00eb546062cf7deb847f135a3b81503d22b0d226b3ed
+license: Apache-2.0
+dep-pkg: glib libseccomp systemd
+bsystem: gmake go
+install: |
+    gmakew clean &&
+    gmakew install PREFIX=$PACKAGE_INSTALL_DIR
