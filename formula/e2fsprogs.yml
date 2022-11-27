@@ -8,7 +8,9 @@ dep-pkg: gettext libiconv
 
 install: |
     configure \
+        --sysconfdir=$PACKAGE_INSTALL_DIR/etc \
         --disable-e2initrd-helper \
+        --without-crond-dir \
         --with-libiconv-prefix=$libiconv_INSTALL_DIR \
         --with-libintl-prefix=$gettext_INSTALL_DIR \
         MKDIR_P="'mkdir -p'"

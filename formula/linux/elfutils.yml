@@ -6,7 +6,7 @@ src-sha: fb8b0e8d0802005b9a309c60c1d8de32dd2951b56f0c3a3cb56d21ce01595dff
 license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
 dep-pkg: libbz2 liblzma zlib
 dep-upp: gm4
-
+ccflags: -Wno-error
 install: |
     configure \
         --disable-libdebuginfod \

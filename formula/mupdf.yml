@@ -1,0 +1,29 @@
+summary: Lightweight PDF and XPS viewer
+git-url: https://git.ghostscript.com/mupdf.git
+web-url: https://mupdf.com/
+src-url: https://mupdf.com/downloads/archive/mupdf-1.20.3-source.tar.lz
+src-sha: 6f73f63ef8aa81991dfd023d4426a548827d1d74e0bfcf2a013acad63b651868
+license: AGPL-3.0-or-later
+dep-pkg: openjpeg openssl mujs libjpeg-turbo jbig2dec freetype2-with-harfbuzz gumbo-parser freeglut mesa xorg-libxext
+binbstd: yes
+prepare: |
+    for item in $(find thirdparty -maxdepth 1 -mindepth 1 -type d)
+    do
+        [ "$item" = thirdparty/extract ] && continue
+        [ "$item" = thirdparty/lcms2 ]   && continue
+        run rm -rf "$item"
+    done
+
+install: |
+    gmakew clean &&
+    gmakew install \
+        build=release \
+        shared=yes \
+        verbose=yes \
+        prefix=$PACKAGE_INSTALL_DIR \
+        CC=$CC \
+        AR=$AR \
+        RANLIB=$RANLIB \
+        XCFLAGS="'$CFLAGS $CPPFLAGS'" \
+        USE_SYSTEM_LIBS=yes \
+        USE_SYSTEM_MUJS=yes

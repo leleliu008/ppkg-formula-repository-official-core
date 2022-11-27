@@ -1,0 +1,11 @@
+summary: Performance-portable, length-agnostic SIMD with runtime dispatch
+git-url: https://github.com/google/highway.git
+src-url: https://github.com/google/highway/archive/refs/tags/1.0.2.tar.gz
+src-sha: e8ef71236ac0d97f12d553ec1ffc5b6375d57b5f0b860c7447dd69b6ed1072db
+license: Apache-2.0
+install: |
+    cmakew \
+        -DHWY_ENABLE_TESTS=OFF \
+        -DHWY_ENABLE_EXAMPLES=ON \
+        -DHWY_ENABLE_CONTRIB=ON \
+        -DHWY_ENABLE_INSTALL=ON
