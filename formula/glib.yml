@@ -3,23 +3,20 @@ web-url: https://developer.gnome.org/glib
 git-url: https://github.com/GNOME/glib.git
 src-url: https://download.gnome.org/sources/glib/2.74/glib-2.74.0.tar.xz
 src-sha: 3652c7f072d7b031a6b5edd623f77ebc5dcd2ae698598abcc89ff39ca75add30
-dep-pkg: gettext libffi pcre
+dep-pkg: gettext libffi pcre2
 license: LGPL-2.1-or-later
 
 prepare: |
-    sed_in_place "s|dependency('zlib', required : false)|cc.find_library('z', static : true, dirs : ['$zlib_LIBRARY_DIR'])|" meson.build
+    sed_in_place "s|dependency('zlib')|cc.find_library('z', static : true, dirs : ['$zlib_LIBRARY_DIR'])|" meson.build
 
-ldflags: -lintl
 install: |
     mesonw \
         -Dnls=disabled \
         -Dman=false \
         -Dgtk_doc=false \
-        -Diconv=external \
         -Ddtrace=false \
         -Dglib_debug=disabled \
         -Dglib_assert=false \
         -Dtests=false \
         -Dinstalled_tests=false \
-        -Dbsymbolic_functions=false &&
-    sed_in_place '/Libs: /s|$| -lintl|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/glib-2.0.pc"
+        -Dbsymbolic_functions=false
