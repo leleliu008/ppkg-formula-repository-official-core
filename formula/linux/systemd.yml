@@ -10,7 +10,10 @@ dep-pkg: docbook gettext intltool libgpg-error libcap util-linux libzstd lz4 lib
 ldflags: -lintl
 install: |
     mesonw \
-        -Drootprefix=/ \
+        -Drootprefix=$PACKAGE_INSTALL_DIR \
+        -Dsysvinit-path=$PACKAGE_INSTALL_DIR/etc/init.d \
+        -Dsysvrcnd-path=$PACKAGE_INSTALL_DIR/etc/rc.d \
+        -Dpamconfdir=$PACKAGE_INSTALL_DIR/etc/pam.d \
         -Dlz4=true \
         -Dhwdb=false \
         -Dgcrypt=false \

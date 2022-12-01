@@ -2,5 +2,5 @@ summary: Universal Prebuild Package Manager
 git-url: https://github.com/leleliu008/uppm.git
 #src-url: dir:///home/leleliu008/uppm
 license: Apache-2.0
-dep-pkg: curl libgit2 libarchive libyaml jansson
+dep-pkg: curl libgit2 libarchive libyaml jansson sqlite
 install: cmakew -DFIND_STATIC_LIBS=ON
