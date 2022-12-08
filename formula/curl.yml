@@ -1,9 +1,9 @@
 summary: Get a file from an HTTP, HTTPS or FTP server
-web-url: https://curl.haxx.se
-src-url: https://curl.haxx.se/download/curl-7.85.0.tar.bz2
-src-sha: 21a7e83628ee96164ac2b36ff6bf99d467c7b0b621c1f7e317d8f0d96011539c
+web-url: https://curl.haxx.se/
+src-url: https://curl.haxx.se/download/curl-7.86.0.tar.bz2
+src-sha: f5ca69db03eea17fa8705bdfb1a9f58d76a46c9010518109bb38f313137e0a28
 git-url: https://github.com/curl/curl.git
-dep-pkg: openssl zlib
+dep-pkg: libnghttp2 openssl libzstd brotli
 license: curl
 install: |
     configure \
@@ -11,12 +11,13 @@ install: |
         --enable-pthreads \
         --with-default-ssl-backend=openssl \
         --with-ssl=$openssl_INSTALL_DIR \
-        --without-nghttp2 \
+        --with-nghttp2 \
         --without-nghttp3 \
         --without-ngtcp2 \
         --without-quiche \
         --without-librtmp \
         --without-libidn2 && {
+            sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libcurl.pc"
         if [ "$NATIVE_OS_KIND" = darwin ] ; then
             sed_in_place '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libcurl.pc"
         fi

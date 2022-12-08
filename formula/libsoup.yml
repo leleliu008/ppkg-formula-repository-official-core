@@ -3,7 +3,7 @@ web-url: https://wiki.gnome.org/Projects/libsoup
 src-url: https://download.gnome.org/sources/libsoup/3.2/libsoup-3.2.2.tar.xz
 src-sha: 83673c685b910fb7d39f1f28eee5afbefb71c05798fc350ac3bf1b885e1efaa1
 license: LGPL-2.0-or-later
-dep-pkg: vala glib-networking nghttp2 libpsl libxml2 sqlite
+dep-pkg: vala glib-networking libnghttp2 libpsl libxml2 sqlite
 install: |
     # https://docs.gtk.org/gio/overview.html#running-gio-applications
     export GIO_MODULE_DIR=$glib_networking_INSTALL_DIR/lib/gio/modules
