@@ -5,6 +5,7 @@ src-sha: f5ca69db03eea17fa8705bdfb1a9f58d76a46c9010518109bb38f313137e0a28
 git-url: https://github.com/curl/curl.git
 dep-pkg: libnghttp2 openssl libzstd brotli
 license: curl
+prepare: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
 install: |
     configure \
         --enable-optimize \
@@ -17,7 +18,6 @@ install: |
         --without-quiche \
         --without-librtmp \
         --without-libidn2 && {
-            sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libcurl.pc"
         if [ "$NATIVE_OS_KIND" = darwin ] ; then
             sed_in_place '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libcurl.pc"
         fi
