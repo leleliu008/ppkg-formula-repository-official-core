@@ -1,6 +1,6 @@
 summary: C test project
 git-url: https://github.com/leleliu008/C.git
-    #src-url: dir:///home/leleliu008/Downloads/ddd
+    #src-url: dir:///home/leleliu008/C
 dep-pkg: libgit2
 bsystem: gmake
 binbstd: yes

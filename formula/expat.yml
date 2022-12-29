@@ -4,7 +4,7 @@ git-url: https://github.com/libexpat/libexpat.git
 src-url: https://github.com/libexpat/libexpat/releases/download/R_2_4_8/expat-2.4.8.tar.xz
 src-sha: f79b8f904b749e3e0d20afeadecf8249c55b2e32d4ebb089ae378df479dcaf25
 license: MIT
-
+bsystem: cmake
 install: |
     CMAKE_COMMON_OPTIONS="
         -DEXPAT_BUILD_DOCS=OFF
