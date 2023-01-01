@@ -8,7 +8,7 @@ license: GPL-2.0-only
 prepare: |
     # https://github.com/libgit2/libgit2/issues/6280
     if [ "$NATIVE_OS_KIND" = openbsd ] ; then
-        sed_in_place 's|sys/random.h|unistd.h|' src/util/rand.c
+        sed_in_place 's|sys/random.h|unistd.h|' src/rand.c
     fi
 
 install: |
