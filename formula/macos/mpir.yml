@@ -13,7 +13,7 @@ dep-pkg: libtool
 bsystem: autotools
 
 prepare: |
-    run "patch -p1 < ../fix/bbc43ca6ae0bec4f64e69c9cd4c967005d6470eb.patch"
+    run "patch -p1 < ../fix/8c0ec267c62a91fe6c21d43467fee736fb5431bd9e604dc930cc71048f4e3452.patch"
     run autoreconf -ivf
 
 install: |

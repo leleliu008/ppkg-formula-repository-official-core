@@ -11,7 +11,7 @@ fix-sha: d38c9ae06c387da151492dd5862c58551559dd6d2b1877c74cc1e11754221fe4
 
 prepare: |
     if [ "$NATIVE_OS_KIND" = darwin ] ; then
-        patch -p1 < ../fix/3671d4a878fb58aa953810ecf9af41809317294f.patch
+        patch -p1 < ../fix/d38c9ae06c387da151492dd5862c58551559dd6d2b1877c74cc1e11754221fe4.patch
     fi
 
 install: |

@@ -8,5 +8,5 @@ fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/5bf1a0e0cfe6
 fix-sha: 45c16a2b64ba67f7ca5335c2f602d8d5186c29b38188b3cc7aff5df60aecaf60
 
 license: GPL-2.0-or-later
-prepare: run "patch -p1 < ../fix/fix_cmake_quoting.patch"
+prepare: run "patch -p1 < ../fix/45c16a2b64ba67f7ca5335c2f602d8d5186c29b38188b3cc7aff5df60aecaf60.patch"
 install: cmakew -DUSE_OMP=OFF

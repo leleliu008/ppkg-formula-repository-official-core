@@ -11,7 +11,7 @@ license: BSD-3-Clause
 
 binbstd: yes
 install: |
-    run "patch -p0 < ../fix/patch-Makefile.diff" &&
+    run "patch -p0 < ../fix/a51e794f06d73d544123af07cda8a4b21e7934498d21b7a6ed1a3e997f363155.diff" &&
     gmakew clean &&
     gmakew all CFLAGS="'$CFLAGS'" &&
     install_bins predict train &&

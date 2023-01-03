@@ -14,8 +14,8 @@ res-sha: a2cf01ca5f632f7372f03c7a9db438f5f7083daae90a617241a0c41ece979267
 bscript: llvm
 prepare: |
     cd ..
-    patch -p1 < ../fix/81fc5f7909a4ef5a8d4b5da2a10f77f7cb01ba63.patch
-    patch -p1 < ../res/f0a25fe0b746f56295d5c02116ba28d2f965c175.patch
+    patch -p1 < ../fix/d2a2b61f7024fdf45f24a8ad8592808fc94c9ce6db8df3152fd9f46180c43074.patch
+    patch -p1 < ../res/a2cf01ca5f632f7372f03c7a9db438f5f7083daae90a617241a0c41ece979267.patch
     cd llvm
 
 license: Apache-2.0 with LLVM-exception

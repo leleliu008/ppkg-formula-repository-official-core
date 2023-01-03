@@ -10,7 +10,7 @@ fix-sha: af1e9faf1b7f414ff81ef3f1641e2e37f3502f0febd17f70f0db6ecdd02dc910
 
 license: LGPL-2.1-or-later
 dep-pkg: opus libvorbis flac sqlite python3 libtool
-prepare: run "patch -p1 < ../fix/e4fdaeefddd39bae1db27d48ccb7db7733e0c009.patch"
+prepare: run "patch -p1 < ../fix/af1e9faf1b7f414ff81ef3f1641e2e37f3502f0febd17f70f0db6ecdd02dc910.patch"
 bsystem: autotools
 install: |
     configure \

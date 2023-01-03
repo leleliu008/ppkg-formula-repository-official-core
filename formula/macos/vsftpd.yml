@@ -13,8 +13,8 @@ license: GPL-2.0-only
 
 binbstd: yes
 install: |
-    run "patch -p1 < ../fix/3.0.3.patch" &&
-    run "patch -p1 < ../res/3.0.5.patch" &&
+    run "patch -p1 < ../fix/c158fac428e06e16219e332c3897c3f730586e55d0ef3a670ed3c716e3de5371.patch" &&
+    run "patch -p1 < ../res/95afc3bc00dd6cc37a2c64b19b1e7e30951ec022f839dbab1773b7716966b9cf.patch" &&
     gmakew clean &&
     gmakew CC=$CC CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" &&
     install_bins vsftpd &&

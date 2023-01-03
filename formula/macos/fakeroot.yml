@@ -13,8 +13,8 @@ license: GPL-3.0-or-later
 dep-pkg: libtool
 bsystem: autotools
 prepare: |
-    run "patch -p1 < ../fix/e1a7af793e58bddd4bbd04cfb4d26687fbaa9bcf.diff" &&
-    run "patch -p0 < ../res/patch-message.h.diff" &&
+    run "patch -p1 < ../fix/60cfd8bbc416527981151237b7c403fba88975e97907a0ed5c31566d0cda078d.diff" &&
+    run "patch -p0 < ../res/6540eef1c31ffb4ed636c1f4750ee668d2effdfe308d975d835aa518731c72dc.diff" &&
     run ./bootstrap
 
 install: configure --disable-static

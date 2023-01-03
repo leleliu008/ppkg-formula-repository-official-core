@@ -7,24 +7,25 @@ a formula is a YAML format file which is used to configure a ppkg's package info
 |KEY|required?|overview|
 |-|-|-|
 |`summary`|required|the summary of this package.|
-|`webpage`|optional|the home webpage of this package.<br>If this key is not present, `git-url` must be present.|
-|`version`|optional|the version of this package.<br>If this key is not present, it will be calculated from `src-url`|
-|`license`|optional|the license of this package.|
+|`license`|optional|the license of this package.<br>a list of space-separated [SPDX license short identifiers](https://spdx.github.io/spdx-spec/v2.3/SPDX-license-list/#a1-licenses-with-short-identifiers)|
+|`version`|optional|the version of this package.<br>If this key is not present, it will be calculated from `src-url`, if `src-url` is also not present, it will be calculated from running time as format `date +%Y.%m.%d`|
+||||
+|`web-url`|optional|the home webpage of this package.<br>If this key is not present, `git-url` must be present.|
 ||||
 |`git-url`|optional|the source code git repository.<br>must end with `.git`|
 |`git-ref`|optional|reference: https://git-scm.com/book/en/v2/Git-Internals-Git-References <br>example values: `HEAD` `refs/heads/master` `refs/heads/main` `refs/tags/v1`, default value is `HEAD`|
 |`git-sha`|optional|the full git commit id, 40-byte hexadecimal string, if `git-ref` and `git-sha` both are given, `git-sha` takes precedence over `git-ref`|
 |`shallow`|optional|whether do a git shallow fetch. values can be `yes` or `no`. default value is `yes`.|
 ||||
-|`src-url`|required|the source code download url of this package.<br>must end with one of `.git` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
+|`src-url`|optional|the source code download url of this package.<br>must end with one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
 |`src-uri`|optional|the mirror of `src-url`.|
-|`src-sha`|optional|the `sha256sum` of source code.<br>If the value of `src-url` end with `.git`, this key is optional, otherwise, this key must be present.|
+|`src-sha`|optional|the `sha256sum` of source code.<br>`src-sha` and `src-url` must appear togther.|
 ||||
-|`fix-url`|optional|the patch file download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
-|`fix-sha`|optional|the `sha256sum` of patch file.|
+|`fix-url`|optional|the patch file download url of this package.<br>must end with one of `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz`|
+|`fix-sha`|optional|the `sha256sum` of patch file.<br>`src-sha` and `src-url` must appear togther.|
 ||||
-|`res-url`|optional|other resource download url of this package.<br>must end with one of `.fix` `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz`|
-|`res-sha`|optional|the `sha256sum` of resource file.|
+|`res-url`|optional|other resource download url of this package.<br>must end with one of `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` |
+|`res-sha`|optional|the `sha256sum` of resource file.<br>`src-sha` and `src-url` must appear togther.|
 ||||
 |`dep-pkg`|optional|space-separated   `ppkg packages` that are depended by this package when installing and/or runtime, which will be installed via [ppkg](https://github.com/leleliu008/ppkg).|
 |`dep-upp`|optional|space-separated   `uppm packages` that are depended by this package when installing and/or runtime, which will be installed via [uppm](https://github.com/leleliu008/uppm).|
