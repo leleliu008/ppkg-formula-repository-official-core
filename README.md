@@ -17,15 +17,15 @@ a formula is a YAML format file which is used to configure a ppkg's package info
 |`git-sha`|optional|the full git commit id, 40-byte hexadecimal string, if `git-ref` and `git-sha` both are given, `git-sha` takes precedence over `git-ref`|
 |`shallow`|optional|whether do a git shallow fetch. values can be `yes` or `no`. default value is `yes`.|
 ||||
-|`src-url`|optional|the source code download url of this package.<br>must end with one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
+|`src-url`|optional|the source code download url of this package.<br>must end with one of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2` `.c` `.cc` `.cxx` `.cpp`.<br>also support format like `dir://DIR`|
 |`src-uri`|optional|the mirror of `src-url`.|
 |`src-sha`|optional|the `sha256sum` of source code.<br>`src-sha` and `src-url` must appear togther.|
 ||||
-|`fix-url`|optional|the patch file download url of this package.<br>must end with one of `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz`|
-|`fix-sha`|optional|the `sha256sum` of patch file.<br>`src-sha` and `src-url` must appear togther.|
+|`fix-url`|optional|the patch file download url of this package.<br>must end with one of `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`|
+|`fix-sha`|optional|the `sha256sum` of patch file.<br>`fix-sha` and `fix-url` must appear togther.|
 ||||
-|`res-url`|optional|other resource download url of this package.<br>must end with one of `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` |
-|`res-sha`|optional|the `sha256sum` of resource file.<br>`src-sha` and `src-url` must appear togther.|
+|`res-url`|optional|other resource download url of this package.<br>must end with one of `.diff` `.patch` `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`|
+|`res-sha`|optional|the `sha256sum` of resource file.<br>`res-sha` and `res-url` must appear togther.|
 ||||
 |`dep-pkg`|optional|space-separated   `ppkg packages` that are depended by this package when installing and/or runtime, which will be installed via [ppkg](https://github.com/leleliu008/ppkg).|
 |`dep-upp`|optional|space-separated   `uppm packages` that are depended by this package when installing and/or runtime, which will be installed via [uppm](https://github.com/leleliu008/uppm).|
@@ -62,7 +62,7 @@ a formula is a YAML format file which is used to configure a ppkg's package info
 |`getvalue`|`VALUE=$(getvalue --key=value)`|
 |`sha256sum`|`VALUE=$(sha256sum FILEPATH)`|
 |`is_sha256sum_match`|`is_sha256sum_match FILEPATH SHA256SUM`|
-|`fetch`|`fetch URL [--sha256=SHA256] --output-path=PATH`<br>`fetch URL [--sha256=SHA256] --output-dir=DIR --output-name=NAME`<br>`fetch URL [--sha256=SHA256] --output-dir=DIR [--output-name=NAME]`<br>`fetch URL [--sha256=SHA256] [--output-dir=DIR] --output-name=NAME`|
+|`wfetch`|`wfetch URL [--sha256=SHA256] --output-path=PATH`<br>`wfetch URL [--sha256=SHA256] --output-dir=DIR --output-name=NAME`<br>`wfetch URL [--sha256=SHA256] --output-dir=DIR [--output-name=NAME]`<br>`wfetch URL [--sha256=SHA256] [--output-dir=DIR] --output-name=NAME`|
 
 ## the commands can be invoked in install block only
 |command|usage-example|
