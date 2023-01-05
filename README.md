@@ -7,7 +7,7 @@ a formula is a YAML format file which is used to configure a ppkg's package info
 |KEY|required?|overview|
 |-|-|-|
 |`summary`|required|the summary of this package.|
-|`license`|optional|the license of this package.<br>a list of space-separated [SPDX license short identifiers](https://spdx.github.io/spdx-spec/v2.3/SPDX-license-list/#a1-licenses-with-short-identifiers)|
+|`license`|optional|the license of this package.<br>a space-separated list of [SPDX license short identifiers](https://spdx.github.io/spdx-spec/v2.3/SPDX-license-list/#a1-licenses-with-short-identifiers)|
 |`version`|optional|the version of this package.<br>If this mapping is not present, it will be calculated from `src-url`, if `src-url` is also not present, it will be calculated from running time as format `date +%Y.%m.%d`|
 ||||
 |`web-url`|optional|the home webpage of this package.<br>If this mapping is not present, `git-url` must be present.|
@@ -27,10 +27,10 @@ a formula is a YAML format file which is used to configure a ppkg's package info
 |`res-url`|optional|other resource download url of this package.<br>If value of this mapping ends with any of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `PACKAGE_INSTALLING_RES_DIR` when this package is installing, otherwise, it will be copied to `PACKAGE_INSTALLING_RES_DIR`.|
 |`res-sha`|optional|the `sha256sum` of resource file.<br>`res-sha` and `res-url` must appear togther.|
 ||||
-|`dep-pkg`|optional|space-separated   `ppkg packages` that are depended by this package when installing and/or runtime, which will be installed via [ppkg](https://github.com/leleliu008/ppkg).|
+|`dep-pkg`|optional|a space-separated list of   `ppkg packages` that are depended by this package when installing and/or runtime, which will be installed via [ppkg](https://github.com/leleliu008/ppkg).|
 |`dep-upp`|optional|space-separated   `uppm packages` that are depended by this package when installing and/or runtime, which will be installed via [uppm](https://github.com/leleliu008/uppm).|
-|`dep-pym`|optional|space-separated `python packages` that are depended by this package when installing and/or runtime, which will be installed via `pip3`.|
-|`dep-plm`|optional|space-separated    `perl modules` that are depended by this package when installing and/or runtime, which will be installed via `cpan`.|
+|`dep-pym`|optional|a space-separated list of `python packages` that are depended by this package when installing and/or runtime, which will be installed via `pip3`.|
+|`dep-plm`|optional|a space-separated list of    `perl modules` that are depended by this package when installing and/or runtime, which will be installed via `cpan`.|
 ||||
 |`cdefine`|optional|append to `CPPFLAGS`|
 |`ccflags`|optional|append to `CFLAGS`|
