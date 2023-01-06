@@ -6,8 +6,8 @@ a formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to
 
 |KEY|required?|overview|
 |-|-|-|
-|`summary`|required|the summary of this package.|
-|`license`|optional|the license of this package.<br>a space-separated list of [SPDX license short identifiers](https://spdx.github.io/spdx-spec/v2.3/SPDX-license-list/#a1-licenses-with-short-identifiers)|
+|`summary`|required|Describe this package in one sentence.|
+|`license`|optional|a space-separated list of [SPDX license short identifiers](https://spdx.github.io/spdx-spec/v2.3/SPDX-license-list/#a1-licenses-with-short-identifiers)|
 |`version`|optional|the version of this package.<br>If this mapping is not present, it will be calculated from `src-url`, if `src-url` is also not present, it will be calculated from running time as format `date +%Y.%m.%d`|
 ||||
 |`web-url`|optional|the home webpage of this package.<br>If this mapping is not present, `git-url` must be present.|
