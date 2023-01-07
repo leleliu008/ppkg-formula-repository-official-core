@@ -1,6 +1,6 @@
 summary: User-friendly command-line shell for UNIX-like operating systems
 web-url: https://fishshell.com/
-git-url: https://github.com/fish-shell/fish-shell.git
+git-url: https://github.com/fish-shell/fish-shell
 src-url: https://github.com/fish-shell/fish-shell/releases/download/3.5.1/fish-3.5.1.tar.xz
 src-sha: a6d45b3dc5a45dd31772e7f8dfdfecabc063986e8f67d60bd7ca60cc81db6928
 dep-pkg: pcre2 libbz2 ncurses readline

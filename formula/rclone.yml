@@ -1,6 +1,6 @@
 summary: Rsync for cloud storage
 web-url: https://rclone.org/
-git-url: https://github.com/rclone/rclone.git
+git-url: https://github.com/rclone/rclone
 src-url: https://github.com/rclone/rclone/archive/v1.59.1.tar.gz
 src-sha: 3eb56502c49ffe53da0360b66d5c9ee6147433f1a9b0238686c1743855cc891f
 license: MIT

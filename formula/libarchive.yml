@@ -1,5 +1,5 @@
 summary: Multi-format archive and compression library
-git-url: https://github.com/libarchive/libarchive.git
+git-url: https://github.com/libarchive/libarchive
 web-url: https://www.libarchive.org/
 src-url: https://www.libarchive.org/downloads/libarchive-3.6.2.tar.xz
 src-sha: 9e2c1b80d5fbe59b61308fdfab6c79b5021d7ff4ff2489fb12daf0a96a83551d

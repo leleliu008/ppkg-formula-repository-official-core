@@ -1,6 +1,6 @@
 summary: High quality, portable, open source libm implementation
 web-url: https://openlibm.org
-git-url: https://github.com/JuliaMath/openlibm.git
+git-url: https://github.com/JuliaMath/openlibm
 src-url: https://github.com/JuliaMath/openlibm/archive/v0.8.1.tar.gz
 src-sha: ba8a282ecd92d0033f5656bb20dfc6ea3fb83f90ba69291ac8f7beba42dcffcf
 license: MIT ISC BSD-2-Clause

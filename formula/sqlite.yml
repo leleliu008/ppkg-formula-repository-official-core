@@ -1,5 +1,5 @@
 summary: command-line interface for SQLite
-git-url: https://github.com/sqlite/sqlite.git
+git-url: https://github.com/sqlite/sqlite
 web-url: https://sqlite.org/
 src-url: https://sqlite.org/2022/sqlite-autoconf-3390400.tar.gz
 src-sha: f31d445b48e67e284cf206717cc170ab63cbe4fd7f79a82793b772285e78fdbb

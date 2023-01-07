@@ -1,6 +1,6 @@
 summary: Compiler infrastructure and toolchain library for WebAssembly
 web-url: https://webassembly.org/
-git-url: https://github.com/WebAssembly/binaryen.git
+git-url: https://github.com/WebAssembly/binaryen
 src-url: https://github.com/WebAssembly/binaryen/archive/version_110.tar.gz
 src-sha: 0f80250a02b94dd81bdedeae029eb805abf607fcdadcfee5ca8b5e6b77035601
 license: Apache-2.0

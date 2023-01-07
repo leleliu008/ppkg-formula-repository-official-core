@@ -2,7 +2,7 @@ summary: Cryptographic algorithms and formats library in C++
 web-url: https://botan.randombit.net/
 src-url: https://botan.randombit.net/releases/Botan-2.19.2.tar.xz
 src-sha: 3af5f17615c6b5cd8b832d269fb6cb4d54ec64f9eb09ddbf1add5093941b4d75
-git-url: https://github.com/randombit/botan.git
+git-url: https://github.com/randombit/botan
 license: BSD-2-Clause
 dep-pkg: python3 sqlite libbz2 zlib
 bsystem: gmake

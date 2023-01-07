@@ -1,5 +1,5 @@
 summary: A perl module for parsing XML documents
-git-url: https://github.com/toddr/XML-Parser.git
+git-url: https://github.com/toddr/XML-Parser
 src-url: https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.46.tar.gz
 src-sha: d331332491c51cccfb4cb94ffc44f9cd73378e618498d4a37df9e043661c515d
 dep-pkg: perl expat

@@ -1,5 +1,5 @@
 summary: a packrat parser generator for C
-git-url: https://github.com/enechaev/packcc.git
+git-url: https://github.com/enechaev/packcc
 
 binbstd: yes
 install: |

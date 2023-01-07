@@ -1,6 +1,6 @@
 summary: Simple Realtime Server
 web-url: https://ossrs.net
-git-url: https://github.com/ossrs/srs.git
+git-url: https://github.com/ossrs/srs
 src-url: https://github.com/ossrs/srs/archive/v4.0-r1.tar.gz
 src-sha: 185069639b835646370102c23c884aac624771b59276e0dffa91e68008cfed4f
 version: 4.0.1

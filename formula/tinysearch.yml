@@ -1,5 +1,5 @@
 summary: a lightweight, fast, full-text search engine for static websites built with Rust and Wasm
-git-url: https://github.com/tinysearch/tinysearch.git
+git-url: https://github.com/tinysearch/tinysearch
 src-url: https://github.com/tinysearch/tinysearch/archive/refs/tags/v0.7.0.tar.gz
 src-sha: 3330a8b91a83d9e452f71ba065778bc0eb2be0504f7707bd11b729bf501395e5
 license: Apache-2.0

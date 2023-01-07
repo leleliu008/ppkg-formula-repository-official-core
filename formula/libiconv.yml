@@ -2,7 +2,7 @@ summary: charset conversion library
 web-url: https://www.gnu.org/software/libiconv
 src-url: https://ftp.gnu.org/gnu/libiconv/libiconv-1.17.tar.gz
 src-sha: 8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313
-git-url: https://git.savannah.gnu.org/git/libiconv.git
+git-url: https://git.savannah.gnu.org/git/libiconv
 license: GPL-3.0-or-later LGPL-2.0-or-later
 
 install: |

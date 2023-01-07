@@ -1,5 +1,5 @@
 summary: Programming language designed for robustness, optimality, and clarity
-git-url: https://github.com/ziglang/zig.git
+git-url: https://github.com/ziglang/zig
 web-url: https://ziglang.org/
 src-url: https://ziglang.org/download/0.10.0/zig-0.10.0.tar.xz
 src-sha: d8409f7aafc624770dcd050c8fa7e62578be8e6a10956bca3c86e8531c64c136

@@ -1,6 +1,6 @@
 summary: C library for reading DVD-video images
 web-url: https://www.videolan.org/developers/libdvdnav.html
-git-url: https://code.videolan.org/videolan/libdvdread.git
+git-url: https://code.videolan.org/videolan/libdvdread
 src-url: https://download.videolan.org/pub/videolan/libdvdread/6.1.3/libdvdread-6.1.3.tar.bz2
 src-sha: ce35454997a208cbe50e91232f0e73fb1ac3471965813a13b8730a8f18a15369
 license: GPL-2.0-or-later

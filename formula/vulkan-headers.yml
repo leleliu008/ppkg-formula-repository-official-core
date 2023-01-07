@@ -1,5 +1,5 @@
 summary: Vulkan Header files and API registry
-git-url: https://github.com/KhronosGroup/Vulkan-Headers.git
+git-url: https://github.com/KhronosGroup/Vulkan-Headers
 src-url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.234.tar.gz
 src-sha: 0bbfebd602501476e6044719619a24d8b27338fbca3ae0c69fe1daa8d0ca9caf
 license: Apache-2.0

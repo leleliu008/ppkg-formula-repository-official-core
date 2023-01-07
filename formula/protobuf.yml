@@ -1,5 +1,5 @@
 summary: data interchange format by Google
-git-url: https://github.com/protocolbuffers/protobuf.git
+git-url: https://github.com/protocolbuffers/protobuf
 src-url: https://github.com/protocolbuffers/protobuf/releases/download/v21.5/protobuf-all-21.5.tar.gz
 src-sha: 7ba0cb2ecfd9e5d44a6fa9ce05f254b7e5cd70ec89fafba0b07448f3e258310c
 license: BSD-3-Clause

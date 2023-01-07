@@ -1,5 +1,5 @@
 summary: Obfuscate Go builds
-git-url: https://github.com/burrowers/garble.git
+git-url: https://github.com/burrowers/garble
 src-url: https://github.com/burrowers/garble/archive/refs/tags/v0.7.1.tar.gz
 src-sha: d0ad01bbf1dc4d8ea3db4671f40dc93fc4f1504f097ea9d3e3c3d8132dce23d4
 license: BSD-3-Clause

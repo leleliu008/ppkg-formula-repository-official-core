@@ -1,5 +1,5 @@
 summary: CPU INFOrmation library
-git-url: https://github.com/pytorch/cpuinfo.git
+git-url: https://github.com/pytorch/cpuinfo
 license: BSD-2-Clause
 install: |
     cmakew \

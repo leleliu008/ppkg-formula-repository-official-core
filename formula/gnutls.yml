@@ -1,6 +1,6 @@
 summary: GNU Transport Layer Security (TLS) Library
 web-url: https://gnutls.org
-git-url: https://github.com/gnutls/gnutls.git
+git-url: https://github.com/gnutls/gnutls
 src-url: https://www.gnupg.org/ftp/gcrypt/gnutls/v3.7/gnutls-3.7.7.tar.xz
 src-sha: be9143d0d58eab64dba9b77114aaafac529b6c0d7e81de6bdf1c9b59027d2106
 dep-pkg: gmp libunistring nettle libtasn1 libidn2 p11-kit

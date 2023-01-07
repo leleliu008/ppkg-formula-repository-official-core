@@ -1,6 +1,6 @@
 summary: Library for JPEG-2000 image manipulation
 web-url: https://www.openjpeg.org/
-git-url: https://github.com/uclouvain/openjpeg.git
+git-url: https://github.com/uclouvain/openjpeg
 src-url: https://github.com/uclouvain/openjpeg/archive/v2.5.0.tar.gz
 src-sha: 0333806d6adecc6f7a91243b2b839ff4d2053823634d4f6ed7a59bc87409122a
 license: BSD-2-Clause

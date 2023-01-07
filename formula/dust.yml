@@ -1,5 +1,5 @@
 summary: More intuitive version of du(1) in rust
-git-url: https://github.com/bootandy/dust.git
+git-url: https://github.com/bootandy/dust
 src-url: https://github.com/bootandy/dust/archive/v0.8.2.tar.gz
 src-sha: 890972fbf1a7f0a336c0f20e1e9ecc756c62d3debd75d22b596af993a3d8af01
 license: Apache-2.0

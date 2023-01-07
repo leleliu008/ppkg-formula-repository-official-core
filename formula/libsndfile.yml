@@ -1,6 +1,6 @@
 summary: C library for files containing sampled sound
 web-url: http://libsndfile.github.io/libsndfile/
-git-url: https://github.com/libsndfile/libsndfile.git
+git-url: https://github.com/libsndfile/libsndfile
 src-url: https://github.com/libsndfile/libsndfile/releases/download/1.1.0/libsndfile-1.1.0.tar.xz
 src-sha: 0f98e101c0f7c850a71225fb5feaf33b106227b3d331333ddc9bacee190bcf41
 

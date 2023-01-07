@@ -1,5 +1,5 @@
 summary: Fast, simple fuzzy text selector with an advanced scoring algorithm
-git-url: https://github.com/jhawthorn/fzy.git
+git-url: https://github.com/jhawthorn/fzy
 license: MIT
 binbstd: yes
 install: |

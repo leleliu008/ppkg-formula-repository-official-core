@@ -1,6 +1,6 @@
 summary: Run and Test HTTP Requests with plain text and curl
 web-url: https://hurl.dev
-git-url: https://github.com/Orange-OpenSource/hurl.git
+git-url: https://github.com/Orange-OpenSource/hurl
 src-url: https://github.com/Orange-OpenSource/hurl/archive/refs/tags/1.8.0.tar.gz
 src-sha: 9c6c1d4175e7ea5fa040e66dd5623e29ece301e3e52b53da1daa0edb156b6e66
 license: Apache-2.0

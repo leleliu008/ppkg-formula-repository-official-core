@@ -1,6 +1,6 @@
 summary: Command-driven, interactive function plotting
 web-url: http://www.gnuplot.info/
-git-url: https://git.code.sf.net/p/gnuplot/gnuplot-main.git
+git-url: https://git.code.sf.net/p/gnuplot/gnuplot-main
 src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.4.5/gnuplot-5.4.5.tar.gz
 src-sha: 66f679115dd30559e110498fc94d926949d4d370b4999a042e724b8e910ee478
 license: gnuplot

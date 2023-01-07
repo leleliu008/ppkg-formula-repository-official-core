@@ -1,5 +1,5 @@
 summary: GStreamer plugins (well-supported, under the LGPL)
-git-url: https://gitlab.freedesktop.org/gstreamer/gst-plugins-good.git
+git-url: https://gitlab.freedesktop.org/gstreamer/gst-plugins-good
 web-url: https://gstreamer.freedesktop.org/
 src-url: https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.20.3.tar.xz
 src-sha: f8f3c206bf5cdabc00953920b47b3575af0ef15e9f871c0b6966f6d0aa5868b7

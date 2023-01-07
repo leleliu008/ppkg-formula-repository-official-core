@@ -1,5 +1,5 @@
 summary: Terminal-based visual file manager
-git-url: https://github.com/MidnightCommander/mc.git
+git-url: https://github.com/MidnightCommander/mc
 web-url: https://www.midnight-commander.org/
 src-url: https://www.midnight-commander.org/downloads/mc-4.8.28.tar.xz
 src-sha: e994d9be9a7172e9ac4a4ad62107921f6aa312e668b056dfe5b8bcebbaf53803

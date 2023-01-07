@@ -1,5 +1,5 @@
 summary: Utility that provides fast incremental file transfer
-git-url: https://github.com/WayneD/rsync.git
+git-url: https://github.com/WayneD/rsync
 web-url: https://rsync.samba.org/
 
 src-url: https://rsync.samba.org/ftp/rsync/rsync-3.2.7.tar.gz

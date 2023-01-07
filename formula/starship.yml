@@ -1,6 +1,6 @@
 summary: Cross-shell prompt for astronauts
 web-url: https://starship.rs
-git-url: https://github.com/starship/starship.git
+git-url: https://github.com/starship/starship
 src-url: https://github.com/starship/starship/archive/v1.11.0.tar.gz
 src-sha: 7b408ef8a2ab47d7a7d0e120889bf12c8f2a965796f8a027d8b2176287fdec6b
 license: ISC

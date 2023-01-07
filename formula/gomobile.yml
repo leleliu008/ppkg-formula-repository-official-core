@@ -1,5 +1,5 @@
 summary: a tool for building and running mobile apps written in golang
-git-url: https://github.com/golang/mobile.git
+git-url: https://github.com/golang/mobile
 
 install: |
         gow ./cmd/gobind

@@ -1,6 +1,6 @@
 summary: Next generation open source RPC library and framework
 web-url: https://grpc.io
-git-url: https://github.com/grpc/grpc.git
+git-url: https://github.com/grpc/grpc
 src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.48.0.tar.gz
 src-sha: 9b1f348b15a7637f5191e4e673194549384f2eccf01fcef7cc1515864d71b424
 license: Apache-2.0

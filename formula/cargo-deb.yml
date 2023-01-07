@@ -1,5 +1,5 @@
 summary: A cargo subcommand that generates Debian packages from information in Cargo.toml
-git-url: https://github.com/kornelski/cargo-deb.git
+git-url: https://github.com/kornelski/cargo-deb
 src-url: https://github.com/kornelski/cargo-deb/archive/refs/tags/v1.41.1.tar.gz
 src-sha: 7d53f8b3874f2a5751575d5ae484afd3b3abacc6930f3eecaca6e8cbf6b1fc96
 license: MIT

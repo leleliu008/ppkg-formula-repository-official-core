@@ -1,5 +1,5 @@
 summary: Command-line Git information tool
-git-url: https://github.com/o2sh/onefetch.git
+git-url: https://github.com/o2sh/onefetch
 src-url: https://github.com/o2sh/onefetch/archive/v2.13.2.tar.gz
 src-sha: 6a57e12fb049af89de13aeaf06f206be602e73872458ff4cd5725d3b82289123
 license: MIT

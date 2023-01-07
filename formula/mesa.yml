@@ -1,6 +1,6 @@
 summary: Graphics Library
 web-url: https://www.mesa3d.org/
-git-url: https://gitlab.freedesktop.org/mesa/mesa.git
+git-url: https://gitlab.freedesktop.org/mesa/mesa
 src-url: https://mesa.freedesktop.org/archive/mesa-22.2.3.tar.xz
 src-sha: ee7d026f7b1991dbae0861d359b671145c3a86f2a731353b885d2ea2d5c098d6
 license: MIT

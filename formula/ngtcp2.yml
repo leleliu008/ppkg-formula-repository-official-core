@@ -1,5 +1,5 @@
 summary: QUIC library written in C
-git-url: https://github.com/ngtcp2/ngtcp2.git
+git-url: https://github.com/ngtcp2/ngtcp2
 dep-pkg: libev nghttp3
 
 install: |

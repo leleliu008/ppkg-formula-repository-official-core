@@ -1,5 +1,5 @@
 summary: Static reflection for enums (to string, from string, iteration) for modern C++
-git-url: https://github.com/Neargye/magic_enum.git
+git-url: https://github.com/Neargye/magic_enum
 src-url: https://github.com/Neargye/magic_enum/archive/v0.8.1.tar.gz
 src-sha: 6b948d1680f02542d651fc82154a9e136b341ce55c5bf300736b157e23f9df11
 license: MIT

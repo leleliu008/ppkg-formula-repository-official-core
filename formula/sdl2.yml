@@ -1,5 +1,5 @@
 summary: Low-level access to audio, keyboard, mouse, joystick and graphics
-git-url: https://github.com/libsdl-org/SDL.git
+git-url: https://github.com/libsdl-org/SDL
 web-url: https://www.libsdl.org/
 src-url: https://www.libsdl.org/release/SDL2-2.24.2.tar.gz
 src-sha: b35ef0a802b09d90ed3add0dcac0e95820804202914f5bb7b0feb710f1a1329f

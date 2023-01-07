@@ -1,5 +1,5 @@
 summary: Watch files and take action when they change
-git-url: https://github.com/facebook/watchman.git
+git-url: https://github.com/facebook/watchman
 src-url: https://github.com/facebook/watchman/archive/v2022.11.14.00.tar.gz
 src-sha: 60d20f2247e09612126ac49efcce9ad90ae918949ba44da4bfd295234de73b05
 license: MIT

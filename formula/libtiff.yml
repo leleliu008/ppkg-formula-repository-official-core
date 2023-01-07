@@ -1,6 +1,6 @@
 summary: TIFF library and utilities
 web-url: https://libtiff.gitlab.io/libtiff
-git-url: https://gitlab.com/libtiff/libtiff.git
+git-url: https://gitlab.com/libtiff/libtiff
 src-url: https://download.osgeo.org/libtiff/tiff-4.4.0.tar.gz
 src-sha: 917223b37538959aca3b790d2d73aa6e626b688e02dcda272aec24c2f498abed
 dep-pkg: libzstd

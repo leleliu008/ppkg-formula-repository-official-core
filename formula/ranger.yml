@@ -1,5 +1,5 @@
 summary: A VIM-inspired file manager for the console
-git-url: https://github.com/ranger/ranger.git
+git-url: https://github.com/ranger/ranger
 web-url: https://ranger.github.io
 src-url: https://ranger.github.io/ranger-1.9.3.tar.gz
 src-sha: ce088a04c91c25263a9675dc5c43514b7ec1b38c8ea43d9a9d00923ff6cdd251

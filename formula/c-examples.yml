@@ -1,5 +1,5 @@
 summary: C语言学习项目
-git-url: https://github.com/leleliu008/C-examples.git
+git-url: https://github.com/leleliu008/C-examples
 #src-url: dir:///home/leleliu008/C
 license: Apache-2.0
 bsystem: cmake

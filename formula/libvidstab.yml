@@ -1,6 +1,6 @@
 summary: Transcode video stabilization plugin
 web-url: http://public.hronopik.de/vid.stab/
-git-url: https://github.com/georgmartius/vid.stab.git
+git-url: https://github.com/georgmartius/vid.stab
 src-url: https://github.com/georgmartius/vid.stab/archive/v1.1.0.tar.gz
 src-sha: 14d2a053e56edad4f397be0cb3ef8eb1ec3150404ce99a426c4eb641861dc0bb
 

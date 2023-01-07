@@ -1,5 +1,5 @@
 summary: Interpreted, interactive, object-oriented programming language
-git-url: https://github.com/python/cpython.git
+git-url: https://github.com/python/cpython
 web-url: https://www.python.org/
 src-url: https://www.python.org/ftp/python/3.11.0/Python-3.11.0.tgz
 src-sha: 64424e96e2457abbac899b90f9530985b51eef2905951febd935f0e73414caeb

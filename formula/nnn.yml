@@ -1,5 +1,5 @@
 summary: Tiny, lightning fast, feature-packed file manager
-git-url: https://github.com/jarun/nnn.git
+git-url: https://github.com/jarun/nnn
 src-url: https://github.com/jarun/nnn/archive/v4.6.tar.gz
 src-sha: 15acaf9a88cfb5a2a640d3ef55a48af644fba92b46aac0768efe94c4addf7e3f
 license: BSD-2-Clause

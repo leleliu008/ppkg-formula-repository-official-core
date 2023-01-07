@@ -1,6 +1,6 @@
 summary: Core application library for C
 web-url: https://developer.gnome.org/glib
-git-url: https://github.com/GNOME/glib.git
+git-url: https://github.com/GNOME/glib
 src-url: https://download.gnome.org/sources/glib/2.74/glib-2.74.0.tar.xz
 src-sha: 3652c7f072d7b031a6b5edd623f77ebc5dcd2ae698598abcc89ff39ca75add30
 dep-pkg: gettext libffi pcre2

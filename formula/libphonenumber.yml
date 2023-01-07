@@ -1,5 +1,5 @@
 summary: C++ Phone Number library by Google
-git-url: https://github.com/google/libphonenumber.git
+git-url: https://github.com/google/libphonenumber
 src-url: https://github.com/google/libphonenumber/archive/v8.12.54.tar.gz
 src-sha: cf3d531a6b097cad508c475888bcf042ff15fabc6be05e3f817224ae8512ce63
 dep-pkg: boost icu4c protobuf googletest abseil

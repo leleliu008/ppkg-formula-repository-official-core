@@ -1,6 +1,6 @@
 summary: Modern shell for the GitHub era
 web-url: https://www.nushell.sh
-git-url: https://github.com/nushell/nushell.git
+git-url: https://github.com/nushell/nushell
 src-url: https://github.com/nushell/nushell/archive/0.71.0.tar.gz
 src-sha: 0f3a279ead004c86c44b6c9991e9e838b819dad23d65add7250a9691ad29f209
 dep-pkg: zlib openssl

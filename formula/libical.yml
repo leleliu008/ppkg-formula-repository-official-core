@@ -1,6 +1,6 @@
 summary: Implementation of iCalendar protocols and data formats
 web-url: https://libical.github.io/libical
-git-url: https://github.com/libical/libical.git
+git-url: https://github.com/libical/libical
 src-url: https://github.com/libical/libical/releases/download/v3.0.16/libical-3.0.16.tar.gz
 src-sha: b44705dd71ca4538c86fb16248483ab4b48978524fb1da5097bd76aa2e0f0c33
 license: LGPL-2.1-or-later

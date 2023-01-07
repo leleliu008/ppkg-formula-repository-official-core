@@ -2,7 +2,7 @@ summary: C++ class libraries for building network and internet-based application
 web-url: https://pocoproject.org/
 src-url: https://pocoproject.org/releases/poco-1.12.2/poco-1.12.2-all.tar.gz
 src-sha: 642faec888acb619954d870f89c12a834052813306ff8d8a071becb1eee708aa
-git-url: https://github.com/pocoproject/poco.git
+git-url: https://github.com/pocoproject/poco
 version: 1.12.2
 license: BSL-1.0
 dep-pkg: openssl

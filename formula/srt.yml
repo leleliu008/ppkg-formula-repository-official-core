@@ -1,6 +1,6 @@
 summary: Secure Reliable Transport
 web-url: https://www.srtalliance.org/
-git-url: https://github.com/Haivision/srt.git
+git-url: https://github.com/Haivision/srt
 src-url: https://github.com/Haivision/srt/archive/v1.5.1.tar.gz
 src-sha: af891e7a7ffab61aa76b296982038b3159da690f69ade7c119f445d924b3cf53
 license: MPL-2.0

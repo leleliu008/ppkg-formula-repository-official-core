@@ -1,6 +1,6 @@
 summary: Database of common MIME types
 web-url: https://wiki.freedesktop.org/www/Software/shared-mime-info
-git-url: https://gitlab.freedesktop.org/xdg/shared-mime-info.git
+git-url: https://gitlab.freedesktop.org/xdg/shared-mime-info
 src-url: https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.2/shared-mime-info-2.2.tar.bz2
 src-sha: 418c480019d9865f67f922dfb88de00e9f38bf971205d55cdffab50432919e61
 license: GPL-2.0-only

@@ -1,6 +1,6 @@
 summary: DVD navigation library
 web-url: https://www.videolan.org/developers/libdvdnav.html
-git-url: https://code.videolan.org/videolan/libdvdnav.git
+git-url: https://code.videolan.org/videolan/libdvdnav
 src-url: https://download.videolan.org/pub/videolan/libdvdnav/6.1.1/libdvdnav-6.1.1.tar.bz2
 src-sha: c191a7475947d323ff7680cf92c0fb1be8237701885f37656c64d04e98d18d48
 license: GPL-2.0-or-later

@@ -1,6 +1,6 @@
 summary: Open source Video Decode and Presentation API library
 web-url: https://www.freedesktop.org/wiki/Software/VDPAU/
-git-url: https://gitlab.freedesktop.org/vdpau/libvdpau.git
+git-url: https://gitlab.freedesktop.org/vdpau/libvdpau
 src-url: https://gitlab.freedesktop.org/vdpau/libvdpau/-/archive/1.5/libvdpau-1.5.tar.bz2
 src-sha: a5d50a42b8c288febc07151ab643ac8de06a18446965c7241f89b4e810821913
 license: MIT

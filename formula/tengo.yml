@@ -1,6 +1,6 @@
 summary: Fast script language for Go
 web-url: https://tengolang.com
-git-url: https://github.com/d5/tengo.git
+git-url: https://github.com/d5/tengo
 src-url: https://github.com/d5/tengo/archive/v2.12.2.tar.gz
 src-sha: aae5ffbf4a407ed2dee45de10191c095b5d7991af3971bfe937f69fd75085b20
 license: MIT

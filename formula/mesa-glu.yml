@@ -1,6 +1,6 @@
 summary: Mesa OpenGL Utility library
 web-url: https://cgit.freedesktop.org/mesa/glu
-git-url: https://gitlab.freedesktop.org/mesa/glu.git
+git-url: https://gitlab.freedesktop.org/mesa/glu
 src-url: ftp://ftp.freedesktop.org/pub/mesa/glu/glu-9.0.2.tar.xz
 src-sha: 6e7280ff585c6a1d9dfcdf2fca489251634b3377bfc33c29e4002466a38d02d4
 license: GPL-3.0-or-later
