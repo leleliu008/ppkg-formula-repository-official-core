@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow6
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [gnu-barcode,gnu-which,gnupg,gnuplot,godu,gogs,golang,gomobile,google-benchmark,google-highway,goreleaser,gosh,gotop,gotty,gox,gping,gpsim,gputils,grep,grex,groff,gron,gsed,gtar]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [gnu-barcode,gnu-which,gnupg,gnuplot,godu,gogs,golang,gomobile,google-benchmark,google-highway,goreleaser,gosh,gotop,gotty,gox,gping,gpsim,gputils,grep,grex,groff,gron,gsed,gtar]
 
     runs-on: macos-${{ matrix.tag }}
 

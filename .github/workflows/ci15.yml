@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow15
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [pget,physfs,pigz,pipewire,pkg-config,pkgconf,plog,pngquant,pocl,poco,ppkg,procps,procs,progress,proj,proot,pup,putty,pybind11,qpdf,quiche,quickjs,ragel,rang,ranger]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [pget,physfs,pigz,pipewire,pkg-config,pkgconf,plog,pngquant,pocl,poco,ppkg,procps,procs,progress,proj,proot,pup,putty,pybind11,qpdf,quiche,quickjs,ragel,rang,ranger]
 
     runs-on: macos-${{ matrix.tag }}
 
