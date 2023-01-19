@@ -1,8 +1,8 @@
 summary: General-purpose data compression with high compression ratio
 git-url: https://github.com/xz-mirror/xz
 web-url: https://tukaani.org/xz
-src-url: https://tukaani.org/xz/xz-5.2.7.tar.gz
-src-sha: 06327c2ddc81e126a6d9a78b0be5014b976a2c0832f492dcfc4755d7facf6d33
+src-url: https://tukaani.org/xz/xz-5.4.1.tar.gz
+src-sha: e4b0f81582efa155ccf27bb88275254a429d44968e488fc94b806f2a61cd3e22
 license: LGPL-2.1-or-later
 
 install: |
