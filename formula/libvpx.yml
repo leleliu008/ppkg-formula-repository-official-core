@@ -20,7 +20,7 @@ install: |
         *) unset TARGET
     esac
 
-    run $PACKAGE_INSTALLING_BST_DIR/configure \
+    run $PACKAGE_BSCRIPT_DIR/configure \
         --prefix=$PACKAGE_INSTALL_DIR \
         --target=$TARGET \
         --disable-examples \

@@ -67,4 +67,4 @@ install: |
         --disable-indev=jack &&
     gmakew clean &&
     gmakew install &&
-    cp ffbuild/config.log $PACKAGE_INSTALLING_TMP_DIR
+    cp ffbuild/config.log $PACKAGE_BCACHED_DIR

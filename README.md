@@ -40,9 +40,9 @@ a formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to
 |`exetype`|optional|indicates whether can be built as statically-linked executable.<br>values can be any of `statically-linked` `dynamically-linked`. If this mapping is not present, `statically-linked` will be used. this mapping only affects `GNU/Linux` system.|
 ||||
 |`bsystem`|optional|build system.<br>values can be any of `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go`|
-|`bscript`|optional|the directory where the build script is located in, relative to `PACKAGE_INSTALLING_TOP_DIR`. build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
+|`bscript`|optional|the directory where the build script is located in, relative to `PACKAGE_WORKING_DIR`. build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
 |`binbstd`|optional|whether build in the directory where the build script is located in, otherwise build in other directory. values can be `yes` or `no`. default value is `no`.|
-|`prepare`|optional|bash shell code to be run before `install`. `pwd` is `PACKAGE_INSTALLING_BST_DIR`|
+|`prepare`|optional|bash shell code to be run before `install`. `pwd` is `PACKAGE_BSCRIPT_DIR`|
 |`install`|optional|bash shell code to be run when user run `ppkg install <PKG>`. If this mapping is not present, `ppkg` will run default install code according to `bsystem`|
 |`symlink`|optional|whether symlink installed files to `/opt/ppkg/symlinked/*`. values can be `yes` or `no`. default value is `yes`.|
 
@@ -83,8 +83,9 @@ a formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to
 |`NATIVE_OS_NCPU`|current machine os's cpu core count.|
 |||
 |`PPKG_VERSION`|the version of `ppkg`.|
-|`PPKG_EXECUTABLE`|the path of `ppkg`.|
 |`PPKG_HOME`|the home directory of `ppkg`.|
+|`PPKG_EXE_FILEPATH`|the filepath of `ppkg`.|
+|`PPKG_EXE_REALPATH`|the realpath of `ppkg`.|
 |||
 |`CC`|the C Compiler.|
 |`CFLAGS`|the flags of `CC`.|
@@ -100,14 +101,10 @@ a formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to
 |`NM`|a command line tool to list symbols from object files.|
 |`STRIP`|a command line tool to discard symbols and other data from object files.|
 |||
-|`PACKAGE_INSTALLING_TOP_DIR`|the directory used when installing.|
-|`PACKAGE_INSTALLING_SRC_DIR`|the directory where the source code files uncompressed to or copy to.|
-|`PACKAGE_INSTALLING_FIX_DIR`|the directory where the patch files uncompressed to or copy to.|
-|`PACKAGE_INSTALLING_RES_DIR`|the directory where the other resource files uncompressed to or copy to.|
-|`PACKAGE_INSTALLING_BST_DIR`|the directory where the build script (`Makefile`, `configure`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`) is located in.|
-|`PACKAGE_INSTALLING_TMP_DIR`|the directory where the tmp files are stored in when run build script.|
-|||
-|`PACKAGE_INSTALL_DIR`|the directory where the output files will be installed to.|
+|`PACKAGE_WORKING_DIR`|the working directory when installing.|
+|`PACKAGE_BSCRIPT_DIR`|the directory where the build script (e.g. `Makefile`, `configure`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc) is located in.|
+|`PACKAGE_BCACHED_DIR`|the directory where the temporary files are stored in when building.|
+|`PACKAGE_INSTALL_DIR`|the directory where the final files will be installed to.|
 |||
 |`x_INSTALL_DIR`|the installation directory of x package.|
 |`x_INCLUDE_DIR`|`$x_INSTALL_DIR/include`|
