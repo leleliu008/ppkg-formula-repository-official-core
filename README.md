@@ -1,9 +1,10 @@
 # ppkg-formula-repository
 the offical formula repository for [ppkg](https://github.com/leleliu008/ppkg)
 
-## what's formula
+## ppkg formula
 a ppkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to config a [ppkg](https://github.com/leleliu008/ppkg) package's meta-infomation including one sentence description, package version, installation instructions, etc.
 
+## ppkg formula scheme
 |KEY|required?|overview|
 |-|-|-|
 |`summary`|required|Describe this package in one sentence.|
@@ -46,7 +47,7 @@ a ppkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is us
 |`install`|optional|POSIX shell code to be run when user run `ppkg install <PKG>`. If this mapping is not present, `ppkg` will run default install code according to `bsystem`|
 |`symlink`|optional|whether symlink installed files to `$PPKG_HOME/symlinked/*`. values can be `yes` or `no`. default value is `yes`.|
 
-## the commands can be invoked in prepare and install block
+### the commands can be invoked in prepare and install block
 |command|usage-example|
 |-|-|
 |`echo`|`echo 'your message.'`|
@@ -59,7 +60,7 @@ a ppkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is us
 |`format_unix_timestamp`|`format_unix_timestamp "$TIMESTAMP_UNIX" '+%Y/%m/%d %H:%M:%S'`|
 |`wfetch`|`wfetch URL [--sha256=SHA256] --output-path=PATH`<br>`wfetch URL [--sha256=SHA256] --output-dir=DIR --output-name=NAME`<br>`wfetch URL [--sha256=SHA256] --output-dir=DIR [--output-name=NAME]`<br>`wfetch URL [--sha256=SHA256] [--output-dir=DIR] --output-name=NAME`|
 
-## the commands can be invoked in install block only
+### the commands can be invoked in install block only
 |command|usage-example|
 |-|-|
 |`configure`|`configure --enable-pic`|
@@ -70,7 +71,7 @@ a ppkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is us
 |`cargow`|`cargow`|
 |`gow`|`gow`|
 
-## the variable can be used in prepare and install block
+### the variable can be used in prepare and install block
 |variable|overview|
 |-|-|
 |`TIMESTAMP_UNIX`|the unix timestamp of this action.|
