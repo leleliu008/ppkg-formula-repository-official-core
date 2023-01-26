@@ -1,8 +1,8 @@
-# ppkg-formula-repository
+# ppkg-formula-repository-offical-core
 the offical formula repository for [ppkg](https://github.com/leleliu008/ppkg)
 
 ## ppkg formula
-a ppkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to config a [ppkg](https://github.com/leleliu008/ppkg) package's meta-infomation including one sentence description, package version, installation instructions, etc.
+a ppkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to config a ppkg package's meta-infomation including one sentence description, package version, installation instructions, etc.
 
 ## ppkg formula scheme
 |KEY|required?|overview|
@@ -16,7 +16,7 @@ a ppkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is us
 |`git-url`|optional|the source code git repository.<br>If `src-url` is not present, this mapping must be present.|
 |`git-ref`|optional|reference: https://git-scm.com/book/en/v2/Git-Internals-Git-References <br>example values: `HEAD` `refs/heads/master` `refs/heads/main` `refs/tags/v1`, default value is `HEAD`|
 |`git-sha`|optional|the full git commit id, 40-byte hexadecimal string, if `git-ref` and `git-sha` both are present, `git-sha` takes precedence over `git-ref`|
-|`shallow`|optional|indicates whether do a git shallow fetch. values can be `yes` or `no`. default value is `yes`.|
+|`shallow`|optional|indicates whether do a git shallow fetch. value can be `yes` or `no`. default value is `yes`.|
 ||||
 |`src-url`|optional|the source code download url of this package.<br>If value of this mapping ends with any of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/src` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/src`<br>also support format like `dir://DIR`|
 |`src-uri`|optional|the mirror of `src-url`.|
@@ -38,14 +38,14 @@ a ppkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is us
 |`xxflags`|optional|append to `CXXFLAGS`|
 |`ldflags`|optional|append to `LDFLAGS`|
 ||||
-|`exetype`|optional|indicates whether can be built as statically-linked executable.<br>values can be any of `statically-linked` `dynamically-linked`. If this mapping is not present, `statically-linked` will be used. this mapping only affects `GNU/Linux` system.|
+|`exetype`|optional|indicates whether can be built as statically-linked executable.<br>value can be any of `statically-linked` `dynamically-linked`. If this mapping is not present, `statically-linked` will be used. this mapping only affects `GNU/Linux` system.|
 ||||
 |`bsystem`|optional|build system.<br>values can be any of `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go`|
 |`bscript`|optional|the directory where the build script is located in, relative to `PACKAGE_WORKING_DIR`. build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
-|`binbstd`|optional|whether build in the directory where the build script is located in, otherwise build in other directory. values can be `yes` or `no`. default value is `no`.|
+|`binbstd`|optional|whether build in the directory where the build script is located in, otherwise build in other directory. value can be `yes` or `no`. default value is `no`.|
 |`prepare`|optional|POSIX shell code to be run before `install`. `pwd` is `$PACKAGE_BSCRIPT_DIR`|
 |`install`|optional|POSIX shell code to be run when user run `ppkg install <PKG>`. If this mapping is not present, `ppkg` will run default install code according to `bsystem`|
-|`symlink`|optional|whether symlink installed files to `$PPKG_HOME/symlinked/*`. values can be `yes` or `no`. default value is `yes`.|
+|`symlink`|optional|whether symlink installed files to `$PPKG_HOME/symlinked/*`. value can be `yes` or `no`. default value is `yes`.|
 
 ### the commands can be invoked in prepare and install block
 |command|usage-example|
