@@ -2,7 +2,7 @@
 the offical formula repository for [ppkg](https://github.com/leleliu008/ppkg)
 
 ## what's formula
-a formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to configure a ppkg's package infomation and describe how to compile a package for [ppkg](https://github.com/leleliu008/ppkg).
+a ppkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to config a [ppkg](https://github.com/leleliu008/ppkg) package's meta-infomation including one sentence description, package version, installation instructions, etc.
 
 |KEY|required?|overview|
 |-|-|-|
@@ -17,15 +17,15 @@ a formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to
 |`git-sha`|optional|the full git commit id, 40-byte hexadecimal string, if `git-ref` and `git-sha` both are present, `git-sha` takes precedence over `git-ref`|
 |`shallow`|optional|indicates whether do a git shallow fetch. values can be `yes` or `no`. default value is `yes`.|
 ||||
-|`src-url`|optional|the source code download url of this package.<br>If value of this mapping ends with any of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `PACKAGE_INSTALLING_SRC_DIR` when this package is installing, otherwise, it will be copied to `PACKAGE_INSTALLING_SRC_DIR`<br>also support format like `dir://DIR`|
+|`src-url`|optional|the source code download url of this package.<br>If value of this mapping ends with any of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/src` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/src`<br>also support format like `dir://DIR`|
 |`src-uri`|optional|the mirror of `src-url`.|
-|`src-sha`|optional|the `sha256sum` of source code.<br>`src-sha` and `src-url` must appear togther.|
+|`src-sha`|optional|the `sha256sum` of source code.<br>`src-sha` and `src-url` must appear together.|
 ||||
-|`fix-url`|optional|the patch file download url of this package.<br>If value of this mapping ends with any of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `PACKAGE_INSTALLING_FIX_DIR` when this package is installing, otherwise, it will be copied to `PACKAGE_INSTALLING_FIX_DIR`.|
-|`fix-sha`|optional|the `sha256sum` of patch file.<br>`fix-sha` and `fix-url` must appear togther.|
+|`fix-url`|optional|the patch file download url of this package.<br>If value of this mapping ends with any of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/fix` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/fix`.|
+|`fix-sha`|optional|the `sha256sum` of patch file.<br>`fix-sha` and `fix-url` must appear together.|
 ||||
-|`res-url`|optional|other resource download url of this package.<br>If value of this mapping ends with any of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `PACKAGE_INSTALLING_RES_DIR` when this package is installing, otherwise, it will be copied to `PACKAGE_INSTALLING_RES_DIR`.|
-|`res-sha`|optional|the `sha256sum` of resource file.<br>`res-sha` and `res-url` must appear togther.|
+|`res-url`|optional|other resource download url of this package.<br>If value of this mapping ends with any of `.zip` `.tar.xz` `.tar.gz` `.tar.lz` `.tar.bz2` `.tgz` `.txz` `.tlz` `.tbz2`, it will be uncompressed to `$PACKAGE_WORKING_DIR/res` when this package is installing, otherwise, it will be copied to `$PACKAGE_WORKING_DIR/res`.|
+|`res-sha`|optional|the `sha256sum` of resource file.<br>`res-sha` and `res-url` must appear together.|
 ||||
 |`dep-pkg`|optional|a space-separated list of   `ppkg packages` that are depended by this package when installing and/or runtime, which will be installed via [ppkg](https://github.com/leleliu008/ppkg).|
 |`dep-upp`|optional|space-separated   `uppm packages` that are depended by this package when installing and/or runtime, which will be installed via [uppm](https://github.com/leleliu008/uppm).|
@@ -42,9 +42,9 @@ a formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to
 |`bsystem`|optional|build system.<br>values can be any of `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go`|
 |`bscript`|optional|the directory where the build script is located in, relative to `PACKAGE_WORKING_DIR`. build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
 |`binbstd`|optional|whether build in the directory where the build script is located in, otherwise build in other directory. values can be `yes` or `no`. default value is `no`.|
-|`prepare`|optional|bash shell code to be run before `install`. `pwd` is `PACKAGE_BSCRIPT_DIR`|
-|`install`|optional|bash shell code to be run when user run `ppkg install <PKG>`. If this mapping is not present, `ppkg` will run default install code according to `bsystem`|
-|`symlink`|optional|whether symlink installed files to `/opt/ppkg/symlinked/*`. values can be `yes` or `no`. default value is `yes`.|
+|`prepare`|optional|POSIX shell code to be run before `install`. `pwd` is `$PACKAGE_BSCRIPT_DIR`|
+|`install`|optional|POSIX shell code to be run when user run `ppkg install <PKG>`. If this mapping is not present, `ppkg` will run default install code according to `bsystem`|
+|`symlink`|optional|whether symlink installed files to `$PPKG_HOME/symlinked/*`. values can be `yes` or `no`. default value is `yes`.|
 
 ## the commands can be invoked in prepare and install block
 |command|usage-example|
@@ -84,8 +84,7 @@ a formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is used to
 |||
 |`PPKG_VERSION`|the version of `ppkg`.|
 |`PPKG_HOME`|the home directory of `ppkg`.|
-|`PPKG_EXE_FILEPATH`|the filepath of `ppkg`.|
-|`PPKG_EXE_REALPATH`|the realpath of `ppkg`.|
+|`PPKG`|the executable filepath of `ppkg`.|
 |||
 |`CC`|the C Compiler.|
 |`CFLAGS`|the flags of `CC`.|
