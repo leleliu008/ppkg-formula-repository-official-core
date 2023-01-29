@@ -30,7 +30,7 @@ install: |
     includedir=\${prefix}/include
 
     Name: lib$item
-    URL: ${PACKAGE_WEBPAGE}
+    URL: ${PACKAGE_WEB_URL}
     Description: ${PACKAGE_SUMMARY}
     Version: ${PACKAGE_VERSION}
     Libs: -L\${libdir} -l$item
