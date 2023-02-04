@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow4
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [e2fsprogs,ed,eigen,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,fortune]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [e2fsprogs,ed,eigen,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,fortune]
 
     runs-on: macos-${{ matrix.tag }}
 

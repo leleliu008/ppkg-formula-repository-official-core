@@ -6,7 +6,7 @@ src-sha: 4305c54d4eebc4bf3ce365af85f04984ef5aa97a52e01128445e26da5b1f467a
 dep-pkg: gmp
 license: MIT
 
-cdefine: _GNU_SOURCE
+ppflags: -D_GNU_SOURCE
 install: |
     configure \
         --with-int=gmp \

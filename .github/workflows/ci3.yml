@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow3
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [coreutils,cpio,cppcheck,cppunit,cpu_features,cpuinfo,croc,crosstool-ng,crowbook,crun,ctop,cue,curlie,cxxopts,d2,darkhttpd,dasel,dash,delta,diffutils,distcc,dmalloc,dns2tcp,dnsmap,dog,dos2unix,doxygen,dpkg,dua,duf,dufs,dust]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [coreutils,cpio,cppcheck,cppunit,cpu_features,cpuinfo,croc,crosstool-ng,crowbook,crun,ctop,cue,curlie,cxxopts,d2,darkhttpd,dasel,dash,delta,diffutils,distcc,dmalloc,dns2tcp,dnsmap,dog,dos2unix,doxygen,dpkg,dua,duf,dufs,dust]
 
     runs-on: macos-${{ matrix.tag }}
 

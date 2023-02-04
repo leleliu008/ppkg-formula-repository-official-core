@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow7
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [gzip,hashcat,helix,helm,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,iputils,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jsoncpp,jump]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [gzip,hashcat,helix,helm,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,iputils,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jsoncpp,jump]
 
     runs-on: macos-${{ matrix.tag }}
 

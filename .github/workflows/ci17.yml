@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow17
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [soundtouch,spirv-tools,srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,szip,tarlz,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [soundtouch,spirv-tools,srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,szip,tarlz,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2]
 
     runs-on: macos-${{ matrix.tag }}
 
