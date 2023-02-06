@@ -1,7 +1,7 @@
 summary: Modern Linker
 git-url: https://github.com/rui314/mold
-src-url: https://github.com/rui314/mold/archive/v1.6.0.tar.gz
-src-sha: 59cd3ea1a2a5fb50d0d97faddd8bff4c7e71054a576c00a87b17f56ecbd88729
+src-url: https://github.com/rui314/mold/archive/v1.10.1.tar.gz
+src-sha: 19e4aa16b249b7e6d2e0897aa1843a048a0780f5c76d8d7e643ab3a4be1e4787
 license: AGPL-3.0-only
 dep-pkg: tbb xxhash zlib libzstd openssl
 install: |

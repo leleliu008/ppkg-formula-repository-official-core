@@ -5,7 +5,6 @@ src-sha: 767ec234ae7aa684695b3a735548224888132e063f92db585759b422570621d4
 license: LGPL-2.0-or-later
 dep-pkg: glib libxml2
 
-ldflags: -lpcre
 install: |
     configure \
         --disable-gtk-doc \

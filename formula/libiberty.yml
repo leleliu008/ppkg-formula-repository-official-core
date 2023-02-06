@@ -1,6 +1,6 @@
 summary: a collection of subroutines used by various GNU programs.
 web-url: https://packages.debian.org/sid/libiberty-dev
-src-url: http://deb.debian.org/debian/pool/main/libi/libiberty/libiberty_20220713.orig.tar.xz
-src-sha: b59050f48c8a0f9c9e6fba5d17c7a4f11d1329de0c0dca7331b767a6d2bbe8d9
+src-url: http://deb.debian.org/debian/pool/main/libi/libiberty/libiberty_20230104.orig.tar.xz
+src-sha: f0c873589b983a2e82287d1beea3b230959803121ede290154d44008984013ef
 bscript: libiberty
 install: configure --enable-install-libiberty

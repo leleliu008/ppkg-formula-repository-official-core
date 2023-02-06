@@ -5,7 +5,7 @@ src-sha: 75b16b6ef7f1c0c7c4172ed346b2b91b6f1be72c824b6671a059de2b2da554ff
 version: 1
 
 install: |
-    run $CC $CFLAGS $CPPFLAGS -c -o crypt.o $PACKAGE_BSCRIPT_DIR/libcrypt-${PACKAGE_VERSION}.c &&
+    run $CC $CFLAGS $CPPFLAGS -c -o crypt.o ${PACKAGE_SRC_FILEPATH} &&
     run $CC $LDFLAGS -shared -o libcrypt$SHARED_LIBRARY_SUFFIX crypt.o &&
     run $AR crs libcrypt.a crypt.o &&
     run echo "'char* crypt(char* key, char* salt);'" > crypt.h &&
