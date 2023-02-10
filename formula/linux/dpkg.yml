@@ -3,5 +3,6 @@ web-url: https://wiki.debian.org/Teams/Dpkg
 src-url: https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.21.19.tar.xz
 src-sha: cdfd0b36676a77a9cfc53597697c9096f3ffcbc25750944c34142af025101c92
 license: GPL-2.0-only
-dep-pkg: gettext liblzma libbz2 zlib perl
+dep-upp: patch
+dep-pkg: gettext libmd liblzma libbz2 zlib perl
 install: configure --disable-shared

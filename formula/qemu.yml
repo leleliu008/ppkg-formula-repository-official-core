@@ -5,6 +5,7 @@ src-url: https://download.qemu.org/qemu-7.1.0.tar.xz
 src-sha: a0634e536bded57cf38ec8a751adb124b89c776fe0846f21ab6c6728f1cbbbe6
 license: GPL-2.0-only
 dep-pkg: capstone libslirp libssh libusb libpng libjpeg-turbo pixman gnutls lzo nettle snappy vde libzstd libcap-ng xattr
+dep-upp: ninja
 binbstd: yes
 install: |
     export CPPFLAGS="$(printf '%s\n' "$CPPFLAGS" | sed 's|-DNDEBUG||')"

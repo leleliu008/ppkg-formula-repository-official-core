@@ -13,4 +13,5 @@ install: |
         --disable-coverage \
         --disable-strict \
         --disable-static \
+        --enable-shared \
         --disable-doc
