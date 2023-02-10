@@ -4,7 +4,7 @@ web-url: https://zlib.net/
 src-url: https://zlib.net/zlib-1.2.13.tar.gz
 src-sha: b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30
 license: Zlib
-dep-pkg: libzip
+
 bsystem: cmake
 prepare: |
     sed_in_place 's|/share/pkgconfig|/lib/pkgconfig|' CMakeLists.txt &&
