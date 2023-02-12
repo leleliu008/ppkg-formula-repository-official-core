@@ -4,4 +4,4 @@ src-url: https://download.savannah.gnu.org/releases/lzip/plzip/plzip-1.10.tar.gz
 src-sha: 43faa58265d8b89ad75bd4ed11d347ef10065a8070748bc1ed0e06f191458098
 license: GPL-2.0-or-later
 dep-pkg: lzlib
-bsystem: configure
+install: configure CXX="'$CXX'" CXXFLAGS="'$CXXFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'"

@@ -3,6 +3,7 @@ web-url: https://www.getzola.org
 git-url: https://github.com/getzola/zola
 src-url: https://github.com/getzola/zola/archive/v0.16.1.tar.gz
 src-sha: c153fd0cc1435930a4871165e6ad4865e3528465f3f41d0671a9837121688ac7
-dep-pkg: openssl
 license: MIT
+dep-pkg: openssl
+dep-upp: gmake
 bsystem: cargo

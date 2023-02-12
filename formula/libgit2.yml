@@ -1,10 +1,11 @@
 summary: C library of Git core methods that is re-entrant and linkable
 web-url: https://libgit2.github.com
 git-url: https://github.com/libgit2/libgit2
-src-url: https://github.com/libgit2/libgit2/archive/v1.4.4.tar.gz
-src-sha: e9923e9916a32f54c661d55d79c28fa304cb23617639e68bff9f94d3e18f2d4b
+src-url: https://github.com/libgit2/libgit2/archive/v1.5.1.tar.gz
+src-sha: 7074f1e2697992b82402501182db254fe62d64877b12f6e4c64656516f4cde88
 dep-pkg: libssh2 pcre2 libiconv
 license: GPL-2.0-only
+
 prepare: |
     # https://github.com/libgit2/libgit2/issues/6280
     if [ "$NATIVE_OS_KIND" = openbsd ] ; then
@@ -13,16 +14,13 @@ prepare: |
 
 install: |
     cmakew \
-        -DBUILD_CLAR=OFF \
+        -DBUILD_CLI=OFF \
         -DBUILD_TESTS=OFF \
         -DBUILD_FUZZERS=OFF \
         -DBUILD_EXAMPLES=OFF \
         -DBUILD_SHARED_LIBS=OFF \
         -DENABLE_WERROR=OFF \
-        -DENABLE_TRACE=OFF \
         -DDEPRECATE_HARD=OFF \
-        -DPROFILE=OFF \
-        -DTHREADSAFE=ON \
         -DUSE_SSH=ON \
         -DUSE_ICONV=ON \
         -DUSE_HTTPS=OpenSSL \
