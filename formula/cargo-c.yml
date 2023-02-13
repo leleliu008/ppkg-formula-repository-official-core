@@ -1,7 +1,7 @@
 summary: Helper program to build and install c-like libraries
 git-url: https://github.com/lu-zero/cargo-c
 src-url: https://github.com/lu-zero/cargo-c/archive/v0.9.16.tar.gz
-src-sha: d7c5d6259798abac86a4c8c36884ae7f1591831e74fbd6ce87b7c5e953196f75
+src-sha: a84e31fa1718db05f0c7708aff0688858362113d35828e0bc478199b5761256f
 license: MIT
 dep-upp: git curl pkg-config
 dep-pkg: libgit2

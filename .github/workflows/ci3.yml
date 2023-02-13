@@ -24,21 +24,11 @@ jobs:
 
         - uses: actions/checkout@v3
 
-        - run: install -d ~/.ppkg/repos.d/offical-core/
-        - run: mv formula ~/.ppkg/repos.d/offical-core/
-        - run: |
-            cat > ~/.ppkg/repos.d/offical-core/.ppkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
-            branch: master
-            pinned: yes
-            enabled: yes
-            timestamp-added: $(date +%s)
-            EOF
-
         - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/bin/ppkg
         - run: chmod a+x ppkg
         - run: ./ppkg setup
-        - run: ./ppkg env
+        - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-offical-core
+        - run: mv formula ~/.ppkg/repos.d/test/
         - run: ./ppkg install ${{ matrix.pkg }}
 
   macos:
@@ -58,19 +48,9 @@ jobs:
 
         - uses: actions/checkout@v3
 
-        - run: install -d ~/.ppkg/repos.d/offical-core/
-        - run: mv formula ~/.ppkg/repos.d/offical-core/
-        - run: |
-            cat > ~/.ppkg/repos.d/offical-core/.ppkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
-            branch: master
-            pinned: yes
-            enabled: yes
-            timestamp-added: $(date +%s)
-            EOF
-
         - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/bin/ppkg
         - run: chmod a+x ppkg
         - run: ./ppkg setup
-        - run: ./ppkg env
+        - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-offical-core
+        - run: mv formula ~/.ppkg/repos.d/test/
         - run: ./ppkg install ${{ matrix.pkg }}

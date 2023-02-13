@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [bk,blake3,bmake,botan,bottom,boxes,brook,broot,bullet,byacc,bzip2,c-examples,caddy,cargo-deb,catch2,catimg,ccache,cdrtools,cereal,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,clash,cli11,cmake,conmon]
+        pkg: [bk,blake3,bmake,botan,bottom,boxes,brook,broot,bullet,byacc,bzip2,c-examples,caddy,cargo-c,cargo-deb,catch2,catimg,ccache,cdrtools,cereal,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,clash,cli11,cmake,conmon]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -24,21 +24,11 @@ jobs:
 
         - uses: actions/checkout@v3
 
-        - run: install -d ~/.ppkg/repos.d/offical-core/
-        - run: mv formula ~/.ppkg/repos.d/offical-core/
-        - run: |
-            cat > ~/.ppkg/repos.d/offical-core/.ppkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
-            branch: master
-            pinned: yes
-            enabled: yes
-            timestamp-added: $(date +%s)
-            EOF
-
         - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/bin/ppkg
         - run: chmod a+x ppkg
         - run: ./ppkg setup
-        - run: ./ppkg env
+        - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-offical-core
+        - run: mv formula ~/.ppkg/repos.d/test/
         - run: ./ppkg install ${{ matrix.pkg }}
 
   macos:
@@ -47,7 +37,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [bk,blake3,bmake,botan,bottom,boxes,brook,broot,bullet,byacc,bzip2,c-examples,caddy,cargo-deb,catch2,catimg,ccache,cdrtools,cereal,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,clash,cli11,cmake,conmon]
+        pkg: [bk,blake3,bmake,botan,bottom,boxes,brook,broot,bullet,byacc,bzip2,c-examples,caddy,cargo-c,cargo-deb,catch2,catimg,ccache,cdrtools,cereal,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,clash,cli11,cmake,conmon]
 
     runs-on: macos-${{ matrix.tag }}
 
@@ -58,19 +48,9 @@ jobs:
 
         - uses: actions/checkout@v3
 
-        - run: install -d ~/.ppkg/repos.d/offical-core/
-        - run: mv formula ~/.ppkg/repos.d/offical-core/
-        - run: |
-            cat > ~/.ppkg/repos.d/offical-core/.ppkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ppkg-formula-repository-offical-core
-            branch: master
-            pinned: yes
-            enabled: yes
-            timestamp-added: $(date +%s)
-            EOF
-
         - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/bin/ppkg
         - run: chmod a+x ppkg
         - run: ./ppkg setup
-        - run: ./ppkg env
+        - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-offical-core
+        - run: mv formula ~/.ppkg/repos.d/test/
         - run: ./ppkg install ${{ matrix.pkg }}
