@@ -3,9 +3,9 @@ web-url: https://stedolan.github.io/jq
 git-url: https://github.com/stedolan/jq
 src-url: https://github.com/stedolan/jq/releases/download/jq-1.6/jq-1.6.tar.gz
 src-sha: 5de8c8e29aaa3fb9cc6b47bb27299f271354ebb72514e3accadc7d38b5bbaa72
-dep-pkg: oniguruma
-dep-upp: bison
 license: MIT
+dep-upp: bison
+dep-pkg: oniguruma
 
 install: |
     # https://www.gnu.org/software/gnulib/manual/html_node/lgamma_005fr.html

@@ -1,0 +1,9 @@
+summary: SkCMS
+git-url: https://skia.googlesource.com/skcms.git
+license: BSD
+binbstd: yes
+install: |
+    run $CXX $CPPFLAGS $CFLAGS -c skcms.cc
+    run $AR crs libskcms.a skcms.o
+    install_libs libskcms.a
+    install_incs skcms.h

@@ -1,0 +1,6 @@
+summary: simple jpeg encoder
+git-url: https://github.com/webmproject/sjpeg
+license: Apache-2.0
+install: |
+    cmakew -DBUILD_SHARED_LIBS=ON  -DSJPEG_BUILD_EXAMPLES=ON
+    cmakew -DBUILD_SHARED_LIBS=OFF -DSJPEG_BUILD_EXAMPLES=ON

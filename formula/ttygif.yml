@@ -8,5 +8,5 @@ binbstd: yes
 prepare: sed_in_place 's|CFLAGS += -O2 -Wall|override CFLAGS +=|' Makefile
 install: |
     gmakew clean
-    gmakew CC=$CC CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'"
-    gmakew install PREFIX=$PACKAGE_INSTALL_DIR
+    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'"
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
