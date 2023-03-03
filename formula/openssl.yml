@@ -19,14 +19,40 @@ install: |
     fi
 
     if [ "$LINK_TYPE" = static-only ] || [ "$LINK_TYPE" = static-prefered ] ; then
-        export LDCMD=./build-openssl-cmd.sh
+        cat > proxy-ld.c <<EOF
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <string.h>
+    #include <unistd.h>
 
-        cat > "$LDCMD" <<EOF
-        #!/bin/sh
-        $CC \$(printf '%s\n' "\$*" | sed -e 's|-lssl|./libssl.a|g' -e 's|-lcrypto|./libcrypto.a|g')
+    int main(int argc, char* argv[]) {
+        for (int i = 1; i < argc; i++) {
+            if (strcmp(argv[i], "-lssl") == 0) {
+                argv[i] = (char*)"./libssl.a";
+            } else if (strcmp(argv[i], "-lcrypto") == 0) {
+                argv[i] = (char*)"./libcrypto.a";
+            }
+        }
+
+        char * LD = getenv("CC");
+
+        argv[0] = LD;
+
+        for (int i = 0; i < argc; i++) {
+            printf("%s ", argv[i]);
+        }
+
+        printf("\n");
+
+        execv(LD, argv);
+
+        perror(LD);
+
+        return 127;
+    }
     EOF
-
-        chmod +x "$LDCMD"
+        run $CC $CPPFLAGS $CFLAGS $LDFLAGS -std=c99 -o proxy-ld proxy-ld.c
+        run export LDCMD=./proxy-ld
     fi
 
     run ./config \
