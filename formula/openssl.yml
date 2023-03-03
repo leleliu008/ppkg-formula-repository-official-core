@@ -1,8 +1,8 @@
 summary: Cryptography and SSL/TLS Toolkit
+git-url: https://github.com/openssl/openssl
 web-url: https://www.openssl.org/
 src-url: https://www.openssl.org/source/openssl-3.0.5.tar.gz
 src-sha: aa7d8d9bef71ad6525c55ba11e5f4397889ce49c2c9349dcea6d3e4f0b024a7a
-git-url: https://github.com/openssl/openssl
 license: Apache-2.0
 dep-pkg: perl
 
@@ -13,6 +13,7 @@ install: |
         openbsd) sed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
     esac
 
+    # if -static option is given, only static libs are created, but we want both static and shared libs, so we remove the -static option
     if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
         export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
         #sed_in_place 's|BIN_EX_LIBS=|BIN_EX_LIBS=-static |' Configurations/unix-Makefile.tmpl
@@ -31,6 +32,12 @@ install: |
                 argv[i] = (char*)"./libssl.a";
             } else if (strcmp(argv[i], "-lcrypto") == 0) {
                 argv[i] = (char*)"./libcrypto.a";
+            } else {
+                #ifndef NATIVE_OS_KIND_DARWIN
+                if (strcmp(argv[i], "-fPIC") == 0) {
+                    argv[i] = (char*)"-static";
+                }
+                #endif
             }
         }
 
@@ -51,7 +58,12 @@ install: |
         return 127;
     }
     EOF
-        run $CC $CPPFLAGS $CFLAGS $LDFLAGS -std=c99 -o proxy-ld proxy-ld.c
+        if [ "$NATIVE_OS_KIND" = darwin ] ; then
+            run $CC $CPPFLAGS $CFLAGS $LDFLAGS -std=c99 -DNATIVE_OS_KIND_DARWIN -o proxy-ld proxy-ld.c
+        else
+            run $CC $CPPFLAGS $CFLAGS $LDFLAGS -std=c99 -UNATIVE_OS_KIND_DARWIN -o proxy-ld proxy-ld.c
+        fi
+
         run export LDCMD=./proxy-ld
     fi
 
