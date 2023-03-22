@@ -1,11 +1,15 @@
 summary: 7-Zip (high compression file archiver) implementation
 git-url: https://github.com/jinfeihan57/p7zip
+src-url: https://github.com/p7zip-project/p7zip/archive/v17.05.tar.gz
+src-sha: d2788f892571058c08d27095c22154579dfefb807ebe357d145ab2ddddefb1a6
 license: LGPL-2.1-or-later
+binbstd: yes
+install: |
+    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+        mv makefile.macosx_llvm_64bits makefile.machine
+    else
+        mv makefile.linux_any_cpu      makefile.machine
+    fi
 
-bscript: CPP/7zip/CMAKE
-bsystem: cmake
-prepare: |
-    printf '%s\n' 'install(PROGRAMS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/7z_ DESTINATION bin RENAME 7z)' >> CMakeLists.txt &&
-    printf '%s\n' 'install(PROGRAMS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/7za DESTINATION bin)' >> CMakeLists.txt &&
-    printf '%s\n' 'install(PROGRAMS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/7zr DESTINATION bin)' >> CMakeLists.txt &&
-    sed_in_place 's|SET(CMAKE_CXX_FLAGS "|SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} |' CMakeLists.txt
+    gmakew all3 CC="'$CC $CFLAGS $CPPFLAGS $LDFLAGS'" CXX="'$CXX $CXXFLAGS $CPPFLAGS $LDFLAGS'"
+    gmakew install DEST_HOME="$PACKAGE_INSTALL_DIR"
