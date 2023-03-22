@@ -5,10 +5,10 @@ src-url: https://downloads.sourceforge.net/project/infozip/UnZip%206.x%20%28late
 src-sha: 036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
 
 # https://packages.debian.org/buster/unzip
-fix-url: https://deb.debian.org/debian/pool/main/u/unzip/unzip_6.0-27.debian.tar.xz
-fix-sha: 67bde7c71d52afd61aa936d4415c8d12fd90ca26e9637a3cd67cae9b71298c12
+fix-url: https://deb.debian.org/debian/pool/main/u/unzip/unzip_6.0-28.debian.tar.xz
+fix-sha: e51364116c84739c591728ecc841113a914fa11358fd10ff0d6813524d811bb9
 
-version: 6.0.27
+version: 6.0.28
 license: Info-ZIP
 dep-pkg: libbz2
 binbstd: yes
