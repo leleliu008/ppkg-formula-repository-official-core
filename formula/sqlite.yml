@@ -1,9 +1,9 @@
 summary: command-line interface for SQLite
 git-url: https://github.com/sqlite/sqlite
-web-url: https://sqlite.org/
-src-url: https://sqlite.org/2022/sqlite-autoconf-3390400.tar.gz
-src-sha: f31d445b48e67e284cf206717cc170ab63cbe4fd7f79a82793b772285e78fdbb
+web-url: https://www.sqlite.org/
+src-url: https://www.sqlite.org/2023/sqlite-autoconf-3410100.tar.gz
+src-sha: 4dadfbeab9f8e16c695d4fbbc51c16b2f77fb97ff4c1c3d139919dfc038c9e33
 license: blessing
-version: 3.39.4
+version: 3.41.1
 dep-pkg: readline zlib
 install: configure --disable-editline --enable-readline --enable-static-shell
