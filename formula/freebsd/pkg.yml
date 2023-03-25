@@ -1,3 +1,6 @@
 summary: a binary package manager for FreeBSD and DragonflyBSD.
 git-url: https://github.com/freebsd/pkg
-bsystem: configure
+dep-pkg: libarchive
+install: |
+  install -d "$PACKAGE_INSTALL_DIR/etc"
+  configure --with-libarchive.pc
