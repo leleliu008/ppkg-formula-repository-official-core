@@ -1,0 +1,3 @@
+summary: a binary package manager for FreeBSD and DragonflyBSD.
+git-url: https://github.com/freebsd/pkg
+bsystem: configure
