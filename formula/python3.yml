@@ -3,7 +3,7 @@ git-url: https://github.com/python/cpython
 web-url: https://www.python.org/
 src-url: https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz
 src-sha: 2411c74bda5bbcfcddaf4531f66d1adc73f247f529aee981b029513aefdbf849
-dep-pkg: expat libffi openssl sqlite libbz2
+dep-pkg: expat libffi openssl sqlite libbz2 gdbm
 license: Python-2.0
 
 exetype: dynamically-linked
