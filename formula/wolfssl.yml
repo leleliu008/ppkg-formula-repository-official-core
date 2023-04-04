@@ -4,7 +4,7 @@ git-url: https://github.com/wolfSSL/wolfssl
 src-url: https://github.com/wolfSSL/wolfssl/archive/refs/tags/v5.4.0-stable.tar.gz
 src-sha: dc36cc19dad197253e5c2ecaa490c7eef579ad448706e55d73d79396e814098b
 license: GPL-2.0-or-later
-dep-pkg: libtool
+dep-upp: libtool
 bsystem: autogen
 
 install: |

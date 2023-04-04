@@ -5,7 +5,7 @@ src-sha: 7c031cf3eb811242f53664379aebbdd9fae0b7b26b5e5d584c31a9f338154b64
 license: GPL-3.0-or-later
 dep-pkg: gettext
 
-prepare: sed_in_place 's|int streaming;|int streaming __attribute__((common));|' barcode.h
+dopatch: sed_in_place 's|int streaming;|int streaming __attribute__((common));|' barcode.h
 install: |
     export CPPFLAGS="$CPPFLAGS -I$gettext_INSTALL_DIR/share/gettext"
     configure

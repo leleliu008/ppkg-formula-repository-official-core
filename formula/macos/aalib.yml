@@ -8,10 +8,11 @@ fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/6e23dfb/aali
 fix-sha: 54aeff2adaea53902afc2660afb9534675b3ea522c767cbc24a5281080457b2c
 
 license: GPL-2.0-or-later
-dep-pkg: ncurses libtool
+dep-pkg: ncurses
+dep-upp: libtool
 bsystem: autotools
 
-prepare: |
+dopatch: |
     run "patch -p1 < ../fix/54aeff2adaea53902afc2660afb9534675b3ea522c767cbc24a5281080457b2c.patch" &&
     run autoreconf -ivf
     #sed_in_place '203c return 0;'         src/aalinuxkbd.c &&

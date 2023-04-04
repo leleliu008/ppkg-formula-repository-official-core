@@ -5,7 +5,7 @@ src-sha: 32184860ddc0b264ff95010e1c64e596bd746fe4c2e34014a1185340cdddeba6
 dep-pkg: icu4c gobject-introspection graphite2
 license: MIT
 
-prepare: sed_in_place "/subdir('util')/d" meson.build
+dopatch: sed_in_place "/subdir('util')/d" meson.build
 install: |
     mesonw \
         -Dicu=enabled \

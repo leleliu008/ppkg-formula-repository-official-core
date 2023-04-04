@@ -5,7 +5,7 @@ src-url: https://ftp.gnu.org/gnu/make/make-4.3.tar.gz
 src-sha: e05fdde47c5f7ca45cb697e973894ff4f5d79e13b750ed57d7b66d8defc78e19
 license: GPL-3.0-or-later
 
-prepare: |
+dopatch: |
     if [ "$NATIVE_OS_KIND" = freebsd ] ; then
         if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
             sed_in_place 's|-Wl,--export-dynamic||g' configure

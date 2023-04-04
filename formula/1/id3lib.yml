@@ -5,7 +5,7 @@ src-sha: 2749cc3c0cd7280b299518b1ddf5a5bcfe2d1100614519b68702230e26c7d079
 license: LGPL-2.0-or-later
 dep-pkg: libiconv
 
-prepare: |
+dopatch: |
     sed_in_place 's/iomanip.h/iomanip/g' configure || return 1
     for item in $(grep -l 'unsigned int argc' examples/*)
     do

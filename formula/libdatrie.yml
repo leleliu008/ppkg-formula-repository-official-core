@@ -7,4 +7,4 @@ license: LGPL-2.1-or-later
 dep-pkg: libiconv
 ldflags: -liconv -lcharset
 bsystem: configure
-prepare: sed_in_place '/$(LN_S) trietool/d' Makefile.in
+dopatch: sed_in_place '/$(LN_S) trietool/d' Makefile.in

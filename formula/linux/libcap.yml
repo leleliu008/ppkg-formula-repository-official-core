@@ -7,7 +7,7 @@ dep-upp: gperf
 
 binbstd: yes
 
-prepare: |
+dopatch: |
     sed_in_place 's/indent -kr/indent -br/'    Make.Rules &&
     sed_in_place 's/-i $@/-i".bak" $@/'        libcap/Makefile &&
     sed_in_place 's|size_t len/|size_t len/g|' libcap/Makefile

@@ -6,7 +6,7 @@ src-sha: 12848f0a4408f65b530d3962cd9ff670b6ae796191cfeff37522b5772de8dc8e
 license: X11
 dep-pkg: libxml2
 
-prepare: |
+dopatch: |
     sed_in_place 's|$(XSLTPROC) --nonet $(srcdir)/xsltproc.xml|touch xsltproc.1|' doc/Makefile.am &&
     sed_in_place 's|$(XSLTPROC) --nonet $(srcdir)/xsltproc.xml|touch xsltproc.1|' doc/Makefile.in
 

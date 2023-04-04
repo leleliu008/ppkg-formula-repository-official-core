@@ -5,7 +5,7 @@ src-url: https://github.com/fontforge/fontforge/releases/download/20220308/fontf
 src-sha: 01e4017f7a0ccecf436c74b8e1f6b374fc04a5283c1d68967996782e15618e59
 license: GPL-3.0-or-later
 dep-pkg: pango libuninameslist libspiro giflib libjpeg-turbo libtiff
-prepare: |
+dopatch: |
     cat > cmake/packages/FindTIFF.cmake <<EOF
     # https://cmake.org/cmake/help/latest/module/FindTIFF.html
     #

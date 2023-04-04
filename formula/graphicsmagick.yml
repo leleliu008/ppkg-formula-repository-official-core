@@ -3,7 +3,8 @@ web-url: http://www.graphicsmagick.org/
 src-url: https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.38/GraphicsMagick-1.3.38.tar.xz
 src-sha: d60cd9db59351d2b9cb19beb443170acaa28f073d13d258f67b3627635e32675
 license: MIT
-dep-pkg: freetype2 jasper libjxl libxml2 lcms2 libtool
+dep-pkg: freetype2 jasper libjxl libxml2 lcms2
+dep-upp: libtool
 install: |
     configure \
         --disable-openmp \

@@ -4,7 +4,7 @@ git-url: https://github.com/yasm/yasm
 src-url: https://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz
 src-sha: 3dce6601b495f5b3d45b59f7d2492a340ee7e84b5beca17e48f862502bd5603f
 
-prepare: |
+dopatch: |
     if [ "$NATIVE_OS_KIND" = darwin ] ; then
         sed_in_place 's|$(CC_FOR_BUILD) $(DEFAULT_INCLUDES)|$(CC_FOR_BUILD) $(CFLAGS_FOR_BUILD) $(DEFAULT_INCLUDES)|' Makefile.in
     fi

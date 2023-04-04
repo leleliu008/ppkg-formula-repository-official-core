@@ -5,7 +5,7 @@ src-sha: 45cfcdab07f824f6c06c9776701156f7a04b23eadd25ecbc88c188789a447cc7
 dep-pkg: grpc nlohmann-json spdlog
 license: GPL-3.0-or-later
 
-prepare: |
+dopatch: |
     sed_in_place '/-DPKG_CONFIG_EXECUTABLE/a -DCMAKE_PROJECT_INCLUDE=${CMAKE_PROJECT_INCLUDE}' CMakeLists.txt
 
     # https://github.com/nlohmann/json/issues/3090

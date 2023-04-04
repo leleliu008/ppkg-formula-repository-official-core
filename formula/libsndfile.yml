@@ -9,8 +9,9 @@ fix-url: https://github.com/libsndfile/libsndfile/commit/e4fdaeefddd39bae1db27d4
 fix-sha: af1e9faf1b7f414ff81ef3f1641e2e37f3502f0febd17f70f0db6ecdd02dc910
 
 license: LGPL-2.1-or-later
-dep-pkg: opus libvorbis flac sqlite python3 libtool
-prepare: run "patch -p1 < ../fix/af1e9faf1b7f414ff81ef3f1641e2e37f3502f0febd17f70f0db6ecdd02dc910.patch"
+dep-pkg: opus libvorbis flac sqlite python3
+dep-upp: libtool
+dopatch: run "patch -p1 < ../fix/af1e9faf1b7f414ff81ef3f1641e2e37f3502f0febd17f70f0db6ecdd02dc910.patch"
 bsystem: autotools
 install: |
     configure \

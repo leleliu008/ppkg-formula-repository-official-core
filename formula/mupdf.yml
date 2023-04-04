@@ -6,7 +6,7 @@ src-sha: 6f73f63ef8aa81991dfd023d4426a548827d1d74e0bfcf2a013acad63b651868
 license: AGPL-3.0-or-later
 dep-pkg: openjpeg openssl mujs libjpeg-turbo jbig2dec freetype2-with-harfbuzz gumbo-parser freeglut mesa xorg-libxext
 binbstd: yes
-prepare: |
+dopatch: |
     for item in $(find thirdparty -maxdepth 1 -mindepth 1 -type d)
     do
         [ "$item" = thirdparty/extract ] && continue

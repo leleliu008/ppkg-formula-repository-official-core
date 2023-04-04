@@ -3,11 +3,12 @@ web-url: http://www.mega-nerd.com/SRC
 src-url: http://www.mega-nerd.com/SRC/libsamplerate-0.1.9.tar.gz
 src-sha: 0a7eb168e2f21353fb6d84da152e4512126f7dc48ccb0be80578c565413444c1
 license: BSD-2-Clause
-dep-pkg: libsndfile fftw libtool
+dep-pkg: libsndfile fftw
+dep-upp: libtool
 
 bsystem: autogen
 
-prepare: |
+dopatch: |
     sed_in_place 's|Carbon\.h|Carbon/Carbon.h|' examples/audio_out.c &&
     autoreconf -ivf &&
     sed_in_place '$d' autogen.sh &&

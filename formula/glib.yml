@@ -6,7 +6,7 @@ src-sha: 3652c7f072d7b031a6b5edd623f77ebc5dcd2ae698598abcc89ff39ca75add30
 license: LGPL-2.1-or-later
 dep-pkg: gettext libffi pcre2
 
-prepare: |
+dopatch: |
     sed_in_place "s|dependency('zlib')|cc.find_library('z', static : true, dirs : ['$zlib_LIBRARY_DIR'])|" meson.build
 
 install: |

@@ -6,5 +6,5 @@ src-sha: 872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd
 license: GPL-3.0-or-later
 dep-pkg: zlib openssl ncurses protobuf
 
-prepare: sed_in_place 's|if ( bind|if (::bind|' src/network/network.cc
+dopatch: sed_in_place 's|if ( bind|if (::bind|' src/network/network.cc
 install: configure --with-ncurses

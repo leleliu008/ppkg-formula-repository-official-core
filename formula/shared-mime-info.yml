@@ -5,5 +5,5 @@ src-url: https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.2/share
 src-sha: 418c480019d9865f67f922dfb88de00e9f38bf971205d55cdffab50432919e61
 license: GPL-2.0-only
 dep-pkg: libxslt glib
-prepare: sed_in_place 's|xmlto.found()|false|' data/meson.build
+dopatch: sed_in_place 's|xmlto.found()|false|' data/meson.build
 install: mesonw -Dupdate-mimedb=true

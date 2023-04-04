@@ -6,7 +6,7 @@ git-url: https://github.com/hanwen/mftrace
 license: GPL-2.0-only
 dep-pkg: fontforge potrace t1utils
 binbstd: yes
-prepare: |
+dopatch: |
     touch gf2pbm.1
     sed_in_place 's/rm -f config.cache config.h config.log config.status GNUmakefile/rm -f config.cache config.log/' GNUmakefile.in
 

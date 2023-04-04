@@ -5,7 +5,7 @@ src-sha: 9f9cd4c041f99b5c49ffb7b59d9f12d95b683d88585608aa56a6307667b2b21f
 license: BSD-2-Clause
 binbstd: yes
 xxflags: -std=c++11
-#prepare: sed_in_place 's|ac_sys_system=`uname -s`|ac_sys_system=$host|' configure
+#dopatch: sed_in_place 's|ac_sys_system=`uname -s`|ac_sys_system=$host|' configure
 install: |
     export LD="$CC"
     configure

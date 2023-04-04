@@ -13,7 +13,7 @@ license: Info-ZIP
 dep-pkg: libbz2
 binbstd: yes
 
-prepare: |
+dopatch: |
     for patchfile in $(cat ../fix/patches/series)
     do  
         patch -p1 < ../fix/patches/$patchfile || return 1

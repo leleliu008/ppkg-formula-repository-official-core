@@ -2,5 +2,6 @@ summary: X.org X Present Extension library
 git-url: https://gitlab.freedesktop.org/xorg/lib/libxpresent
 src-url: https://gitlab.freedesktop.org/xorg/lib/libxpresent/-/archive/libXpresent-1.0.1/libxpresent-libXpresent-1.0.1.tar.bz2
 src-sha: 8056ce854753409ad7a8fddb7cbd921adcb571e296767666f6908672f68133ce
-dep-pkg: xorg-libxrandr xorg-libxfixes libtool
+dep-pkg: xorg-libxrandr xorg-libxfixes
+dep-upp: libtool
 bsystem: autogen

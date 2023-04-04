@@ -3,8 +3,8 @@ web-url: https://www.unbound.net
 git-url: https://github.com/NLnetLabs/unbound
 src-url: https://nlnetlabs.nl/downloads/unbound/unbound-1.17.0.tar.gz
 src-sha: dcbc95d7891d9f910c66e4edc9f1f2fde4dea2eec18e3af9f75aed44a02f1341
-dep-pkg: libevent libnghttp2 openssl expat libtool
-dep-upp: gm4 flex bison
+dep-pkg: libevent libnghttp2 openssl expat
+dep-upp: gm4 flex bison libtool
 license: BSD-3-Clause
 
 install: |

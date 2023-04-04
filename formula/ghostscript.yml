@@ -7,7 +7,7 @@ dep-pkg: fontconfig jbig2dec libidn lcms2 openjpeg tesseract
 bsystem: configure
 binbstd: yes
 
-prepare: |
+dopatch: |
     rm -rf expat
     rm -rf freetype
     rm -rf jbig2dec

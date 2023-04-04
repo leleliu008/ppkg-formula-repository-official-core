@@ -4,5 +4,5 @@ src-url: https://github.com/numactl/numactl/releases/download/v2.0.14/numactl-2.
 src-sha: 826bd148c1b6231e1284e42a4db510207747484b112aee25ed6b1078756bcff6
 license: GPL-2.0-or-later
 
-prepare: sed_in_place 's/-lrt//' Makefile.in
+dopatch: sed_in_place 's/-lrt//' Makefile.in
 bsystem: configure

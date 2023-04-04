@@ -10,9 +10,9 @@ res-url: https://raw.githubusercontent.com/macports/macports-ports/0ffd857cab7b0
 res-sha: 6540eef1c31ffb4ed636c1f4750ee668d2effdfe308d975d835aa518731c72dc
 
 license: GPL-3.0-or-later
-dep-pkg: libtool
+dep-upp: libtool
 bsystem: autotools
-prepare: |
+dopatch: |
     run "patch -p1 < ../fix/60cfd8bbc416527981151237b7c403fba88975e97907a0ed5c31566d0cda078d.diff" &&
     run "patch -p0 < ../res/6540eef1c31ffb4ed636c1f4750ee668d2effdfe308d975d835aa518731c72dc.diff" &&
     run ./bootstrap
