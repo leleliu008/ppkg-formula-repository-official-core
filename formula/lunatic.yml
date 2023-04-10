@@ -1,7 +1,7 @@
 summary: A universal runtime for fast, robust and scalable server-side applications.
 web-url: https://lunatic.solutions
-git-url: https://github.com/lunatic-solutions
-src-url: https://github.com/lunatic-solutions/lunatic/archive/refs/tags/v0.10.0.tar.gz
-src-sha: 69554bae268fd399fde67afbdaa9b3d547624dadae021dd9b22dbc6b2ef67553
+git-url: https://github.com/lunatic-solutions/lunatic
+src-url: https://github.com/lunatic-solutions/lunatic/archive/refs/tags/v0.12.0.tar.gz
+src-sha: fa4671b5bf6513a434b926f87d86378be56659dad6a5e367fa28cc6238df2137
 license: MIT
 bsystem: cargo
