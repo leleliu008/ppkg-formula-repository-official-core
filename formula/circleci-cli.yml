@@ -1,0 +1,11 @@
+summary: Use CircleCI from the command line
+webpage: https://circleci.com/docs/2.0/local-cli/
+git-url: https://github.com/CircleCI-Public/circleci-cli
+src-url: https://github.com/CircleCI-Public/circleci-cli/archive/refs/tags/v0.1.25725.tar.gz
+src-sha: fb4a23573cb9cbe6084f7a4761829aa086661634a7990398f05180e09a8e1740
+license: MIT
+install: |
+    gow \
+        -X github.com/CircleCI-Public/circleci-cli/version.packageManager=ppkg \
+        -X github.com/CircleCI-Public/circleci-cli/version.Version=$PACKAGE_VERSION \
+        -X github.com/CircleCI-Public/circleci-cli/version.Commit=$PACKAGE_GIT_SHA
