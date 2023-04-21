@@ -2,8 +2,8 @@ summary: GNU multiple precision arithmetic library
 web-url: https://gmplib.org/
 src-url: https://gmplib.org/download/gmp/gmp-6.2.1.tar.xz
 src-sha: fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddadc49b4f2
-dep-upp: gm4
 license: LGPL-3.0-or-later
+dep-upp: gm4
 
 install: |
     export CC_FOR_BUILD="$CC_FOR_BUILD $CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD"

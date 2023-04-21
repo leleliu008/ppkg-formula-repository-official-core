@@ -15,4 +15,4 @@ install: |
         export MACOSX_DEPLOYMENT_TARGET=10.8
     fi
 
-    configure --with-oniguruma=$oniguruma_INSTALL_DIR
+    configure --with-oniguruma="$oniguruma_INSTALL_DIR"

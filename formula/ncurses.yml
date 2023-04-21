@@ -7,6 +7,8 @@ license: MIT
 
 binbstd: yes
 install: |
+    unset TERMINFO
+
     run install -d "$PACKAGE_INSTALL_DIR/lib/pkgconfig" || return 1
 
     configure \

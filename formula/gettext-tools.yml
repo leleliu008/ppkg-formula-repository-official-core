@@ -25,4 +25,6 @@ install: |
         --enable-libasprintf \
         --enable-namespacing \
         --enable-nls \
-        --enable-relocatable
+        --enable-relocatable &&
+    rm -rf "$PACKAGE_INSTALL_DIR/lib" &&
+    rm -rf "$PACKAGE_INSTALL_DIR/include"

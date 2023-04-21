@@ -1,0 +1,24 @@
+summary: Core application library for C
+web-url: https://developer.gnome.org/glib
+git-url: https://github.com/GNOME/glib
+src-url: https://download.gnome.org/sources/glib/2.74/glib-2.74.0.tar.xz
+src-sha: 3652c7f072d7b031a6b5edd623f77ebc5dcd2ae698598abcc89ff39ca75add30
+license: LGPL-2.1-or-later
+dep-pkg: gettext libffi pcre2
+
+dopatch: |
+    sed_in_place "s|dependency('zlib')|cc.find_library('z', static : true, dirs : ['$zlib_LIBRARY_DIR'])|" meson.build
+
+install: |
+    mesonw \
+        -Dnls=disabled \
+        -Dman=false \
+        -Dgtk_doc=false \
+        -Ddtrace=false \
+        -Dglib_debug=disabled \
+        -Dglib_assert=false \
+        -Dtests=false \
+        -Dinstalled_tests=false \
+        -Dbsymbolic_functions=false
+    rm -rf "$PACKAGE_INSTALL_DIR/lib"
+    rm -rf "$PACKAGE_INSTALL_DIR/include"
