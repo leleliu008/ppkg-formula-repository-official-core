@@ -10,4 +10,4 @@ install: |
         -DJAS_ENABLE_DOC=OFF \
         -DJAS_ENABLE_SHARED=ON \
         -DJAS_ENABLE_PROGRAMS=ON \
-        -DJAS_STDC_VERSION=$($CC -E -dM - < /dev/null | sed -n '/__STDC_VERSION__/p' | cut -d ' ' -f3)
+        -DJAS_STDC_VERSION=$("$CC" -E -dM - < /dev/null | sed -n '/__STDC_VERSION__/p' | cut -d ' ' -f3)
