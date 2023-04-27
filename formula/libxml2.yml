@@ -9,7 +9,7 @@ dep-pkg: libiconv zlib
 
 install: |
     configure \
-        --with-iconv=$libiconv_INSTALL_DIR \
+        --with-iconv="$libiconv_INSTALL_DIR" \
         --with-zlib \
         --without-lzma \
         --without-python \
