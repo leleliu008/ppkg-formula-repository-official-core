@@ -1,21 +1,14 @@
 summary: C library for files containing sampled sound
 web-url: http://libsndfile.github.io/libsndfile/
 git-url: https://github.com/libsndfile/libsndfile
-src-url: https://github.com/libsndfile/libsndfile/releases/download/1.1.0/libsndfile-1.1.0.tar.xz
-src-sha: 0f98e101c0f7c850a71225fb5feaf33b106227b3d331333ddc9bacee190bcf41
-
-# https://github.com/libsndfile/libsndfile/pull/828
-fix-url: https://github.com/libsndfile/libsndfile/commit/e4fdaeefddd39bae1db27d48ccb7db7733e0c009.patch?full_index=1
-fix-sha: af1e9faf1b7f414ff81ef3f1641e2e37f3502f0febd17f70f0db6ecdd02dc910
-
+src-url: https://github.com/libsndfile/libsndfile/releases/download/1.2.0/libsndfile-1.2.0.tar.xz
+src-sha: 0e30e7072f83dc84863e2e55f299175c7e04a5902ae79cfb99d4249ee8f6d60a
 license: LGPL-2.1-or-later
-dep-pkg: opus libvorbis flac sqlite python3
-dep-upp: libtool
-dopatch: run "patch -p1 < ../fix/af1e9faf1b7f414ff81ef3f1641e2e37f3502f0febd17f70f0db6ecdd02dc910.patch"
-bsystem: autotools
+dep-pkg: opus libvorbis flac sqlite
+dep-upp: python3
 install: |
-    configure \
-        --disable-test-coverage \
-        --disable-octave \
-        --enable-sqlite \
-        --enable-external-libs
+    cmakew \
+        -DBUILD_PROGRAMS=ON \
+        -DBUILD_EXAMPLES=OFF \
+        -DENABLE_PACKAGE_CONFIG=ON \
+        -DINSTALL_PKGCONFIG_MODULE=ON

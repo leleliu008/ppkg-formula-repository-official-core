@@ -9,6 +9,6 @@ bsystem: autogen
 install: |
     configure \
         --with-openssl \
-        --with-pcre=$pcre_INSTALL_DIR \
+        --with-pcre="$pcre_INSTALL_DIR" \
         --with-zlib \
         --with-bzip2
