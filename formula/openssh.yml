@@ -1,9 +1,9 @@
 summary: OpenBSD freely-licensed SSH connectivity tools
 git-url: https://github.com/openssh/openssh-portable
 web-url: https://www.openssh.com/
-src-url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.0p1.tar.gz
-src-sha: 03974302161e9ecce32153cfa10012f1e65c8f3750f573a73ab1befd5972a28a
-version: 9.1p1
+src-url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.3p1.tar.gz
+src-sha: e9baba7701a76a51f3d85a62c383a3c9dcd97fa900b859bc7db114c1868af8a8
+version: 9.3.1
 license: SSH-OpenSSH
 dep-pkg: ldns openssl zlib
 install: configure --with-privsep-path=$PACKAGE_INSTALL_DIR/sbin
