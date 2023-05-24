@@ -10,4 +10,4 @@ install: |
         -DLIBUV_BUILD_TESTS=OFF \
         -DLIBUV_BUILD_BENCH=OFF \
         -DQEMU=OFF &&
-    mv $PACKAGE_INSTALL_DIR/lib/libuv_a.a $PACKAGE_INSTALL_DIR/lib/libuv.a
+    mv "$PACKAGE_INSTALL_DIR/lib/libuv_a.a" "$PACKAGE_INSTALL_DIR/lib/libuv.a"
