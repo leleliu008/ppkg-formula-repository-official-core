@@ -3,6 +3,6 @@ web-url: https://wiki.freedesktop.org/www/Software/PulseAudio/
 git-url: https://gitlab.freedesktop.org/pulseaudio/pulseaudio
 src-url: https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-14.2.tar.xz
 src-sha: 75d3f7742c1ae449049a4c88900e454b8b350ecaa8c544f3488a2562a9ff66f1
-dep-pkg: json-c libsndfile libsoxr openssl speexdsp expat glib libcap
-dep-upp: gm4 libtool
+dep-pkg: json-c libsndfile libsoxr openssl speexdsp expat glib libcap libtool
+dep-upp: gm4
 bsystem: configure

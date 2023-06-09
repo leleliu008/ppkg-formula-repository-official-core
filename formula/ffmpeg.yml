@@ -1,8 +1,8 @@
 summary: Play, record, convert, and stream audio and video
 git-url: https://github.com/FFmpeg/FFmpeg
 web-url: https://ffmpeg.org/
-src-url: https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.xz
-src-sha: 619e706d662c8420859832ddc259cd4d4096a48a2ce1eefd052db9e440eef3dc
+src-url: https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz
+src-sha: 57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082
 license: GPL-2.0-or-later
 dep-pkg: gnutls aom dav1d rav1e opus libvpx theora speex x264 x265 lame frei0r libass libbluray librist libsoxr libvidstab opencore-amr rubberband snappy srt tesseract xvid zeromq zimg alsa-lib xorg-libxv
 

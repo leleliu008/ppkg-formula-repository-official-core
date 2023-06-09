@@ -1,0 +1,21 @@
+name: compare-versions
+
+on:
+  push:
+    branches: [ master, dev ]
+  pull_request:
+    branches: [ master, dev ]
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  schedule:
+
+    runs-on: macos-12
+
+    steps:
+      - run: brew update
+
+      - uses: actions/checkout@v3
+
+      - run: ./compare-versions-with-brew
