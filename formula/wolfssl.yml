@@ -1,8 +1,8 @@
 summary: Embedded SSL Library written in C
 web-url: https://www.wolfssl.com
 git-url: https://github.com/wolfSSL/wolfssl
-src-url: https://github.com/wolfSSL/wolfssl/archive/refs/tags/v5.4.0-stable.tar.gz
-src-sha: dc36cc19dad197253e5c2ecaa490c7eef579ad448706e55d73d79396e814098b
+src-url: https://github.com/wolfSSL/wolfssl/archive/refs/tags/v5.6.2-stable.tar.gz
+src-sha: eb252f6ca8d8dcc2a05926dfafbc42250fea78e5e07b4689c3fc26ad69d2dd73
 license: GPL-2.0-or-later
 dep-upp: libtool
 bsystem: autogen

@@ -1,7 +1,7 @@
 summary: Portable version of NetBSD make(1)
 web-url: https://www.crufty.net/help/sjg/bmake.html
-src-url: https://www.crufty.net/ftp/pub/sjg/bmake-20230303.tar.gz
-src-sha: e8698724ac68c63f8e6682a93c3154c1d93dc6a9072f13c8cef07ece4ccd0ed6
+src-url: https://www.crufty.net/ftp/pub/sjg/bmake-20230522.tar.gz
+src-sha: dfe556df70e1555b70eccf4e6d367aa8b91aa076d5e9b55e36b5ce3e721f9050
 license: BSD-3-Clause
 binbstd: yes
 install: |

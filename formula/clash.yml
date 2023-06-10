@@ -1,7 +1,7 @@
 summary: Rule-based tunnel in Go
 git-url: https://github.com/Dreamacro/clash
-src-url: https://github.com/Dreamacro/clash/archive/v1.11.8.tar.gz
-src-sha: 573fcf59648a4eee6ac8cd0a0d4717cc55f350beb866923749d343f17ff77f11
+src-url: https://github.com/Dreamacro/clash/archive/v1.16.0.tar.gz
+src-sha: 671d9ad8582593478945e13a052d4b462e0935ac50d5bb71fa2bdf2fa16893ea
 license: GPL-3.0-only
 
 install: |

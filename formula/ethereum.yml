@@ -1,8 +1,8 @@
 summary: Go implementation of the Ethereum protocol
 web-url: https://geth.ethereum.org/
 git-url: https://github.com/ethereum/go-ethereum
-src-url: https://github.com/ethereum/go-ethereum/archive/refs/tags/v1.10.23.tar.gz
-src-sha: 44d89b50a9cce9198aee8b2f10692949ef9b477b315f18bbd7e89b084416f4de
+src-url: https://github.com/ethereum/go-ethereum/archive/refs/tags/v1.12.0.tar.gz
+src-sha: dcd73f341d89f6a195bcdd115066bc7b0ea2ca9983be351ea06a3d41e621f678
 license: LGPL-3.0-or-later
 
 bsystem: go

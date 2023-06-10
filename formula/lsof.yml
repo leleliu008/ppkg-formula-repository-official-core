@@ -1,8 +1,8 @@
 summary: Utility to list open files
 web-url: https://people.freebsd.org/~abe
 git-url: https://github.com/lsof-org/lsof
-src-url: https://github.com/lsof-org/lsof/archive/4.96.4.tar.gz
-src-sha: b5a052cac8d6b2726bbb1de2b98c6d9204c7619263fb63e9b6b1bd6bbb37bf14
+src-url: https://github.com/lsof-org/lsof/archive/4.98.0.tar.gz
+src-sha: 80308a614508814ac70eb2ae1ed2c4344dcf6076fa60afc7734d6b1a79e62b16
 dep-pkg: libtirpc
 license: Zlib
 

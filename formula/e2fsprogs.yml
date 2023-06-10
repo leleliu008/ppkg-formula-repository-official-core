@@ -1,8 +1,8 @@
 summary: Utilities for the ext2, ext3, and ext4 file systems
 web-url: https://e2fsprogs.sourceforge.io/
 git-url: https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs
-src-url: https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.46.5/e2fsprogs-1.46.5.tar.gz
-src-sha: b7430d1e6b7b5817ce8e36d7c8c7c3249b3051d0808a96ffd6e5c398e4e2fbb9
+src-url: https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.0/e2fsprogs-1.47.0.tar.gz
+src-sha: 6667afde56eef0c6af26684974400e4d2288ea49e9441bf5e6229195d51a3578
 license: GPL-2.0-or-later
 dep-pkg: gettext libiconv
 

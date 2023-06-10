@@ -1,7 +1,7 @@
 summary: OpenType text shaping engine
 git-url: https://github.com/harfbuzz/harfbuzz
-src-url: https://github.com/harfbuzz/harfbuzz/archive/4.3.0.tar.gz
-src-sha: 32184860ddc0b264ff95010e1c64e596bd746fe4c2e34014a1185340cdddeba6
+src-url: https://github.com/harfbuzz/harfbuzz/archive/7.3.0.tar.gz
+src-sha: 7cefc6cc161e9d5c88210dafc43bc733ca3e383fd3dd4f1e6178f81bd41cfaae
 dep-pkg: icu4c gobject-introspection graphite2
 license: MIT
 
