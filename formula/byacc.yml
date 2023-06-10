@@ -1,5 +1,5 @@
 summary: (Arguably) the best yacc variant
 web-url: https://invisible-island.net/byacc/
-src-url: https://invisible-mirror.net/archives/byacc/byacc-20221106.tgz
-src-sha: a899be227bbcac9cf7700f7dbb5a8494688f1f9f0617b510762daeace47b9d12
+src-url: https://invisible-mirror.net/archives/byacc/byacc-20230521.tgz
+src-sha: 5ad915a7d5833aa38a5e31bd077505666029c35e365dff8569fe4598eaa9fef2
 install: configure --program-prefix=b

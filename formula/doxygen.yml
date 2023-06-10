@@ -1,8 +1,8 @@
 summary: Generate documentation for several programming languages
 git-url: https://github.com/doxygen/doxygen
 web-url: https://www.doxygen.nl/
-src-url: https://www.doxygen.nl/files/doxygen-1.9.5.src.tar.gz
-src-sha: 55b454b35d998229a96f3d5485d57a0a517ce2b78d025efb79d57b5a2e4b2eec
+src-url: https://www.doxygen.nl/files/doxygen-1.9.7.src.tar.gz
+src-sha: 87007641c38e2c392c8596f36711eb97633b984c8430f389e7bcf6323a098d94
 license: GPL-2.0-only
 dep-upp: gm4 flex bison
 dep-pkg: python3

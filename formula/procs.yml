@@ -1,6 +1,6 @@
 summary: Modern replacement for ps written by Rust
 git-url: https://github.com/dalance/procs
-src-url: https://github.com/dalance/procs/archive/v0.13.0.tar.gz
-src-sha: 77642878d503f876db05d99a620c8c91834354a074bf71ab65474aa433f75fc5
+src-url: https://github.com/dalance/procs/archive/v0.14.0.tar.gz
+src-sha: fa5af0951dc8aa63c0590f8c5c1136594866057704cfb1cdfc22ac3cc49437c6
 license: MIT
 bsystem: cargo
