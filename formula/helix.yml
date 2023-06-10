@@ -1,8 +1,8 @@
 summary: A post-modern modal text editor.
 web-url: https://helix-editor.com/
 git-url: https://github.com/helix-editor/helix
-src-url: https://github.com/helix-editor/helix/releases/download/22.12/helix-22.12-source.tar.xz
-src-sha: 295b42a369fbc6282693eb984a77fb86260f7baf3ba3a8505d62d1c619c2f3f4
+src-url: https://github.com/helix-editor/helix/releases/download/23.05/helix-23.05-source.tar.xz
+src-sha: c1ca69facde99d708175c686ce5bf3585e119e372c83e1c3dc1d562c7a8e3d87
 license: MPL-2.0
 install: |
     cargow install --path helix-term &&

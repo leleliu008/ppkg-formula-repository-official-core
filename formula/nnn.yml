@@ -1,7 +1,7 @@
 summary: Tiny, lightning fast, feature-packed file manager
 git-url: https://github.com/jarun/nnn
-src-url: https://github.com/jarun/nnn/archive/v4.6.tar.gz
-src-sha: 15acaf9a88cfb5a2a640d3ef55a48af644fba92b46aac0768efe94c4addf7e3f
+src-url: https://github.com/jarun/nnn/archive/v4.8.tar.gz
+src-sha: 0a744e67a0ce8b5e1e04961f542d2c33ddb6ceed46ba760dd35c4922b21f1146
 license: BSD-2-Clause
 dep-pkg: readline
 binbstd: yes
