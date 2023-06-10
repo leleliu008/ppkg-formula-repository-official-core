@@ -1,7 +1,7 @@
 summary: Zlib replacement with optimizations for next generation systems
 git-url: https://github.com/zlib-ng/zlib-ng
-src-url: https://github.com/zlib-ng/zlib-ng/archive/2.0.6.tar.gz
-src-sha: 8258b75a72303b661a238047cb348203d88d9dddf85d480ed885f375916fcab6
+src-url: https://github.com/zlib-ng/zlib-ng/archive/2.1.2.tar.gz
+src-sha: 383560d6b00697c04e8878e26c0187b480971a8bce90ffd26a5a7b0f7ecf1a33
 license: Zlib
 install: |
     cmakew \

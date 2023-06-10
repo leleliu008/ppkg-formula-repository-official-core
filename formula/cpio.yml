@@ -1,8 +1,8 @@
 summary: Copies files into or out of a cpio or tar archive
 git-url: https://git.savannah.gnu.org/git/cpio
 web-url: https://www.gnu.org/software/cpio
-src-url: https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2
-src-sha: eab5bdc5ae1df285c59f2a4f140a98fc33678a0bf61bdba67d9436ae26b46f6d
+src-url: https://ftp.gnu.org/gnu/cpio/cpio-2.14.tar.bz2
+src-sha: fcdc15d60f7267a6fc7efcd6b9db7b6c8966c4f2fbbb964c24d41336fd3f2c12
 license: GPL-3.0-or-later
 install: |
     if [ "$NATIVE_OS_KIND" = darwin ] ; then

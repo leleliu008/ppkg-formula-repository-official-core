@@ -1,8 +1,8 @@
 summary: Distributed revision control system
 web-url: https://git-scm.com/
 git-url: https://github.com/git/git
-src-url: https://www.kernel.org/pub/software/scm/git/git-2.40.0.tar.xz
-src-sha: b17a598fbf58729ef13b577465eb93b2d484df1201518b708b5044ff623bf46d
+src-url: https://www.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz
+src-sha: e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040
 license: GPL-2.0-only
 dep-pkg: gettext expat curl pcre2
 

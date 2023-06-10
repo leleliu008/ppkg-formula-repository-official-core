@@ -126,13 +126,10 @@ main() {
             BREW_PACKAGE_VERS=$(brew info "$BREW_PACKAGE_NMAE" --json | yq '.[0].versions.stable')
 
             if version_match "$BREW_PACKAGE_VERS" gt "$PACKAGE_VERSION" ; then
-                printf "${COLOR_RED}%-10s %-10s  |  %-10s %-10s${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$BREW_PACKAGE_NMAE" "$BREW_PACKAGE_VERS"
-            else
-                :
-                #printf "${COLOR_GREEN}%-10s %-10s  |  %-10s %-10s${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$BREW_PACKAGE_NMAE" "$BREW_PACKAGE_VERS"
+                printf "${COLOR_RED}%-10s %-10s\n%-10s %-10s${COLOR_OFF}\n\n" "$PACKAGE_NAME" "$PACKAGE_VERSION" "$BREW_PACKAGE_NMAE" "$BREW_PACKAGE_VERS"
             fi
         else
-            printf "${COLOR_BLUE}%-10s %-10s  |${COLOR_OFF}\n" "$PACKAGE_NAME" "$PACKAGE_VERSION"
+            printf "${COLOR_BLUE}%-10s %-10s${COLOR_OFF}\n\n" "$PACKAGE_NAME" "$PACKAGE_VERSION"
         fi
     done
 }
