@@ -1,8 +1,8 @@
 summary: Keyboard handling library
 git-url: https://github.com/xkbcommon/libxkbcommon
 web-url: https://xkbcommon.org/
-src-url: https://xkbcommon.org/download/libxkbcommon-1.4.1.tar.xz
-src-sha: 943c07a1e2198026d8102b17270a1f406e4d3d6bbc4ae105b9e1b82d7d136b39
+src-url: https://xkbcommon.org/download/libxkbcommon-1.5.0.tar.xz
+src-sha: 560f11c4bbbca10f495f3ef7d3a6aa4ca62b4f8fb0b52e7d459d18a26e46e017
 license: MIT
 dep-upp: gm4 bison
 dep-pkg: xorg-libx11 xorg-libxcb xkeyboard-config

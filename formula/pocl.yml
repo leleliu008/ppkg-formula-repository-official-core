@@ -1,10 +1,10 @@
 summary: Portable Computing Language
 git-url: https://github.com/pocl/pocl
 web-url: http://portablecl.org/
-src-url: http://portablecl.org/downloads/pocl-3.0.tar.gz
-src-sha: a3fd3889ef7854b90b8e4c7899c5de48b7494bf770e39fba5ad268a5cbcc719d
+src-url: http://portablecl.org/downloads/pocl-3.1.tar.gz
+src-sha: 82314362552e050aff417318dd623b18cf0f1d0f84f92d10a7e3750dd12d3a9a
 license: MIT
-dep-pkg: ocl-icd hwloc llvm@14
+dep-pkg: ocl-icd hwloc llvm
 install: |
     install -d "$PACKAGE_INSTALL_DIR/pocl/OpenCL/vendors"
     cmakew \
