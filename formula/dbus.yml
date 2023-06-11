@@ -1,8 +1,8 @@
 summary: Message bus system, providing inter-application communication
 git-url: https://gitlab.freedesktop.org/dbus/dbus
 web-url: https://wiki.freedesktop.org/www/Software/dbus
-src-url: https://dbus.freedesktop.org/releases/dbus/dbus-1.14.4.tar.xz
-src-sha: 7c0f9b8e5ec0ff2479383e62c0084a3a29af99edf1514e9f659b81b30d4e353e
+src-url: https://dbus.freedesktop.org/releases/dbus/dbus-1.14.8.tar.xz
+src-sha: a6bd5bac5cf19f0c3c594bdae2565a095696980a683a0ef37cb6212e093bde35
 license: GPL-2.0-or-later
 dep-pkg: xmlto expat
 

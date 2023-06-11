@@ -1,8 +1,8 @@
 summary: High dynamic-range image file format
 web-url: https://www.openexr.com/
 git-url: https://github.com/AcademySoftwareFoundation/openexr
-src-url: https://github.com/AcademySoftwareFoundation/openexr/archive/v3.1.5.tar.gz
-src-sha: 93925805c1fc4f8162b35f0ae109c4a75344e6decae5a240afdfce25f8a433ec
+src-url: https://github.com/AcademySoftwareFoundation/openexr/archive/v3.1.8.tar.gz
+src-sha: 3ff47111ef7e5da6f69330e66e1e90ae620b79df1cedf2512bb9bffe86c2c617
 license: BSD-3-Clause
 dep-pkg: imath zlib
 install: |

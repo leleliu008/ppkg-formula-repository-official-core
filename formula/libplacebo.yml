@@ -1,7 +1,7 @@
 summary: Reusable library for GPU-accelerated image/video processing primitives
 git-url: https://code.videolan.org/videolan/libplacebo
-src-url: https://code.videolan.org/videolan/libplacebo/-/archive/v4.208.0/libplacebo-v4.208.0.tar.bz2
-src-sha: c89a80655ab375e4809415bb597c638607fc150fa6f6bb830dd502fec7f0ba95
+src-url: https://code.videolan.org/videolan/libplacebo/-/archive/v5.264.1/libplacebo-v5.264.1.tar.bz2
+src-sha: 99ebcf90f3d3c6c4e5b9364091575b9b75d5a1a7d2356a60d8cf67d4fd93b5da
 license: LGPL-2.1-or-later
 dep-plm: Mako MarkupSafe
 dep-pkg: ffmpeg vulkan-loader glslang libepoxy
