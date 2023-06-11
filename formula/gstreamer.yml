@@ -1,8 +1,8 @@
 summary: Development framework for multimedia applications
 git-url: https://gitlab.freedesktop.org/gstreamer/gstreamer
 web-url: https://gstreamer.freedesktop.org/
-src-url: https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.20.4.tar.xz
-src-sha: 67c1edf8c3c339cda5dde85f4f7b953bb9607c2d13ae970e2491c5c4c055ef5f
+src-url: https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.22.3.tar.xz
+src-sha: 9ffeab95053f9f6995eb3b3da225e88f21c129cd60da002d3f795db70d6d5974
 license: LGPL-2.0-or-later
 dep-upp: gm4 bison flex
 dep-pkg: glib gobject-introspection gettext

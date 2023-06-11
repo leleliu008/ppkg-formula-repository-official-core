@@ -1,8 +1,8 @@
 summary: GNU Pretty Good Privacy (PGP) package
 web-url: https://www.gnupg.org
 git-url: https://dev.gnupg.org/source/gnupg
-src-url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.3.7.tar.bz2
-src-sha: ee163a5fb9ec99ffc1b18e65faef8d086800c5713d15a672ab57d3799da83669
+src-url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.2.tar.bz2
+src-sha: 97eb47df8ae5a3ff744f868005a090da5ab45cb48ee9836dbf5ee739a4e5cf49
 dep-pkg: libgpg-error libgcrypt libassuan libksba npth libiconv libbz2 readline
 license: GPL-3.0-or-later
 
@@ -24,4 +24,4 @@ install: |
         --with-npth-prefix=$npth_INSTALL_DIR \
         --with-bzip2=$libbz2_INSTALL_DIR \
         --with-readline=$readline_INSTALL_DIR \
-        --with-libiconv-prefix=$libincov_INSTALL_DIR
+        --with-libiconv-prefix=$libincov_INSTALL_DIR LIBS=-lm

@@ -1,11 +1,12 @@
 summary: Embeddable Javascript interpreter
 web-url: https://www.mujs.com/
 git-url: https://github.com/ccxvii/mujs
-src-url: https://github.com/ccxvii/mujs/archive/refs/tags/1.3.2.tar.gz
-src-sha: 59763cc32776714b4f00a0efede83f4f56b381c9dbaced4756d665c214249dca
+src-url: https://github.com/ccxvii/mujs/archive/refs/tags/1.3.3.tar.gz
+src-sha: e2c5ee5416dfda2230c7a0cb7895df9a9b2d5b2065bb18e7e64dec2a796abe1b
 dep-pkg: readline
 binbstd: yes
 install: |
+    sed_in_place "s|CFLAGS = -std=c99|CFLAGS = -I$readline_INCLUDE_DIR -L$readline_LIBRARY_DIR -std=c99|" Makefile
     gmakew clean &&
     gmakew release &&
     gmakew install-static prefix="$PACKAGE_INSTALL_DIR" VERSION=$PACKAGE_VERSION &&

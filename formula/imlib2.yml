@@ -1,7 +1,7 @@
 summary: Image loading and rendering library
 web-url: https://sourceforge.net/projects/enlightenment/
-src-url: https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.9.1/imlib2-1.9.1.tar.xz
-src-sha: 4a224038bfffbe5d4d250c44e05f4ee5ae24dcfef8395b1677c715c58f764d43
+src-url: https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.11.1/imlib2-1.11.1.tar.xz
+src-sha: f712b6bb9dcad46d8b8f4ad52610dcbbaebb4cc80b5fd12f93124d3a380fa6bf
 license: Imlib2
 
 dep-pkg: giflib libjpeg-turbo libpng libtiff libwebp freetype2 xorg-libxext
