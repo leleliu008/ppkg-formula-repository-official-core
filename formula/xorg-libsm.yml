@@ -1,7 +1,7 @@
 summary: X.Org Session Management Library
 web-url: https://www.x.org/
-src-url: https://www.x.org/archive/individual/lib/libSM-1.2.3.tar.bz2
-src-sha: 2d264499dcb05f56438dee12a1b4b71d76736ce7ba7aa6efbf15ebb113769cbb
+src-url: https://www.x.org/archive/individual/lib/libSM-1.2.4.tar.xz
+src-sha: fdcbe51e4d1276b1183da77a8a4e74a137ca203e0bcfb20972dd5f3347e97b84
 license: MIT
 dep-pkg: xorg-libice
 install: configure --enable-docs=no
