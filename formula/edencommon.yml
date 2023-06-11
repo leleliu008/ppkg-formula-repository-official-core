@@ -1,7 +1,7 @@
 summary: Shared library for Watchman and Eden projects
 git-url: https://github.com/facebookexperimental/edencommon
-src-url: https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2022.11.14.00.tar.gz
-src-sha: 6f9321bf91703c0ca2b3627bd51a5a6b79bcd32f5aab487fe23f933864d0149f
+src-url: https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2023.06.08.00.tar.gz
+src-sha: 17ee4b04541af4116c9cf5401cbfa93c9a4a8ce316f14525b90bf0ebf7317000
 license: MIT
 dep-pkg: folly googletest
 bsystem: cmake

@@ -1,8 +1,8 @@
 summary: Garbage collector for C and C++
 web-url: https://www.hboehm.info/gc/
 git-url: https://github.com/ivmai/bdwgc
-src-url: https://github.com/ivmai/bdwgc/releases/download/v8.2.2/gc-8.2.2.tar.gz
-src-sha: f30107bcb062e0920a790ffffa56d9512348546859364c23a14be264b38836a0
+src-url: https://github.com/ivmai/bdwgc/releases/download/v8.2.4/gc-8.2.4.tar.gz
+src-sha: 3d0d3cdbe077403d3106bb40f0cbb563413d6efdbb2a7e1cd6886595dec48fc2
 license: MIT
 dep-pkg: libatomic_ops
 install: |
