@@ -8,7 +8,7 @@ dep-pkg: libiconv
 
 install: |
     configure \
-        --with-libiconv-prefix=$libiconv_INSTALL_DIR \
+        --with-libiconv-prefix="$libiconv_INSTALL_DIR" \
         --enable-threads=posix \
         --enable-relocatable \
         --enable-namespacing

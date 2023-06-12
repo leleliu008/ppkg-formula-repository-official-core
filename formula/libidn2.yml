@@ -6,14 +6,15 @@ src-sha: 93caba72b4e051d1f8d4f5a076ab63c99b77faee019b72b9783b267986dbb45f
 license: GPL-2.0-or-later LGPL-3.0-or-later
 dep-pkg: libunistring
 
-install: |
-    if [ -L ../lib/libiconv.a ] ; then
-        "$AR" x ../lib/libiconv.a
-        "$AR" x ../lib/libunistring.a
-        "$AR" crs ../lib/libunistring.a *.o
-        rm -f *.o
+dopatch: |
+    if [ -L ../lib/libunistring.a ] ; then
+        if [ -L ../lib/libiconv.a ] ; then
+            rm ../lib/libunistring.a
+            printf 'INPUT(%s %s)' "$libunistring_INSTALL_DIR/lib/libunistring.a" "$libiconv_INSTALL_DIR/lib/libiconv.a" ../lib/libunistring.a
+        fi
     fi
 
+install: |
     configure \
         --with-libunistring-prefix=$libunistring_INSTALL_DIR \
         --disable-valgrind-tests \
