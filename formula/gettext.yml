@@ -1,11 +1,11 @@
 summary: GNU internationalization (i18n) and localization (l10n) library
 git-url: https://git.savannah.gnu.org/git/gettext.git
 web-url: https://www.gnu.org/software/gettext
-src-url: https://ftp.gnu.org/gnu/gettext/gettext-0.21.1.tar.xz
-src-sha: 50dbc8f39797950aa2c98e939947c527e5ac9ebd2c1b99dd7b06ba33a6767ae6
+src-url: https://ftp.gnu.org/gnu/gettext/gettext-0.21.tar.xz
+src-sha: d20fcbb537e02dcf1383197ba05bd0734ef7bf5db06bdb241eb69b7d16b73192
 license: GPL-3.0-or-later
 dep-pkg: ncurses libiconv
-parallel: no
+
 install: |
     export LDFLAGS="$LDFLAGS -L$PWD/gettext-tools/gnulib-lib/.libs/"
     configure \
