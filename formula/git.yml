@@ -12,8 +12,9 @@ install: |
     # musl libc
     if [ "$NATIVE_OS_LIBC" = musl ] ; then
         export ac_cv_c_regex_with_reg_startend=no
-        export ac_cv_lib_curl_curl_global_init=yes
     fi
+
+    export ac_cv_lib_curl_curl_global_init=yes
 
     LIBCURL_LIBS="$(pkg-config --libs libcurl)"
     printf 'LIBCURL_LIBS=%s\n' "$LIBCURL_LIBS"
