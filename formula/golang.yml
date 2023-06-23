@@ -5,7 +5,7 @@ src-url: https://go.dev/dl/go1.20.5.src.tar.gz
 src-sha: 9a15c133ba2cfafe79652f4815b62e7cfc267f68df1b9454c6ab2a3ca8b96a88
 license: BSD-3-Clause
 version: 1.20.5
-dep-pkg: bash
+dep-upp: bash
 binbstd: yes
 bscript: src
 bsystem: go
