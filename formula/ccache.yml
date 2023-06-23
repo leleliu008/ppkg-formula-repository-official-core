@@ -1,8 +1,8 @@
 summary: Object-file caching compiler wrapper
 web-url: https://ccache.dev
 git-url: https://github.com/ccache/ccache
-src-url: https://github.com/ccache/ccache/releases/download/v4.8.1/ccache-4.8.1.tar.xz
-src-sha: 87959b6819530b3dcaeb39992f585b9fc2c7120302809741378097774919fb6f
+src-url: https://github.com/ccache/ccache/releases/download/v4.8.2/ccache-4.8.2.tar.xz
+src-sha: 3d3fb3f888a5b16c4fa7ee5214cca76348afd6130e8443de5f6f2424f2076a49
 dep-pkg: hiredis libzstd
 license: GPL-3.0-or-later
 

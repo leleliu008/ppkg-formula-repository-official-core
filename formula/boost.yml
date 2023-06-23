@@ -1,8 +1,8 @@
 summary: a collection of portable C++ source libraries
 web-url: https://www.boost.org
 git-url: https://github.com/boostorg/boost
-src-url: https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.bz2
-src-sha: 71feeed900fbccca04a3b4f2f84a7c217186f28a940ed8b7ed4725986baf99fa
+src-url: https://github.com/boostorg/boost/releases/download/boost-1.82.0/boost-1.82.0.tar.xz
+src-sha: fd60da30be908eff945735ac7d4d9addc7f7725b1ff6fcdcaede5262d511d21e
 version: 1.81.0
 license: BSL-1.0
 dep-pkg: libbz2 libzstd libiconv icu4c

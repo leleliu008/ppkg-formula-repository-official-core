@@ -1,7 +1,7 @@
 summary: tbls is a CI-Friendly tool for document a database, written in Go
 git-url: https://github.com/k1LoW/tbls
-src-url: https://github.com/k1LoW/tbls/archive/refs/tags/v1.65.4.tar.gz
-src-sha: 010dfd2f2f36ff67c1c698dc31677bb2434dc8577ba12806d9d8174663b9ccfb
+src-url: https://github.com/k1LoW/tbls/archive/refs/tags/v1.67.1.tar.gz
+src-sha: 7485e200a3f8b09da463b393d1d20a6dd57f2abaca7ae117a44d451b8ac3e984
 license: MIT
 install: |
     # https://github.com/goccy/go-graphviz/issues/43

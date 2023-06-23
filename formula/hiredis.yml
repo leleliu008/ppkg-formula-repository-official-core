@@ -1,8 +1,8 @@
 summary: Minimalistic client for Redis
 git-url: https://github.com/redis/hiredis
-src-url: https://github.com/redis/hiredis/archive/v1.0.2.tar.gz
-src-sha: e0ab696e2f07deb4252dda45b703d09854e53b9703c7d52182ce5a22616c3819
+src-url: https://github.com/redis/hiredis/archive/v1.1.0.tar.gz
+src-sha: fe6d21741ec7f3fc9df409d921f47dfc73a4d8ff64f4ac6f1d95f951bf7f53d6
 license: BSD-3-Clause
-
+bsystem: cmake-gmake
 dopatch: sed_in_place 's|hiredis SHARED|hiredis STATIC|' CMakeLists.txt
 install: cmakew -DDISABLE_TESTS=ON

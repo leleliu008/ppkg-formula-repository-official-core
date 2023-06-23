@@ -1,8 +1,8 @@
 summary: Bourne-Again SHell, a UNIX command interpreter
 git-url: https://git.savannah.gnu.org/git/bash
 web-url: https://www.gnu.org/software/bash
-src-url: https://ftp.gnu.org/gnu/bash/bash-5.1.16.tar.gz
-src-sha: 5bac17218d3911834520dad13cd1f85ab944e1c09ae1aba55906be1f8192f558
+src-url: https://ftp.gnu.org/gnu/bash/bash-5.2.15.tar.gz
+src-sha: 13720965b5f4fc3a0d4b61dd37e7565c741da9a5be24edc2ae00182fc1b3588c
 license: GPL-3.0-or-later
 dep-pkg: readline
 bsystem: configure

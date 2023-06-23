@@ -1,7 +1,7 @@
 summary: GitHub command-line tool
 git-url: https://github.com/cli/cli
-src-url: https://github.com/cli/cli/archive/v2.30.0.tar.gz
-src-sha: 5e66be97f51559dcea3621c8cc3cf2f67bf47bf2e1902014b3ec5689ab4e8add
+src-url: https://github.com/cli/cli/archive/v2.31.0.tar.gz
+src-sha: 9a9896fa80ecfec640cf5d93da830713150f4b44e0db142c958bfa36d09d2c03
 license: MIT
 
 install: |
