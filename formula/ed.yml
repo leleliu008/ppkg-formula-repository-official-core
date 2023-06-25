@@ -3,4 +3,4 @@ web-url: https://www.gnu.org/software/ed/ed.html
 src-url: https://ftp.gnu.org/gnu/ed/ed-1.19.tar.lz
 src-sha: ce2f2e5c424790aa96d09dacb93d9bbfdc0b7eb6249c9cb7538452e8ec77cd48
 license: GPL-3.0-or-later
-install: configure
+install: configure CC="'$CC'" CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'"
