@@ -8,7 +8,8 @@ dep-pkg: zlib openssl
 dopatch: |
     # https://github.com/openssl/openssl/issues/21286
     if [ "$NATIVE_OS_KIND" = linux ] && [ "$NATIVE_OS_ARCH" = ppc64le ] ; then
-        echo > "$PACKAGE_WORKING_DIR/project-after.cmake"
+        echo > ../project-after.cmake
+        rm     ../lib/lib*.a
     fi
 install: |
     cmakew \
