@@ -5,6 +5,11 @@ src-url: https://libssh2.org/download/libssh2-1.11.0.tar.gz
 src-sha: 3736161e41e2693324deb38c26cfdc3efe6209d634ba4258db1cecff6a5ad461
 license: BSD-3-Clause
 dep-pkg: zlib openssl
+dopatch: |
+    # https://github.com/openssl/openssl/issues/21286
+    if [ "$NATIVE_OS_KIND" = linux ] && [ "$NATIVE_OS_ARCH" = ppc64le ] ; then
+        echo > "$PACKAGE_WORKING_DIR/project-after.cmake"
+    fi
 install: |
     cmakew \
         -DBUILD_TESTING=OFF \
