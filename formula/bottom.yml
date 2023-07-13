@@ -2,6 +2,6 @@ summary: Yet another cross-platform graphical process/system monitor
 web-url: https://clementtsang.github.io/bottom/
 git-url: https://github.com/ClementTsang/bottom
 src-url: https://github.com/ClementTsang/bottom/archive/0.9.3.tar.gz
-src-sha: 97dbd9f46d63d70898ec12be8743de5a84151f548f158e71d76c41e8072cd0e5
+src-sha: 53a1466c3d2ed8f38401e8929cf2da796e703e4d70339d215f855b2304c07f72
 license: MIT
 bsystem: cargo

@@ -1,20 +1,17 @@
 summary: Protocol Buffers(data interchange format) compiler and library developed by Google
 git-url: https://github.com/protocolbuffers/protobuf
-src-url: https://github.com/protocolbuffers/protobuf/releases/download/v21.5/protobuf-all-21.5.tar.gz
-src-sha: 7ba0cb2ecfd9e5d44a6fa9ce05f254b7e5cd70ec89fafba0b07448f3e258310c
+src-url: https://github.com/protocolbuffers/protobuf/releases/download/v23.4/protobuf-23.4.tar.gz
+src-sha: a700a49470d301f1190a487a923b5095bf60f08f4ae4cac9f5f7c36883d17971
 license: BSD-3-Clause
-dep-pkg: zlib
+dep-pkg: zlib jsoncpp abseil
 
 install: |
-    # https://cmake.org/cmake/help/latest/variable/CMAKE_SKIP_INSTALL_RPATH.html
-    if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
-        CMAKE_SKIP_INSTALL_RPATH=TRUE
-    else
-        CMAKE_SKIP_INSTALL_RPATH=FALSE
-    fi
-
     cmakew \
-        -DCMAKE_SKIP_INSTALL_RPATH="$CMAKE_SKIP_INSTALL_RPATH" \
+        -DCMAKE_CXX_STANDARD=17 \
+        -Dprotobuf_WITH_ZLIB=ON \
         -Dprotobuf_BUILD_TESTS=OFF \
         -Dprotobuf_BUILD_EXAMPLES=OFF \
-        -Dprotobuf_BUILD_SHARED_LIBS=OFF
+        -Dprotobuf_BUILD_LIBPROTOC=ON \
+        -Dprotobuf_BUILD_SHARED_LIBS=OFF \
+        -Dprotobuf_ABSL_PROVIDER=package \
+        -Dprotobuf_JSONCPP_PROVIDER=package

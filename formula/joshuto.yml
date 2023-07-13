@@ -1,6 +1,6 @@
 summary: ranger-like terminal file manager written in Rust
 git-url: https://github.com/kamiyaa/joshuto
-src-url: https://github.com/kamiyaa/joshuto/archive/refs/tags/v0.9.4.tar.gz
-src-sha: 5632b0430cee850678e0f004427a3eaf6718e4761f9dd337a920d57919ba50b1
-license: LGPL-3.0
+src-url: https://github.com/kamiyaa/joshuto/archive/refs/tags/v0.9.5.tar.gz
+src-sha: 14155a02cfeb0993a4906635a3c121589451e155e067d1c0d1673abdd1494ca8
+license: LGPL-3.0-or-later
 bsystem: cargo

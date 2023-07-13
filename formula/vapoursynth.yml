@@ -1,8 +1,8 @@
 summary: Video processing framework with simplicity in mind
 web-url: https://www.vapoursynth.com
 git-url: https://github.com/vapoursynth/vapoursynth
-src-url: https://github.com/vapoursynth/vapoursynth/archive/R60.tar.gz
-src-sha: d0ff9b7d88d4b944d35dd7743d72ffcea5faa687f6157b160f57be45f4403a30
+src-url: https://github.com/vapoursynth/vapoursynth/archive/R62.tar.gz
+src-sha: 6f3eb7e2e32a0572b363e08d16092418e99bd9c8f06661645a0995f1f736d438
 license: LGPL-2.1-or-later
 dep-pym: cython
 dep-pkg: zimg

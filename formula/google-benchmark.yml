@@ -1,7 +1,7 @@
-summary: C++ microbenchmark support library
+summary: A C++ library to benchmark code snippets, similar to unit tests. 
 git-url: https://github.com/google/benchmark
-src-url: https://github.com/google/benchmark/archive/v1.8.0.tar.gz
-src-sha: ea2e94c24ddf6594d15c711c06ccd4486434d9cf3eca954e2af8a20c88f9f172
+src-url: https://github.com/google/benchmark/archive/v1.8.2.tar.gz
+src-sha: 2aab2980d0376137f969d92848fbb68216abb07633034534fc8c65cc4e7a0e93
 license: Apache-2.0
 
 # https://github.com/google/benchmark/issues/315

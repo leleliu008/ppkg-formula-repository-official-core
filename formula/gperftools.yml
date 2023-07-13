@@ -1,0 +1,8 @@
+summary: a collection of a high-performance multi-threaded malloc() implementation, plus some pretty nifty performance analysis tools.
+git-url: https://github.com/gperftools/gperftools
+src-url: https://github.com/gperftools/gperftools/releases/download/gperftools-2.10/gperftools-2.10.tar.gz
+src-sha: 83e3bfdd28b8bcf53222c3798d4d395d52dadbbae59e8730c4a6d31a9c3732d8
+license: BSD-3-Clause
+dep-pkg: liblzma
+dep-upp: libtool
+bsystem: autotools

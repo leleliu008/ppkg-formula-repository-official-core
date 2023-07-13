@@ -1,7 +1,11 @@
-summary: NCurses Disk Usage
+summary: a disk usage analyzer with an ncurses interface.
 web-url: https://dev.yorhel.nl/ncdu
-src-url: https://dev.yorhel.nl/download/ncdu-1.17.tar.gz
-src-sha: 810745a8ed1ab3788c87d3aea4cc1a14edf6ee226f764bcc383e024ba56adbf1
+src-url: https://dev.yorhel.nl/download/ncdu-2.2.2.tar.gz
+src-sha: 90d920024e752318b469776ce57e03b3c702d49329ad9825aeeab36c3babf993
 license: MIT
 dep-pkg: ncurses
-bsystem: configure
+dep-upp: zig
+binbstd: yes
+install: |
+    run zig build --prefix "$PACKAGE_INSTALL_DIR" -Drelease-fast=true
+    install_mans ncdu.1

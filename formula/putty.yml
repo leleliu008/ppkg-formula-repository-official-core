@@ -4,7 +4,7 @@ git-url: https://git.tartarus.org/simon/putty
 src-url: https://the.earth.li/~sgtatham/putty/0.78/putty-0.78.tar.gz
 src-sha: 274e01bcac6bd155dfd647b2f18f791b4b17ff313753aa919fcae2e32d34614f
 license: MIT
-dep-pkg: perl
+dep-upp: perl
 install: |
     export CPPFLAGS="$(printf '%s\n' "$CPPFLAGS" | sed 's|-DNDEBUG||g')"
     cmakew -DPUTTY_GTK_VERSION=NONE

@@ -7,6 +7,7 @@ license: LGPL-2.0-or-later
 install: |
     cmakew \
         -DALSOFT_UTILS=ON \
+        -DALSOFT_TESTS=OFF \
         -DALSOFT_EXAMPLES=OFF \
         -DALSOFT_BACKEND_PORTAUDIO=OFF \
         -DALSOFT_BACKEND_PULSEAUDIO=OFF \

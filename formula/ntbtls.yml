@@ -1,8 +1,8 @@
 summary: Not Too Bad TLS library
 web-url: https://www.gnupg.org/software/ntbtls/index.html
 git-url: https://dev.gnupg.org/source/ntbtls
-src-url: https://www.gnupg.org/ftp/gcrypt/ntbtls/ntbtls-0.2.0.tar.bz2
-src-sha: 649fe74a311d13e43b16b26ebaa91665ddb632925b73902592eac3ed30519e17
+src-url: https://www.gnupg.org/ftp/gcrypt/ntbtls/ntbtls-0.3.1.tar.bz2
+src-sha: 8922181fef523b77b71625e562e4d69532278eabbd18bc74579dbe14135729ba
 license: GPL-3.0-or-later
 dep-pkg: zlib libgpg-error libgcrypt libksba
 

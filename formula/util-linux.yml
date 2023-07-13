@@ -1,19 +1,10 @@
-summary: Collection of Linux utilities
+summary: a collection of Linux utilities
 git-url: https://github.com/util-linux/util-linux
-src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.39/util-linux-2.39.tar.xz
-src-sha: 32b30a336cda903182ed61feb3e9b908b762a5e66fe14e43efb88d37162075cb
+src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.39/util-linux-2.39.1.tar.xz
+src-sha: 890ae8ff810247bd19e274df76e8371d202cda01ad277681b0ea88eeaa00286b
 license: GPL-2.0-or-later
-dep-pkg: readline
 dep-upp: automake libtool
-
-# Fix lib/procfs.c:9:10: fatal error: 'sys/vfs.h' file not found
-fix-url: https://github.com/util-linux/util-linux/commit/3671d4a878fb58aa953810ecf9af41809317294f.patch?full_index=1
-fix-sha: d38c9ae06c387da151492dd5862c58551559dd6d2b1877c74cc1e11754221fe4
-
-dopatch: |
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
-        patch -p1 < ../fix/d38c9ae06c387da151492dd5862c58551559dd6d2b1877c74cc1e11754221fe4.patch
-    fi
+dep-pkg: readline
 
 install: |
     export AUTOMAKE="$(command -v automake)"

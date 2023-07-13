@@ -1,8 +1,8 @@
 summary: Highly capable, feature-rich programming language
 web-url: https://www.perl.org/
 git-url: https://github.com/perl/perl5
-src-url: https://cpan.metacpan.org/authors/id/R/RJ/RJBS/perl-5.36.0.tar.xz
-src-sha: 0f386dccbee8e26286404b2cca144e1005be65477979beb9b1ba272d4819bcf0
+src-url: https://cpan.metacpan.org/authors/id/R/RJ/RJBS/perl-5.38.0.tar.xz
+src-sha: eca551caec3bc549a4e590c0015003790bdd1a604ffe19cc78ee631d51f7072e
 license: GPL-1.0-or-later
 
 binbstd: yes
