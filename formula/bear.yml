@@ -7,6 +7,7 @@ license: GPL-3.0-or-later
 
 dopatch: |
     sed_in_place '/-DPKG_CONFIG_EXECUTABLE/a -DCMAKE_PROJECT_INCLUDE=${CMAKE_PROJECT_INCLUDE}' CMakeLists.txt
+    sed_in_place 's|fmt_VERSION_MAJOR EQUAL 9|fmt_VERSION_MAJOR GREATER_EQUAL 9|' source/CMakeLists.txt
 
     # https://github.com/nlohmann/json/issues/3090
 

@@ -1,8 +1,8 @@
 summary: Network authentication protocol
 web-url: https://web.mit.edu/kerberos/
 git-url: https://github.com/krb5/krb5
-src-url: https://kerberos.org/dist/krb5/1.21/krb5-1.21.tar.gz
-src-sha: 69f8aaff85484832df67a4bbacd99b9259bd95aab8c651fbbe65cdc9620ea93b
+src-url: https://kerberos.org/dist/krb5/1.21/krb5-1.21.1.tar.gz
+src-sha: 7881c3aaaa1b329bd27dbc6bf2bf1c85c5d0b6c7358aff2b35d513ec2d50fa1f
 dep-upp: gm4 bison
 dep-pkg: openssl
 bscript: src

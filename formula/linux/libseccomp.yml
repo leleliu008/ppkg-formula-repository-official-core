@@ -3,5 +3,5 @@ git-url: https://github.com/seccomp/libseccomp.git
 src-url: https://github.com/seccomp/libseccomp/releases/download/v2.5.4/libseccomp-2.5.4.tar.gz
 src-sha: d82902400405cf0068574ef3dc1fe5f5926207543ba1ae6f8e7a1576351dcbdb
 license: LGPL-2.1-only
-dep-pkg: gperf
+dep-upp: gperf
 install: configure --disable-code-coverage --disable-python
