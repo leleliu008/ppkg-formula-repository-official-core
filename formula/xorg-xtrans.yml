@@ -1,7 +1,7 @@
 summary: X.Org Network Transport layer shared code
 web-url: https://www.x.org/
-src-url: https://www.x.org/archive/individual/lib/xtrans-1.5.0.tar.xz
-src-sha: 1ba4b703696bfddbf40bacf25bce4e3efb2a0088878f017a50e9884b0c8fb1bd
+src-url: https://www.x.org/archive/individual/lib/xtrans-1.4.0.tar.bz2
+src-sha: 377c4491593c417946efcd2c7600d1e62639f7a8bbca391887e2c4679807d773
 license: MIT
 dep-pkg: xorg-proto
 dopatch: sed_in_place 's|<sys/stropts.h>|<sys/ioctl.h>|' Xtranslcl.c

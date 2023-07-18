@@ -7,6 +7,7 @@ dep-pkg: readline
 binbstd: yes
 install: |
     sed_in_place "s|CFLAGS = -std=c99|CFLAGS = -I$readline_INCLUDE_DIR -L$readline_LIBRARY_DIR -std=c99|" Makefile
+    sed_in_place 's|-lreadline|-lreadline -lncurses|' Makefile
     gmakew clean &&
     gmakew release &&
     gmakew install-static prefix="$PACKAGE_INSTALL_DIR" VERSION=$PACKAGE_VERSION &&

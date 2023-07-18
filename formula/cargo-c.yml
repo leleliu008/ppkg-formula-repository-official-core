@@ -1,12 +1,7 @@
-summary: Helper program to build and install c-like libraries
+summary: a helper program to build and install C-ABI compatible dynamic and static libraries.
 git-url: https://github.com/lu-zero/cargo-c
 src-url: https://github.com/lu-zero/cargo-c/archive/v0.9.21.tar.gz
 src-sha: fbc199ca7da0514d18200a19630a9bbce6f4d5871c9c3ca5f0b6bca42ee99095
 license: MIT
 dep-upp: git
-dep-pkg: libgit2 curl
-install: |
-    export PATH="$curl_INSTALL_DIR/bin:$PATH"
-    export LIBGIT2_SYS_USE_PKG_CONFIG=1
-    export LIBSSH2_SYS_USE_PKG_CONFIG=1
-    cargow install
+install: cargow install --features=vendored-openssl
