@@ -7,5 +7,6 @@ dep-pkg: ncurses
 dep-upp: zig@0.10
 binbstd: yes
 install: |
-    run zig build --prefix "$PACKAGE_INSTALL_DIR" -Drelease-fast=true
+    sed_in_place "s|linkSystemLibrary(\"ncursesw\")|addObjectFile(\"$ncurses_LIBRARY_DIR/libncursesw.a\")|" build.zig
+    run zig build --prefix "$PACKAGE_INSTALL_DIR" -Drelease-fast=true --search-prefix "$ncurses_INSTALL_DIR"
     install_mans ncdu.1
