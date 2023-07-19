@@ -1,7 +1,7 @@
 summary: Minimalistic plugin API for video effects
 web-url: https://frei0r.dyne.org/
-src-url: https://files.dyne.org/frei0r/releases/frei0r-plugins-1.8.0.tar.gz
-src-sha: 45a28655caf057227b442b800ca3899e93490515c81e212d219fdf4a7613f5c4
+src-url: https://files.dyne.org/frei0r/releases/frei0r-plugins-2.3.0.tar.gz
+src-sha: 00aa65a887445c806b2a467abc3ccc4b0855f7eaf38ed2011a1ff41e74844fa0
 license: GPL-2.0-or-later
 dopatch: sed_in_place '/find_package (Cairo)/d' CMakeLists.txt
 install: |

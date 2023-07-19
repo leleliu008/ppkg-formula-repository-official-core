@@ -1,8 +1,8 @@
 summary: Emulator for x86 and PowerPC
 web-url: https://www.qemu.org/
 git-url: https://git.qemu.org/git/qemu
-src-url: https://download.qemu.org/qemu-8.0.2.tar.xz
-src-sha: f060abd435fbe6794125e2c398568ffc3cfa540042596907a8b18edca34cf6a5
+src-url: https://download.qemu.org/qemu-8.0.3.tar.xz
+src-sha: ecf4d32cbef9d397bfc8cc50e4d1e92a1b30253bf32e8ee73c7a8dcf9a232b09
 license: GPL-2.0-only
 dep-pkg: capstone libslirp libssh libusb libpng libjpeg-turbo pixman gnutls lzo nettle snappy vde libzstd libcap-ng xattr
 dep-upp: ninja

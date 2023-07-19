@@ -1,8 +1,8 @@
 summary: Terminal image and video viewer
 web-url: https://timg.sh/
 git-url: https://github.com/hzeller/timg
-src-url: https://github.com/hzeller/timg/archive/refs/tags/v1.4.5.tar.gz
-src-sha: 3c96476ce4ba2af4b9f639c5b59ded77ce1a4511551a04555ded105f14398e01
+src-url: https://github.com/hzeller/timg/archive/refs/tags/v1.5.1.tar.gz
+src-sha: ac8905e4615d964eee6b014b9ff3413160cfc5b73f547e91736bc06c928ac811
 license: GPL-2.0-only
 dep-pkg: ffmpeg graphicsmagick libexif
 bsystem: cmake

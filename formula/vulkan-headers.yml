@@ -1,6 +1,6 @@
 summary: Vulkan Header files and API registry
 git-url: https://github.com/KhronosGroup/Vulkan-Headers
-src-url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.256.tar.gz
-src-sha: fcd3021d5f504941aa285836125fc61e6b0636bb61da6f33d9ae9299786f729b
+src-url: https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.257.tar.gz
+src-sha: e3ee02eff07ebcdb0ddfd06366d986c889f3392b6c4d79615bb06aefc1fda900
 license: Apache-2.0
 bsystem: cmake
