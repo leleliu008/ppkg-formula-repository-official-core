@@ -1,5 +1,5 @@
 summary: Copies files into or out of a cpio or tar archive
-git-url: https://git.savannah.gnu.org/git/cpio
+git-url: https://git.savannah.gnu.org/git/cpio.git
 web-url: https://www.gnu.org/software/cpio
 src-url: https://ftp.gnu.org/gnu/cpio/cpio-2.14.tar.bz2
 src-sha: fcdc15d60f7267a6fc7efcd6b9db7b6c8966c4f2fbbb964c24d41336fd3f2c12

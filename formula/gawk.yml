@@ -1,5 +1,5 @@
 summary: GNU awk utility
-git-url: https://git.savannah.gnu.org/git/gawk
+git-url: https://git.savannah.gnu.org/git/gawk.git
 web-url: https://www.gnu.org/software/gawk
 src-url: https://ftp.gnu.org/gnu/gawk/gawk-5.2.2.tar.xz
 src-sha: 3c1fce1446b4cbee1cd273bd7ec64bc87d89f61537471cd3e05e33a965a250e9
@@ -9,7 +9,7 @@ dep-pkg: mpfr
 install: |
     configure \
         --without-readline \
-        --with-mpfr=$mpfr_INSTALL_DIR \
+        --with-mpfr="$mpfr_INSTALL_DIR" \
         --enable-extensions \
         --enable-lint \
         --enable-mpfr \

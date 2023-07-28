@@ -11,8 +11,8 @@ dopatch: |
 
     for item in $("$CC" -print-search-dirs | grep '^libraries: =' | cut -c13- | tr ':' '\n')
     do
-        if [ -f "$item/libm.so" ] ; then
-            LIBM="$item/libm.so"
+        if [ -f "$item/libm$SHARED_LIBRARY_SUFFIX" ] ; then
+            LIBM="$item/libm$SHARED_LIBRARY_SUFFIX"
             break
         fi
     done

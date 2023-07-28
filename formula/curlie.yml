@@ -4,4 +4,4 @@ git-url: https://github.com/rs/curlie
 src-url: https://github.com/rs/curlie/archive/v1.7.1.tar.gz
 src-sha: 24f34e0a21848a54750cea366ca15f6b4c1ab255b4b46942e4e09b2ebde55931
 license: MIT
-install: gow
+bsystem: go

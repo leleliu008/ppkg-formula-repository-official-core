@@ -14,7 +14,7 @@ install: |
 
     # configure [options] [host]
     run ./configure \
-        --prefix=$PACKAGE_INSTALL_DIR \
+        --prefix="$PACKAGE_INSTALL_DIR" \
         --enable-ipv6 \
         --enable-utf8 \
         --disable-graphics \
@@ -24,7 +24,7 @@ install: |
         --with-bzip2 \
         --with-libtiff \
         --with-libjpeg \
-        --with-ssl=$openssl_INSTALL_DIR &&
+        --with-ssl="$openssl_INSTALL_DIR" &&
     gmakew clean &&
     gmakew &&
     gmakew install

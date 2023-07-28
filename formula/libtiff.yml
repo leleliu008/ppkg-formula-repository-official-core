@@ -4,7 +4,10 @@ git-url: https://gitlab.com/libtiff/libtiff
 src-url: https://download.osgeo.org/libtiff/tiff-4.5.1.tar.gz
 src-sha: d7f38b6788e4a8f5da7940c5ac9424f494d8a79eba53d555f4a507167dca5e2b
 dep-pkg: libzstd
-
+dopatch: |
+    if [ "$LINK_TYPE" != 'static-only' ] ; then
+        sed_in_place "s|find_library(CMath_LIBRARY NAMES m)|find_library(CMath_LIBRARY NAMES libm$SHARED_LIBRARY_SUFFIX)|" cmake/FindCMath.cmake
+    fi
 install: |
     cmakew \
         -Dzlib=ON \

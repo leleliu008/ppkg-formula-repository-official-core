@@ -1,17 +1,9 @@
 summary: Utility for directing compilation
-git-url: https://git.savannah.gnu.org/git/make
+git-url: https://git.savannah.gnu.org/git/make.git
 web-url: https://www.gnu.org/software/make
 src-url: https://ftp.gnu.org/gnu/make/make-4.4.1.tar.lz
 src-sha: 8814ba072182b605d156d7589c19a43b89fc58ea479b9355146160946f8cf6e9
 license: GPL-3.0-or-later
-
-dopatch: |
-    if [ "$NATIVE_OS_KIND" = freebsd ] ; then
-        if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
-            sed_in_place 's|-Wl,--export-dynamic||g' configure
-        fi
-    fi
-
 install: |
     configure --program-prefix=g --without-guile --without-dmalloc
     (

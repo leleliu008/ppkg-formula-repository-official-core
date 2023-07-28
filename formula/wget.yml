@@ -1,5 +1,5 @@
 summary: Internet file retriever
-git-url: https://git.savannah.gnu.org/git/wget
+git-url: https://git.savannah.gnu.org/git/wget.git
 web-url: https://www.gnu.org/software/wget
 src-url: https://ftp.gnu.org/gnu/wget/wget-1.21.4.tar.gz
 src-sha: 81542f5cefb8faacc39bbbc6c82ded80e3e4a88505ae72ea51df27525bcde04c
@@ -12,4 +12,4 @@ install: |
         --disable-pcre2 \
         --enable-threads=posix \
         --with-ssl=openssl \
-        --with-libidn=$libidn2_INSTALL_DIR
+        --with-libidn="$libidn2_INSTALL_DIR"

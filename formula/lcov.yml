@@ -7,4 +7,4 @@ license: GPL-2.0-or-later
 binbstd: yes
 install: |
     gmakew clean &&
-    gmakew install PREFIX=$PACKAGE_INSTALL_DIR
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

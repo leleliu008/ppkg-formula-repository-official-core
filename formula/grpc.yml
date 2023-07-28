@@ -1,8 +1,8 @@
 summary: Next generation open source RPC library and framework
 web-url: https://grpc.io
 git-url: https://github.com/grpc/grpc
-src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.56.1.tar.gz
-src-sha: cc3e039aedd7b76f59cf922215adc7c308347a662be1e5e26711ffbc7fd3ce48
+src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.56.2.tar.gz
+src-sha: 931f07db9d48cff6a6007c1033ba6d691fe655bea2765444bc1ad974dfc840aa
 license: Apache-2.0
 dep-pkg: abseil c-ares openssl protobuf re2
 
