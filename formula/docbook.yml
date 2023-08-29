@@ -22,7 +22,7 @@ install: |
         URL=$(printf '%s\n' "$item" | cut -d= -f2)
         SHA=$(printf '%s\n' "$item" | cut -d= -f1)
 
-        wfetch "$URL" --sha256="$SHA" --output-path="$PPKG_DOWNLOADS_DIR/$SHA.zip"
+        wfetch "$URL" --sha256="$SHA" --buffer-dir=. --output-path="$PPKG_DOWNLOADS_DIR/$SHA.zip"
 
         unset VER
         VER=$(printf '%s\n' "$URL" | cut -c25-27)
@@ -49,7 +49,7 @@ install: |
     URL='https://github.com/docbook/xslt10-stylesheets/releases/download/release%2F1.79.2/docbook-xsl-nons-1.79.2.tar.bz2'
     SHA=ee8b9eca0b7a8f89075832a2da7534bce8c5478fc8fc2676f512d5d87d832102
 
-    wfetch "$URL" --sha256="$SHA" --output-path="$PPKG_DOWNLOADS_DIR/$SHA.tar.bz2"
+    wfetch "$URL" --sha256="$SHA" --buffer-dir=. --output-path="$PPKG_DOWNLOADS_DIR/$SHA.tar.bz2"
 
     DEST="$PACKAGE_INSTALL_DIR/xslt/1.0/nons"
 
@@ -73,7 +73,7 @@ install: |
     URL='https://github.com/docbook/xslt10-stylesheets/releases/download/release%2F1.79.2/docbook-xsl-1.79.2.tar.bz2'
     SHA=316524ea444e53208a2fb90eeb676af755da96e1417835ba5f5eb719c81fa371
 
-    wfetch "$URL" --sha256="$SHA" --output-path="$PPKG_DOWNLOADS_DIR/$SHA.tbz2"
+    wfetch "$URL" --sha256="$SHA" --buffer-dir=. --output-path="$PPKG_DOWNLOADS_DIR/$SHA.tbz2"
 
     DEST="$PACKAGE_INSTALL_DIR/xslt/1.0/ns"
 
