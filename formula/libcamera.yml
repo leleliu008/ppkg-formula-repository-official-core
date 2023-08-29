@@ -1,6 +1,6 @@
 summary: An open source camera stack and framework
 web-url: https://libcamera.org/
-git-url: https://git.libcamera.org/libcamera/libcamera
+git-url: https://git.libcamera.org/libcamera/libcamera.git
 license: MIT
 dep-pym: Jinja2 ply PyYAML
 dep-pkg: gst-plugins-base
