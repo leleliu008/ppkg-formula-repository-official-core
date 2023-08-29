@@ -1,11 +1,14 @@
-summary: Collection of PostScript document handling utilities
-web-url: http://knackered.org/angus/psutils/
-src-url: ftp://ftp.knackered.org/pub/psutils/psutils-p17.tar.gz
-src-sha: 3853eb79584ba8fbe27a815425b65a9f7f15b258e0d43a05a856bdb75d588ae4
-version: p17
-license: psutils
+summary: A collection utilities for manipulating PostScript documents
+git-url: https://github.com/rrthomas/psutils
+src-url: https://files.pythonhosted.org/packages/51/e1/84b207ea1ac7140a626988f6cb46e1ad30c46996715ab8940fbc079461ba/pspdfutils-3.1.1.tar.gz
+src-sha: 86f9c769b6b1a76ddda64fe0d28694545de0397aafa318dc2cae809037569018
+license: GPL-3.0-or-later
+dep-pkg: libpaper
+dep-pym: build
+dep-upp: python3
 binbstd: yes
 install: |
-    MANDIR=$PACKAGE_INSTALL_DIR/share/man/man1
-    run install -d $MANDIR
-    gmakew -f Makefile.unix install BINDIR=$PACKAGE_INSTALL_DIR/bin INCLUDEDIR=$PACKAGE_INSTALL_DIR/include MANDIR=$MANDIR PERL=$(command -v perl) CC=$CC CCFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'"
+    python3 -m build
+    pip3 install dist/*.whl
+    install -d "$PACKAGE_INSTALL_DIR"
+    mv dist/*  "$PACKAGE_INSTALL_DIR/"
