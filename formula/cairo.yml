@@ -1,8 +1,8 @@
 summary: Vector graphics library with cross-device output support
-web-url: https://cairographics.org/
 git-url: https://gitlab.freedesktop.org/cairo/cairo
-src-url: https://gitlab.freedesktop.org/cairo/cairo/-/archive/1.17.8/cairo-1.17.8.tar.bz2
-src-sha: ead4724423eb969f98b456fe1e3ee1e1741fe1c8dfb1a41ca12afa81a6c1665f
+web-url: https://cairographics.org/
+src-url: https://cairographics.org/snapshots/cairo-1.17.8.tar.xz
+src-sha: 5b10c8892d1b58d70d3f0ba5b47863a061262fa56b9dc7944161f8c8b783bc64
 dep-pkg: libxml2 libpng pixman lzo glib fontconfig
 license: LGPL-2.1-or-later MPL-1.1
 
