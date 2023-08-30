@@ -1,8 +1,8 @@
-summary: Unit testing framework for C
-git-url: https://gitlab.com/cmocka/cmocka
+summary: An elegant unit testing framework for C with support for mock objects
 web-url: https://cmocka.org/
-src-url: https://cmocka.org/files/1.1/cmocka-1.1.7.tar.xz
-src-sha: 810570eb0b8d64804331f82b29ff47c790ce9cd6b163e98d47a4807047ecad82
+git-url: https://gitlab.com/cmocka/cmocka
+src-url: https://gitlab.com/cmocka/cmocka/-/archive/cmocka-1.1.7/cmocka-cmocka-1.1.7.tar.gz
+src-sha: 243344de12f8df78fa639fb426dd02d4cb37eda61462e48e6a0e13a98b94602a
 license: Apache-2.0
 install: |
     cmakew \
