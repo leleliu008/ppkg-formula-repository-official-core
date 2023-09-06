@@ -3,7 +3,7 @@ git-url: https://github.com/facebook/watchman
 src-url: https://github.com/facebook/watchman/archive/v2023.07.10.00.tar.gz
 src-sha: 3fc4e3a39d6c948e5ca175d1313551010282a8020a9363b50d3d1e70c76ccca8
 license: MIT
-dep-pkg: python3 pcre2 fb303 edencommon cpptoml
+dep-pkg: python3 libpcre2 fb303 edencommon cpptoml
 bsystem: cmake cargo
 dopatch: sed_in_place 's|^t_test|#t_test|' CMakeLists.txt
 install: cmakew -DENABLE_EDEN_SUPPORT=ON

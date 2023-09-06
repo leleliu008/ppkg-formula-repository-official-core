@@ -4,7 +4,7 @@ web-url: https://nginx.org/
 src-url: https://nginx.org/download/nginx-1.25.1.tar.gz
 src-sha: f09071ac46e0ea3adc0008ef0baca229fc6b4be4533baef9bbbfba7de29a8602
 license: BSD-2-Clause
-dep-pkg: openssl pcre2 zlib
+dep-pkg: openssl libpcre2 zlib
 
 bsystem: gmake
 binbstd: yes
