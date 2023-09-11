@@ -1,0 +1,8 @@
+summary: a binary package system designed and implemented from scratch
+git-url: https://github.com/void-linux/xbps
+dep-pkg: libarchive
+binbstd: yes
+install: |
+    ./configure --enable-rpath --prefix=/
+    gmakew
+    gmakew install DESTDIR="$PACKAGE_INSTALL_DIR"
