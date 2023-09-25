@@ -7,9 +7,6 @@ license: BSD-2-Clause
 bsystem: autogen
 binbstd: yes
 install: |
-    export ac_cv_prog_AR="$AR"
-    export ac_cv_prog_RANLIB="$RANLIB"
-
     configure \
         --disable-profiling \
         --enable-lto \
