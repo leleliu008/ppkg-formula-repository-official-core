@@ -1,8 +1,8 @@
-summary: A new type of shell.
+summary: A new type of shell
 web-url: https://www.nushell.sh
 git-url: https://github.com/nushell/nushell
-src-url: https://github.com/nushell/nushell/archive/0.83.0.tar.gz
-src-sha: 49be7fdd34512e877ca18345f7be84606db601a657f8235dff670a66fff5b82c
+src-url: https://github.com/nushell/nushell/archive/0.85.0.tar.gz
+src-sha: 19e327b23fc08b519f5077e33908afa7967d98139a516c180d029b3ca0618da3
 dep-pkg: zlib openssl
 license: MIT
 bsystem: cargo
