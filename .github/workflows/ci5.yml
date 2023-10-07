@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow5
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [20.04, 22.04]
-        pkg: [PKGLIST]
+        pkg: [json-glib,jump,k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lexbor,lf,libaec,libao,libavif,libb2,libbcrypt,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdeflate,libdiscid,libdv,libdvdnav,libexecinfo,libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmaxminddb,libmetalink,libmill,libmms,libmnl,libphonenumber,libpipeline,libproxy,libqalculate,libraqm,librasterlite,libraw,libreplaygain]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [json-glib,jump,k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lexbor,lf,libaec,libao,libavif,libb2,libbcrypt,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdeflate,libdiscid,libdv,libdvdnav,libexecinfo,libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmaxminddb,libmetalink,libmill,libmms,libmnl,libphonenumber,libpipeline,libproxy,libqalculate,libraqm,librasterlite,libraw,libreplaygain]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}
