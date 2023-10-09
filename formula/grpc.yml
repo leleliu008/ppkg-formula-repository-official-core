@@ -1,8 +1,8 @@
-summary: Next generation open source RPC library and framework
+summary: A modern, open source, high-performance remote procedure call (RPC) framework
 web-url: https://grpc.io
 git-url: https://github.com/grpc/grpc
-src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.56.2.tar.gz
-src-sha: 931f07db9d48cff6a6007c1033ba6d691fe655bea2765444bc1ad974dfc840aa
+src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.59.0.tar.gz
+src-sha: 585e219faaaa1ef82392d27f7ff41982c0dbf72a19abd0070eddd3df927c48f5
 license: Apache-2.0
 dep-pkg: abseil c-ares openssl protobuf re2
 

@@ -10,7 +10,7 @@ binbstd: yes
 install: |
     export CXXFLAGS="$CXXFLAGS $CPPFLAGS"
     python3 configure.py \
-        --prefix=$PACKAGE_INSTALL_DIR \
+        --prefix="$PACKAGE_INSTALL_DIR" \
         --docdir=share/doc \
         --cc=gcc \
         --with-zlib \

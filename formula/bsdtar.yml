@@ -1,0 +1,34 @@
+summary: BSD tar
+git-url: https://github.com/libarchive/libarchive
+web-url: https://www.libarchive.org/
+src-url: https://www.libarchive.org/downloads/libarchive-3.7.2.tar.xz
+src-sha: 04357661e6717b6941682cde02ad741ae4819c67a260593dfb2431861b251acb
+license: BSD-2-Clause
+dep-pkg: expat openssl lz4 lzo libzstd liblzma libbz2 libiconv
+
+install: |
+    configure \
+        --enable-xattr \
+        --enable-acl \
+        --enable-bsdtar=static \
+        --disable-bsdunzip \
+        --disable-bsdcpio \
+        --disable-bsdcat \
+        --without-xml2 \
+        --with-expat \
+        --with-openssl \
+        --without-mbedtls \
+        --without-nettle \
+        --without-cng \
+        --with-zlib \
+        --with-lzma \
+        --with-bz2lib \
+        --with-lz4 \
+        --with-lzo2 \
+        --with-zstd \
+        --without-libb2 \
+        --with-iconv
+    run rm -rf "$PACKAGE_INSTALL_DIR/lib"
+    run rm -rf "$PACKAGE_INSTALL_DIR/include"
+    run rm -rf "$PACKAGE_INSTALL_DIR/share/man/man3"
+    run rm -rf "$PACKAGE_INSTALL_DIR/share/man/man5"

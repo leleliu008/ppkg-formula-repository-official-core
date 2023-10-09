@@ -4,7 +4,7 @@ web-url: https://www.python.org/
 src-url: https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz
 src-sha: a12a0a013a30b846c786c010f2c19dd36b7298d888f7c4bd1581d90ce18b5e58
 license: Python-2.0
-dep-pkg: expat libffi openssl libsqlite3 libbz2 gdbm
+dep-pkg: gdbm expat openssl libsqlite3 libffi liblzma libbz2
 
 exetype: dynamically-linked
 install: |
@@ -13,10 +13,27 @@ install: |
     unset PYTHONHOME
     unset PYTHONPATH
 
+    export ZLIB_CFLAGS="-I$zlib_INCLUDE_DIR"
+    export ZLIB_LIBS="-L$zlib_LIBRARY_DIR -lz"
+
+    export BZIP2_CFLAGS="-I$libbz2_INCLUDE_DIR"
+    export BZIP2_LIBS="-L$libbz2_LIBRARY_DIR -lbz2"
+
+    export LIBLZMA_CFLAGS="-I$liblzma_INCLUDE_DIR"
+    export LIBLZMA_LIBS="-L$liblzma_LIBRARY_DIR -llzma"
+
+    export LIBSQLITE3_CFLAGS="-I$libsqlite3_INCLUDE_DIR"
+    export LIBSQLITE3_LIBS="-L$libsqlite3_LIBRARY_DIR -lsqlite3"
+
+    export GDBM_CFLAGS="-I$gdbm_INCLUDE_DIR"
+    export GDBM_LIBS="-L$gdbm_LIBRARY_DIR -lgdbm -lgdbm_compat"
+
+    export LIBS='-lm'
+
     configure \
         --with-system-expat \
         --with-system-ffi \
-        --with-openssl=$openssl_INSTALL_DIR \
+        --with-openssl="$openssl_INSTALL_DIR" \
         --with-ensurepip=yes \
         --with-lto \
         --enable-ipv6 \
