@@ -1,7 +1,7 @@
 summary: http_parser replacement
 web-url: https://llhttp.org/
 git-url: https://github.com/nodejs/llhttp
-src-url: https://github.com/nodejs/llhttp/archive/refs/tags/release/v8.1.1.tar.gz
-src-sha: ec9b6d829ed4c4594f1f1b8fe4c832fdace864dd99fa5db5118dfc49b08d9b14
+src-url: https://github.com/nodejs/llhttp/archive/refs/tags/release/v9.1.3.tar.gz
+src-sha: 49405a7bcb4312b29b91408ee1395de3bc3b29e3bdd10380dc4eb8210912f295
 license: MIT
-bsystem: cmake
+install: cmakew -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON

@@ -1,0 +1,71 @@
+name: workflow3
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  ubuntu:
+    if: ${{ true }}
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [20.04, 22.04]
+        pkg: [dust,e2fsprogs,easyutils,ed,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,fortune,fselect,fsmon,fswatch,fzf,fzy,garble,gawk,gbt,gcc,gcc@13,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gh,git,git-lfs,gitui,gitwatch,glew,glib-tools,glow,glslviewer,glyr,gmake,gn]
+        flavor: [sh, c]
+
+    runs-on:   ubuntu-latest
+    container: ubuntu:${{ matrix.tag }}
+
+    steps:
+        - run: apt -y update
+        - run: apt -y install curl xz-utils g++ gfortran linux-headers-generic
+
+        - uses: actions/checkout@v3
+
+        - if: matrix.flavor == 'sh'
+          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg && chmod a+x ppkg
+
+        - if: matrix.flavor == 'c'
+          run: |
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.0-linux-x86_64.tar.xz
+            tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
+            mv bin/ppkg .
+
+        - run: ./ppkg setup
+        - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-offical-core
+        - run: mv formula ~/.ppkg/repos.d/test/
+        - run: ./ppkg install ${{ matrix.pkg }}
+
+  macos:
+    if: ${{ false }}
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [12]
+        pkg: [dust,e2fsprogs,easyutils,ed,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findutils,fish,flatbuffers,flex,fortune,fselect,fsmon,fswatch,fzf,fzy,garble,gawk,gbt,gcc,gcc@13,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gh,git,git-lfs,gitui,gitwatch,glew,glib-tools,glow,glslviewer,glyr,gmake,gn]
+        flavor: [sh, c]
+
+    runs-on: macos-${{ matrix.tag }}
+
+    steps:
+        - run: brew update
+        - run: brew install --overwrite python@3.10 python@3.11
+
+        - uses: actions/checkout@v3
+
+        - if: matrix.flavor == 'sh'
+          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg && chmod a+x ppkg
+
+        - if: matrix.flavor == 'c'
+          run: |
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.0-macos-x86_64.tar.xz
+            tar vxf ppkg-*-macos-x86_64.tar.xz --strip-components=1
+            mv bin/ppkg .
+
+        - run: ./ppkg setup
+        - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-offical-core
+        - run: mv formula ~/.ppkg/repos.d/test/
+        - run: ./ppkg install ${{ matrix.pkg }}

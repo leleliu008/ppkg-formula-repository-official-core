@@ -6,11 +6,16 @@ src-sha: 2a499607df669e40258e53d0ade8035ba4ec0175244869d1025d460562aa09b4
 dep-pkg: libpng libtiff libjpeg-turbo giflib
 license: BSD-3-Clause
 
-dopatch: |
-    sed_in_place 's|CMAKE_INSTALL_DATADIR|CMAKE_INSTALL_LIBDIR|' CMakeLists.txt
+dopatch: sed_in_place 's|CMAKE_INSTALL_DATADIR|CMAKE_INSTALL_LIBDIR|' CMakeLists.txt
 
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
-        export LDFLAGS="$LDFLAGS -Wl,-undefined -Wl,dynamic_lookup"
-    fi
-
-install: cmakew -DWEBP_LINK_STATIC=ON
+install: |
+    cmakew \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DWEBP_LINK_STATIC=ON \
+        -DWEBP_BUILD_CWEBP=OFF \
+        -DWEBP_BUILD_DWEBP=OFF \
+        -DWEBP_BUILD_VWEBP=OFF \
+        -DWEBP_BUILD_WEBPMUX=OFF \
+        -DWEBP_BUILD_WEBPINFO=OFF \
+        -DWEBP_BUILD_GIF2WEBP=OFF \
+        -DWEBP_BUILD_IMG2WEBP=OFF

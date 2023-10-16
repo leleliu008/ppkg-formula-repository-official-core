@@ -16,7 +16,7 @@ dopatch: |
 
 install: |
     configure \
-        --with-libunistring-prefix=$libunistring_INSTALL_DIR \
+        --with-libunistring-prefix="$libunistring_INSTALL_DIR" \
         --disable-valgrind-tests \
         --disable-code-coverage \
         --disable-doc \
