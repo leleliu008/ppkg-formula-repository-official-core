@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [20.04, 22.04]
+        tag: [22.04]
         pkg: [PKGLIST]
         flavor: [sh, c]
 
