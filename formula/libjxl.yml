@@ -9,7 +9,6 @@ dep-pkg: brotli libwebp openexr
 dopatch: run ./deps.sh && rm -rf third_party/libpng
 install: |
     cmakew \
-        -DBUILD_TESTING=OFF \
         -DJPEGXL_ENABLE_JNI=OFF \
         -DJPEGXL_ENABLE_TOOLS=ON \
         -DJPEGXL_ENABLE_EXAMPLES=ON \

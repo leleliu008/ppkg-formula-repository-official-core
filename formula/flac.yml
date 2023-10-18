@@ -12,7 +12,6 @@ install: |
         -DBUILD_CXXLIBS=ON \
         -DBUILD_PROGRAMS=ON \
         -DBUILD_EXAMPLES=ON \
-        -DBUILD_TESTING=OFF \
         -DBUILD_DOCS=OFF \
         -DINSTALL_MANPAGES=ON \
         -DINSTALL_PKGCONFIG_MODULES=ON \

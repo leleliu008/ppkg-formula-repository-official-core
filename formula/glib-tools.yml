@@ -4,7 +4,7 @@ git-url: https://github.com/GNOME/glib
 src-url: https://download.gnome.org/sources/glib/2.76/glib-2.76.4.tar.xz
 src-sha: 5a5a191c96836e166a7771f7ea6ca2b0069c603c7da3cba1cd38d1694a395dda
 license: LGPL-2.1-or-later
-dep-pkg: gettext libffi libpcre2
+dep-pkg: gettext libffi libpcre2 zlib
 
 dopatch: |
     sed_in_place "s|dependency('zlib')|cc.find_library('z', static : true, dirs : ['$zlib_LIBRARY_DIR'])|" meson.build
