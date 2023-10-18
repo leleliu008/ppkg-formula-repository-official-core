@@ -1,0 +1,7 @@
+summary: A fork of OpenSSL that is designed to meet Google needs
+web-url: https://boringssl.googlesource.com/boringssl/
+git-url: https://github.com/google/boringssl
+dep-upp: golang
+install: |
+    cmakew -DBUILD_SHARED_LIBS=OFF
+    cmakew -DBUILD_SHARED_LIBS=ON
