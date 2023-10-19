@@ -6,4 +6,4 @@ src-sha: e9baba7701a76a51f3d85a62c383a3c9dcd97fa900b859bc7db114c1868af8a8
 version: 9.3.1
 license: SSH-OpenSSH
 dep-pkg: ldns openssl zlib
-install: configure --with-privsep-path=$PACKAGE_INSTALL_DIR/sbin
+install: configure --without-zlib-version-check --with-privsep-path=$PACKAGE_INSTALL_DIR/sbin

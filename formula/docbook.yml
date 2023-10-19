@@ -2,7 +2,7 @@ summary: Standard SGML representation system for technical documents
 web-url: https://docbook.org/
 src-url: https://docbook.org/xml/5.1/docbook-v5.1-os.zip
 src-sha: b3f3413654003c1e773360d7fc60ebb8abd0e8c9af8e7d6c4b55f124f34d1e7f
-dep-upp: libxml2-utils
+dep-upp: bsdtar libxml2-utils
 install: |
     DOCBOOK_XML_VERSION_LIST='
     30f0644064e0ea71751438251940b1431f46acada814a062870f486c772e7772=https://docbook.org/xml/4.1.2/docbkx412.zip

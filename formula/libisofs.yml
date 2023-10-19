@@ -2,6 +2,7 @@ summary: Library to create an ISO-9660 filesystem with extensions like RockRidge
 git-url: https://dev.lovelyhq.com/libburnia/libisofs
 src-url: http://files.libburnia-project.org/releases/libisofs-1.5.6.pl01.tar.gz
 src-sha: ac1fd338d641744ca1fb1567917188b79bc8c2506832dd56885fec98656b9f25
+version: 1.5.6.1
 license: LGPL-2.0-or-later
 dep-pkg: libiconv
 

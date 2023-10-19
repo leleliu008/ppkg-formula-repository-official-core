@@ -2,7 +2,7 @@ summary: A C++ library for parsing, formatting, and validating international pho
 git-url: https://github.com/google/libphonenumber
 src-url: https://github.com/google/libphonenumber/archive/v8.13.23.tar.gz
 src-sha: fcfeece0ffc44b1047228b8a24be9240023f4c9105e4e88b4648978764dad9a9
-dep-pkg: boost icu4c libprotobuf googletest abseil
+dep-pkg: boost icu4c protobuf googletest abseil
 license: Apache-2.0
 bscript: cpp
 dopatch: printf 'INPUT(-licudata %s -lc++_shared)\n' "$(pkg-config --libs-only-l protobuf)" > ../../lib/libpthread.a

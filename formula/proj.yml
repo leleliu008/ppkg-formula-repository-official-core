@@ -4,6 +4,7 @@ git-url: https://github.com/OSGeo/PROJ
 src-url: https://github.com/OSGeo/PROJ/releases/download/9.3.0/proj-9.3.0.tar.gz
 src-sha: 91a3695a004ea28db0448a34460bed4cc3b130e5c7d74339ec999efdab0e547d
 license: MIT
+dep-upp: sqlite
 dep-pkg: libtiff libcurl libsqlite3
 dopatch: |
     # https://cmake.org/cmake/help/latest/module/FindTIFF.html
