@@ -1,9 +1,13 @@
 summary: Watch files and take action when they change
 git-url: https://github.com/facebook/watchman
-src-url: https://github.com/facebook/watchman/archive/v2023.07.10.00.tar.gz
-src-sha: 3fc4e3a39d6c948e5ca175d1313551010282a8020a9363b50d3d1e70c76ccca8
+src-url: https://github.com/facebook/watchman/archive/refs/tags/v2023.10.09.00.tar.gz
+src-sha: f7e92f4007c151480f91b57c6b687b376a91a8c4dd3a7184588166b45445861c
 license: MIT
 dep-pkg: python3 libpcre2 fb303 edencommon cpptoml
-bsystem: cmake cargo
-dopatch: sed_in_place 's|^t_test|#t_test|' CMakeLists.txt
+
+fix-url: https://github.com/facebook/watchman/commit/e9be5564fbff3b9efd21caed524cd72e33584773.patch?full_index=1
+fix-sha: dc3ef949b0a4be7dd67267eb057fb855926b3708e0ce1df310f431fd157721ca
+dep-upp: patch
+dopatch: patch -p1 ../fix/dc3ef949b0a4be7dd67267eb057fb855926b3708e0ce1df310f431fd157721ca.patch
+
 install: cmakew -DENABLE_EDEN_SUPPORT=ON

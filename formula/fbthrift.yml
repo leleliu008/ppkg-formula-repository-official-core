@@ -1,8 +1,8 @@
 summary: Facebook branch of Apache Thrift, including a new C++ server
 git-url: https://github.com/facebook/fbthrift
-src-url: https://github.com/facebook/fbthrift/archive/v2023.07.10.00.tar.gz
-src-sha: 8e05cb9a337222aecd15d6c12a2242510213e3446c8e56b3b5411a390521b434
+src-url: https://github.com/facebook/fbthrift/archive/refs/tags/v2023.10.09.00.tar.gz
+src-sha: d402676e08df73e2e4b45ed99bef8b0c05f08ef41f606c8c2c19efea552948e6
 license: Apache-2.0
 dep-upp: gm4 flex bison
-dep-pkg: wangle
+dep-pkg: wangle mvfst
 bsystem: cmake

@@ -5,11 +5,11 @@ src-sha: 0f6c2e7ffd3a1723ab47fdac785ec40f85c0a5b5a42c1d002272205b988be722
 license: GPL-2.0-or-later
 dep-pkg: zlib openssl
 dep-upp: libtool
-
 bsystem: autogen
+dopatch: sed_in_place '/AC_INIT/a AC_CONFIG_AUX_DIR([.])' configure.ac
 install: |
     configure \
         --disable-largefile \
         --enable-aligned=true \
         --without-fastcgi \
-        --with-zlib=$zlib_INSTALL_DIR
+        --with-zlib="$zlib_INSTALL_DIR"

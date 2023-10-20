@@ -6,7 +6,7 @@ src-sha: e2c5ee5416dfda2230c7a0cb7895df9a9b2d5b2065bb18e7e64dec2a796abe1b
 dep-pkg: readline
 binbstd: yes
 install: |
-    sed_in_place "s|CFLAGS = -std=c99|CFLAGS = -I$readline_INCLUDE_DIR -L$readline_LIBRARY_DIR -std=c99|" Makefile
+    sed_in_place "s|CFLAGS = -std=c99|CFLAGS = $CPPFLAGS $LDFLAGS -std=c99|" Makefile
     sed_in_place 's|-lreadline|-lreadline -lncurses|' Makefile
     gmakew clean &&
     gmakew release &&
