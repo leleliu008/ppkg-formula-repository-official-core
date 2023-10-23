@@ -11,6 +11,6 @@ fix-sha: e7e5e9ea0b6dd7639c7a5c6f49a1d06be20d449d59f60ba59b238e1aa79b13f0
 license: GPL-3.0-or-later
 
 dep-pkg: openssl popt lz4 libzstd xxhash libiconv
-dep-upp: patch
+dep-upp: patch autoconf
 dopatch: patch -p1 < ../fix/patches/fileflags.diff
 install: configure --disable-simd --enable-ipv6 --with-included-popt=no --with-included-zlib=no

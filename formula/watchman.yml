@@ -9,5 +9,5 @@ fix-url: https://github.com/facebook/watchman/commit/e9be5564fbff3b9efd21caed524
 fix-sha: dc3ef949b0a4be7dd67267eb057fb855926b3708e0ce1df310f431fd157721ca
 dep-upp: patch
 dopatch: patch -p1 ../fix/dc3ef949b0a4be7dd67267eb057fb855926b3708e0ce1df310f431fd157721ca.patch
-
+bsystem: cmake cargo
 install: cmakew -DENABLE_EDEN_SUPPORT=ON
