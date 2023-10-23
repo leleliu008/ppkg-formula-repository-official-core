@@ -6,7 +6,6 @@ license: GPL-2.0-or-later
 dep-pkg: zlib openssl
 dep-upp: libtool
 bsystem: autogen
-dopatch: sed_in_place '/AC_INIT/a AC_CONFIG_AUX_DIR([.])' configure.ac
 install: |
     configure \
         --disable-largefile \
