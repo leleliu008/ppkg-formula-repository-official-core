@@ -5,15 +5,15 @@ src-url: https://github.com/libjxl/libjxl/archive/v0.8.2.tar.gz
 src-sha: c70916fb3ed43784eb840f82f05d390053a558e2da106e40863919238fa7b420
 license: BSD-3-Clause
 dep-pkg: brotli libwebp openexr
-
+dep-upp: curl gtar gzip
 dopatch: run ./deps.sh && rm -rf third_party/libpng
 install: |
     cmakew \
         -DJPEGXL_ENABLE_JNI=OFF \
-        -DJPEGXL_ENABLE_TOOLS=ON \
-        -DJPEGXL_ENABLE_EXAMPLES=ON \
-        -DJPEGXL_ENABLE_MANPAGES=ON \
+        -DJPEGXL_ENABLE_TOOLS=OFF \
+        -DJPEGXL_ENABLE_EXAMPLES=OFF \
+        -DJPEGXL_ENABLE_MANPAGES=OFF \
         -DJPEGXL_ENABLE_BENCHMARK=OFF \
         -DJPEGXL_WARNINGS_AS_ERRORS=OFF \
         -DJPEGXL_FORCE_SYSTEM_BROTLI=ON \
-        -DJPEGXL_VERSION=$PACKAGE_VERSION
+        -DJPEGXL_VERSION="$PACKAGE_VERSION"
