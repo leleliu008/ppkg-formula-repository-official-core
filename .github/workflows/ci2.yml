@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow2
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [PKGLIST]
+        pkg: [catch2,catimg,ccache,cdrtools,cereal,c-examples,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,circleci-cli,clash,cli11,cmake,coreutils,cpio,cppcheck,cppunit,cpu_features,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,delta,diffutils,distcc,dmalloc,dns2tcp,dnsmap,dog,doggo,dos2unix,doxygen,dua,duf,dufs]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [catch2,catimg,ccache,cdrtools,cereal,c-examples,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,circleci-cli,clash,cli11,cmake,coreutils,cpio,cppcheck,cppunit,cpu_features,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,delta,diffutils,distcc,dmalloc,dns2tcp,dnsmap,dog,doggo,dos2unix,doxygen,dua,duf,dufs]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}
