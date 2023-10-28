@@ -68,7 +68,7 @@ jobs:
 
         - run: ./ppkg setup
         - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-offical-core
-        - run: mv formula ~/.ppkg/repos.d/test/
+        - run: mv formula/* ~/.ppkg/repos.d/test/formula/
         - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-only
 
 
