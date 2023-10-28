@@ -3,4 +3,10 @@ web-url: https://www.nongnu.org/lzip/lzlib.html
 src-url: https://download.savannah.gnu.org/releases/lzip/lzlib/lzlib-1.13.tar.gz
 src-sha: a1ab58f3148ba4b2674e938438166042137a9275bed747306641acfddc9ffb80
 license: BSD-2-Clause
-install: configure CC="$CC" CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR"
+bsystem: gmake
+binbstd: yes
+install: |
+    sed_in_place 's|$(progname_shared)|lib$(libname).so.$(pkgversion)|' Makefile.in
+    run ./configure --enable-static --enable-shared --disable-ldconfig --prefix="$PACKAGE_INSTALL_DIR" CC="$CC" CFLAGS="'$CFLAGS'" CPPFLAGS="'$CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR"
+    gmakew
+    gmakew install

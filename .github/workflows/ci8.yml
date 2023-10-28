@@ -8,7 +8,7 @@ on:
 
 jobs:
   ubuntu:
-    if: ${{ true }}
+    if: ${{ false }}
     strategy:
       fail-fast: false
       matrix:
@@ -38,6 +38,39 @@ jobs:
         - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-offical-core
         - run: mv formula ~/.ppkg/repos.d/test/
         - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-only
+
+  alpine:
+    if: ${{ true }}
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [3.17]
+        pkg: [pigz,pipewire,pjsip,pkgconf,pkg-config,plog,plzip,pngquant,pocl,poco,ppkg,procs,progress,proj,pup,putty,pybind11,python3-setup,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtorrent,rust-analyzer,sassc,scc,sccache,sd,shaderc,shc,shell2http,shiori,silicon,sjpeg,skcms,sl,socat,soundtouch]
+        flavor: [sh, c]
+
+    runs-on:   ubuntu-latest
+    container: alpine:${{ matrix.tag }}
+
+    steps:
+        - run: apk update
+        - run: apk add curl g++ libc-dev linux-headers
+
+        - uses: actions/checkout@v3
+
+        - if: matrix.flavor == 'sh'
+          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg && chmod a+x ppkg
+
+        - if: matrix.flavor == 'c'
+          run: |
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.0-linux-x86_64.tar.xz
+            tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
+            mv bin/ppkg .
+
+        - run: ./ppkg setup
+        - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-offical-core
+        - run: mv formula ~/.ppkg/repos.d/test/
+        - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-only
+
 
   macos:
     if: ${{ false }}

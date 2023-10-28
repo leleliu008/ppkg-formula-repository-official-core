@@ -1,10 +1,21 @@
 summary: a command-line tool and C++ library that performs content-preserving transformations on PDF files
 git-url: https://github.com/qpdf/qpdf
-src-url: https://github.com/qpdf/qpdf/releases/download/v11.6.2/qpdf-11.6.2.tar.gz
-src-sha: 9d7011c348abb9ec281dfb0675abcc4a670a14ca4fafd8b945dac5817035acb0
+src-url: https://github.com/qpdf/qpdf/releases/download/v11.6.3/qpdf-11.6.3.tar.gz
+src-sha: c394b1b0cff4cd9d13b0f5e16bdf3cf54da424dc434f9d40264b7fe67acd90bc
 license: Apache-2.0
 dep-pkg: libjpeg-turbo openssl zlib
+dopatch: |
+    sed_in_place '/add_subdirectory(examples)/d' CMakeLists.txt
+    sed_in_place 's|target_link_libraries(${PROG} libqpdf)|target_link_libraries(${PROG} libqpdf_static)|' qpdf/CMakeLists.txt
+    sed_in_place 's|target_link_libraries(zlib-flate libqpdf)|target_link_libraries(zlib-flate libqpdf_static)|' zlib-flate/CMakeLists.txt
 install: |
     cmakew \
+        -DINSTALL_MANUAL=OFF \
+        -DINSTALL_EXAMPLES=OFF \
+        -DINSTALL_PKGCONFIG=ON \
+        -DINSTALL_CMAKE_PACKAGE=ON \
+        -DBUILD_DOC=OFF \
+        -DBUILD_SHARED_LIBS=ON \
+        -DBUILD_STATIC_LIBS=ON \
         -DUSE_IMPLICIT_CRYPTO=OFF \
         -DREQUIRE_CRYPTO_OPENSSL=ON
