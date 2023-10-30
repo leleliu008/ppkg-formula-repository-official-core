@@ -6,6 +6,5 @@ src-sha: 6c1381fd1a66e86e095b76028ede696724e198ea0e39957c9649af5f0718b96a
 license: BSD-3-Clause
 xxflags: -std=c++11
 install: |
-    cmakew &&
-    run install_libs libwebm$SHARED_LIBRARY_SUFFIX &&
-    run install_bins mkvmuxer_sample mkvparser_sample vttdemux dumpvtt webm2ts webm2pes webm_info
+    cmakew -DENABLE_TESTS=OFF -DENABLE_SAMPLE_PROGRAMS=OFF -DENABLE_WEBMINFO=OFF -DENABLE_WEBM_PARSER=OFF -DENABLE_WEBMTS=OFF -DBUILD_SHARED_LIBS=OFF
+    cmakew -DENABLE_TESTS=OFF -DENABLE_SAMPLE_PROGRAMS=OFF -DENABLE_WEBMINFO=OFF -DENABLE_WEBM_PARSER=OFF -DENABLE_WEBMTS=OFF -DBUILD_SHARED_LIBS=ON

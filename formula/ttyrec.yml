@@ -10,6 +10,8 @@ dopatch: |
     if [ "$NATIVE_OS_KIND" = darwin ] ; then
         sed_in_place 's|libutil\.h|util.h|' ttyrec.c
         export CPPFLAGS="$CPPFLAGS -DHAVE_openpty -Dset_progname=setprogname -include signal.h"
+    else
+        sed_in_place '1i #include <fcntl.h>' ttyrec.c
     fi
 
 install: |

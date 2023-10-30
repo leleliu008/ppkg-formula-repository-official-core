@@ -8,5 +8,13 @@ dep-pkg: mbedtls
 install: |
     cmakew \
         -DNNG_TESTS=OFF \
+        -DNNG_TOOLS=OFF \
         -DNNG_ENABLE_TLS=ON \
-        -DNNG_ENABLE_HTTP=ON
+        -DNNG_ENABLE_HTTP=ON \
+        -DBUILD_SHARED_LIBS=OFF
+    cmakew \
+        -DNNG_TESTS=OFF \
+        -DNNG_TOOLS=OFF \
+        -DNNG_ENABLE_TLS=ON \
+        -DNNG_ENABLE_HTTP=ON \
+        -DBUILD_SHARED_LIBS=ON

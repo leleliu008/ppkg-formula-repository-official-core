@@ -5,4 +5,4 @@ src-url: https://github.com/pupnp/pupnp/releases/download/release-1.14.17/libupn
 src-sha: 9b877242eba0428c7f949af4d6e7b7b908ce5ebc67cc13475ee6eb0d9bcb6ffb
 license: BSD-3-Clause
 dep-pkg: openssl
-install: cmakew -Dopen_ssl=ON
+install: cmakew -DUPNP_ENABLE_OPEN_SSL=ON -DUPNP_BUILD_SHARED=ON -DUPNP_BUILD_STATIC=ON -DUPNP_BUILD_SAMPLES=OFF

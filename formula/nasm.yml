@@ -8,10 +8,12 @@ license: BSD-2-Clause
 binbstd: yes
 install: |
     configure \
-        --disable-profiling \
         --enable-lto \
         --enable-suggestions \
+        --disable-profiling \
         --disable-sanitizer \
         --disable-pedantic \
         --disable-werror \
-        --disable-pdf-compression
+        --disable-pdf-compression \
+        ac_cv_prog_AR="$AR" \
+        ac_cv_prog_RANLIB="$RANLIB"

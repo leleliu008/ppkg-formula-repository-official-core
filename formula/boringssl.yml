@@ -3,5 +3,6 @@ web-url: https://boringssl.googlesource.com/boringssl/
 git-url: https://github.com/google/boringssl
 dep-upp: perl golang
 install: |
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
     cmakew -DBUILD_SHARED_LIBS=OFF
     cmakew -DBUILD_SHARED_LIBS=ON

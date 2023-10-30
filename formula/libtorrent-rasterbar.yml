@@ -13,4 +13,5 @@ install: |
         -Dbuild_tools=ON \
         -Dbuild_tests=OFF \
         -Dbuild_examples=OFF \
-        -Dpython-bindings=OFF
+        -Dpython-bindings=OFF \
+        -DBUILD_SHARED_LIBS=OFF

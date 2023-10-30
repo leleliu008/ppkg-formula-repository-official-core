@@ -4,4 +4,4 @@ src-url: https://github.com/libuvc/libuvc/archive/v0.0.7.tar.gz
 src-sha: 7c6ba79723ad5d0ccdfbe6cadcfbd03f9f75b701d7ba96631eb1fd929a86ee72
 license: BSD-3-Clause
 dep-pkg: libusb
-bsystem: cmake
+install: cmakew -DBUILD_TEST=OFF -DBUILD_EXAMPLE=OFF
