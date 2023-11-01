@@ -16,16 +16,16 @@ install: |
 
     export ac_cv_lib_curl_curl_global_init=yes
 
-    LIBCURL_LIBS="$(pkg-config --libs libcurl)"
-    printf 'LIBCURL_LIBS=%s\n' "$LIBCURL_LIBS"
+    #LIBCURL_LIBS="$(pkg-config --libs libcurl)"
+    #printf 'LIBCURL_LIBS=%s\n' "$LIBCURL_LIBS"
 
-    export LDFLAGS="$LDFLAGS $LIBCURL_LIBS"
+    #export LDFLAGS="$LDFLAGS $LIBCURL_LIBS"
 
     configure \
-        --with-zlib=$zlib_INSTALL_DIR \
-        --with-curl=$libcurl_INSTALL_DIR \
-        --with-expat=$expat_INSTALL_DIR \
-        --with-iconv=$libiconv_INSTALL_DIR \
-        --with-openssl=$openssl_INSTALL_DIR \
-        --with-libpcre2=$libpcre2_INSTALL_DIR \
-        --without-tcltk
+        --with-zlib="$zlib_INSTALL_DIR" \
+        --with-curl="$libcurl_INSTALL_DIR" \
+        --with-expat="$expat_INSTALL_DIR" \
+        --with-iconv="$libiconv_INSTALL_DIR" \
+        --with-openssl="$openssl_INSTALL_DIR" \
+        --with-libpcre2="$libpcre2_INSTALL_DIR" \
+        --without-tcltk LIBS="'$(pkg-config --libs libcurl)'"

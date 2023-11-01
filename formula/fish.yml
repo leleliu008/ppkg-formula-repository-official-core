@@ -1,8 +1,10 @@
-summary: User-friendly command-line shell for UNIX-like operating systems
+summary: A smart and user-friendly command line shell for Linux, macOS, and the rest of the family
 web-url: https://fishshell.com/
 git-url: https://github.com/fish-shell/fish-shell
 src-url: https://github.com/fish-shell/fish-shell/releases/download/3.6.1/fish-3.6.1.tar.xz
 src-sha: 55402bb47ca6739d8aba25e41780905b5ce1bce0a5e0dd17dca908b5bc0b49b2
 license: GPL-2.0-or-later
 dep-pkg: libpcre2 readline
-install: cmakew -DWITH_GETTEXT=OFF
+install: |
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+    cmakew -DWITH_GETTEXT=OFF

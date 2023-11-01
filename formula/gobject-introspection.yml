@@ -6,4 +6,6 @@ src-sha: 196178bf64345501dcdc4d8469b36aa6fe80489354efe71cb7cb8ab82a3738bf
 license: MIT
 dep-upp: gm4 flex bison
 dep-pkg: glib python3
-install: mesonw
+install: |
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
+    mesonw
