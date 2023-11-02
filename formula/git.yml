@@ -9,17 +9,15 @@ dep-pkg: gettext expat libcurl libpcre2 zlib
 bsystem: configure
 binbstd: yes
 install: |
-    # musl libc
     if [ "$NATIVE_OS_LIBC" = musl ] ; then
         export ac_cv_c_regex_with_reg_startend=no
     fi
 
     export ac_cv_lib_curl_curl_global_init=yes
 
-    #LIBCURL_LIBS="$(pkg-config --libs libcurl)"
-    #printf 'LIBCURL_LIBS=%s\n' "$LIBCURL_LIBS"
-
-    #export LDFLAGS="$LDFLAGS $LIBCURL_LIBS"
+    if [ -f ../lib/libcurl.a ] ; then
+        printf 'INPUT(%s %s)\n' "$libcurl_LIBRARY_DIR/libcurl.a" "$(pkg-config --libs-only-l libcurl | sed 's|-lcurl||g')" > ../lib/libcurl.a
+    fi
 
     configure \
         --with-zlib="$zlib_INSTALL_DIR" \
@@ -28,4 +26,4 @@ install: |
         --with-iconv="$libiconv_INSTALL_DIR" \
         --with-openssl="$openssl_INSTALL_DIR" \
         --with-libpcre2="$libpcre2_INSTALL_DIR" \
-        --without-tcltk LIBS="'$(pkg-config --libs libcurl)'"
+        --without-tcltk

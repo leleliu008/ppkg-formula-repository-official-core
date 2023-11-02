@@ -7,9 +7,8 @@ dep-pkg: gmp libunistring nettle libtasn1 libidn2 p11-kit
 license: LGPL-2.1-or-later GPL-3.0-only
 
 dopatch: |
-    if [ -L ../lib/libidn2.a ] ; then
-        if [ -L ../lib/libiconv.a ] ; then
-            rm ../lib/libidn2.a
+    if [ -f ../lib/libidn2.a ] ; then
+        if [ -f ../lib/libiconv.a ] ; then
             printf 'INPUT(%s %s %s)' "$libidn2_INSTALL_DIR/lib/libidn2.a" "$libunistring_INSTALL_DIR/lib/libunistring.a" "$libiconv_INSTALL_DIR/lib/libiconv.a" ../lib/libidn2.a
         fi
     fi

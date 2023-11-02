@@ -8,5 +8,7 @@ license: BSL-1.0
 dep-pkg: openssl
 install: |
     cmakew \
+        -DENABLE_TESTS=OFF \
         -DENABLE_DATA_ODBC=OFF \
-        -DENABLE_DATA_MYSQL=OFF
+        -DENABLE_DATA_MYSQL=OFF \
+        -DBUILD_SHARED_LIBS=OFF

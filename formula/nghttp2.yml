@@ -1,12 +1,19 @@
 summary: HTTP/2 C Library
 web-url: https://nghttp2.org/
 git-url: https://github.com/nghttp2/nghttp2
-src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.55.1/nghttp2-1.55.1.tar.gz
-src-sha: e12fddb65ae3218b4edc083501519379928eba153e71a1673b185570f08beb96
+src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.58.0/nghttp2-1.58.0.tar.gz
+src-sha: 9ebdfbfbca164ef72bdf5fd2a94a4e6dfb54ec39d2ef249aeb750a91ae361dfb
 dep-pkg: libevent libev jansson libxml2 c-ares cunit
 license: MIT
 
+fix-url: https://github.com/nghttp2/nghttp2/commit/829258e7038fe7eff849677f1ccaeca3e704eb67.patch?full_index=1
+fix-sha: c4bcf5cf73d5305fc479206676027533bb06d4ff2840eb672f6265ba3239031e
+dopatch: |
+    patch -p1 < ../fix/c4bcf5cf73d5305fc479206676027533bb06d4ff2840eb672f6265ba3239031e.patch
+    sed_in_place '/find_package(LibXml2/c find_package(LibXml2 CONFIG)' CMakeLists.txt
+
 install: |
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
     cmakew \
         -DENABLE_DEBUG=OFF \
         -DENABLE_WERROR=OFF \

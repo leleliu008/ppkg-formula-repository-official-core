@@ -6,6 +6,7 @@ license: BSD-3-Clause
 dep-pkg: libpng
 dep-upp: nasm
 install: |
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
     cmakew \
         -DENABLE_STATIC=ON \
         -DENABLE_SHARED=ON \

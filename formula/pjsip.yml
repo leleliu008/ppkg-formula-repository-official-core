@@ -9,8 +9,7 @@ binbstd: yes
 parallel: no
 
 install: |
-    #TARGET_TRIPLE=$TARGET_PLATFORM_ARCH-apple-darwin_ios
     export LD="$CC"
     export CFLAGS="$CPPFLAGS $CFLAGS"
-
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
     configure --disable-libwebrtc

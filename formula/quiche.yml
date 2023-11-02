@@ -5,6 +5,7 @@ src-sha: eb242a14c4d801a90b57b6021dd29f7a62099f3a4d7a7ba889e105f8328e6c1f
 license: BSD-2-Clause
 dep-pkg: boringssl
 install: |
+    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
     export QUICHE_BSSL_PATH="$boringssl_LIBRARY_DIR"
     cargow build --package quiche &&
     install_incs quiche/include/quiche.h &&
