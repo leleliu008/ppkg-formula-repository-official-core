@@ -45,7 +45,8 @@ a ppkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is us
 |`binbstd`|optional|whether build in the directory where the build script is located in, otherwise build in other directory. value can be `yes` or `no`. default value is `no`.|
 |`prepare`|optional|POSIX shell code to be run before `install`. `pwd` is `$PACKAGE_BSCRIPT_DIR`|
 |`install`|optional|POSIX shell code to be run when user run `ppkg install <PKG>`. If this mapping is not present, `ppkg` will run default install code according to `bsystem`|
-|`symlink`|optional|whether symlink installed files to `$PPKG_HOME/symlinked/*`. value can be `yes` or `no`. default value is `yes`.|
+|`symlink`|optional|whether to symlink installed files to `$PPKG_HOME/symlinked/*`. value can be `yes` or `no`. default value is `yes`.|
+|`sfslink`|optional|whether to support fully statically linked executables. value can be `yes` or `no`. default value is `yes`. If `no`, `ppkg` would not add `--static` and `-static` options to `LDFLAGS` even if `--link-type=static-fully` install option is given.|
 
 ### Appendix1: commands that can be invoked in prepare and install block
 |command|usage-example|

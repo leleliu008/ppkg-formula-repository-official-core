@@ -7,9 +7,8 @@ dep-upp: python3
 
 bsystem: gmake
 binbstd: yes
+sfslink: no
 install: |
-    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
-
     ./configure build \
         --prefix=$TARGET_INSTALL_DIR \
         --disable-rpath \

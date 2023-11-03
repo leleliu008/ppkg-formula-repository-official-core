@@ -7,7 +7,7 @@ src-sha: 88b3979e6d5c7e32b50d7ec72fb15af724f6ab2cbf7e10880c360a77e4b5d99a
 dep-pkg: libzstd liblzma zlib
 
 dopatch: |
-    if [ "$LINK_TYPE" != 'static-only' ] ; then
+    if [ "$LINK_TYPE" != 'static-full' ] ; then
         sed_in_place "s|find_library(CMath_LIBRARY NAMES m)|find_library(CMath_LIBRARY NAMES libm$SHARED_LIBRARY_SUFFIX)|" cmake/FindCMath.cmake
     fi
 install: |

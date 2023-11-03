@@ -5,4 +5,5 @@ src-url: https://github.com/geographiclib/geographiclib/archive/refs/tags/r2.2.t
 src-sha: 6611507210baf1827259f50ac970ab2e8c57a772f7c90ede4829f8834fd3d934
 version: 2.2
 license: MIT
+sfslink: no
 bsystem: cmake

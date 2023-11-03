@@ -6,10 +6,9 @@ src-sha: 4178bb9f586299111463fc16ea04e461adca4a73e646f8ddef61ea53dafa92d9
 license: GPL-2.0-or-later
 dep-pkg: openssl
 binbstd: yes
+sfslink: no
 parallel: no
-
 install: |
     export LD="$CC"
     export CFLAGS="$CPPFLAGS $CFLAGS"
-    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
     configure --disable-libwebrtc

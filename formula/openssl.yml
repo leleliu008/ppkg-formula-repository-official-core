@@ -13,13 +13,7 @@ install: |
         openbsd) sed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
     esac
 
-    # if -static option is given, only static libs are created, but we want both static and shared libs, so we remove the -static option
-    if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
-        export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
-        #sed_in_place 's|BIN_EX_LIBS=|BIN_EX_LIBS=-static |' Configurations/unix-Makefile.tmpl
-    fi
-
-    if [ "$LINK_TYPE" = static-only ] || [ "$LINK_TYPE" = static-prefered ] ; then
+    if [ "$LINK_TYPE" = static-full ] || [ "$LINK_TYPE" = static-most ] ; then
         cat > proxy-ld.c <<EOF
     #include <stdio.h>
     #include <stdlib.h>

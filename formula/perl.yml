@@ -4,11 +4,9 @@ git-url: https://github.com/perl/perl5
 src-url: https://cpan.metacpan.org/authors/id/R/RJ/RJBS/perl-5.38.0.tar.xz
 src-sha: eca551caec3bc549a4e590c0015003790bdd1a604ffe19cc78ee631d51f7072e
 license: GPL-1.0-or-later
-
+sfslink: no
 binbstd: yes
 install: |
-    export LDFLAGS="$(printf '%s\n' "$LDFLAGS" | sed -e 's|--static||g' -e 's|-static||g')"
-
     if [ "$NATIVE_OS_KIND" = darwin ] ; then
         LIBS='-lpthread -ldl -lm -lc -lutil'
     else
