@@ -37,7 +37,7 @@ jobs:
         - run: ./ppkg setup
         - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-offical-core
         - run: mv formula ~/.ppkg/repos.d/test/
-        - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-only
+        - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-full
 
   alpine:
     if: ${{ true }}
@@ -69,7 +69,7 @@ jobs:
         - run: ./ppkg setup
         - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-offical-core
         - run: mv formula/* ~/.ppkg/repos.d/test/formula/
-        - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-only
+        - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-full
 
 
   macos:
@@ -101,4 +101,4 @@ jobs:
         - run: ./ppkg setup
         - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-offical-core
         - run: mv formula ~/.ppkg/repos.d/test/
-        - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-only
+        - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-most
