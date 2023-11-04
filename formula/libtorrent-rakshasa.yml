@@ -12,3 +12,4 @@ install: |
         --enable-aligned=true \
         --without-fastcgi \
         --with-zlib="$zlib_INSTALL_DIR"
+    sed_in_place 's|-ltorrent|-ltorrent -lz|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libtorrent.pc"

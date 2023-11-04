@@ -7,7 +7,10 @@ dep-pkg: boringssl
 sfslink: no
 install: |
     export QUICHE_BSSL_PATH="$boringssl_LIBRARY_DIR"
-    cargow build --package quiche &&
-    install_incs quiche/include/quiche.h &&
-    install_libs target/$RUST_TARGET/release/libquiche.a &&
-    install_libs target/$RUST_TARGET/release/libquiche$SHARED_LIBRARY_SUFFIX
+    cargow build --package quiche
+    install_incs quiche/include/quiche.h
+    install_libs target/$RUST_TARGET/release/libquiche.a
+
+    if [ -f          "target/$RUST_TARGET/release/libquiche$SHARED_LIBRARY_SUFFIX" ] ; then
+        install_libs "target/$RUST_TARGET/release/libquiche$SHARED_LIBRARY_SUFFIX"
+    fi

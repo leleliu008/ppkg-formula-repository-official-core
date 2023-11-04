@@ -6,7 +6,16 @@ src-sha: dfddf3a1f61059853c625b7bb03de8433b455f2f79f89548cbcbd5edca3d4a4a
 license: LGPL-2.0-or-later
 install: |
     cmakew \
+        -DLIBTYPE=STATIC \
         -DALSOFT_UTILS=ON \
+        -DALSOFT_TESTS=OFF \
+        -DALSOFT_EXAMPLES=OFF \
+        -DALSOFT_BACKEND_PORTAUDIO=OFF \
+        -DALSOFT_BACKEND_PULSEAUDIO=OFF \
+        -DALSOFT_MIDI_FLUIDSYNTH=OFF
+    cmakew \
+        -DLIBTYPE=SHARED \
+        -DALSOFT_UTILS=OFF \
         -DALSOFT_TESTS=OFF \
         -DALSOFT_EXAMPLES=OFF \
         -DALSOFT_BACKEND_PORTAUDIO=OFF \

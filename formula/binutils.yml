@@ -1,12 +1,13 @@
 summary: GNU binary tools for native development
 git-url: https://sourceware.org/git/binutils-gdb
 web-url: https://www.gnu.org/software/binutils/binutils.html
-src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.xz
-src-sha: 0f8a4c272d7f17f369ded10a4aca28b8e304828e95526da482b0ccc4dfc9d8e1
+src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz
+src-uri: https://sourceware.org/pub/binutils/releases/binutils-2.41.tar.xz
+src-sha: ae9a5789e23459e59606e6714723f2d3ffc31c03174191ef0d015bdf06007450
 license: GPL-2.0-or-later
 dep-pkg: isl libmpc zlib
 dep-upp: gm4 bison texinfo
-
+sfslink: no
 install: |
     configure \
         --with-isl="$isl_INSTALL_DIR" \

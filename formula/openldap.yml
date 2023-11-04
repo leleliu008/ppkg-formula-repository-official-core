@@ -1,0 +1,7 @@
+summary: Open source suite of directory software
+web-url: https://www.openldap.org/software/
+src-url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.6.tgz
+src-sha: 082e998cf542984d43634442dbe11da860759e510907152ea579bdc42fe39ea0
+license: OLDAP-2.8
+dep-pkg: openssl
+install: configure --without-systemd
