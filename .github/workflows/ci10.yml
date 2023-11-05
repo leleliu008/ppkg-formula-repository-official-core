@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xorriso,xpup,xsltproc,xxd,yajl,yasm,youtubedr,yq,yyjson,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
+        pkg: [vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xorriso,xpup,xsltproc,xxd,yajl,yaml-cpp,yasm,youtubedr,yq,yyjson,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.17]
-        pkg: [vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xorriso,xpup,xsltproc,xxd,yajl,yasm,youtubedr,yq,yyjson,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
+        pkg: [vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xorriso,xpup,xsltproc,xxd,yajl,yaml-cpp,yasm,youtubedr,yq,yyjson,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
 
     steps:
         - run: apk update
-        - run: apk add curl g++ libc-dev linux-headers
+        - run: apk add curl g++ gfortran libc-dev linux-headers
 
         - uses: actions/checkout@v3
 
@@ -78,7 +78,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xorriso,xpup,xsltproc,xxd,yajl,yasm,youtubedr,yq,yyjson,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
+        pkg: [vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xorriso,xpup,xsltproc,xxd,yajl,yaml-cpp,yasm,youtubedr,yq,yyjson,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

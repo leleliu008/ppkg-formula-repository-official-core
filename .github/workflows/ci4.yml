@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [gnu-barcode,gnupg,gnuplot,gnu-which,godu,gogs,golang,go-md2man,gomobile,google-benchmark,google-highway,goreleaser,gosh,go-tools,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,grep,grex,groff,gron,gsed,hashcat,helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq]
+        pkg: [gnupg,gnuplot,gnu-which,godu,gogs,golang,go-md2man,gomobile,google-benchmark,google-highway,goreleaser,gosh,go-tools,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,grep,grex,groff,gron,gsed,hashcat,helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.17]
-        pkg: [gnu-barcode,gnupg,gnuplot,gnu-which,godu,gogs,golang,go-md2man,gomobile,google-benchmark,google-highway,goreleaser,gosh,go-tools,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,grep,grex,groff,gron,gsed,hashcat,helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq]
+        pkg: [gnupg,gnuplot,gnu-which,godu,gogs,golang,go-md2man,gomobile,google-benchmark,google-highway,goreleaser,gosh,go-tools,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,grep,grex,groff,gron,gsed,hashcat,helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
 
     steps:
         - run: apk update
-        - run: apk add curl g++ libc-dev linux-headers
+        - run: apk add curl g++ gfortran libc-dev linux-headers
 
         - uses: actions/checkout@v3
 
@@ -78,7 +78,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [gnu-barcode,gnupg,gnuplot,gnu-which,godu,gogs,golang,go-md2man,gomobile,google-benchmark,google-highway,goreleaser,gosh,go-tools,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,grep,grex,groff,gron,gsed,hashcat,helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq]
+        pkg: [gnupg,gnuplot,gnu-which,godu,gogs,golang,go-md2man,gomobile,google-benchmark,google-highway,goreleaser,gosh,go-tools,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,grep,grex,groff,gron,gsed,hashcat,helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

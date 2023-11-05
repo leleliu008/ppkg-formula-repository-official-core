@@ -10,12 +10,12 @@ install: |
     cmakew \
         -DDOCS=OFF \
         -DOPENEXR_INSTALL=ON \
-        -DOPENEXR_INSTALL_TOOLS=ON \
-        -DOPENEXR_INSTALL_EXAMPLES=ON \
-        -DBUILD_SHARED_LIBS=OFF
-    cmakew \
-        -DDOCS=OFF \
-        -DOPENEXR_INSTALL=ON \
         -DOPENEXR_INSTALL_TOOLS=OFF \
         -DOPENEXR_INSTALL_EXAMPLES=OFF \
         -DBUILD_SHARED_LIBS=ON
+    cmakew \
+        -DDOCS=OFF \
+        -DOPENEXR_INSTALL=ON \
+        -DOPENEXR_INSTALL_TOOLS=ON \
+        -DOPENEXR_INSTALL_EXAMPLES=ON \
+        -DBUILD_SHARED_LIBS=OFF

@@ -1,4 +1,4 @@
-summary: A C library to render fonts.
+summary: A C library to render fonts
 web-url: https://freetype.org/
 git-url: https://gitlab.freedesktop.org/freetype/freetype
 src-url: https://downloads.sourceforge.net/project/freetype/freetype2/2.13.1/freetype-2.13.1.tar.xz
@@ -8,6 +8,15 @@ license: FTL
 symlink: no
 install: |
     cmakew \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DFT_WITH_BROTLI=ON \
+        -DFT_WITH_BZIP2=ON \
+        -DFT_WITH_ZLIB=ON \
+        -DFT_WITH_PNG=ON \
+        -DFT_WITH_HARFBUZZ=OFF \
+        -DCMAKE_DISABLE_FIND_PACKAGE_HarfBuzz=TRUE
+    cmakew \
+        -DBUILD_SHARED_LIBS=ON \
         -DFT_WITH_BROTLI=ON \
         -DFT_WITH_BZIP2=ON \
         -DFT_WITH_ZLIB=ON \

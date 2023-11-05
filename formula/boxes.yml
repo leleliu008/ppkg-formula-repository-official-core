@@ -8,6 +8,11 @@ dep-pkg: libpcre2 libunistring
 dep-upp: gm4 flex bison
 binbstd: yes
 install: |
+    if [ -e ../lib/libunistring.a ] ; then
+        rm  ../lib/libunistring.a
+        printf 'INPUT(%s %s)\n' "$libunistring_LIBRARY_DIR/libunistring.a" "$(pkg-config --libs-only-l libunistring | sed 's|-lunistring||g')" > ../lib/libunistring.a
+    fi
+
     sed_in_place 's|STRIP=true||' src/Makefile
 
     export CPPFLAGS="$CPPFLAGS -I. -I../src -include string.h"

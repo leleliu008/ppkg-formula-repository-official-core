@@ -6,7 +6,8 @@ src-sha: ee9b6c75d13ba096907a2e3c6b27b61bcd17f5c7ebeab5a5b439d2f2e39fe44b
 license: LGPL-2.1-or-later
 dep-upp: glib-tools
 dep-pkg: glib gobject-introspection libjpeg-turbo libpng libtiff shared-mime-info
-dopatch: |
+sfslink: no
+dopatch2: |
     unset LIBM
 
     for item in $("$CC" -print-search-dirs | grep '^libraries: =' | cut -c13- | tr ':' '\n')
@@ -22,6 +23,7 @@ dopatch: |
     printf 'INPUT(%s)\n' "-ljpeg $LIBPNG_DEPS $LIBTIFF_DEPS $LIBM" > ../lib/libm.a
 
 install: |
+    LINK_TYPE=shared-most
     mesonw \
         -Drelocatable=true \
         -Dnative_windows_loaders=false \

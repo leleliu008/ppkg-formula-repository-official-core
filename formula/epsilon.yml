@@ -7,8 +7,7 @@ dep-pkg: popt
 bsystem: configure
 
 dopatch: |
-    if [ -f ../lib/libpopt.a ] ; then
-        if [ -f ../lib/libiconv.a ] ; then
-            printf 'INPUT(%s %s)' "$popt_LIBRARY_DIR/libpopt.a" "$libiconv_LIBRARY_DIR/libiconv.a" > ../lib/libpopt.a
-        fi
+    if [ -e ../lib/libpopt.a ] ; then
+        rm  ../lib/libpopt.a
+        printf 'INPUT(%s %s)' "$popt_LIBRARY_DIR/libpopt.a" "$(pkg-config --libs-only-l popt | sed 's|-lpopt||g')" > ../lib/libpopt.a
     fi

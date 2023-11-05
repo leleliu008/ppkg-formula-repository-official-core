@@ -5,4 +5,11 @@ src-url: https://github.com/openslide/openslide/releases/download/v3.4.1/opensli
 src-sha: 9938034dba7f48fadc90a2cdf8cfe94c5613b04098d1348a5ff19da95b990564
 license: LGPL-2.1-only
 dep-pkg: cairo gdk-pixbuf openjpeg libsqlite3
-bsystem: configure
+dopatch: |
+    if [ -f ../lib/libfreetype.a ] ; then
+        printf 'INPUT(%s %s)\n' "$freetype2_LIBRARY_DIR/libfreetype.a" "$(pkg-config --libs-only-l freetype2 | sed 's|-lfreetype||g')" > ../lib/libfreetype.a
+    fi
+    if [ -f ../lib/libglib-2.0.a ] ; then
+        printf 'INPUT(%s %s)\n' "$glib_LIBRARY_DIR/libglib-2.0.a" "$(pkg-config --libs-only-l glib-2.0 | sed 's|-lglib-2.0||g')" > ../lib/libglib-2.0.a
+    fi
+install: configure CPPFLAGS="'$CPPFLAGS -I$libxml2_INCLUDE_DIR/libxml2'"

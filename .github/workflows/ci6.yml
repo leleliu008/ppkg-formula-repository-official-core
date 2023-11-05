@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [libreplaygain,libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libupnp,libuvc,libwebm,libwordexp,libxcrypt,libxml2-utils,libyuv,lighttpd,lima,links,livego,llhttp,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mesalink,mftrace,midnight-commander]
+        pkg: [libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libupnp,libuvc,libwebm,libwordexp,libxcrypt,libxml2-utils,libyuv,lighttpd,lima,links,livego,llhttp,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mesalink,mftrace,midnight-commander,mimalloc]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.17]
-        pkg: [libreplaygain,libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libupnp,libuvc,libwebm,libwordexp,libxcrypt,libxml2-utils,libyuv,lighttpd,lima,links,livego,llhttp,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mesalink,mftrace,midnight-commander]
+        pkg: [libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libupnp,libuvc,libwebm,libwordexp,libxcrypt,libxml2-utils,libyuv,lighttpd,lima,links,livego,llhttp,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mesalink,mftrace,midnight-commander,mimalloc]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
 
     steps:
         - run: apk update
-        - run: apk add curl g++ libc-dev linux-headers
+        - run: apk add curl g++ gfortran libc-dev linux-headers
 
         - uses: actions/checkout@v3
 
@@ -78,7 +78,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [libreplaygain,libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libupnp,libuvc,libwebm,libwordexp,libxcrypt,libxml2-utils,libyuv,lighttpd,lima,links,livego,llhttp,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mesalink,mftrace,midnight-commander]
+        pkg: [libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libupnp,libuvc,libwebm,libwordexp,libxcrypt,libxml2-utils,libyuv,lighttpd,lima,links,livego,llhttp,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mesalink,mftrace,midnight-commander,mimalloc]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

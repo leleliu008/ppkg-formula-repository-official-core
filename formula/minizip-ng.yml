@@ -3,5 +3,7 @@ git-url: https://github.com/zlib-ng/minizip-ng
 src-url: https://github.com/zlib-ng/minizip-ng/archive/4.0.0.tar.gz
 src-sha: f9062e576de026fd5026d65597de3b05263cd4d91400cacdbbe36dfa8a642fff
 license: Zlib
-dep-pkg: libzstd libbz2
-bsystem: cmake
+dep-pkg: libzstd libbz2 zlib
+install: |
+    cmakew -DBUILD_SHARED_LIBS=OFF
+    cmakew -DBUILD_SHARED_LIBS=ON

@@ -5,5 +5,5 @@ src-url: https://github.com/AcademySoftwareFoundation/Imath/archive/refs/tags/v3
 src-sha: f1d8aacd46afed958babfced3190d2d3c8209b66da451f556abd6da94c165cf3
 license: BSD-3-Clause
 install: |
-    cmakew -DPYTHON=OFF -DDOCS=OFF -DBUILD_SHARED_LIBS=OFF
     cmakew -DPYTHON=OFF -DDOCS=OFF -DBUILD_SHARED_LIBS=ON
+    cmakew -DPYTHON=OFF -DDOCS=OFF -DBUILD_SHARED_LIBS=OFF
