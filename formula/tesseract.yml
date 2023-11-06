@@ -1,9 +1,41 @@
 summary: OCR (Optical Character Recognition) engine
 git-url: https://github.com/tesseract-ocr/tesseract
-src-url: https://github.com/tesseract-ocr/tesseract/archive/5.3.2.tar.gz
-src-sha: b99d30fed47360d7168c3e25d194a7416ceb1d9e4b232c7f121cc5f77084d3e7
+src-url: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.3.tar.gz
+src-sha: dc4329f85f41191b2d813b71b528ba6047745813474e583ccce8795ff2ff5681
 license: Apache-2.0
 dep-pkg: leptonica icu4c pango libarchive libcurl
+dopatch: |
+    CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl | tr ' ' ';')"
+    cat > cmake/FindCURL.cmake <<EOF
+    set(CURL_INCLUDE_DIRS "$libcurl_INCLUDE_DIR")
+    set(CURL_LIBRARIES    "$CURL_LIBRARIES")
+    if (NOT TARGET  CURL::libcurl)
+        add_library(CURL::libcurl INTERFACE IMPORTED)
+        set_target_properties(CURL::libcurl PROPERTIES
+            INTERFACE_INCLUDE_DIRECTORIES "\${CURL_INCLUDE_DIRS}"
+            INTERFACE_LINK_LIBRARIES      "\${CURL_LIBRARIES}"
+        )
+    endif()
+    include(FindPackageHandleStandardArgs)
+    find_package_handle_standard_args(CURL REQUIRED_VARS CURL_LIBRARIES CURL_INCLUDE_DIRS VERSION_VAR CURL_VERSION)
+    mark_as_advanced(CURL_INCLUDE_DIRS CURL_LIBRARIES)
+    EOF
+
+    LIBARCHIVE_LIBRARIES="$(pkg-config --libs-only-l libarchive | tr ' ' ';')"
+    cat > cmake/FindLibArchive.cmake <<EOF
+    set(LibArchive_INCLUDE_DIRS "$libarchive_INCLUDE_DIR")
+    set(LibArchive_LIBRARIES    "$LIBARCHIVE_LIBRARIES")
+    if (NOT TARGET  LibArchive::LibArchive)
+        add_library(LibArchive::LibArchive INTERFACE IMPORTED)
+        set_target_properties(LibArchive::LibArchive PROPERTIES
+            INTERFACE_INCLUDE_DIRECTORIES "${LibArchive_INCLUDE_DIRS}"
+            INTERFACE_LINK_LIBRARIES      "${LibArchive_LIBRARIES}"
+        )
+    endif()
+    include(FindPackageHandleStandardArgs)
+    find_package_handle_standard_args(LibArchive REQUIRED_VARS LibArchive_LIBRARIES LibArchive_INCLUDE_DIRS VERSION_VAR LibArchive_VERSION)
+    mark_as_advanced(LibArchive_INCLUDE_DIRS LibArchive_LIBRARIES)
+    EOF
 install: |
     cmakew \
         -DENABLE_LTO=ON \
@@ -11,4 +43,5 @@ install: |
         -DDISABLE_ARCHIVE=OFF \
         -DDISABLE_CURL=OFF \
         -DBUILD_TESTS=OFF \
-        -DBUILD_TRAINING_TOOLS=ON
+        -DBUILD_TRAINING_TOOLS=ON \
+        -DBUILD_SHARED_LIBS=OFF

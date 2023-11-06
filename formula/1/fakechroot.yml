@@ -1,5 +1,5 @@
 summary: runs a command in an environment were is additional possibility to use chroot(8) command without root privileges
-git-url: https://github.com/dex4er/fakechroot.git
+git-url: https://github.com/dex4er/fakechroot
 license: LGPL-2.1-or-later
 dep-upp: libtool
 bsystem: autogen

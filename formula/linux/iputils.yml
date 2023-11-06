@@ -1,5 +1,5 @@
 summary: Set of small useful utilities for Linux networking
-git-url: https://github.com/iputils/iputils.git
+git-url: https://github.com/iputils/iputils
 src-url: https://github.com/iputils/iputils/archive/refs/tags/20211215.tar.gz
 src-sha: b6f67fc705490673ff4471d006221b4a2f1b1180b929d9fefd771352621ccedf
 license: GPL-2.0-or-later BSD-3-Clause

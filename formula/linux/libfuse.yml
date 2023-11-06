@@ -1,5 +1,5 @@
 summary: Reference implementation of the Linux FUSE interface
-git-url: https://github.com/libfuse/libfuse.git
+git-url: https://github.com/libfuse/libfuse
 src-url: https://github.com/libfuse/libfuse/releases/download/fuse-3.11.0/fuse-3.11.0.tar.xz
 src-sha: 8982c4c521daf3974dda8a5d55d575c988da13a571970f00aea149eb54fdf14c
 license: LGPL-2.1-only

@@ -3,7 +3,5 @@ web-url: https://sourceforge.net/projects/enlightenment/
 src-url: https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.11.1/imlib2-1.11.1.tar.xz
 src-sha: f712b6bb9dcad46d8b8f4ad52610dcbbaebb4cc80b5fd12f93124d3a380fa6bf
 license: Imlib2
-
 dep-pkg: giflib libjpeg-turbo libpng libtiff libwebp freetype2 xorg-libxext
-ldflags: -lbz2 -lz -lm -lbrotlidec -lbrotlicommon -lpng
 install: configure --enable-amd64=no --without-id3
