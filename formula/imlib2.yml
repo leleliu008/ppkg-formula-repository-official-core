@@ -4,4 +4,10 @@ src-url: https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.11
 src-sha: f712b6bb9dcad46d8b8f4ad52610dcbbaebb4cc80b5fd12f93124d3a380fa6bf
 license: Imlib2
 dep-pkg: giflib libjpeg-turbo libpng libtiff libwebp freetype2 xorg-libxext
+dopatch: |
+    if [ -e ../lib/libx11.a ] ; then
+        rm  ../lib/libx11.a
+        printf 'INPUT(%s %s)\n' "$xorg_libx11_LIBRARY_DIR/libx11.a" "$(pkg-config --libs-only-l x11 | sed 's|-lx11||g')" > ../lib/libx11.a
+    fi
+
 install: configure --enable-amd64=no --without-id3
