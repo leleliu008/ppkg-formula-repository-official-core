@@ -1,7 +1,16 @@
 summary: Adds spatial SQL capabilities to SQLite
 web-url: https://www.gaia-gis.it/fossil/libspatialite/index
-src-url: https://www.gaia-gis.it/gaia-sins/libspatialite-sources/libspatialite-5.0.1.tar.gz
-src-sha: eecbc94311c78012d059ebc0fae86ea5ef6eecb13303e6e82b3753c1b3409e98
+src-url: https://www.gaia-gis.it/gaia-sins/libspatialite-sources/libspatialite-5.1.0.tar.gz
+src-sha: 43be2dd349daffe016dd1400c5d11285828c22fea35ca5109f21f3ed50605080
 license: MPL-1.1
 dep-pkg: freexl librttopo libxml2 minizip proj7
-bsystem: configure
+dopatch: |
+    if [ -e ../lib/libproj.a ] ; then
+        rm  ../lib/libproj.a
+        printf 'INPUT(%s %s)\n' "$proj7_LIBRARY_DIR/libproj.a" "$(pkg-config --libs-only-l proj | sed 's|-lproj||g')" > ../lib/libproj.a
+    fi
+    if [ -e ../lib/libgeos_c.a ] ; then
+        rm  ../lib/libgeos_c.a
+        printf 'INPUT(%s %s)\n' "$geos_LIBRARY_DIR/libgeos_c.a" "$(pkg-config --libs-only-l geos | sed 's|-lgeos_c||g')" > ../lib/libgeos_c.a
+    fi
+install: configure ac_cv_search_freexl_open_ods="'$(pkg-config --libs-only-l freexl)'"

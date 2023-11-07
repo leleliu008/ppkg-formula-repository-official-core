@@ -4,4 +4,7 @@ git-url: https://github.com/libgeos/geos
 src-url: https://download.osgeo.org/geos/geos-3.12.0.tar.bz2
 src-sha: d96db96011259178a35555a0f6d6e75a739e52a495a6b2aa5efb3d75390fbc39
 license: LGPL-2.1-or-later
-bsystem: cmake
+install: |
+    cmakew -DBUILD_GEOSOP=OFF -DBUILD_SHARED_LIBS=ON
+    rm -rf *
+    cmakew -DBUILD_GEOSOP=ON  -DBUILD_SHARED_LIBS=OFF

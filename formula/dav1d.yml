@@ -7,6 +7,6 @@ dep-upp: nasm
 install: |
     mesonw \
         -Denable_asm=true \
-        -Denable_tools=true \
+        -Denable_tools=false \
         -Denable_tests=false \
         -Denable_examples=false

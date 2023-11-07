@@ -4,5 +4,22 @@ src-url: https://www.gaia-gis.it/gaia-sins/librasterlite-sources/librasterlite-1
 src-sha: 0a8dceb75f8dec2b7bd678266e0ffd5210d7c33e3d01b247e9e92fa730eebcb3
 license: MPL-1.1
 dep-pkg: libgeotiff libspatialite libpng
-dopatch: sed_in_place "s|-ltiff|$(pkg-config --libs libtiff-4)|" configure
+dopatch: |
+    sed_in_place "s|-ltiff|$(pkg-config --libs libtiff-4)|" configure
+
+    if [ -e ../lib/libproj.a ] ; then
+        rm  ../lib/libproj.a
+        printf 'INPUT(%s %s)\n' "$proj7_LIBRARY_DIR/libproj.a" "$(pkg-config --libs-only-l proj | sed 's|-lproj||g')" > ../lib/libproj.a
+    fi
+
+    if [ -e ../lib/libgeos_c.a ] ; then
+        rm  ../lib/libgeos_c.a
+        printf 'INPUT(%s %s)\n' "$geos_LIBRARY_DIR/libgeos_c.a" "$(pkg-config --libs-only-l geos | sed 's|-lgeos_c||g')" > ../lib/libgeos_c.a
+    fi
+
+    if [ -e ../lib/libspatialite.a ] ; then
+        rm  ../lib/libspatialite.a
+        printf 'INPUT(%s %s)\n' "$libspatialite_LIBRARY_DIR/libspatialite.a" "$(pkg-config --libs-only-l spatialite | sed 's|-lspatialite||g')" > ../lib/libspatialite.a
+    fi
+
 bsystem: configure

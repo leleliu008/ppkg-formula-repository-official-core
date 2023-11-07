@@ -6,3 +6,8 @@ license: GPL-2.0-or-later
 dep-pkg: geos
 dep-upp: libtool
 bsystem: autogen
+dopatch: |
+    if [ -e ../lib/libgeos_c.a ] ; then
+        rm  ../lib/libgeos_c.a
+        printf 'INPUT(%s %s)\n' "$geos_LIBRARY_DIR/libgeos_c.a" "$(pkg-config --libs-only-l geos | sed 's|-lgeos_c||g')" > ../lib/libgeos_c.a
+    fi
