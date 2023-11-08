@@ -6,4 +6,4 @@ license: MPL-1.1
 dep-pkg: libiconv minizip expat
 install: |
     configure LIBS="'-liconv -lz'"
-    printf 'Requires: libiconv minizip expat\n' >> "$PACKAGE_INSTALL_DIR/lib/pkgconfig/freexl.pc"
+    printf 'Requires: libiconv, minizip, expat\n' >> "$PACKAGE_INSTALL_DIR/lib/pkgconfig/freexl.pc"

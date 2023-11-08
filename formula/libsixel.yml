@@ -4,4 +4,10 @@ src-url: https://github.com/libsixel/libsixel/archive/refs/tags/v1.10.3.tar.gz
 src-sha: 028552eb8f2a37c6effda88ee5e8f6d87b5d9601182ddec784a9728865f821e0
 license: MIT
 dep-pkg: gdk-pixbuf gd libcurl
-install: mesonw -Dtests=disabled -Dgdk-pixbuf2=enabled
+dopatch: |
+    sed_in_place '/sys\/unistd\.h/d' meson.build
+    sed_in_place '/sys\/unistd\.h/d' src/tty.c
+    sed_in_place '/sys\/unistd\.h/d' src/encoder.c
+    sed_in_place '/sys\/unistd\.h/d' src/decoder.c
+    sed_in_place '/sys\/unistd\.h/d' converters/img2sixel.c
+install: mesonw -Dtests=disabled -Dgdk-pixbuf2=enabled -Dgd=disabled -Dlibcurl=enabled -Djpeg=enabled -Dpng=enabled -Dimg2sixel=disabled -Dsixel2png=disabled

@@ -1,10 +1,28 @@
 summary: Command-driven, interactive function plotting
 web-url: http://www.gnuplot.info/
 git-url: https://git.code.sf.net/p/gnuplot/gnuplot-main
-src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.4.8/gnuplot-5.4.8.tar.gz
-src-sha: 931279c7caad1aff7d46cb4766f1ff41c26d9be9daf0bcf0c79deeee3d91f5cf
+src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.4.10/gnuplot-5.4.10.tar.gz
+src-sha: 975d8c1cc2c41c7cedc4e323aff035d977feb9a97f0296dd2a8a66d197a5b27c
 license: gnuplot
 dep-pkg: libcerf pango gd lua readline 
+
+dopatch: |
+    if [ -f ../lib/libcairo.a ] ; then
+        printf 'INPUT(%s %s)\n' "$cairo_LIBRARY_DIR/libcairo.a" "$(pkg-config --libs-only-l cairo | sed 's|-lcairo||g')" > ../lib/libcairo.a
+    fi
+    if [ -f ../lib/libfreetype.a ] ; then
+        printf 'INPUT(%s %s)\n' "$freetype2_LIBRARY_DIR/libfreetype.a" "$(pkg-config --libs-only-l freetype2 | sed 's|-lfreetype||g')" > ../lib/libfreetype.a
+    fi
+    if [ -f ../lib/libharfbuzz.a ] ; then
+        printf 'INPUT(%s %s)\n' "$harfbuzz_LIBRARY_DIR/libharfbuzz.a" "$(pkg-config --libs-only-l harfbuzz | sed 's|-lharfbuzz||g')" > ../lib/libharfbuzz.a
+    fi
+    if [ -f ../lib/libglib-2.0.a ] ; then
+        printf 'INPUT(%s %s)\n' "$glib_LIBRARY_DIR/libglib-2.0.a" "$(pkg-config --libs-only-l glib-2.0 | sed 's|-lglib-2.0||g')" > ../lib/libglib-2.0.a
+    fi
+    if [ -f ../lib/libgobject-2.0.a ] ; then
+        printf 'INPUT(%s %s)\n' "$glib_LIBRARY_DIR/libgobject-2.0.a" "$(pkg-config --libs-only-l gobject-2.0 | sed 's|-lgobject-2.0||g')" > ../lib/libgobject-2.0.a
+    fi
+
 install: |
     configure \
         --disable-wxwidgets \

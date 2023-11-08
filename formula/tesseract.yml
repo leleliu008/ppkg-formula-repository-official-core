@@ -9,6 +9,7 @@ dopatch: |
     cat > cmake/FindCURL.cmake <<EOF
     set(CURL_INCLUDE_DIRS "$libcurl_INCLUDE_DIR")
     set(CURL_LIBRARIES    "$CURL_LIBRARIES")
+
     if (NOT TARGET  CURL::libcurl)
         add_library(CURL::libcurl INTERFACE IMPORTED)
         set_target_properties(CURL::libcurl PROPERTIES
@@ -16,15 +17,35 @@ dopatch: |
             INTERFACE_LINK_LIBRARIES      "\${CURL_LIBRARIES}"
         )
     endif()
+
     include(FindPackageHandleStandardArgs)
     find_package_handle_standard_args(CURL REQUIRED_VARS CURL_LIBRARIES CURL_INCLUDE_DIRS VERSION_VAR CURL_VERSION)
     mark_as_advanced(CURL_INCLUDE_DIRS CURL_LIBRARIES)
+    EOF
+
+    TIFF_LIBRARIES="$(pkg-config --libs-only-l libtiff-4 | tr ' ' ';')"
+    cat > cmake/FindTIFF.cmake <<EOF
+    set(TIFF_INCLUDE_DIRS "$libtiff_INCLUDE_DIR")
+    set(TIFF_LIBRARIES    "$TIFF_LIBRARIES")
+
+    if (NOT TARGET  TIFF::TIFF)
+        add_library(TIFF::TIFF INTERFACE IMPORTED)
+        set_target_properties(TIFF::TIFF PROPERTIES
+            INTERFACE_INCLUDE_DIRECTORIES "\${TIFF_INCLUDE_DIRS}"
+            INTERFACE_LINK_LIBRARIES      "\${TIFF_LIBRARIES}"
+        )
+    endif()
+
+    include(FindPackageHandleStandardArgs)
+    find_package_handle_standard_args(TIFF REQUIRED_VARS TIFF_LIBRARIES TIFF_INCLUDE_DIRS VERSION_VAR TIFF_VERSION)
+    mark_as_advanced(TIFF_INCLUDE_DIRS TIFF_LIBRARIES)
     EOF
 
     LIBARCHIVE_LIBRARIES="$(pkg-config --libs-only-l libarchive | tr ' ' ';')"
     cat > cmake/FindLibArchive.cmake <<EOF
     set(LibArchive_INCLUDE_DIRS "$libarchive_INCLUDE_DIR")
     set(LibArchive_LIBRARIES    "$LIBARCHIVE_LIBRARIES")
+
     if (NOT TARGET  LibArchive::LibArchive)
         add_library(LibArchive::LibArchive INTERFACE IMPORTED)
         set_target_properties(LibArchive::LibArchive PROPERTIES
@@ -32,10 +53,16 @@ dopatch: |
             INTERFACE_LINK_LIBRARIES      "${LibArchive_LIBRARIES}"
         )
     endif()
+
     include(FindPackageHandleStandardArgs)
     find_package_handle_standard_args(LibArchive REQUIRED_VARS LibArchive_LIBRARIES LibArchive_INCLUDE_DIRS VERSION_VAR LibArchive_VERSION)
     mark_as_advanced(LibArchive_INCLUDE_DIRS LibArchive_LIBRARIES)
     EOF
+
+    PANGOCAIRO_LIBRARIES="$(pkg-config --libs-only-l pangocairo) -lintl -lpixman-1 -lffi  -lpcre2-8"
+    echo "$PANGOCAIRO_LIBRARIES=$PANGOCAIRO_LIBRARIES"
+    sed_in_place "s|PkgConfig::PANGO|$PANGOCAIRO_LIBRARIES|" src/training/CMakeLists.txt
+
 install: |
     cmakew \
         -DENABLE_LTO=ON \

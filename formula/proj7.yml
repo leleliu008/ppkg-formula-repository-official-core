@@ -63,7 +63,7 @@ install: |
     Name: PROJ
     Description: Coordinate transformation software library
     Version: $PACKAGE_VERSION
-    Requires: sqlite3 libtiff-4 libcurl
+    Requires: sqlite3, libtiff-4, libcurl
     Libs: -L\${libdir} -lproj -lstdc++ -lm -ldl
     Cflags: -I\${includedir}
     EOF
