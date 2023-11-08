@@ -5,7 +5,9 @@ src-url: https://github.com/warmcat/libwebsockets/archive/refs/tags/v4.3.2.tar.g
 src-sha: 6a85a1bccf25acc7e8e5383e4934c9b32a102880d1e4c37c70b27ae2a42406e1
 license: MIT
 dep-pkg: zlib libevent libuv
-dopatch: sed_in_place 's|include(LwsCheckRequirements)|include(${LWS_CMAKE_DIR}/LwsCheckRequirements.cmake)|' cmake/libwebsockets-config.cmake.in
+dopatch: |
+    sed_in_place 's|include(LwsCheckRequirements)|include(${LWS_CMAKE_DIR}/LwsCheckRequirements.cmake)|' cmake/libwebsockets-config.cmake.in
+    sed_in_place 's|websockets websockets_shared|websockets|' cmake/libwebsockets-config.cmake.in
 install: |
     cmakew \
         -DLWS_IPV6=ON \
@@ -15,6 +17,8 @@ install: |
         -DLWS_WITH_MBEDTLS=OFF \
         -DLWS_WITH_LIBEVENT=ON \
         -DLWS_WITH_PLUGINS=ON \
+        -DLWS_WITH_STATIC=ON \
+        -DLWS_WITH_SHARED=ON \
         -DLWS_WITHOUT_TESTAPPS=ON \
         -DLWS_OPENSSL_SUPPORT=ON \
         -DLWS_BUILD_HASH=no_hash

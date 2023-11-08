@@ -19,7 +19,7 @@ install: |
         CONFIGURE_EXTRA_ARGS=
     fi
 
-    run ./configure \
+    run bash configure \
         --prefix=$PACKAGE_INSTALL_DIR \
         --static \
         --cc=$CC \

@@ -6,4 +6,5 @@ src-sha: 560f11c4bbbca10f495f3ef7d3a6aa4ca62b4f8fb0b52e7d459d18a26e46e017
 license: MIT
 dep-upp: gm4 bison
 dep-pkg: xorg-libx11 xorg-libxcb xkeyboard-config
+sfslink: no
 install: mesonw -Denable-wayland=false -Denable-docs=false

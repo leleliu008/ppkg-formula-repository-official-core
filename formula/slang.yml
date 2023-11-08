@@ -6,6 +6,8 @@ license: GPL-2.0-or-later
 dep-pkg: libpng pcre
 binbstd: yes
 sfslink: no
+dopatch: |
+    printf 'INPUT(%s)\n' "$(pkg-config --libs-only-l readline)" > ../lib/libtermcap.a
 install: |
     configure \
         --with-pnglib="$libpng_LIBRARY_DIR" \

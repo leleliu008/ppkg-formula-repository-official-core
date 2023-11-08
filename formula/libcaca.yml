@@ -6,6 +6,13 @@ src-sha: ff9aa641af180a59acedc7fc9e663543fb397ff758b5122093158fd628125ac1
 version: 0.99b20
 license: WTFPL
 dep-pkg: imlib2
+
+dopatch: |
+    if [ -e ../lib/libxcb.a ] ; then
+        rm  ../lib/libxcb.a
+        printf 'INPUT(%s %s)\n' "$xorg_libxcb_LIBRARY_DIR/libxcb.a" "$(pkg-config --libs-only-l xcb | sed 's|-lxcb||g')" > ../lib/libxcb.a
+    fi
+
 install: |
     configure \
         --disable-csharp \

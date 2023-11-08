@@ -6,7 +6,11 @@ src-sha: b44705dd71ca4538c86fb16248483ab4b48978524fb1da5097bd76aa2e0f0c33
 license: LGPL-2.1-or-later
 dep-upp: perl
 dep-pkg: icu4c libxml2 glib
-dopatch: sed_in_place 's|_pc_glib_LDFLAGS|_pc_glib_LINK_LIBRARIES|' cmake/modules/FindGLib.cmake
+dopatch: |
+    sed_in_place 's|_pc_glib_LDFLAGS|_pc_glib_LINK_LIBRARIES|' cmake/modules/FindGLib.cmake
+    if [ -f ../lib/libglib-2.0.a ] ; then
+        printf 'INPUT(%s %s)\n' "$glib_LIBRARY_DIR/libglib-2.0.a" "$(pkg-config --libs-only-l glib-2.0 | sed 's|-lglib-2.0||g')" > ../lib/libglib-2.0.a
+    fi
 install: |
     cmakew \
         -DPACKAGE_DUMPER=OFF \

@@ -4,12 +4,10 @@ src-url: https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/libcap-2
 src-sha: 9cc2fa3ee744d881629cdac1a1b54c302e7684fda3e3622056218c7681642ffb
 license: BSD-3-Clause GPL-2.0-or-later
 dep-upp: gperf
-
+dep-pkg: gindent
 binbstd: yes
 
-dopatch: |
-    sed_in_place 's/indent -kr/indent -br/'    Make.Rules &&
-    sed_in_place 's/-i $@/-i".bak" $@/'        libcap/Makefile &&
+dopatch2: |
     sed_in_place 's|size_t len/|size_t len/g|' libcap/Makefile
 
 install: |
@@ -19,8 +17,9 @@ install: |
         lib=lib \
         PAM_CAP=no \
         GOLANG=no \
-        BUILD_CC="$CC" \
-        BUILD_CFLAGS="'$CFLAGS $CPPFLAGS'" \
+        RAISE_SETFCAP=no \
+        BUILD_CC="$CC_FOR_BUILD" \
+        BUILD_CFLAGS="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" \
         CC="$CC" \
         CFLAGS="'$CFLAGS $CPPFLAGS'" \
         LDFLAGS="'$LDFLAGS'" \

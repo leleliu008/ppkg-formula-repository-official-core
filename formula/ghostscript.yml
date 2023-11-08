@@ -4,8 +4,9 @@ src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download
 src-sha: 05e64c19853e475290fd608a415289dc21892c4d08ee9086138284b6addcb299
 license: AGPL-3.0-or-later
 dep-pkg: fontconfig jbig2dec libidn lcms2 openjpeg tesseract
-bsystem: configure
+
 binbstd: yes
+sfslink: no
 
 dopatch: |
     rm -rf expat
@@ -21,12 +22,11 @@ dopatch: |
 
 install: |
     export CFLAGS="$CFLAGS $CPPFLAGS $LDFLAGS"
-
     configure \
         --disable-compile-inits \
         --disable-cups \
         --disable-gtk \
         --with-system-libtiff \
-        --without-x &&
-    run make soclean &&
+        --without-x
+    run make soclean
     run make install-so
