@@ -4,5 +4,9 @@ web-url: https://www.libssh.org/
 src-url: https://www.libssh.org/files/0.10/libssh-0.10.5.tar.xz
 src-sha: b60e2ff7f367b9eee2b5634d3a63303ddfede0e6a18dfca88c44a8770e7e4234
 license: LGPL-2.1-or-later
-dep-pkg: openssl@1.1 zlib
-install: cmakew -DWITH_SYMBOL_VERSIONING=OFF -DBUILD_STATIC_LIB=ON
+dep-pkg: openssl zlib
+install: |
+    cmakew -DWITH_SYMBOL_VERSIONING=OFF -DWITH_EXAMPLES=OFF -DBUILD_SHARED_LIBS=ON
+    rm -rf "$PACKAGE_INSTALL_DIR/lib/cmake"
+    cmakew -DWITH_SYMBOL_VERSIONING=OFF -DWITH_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF
+    printf 'Requires: openssl, zlib\n' >> "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libssh.pc"

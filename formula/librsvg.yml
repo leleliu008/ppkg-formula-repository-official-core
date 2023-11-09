@@ -6,7 +6,9 @@ src-sha: 5a328048a02d014645cd27f61140f4e0b11280fb2c7f2a21864fe0c59ac1ce88
 license: LGPL-2.1-or-later
 dep-pkg: gdk-pixbuf pango
 bsystem: configure cargo
+sfslink: no
 install: |
+    LINK_TYPE=shared-most
     configure \
         --enable-tools=yes \
         --enable-pixbuf-loader=yes \
