@@ -4,4 +4,8 @@ src-url: https://github.com/wasm3/wasm3/archive/v0.5.0.tar.gz
 src-sha: b778dd72ee2251f4fe9e2666ee3fe1c26f06f517c3ffce572416db067546536c
 license: MIT
 dep-upp: git
+dopatch: |
+    sed_in_place '/target_link_libraries(${OUT_FILE} m3)/d'     CMakeLists.txt
+    sed_in_place '185i target_link_libraries(${OUT_FILE} m3 m)' CMakeLists.txt
+
 install: cmakew && install_bins wasm3

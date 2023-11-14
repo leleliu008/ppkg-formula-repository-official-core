@@ -1,8 +1,8 @@
 summary: A fast, small, safe, gradually typed embeddable scripting language derived from Lua
 web-url: https://luau-lang.org
 git-url: https://github.com/Roblox/luau
-src-url: https://github.com/Roblox/luau/archive/refs/tags/0.600.tar.gz
-src-sha: 5d56c18f8bd063ce9516ee9ca3fe22670187f26daadebbe356d68070371880a3
+src-url: https://github.com/Roblox/luau/archive/refs/tags/0.602.tar.gz
+src-sha: c44cfc9cbb42a61135f881cce20a96be7f0d4413bc5800bf8b190abe6c7dd311
 license: MIT
 install: |
     cmakew \

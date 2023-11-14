@@ -7,13 +7,14 @@ dep-pkg: gmp libunistring nettle libtasn1 libidn2 p11-kit
 license: LGPL-2.1-or-later GPL-3.0-only
 
 dopatch: |
-    if [ -f ../lib/libunistring.a ] ; then
-        if [ -f ../lib/libiconv.a ] ; then
-            printf 'INPUT(%s %s)' "$libunistring_LIBRARY_DIR/libunistring.a" "$libiconv_LIBRARY_DIR/libiconv.a" > ../lib/libunistring.a
-        fi
+    if [ -e ../lib/libunistring.a ] ; then
+        rm  ../lib/libunistring.a
+        printf 'INPUT(%s %s)\n' "$libunistring_LIBRARY_DIR/libunistring.a" "$(pkg-config --libs-only-l libunistring | sed 's|-lunistring||g')" > ../lib/libunistring.a
     fi
-    if [ -f ../lib/libhogweed.a ] ; then
-        if [ -f ../lib/libnettle.a ] ; then
+
+    if [ -e ../lib/libhogweed.a ] ; then
+        rm  ../lib/libhogweed.a
+        if [ -e ../lib/libnettle.a ] ; then
             printf 'INPUT(%s %s)' "$nettle_LIBRARY_DIR/libhogweed.a" "$nettle_LIBRARY_DIR/libnettle.a" > ../lib/libhogweed.a
         fi
     fi

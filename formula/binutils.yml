@@ -15,6 +15,7 @@ install: |
         --with-mpc="$libmpc_INSTALL_DIR" \
         --with-mpfr="$mpfr_INSTALL_DIR" \
         --with-system-zlib \
+        --disable-gprofng \
         --disable-werror \
         --disable-nls \
         --enable-gold \

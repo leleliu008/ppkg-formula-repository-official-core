@@ -7,19 +7,24 @@ license: gnuplot
 dep-pkg: libcerf pango gd lua readline 
 
 dopatch: |
-    if [ -f ../lib/libcairo.a ] ; then
+    if [ -e ../lib/libcairo.a ] ; then
+        rm  ../lib/libcairo.a
         printf 'INPUT(%s %s)\n' "$cairo_LIBRARY_DIR/libcairo.a" "$(pkg-config --libs-only-l cairo | sed 's|-lcairo||g')" > ../lib/libcairo.a
     fi
-    if [ -f ../lib/libfreetype.a ] ; then
+    if [ -e ../lib/libfreetype.a ] ; then
+        rm  ../lib/libfreetype.a
         printf 'INPUT(%s %s)\n' "$freetype2_LIBRARY_DIR/libfreetype.a" "$(pkg-config --libs-only-l freetype2 | sed 's|-lfreetype||g')" > ../lib/libfreetype.a
     fi
-    if [ -f ../lib/libharfbuzz.a ] ; then
+    if [ -e ../lib/libharfbuzz.a ] ; then
+        rm  ../lib/libharfbuzz.a
         printf 'INPUT(%s %s)\n' "$harfbuzz_LIBRARY_DIR/libharfbuzz.a" "$(pkg-config --libs-only-l harfbuzz | sed 's|-lharfbuzz||g')" > ../lib/libharfbuzz.a
     fi
-    if [ -f ../lib/libglib-2.0.a ] ; then
+    if [ -e ../lib/libglib-2.0.a ] ; then
+        rm  ../lib/libglib-2.0.a
         printf 'INPUT(%s %s)\n' "$glib_LIBRARY_DIR/libglib-2.0.a" "$(pkg-config --libs-only-l glib-2.0 | sed 's|-lglib-2.0||g')" > ../lib/libglib-2.0.a
     fi
-    if [ -f ../lib/libgobject-2.0.a ] ; then
+    if [ -e ../lib/libgobject-2.0.a ] ; then
+        rm  ../lib/libgobject-2.0.a
         printf 'INPUT(%s %s)\n' "$glib_LIBRARY_DIR/libgobject-2.0.a" "$(pkg-config --libs-only-l gobject-2.0 | sed 's|-lgobject-2.0||g')" > ../lib/libgobject-2.0.a
     fi
 
