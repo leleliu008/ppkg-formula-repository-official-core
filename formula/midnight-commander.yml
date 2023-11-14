@@ -6,12 +6,6 @@ src-sha: 01d8a3b94f58180cca5bf17257b5078d1fd6fd27a9b5c0e970ec767549540ad4
 license: GPL-3.0-or-later
 dep-pkg: glib libssh2 openssl slang
 sfslink: no
-dopatch: |
-    if [ -e ../lib/libglib-2.0.a ] ; then
-        rm  ../lib/libglib-2.0.a
-        printf 'INPUT(%s -lintl)\n' "$glib_LIBRARY_DIR/libglib-2.0.a" > ../lib/libglib-2.0.a
-    fi
-
 install: |
     configure \
         --without-x \

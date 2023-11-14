@@ -8,7 +8,7 @@ dep-pkg: glib
 sfslink: no
 install: |
     mesonw \
-        -Dtests=false \
         -Dman=false \
+        -Dtests=false \
         -Dgtk_doc=disabled \
         -Dintrospection=disabled

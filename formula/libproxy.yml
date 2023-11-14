@@ -1,13 +1,18 @@
 summary: Library that provides automatic proxy configuration management
 web-url: https://libproxy.github.io/libproxy/
 git-url: https://github.com/libproxy/libproxy
-src-url: https://github.com/libproxy/libproxy/archive/0.4.18.tar.gz
-src-sha: 0b4a9218d88f6cf9fa25996a3f38329a11f688a9d026141d9d0e966d8fa63837
+src-url: https://github.com/libproxy/libproxy/archive/refs/tags/0.5.3.tar.gz
+src-sha: 0d8d8e4dd96239ba173c2b18905c0bb6e161fd5000e1e0aeace16f754e9a9108
 license: LGPL-2.1-or-later
-dep-pkg: python3 glib dbus
-install: |
-    cmakew \
-        -DWITH_VALA=ON \
-        -DWITH_PERL=OFF \
-        -DWITH_PYTHON3=ON \
-        -DWITH_PYTHON2=OFF
+dep-pkg: glib gsettings-desktop-schemas dbus duktape libcurl
+sfslink: no
+dopatch2: |
+    if [ -e ../lib/libgio-2.0.a ] ; then
+        rm  ../lib/libgio-2.0.a
+        printf 'INPUT(%s %s)\n' "$glib_LIBRARY_DIR/libgio-2.0.a" "$(pkg-config --libs-only-l gio-2.0 | sed 's|-lgio-2.0||g')" > ../lib/libgio-2.0.a
+    fi
+    if [ -e ../lib/libglib-2.0.a ] ; then
+        rm  ../lib/libglib-2.0.a
+        printf 'INPUT(%s %s)\n' "$glib_LIBRARY_DIR/libglib-2.0.a" "$(pkg-config --libs-only-l glib-2.0 | sed 's|-lglib-2.0||g')" > ../lib/libglib-2.0.a
+    fi
+install: mesonw -Ddocs=false -Dtests=false -Dcurl=true -Dvapi=false -Dintrospection=false

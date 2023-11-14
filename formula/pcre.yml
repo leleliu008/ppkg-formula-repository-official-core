@@ -20,22 +20,23 @@ install: |
         -DPCRE_SUPPORT_VALGRIND=OFF \
         -DPCRE_SUPPORT_LIBZ=ON \
         -DPCRE_SUPPORT_LIBBZ2=ON \
-        -DPCRE_SUPPORT_LIBREADLINE=ON && {
-        for item in pcre pcre16 pcre32 pcreposix
-        do
-            install_pc_file lib$item <<EOF
+        -DPCRE_SUPPORT_LIBREADLINE=ON
+
+    for item in pcre pcre16 pcre32 pcreposix
+    do
+        cat > "lib$item.pc" <<EOF
     prefix=$PACKAGE_INSTALL_DIR
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
     includedir=\${prefix}/include
 
     Name: lib$item
-    URL: ${PACKAGE_WEB_URL}
-    Description: ${PACKAGE_SUMMARY}
-    Version: ${PACKAGE_VERSION}
+    URL: $PACKAGE_WEB_URL
+    Description: $PACKAGE_SUMMARY
+    Version: $PACKAGE_VERSION
     Libs: -L\${libdir} -l$item
     Libs.private: -D_THREAD_SAFE -pthread
     Cflags: -I\${includedir}
     EOF
-        done
-    }
+        install_pcfs "lib$item.pc"
+    done
