@@ -5,7 +5,6 @@ src-url: https://downloads.sourceforge.net/project/freetype/freetype2/2.13.1/fre
 src-sha: ea67e3b019b1104d1667aa274f5dc307d8cbd606b399bc32df308a77f1a564bf
 dep-pkg: brotli libbz2 libpng harfbuzz
 license: FTL
-
 install: |
     cmakew \
         -DFT_WITH_BROTLI=ON \

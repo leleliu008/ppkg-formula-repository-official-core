@@ -4,18 +4,17 @@ git-url: https://github.com/tukaani-project/xz
 src-url: https://github.com/tukaani-project/xz/releases/download/v5.4.5/xz-5.4.5.tar.gz
 src-sha: 135c90b934aee8fbc0d467de87a05cb70d627da36abe518c357a873709e5b7d6
 license: LGPL-2.1-or-later
-
 install: |
     configure \
         --disable-external-sha256 \
         --disable-werror \
         --enable-assembler \
-        --enable-threads=posix &&
-    {
-        for item in xzmore xzdiff xzdiff xzless xzgrep
-        do
-            sed_in_place '1c #!/usr/bin/env bash' "$PACKAGE_INSTALL_DIR/bin/$item"
-        done
-    } &&
-    rm -rf "$PACKAGE_INSTALL_DIR/include" &&
+        --enable-threads=posix
+
+    for item in xzmore xzdiff xzdiff xzless xzgrep
+    do
+        sed_in_place '1c #!/usr/bin/env bash' "$PACKAGE_INSTALL_DIR/bin/$item"
+    done
+
+    rm -rf "$PACKAGE_INSTALL_DIR/include"
     rm -rf "$PACKAGE_INSTALL_DIR/lib"
