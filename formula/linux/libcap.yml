@@ -3,15 +3,14 @@ web-url: https://git.kernel.org/pub/scm/libs/libcap/libcap.git
 src-url: https://git.kernel.org/pub/scm/libs/libcap/libcap.git/snapshot/libcap-2.69.tar.gz
 src-sha: 9cc2fa3ee744d881629cdac1a1b54c302e7684fda3e3622056218c7681642ffb
 license: BSD-3-Clause GPL-2.0-or-later
-dep-upp: gperf
+dep-upp: gperf bash
 dep-pkg: gindent
 binbstd: yes
 
-dopatch2: |
-    sed_in_place 's|size_t len/|size_t len/g|' libcap/Makefile
+dopatch: sed_in_place 's|/bin/bash|/usr/bin/env bash|' progs/mkcapshdoc.sh
 
 install: |
-    gmakew clean &&
+    gmakew clean
     gmakew install \
         prefix="$PACKAGE_INSTALL_DIR" \
         lib=lib \

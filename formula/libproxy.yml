@@ -6,13 +6,8 @@ src-sha: 0d8d8e4dd96239ba173c2b18905c0bb6e161fd5000e1e0aeace16f754e9a9108
 license: LGPL-2.1-or-later
 dep-pkg: glib gsettings-desktop-schemas dbus duktape libcurl
 sfslink: no
-dopatch2: |
-    if [ -e ../lib/libgio-2.0.a ] ; then
-        rm  ../lib/libgio-2.0.a
-        printf 'INPUT(%s %s)\n' "$glib_LIBRARY_DIR/libgio-2.0.a" "$(pkg-config --libs-only-l gio-2.0 | sed 's|-lgio-2.0||g')" > ../lib/libgio-2.0.a
-    fi
-    if [ -e ../lib/libglib-2.0.a ] ; then
-        rm  ../lib/libglib-2.0.a
-        printf 'INPUT(%s %s)\n' "$glib_LIBRARY_DIR/libglib-2.0.a" "$(pkg-config --libs-only-l glib-2.0 | sed 's|-lglib-2.0||g')" > ../lib/libglib-2.0.a
-    fi
+dopatch: |
+    sed_in_place 's|/bin/bash|/usr/bin/env bash|' data/check-code-style
+    sed_in_place 's|/bin/bash|/usr/bin/env bash|' data/pre-commit-hook
+    sed_in_place 's|/bin/bash|/usr/bin/env bash|' data/install-git-hook.sh
 install: mesonw -Ddocs=false -Dtests=false -Dcurl=true -Dvapi=false -Dintrospection=false

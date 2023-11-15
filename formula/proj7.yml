@@ -52,18 +52,18 @@ install: |
     rm -rf *
     cmakew -DENABLE_TIFF=ON -DENABLE_CURL=ON -DBUILD_EXAMPLES=OFF -DBUILD_CCT=OFF -DBUILD_CS2CS=OFF -DBUILD_GEOD=OFF -DBUILD_GIE=OFF -DBUILD_PROJ=OFF -DBUILD_PROJINFO=OFF -DBUILD_PROJSYNC=OFF -DBUILD_SHARED_LIBS=OFF
 
-    run install -d      "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-
-    cat > "$PACKAGE_INSTALL_DIR/lib/pkgconfig/proj.pc" <<EOF
+    cat > proj.pc <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
     includedir=\${prefix}/include
 
     Name: PROJ
-    Description: Coordinate transformation software library
+    Description: $PACKAGE_SUMMAY
     Version: $PACKAGE_VERSION
-    Requires: sqlite3, libtiff-4, libcurl
-    Libs: -L\${libdir} -lproj -lstdc++ -lm -ldl
     Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lproj -lstdc++ -lm -ldl
+    Requires: sqlite3 libtiff-4 libcurl
     EOF
+
+    install_pcfs proj.pc
