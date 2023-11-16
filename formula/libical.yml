@@ -6,13 +6,14 @@ src-sha: b44705dd71ca4538c86fb16248483ab4b48978524fb1da5097bd76aa2e0f0c33
 license: LGPL-2.1-or-later
 dep-upp: perl
 dep-pkg: icu4c libxml2 glib
-sfslink: no
+
 dopatch: |
     GOBJECT_LIBRARIES="$(pkg-config --libs-only-l gobject-2.0)"
     echo "GOBJECT_LIBRARIES=$GOBJECT_LIBRARIES"
     sed -i '28i message(STATUS "GLIB_CFLAGS=${GLIB_CFLAGS}")'       cmake/modules/FindGLib.cmake
     sed -i '28i message(STATUS "GLIB_LIBRARIES=${GLIB_LIBRARIES}")' cmake/modules/FindGLib.cmake
     sed -i "/set(GLIB_LIBRARIES/c set(GLIB_LIBRARIES $GOBJECT_LIBRARIES)" cmake/modules/FindGLib.cmake
+    sed -i '/add_subdirectory(examples)/d' CMakeLists.txt
 
 install: |
     cmakew \

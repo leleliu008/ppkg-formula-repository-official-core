@@ -7,4 +7,4 @@ dep-pkg: glib popt readline
 dep-upp: python3
 xxflags: -std=c++11
 binbstd: yes
-install: configure --disable-gui LIBS=-liconv
+install: configure --disable-gui
