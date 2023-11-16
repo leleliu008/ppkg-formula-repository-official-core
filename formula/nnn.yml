@@ -3,9 +3,9 @@ git-url: https://github.com/jarun/nnn
 src-url: https://github.com/jarun/nnn/archive/v4.8.tar.gz
 src-sha: 0a744e67a0ce8b5e1e04961f542d2c33ddb6ceed46ba760dd35c4922b21f1146
 license: BSD-2-Clause
-dep-pkg: readline
+dep-pkg: readline musl-fts
 binbstd: yes
 install: |
-    gmakew clean &&
-    gmakew install PREFIX=$PACKAGE_INSTALL_DIR &&
+    gmakew clean
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
     install_mans nnn.1

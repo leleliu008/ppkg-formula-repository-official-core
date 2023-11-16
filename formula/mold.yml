@@ -1,9 +1,9 @@
-summary: Modern Linker
+summary: A Modern Linker
 git-url: https://github.com/rui314/mold
-src-url: https://github.com/rui314/mold/archive/refs/tags/v2.3.2.tar.gz
-src-sha: db172c0e97606565a81e37995bf5c911606d3f3b9f3829e92cd26985c9b0ed3b
-license: AGPL-3.0-only
-dep-pkg: tbb xxhash zlib libzstd openssl
+src-url: https://github.com/rui314/mold/archive/refs/tags/v2.3.3.tar.gz
+src-sha: dcba90d5ee852ececb3a1a70110bb2d385079dcd1aa103e970296683c642f856
+license: MIT
+dep-pkg: tbb blake3 xxhash zlib libzstd
 install: |
     cmakew \
         -DMOLD_LTO=ON \
@@ -13,9 +13,3 @@ install: |
         -DMOLD_USE_SYSTEM_MIMALLOC=OFF \
         -DMOLD_USE_SYSTEM_TBB=OFF \
         -DCMAKE_SKIP_INSTALL_RULES=OFF
-
-# ubuntu-18.04
-# ubuntu-20.04
-# c++: error: unrecognized command line option '-std=c++20'; did you mean '-std=c++2a'?
-# gmake: *** [Makefile:153: out/compress.o] Error 1
-# gmake: *** Waiting for unfinished jobs....
