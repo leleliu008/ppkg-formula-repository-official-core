@@ -8,6 +8,7 @@ dep-pkg: libzstd liblzma libbz2 zlib argp-standalone musl-obstack musl-fts
 dep-upp: gm4
 ccflags: -Wno-error
 sfslink: no
+dopatch: sed_in_place '/libintl\.h/d' lib/eu-config.h
 install: |
     configure \
         --program-prefix=elfutils- \

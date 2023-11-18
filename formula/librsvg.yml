@@ -8,9 +8,8 @@ dep-pkg: gdk-pixbuf pango
 bsystem: configure cargo
 sfslink: no
 install: |
-    LINK_TYPE=shared-most
     configure \
         --enable-tools=yes \
-        --enable-pixbuf-loader=yes \
-        --enable-introspection=yes \
-        --disable-static
+        --enable-pixbuf-loader=no \
+        --enable-introspection=no \
+        --disable-Bsymbolic

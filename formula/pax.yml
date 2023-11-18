@@ -5,5 +5,9 @@ src-sha: 1cc892c9c8ce265d28457bab4225eda71490d93def0a1d2271430c2863b728dc
 license: MirOS
 dep-pkg: musl-fts
 install: |
+    if [ "$NATIVE_OS_LIBC" = musl ] ; then
+        export LIBS=-lfts
+    fi
+
     run sh ../Build.sh -r -tpax
     install_bins pax

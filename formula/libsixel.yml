@@ -3,11 +3,28 @@ git-url: https://github.com/libsixel/libsixel
 src-url: https://github.com/libsixel/libsixel/archive/refs/tags/v1.10.3.tar.gz
 src-sha: 028552eb8f2a37c6effda88ee5e8f6d87b5d9601182ddec784a9728865f821e0
 license: MIT
-dep-pkg: gdk-pixbuf gd libcurl
+dep-pkg: gdk-pixbuf libcurl
 dopatch: |
     sed_in_place '/sys\/unistd\.h/d' meson.build
     sed_in_place '/sys\/unistd\.h/d' src/tty.c
     sed_in_place '/sys\/unistd\.h/d' src/encoder.c
     sed_in_place '/sys\/unistd\.h/d' src/decoder.c
     sed_in_place '/sys\/unistd\.h/d' converters/img2sixel.c
-install: mesonw -Dtests=disabled -Dgdk-pixbuf2=enabled -Dgd=disabled -Dlibcurl=enabled -Djpeg=enabled -Dpng=enabled -Dimg2sixel=disabled -Dsixel2png=disabled
+
+    sed_in_place 's|if HAVE_JPEG|ifdef HAVE_JPEG|' src/loader.c
+    sed_in_place 's|if HAVE_JPEG|ifdef HAVE_JPEG|' src/status.c
+
+    sed_in_place 's|and jpeg_found|and jpeg_found.found()|' meson.build
+    sed_in_place 's|and png_found|and png_found.found()|' meson.build
+
+    sed_in_place 's|link_with: libsixel|link_with: libsixel.get_static_lib()|' converters/meson.build
+install: |
+    mesonw \
+        -Dtests=disabled \
+        -Dgd=disabled \
+        -Dgdk-pixbuf2=enabled \
+        -Dpng=enabled \
+        -Djpeg=enabled \
+        -Dlibcurl=enabled \
+        -Dimg2sixel=enabled \
+        -Dsixel2png=enabled

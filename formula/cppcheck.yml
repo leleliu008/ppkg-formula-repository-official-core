@@ -1,8 +1,8 @@
-summary: Static analysis of C and C++ code
+summary: A static analysis tool for C and C++
 web-url: https://sourceforge.net/projects/cppcheck
 git-url: https://github.com/danmar/cppcheck
-src-url: https://github.com/danmar/cppcheck/archive/2.11.1.tar.gz
-src-sha: fef6ef868d562d49136f158e1d0f7a38237e7e1c0a91d9189bdd465f1fe54316
+src-url: https://github.com/danmar/cppcheck/archive/refs/tags/2.12.1.tar.gz
+src-sha: 2a3d4ba1179419612183ab3d6aed6d3b18be75e98cd6f138ea8e2020905dced2
 license: GPL-3.0-or-later
-dep-pkg: pcre libxml2
+dep-pkg: libpcre libxml2
 bsystem: cmake

@@ -5,29 +5,6 @@ src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.4.10/gnuplo
 src-sha: 975d8c1cc2c41c7cedc4e323aff035d977feb9a97f0296dd2a8a66d197a5b27c
 license: gnuplot
 dep-pkg: libcerf pango gd lua readline 
-
-dopatch: |
-    if [ -e ../lib/libcairo.a ] ; then
-        rm  ../lib/libcairo.a
-        printf 'INPUT(%s %s)\n' "$cairo_LIBRARY_DIR/libcairo.a" "$(pkg-config --libs-only-l cairo | sed 's|-lcairo||g')" > ../lib/libcairo.a
-    fi
-    if [ -e ../lib/libfreetype.a ] ; then
-        rm  ../lib/libfreetype.a
-        printf 'INPUT(%s %s)\n' "$freetype2_LIBRARY_DIR/libfreetype.a" "$(pkg-config --libs-only-l freetype2 | sed 's|-lfreetype||g')" > ../lib/libfreetype.a
-    fi
-    if [ -e ../lib/libharfbuzz.a ] ; then
-        rm  ../lib/libharfbuzz.a
-        printf 'INPUT(%s %s)\n' "$harfbuzz_LIBRARY_DIR/libharfbuzz.a" "$(pkg-config --libs-only-l harfbuzz | sed 's|-lharfbuzz||g')" > ../lib/libharfbuzz.a
-    fi
-    if [ -e ../lib/libglib-2.0.a ] ; then
-        rm  ../lib/libglib-2.0.a
-        printf 'INPUT(%s %s)\n' "$glib_LIBRARY_DIR/libglib-2.0.a" "$(pkg-config --libs-only-l glib-2.0 | sed 's|-lglib-2.0||g')" > ../lib/libglib-2.0.a
-    fi
-    if [ -e ../lib/libgobject-2.0.a ] ; then
-        rm  ../lib/libgobject-2.0.a
-        printf 'INPUT(%s %s)\n' "$glib_LIBRARY_DIR/libgobject-2.0.a" "$(pkg-config --libs-only-l gobject-2.0 | sed 's|-lgobject-2.0||g')" > ../lib/libgobject-2.0.a
-    fi
-
 install: |
     configure \
         --disable-wxwidgets \

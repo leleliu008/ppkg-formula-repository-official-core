@@ -3,5 +3,27 @@ git-url: https://github.com/virtualsquare/vde-2
 src-url: https://github.com/virtualsquare/vde-2/archive/refs/tags/v2.3.3.tar.gz
 src-sha: a7d2cc4c3d0c0ffe6aff7eb0029212f2b098313029126dcd12dc542723972379
 license: GPL-2.0-or-later
-dep-upp: libtool
 bsystem: autotools
+dep-upp: patch
+dopatch: |
+    if [ "$NATIVE_OS_LIBC" != musl ] ; then
+        return 0
+    fi
+
+    # https://git.alpinelinux.org/aports/tree/community/vde2/musl-build-fix.patch
+    patch -p1 <<EOF
+    --- a/src/vdetaplib/libvdetap.c
+    +++ b/src/vdetaplib/libvdetap.c
+    @@ -121,6 +121,10 @@
+            return native_open(path, flags, data);
+     }
+
+    +/* musl apparently defines open64 as a macro */
+    +#ifdef open64
+    +#undef open64
+    +#endif
+     int open64(const char *path, int flags, ...)
+     {
+        va_list ap;
+
+    EOF

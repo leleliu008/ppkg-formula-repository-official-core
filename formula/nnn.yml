@@ -6,6 +6,10 @@ license: BSD-2-Clause
 dep-pkg: readline musl-fts
 binbstd: yes
 install: |
+    if [ "$NATIVE_OS_LIBC" = musl ] ; then
+        export LIBS=-lfts
+    fi
+
     gmakew clean
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
     install_mans nnn.1
