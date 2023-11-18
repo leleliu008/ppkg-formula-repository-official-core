@@ -1,14 +1,12 @@
-summary: a user-space implementation of chroot, mount --bind, and binfmt_misc.
+summary: a user-space implementation of chroot, mount --bind, and binfmt_misc
 web-url: https://proot-me.github.io/
 git-url: https://github.com/proot-me/proot
 src-url: https://github.com/proot-me/proot/archive/refs/tags/v5.3.1.tar.gz
 src-sha: 966afe32bf9a9d0e80836a8874d4dd829c51750060d9e0f30d330b1ed7eec8c2
 license: GPL-2.0-or-later
-dep-pkg: libarchive talloc
-
-dopatch: wfetch 'https://raw.githubusercontent.com/openembedded/openembedded-core/master/meta/recipes-core/musl/bsd-headers/sys-queue.h' --output-filepath=../include/sys/queue.h
+dep-pkg: libarchive talloc sys-queue.h
 binbstd: yes
 install: |
-    gmakew -C src clean &&
-    gmakew -C src build.h proot V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP HAS_SWIG= HAS_PYTHON_CONFIG= PYTHON=true GIT=true &&
+    gmakew -C src clean
+    gmakew -C src build.h proot V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP HAS_SWIG= HAS_PYTHON_CONFIG= PYTHON=true GIT=true
     gmakew -C src install PREFIX=$PACKAGE_INSTALL_DIR DESTDIR=

@@ -72,3 +72,4 @@ install: |
         -DBUILD_TESTS=OFF \
         -DBUILD_TRAINING_TOOLS=ON \
         -DBUILD_SHARED_LIBS=OFF
+    sed_in_place '/^Requires\.private:/c Requires: lept libcurl libarchive' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/tesseract.pc"
