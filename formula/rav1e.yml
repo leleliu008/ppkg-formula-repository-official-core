@@ -4,7 +4,6 @@ src-url: https://github.com/xiph/rav1e/archive/v0.6.6.tar.gz
 src-sha: 723696e93acbe03666213fbc559044f3cae5b8b888b2ddae667402403cff51e5
 license: BSD-2-Clause
 dep-upp: nasm cargo-c
-
 install: |
     cargow  install
     cargow cinstall

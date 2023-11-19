@@ -7,7 +7,9 @@ dep-pkg: readline musl-fts
 binbstd: yes
 install: |
     if [ "$NATIVE_OS_LIBC" = musl ] ; then
-        export LIBS=-lfts
+        export LDLIBS=-lfts
+    else
+        unset LDLIBS
     fi
 
     gmakew clean
