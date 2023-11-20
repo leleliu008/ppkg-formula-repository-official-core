@@ -7,6 +7,7 @@ license: LGPL-2.0-or-later
 dep-upp: gm4 bison flex
 dep-pkg: glib gobject-introspection gettext
 install: |
+    INSTALL_LIB=both
     mesonw \
         -Dintrospection=enabled \
         -Dptp-helper-permissions=none

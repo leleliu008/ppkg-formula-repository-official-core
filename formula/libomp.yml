@@ -1,0 +1,8 @@
+summary: LLVM OpenMP runtime library
+web-url: https://openmp.llvm.org/
+src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.5/openmp-17.0.5.src.tar.xz
+src-sha: 13c80e80d3eea2f4ffe89585a8e8c81bdedec410192c613fc089a12f7da4c0a2
+license: MIT
+dep-upp: python3
+dep-pym: lit
+install: cmakew -DLIBOMP_ENABLE_SHARED=OFF

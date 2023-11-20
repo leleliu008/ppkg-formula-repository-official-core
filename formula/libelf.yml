@@ -12,6 +12,8 @@ dopatch: |
     sed_in_place '/libintl\.h/d' lib/eu-config.h
     sed_in_place '/dgettext/d'   lib/eu-config.h
     sed_in_place '/N_(Str/a #define _(Str) Str' lib/eu-config.h
+    sed_in_place '/libasm debuginfod/d' Makefile.in
+    sed_in_place '/^SUBDIRS =/c SUBDIRS = lib libelf' Makefile.in
 install: |
     # FNM_EXTMATCH is a GNU externsion, musl does not define it
     if [ "$NATIVE_OS_LIBC" = musl ] ; then

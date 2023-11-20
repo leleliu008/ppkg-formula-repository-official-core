@@ -4,7 +4,8 @@ git-url: https://github.com/llvm/llvm-project
 src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/llvm-project-14.0.6.src.tar.xz
 src-sha: 8b3cfd7bc695bd6cea0f37f53f0981f34f87496e79e2529874fd03a2f9dd3a8a
 license: Apache-2.0 with LLVM-exception
-dep-pkg: binutils elfutils swig six z3 libedit libffi ncurses zlib libzstd
+dep-pkg: binutils libelf libedit libffi libxml2 libz3.a
+dep-upp: swig patch
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=2128646
 fix-url: https://github.com/llvm/llvm-project/commit/81fc5f7909a4ef5a8d4b5da2a10f77f7cb01ba63.patch?full_index=1
@@ -14,35 +15,48 @@ res-url: https://github.com/llvm/llvm-project/commit/f0a25fe0b746f56295d5c02116b
 res-sha: a2cf01ca5f632f7372f03c7a9db438f5f7083daae90a617241a0c41ece979267
 
 bscript: llvm
-dep-upp: patch
 dopatch: |
     cd ..
     patch -p1 < ../fix/d2a2b61f7024fdf45f24a8ad8592808fc94c9ce6db8df3152fd9f46180c43074.patch
     patch -p1 < ../res/a2cf01ca5f632f7372f03c7a9db438f5f7083daae90a617241a0c41ece979267.patch
     cd llvm
 
+# https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
+# https://lldb.llvm.org/resources/build.html
 install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \
-        -DLLVM_LINK_LLVM_DYLIB=ON \
+        -DLLVM_TARGETS_TO_BUILD=all \
         -DLLVM_ENABLE_PROJECTS="'clang;clang-tools-extra;lld;lldb;mlir;polly;openmp'" \
         -DLLVM_ENABLE_RUNTIMES="'compiler-rt;libcxx;libcxxabi;libunwind'" \
-        -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
-        -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
         -DLLVM_ENABLE_EH=ON \
+        -DLLVM_ENABLE_PIC=ON \
         -DLLVM_ENABLE_FFI=ON \
+        -DLLVM_ENABLE_ZLIB=ON \
+        -DLLVM_ENABLE_ZSTD=ON \
         -DLLVM_ENABLE_RTTI=ON \
+        -DLLVM_ENABLE_SPHINX=OFF \
+        -DLLVM_ENABLE_DOXYGEN=OFF \
+        -DLLVM_ENABLE_Z3_SOLVER=ON \
         -DLLVM_INCLUDE_DOCS=OFF \
         -DLLVM_INCLUDE_TESTS=OFF \
+        -DLLVM_BUILD_DOCS=OFF \
+        -DLLVM_BUILD_TESTS=OFF \
+        -DLLVM_BUILD_EXAMPLES=OFF \
+        -DLLVM_BUILD_LLVM_DYLIB=ON \
+        -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
+        -DLLVM_LINK_LLVM_DYLIB=ON \
+        -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
         -DLLVM_INSTALL_UTILS=ON \
-        -DLLVM_ENABLE_Z3_SOLVER=ON \
         -DLLVM_OPTIMIZED_TABLEGEN=ON \
-        -DLLVM_TARGETS_TO_BUILD=all \
-        -DLLDB_USE_SYSTEM_DEBUGSERVER=ON \
-        -DLLDB_ENABLE_PYTHON=ON \
-        -DLLDB_ENABLE_LUA=OFF \
-        -DLLDB_ENABLE_LZMA=ON \
-        -DLLDB_USE_SYSTEM_SIX=ON \
-        -DLIBOMP_INSTALL_ALIASES=OFF \
         -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
-        -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF
+        -DLLDB_USE_SYSTEM_DEBUGSERVER=ON \
+        -DLLDB_USE_SYSTEM_SIX=OFF \
+        -DLLDB_ENABLE_LUA=OFF \
+        -DLLDB_ENABLE_PYTHON=OFF \
+        -DLLDB_ENABLE_CURSES=ON \
+        -DLLDB_ENABLE_LIBEDIT=ON \
+        -DLLDB_ENABLE_LIBXML2=ON \
+        -DLLDB_ENABLE_LZMA=ON \
+        -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF \
+        -DLIBOMP_INSTALL_ALIASES=OFF

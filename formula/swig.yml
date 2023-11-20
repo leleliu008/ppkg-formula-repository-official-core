@@ -5,7 +5,6 @@ src-url: https://downloads.sourceforge.net/project/swig/swig/swig-4.1.1/swig-4.1
 src-sha: 2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b
 license: GPL-3.0-or-later
 dep-pkg: libpcre2
-
 install: |
     configure \
         --enable-ccache \

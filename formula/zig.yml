@@ -4,5 +4,6 @@ web-url: https://ziglang.org/
 src-url: https://ziglang.org/download/0.10.1/zig-0.10.1.tar.xz
 src-sha: 69459bc804333df077d441ef052ffa143d53012b655a51f04cfef1414c04168c
 license: MIT
-dep-pkg: llvm z3 ncurses zlib libzstd
-install: cmakew -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="$libzstd_INSTALL_DIR"
+dep-pkg: libllvm
+dopatch: sed_in_place '/find_package(lld /a list(APPEND LLVM_LIBRARIES -lz3 -lncurses -lstdc++)' CMakeLists.txt
+install: cmakew -DCMAKE_FIND_DEBUG_MODE=ON -DZIG_STATIC=ON -DZIG_USE_LLVM_CONFIG=OFF

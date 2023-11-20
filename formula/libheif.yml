@@ -5,4 +5,6 @@ src-url: https://github.com/strukturag/libheif/releases/download/v1.17.3/libheif
 src-sha: 8d5b6292e7931324f81f871f250ecbb9f874aa3c66b4f6f35ceb0bf3163b53ea
 license: LGPL-3.0-only
 dep-pkg: libde265 x265 aom rav1e dav1d svt-av1
-bsystem: cmake
+install: |
+    cmakew -DWITH_EXAMPLES=OFF -DBUILD_SHARED_LIBS=ON
+    cmakew -DWITH_EXAMPLES=ON  -DBUILD_SHARED_LIBS=OFF

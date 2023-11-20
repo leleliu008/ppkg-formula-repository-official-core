@@ -4,7 +4,7 @@ src-url: https://github.com/sahib/glyr/archive/3df20bd653ebf8fed7fe52a7988409f01
 src-sha: 1068cf0d6dd301c5cbfa6417f1e49e586867dcb797436dd014e0bde673a69833
 version: 1.0.11
 license: LGPL-3.0-or-later
-dep-pkg: glib libsqlite3 libcurl
+dep-pkg: glib libsqlite3 libcurl libexecinfo
 bsystem: cmake
 dopatch: |
     sed_in_place 's|FIND_PACKAGE(CURL|PKG_CHECK_MODULES(CURL libcurl|' CMakeLists.txt

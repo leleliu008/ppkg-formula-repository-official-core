@@ -30,8 +30,7 @@ install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \
         -DLLVM_TARGETS_TO_BUILD=all \
-        -DLLVM_ENABLE_PROJECTS="'clang;clang-tools-extra;lld;lldb;mlir;polly;openmp'" \
-        -DLLVM_ENABLE_RUNTIMES="'compiler-rt;libcxx;libcxxabi;libunwind'" \
+        -DLLVM_ENABLE_PROJECTS="'clang;lld'" \
         -DLLVM_ENABLE_EH=ON \
         -DLLVM_ENABLE_PIC=ON \
         -DLLVM_ENABLE_FFI=ON \
@@ -45,6 +44,7 @@ install: |
         -DLLVM_INCLUDE_TESTS=OFF \
         -DLLVM_BUILD_DOCS=OFF \
         -DLLVM_BUILD_TESTS=OFF \
+        -DLLVM_BUILD_TOOLS=OFF \
         -DLLVM_BUILD_EXAMPLES=OFF \
         -DLLVM_BUILD_LLVM_DYLIB=ON \
         -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
