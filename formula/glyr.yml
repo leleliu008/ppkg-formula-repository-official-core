@@ -7,6 +7,7 @@ license: LGPL-3.0-or-later
 dep-pkg: glib libsqlite3 libcurl libexecinfo
 bsystem: cmake
 dopatch: |
+    sed_in_place "s|-lexecinfo|-L$libexecinfo_LIBRARY_DIR -lexecinfo|" CMakeLists.txt
     sed_in_place 's|FIND_PACKAGE(CURL|PKG_CHECK_MODULES(CURL libcurl|' CMakeLists.txt
     sed_in_place 's|CURL_LIBRARY|CURL_LIBRARIES|' lib/CMakeLists.txt
     sed_in_place 's|SHARED|STATIC|' lib/CMakeLists.txt
