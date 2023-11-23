@@ -28,4 +28,6 @@ dopatch: |
 install: |
     cmakew \
         -DENABLE_GUI=OFF \
-        -DENABLE_FONTFORGE_EXTRAS=ON
+        -DENABLE_DOCS=OFF \
+        -DENABLE_FONTFORGE_EXTRAS=ON \
+        -DBUILD_SHARED_LIBS=OFF

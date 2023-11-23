@@ -16,3 +16,7 @@ install: |
         --without-coverage \
         --without-debug \
         --enable-ipv6 LIBS=-liconv
+    cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
+    sed -i '/^Requires: /d' libxml-2.0.pc
+    sed -i -e 's|-liconv||g' -e 's|-lz||g' libxml-2.0.pc
+    printf 'Requires: libiconv zlib\n' >>  libxml-2.0.pc

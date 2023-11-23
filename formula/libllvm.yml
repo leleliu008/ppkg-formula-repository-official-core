@@ -22,6 +22,30 @@ dopatch2: |
     patch -p1 < ../fix/d2a2b61f7024fdf45f24a8ad8592808fc94c9ce6db8df3152fd9f46180c43074.patch
     patch -p1 < ../res/a2cf01ca5f632f7372f03c7a9db438f5f7083daae90a617241a0c41ece979267.patch
     cd llvm
+dopatch: |
+    LIBXML2_LIBRARIES="$(pkg-config --libs-only-l libxml-2.0 | tr ' ' ';')"
+    LIBXML2_INCLUDE_DIR="$libxml2_INCLUDE_DIR/libxml2"
+
+    # https://cmake.org/cmake/help/latest/module/FindLibXml2.html
+    cat > ../lldb/cmake/modules/FindLibXml2.cmake <<EOF
+    set(LIBXML2_INCLUDE_DIR  "$LIBXML2_INCLUDE_DIR")
+    set(LIBXML2_INCLUDE_DIRS "$LIBXML2_INCLUDE_DIR")
+    set(LIBXML2_LIBRARIES    "$LIBXML2_LIBRARIES")
+    set(LibXml2_FOUND TRUE)
+
+    if (NOT TARGET  LibXml2::LibXml2)
+        add_library(LibXml2::LibXml2 INTERFACE IMPORTED)
+        set_target_properties(LibXml2::LibXml2 PROPERTIES
+            INTERFACE_INCLUDE_DIRECTORIES "\${LIBXML2_INCLUDE_DIRS}"
+            INTERFACE_LINK_LIBRARIES      "\${LIBXML2_LIBRARIES}"
+        )
+    endif()
+
+    include(FindPackageHandleStandardArgs)
+    find_package_handle_standard_args(LibXml2 REQUIRED_VARS LIBXML2_LIBRARIES LIBXML2_INCLUDE_DIRS VERSION_VAR LIBXML2_VERSION_STRING)
+
+    mark_as_advanced(LIBXML2_INCLUDE_DIRS LIBXML2_LIBRARIES)
+    EOF
 
 
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
@@ -53,6 +77,9 @@ install: |
         -DLLVM_INSTALL_UTILS=ON \
         -DLLVM_OPTIMIZED_TABLEGEN=ON \
         -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
+        -DCLANG_BUILD_TOOLS=OFF \
+        -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF \
+        -DLLD_BUILD_TOOLS=ON \
         -DLLDB_USE_SYSTEM_DEBUGSERVER=ON \
         -DLLDB_USE_SYSTEM_SIX=OFF \
         -DLLDB_ENABLE_LUA=OFF \
@@ -61,5 +88,4 @@ install: |
         -DLLDB_ENABLE_LIBEDIT=ON \
         -DLLDB_ENABLE_LIBXML2=ON \
         -DLLDB_ENABLE_LZMA=ON \
-        -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF \
         -DLIBOMP_INSTALL_ALIASES=OFF
