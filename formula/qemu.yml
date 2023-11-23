@@ -1,11 +1,11 @@
-summary: Emulator for x86 and PowerPC
+summary: A generic and open source machine & userspace emulator and virtualizer
 web-url: https://www.qemu.org/
 git-url: https://git.qemu.org/git/qemu.git
 src-url: https://download.qemu.org/qemu-8.0.3.tar.xz
 src-sha: ecf4d32cbef9d397bfc8cc50e4d1e92a1b30253bf32e8ee73c7a8dcf9a232b09
 license: GPL-2.0-only
 dep-pkg: capstone libslirp libssh libusb libpng libjpeg-turbo pixman gnutls lzo nettle snappy dtc vde libzstd libcap-ng xattr
-dep-upp: bzip2
+dep-upp: bzip2 flex bison
 ppflags: -UNDEBUG
 bsystem: gmake meson
 dopatch: |

@@ -23,12 +23,12 @@ dopatch2: |
     patch -p1 < ../res/a2cf01ca5f632f7372f03c7a9db438f5f7083daae90a617241a0c41ece979267.patch
     cd llvm
 
-dopatch: |
+dopatch2: |
     LIBXML2_LIBRARIES="$(pkg-config --libs-only-l libxml-2.0 | tr ' ' ';')"
     LIBXML2_INCLUDE_DIR="$libxml2_INCLUDE_DIR/libxml2"
 
     # https://cmake.org/cmake/help/latest/module/FindLibXml2.html
-    cat > ../lldb/cmake/modules/FindLibXml2.cmake <<EOF
+    cat > src/lldb/cmake/modules/FindLibXml2.cmake <<EOF
     set(LIBXML2_INCLUDE_DIR  "$LIBXML2_INCLUDE_DIR")
     set(LIBXML2_INCLUDE_DIRS "$LIBXML2_INCLUDE_DIR")
     set(LIBXML2_LIBRARIES    "$LIBXML2_LIBRARIES")
@@ -47,6 +47,9 @@ dopatch: |
     mark_as_advanced(LIBXML2_INCLUDE_DIRS LIBXML2_LIBRARIES)
     EOF
 
+dopatch: |
+    sed_in_place '/add_optional_dependency(LLDB_ENABLE_LIBXML2/c find_package(LibXml2 CONFIG REQUIRED)' ../lldb/cmake/modules/LLDBConfig.cmake
+    sed_in_place '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)' ../lldb/cmake/modules/LLDBConfig.cmake
 
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
 # https://lldb.llvm.org/resources/build.html
@@ -62,6 +65,7 @@ install: |
         -DLLVM_ENABLE_ZLIB=ON \
         -DLLVM_ENABLE_ZSTD=ON \
         -DLLVM_ENABLE_RTTI=ON \
+        -DLLVM_ENABLE_LIBXML2=OFF \
         -DLLVM_ENABLE_SPHINX=OFF \
         -DLLVM_ENABLE_DOXYGEN=OFF \
         -DLLVM_ENABLE_Z3_SOLVER=ON \
