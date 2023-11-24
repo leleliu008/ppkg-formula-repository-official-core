@@ -21,6 +21,10 @@ dopatch: |
     patch -p1 < ../res/a2cf01ca5f632f7372f03c7a9db438f5f7083daae90a617241a0c41ece979267.patch
     cd llvm
 
+    LIBELF_LIBRARIES="$(pkg-config --libs-only-l libelf)"
+    sed_in_place "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
+
+# https://llvm.org/docs/CMake.html
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
 # https://lldb.llvm.org/resources/build.html
 install: |

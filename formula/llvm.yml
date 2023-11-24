@@ -23,34 +23,38 @@ dopatch2: |
     patch -p1 < ../res/a2cf01ca5f632f7372f03c7a9db438f5f7083daae90a617241a0c41ece979267.patch
     cd llvm
 
-dopatch2: |
-    LIBXML2_LIBRARIES="$(pkg-config --libs-only-l libxml-2.0 | tr ' ' ';')"
-    LIBXML2_INCLUDE_DIR="$libxml2_INCLUDE_DIR/libxml2"
+dopatch: |
+    LibEdit_INCLUDE_DIRS="$libedit_INCLUDE_DIR;$libedit_INCLUDE_DIR/editline"
+    LibEdit_LIBRARIES="$(pkg-config --libs-only-l libedit | tr ' ' ';')"
 
-    # https://cmake.org/cmake/help/latest/module/FindLibXml2.html
-    cat > src/lldb/cmake/modules/FindLibXml2.cmake <<EOF
-    set(LIBXML2_INCLUDE_DIR  "$LIBXML2_INCLUDE_DIR")
-    set(LIBXML2_INCLUDE_DIRS "$LIBXML2_INCLUDE_DIR")
-    set(LIBXML2_LIBRARIES    "$LIBXML2_LIBRARIES")
-    set(LibXml2_FOUND TRUE)
+    cat > ../cmake/Modules/FindLibEdit.cmake <<EOF
+    set(LibEdit_INCLUDE_DIRS "$LibEdit_INCLUDE_DIRS")
+    set(LibEdit_LIBRARIES    "$LibEdit_LIBRARIES")
+    set(LibEdit_FOUND TRUE)
 
-    if (NOT TARGET  LibXml2::LibXml2)
-        add_library(LibXml2::LibXml2 INTERFACE IMPORTED)
-        set_target_properties(LibXml2::LibXml2 PROPERTIES
-            INTERFACE_INCLUDE_DIRECTORIES "\${LIBXML2_INCLUDE_DIRS}"
-            INTERFACE_LINK_LIBRARIES      "\${LIBXML2_LIBRARIES}"
+    if (NOT TARGET  LibEdit::LibEdit)
+        add_library(LibEdit::LibEdit INTERFACE IMPORTED)
+        set_target_properties(LibEdit::LibEdit PROPERTIES
+            INTERFACE_INCLUDE_DIRECTORIES "\${LibEdit_INCLUDE_DIRS}"
+            INTERFACE_LINK_LIBRARIES      "\${LibEdit_LIBRARIES}"
         )
     endif()
 
     include(FindPackageHandleStandardArgs)
-    find_package_handle_standard_args(LibXml2 REQUIRED_VARS LIBXML2_LIBRARIES LIBXML2_INCLUDE_DIRS VERSION_VAR LIBXML2_VERSION_STRING)
-    mark_as_advanced(LIBXML2_INCLUDE_DIRS LIBXML2_LIBRARIES)
+    find_package_handle_standard_args(LibEdit REQUIRED_VARS LibEdit_LIBRARIES LibEdit_INCLUDE_DIRS VERSION_VAR LibEdit_VERSION_STRING)
+    mark_as_advanced(LibEdit_INCLUDE_DIRS LibEdit_LIBRARIES)
     EOF
 
-dopatch: |
-    sed_in_place '/add_optional_dependency(LLDB_ENABLE_LIBXML2/c find_package(LibXml2 CONFIG REQUIRED)' ../lldb/cmake/modules/LLDBConfig.cmake
-    sed_in_place '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)' ../lldb/cmake/modules/LLDBConfig.cmake
+    sed_in_place '/find_library(LibEdit_LIBRARIES/c set(LibEdit_LIBRARIES "${PC_LIBEDIT_LINK_LIBRARIES}")' ../cmake/Modules/FindLibEdit.cmake
+    sed_in_place '/IMPORTED_LOCATION/c INTERFACE_LINK_LIBRARIES "${LibEdit_LIBRARIES}"'                    ../cmake/Modules/FindLibEdit.cmake
 
+    sed_in_place '/add_optional_dependency(LLDB_ENABLE_LIBXML2/c find_package(LibXml2 CONFIG REQUIRED)' ../lldb/cmake/modules/LLDBConfig.cmake
+    sed_in_place '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)'                                      ../lldb/cmake/modules/LLDBConfig.cmake
+
+    LIBELF_LIBRARIES="$(pkg-config --libs-only-l libelf)"
+    sed_in_place "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
+
+# https://llvm.org/docs/CMake.html
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
 # https://lldb.llvm.org/resources/build.html
 install: |
