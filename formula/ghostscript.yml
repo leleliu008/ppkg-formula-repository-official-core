@@ -5,8 +5,8 @@ src-sha: 01f4b699f031566b04cec495506811866e17896b26847c14e5333fb3adfc0619
 license: AGPL-3.0-or-later
 dep-pkg: fontconfig jbig2dec libidn lcms2 openjpeg tesseract
 
-binbstd: yes
-sfslink: no
+binbstd: 1
+binbstd: 0
 
 dopatch: |
     rm -rf expat

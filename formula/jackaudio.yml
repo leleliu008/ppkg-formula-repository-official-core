@@ -6,9 +6,9 @@ src-sha: 1e42b9fc4ad7db7befd414d45ab2f8a159c0b30fcd6eee452be662298766a849
 license: GPL-2.0-or-later
 dep-pkg: readline libsamplerate berkeley-db alsa-lib
 dep-pkg: python3
-binbstd: yes
-sfslink: no
+binbstd: 1
+binbstd: 0
 install: |
-    run python3 ./waf configure --prefix=$PACKAGE_INSTALL_DIR &&
-    run python3 ./waf build &&
+    run python3 ./waf configure --prefix=$PACKAGE_INSTALL_DIR
+    run python3 ./waf build
     run python3 ./waf install

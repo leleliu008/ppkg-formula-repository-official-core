@@ -7,7 +7,7 @@ license: GPL-3.0-or-later
 dep-pkg: readline
 
 install: |
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         CONFIGURE_OPTIONS_EXTRA=--disable-static-link
     else
         CONFIGURE_OPTIONS_EXTRA=--enable-static-link

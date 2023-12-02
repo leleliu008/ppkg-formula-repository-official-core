@@ -7,7 +7,7 @@ src-sha: ae9a5789e23459e59606e6714723f2d3ffc31c03174191ef0d015bdf06007450
 license: GPL-2.0-or-later
 dep-pkg: isl libmpc zlib
 dep-upp: gm4 bison texinfo
-sfslink: no
+binbstd: 0
 install: |
     configure \
         --with-isl="$isl_INSTALL_DIR" \

@@ -7,7 +7,7 @@ license: Apache-2.0 with LLVM-exception
 dep-pkg: python3 binutils libelf libedit libffi libxml2 libz3.a
 dep-upp: swig
 bscript: llvm
-sfslink: no
+binbstd: 0
 
 # https://llvm.org/docs/CMake.html
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration

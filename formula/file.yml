@@ -11,7 +11,7 @@ install: |
     configure_only \
         --enable-zlib \
         --disable-bzlib \
-        --disable-xzlib &&
-    gmakew install-exec &&
-    gmakew -C doc install-man1 &&
+        --disable-xzlib
+    gmakew install-exec
+    gmakew -C doc install-man1
     rm -rf "$PACKAGE_INSTALL_DIR/lib"

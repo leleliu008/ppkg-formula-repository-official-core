@@ -7,7 +7,7 @@ dep-pkg: ncurses libevent utf8proc
 license: ISC
 bsystem: configure
 install: |
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         configure --enable-utf8proc --disable-static
     else
         configure --enable-utf8proc

@@ -7,7 +7,7 @@ dep-pkg: nghttp2 icu4c libuv brotli
 license: MIT
 
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 install: |
     ./configure \
         --prefix=$PACKAGE_INSTALL_DIR \

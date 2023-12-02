@@ -17,6 +17,6 @@ install: |
         -DZSTD_BUILD_SHARED=OFF \
         -DZSTD_ZLIB_SUPPORT=ON \
         -DZSTD_LZMA_SUPPORT=ON \
-        -DZSTD_LZ4_SUPPORT=OFF &&
-    rm -rf "$PACKAGE_INSTALL_DIR/include" &&
+        -DZSTD_LZ4_SUPPORT=OFF
+    rm -rf "$PACKAGE_INSTALL_DIR/include"
     rm -rf "$PACKAGE_INSTALL_DIR/lib"

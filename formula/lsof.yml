@@ -7,7 +7,7 @@ dep-pkg: libtirpc
 license: Zlib
 
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 install: |
     export LSOF_MAKE=gmake
     export LSOF_CC="$CC"
@@ -16,8 +16,8 @@ install: |
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
     export LSOF_CFGL="$LDFLAGS"
     
-    run ./Configure -clean &&
-    run ./Configure -n linux &&
-    gmakew &&
-    run install_bins lsof &&
+    run ./Configure -clean
+    run ./Configure -n linux
+    gmakew
+    run install_bins lsof
     run install_mans Lsof.8

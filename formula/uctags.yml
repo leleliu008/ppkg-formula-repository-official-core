@@ -5,7 +5,7 @@ dep-pkg: jansson libyaml libxml2 libiconv
 license: GPL-2.0-or-later
 bsystem: autogen
 install: |
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] || [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
         configure --disable-static
     else
         configure

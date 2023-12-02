@@ -6,4 +6,4 @@ src-sha: b70e0a42aed74a4a3990ccfe35262305917175e3164330c0889bd70580406391
 license: GPL-2.0-or-later
 dep-pkg: readline libiconv
 bsystem: configure
-binbstd: yes
+binbstd: 1

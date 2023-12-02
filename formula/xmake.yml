@@ -3,13 +3,32 @@ web-url: https://xmake.io/
 git-url: https://github.com/xmake-io/xmake
 src-url: https://github.com/xmake-io/xmake/releases/download/v2.8.5/xmake-v2.8.5.tar.gz
 src-sha: 19c67be3bcfcbda96ca87a18effac39bfccc443fbb3754c7bbc01511decd24af
+src-url: dir:///home/leleliu008/xmake
 license: Apache-2.0
-binbstd: yes
+binbstd: 1
 install: |
     sed_in_place 's|if is_host "macosx"|if false|' configure
     sed_in_place 's|\*/cc|*-cc|' configure
     sed_in_place 's|\*/c++|*-c++|' configure
-    run ./configure &&
-    gmakew clean &&
-    gmakew &&
+
+    if [ "$CROSS_COMPILING" = 1 ] ; then
+        if [ "$TARGET_PLATFORM_NAME" = linux ] ; then
+            case $TARGET_PLATFORM_VERS in
+                glibc) TARGET_TRIPLE="$TARGET_PLATFORM_ARCH-unknown-linux-gnu"  ;;
+                musl)  TARGET_TRIPLE="$TARGET_PLATFORM_ARCH-unknown-linux-musl" ;;
+                *)     TARGET_TRIPLE="$TARGET_PLATFORM_ARCH-unknown-linux"
+            esac
+        elif [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+            TARGET_TRIPLE="$TARGET_PLATFORM_ARCH-apple-darwin"
+        else
+            TARGET_TRIPLE="$TARGET_PLATFORM_ARCH-unknown-$TARGET_PLATFORM_NAME"
+        fi
+
+        run ./configure --host="$TARGET_TRIPLE"
+    else
+        run ./configure --host=
+    fi
+    #return 1
+    gmakew clean
+    gmakew
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

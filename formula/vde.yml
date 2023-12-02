@@ -6,7 +6,7 @@ license: GPL-2.0-or-later
 bsystem: autotools
 dep-upp: libtool patch
 dopatch: |
-    if [ "$NATIVE_OS_LIBC" != musl ] ; then
+    if [ "$TARGET_PLATFORM_VERS" != musl ] ; then
         return 0
     fi
 

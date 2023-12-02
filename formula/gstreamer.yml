@@ -6,7 +6,7 @@ src-sha: 9ffeab95053f9f6995eb3b3da225e88f21c129cd60da002d3f795db70d6d5974
 license: LGPL-2.0-or-later
 dep-upp: gm4 bison flex
 dep-pkg: glib gobject-introspection gettext
-sfslink: no
+binbstd: 0
 install: |
     INSTALL_LIB=both
     mesonw \

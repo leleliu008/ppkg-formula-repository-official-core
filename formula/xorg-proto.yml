@@ -5,6 +5,6 @@ src-sha: da351a403d07a7006d7bdc8dcfc14ddc1b588b38fb81adab9989a8eef605757b
 license: MIT
 dep-pkg: xorg-util-macros
 install: |
-    configure &&
-    install -d "$PACKAGE_INSTALL_DIR/lib" &&
+    configure
+    install -d "$PACKAGE_INSTALL_DIR/lib"
     mv "$PACKAGE_INSTALL_DIR/share/pkgconfig" "$PACKAGE_INSTALL_DIR/lib/"

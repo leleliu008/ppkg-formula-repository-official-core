@@ -5,10 +5,10 @@ src-url: https://www.openssl.org/source/openssl-1.1.1u.tar.gz
 src-sha: e2f8d84b523eecd06c7be7626830370300fbcc15386bf5142d72758f6963ebc6
 dep-pkg: perl
 license: OpenSSL
-symlink: no
-sfslink: no
+symlink: 0
+binbstd: 0
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 install: |
     run ./config \
         no-tests \
@@ -17,7 +17,7 @@ install: |
         no-comp \
         --prefix=$PACKAGE_INSTALL_DIR \
         --libdir=$PACKAGE_INSTALL_DIR/lib \
-        --openssldir=$PACKAGE_INSTALL_DIR/etc/ssl &&
-    gmakew clean &&
-    gmakew &&
+        --openssldir=$PACKAGE_INSTALL_DIR/etc/ssl
+    gmakew clean
+    gmakew
     gmakew install

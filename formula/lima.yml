@@ -7,6 +7,6 @@ dep-pkg: qemu
 bsystem: gmake go
 install: |
     export CGO_ENABLED=1
-    gmakew clean binaries VERSION="$PACKAGE_VERSION" &&
-    install_bins _output/bin/* &&
+    gmakew clean binaries VERSION="$PACKAGE_VERSION"
+    install_bins _output/bin/*
     run cp -r _output/share "$PACKAGE_INSTALL_DIR"

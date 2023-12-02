@@ -6,7 +6,7 @@ src-sha: 9dd83d5b278bb2bf0e39bfeb75c3e8170024edbaf11ba13b7037b2945cf48ab7
 license: BSD-3-Clause
 dep-pkg: openssl
 
-binbstd: yes
+binbstd: 1
 install: |
     gmakew clean &&
     gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" RANLIB="$RANLIB" BUILD_TLS=yes USE_JEMALLOC=no &&

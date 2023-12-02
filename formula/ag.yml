@@ -6,7 +6,7 @@ license: Apache-2.0
 dep-pkg: libpcre liblzma zlib
 bsystem: autogen
 install: |
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         export CFLAGS="$CFLAGS -fcommon"
     fi
     configure

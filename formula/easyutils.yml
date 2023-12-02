@@ -1,6 +1,6 @@
 summary: a collections of easy to use command-line utilities
 git-url: https://github.com/leleliu008/C-examples
-binbstd: yes
+binbstd: 1
 install: |
     PACKAGE_BSCRIPT_DIR="$PACKAGE_WORKING_DIR/src/algorithm/base16"
     cmakew

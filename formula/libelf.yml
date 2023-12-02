@@ -7,7 +7,7 @@ license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
 dep-pkg: libzstd liblzma libbz2 zlib argp-standalone musl-obstack musl-fts
 dep-upp: gm4
 ccflags: -Wno-error
-sfslink: no
+binbstd: 0
 dopatch: |
     sed_in_place '/libintl\.h/d' lib/eu-config.h
     sed_in_place '/dgettext/d'   lib/eu-config.h
@@ -16,7 +16,7 @@ dopatch: |
     sed_in_place '/^SUBDIRS =/c SUBDIRS = lib libelf' Makefile.in
 install: |
     # FNM_EXTMATCH is a GNU externsion, musl does not define it
-    if [ "$NATIVE_OS_LIBC" = musl ] ; then
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export CPPFLAGS="$CPPFLAGS -DFNM_EXTMATCH=0"
     fi
 

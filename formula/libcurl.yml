@@ -23,6 +23,6 @@ install: |
     cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
     sed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lnghttp2||g' -e 's|-lzstd||g' -e 's|-lz||g' -e 's|-lbrotlidec||g' -e 's|-lbrotlicommon||g' libcurl.pc
     printf 'Requires: libnghttp2 openssl libzstd zlib libbrotlidec\n' >> libcurl.pc
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         sed_in_place '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' libcurl.pc
     fi

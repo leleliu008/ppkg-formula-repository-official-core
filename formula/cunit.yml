@@ -8,14 +8,14 @@ dep-upp: libtool
 bsystem: autotools
 
 dopatch: |
-    rm config.status &&
-    find . -name .deps    -exec rm -rf {} + &&
-    find . -name Makefile -exec rm -rf {} + &&
-    autoreconf -ivf && \
+    rm config.status
+    find . -name .deps    -exec rm -rf {} +
+    find . -name Makefile -exec rm -rf {} +
+    autoreconf -ivf
     sed_in_place 's/install-data-am: install-dochdrDATA/install-data-am: /' doc/headers/Makefile.in
 
 install: |
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         CONFIGURE_EXTRA_ARGS=--disable-curses
     else
         CONFIGURE_EXTRA_ARGS=--enable-curses
@@ -27,5 +27,5 @@ install: |
         --enable-basic \
         --enable-console \
         --enable-memtrace \
-        --enable-automated $CONFIGURE_EXTRA_ARGS &&
+        --enable-automated $CONFIGURE_EXTRA_ARGS
     mv "$PACKAGE_INSTALL_DIR/doc" "$PACKAGE_INSTALL_DIR/share/"

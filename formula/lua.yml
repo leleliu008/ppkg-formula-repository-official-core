@@ -5,9 +5,9 @@ src-url: https://www.lua.org/ftp/lua-5.4.6.tar.gz
 src-sha: 7d5ea1b9cb6aa0b59ca3dde1c6adcb57ef83a1ba8e5432c0ecd06bf439b3ad88
 license: MIT
 dep-pkg: readline
-binbstd: yes
+binbstd: 1
 
 install: |
-    gmakew clean &&
-    gmakew PLAT=generic CC="$CC" CFLAGS="'$CFLAGS -std=c99 -DLUA_COMPAT_5_3 $CPPFLAGS'" AR="'$AR crs'" RANLIB="$RANLIB" MYLDFLAGS="'$LDFLAGS'" MYLIBS=-lreadline &&
+    gmakew clean
+    gmakew PLAT=generic CC="$CC" CFLAGS="'$CFLAGS -std=c99 -DLUA_COMPAT_5_3 $CPPFLAGS'" AR="'$AR crs'" RANLIB="$RANLIB" MYLDFLAGS="'$LDFLAGS'" MYLIBS=-lreadline
     gmakew install INSTALL_TOP="$PACKAGE_INSTALL_DIR"

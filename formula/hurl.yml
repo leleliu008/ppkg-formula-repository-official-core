@@ -6,7 +6,7 @@ src-sha: 43b5943b8135a0b2c0bb16897291e641f38e7e81aab17a18ee3d6eb5e1cd0d48
 license: Apache-2.0
 dep-pkg: libcurl libxml2
 install: |
-    cargow install --path packages/hurl &&
-    cargow install --path packages/hurlfmt &&
-    install_mans docs/manual/hurl.1 &&
+    cargow install --path packages/hurl
+    cargow install --path packages/hurlfmt
+    install_mans docs/manual/hurl.1
     install_mans docs/manual/hurlfmt.1

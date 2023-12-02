@@ -6,5 +6,5 @@ src-sha: 55a7517cd3572bd2565df0cf450944a04d5273b279ebb369a895391957f0f960
 license: GPL-2.0-or-later
 dep-pkg: ghostscript
 bsystem: configure
-binbstd: yes
-sfslink: no
+binbstd: 1
+binbstd: 0

@@ -1,4 +1,4 @@
-summary: a binary package manager for FreeBSD and DragonflyBSD.
+summary: A binary package manager for FreeBSD and DragonflyBSD
 git-url: https://github.com/freebsd/pkg
 dep-pkg: libarchive
 install: |

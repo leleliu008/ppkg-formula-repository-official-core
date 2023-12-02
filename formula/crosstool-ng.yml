@@ -6,7 +6,7 @@ src-sha: 68162f342243cd4189ed7c1f4e3bb1302caa3f2cbbf8331879bd01fe06c60cd3
 dep-pkg: ncurses libiconv gettext libtool help2man texinfo file gtar gzip bzip2 xz unzip
 dep-upp: gm4 flex bison patch
 license: LGPL-2.1-or-later
-sfslink: no
+binbstd: 0
 install: |
     configure \
         --with-bash-completion \

@@ -3,7 +3,7 @@ git-url: https://github.com/leleliu008/sys-queue.h
 src-url: https://raw.githubusercontent.com/leleliu008/sys-queue.h/v1/sys-queue.h
 src-sha: 3659cd137c320991a78413dd370a92fd18e0a8bc36d017d554f08677a37d7d5a
 version: 1
-binbstd: yes
+binbstd: 1
 install: |
     mv *.h queue.h
     install_incs :sys queue.h

@@ -7,10 +7,22 @@ license: GPL-2.0-only
 dep-pkg: gettext expat libcurl libpcre2 zlib
 
 bsystem: configure
-binbstd: yes
+binbstd: 1
 install: |
-    if [ "$NATIVE_OS_LIBC" = musl ] ; then
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export ac_cv_c_regex_with_reg_startend=no
+    fi
+
+    if [ "$CROSS_COMPILING" = 1 ] ; then
+        # to bypass git error: cannot run test program while cross compiling
+        export ac_cv_fread_reads_directories=yes
+        export ac_cv_header_libintl_h=yes
+        export ac_cv_iconv_omits_bom=no
+        export ac_cv_snprintf_returns_bogus=no
+
+        if [ "$TARGET_PLATFORM_NAME" = freebsd ] ; then
+            sed_in_place '/-DHAVE_SYSINFO/d' config.mak.uname
+        fi
     fi
 
     export ac_cv_lib_curl_curl_global_init=yes

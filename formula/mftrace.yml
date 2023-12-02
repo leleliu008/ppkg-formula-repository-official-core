@@ -5,7 +5,7 @@ src-url: https://lilypond.org/downloads/sources/mftrace/mftrace-1.2.20.tar.gz
 src-sha: 626b7a9945a768c086195ba392632a68d6af5ea24ef525dcd0a4a8b199ea5f6f
 license: GPL-2.0-only
 dep-pkg: fontforge potrace t1utils
-binbstd: yes
+binbstd: 1
 dopatch: |
     touch gf2pbm.1
     sed_in_place 's/rm -f config.cache config.h config.log config.status GNUmakefile/rm -f config.cache config.log/' GNUmakefile.in

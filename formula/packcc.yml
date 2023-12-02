@@ -1,7 +1,7 @@
 summary: a packrat parser generator for C
 git-url: https://github.com/enechaev/packcc
 
-binbstd: yes
+binbstd: 1
 install: |
     run rm -f packcc
     run $CC $CPPFLAGS $CFLAGS $LDFLAGS -o packcc packcc.c &&

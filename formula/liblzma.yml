@@ -16,4 +16,5 @@ install: |
         --disable-lzmadec \
         --disable-lzmainfo \
         --disable-lzma-links \
-        --disable-scripts
+        --disable-scripts \
+        --enable-rpath

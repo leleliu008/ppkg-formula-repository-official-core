@@ -6,7 +6,7 @@ src-sha: 8c3f1cc4f93e50056bb0a8c15a41a8eb6acc7fd71bff6de60b1ef8c4532537bd
 license: GPL-2.0 WITH Linux-syscall-note
 dep-upp: rsync
 
-binbstd: yes
+binbstd: 1
 install: |
     gmakew mrproper &&
     gmakew INSTALL_HDR_PATH=$PACKAGE_INSTALL_DIR headers_install

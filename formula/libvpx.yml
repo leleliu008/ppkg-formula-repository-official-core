@@ -7,16 +7,16 @@ license: BSD-3-Clause
 dep-upp: nasm diffutils perl
 bsystem: gmake
 install: |
-    case $NATIVE_OS_ARCH in
+    case $TARGET_PLATFORM_ARCH in
         i686)    export AS=nasm ;;
         x86_64)  export AS=nasm ;;
     esac
 
-    case $NATIVE_OS_KIND-$NATIVE_OS_ARCH in
-        linux-x86_64)  TARGET=x86_64-linux-gcc ;;
-        linux-arm64)   TARGET=arm64-linux-gcc  ;;
-        darwin-x86_64) TARGET=x86_64-darwin20-gcc ;;
-        datwin-arm64)  TARGET=arm64-darwin20-gcc  ;;
+    case $TARGET_PLATFORM_NAME-$TARGET_PLATFORM_ARCH in
+        linux-x86_64) TARGET=x86_64-linux-gcc ;;
+        linux-arm64)  TARGET=arm64-linux-gcc  ;;
+        macos-x86_64) TARGET=x86_64-darwin20-gcc ;;
+        macos-arm64)  TARGET=arm64-darwin20-gcc  ;;
         *) unset TARGET
     esac
 

@@ -3,7 +3,7 @@ git-url: https://gn.googlesource.com/gn
 git-nth: 0
 dep-upp: python3 git
 
-binbstd: yes
+binbstd: 1
 bsystem: ninja
 install: |
     # c++: error: unrecognized command line option '-Wextra-semi'
@@ -20,6 +20,6 @@ install: |
         fi
     fi
 
-    run python3 build/gen.py &&
-    run ninja -C out/ &&
+    run python3 build/gen.py
+    run ninja -C out/
     run install_bins out/gn

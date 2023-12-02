@@ -6,5 +6,5 @@ license: GPL-2.0-or-later
 dep-pkg: glib popt readline
 dep-upp: python3
 xxflags: -std=c++11
-binbstd: yes
+binbstd: 1
 install: configure --disable-gui

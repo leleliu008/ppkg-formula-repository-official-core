@@ -5,4 +5,5 @@ src-url: https://www.doxygen.nl/files/doxygen-1.9.8.src.tar.gz
 src-sha: 05e3d228e8384b5f3af9c8fd6246d22804acb731a3a24ce285c8986ed7e14f62
 license: GPL-2.0-only
 dep-upp: gm4 flex bison python3
+dep-pkg: libiconv
 install: cmakew -DBUILD_SHARED_LIBS=OFF

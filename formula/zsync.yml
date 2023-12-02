@@ -6,4 +6,4 @@ license: Artistic-2.0
 
 ccflags: -include sys/types.h
 bsystem: configure
-binbstd: yes
+binbstd: 1

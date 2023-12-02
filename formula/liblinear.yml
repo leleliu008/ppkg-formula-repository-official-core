@@ -11,10 +11,10 @@ dopatch: patch -p0 < ../fix/11a47747918f665d219b108fac073c626779555b5022903c9b24
 
 license: BSD-3-Clause
 
-binbstd: yes
+binbstd: 1
 install: |
-    gmakew clean &&
-    gmakew all CFLAGS="'$CFLAGS'" &&
-    install_bins predict train &&
-    install_incs linear.h &&
+    gmakew clean
+    gmakew all CFLAGS="'$CFLAGS'"
+    install_bins predict train
+    install_incs linear.h
     install_libs liblinear.*

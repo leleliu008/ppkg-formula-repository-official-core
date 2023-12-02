@@ -5,8 +5,8 @@ src-sha: 6df36862c42466ef88f360444513870ef46934f9016c84383cc4008a7d0c46ba
 license: GPL-3.0-or-later
 dep-upp: python3
 bsystem: gmake
-binbstd: yes
-sfslink: no
+binbstd: 1
+binbstd: 0
 install: |
     ./configure build \
         --prefix=$TARGET_INSTALL_DIR \

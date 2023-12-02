@@ -4,12 +4,11 @@ web-url: https://www.openssl.org/
 src-url: https://www.openssl.org/source/openssl-3.1.1.tar.gz
 src-sha: b3aa61334233b852b63ddb048df181177c2c659eb9d4376008118f9c08d07674
 license: Apache-2.0
-dep-pkg: perl
-
+dep-upp: perl
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 install: |
-    case $NATIVE_OS_KIND in
+    case $TARGET_PLATFORM_NAME in
         openbsd) sed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
     esac
 
@@ -27,7 +26,7 @@ install: |
             } else if (strcmp(argv[i], "-lcrypto") == 0) {
                 argv[i] = (char*)"./libcrypto.a";
             } else {
-                #ifndef NATIVE_OS_KIND_DARWIN
+                #ifndef TARGET_PLATFORM_NAME_DARWIN
                 if (strcmp(argv[i], "-fPIC") == 0) {
                     argv[i] = (char*)"-static";
                 }
@@ -36,6 +35,11 @@ install: |
         }
 
         char * LD = getenv("CC");
+
+        if (LD == NULL || LD[0] == '\0') {
+            fprintf(stderr, "CC environment variable is not set\n");
+            return 1;
+        }
 
         argv[0] = LD;
 
@@ -52,13 +56,13 @@ install: |
         return 127;
     }
     EOF
-        if [ "$NATIVE_OS_KIND" = darwin ] ; then
-            run $CC $CPPFLAGS $CFLAGS $LDFLAGS -std=c99 -DNATIVE_OS_KIND_DARWIN -o proxy-ld proxy-ld.c
+        if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+            run $CC_FOR_BUILD $CPPFLAGS_FOR_BUILD $CFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD -std=c99 -DTARGET_PLATFORM_NAME_DARWIN -o proxy-ld proxy-ld.c
         else
-            run $CC $CPPFLAGS $CFLAGS $LDFLAGS -std=c99 -UNATIVE_OS_KIND_DARWIN -o proxy-ld proxy-ld.c
+            run $CC_FOR_BUILD $CPPFLAGS_FOR_BUILD $CFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD -std=c99 -UTARGET_PLATFORM_NAME_DARWIN -o proxy-ld proxy-ld.c
         fi
 
-        run export LDCMD=./proxy-ld
+        run export LDCMD="$PWD/proxy-ld"
     fi
 
     run ./config \
@@ -66,9 +70,10 @@ install: |
         no-ssl2 \
         no-ssl3 \
         no-comp \
+        no-afalgeng \
         --prefix=$PACKAGE_INSTALL_DIR  \
         --libdir=$PACKAGE_INSTALL_DIR/lib \
-        --openssldir=$PACKAGE_INSTALL_DIR/etc/ssl &&
-    gmakew clean &&
-    gmakew &&
+        --openssldir=$PACKAGE_INSTALL_DIR/etc/ssl
+    gmakew clean
+    gmakew
     gmakew install

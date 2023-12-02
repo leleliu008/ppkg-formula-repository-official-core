@@ -15,7 +15,7 @@ install: |
         --cc=$CC \
         --ar=$AR \
         --extra-cflags="'$CPPFLAGS $CFLAGS'" \
-        --extra-ldflags="'$LDFLAGS'" &&
-    gmakew clean &&
-    gmakew ONE_SOURCE=yes &&
+        --extra-ldflags="'$LDFLAGS'"
+    gmakew clean
+    gmakew ONE_SOURCE=yes
     gmakew install

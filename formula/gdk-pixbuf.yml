@@ -6,7 +6,7 @@ src-sha: ee9b6c75d13ba096907a2e3c6b27b61bcd17f5c7ebeab5a5b439d2f2e39fe44b
 license: LGPL-2.1-or-later
 dep-upp: glib-tools
 dep-pkg: glib gobject-introspection libjpeg-turbo libpng libtiff shared-mime-info
-sfslink: no
+binbstd: 0
 dopatch2: |
     unset LIBM
 

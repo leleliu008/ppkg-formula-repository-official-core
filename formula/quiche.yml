@@ -4,7 +4,7 @@ src-url: https://github.com/cloudflare/quiche/archive/refs/tags/0.18.0.tar.gz
 src-sha: eb242a14c4d801a90b57b6021dd29f7a62099f3a4d7a7ba889e105f8328e6c1f
 license: BSD-2-Clause
 dep-pkg: boringssl
-sfslink: no
+binbstd: 0
 install: |
     export QUICHE_BSSL_PATH="$boringssl_LIBRARY_DIR"
     cargow build --package quiche

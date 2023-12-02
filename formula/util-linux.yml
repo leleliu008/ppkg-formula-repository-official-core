@@ -12,8 +12,8 @@ install: |
 
     unset EXTRA_CONFIGURE_ARGS
 
-    case $NATIVE_OS_KIND in
-        darwin) EXTRA_CONFIGURE_ARGS='--disable-libmount --disable-ipcrm --disable-ipcs --disable-wall' ;;
+    case $TARGET_PLATFORM_NAME in
+        macos) EXTRA_CONFIGURE_ARGS='--disable-libmount --disable-ipcrm --disable-ipcs --disable-wall' ;;
     esac
 
     configure \

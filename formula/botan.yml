@@ -6,7 +6,7 @@ src-sha: 30c84fe919936a98fef5331f246c62aa2c0e4d2085b2d4511207f6a20afa3a6b
 license: BSD-2-Clause
 dep-pkg: python3 libsqlite3 libbz2 zlib
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 install: |
     export CXXFLAGS="$CXXFLAGS $CPPFLAGS"
     python3 configure.py \

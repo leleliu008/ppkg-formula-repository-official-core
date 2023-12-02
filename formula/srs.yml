@@ -9,11 +9,11 @@ dep-upp: unzip patch
 dep-pkg: perl
 bsystem: gmake
 bscript: trunk
-binbstd: yes
+binbstd: 1
 install: |
     export SRS_EXTRA_FLAGS="$CFLAGS $CPPFLAGS"
     
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         CONFIGURE_EXTRA_ARGS=--osx
     else
         CONFIGURE_EXTRA_ARGS=
@@ -26,7 +26,7 @@ install: |
         --cxx=$CXX \
         --ar=$AR \
         --ld=$LD \
-        --randlib=$RANLIB $CONFIGURE_EXTRA_ARGS &&
-    gmakew clean &&
-    gmakew &&
+        --randlib=$RANLIB $CONFIGURE_EXTRA_ARGS
+    gmakew clean
+    gmakew
     gmakew install

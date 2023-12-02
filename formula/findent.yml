@@ -3,5 +3,5 @@ web-url: https://www.ratrabbit.nl/ratrabbit/findent/index.html
 src-url: https://downloads.sourceforge.net/project/findent/findent-4.3.0.tar.gz
 src-sha: bbff2a754c26f525596c0926eb2198992e1e2eac5b9bc9cbe31e302875de6278
 license: BSD-3-Clause
-binbstd: yes
+binbstd: 1
 bsystem: configure

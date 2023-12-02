@@ -9,8 +9,8 @@ src-sha: 31da5562f44c5f15d63340a09a4fd62b48c45620cd302f77a6d9acf0077879bd
 fix-url: https://sourceforge.net/p/giflib/bugs/_discuss/thread/4e811ad29b/c323/attachment/Makefile.patch
 fix-sha: a94e7bdd8840a31cecacc301684dfdbf7b98773ad824aeaab611fabfdc513036
 
-parallel: no
-binbstd: yes
+parallel: 0
+binbstd: 1
 install: |
     patch -p0 < ../fix/a94e7bdd8840a31cecacc301684dfdbf7b98773ad824aeaab611fabfdc513036.patch &&
     gmakew clean &&

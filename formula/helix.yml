@@ -7,7 +7,7 @@ license: MPL-2.0
 dep-upp: git
 dopatch: sed_in_place 's|1\.65\.0|1.67.0|' rust-toolchain.toml
 install: |
-    cargow install --path helix-term &&
-    rm -rf runtime/grammars/sources/ &&
-    install -d -v    "$PACKAGE_INSTALL_DIR/libexec" &&
+    cargow install --path helix-term
+    rm -rf runtime/grammars/sources/
+    install -d -v    "$PACKAGE_INSTALL_DIR/libexec"
     cp -v -r runtime "$PACKAGE_INSTALL_DIR/libexec"

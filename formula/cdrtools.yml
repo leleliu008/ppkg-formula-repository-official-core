@@ -4,6 +4,6 @@ src-url: https://downloads.sourceforge.net/project/cdrtools/alpha/cdrtools-3.02a
 src-sha: c7e4f732fb299e9b5d836629dadf5512aa5e6a5624ff438ceb1d056f4dcb07c2
 version: 3.02a09
 dep-pkg: smake
-binbstd: yes
+binbstd: 1
 install: |
     run smake CC=$CC CFLAGS="'$CFLAGS'" INS_BASE=$PACKAGE_INSTALL_DIR INS_RBASE=$PACKAGE_INSTALL_DIR install

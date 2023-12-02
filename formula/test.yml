@@ -3,7 +3,7 @@ git-url: https://github.com/leleliu008/C
     #src-url: dir:///home/leleliu008/C
 dep-pkg: libgit2
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 install: |
     #WHICH=standard/posix/sys/stat.h
     #WHICH=standard/iso/variable/__thread

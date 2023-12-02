@@ -26,6 +26,6 @@ install: |
         --with-lz4 \
         --with-lzo2 \
         --with-zstd \
-        --with-iconv &&
-    sed_in_place '/Libs: /s|$| -liconv|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libarchive.pc" &&
+        --with-iconv
+    sed_in_place '/Libs: /s|$| -liconv|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libarchive.pc"
     sed_in_place '/Requires.private:/d'  "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libarchive.pc"

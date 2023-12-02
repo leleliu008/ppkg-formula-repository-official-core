@@ -8,7 +8,7 @@ dep-pkg: freetype2
 dopatch: |
     sed_in_place '/add_subdirectory(tests)/d' CMakeLists.txt
 
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         # https://github.com/silnrsi/graphite/pull/54
         sed_in_place '147i if (BUILD_SHARED_LIBS)' src/CMakeLists.txt
         sed_in_place '148a endif ()'               src/CMakeLists.txt

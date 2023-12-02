@@ -5,7 +5,7 @@ src-sha: f6ce89f616b30c498d1fb3b0f0940914557d8393a79c9e7aafff72032446bca0
 license: BSD-3-Clause
 dep-pkg: libpng
 dep-upp: nasm
-sfslink: no
+binbstd: 0
 install: |
     cmakew \
         -DENABLE_STATIC=ON \

@@ -5,7 +5,7 @@ src-sha: 16701e7c3a731a03fe08dee9893c95a86c879192955d12bc7495645e9ab1bc6e
 license: BSD-2-Clause
 dep-pkg: elfutils zlib
 bscript: src
-binbstd: yes
+binbstd: 1
 install: |
     gmakew clean &&
     gmakew install PREFIX=$PACKAGE_INSTALL_DIR LIBDIR=$PACKAGE_INSTALL_DIR/lib

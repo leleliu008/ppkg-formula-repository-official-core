@@ -11,7 +11,7 @@ fix-sha: e51364116c84739c591728ecc841113a914fa11358fd10ff0d6813524d811bb9
 version: 6.0.28
 license: Info-ZIP
 dep-pkg: libbz2
-binbstd: yes
+binbstd: 1
 ccflags: -include time.h
 dep-upp: patch
 dopatch: |
@@ -21,7 +21,7 @@ dopatch: |
     done
 
 install: |
-    if [ "$NATIVE_OS_KIND" = openbsd ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
         # https://www.gnu.org/software/gnulib/manual/html_node/sys_002ftimeb_002eh.html
         # https://github.com/facebook/zstd/issues/319
         mkdir sys
@@ -66,7 +66,7 @@ install: |
 
     unset TARGET_COMPILE
 
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         TARGET_COMPILE=macosx
     else
         TARGET_COMPILE=generic
@@ -76,7 +76,7 @@ install: |
         sed_in_place 's|^LFLAGS2="|LFLAGS2="-static |' unix/configure
     fi
 
-    gmakew -f unix/Makefile clean &&
+    gmakew -f unix/Makefile clean
     gmakew -f unix/Makefile $TARGET_COMPILE \
         CC="$CC" \
         CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
@@ -86,7 +86,7 @@ install: |
         LOCAL_UNZIP="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
         LOC=-DLARGE_FILE_SUPPORT \
         D_USE_BZ2=-DUSE_BZIP2 \
-        L_BZ2=-lbz2 &&
+        L_BZ2=-lbz2
     gmakew -f unix/Makefile install \
         prefix="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"

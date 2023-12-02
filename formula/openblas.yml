@@ -4,10 +4,10 @@ git-url: https://github.com/xianyi/OpenBLAS
 src-url: https://github.com/xianyi/OpenBLAS/archive/v0.3.23.tar.gz
 src-sha: 5d9491d07168a5d00116cdc068a40022c3455bf9293c7cb86a65b1054d7e5114
 license: BSD-3-Clause
-sfslink: no
-binbstd: yes
+binbstd: 0
+binbstd: 1
 install: |
     #export USE_OPENMP=1
-    gmakew clean HOSTCC="$CC_FOR_BUILD" &&
-    gmakew       HOSTCC="$CC_FOR_BUILD" FC=gfortran CC="$CC" AR="$AR" &&
+    gmakew clean HOSTCC="$CC_FOR_BUILD"
+    gmakew       HOSTCC="$CC_FOR_BUILD" FC=gfortran CC="$CC" AR="$AR"
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

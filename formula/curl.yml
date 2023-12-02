@@ -17,8 +17,8 @@ install: |
         --without-ngtcp2 \
         --without-quiche \
         --without-librtmp \
-        --without-libidn2 && {
-        if [ "$NATIVE_OS_KIND" = darwin ] ; then
-            sed_in_place '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libcurl.pc"
-        fi
-    }
+        --without-libidn2
+
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        sed_in_place '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/libcurl.pc"
+    fi

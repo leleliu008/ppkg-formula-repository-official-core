@@ -4,7 +4,7 @@ web-url: http://www.mirbsd.org/mksh.htm
 src-url: http://www.mirbsd.org/MirOS/dist/mir/mksh/mksh-R59c.tgz
 src-sha: 77ae1665a337f1c48c61d6b961db3e52119b38e58884d1c89684af31f87bc506
 version: 59c
-binbstd: yes
+binbstd: 1
 install: |
     sh ./Build.sh -r
     install_bins mksh

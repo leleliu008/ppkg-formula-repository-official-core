@@ -1,8 +1,8 @@
 summary: a binary package system designed and implemented from scratch
 git-url: https://github.com/void-linux/xbps
 dep-pkg: libarchive
-binbstd: yes
-sfslink: no
+binbstd: 1
+binbstd: 0
 install: |
     ./configure --enable-rpath --prefix=/
     gmakew

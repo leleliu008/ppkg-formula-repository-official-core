@@ -5,7 +5,7 @@ src-sha: 90d920024e752318b469776ce57e03b3c702d49329ad9825aeeab36c3babf993
 license: MIT
 dep-pkg: ncurses
 dep-upp: zig@0.10
-binbstd: yes
+binbstd: 1
 install: |
     sed_in_place "s|linkSystemLibrary(\"ncursesw\")|addObjectFile(\"$ncurses_LIBRARY_DIR/libncursesw.a\")|" build.zig
     run zig build --prefix "$PACKAGE_INSTALL_DIR" -Drelease-fast=true --search-prefix "$ncurses_INSTALL_DIR"

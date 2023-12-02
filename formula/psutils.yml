@@ -6,7 +6,7 @@ license: GPL-3.0-or-later
 dep-pkg: libpaper
 dep-pym: build
 dep-upp: python3
-binbstd: yes
+binbstd: 1
 install: |
     python3 -m build
     pip3 install dist/*.whl

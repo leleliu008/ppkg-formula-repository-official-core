@@ -1,12 +1,11 @@
-summary: a small build system with a focus on speed.
+summary: A small build system with a focus on speed
 web-url: https://ninja-build.org/
 git-url: https://github.com/ninja-build/ninja
 src-url: https://github.com/ninja-build/ninja/archive/v1.11.1.tar.gz
 src-sha: 31747ae633213f1eda3842686f83c2aa1412e0f5691d1c14dbbcc67fe7400cea
 license: Apache-2.0
 dep-upp: python3
-
-binbstd: yes
+binbstd: 1
 install: |
-    run python3 configure.py --bootstrap --verbose --with-python=python3 &&
+    run python3 configure.py --bootstrap --verbose --with-python=python3
     run install_bins ninja

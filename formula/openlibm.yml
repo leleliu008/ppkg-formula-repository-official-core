@@ -5,7 +5,7 @@ src-url: https://github.com/JuliaMath/openlibm/archive/v0.8.1.tar.gz
 src-sha: ba8a282ecd92d0033f5656bb20dfc6ea3fb83f90ba69291ac8f7beba42dcffcf
 license: MIT ISC BSD-2-Clause
 
-binbstd: yes
+binbstd: 1
 install: |
     gmakew clean &&
     gmakew install \

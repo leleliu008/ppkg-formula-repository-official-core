@@ -9,7 +9,7 @@ dep-pkg: openssl
 
 install: |
     # Due to freedesktop.org bug 74029, D-Bus capture support is not available on macOS
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         DISABLE_DBUS=ON
     else
         DISABLE_DBUS=OFF
@@ -26,11 +26,9 @@ install: |
         -DDISABLE_BLUETOOTH=OFF \
         -DDISABLE_DAG=ON \
         -DDISABLE_TC=ON \
-        -DDISABLE_SNF=ON &&
-    (
-        cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig" &&
-        sed_in_place 's@-l[^ ]*/libssl\.a@-lssl@g'                    libpcap.pc &&
-        sed_in_place 's@-l[^ ]*/libcrypto\.a@-lcrypto@g'              libpcap.pc &&
-        sed_in_place 's@-l[^ ]*/libssl\.\(so\|dylib\)@-lssl@g'        libpcap.pc &&
-        sed_in_place 's@-l[^ ]*/libcrypto\.\(so\|dylib\)@-lcrypto@g'  libpcap.pc
-    )
+        -DDISABLE_SNF=ON
+    cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
+    sed_in_place 's@-l[^ ]*/libssl\.a@-lssl@g'                    libpcap.pc
+    sed_in_place 's@-l[^ ]*/libcrypto\.a@-lcrypto@g'              libpcap.pc
+    sed_in_place 's@-l[^ ]*/libssl\.\(so\|dylib\)@-lssl@g'        libpcap.pc
+    sed_in_place 's@-l[^ ]*/libcrypto\.\(so\|dylib\)@-lcrypto@g'  libpcap.pc

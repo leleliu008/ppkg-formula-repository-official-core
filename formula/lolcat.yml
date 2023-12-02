@@ -2,7 +2,7 @@ summary: Rainbows and unicorns in your console
 git-url: https://github.com/jaseg/lolcat
 src-url: https://github.com/jaseg/lolcat/archive/refs/tags/v1.4.tar.gz
 src-sha: 6ea43ee2b2bb2f15fc91812b72ebcdaa883052853ed8f055b6f8b38637bda909
-binbstd: yes
+binbstd: 1
 install: |
     run rm -rf lolcat &&
     run rm -rf censor &&

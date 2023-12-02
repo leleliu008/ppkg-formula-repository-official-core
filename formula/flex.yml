@@ -5,13 +5,15 @@ src-sha: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995
 license: BSD-2-Clause
 dep-pkg: gm4
 install: |
-    # https://github.com/westes/flex/issues/428
-    if [ "$NATIVE_OS_NAME" = Ubuntu ] && version_match "$NATIVE_OS_VERS" le 18.04 ; then
-        export CFLAGS="$(printf '%s\n' "$CFLAGS" | sed 's|-Os||')"
-        export CFLAGS="$CFLAGS -g -O2 -D_GNU_SOURCE"
+    if [ "$TARGET_PLATFORM_NAME" = linux ] ; then
+        # https://github.com/westes/flex/issues/428
+        if [ "$NATIVE_OS_NAME" = Ubuntu ] && version_match "$NATIVE_OS_VERS" le 18.04 ; then
+            export CFLAGS="$(printf '%s\n' "$CFLAGS" | sed 's|-Os||')"
+            export CFLAGS="$CFLAGS -g -O2 -D_GNU_SOURCE"
+        fi
     fi
 
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         export LDFLAGS="$LDFLAGS -Wl,-undefined -Wl,dynamic_lookup"
         export ac_cv_func_reallocarray=no
     fi

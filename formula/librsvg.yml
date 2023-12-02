@@ -6,7 +6,7 @@ src-sha: 335fe2e0c2cbf1b7bf0668651224a23e135451f0b1793cd813649be2bffa74e8
 license: LGPL-2.1-or-later
 dep-pkg: gdk-pixbuf pango
 bsystem: configure cargo
-sfslink: no
+binbstd: 0
 install: |
     configure \
         --enable-tools=yes \

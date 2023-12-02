@@ -4,12 +4,12 @@ web-url: http://www.figlet.org/
 src-url: http://ftp.figlet.org/pub/figlet/program/unix/figlet-2.2.5.tar.gz
 src-sha: bf88c40fd0f077dab2712f54f8d39ac952e4e9f2e1882f1195be9e5e4257417d
 license: BSD-3-Clause
-binbstd: yes
+binbstd: 1
 dopatch: |
     # https://wiki.musl-libc.org/faq.html
-    if [ "$NATIVE_OS_LIBC" = musl ] ; then
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         sed_in_place '/_DECLS/d' utf8.h
     fi
 install: |
-    gmakew clean &&
+    gmakew clean
     gmakew install CC=$CC LD=$CC CFLAGS="'$CPPFLAGS -Dunix $CFLAGS'" LDFLAGS="'$LDFLAGS'" prefix=$PACKAGE_INSTALL_DIR

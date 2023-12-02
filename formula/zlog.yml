@@ -4,9 +4,9 @@ src-url: https://github.com/HardySimpson/zlog/archive/1.2.16.tar.gz
 src-sha: 742401902f2134eb272c49631fe5c38d7aeb9a2ad56fa3ec3d15219b371ba655
 license: LGPL-2.1-or-later
 bscript: src
-binbstd: yes
+binbstd: 1
 install: |
-    gmakew clean &&
+    gmakew clean
     gmakew all \
         CC=$CC \
         CFLAGS="'$CPPFLAGS $CFLAGS'" \
@@ -14,5 +14,5 @@ install: |
         OPTIMIZATION= \
         WARNINGS= \
         DEBUG= \
-        STLIB_MAKE_CMD="'$AR rcs libzlog.a'" &&
-    gmakew install PREFIX=$PACKAGE_INSTALL_DIR
+        STLIB_MAKE_CMD="'$AR rcs libzlog.a'"
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

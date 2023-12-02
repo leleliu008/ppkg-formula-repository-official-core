@@ -5,7 +5,7 @@ src-sha: 0591f9fa0339f0d15e75326d0365871c2d4e2ed8aa1ff759b3a55d3734b7d197
 version: 3.6.0
 license: LGPL-2.1-or-later
 dep-upp: gm4 flex bison
-binbstd: yes
+binbstd: 1
 install: |
     gmakew clean &&
     gmakew all CC=$CC CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" BUILD_STATIC_LIB=1 DEBUG=0 &&

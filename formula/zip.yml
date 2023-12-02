@@ -12,7 +12,7 @@ version: 3.0.11
 
 license: Info-ZIP
 dep-pkg: libbz2
-binbstd: yes
+binbstd: 1
 dep-upp: patch
 dopatch: |
     for patchfile in $(cat ../fix/patches/series)
@@ -20,20 +20,20 @@ dopatch: |
         patch -p1 < ../fix/patches/$patchfile || return 1
     done
 
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         sed_in_place '/-DZMEM/c true' unix/configure &&
         sed_in_place '/-DNO_/c  true' unix/configure
     fi
 
 install: |
-    gmakew -f unix/Makefile clean &&
+    gmakew -f unix/Makefile clean
     gmakew -f unix/Makefile generic \
         CC="$CC" \
         CPP="'$CPP'" \
         AS="$AS" \
         AR="$AR" \
         LOCAL_ZIP="'$CFLAGS $CPPFLAGS'" \
-        LFLAGS2="'$LDFLAGS'" &&
+        LFLAGS2="'$LDFLAGS'"
     gmakew -f unix/Makefile install \
         prefix="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"

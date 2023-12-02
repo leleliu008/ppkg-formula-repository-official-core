@@ -13,7 +13,7 @@ install: |
     export CARGO_BUILD_TARGET="$RUST_TARGET"
     export RUST_TARGET="--target $RUST_TARGET"
 
-    if [ "$NATIVE_OS_KIND" = darwin ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         export LIBS=-liconv
     fi
 

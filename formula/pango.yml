@@ -5,7 +5,7 @@ src-url: https://download.gnome.org/sources/pango/1.50/pango-1.50.14.tar.xz
 src-sha: 1d67f205bfc318c27a29cfdfb6828568df566795df0cb51d2189cde7f2d581e8
 license: LGPL-2.0-or-later
 dep-pkg: cairo fribidi harfbuzz
-sfslink: no
+binbstd: 0
 install: |
     LINK_TYPE=shared-most
     mesonw \

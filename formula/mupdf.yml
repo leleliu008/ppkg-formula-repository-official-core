@@ -5,7 +5,7 @@ src-url: https://mupdf.com/downloads/archive/mupdf-1.22.1-source.tar.lz
 src-sha: 33b00317b93bc404cffb67c91a5e6bb1b62051536829171c5f75cbaf2c1ea7df
 license: AGPL-3.0-or-later
 dep-pkg: openjpeg openssl mujs libjpeg-turbo jbig2dec freetype2-with-harfbuzz gumbo-parser freeglut mesa xorg-libxext
-binbstd: yes
+binbstd: 1
 dopatch: |
     for item in $(find thirdparty -maxdepth 1 -mindepth 1 -type d)
     do
@@ -15,7 +15,7 @@ dopatch: |
     done
 
 install: |
-    gmakew clean &&
+    gmakew clean
     gmakew install \
         build=release \
         shared=yes \

@@ -6,7 +6,7 @@ src-sha: b5a052cac8d6b2726bbb1de2b98c6d9204c7619263fb63e9b6b1bd6bbb37bf14
 license: Zlib
 
 bsystem: gmake
-binbstd: yes
+binbstd: 1
 install: |
     export LSOF_INCLUDE="$SDKROOT/usr/include"
     export LSOF_MAKE=gmake

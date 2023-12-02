@@ -5,7 +5,7 @@ src-url: https://github.com/AcademySoftwareFoundation/openexr/archive/v3.1.9.tar
 src-sha: 103e902d3902800ab07b5f3a298be7afd2755312737b2cdbfa01326ff99dac07
 license: BSD-3-Clause
 dep-pkg: imath zlib
-sfslink: no
+binbstd: 0
 install: |
     cmakew \
         -DDOCS=OFF \
