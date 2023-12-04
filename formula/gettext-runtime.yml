@@ -5,7 +5,11 @@ src-url: https://ftp.gnu.org/gnu/gettext/gettext-0.22.4.tar.gz
 src-sha: c1e0bb2a4427a9024390c662cd532d664c4b36b8ff444ed5e54b115fdb7a1aea
 license: GPL-3.0-or-later
 dep-pkg: ncurses libiconv
+dopatch: |
+    sed_in_place '/SUBDIRS =/s|gettext-tools||g' Makefile.in
+    sed_in_place '/SUBDIRS =/s|gnulib-tests||g' gettext-tools/Makefile.in
 install: |
+    #export LDFLAGS="$LDFLAGS -L$PWD/gettext-tools/gnulib-lib/.libs/"
     configure \
         --with-included-glib \
         --with-included-regex \

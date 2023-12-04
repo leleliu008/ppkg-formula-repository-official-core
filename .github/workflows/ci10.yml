@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow10
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [PKGLIST]
+        pkg: [utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorriso,xpup,xsltproc,xxd,yajl,yaml-cpp,yasm,youtubedr,yq,yyjson,z3,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.17]
-        pkg: [PKGLIST]
+        pkg: [utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorriso,xpup,xsltproc,xxd,yajl,yaml-cpp,yasm,youtubedr,yq,yyjson,z3,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -78,7 +78,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorriso,xpup,xsltproc,xxd,yajl,yaml-cpp,yasm,youtubedr,yq,yyjson,z3,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

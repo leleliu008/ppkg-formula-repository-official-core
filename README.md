@@ -38,15 +38,13 @@ a ppkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is us
 |`xxflags`|optional|append to `CXXFLAGS`|
 |`ldflags`|optional|append to `LDFLAGS`|
 ||||
-|`exetype`|optional|indicates whether can be built as statically-linked executable.<br>value can be one of `statically-linked` `dynamically-linked`. If this mapping is not present, `statically-linked` will be used. this mapping only affects `GNU/Linux` system.|
-||||
-|`bsystem`|optional|build system.<br>values can be some of `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go`|
+|`bsystem`|optional|build system name.<br>values can be some of `autogen` `autotools` `configure` `cmake` `cmake-gmake` `cmake-ninja` `meson` `xmake` `gmake` `ninja` `cargo` `go`|
 |`bscript`|optional|the directory where the build script is located in, relative to `PACKAGE_WORKING_DIR`. build script such as `configure`, `Makefile`, `CMakeLists.txt`, `meson.build`, `Cargo.toml`, etc.|
-|`binbstd`|optional|whether build in the directory where the build script is located in, otherwise build in other directory. value can be `yes` or `no`. default value is `no`.|
-|`prepare`|optional|POSIX shell code to be run before `install`. `pwd` is `$PACKAGE_BSCRIPT_DIR`|
+|`binbstd`|optional|whether to build in the directory where the build script is located in, otherwise build in other directory. value shall be `0` or `1`. default value is `0`.|
+|`dopatch`|optional|POSIX shell code to be run before `install`. `pwd` is `$PACKAGE_BSCRIPT_DIR`|
 |`install`|optional|POSIX shell code to be run when user run `ppkg install <PKG>`. If this mapping is not present, `ppkg` will run default install code according to `bsystem`|
-|`symlink`|optional|whether to symlink installed files to `$PPKG_HOME/symlinked/*`. value can be `yes` or `no`. default value is `yes`.|
-|`sfslink`|optional|whether to support fully statically linked executables. value can be `yes` or `no`. default value is `yes`. If `no`, `ppkg` would not add `--static` and `-static` options to `LDFLAGS` even if `--link-type=static-fully` install option is given.|
+|`symlink`|optional|whether to symlink installed files to `$PPKG_HOME/symlinked/*`. value shall be `0` or `1`. default value is `1`.|
+|`sfslink`|optional|whether to support fully statically linked executables. value shall be `0` or `1`. default value is `1`. If `0` is given, `ppkg` would not add `--static` and `-static` options to `LDFLAGS` even if `--link-type=static-fully` install option is given.|
 
 ### Appendix1: commands that can be invoked in prepare and install block
 |command|usage-example|
@@ -83,6 +81,14 @@ a ppkg formula is a [YAML](https://yaml.org/spec/1.2.2/) format file which is us
 |`NATIVE_OS_VERS`|current machine os version.|
 |`NATIVE_OS_ARCH`|current machine os arch.|
 |`NATIVE_OS_NCPU`|current machine os's cpu core count.|
+|||
+|`TARGET_OS_KIND`|os kind that is built for.|
+|`TARGET_OS_TYPE`|os type that is built for.|
+|`TARGET_OS_VERS`|os vers that is built for.|
+|`TARGET_OS_ARCH`|os arch that is built for.|
+|`TARGET_OS_LIBC`|os libc that is built with.|
+|||
+|`CROSS_COMPILING`|value shall be 0 or 1. indicates whether is cross-compiling.|
 |||
 |`PPKG_VERSION`|the version of `ppkg`.|
 |`PPKG_HOME`|the home directory of `ppkg`.|

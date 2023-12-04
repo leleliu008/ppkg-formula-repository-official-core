@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow7
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [PKGLIST]
+        pkg: [mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mupdf,nano,nanomsg,nasm,navi,ncdu,neofetch,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patch,patchelf,pax]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.17]
-        pkg: [PKGLIST]
+        pkg: [mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mupdf,nano,nanomsg,nasm,navi,ncdu,neofetch,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patch,patchelf,pax]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -78,7 +78,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [12]
-        pkg: [PKGLIST]
+        pkg: [mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mupdf,nano,nanomsg,nasm,navi,ncdu,neofetch,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patch,patchelf,pax]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}
