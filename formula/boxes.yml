@@ -17,9 +17,9 @@ install: |
 
     export CPPFLAGS="$CPPFLAGS -I. -I../src -include string.h"
 
-    gmakew clean &&
-    gmakew CC=$CC CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
+    gmakew clean
+    gmakew CC=$CC CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'"
 
-    run install_bins out/boxes &&
-    run install_mans doc/boxes.1 &&
+    run install_bins out/boxes
+    run install_mans doc/boxes.1
     run install_etcs boxes-config

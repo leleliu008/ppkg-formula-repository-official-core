@@ -7,6 +7,6 @@ license: Vim
 binbstd: 1
 bscript: src/xxd
 install: |
-    gmakew clean &&
-    gmakew &&
+    gmakew clean
+    gmakew
     install_bins xxd

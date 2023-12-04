@@ -4,10 +4,6 @@ git-url: https://repo.or.cz/tinycc.git
 src-url: https://download.savannah.nongnu.org/releases/tinycc/tcc-0.9.27.tar.bz2
 src-sha: de23af78fca90ce32dff2dd45b3432b2334740bb9bb7b05bf60fdbfc396ceb9c
 license: LGPL-2.1-or-later
-bsystem: gmake
-
-dopatch: printf 'clean:\n\n' > lib/Makefile
-
 install: |
     run $PACKAGE_BSCRIPT_DIR/configure \
         --source-path=$PACKAGE_BSCRIPT_DIR \
@@ -16,6 +12,5 @@ install: |
         --ar=$AR \
         --extra-cflags="'$CPPFLAGS $CFLAGS'" \
         --extra-ldflags="'$LDFLAGS'"
-    gmakew clean
     gmakew ONE_SOURCE=yes
     gmakew install

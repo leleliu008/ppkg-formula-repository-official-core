@@ -7,5 +7,4 @@ dep-upp: git
 dopatch: |
     sed_in_place '/target_link_libraries(${OUT_FILE} m3)/d'     CMakeLists.txt
     sed_in_place '185i target_link_libraries(${OUT_FILE} m3 m)' CMakeLists.txt
-
 install: cmakew && install_bins wasm3

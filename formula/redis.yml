@@ -8,6 +8,6 @@ dep-pkg: openssl
 
 binbstd: 1
 install: |
-    gmakew clean &&
-    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" RANLIB="$RANLIB" BUILD_TLS=yes USE_JEMALLOC=no &&
+    gmakew clean
+    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" RANLIB="$RANLIB" BUILD_TLS=yes USE_JEMALLOC=no
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

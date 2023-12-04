@@ -8,6 +8,6 @@ ppflags: -DMDB_USE_ROBUST=0
 bscript: libraries/liblmdb
 binbstd: 1
 install: |
-    gmakew clean &&
-    gmakew CC=$CC XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR=$AR &&
+    gmakew clean
+    gmakew CC=$CC XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR=$AR
     gmakew install prefix=$PACKAGE_INSTALL_DIR

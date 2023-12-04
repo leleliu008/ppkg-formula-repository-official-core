@@ -21,7 +21,7 @@ dopatch: |
     done
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sed_in_place '/-DZMEM/c true' unix/configure &&
+        sed_in_place '/-DZMEM/c true' unix/configure
         sed_in_place '/-DNO_/c  true' unix/configure
     fi
 

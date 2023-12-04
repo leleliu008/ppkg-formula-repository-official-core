@@ -3,9 +3,9 @@ git-url: https://git.savannah.gnu.org/git/wget.git
 web-url: https://www.gnu.org/software/wget
 src-url: https://ftp.gnu.org/gnu/wget/wget-1.21.4.tar.gz
 src-sha: 81542f5cefb8faacc39bbbc6c82ded80e3e4a88505ae72ea51df27525bcde04c
-dep-pkg: openssl libidn2 util-linux
 license: GPL-3.0-or-later
-
+dep-pkg: openssl libidn2 util-linux
+dep-upp: perl
 install: |
     configure \
         --disable-pcre \

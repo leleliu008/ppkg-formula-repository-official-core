@@ -7,8 +7,8 @@ dep-pkg: openssl gettext git
 
 binbstd: 1
 install: |
-    gmakew clean &&
-    gmakew &&
+    gmakew clean
+    gmakew
     gmakew install \
         prefix=$PACKAGE_INSTALL_DIR \
         CGIT_SCRIPT_PATH=$PACKAGE_INSTALL_DIR/var/www \

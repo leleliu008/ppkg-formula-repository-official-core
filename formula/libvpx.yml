@@ -27,6 +27,6 @@ install: |
         --disable-unit-tests \
         --disable-realtime-only \
         --enable-pic \
-        --enable-vp9-highbitdepth &&
+        --enable-vp9-highbitdepth
     gmakew
     gmakew install

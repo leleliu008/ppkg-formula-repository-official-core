@@ -6,6 +6,6 @@ license: MIT
 dep-pkg: xorg-proto
 dopatch: sed_in_place 's|<sys/stropts.h>|<sys/ioctl.h>|' Xtranslcl.c
 install: |
-    configure --enable-docs=no &&
-    install -d "$PACKAGE_INSTALL_DIR/lib" &&
+    configure --enable-docs=no
+    install -d "$PACKAGE_INSTALL_DIR/lib"
     mv "$PACKAGE_INSTALL_DIR/share/pkgconfig" "$PACKAGE_INSTALL_DIR/lib/"

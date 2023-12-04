@@ -15,6 +15,6 @@ dopatch: |
     fi
 
 install: |
-    gmakew clean &&
-    gmakew CC=$CC CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" &&
+    gmakew clean
+    gmakew CC=$CC CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'"
     install_bins ttyrec ttyplay ttytime

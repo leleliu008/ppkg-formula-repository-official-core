@@ -13,10 +13,10 @@ bsystem: go
 install: |
     export GOROOT_BOOTSTRAP="$(go env GOROOT)"
 
-    run ./make.bash &&
-    run cd .. &&
-    run rm -rf _ &&
-    run rm -rf pkg/obj &&
-    run cd .. &&
-    run install -d "$PACKAGE_INSTALL_DIR" &&
+    run ./make.bash
+    run cd ..
+    run rm -rf _
+    run rm -rf pkg/obj
+    run cd ..
+    run install -d "$PACKAGE_INSTALL_DIR"
     run mv src/*   "$PACKAGE_INSTALL_DIR"

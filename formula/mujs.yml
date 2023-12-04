@@ -8,7 +8,7 @@ binbstd: 1
 install: |
     sed_in_place "s|CFLAGS = -std=c99|CFLAGS = $CPPFLAGS $LDFLAGS -std=c99|" Makefile
     sed_in_place 's|-lreadline|-lreadline -lncurses|' Makefile
-    gmakew clean &&
-    gmakew release &&
-    gmakew install-static prefix="$PACKAGE_INSTALL_DIR" VERSION=$PACKAGE_VERSION &&
+    gmakew clean
+    gmakew release
+    gmakew install-static prefix="$PACKAGE_INSTALL_DIR" VERSION=$PACKAGE_VERSION
     gmakew install-shared prefix="$PACKAGE_INSTALL_DIR" VERSION=$PACKAGE_VERSION

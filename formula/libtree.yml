@@ -5,6 +5,6 @@ src-sha: 6148436f54296945d22420254dd78e1829d60124bb2f5b9881320a6550f73f5c
 license: MIT
 binbstd: 1
 install: |
-    gmakew clean &&
-    gmakew CC='$CC' CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" &&
+    gmakew clean
+    gmakew CC='$CC' CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'"
     gmakew install PREFIX=$PACKAGE_INSTALL_DIR

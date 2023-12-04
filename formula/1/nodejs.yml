@@ -13,5 +13,5 @@ install: |
         --prefix=$PACKAGE_INSTALL_DIR \
         --fully-static \
         --enable-static \
-        --verbose &&
+        --verbose
     gmakew install

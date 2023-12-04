@@ -7,6 +7,6 @@ license: MIT
 install: |
     cmakew \
         -DLUAU_BUILD_CLI=ON \
-        -DLUAU_BUILD_TESTS=OFF &&
-    install_bins luau luau-analyze &&
+        -DLUAU_BUILD_TESTS=OFF
+    install_bins luau luau-analyze
     install_libs libLuau.Analysis.a libLuau.Ast.a libLuau.Compiler.a libLuau.VM.a

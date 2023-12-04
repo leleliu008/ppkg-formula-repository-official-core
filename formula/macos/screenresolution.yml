@@ -5,6 +5,6 @@ src-sha: d3761663eaf585b014391a30a77c9494a6404e78e8a4863383e12c59b0f539eb
 license: GPL-2.0-only
 binbstd: 1
 install: |
-    gmakew clean &&
-    gmakew CC=$CC ARCH_FLAGS="'-arch $TARGET_PLATFORM_ARCH'" &&
+    gmakew clean
+    gmakew CC=$CC ARCH_FLAGS="'-arch $TARGET_PLATFORM_ARCH'"
     gmakew install PREFIX=$PACKAGE_INSTALL_DIR

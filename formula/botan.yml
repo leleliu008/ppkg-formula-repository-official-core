@@ -15,5 +15,5 @@ install: |
         --cc=gcc \
         --with-zlib \
         --with-bzip2 \
-        --with-sqlite3 &&
+        --with-sqlite3
     gmakew install

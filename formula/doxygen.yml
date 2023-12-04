@@ -6,4 +6,15 @@ src-sha: 05e3d228e8384b5f3af9c8fd6246d22804acb731a3a24ce285c8986ed7e14f62
 license: GPL-2.0-only
 dep-upp: gm4 flex bison python3
 dep-pkg: libiconv
+dopatch: |
+    cat > cmake/FindIconv.cmake <<EOF
+    set(ICONV_INCLUDE_DIR "$libiconv_INCLUDE_DIR")
+    set(ICONV_LIBRARY     -liconv)
+    set(ICONV_LIBRARIES   -liconv)
+
+    include(FindPackageHandleStandardArgs)
+    find_package_handle_standard_args(Iconv REQUIRED_VARS ICONV_LIBRARY ICONV_INCLUDE_DIR VERSION_VAR ICONV_VERSION)
+    mark_as_advanced(ICONV_INCLUDE_DIR ICONV_LIBRARY)
+    EOF
+
 install: cmakew -DBUILD_SHARED_LIBS=OFF

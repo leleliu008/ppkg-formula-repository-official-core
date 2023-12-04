@@ -8,7 +8,7 @@ license: GPL-3.0-or-later
 bscript: imagequant-sys
 binbstd: 1
 install: |
-    cargow build &&
-    install_incs libimagequant.h &&
-    mv ../target/$RUST_TARGET/release/libimagequant_sys.a libimagequant.a &&
+    cargow build
+    install_incs libimagequant.h
+    mv ../target/$RUST_TARGET/release/libimagequant_sys.a libimagequant.a
     install_libs libimagequant.a

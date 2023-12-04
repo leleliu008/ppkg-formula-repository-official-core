@@ -7,6 +7,6 @@ license: LGPL-2.1-or-later
 dep-upp: gm4 flex bison
 binbstd: 1
 install: |
-    gmakew clean &&
-    gmakew all CC=$CC CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" BUILD_STATIC_LIB=1 DEBUG=0 &&
+    gmakew clean
+    gmakew all CC=$CC CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" BUILD_STATIC_LIB=1 DEBUG=0
     gmakew install PREFIX=$PACKAGE_INSTALL_DIR MANDIR=$PACKAGE_INSTALL_DIR/share/man ETCDIR=$PACKAGE_INSTALL_DIR/etc

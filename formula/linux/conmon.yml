@@ -6,5 +6,5 @@ license: Apache-2.0
 dep-pkg: glib libseccomp systemd
 bsystem: gmake go
 install: |
-    gmakew clean &&
+    gmakew clean
     gmakew install PREFIX=$PACKAGE_INSTALL_DIR

@@ -3,7 +3,6 @@ web-url: https://xmake.io/
 git-url: https://github.com/xmake-io/xmake
 src-url: https://github.com/xmake-io/xmake/releases/download/v2.8.5/xmake-v2.8.5.tar.gz
 src-sha: 19c67be3bcfcbda96ca87a18effac39bfccc443fbb3754c7bbc01511decd24af
-src-url: dir:///home/leleliu008/xmake
 license: Apache-2.0
 binbstd: 1
 install: |
@@ -28,7 +27,7 @@ install: |
     else
         run ./configure --host=
     fi
-    #return 1
+
     gmakew clean
     gmakew
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
