@@ -5,7 +5,7 @@ src-url: https://github.com/libproxy/libproxy/archive/refs/tags/0.5.3.tar.gz
 src-sha: 0d8d8e4dd96239ba173c2b18905c0bb6e161fd5000e1e0aeace16f754e9a9108
 license: LGPL-2.1-or-later
 dep-pkg: glib gsettings-desktop-schemas dbus duktape libcurl
-binbstd: 0
+sfslink: 0
 dopatch: |
     sed_in_place 's|/bin/bash|/usr/bin/env bash|' data/check-code-style
     sed_in_place 's|/bin/bash|/usr/bin/env bash|' data/pre-commit-hook

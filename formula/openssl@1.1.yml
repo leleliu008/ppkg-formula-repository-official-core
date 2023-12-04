@@ -6,7 +6,7 @@ src-sha: e2f8d84b523eecd06c7be7626830370300fbcc15386bf5142d72758f6963ebc6
 dep-pkg: perl
 license: OpenSSL
 symlink: 0
-binbstd: 0
+sfslink: 0
 bsystem: gmake
 binbstd: 1
 install: |

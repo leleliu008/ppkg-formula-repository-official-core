@@ -18,4 +18,4 @@ install: |
         --with-zlib
 
 # Static linking is not supported as it disables dlopen() and certain security features (e.g. RELRO, ASLR)
-binbstd: 0
+sfslink: 0

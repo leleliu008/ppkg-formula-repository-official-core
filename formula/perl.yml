@@ -5,7 +5,7 @@ src-url: https://www.cpan.org/src/5.0/perl-5.38.0.tar.xz
 src-uri: https://cpan.metacpan.org/authors/id/R/RJ/RJBS/perl-5.38.0.tar.xz
 src-sha: eca551caec3bc549a4e590c0015003790bdd1a604ffe19cc78ee631d51f7072e
 license: GPL-1.0-or-later
-binbstd: 0
+sfslink: 0
 binbstd: 1
 install: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then

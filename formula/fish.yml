@@ -5,5 +5,5 @@ src-url: https://github.com/fish-shell/fish-shell/releases/download/3.6.1/fish-3
 src-sha: 55402bb47ca6739d8aba25e41780905b5ce1bce0a5e0dd17dca908b5bc0b49b2
 license: GPL-2.0-or-later
 dep-pkg: libpcre2 readline
-binbstd: 0
+sfslink: 0
 install: cmakew -DWITH_GETTEXT=OFF

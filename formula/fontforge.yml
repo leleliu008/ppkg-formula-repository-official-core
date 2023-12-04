@@ -5,7 +5,7 @@ src-url: https://github.com/fontforge/fontforge/releases/download/20230101/fontf
 src-sha: ca82ec4c060c4dda70ace5478a41b5e7b95eb035fe1c4cf85c48f996d35c60f8
 license: GPL-3.0-or-later
 dep-pkg: pango libuninameslist libspiro giflib libjpeg-turbo libtiff libxml2 python3
-binbstd: 0
+sfslink: 0
 dopatch: |
     TIFF_LIBRARIES="$(pkg-config --libs-only-l libtiff-4 | tr ' ' ';')"
     cat > cmake/packages/FindTIFF.cmake <<EOF

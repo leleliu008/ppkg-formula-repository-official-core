@@ -3,8 +3,9 @@ git-url: https://github.com/curl/curl
 web-url: https://curl.haxx.se/
 src-url: https://curl.haxx.se/download/curl-8.3.0.tar.bz2
 src-sha: 051a217095671e925a129ba9e2ff2e223b44b08399003ba50738060955d010ff
-dep-pkg: libnghttp2 openssl libzstd brotli
 license: curl
+dep-pkg: libnghttp2 openssl libzstd brotli
+dep-upp: perl
 dopatch: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
 install: |
     configure \

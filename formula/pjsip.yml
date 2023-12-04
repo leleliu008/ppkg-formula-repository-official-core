@@ -6,7 +6,7 @@ src-sha: 4178bb9f586299111463fc16ea04e461adca4a73e646f8ddef61ea53dafa92d9
 license: GPL-2.0-or-later
 dep-pkg: openssl
 binbstd: 1
-binbstd: 0
+sfslink: 0
 parallel: 0
 install: |
     export LD="$CC"

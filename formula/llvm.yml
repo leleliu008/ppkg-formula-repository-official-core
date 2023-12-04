@@ -16,7 +16,7 @@ license: Apache-2.0 with LLVM-exception
 dep-pkg: python3 binutils libelf libedit libffi libxml2 libz3.a
 dep-upp: swig patch
 bscript: llvm
-binbstd: 0
+sfslink: 0
 dopatch2: |
     cd ..
     patch -p1 < ../fix/d2a2b61f7024fdf45f24a8ad8592808fc94c9ce6db8df3152fd9f46180c43074.patch
