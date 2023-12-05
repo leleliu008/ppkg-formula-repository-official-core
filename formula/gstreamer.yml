@@ -8,7 +8,7 @@ dep-upp: gm4 bison flex
 dep-pkg: glib gobject-introspection gettext
 sfslink: 0
 install: |
-    INSTALL_LIB=both
+    LINK_TYPE=shared-most
     mesonw \
         -Dintrospection=enabled \
         -Dptp-helper-permissions=none
