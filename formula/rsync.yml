@@ -13,4 +13,4 @@ license: GPL-3.0-or-later
 dep-pkg: openssl popt lz4 libzstd xxhash libiconv
 dep-upp: patch autoconf
 dopatch: patch -p1 < ../fix/patches/fileflags.diff
-install: configure --disable-simd --enable-ipv6 --with-included-popt=no --with-included-zlib=no
+install: configure --disable-simd --enable-ipv6 --with-included-popt=no --with-included-zlib=no LIBS=-lpthread

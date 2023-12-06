@@ -3,4 +3,14 @@ web-url: https://gstreamer.freedesktop.org/projects/orc.html
 src-url: https://gstreamer.freedesktop.org/src/orc/orc-0.4.34.tar.xz
 src-sha: 8f47abb3f097171e44eb807adcdabd860fba2effd37d8d3c4fbd5f341cadd41f
 license: BSD-3-Clause
-install: mesonw -Dgtk_doc=disabled
+dopatch: |
+    sed_in_place 's|link_with : orc_lib|link_with : orc_lib.get_static_lib()|' orc/meson.build
+    sed_in_place 's|link_with : orc_test_lib|link_with : orc_test_lib.get_static_lib()|' orc-test/meson.build
+install: |
+    mesonw \
+        -Dbenchmarks=disabled \
+        -Dexamples=disabled \
+        -Dgtk_doc=disabled \
+        -Dtools=enabled \
+        -Dtests=disabled \
+        -Dorc-test=enabled
