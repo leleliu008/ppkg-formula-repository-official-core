@@ -1,8 +1,8 @@
 summary: A free and easy-to-use client-side URL transfer library
 git-url: https://github.com/curl/curl
 web-url: https://curl.haxx.se/
-src-url: https://curl.haxx.se/download/curl-8.2.1.tar.bz2                                                                                                
-src-sha: 0f1e31ebe336c09ec66381f1532f8350e466e1d02ffe10c4ac44a867f1b9d343
+src-url: https://curl.haxx.se/download/curl-8.5.0.tar.bz2
+src-sha: ce4b6a6655431147624aaf582632a36fe1ade262d5fab385c60f78942dd8d87b
 license: curl
 dep-pkg: libnghttp2 openssl libzstd zlib brotli
 dep-upp: perl
