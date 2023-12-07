@@ -25,7 +25,7 @@ install: |
 
         run ./configure --host="$TARGET_TRIPLE"
     else
-        run ./configure --host=
+        run ./configure
     fi
 
     gmakew clean
