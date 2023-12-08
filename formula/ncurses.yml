@@ -4,14 +4,15 @@ web-url: https://www.gnu.org/software/ncurses
 src-url: https://ftp.gnu.org/gnu/ncurses/ncurses-6.4.tar.gz
 src-sha: 6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159
 license: MIT
+dopatch: |
+    if [ "$CROSS_COMPILING" = 1 ] && [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
+        sed_in_place 's|-Bshareable|-shared|g' configure
+        export LD="$CC"
+    fi
 install: |
     unset TERMINFO
 
     export LDCONFIG=true
-
-    if [ "$CROSS_COMPILING" = 1 ] && [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
-        export LD="$CC"
-    fi
 
     configure \
         --with-pkg-config-libdir="$PACKAGE_INSTALL_DIR/lib/pkgconfig" \
