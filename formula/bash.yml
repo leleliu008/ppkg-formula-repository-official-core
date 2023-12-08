@@ -5,18 +5,10 @@ src-url: https://ftp.gnu.org/gnu/bash/bash-5.2.21.tar.gz
 src-sha: c8e31bdc59b69aaffc5b36509905ba3e5cbb12747091d27b4b977f078560d5b8
 license: GPL-3.0-or-later
 dep-pkg: readline
-
 install: |
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        CONFIGURE_OPTIONS_EXTRA=--disable-static-link
-    else
-        CONFIGURE_OPTIONS_EXTRA=--enable-static-link
-    fi
-
     configure \
         --without-bash-malloc \
         --disable-profiling \
         --enable-readline \
-        --enable-select \
         --enable-history \
-        $CONFIGURE_OPTIONS_EXTRA
+        --enable-select
