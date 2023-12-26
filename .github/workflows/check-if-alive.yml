@@ -20,4 +20,8 @@ jobs:
       - run: ./ppkg env
       - run: ./ppkg sysinfo
       - run: ./ppkg update
-      - run: ./ppkg fetch @all
+      - run: |
+          for item in $(./ppkg ls-available)
+          do
+            ./ppkg fetch @all
+          done
