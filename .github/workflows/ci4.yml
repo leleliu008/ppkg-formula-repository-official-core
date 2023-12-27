@@ -46,7 +46,7 @@ jobs:
       matrix:
         tag: [3.17]
         pkg: [gmake,gn,gnu-barcode,gnupg,gnuplot,gnu-which,godu,gogs,golang,go-md2man,gomobile,google-benchmark,google-highway,goreleaser,gosh,go-tools,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,grep,grex,groff,gron,gsed,hashcat,helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto]
-        flavor: [sh]
+        flavor: [c]
 
     runs-on:   ubuntu-latest
     container: alpine:${{ matrix.tag }}

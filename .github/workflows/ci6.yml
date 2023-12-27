@@ -46,7 +46,7 @@ jobs:
       matrix:
         tag: [3.17]
         pkg: [librasterlite,libraw,libreplaygain,libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libupnp,libuvc,libwebm,libwordexp,libxcrypt,libxml2-utils,libyuv,lighttpd,lima,links,livego,llhttp,llvm,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat,mediainfo]
-        flavor: [sh]
+        flavor: [c]
 
     runs-on:   ubuntu-latest
     container: alpine:${{ matrix.tag }}

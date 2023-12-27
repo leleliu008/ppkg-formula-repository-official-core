@@ -46,7 +46,7 @@ jobs:
       matrix:
         tag: [3.17]
         pkg: [pax,pcre,pcre2,pget,physfs,pigz,pipewire,pjsip,pkgconf,pkg-config,plog,plzip,pngquant,pocl,poco,ppkg,procs,progress,proj,pup,putty,pybind11,python@3.12,python3-setup,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtorrent,ruff,rust-analyzer,sassc,scc,sccache,sd,shaderc,shc]
-        flavor: [sh]
+        flavor: [c]
 
     runs-on:   ubuntu-latest
     container: alpine:${{ matrix.tag }}

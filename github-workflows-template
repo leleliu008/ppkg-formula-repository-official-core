@@ -46,7 +46,7 @@ jobs:
       matrix:
         tag: [3.17]
         pkg: [PKGLIST]
-        flavor: [sh]
+        flavor: [c]
 
     runs-on:   ubuntu-latest
     container: alpine:${{ matrix.tag }}
