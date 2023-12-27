@@ -14,7 +14,7 @@ jobs:
       matrix:
         tag: [22.04]
         pkg: [shell2http,shiori,silicon,six,sjpeg,skcms,sl,socat,soundtouch,spirv-tools,sqlite3,srs,starship,stylua,supervisord,suricata,svn-lite,syncthing,sysinfo,szip,talloc,tarlz,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego,twolame,typos,uctags,unbound,unixodbc]
-        flavor: [sh]
+        flavor: [c]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

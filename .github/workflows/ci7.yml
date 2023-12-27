@@ -14,7 +14,7 @@ jobs:
       matrix:
         tag: [22.04]
         pkg: [mesalink,mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mupdf,nano,nanomsg,nasm,navi,ncdu,neofetch,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patch,patchelf]
-        flavor: [sh]
+        flavor: [c]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

@@ -14,7 +14,7 @@ jobs:
       matrix:
         tag: [22.04]
         pkg: [jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lexbor,lf,libaec,libao,libavif,libb2,libbcrypt,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdeflate,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmagic,libmaxminddb,libmetalink,libmill,libmms,libmnl,libphonenumber,libpipeline,libprotobuf,libproxy,libqalculate,libraqm]
-        flavor: [sh]
+        flavor: [c]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

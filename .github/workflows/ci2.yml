@@ -14,7 +14,7 @@ jobs:
       matrix:
         tag: [22.04]
         pkg: [catimg,ccache,cdrtools,cereal,c-examples,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,circleci-cli,cli11,cmake,coreutils,cpio,cppcheck,cppunit,cpu_features,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,delta,diffutils,distcc,dmalloc,dns2tcp,dnsmap,dog,doggo,dos2unix,doxygen,dua,duf,dufs,dust,e2fsprogs]
-        flavor: [sh]
+        flavor: [c]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}

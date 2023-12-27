@@ -14,7 +14,7 @@ jobs:
       matrix:
         tag: [22.04]
         pkg: [easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flex,flock,fortune,fselect,fsmon,fswatch,fzf,fzy,garble,gawk,gbt,gcc,gcc@13,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gh,gindent,git,git-lfs,gitui,gitwatch,glew,glib-tools,glow,glslviewer,glyr]
-        flavor: [sh]
+        flavor: [c]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
