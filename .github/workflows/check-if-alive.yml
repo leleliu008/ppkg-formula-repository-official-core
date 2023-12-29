@@ -23,5 +23,5 @@ jobs:
       - run: |
           for item in $(./ppkg ls-available)
           do
-            ./ppkg fetch @all
+            ./ppkg fetch "$item"
           done
