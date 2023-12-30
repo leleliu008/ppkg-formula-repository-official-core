@@ -8,13 +8,13 @@ on:
 
 jobs:
   ubuntu:
-    if: ${{ false }}
+    if: ${{ true }}
     strategy:
       fail-fast: false
       matrix:
         tag: [22.04]
         pkg: [unrar,uppm,usbutils,utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorriso,xpup,xsltproc,xxd,yajl,yaml-cpp,yasm,youtubedr,yq,yyjson,z3,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
-        flavor: [c]
+        flavor: [sh, c]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -44,9 +44,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.17]
+        tag: [3.18]
         pkg: [unrar,uppm,usbutils,utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorriso,xpup,xsltproc,xxd,yajl,yaml-cpp,yasm,youtubedr,yq,yyjson,z3,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
-        flavor: [c]
+        flavor: [sh, c]
 
     runs-on:   ubuntu-latest
     container: alpine:${{ matrix.tag }}
@@ -84,9 +84,6 @@ jobs:
     runs-on: macos-${{ matrix.tag }}
 
     steps:
-        - run: brew update
-        - run: brew install --overwrite python@3.10 python@3.11
-
         - uses: actions/checkout@v3
 
         - if: matrix.flavor == 'sh'

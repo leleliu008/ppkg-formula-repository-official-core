@@ -8,13 +8,13 @@ on:
 
 jobs:
   ubuntu:
-    if: ${{ false }}
+    if: ${{ true }}
     strategy:
       fail-fast: false
       matrix:
         tag: [22.04]
         pkg: [librasterlite,libraw,libreplaygain,libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libupnp,libuvc,libwebm,libwordexp,libxcrypt,libxml2-utils,libyuv,lighttpd,lima,links,livego,llhttp,llvm,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat,mediainfo]
-        flavor: [c]
+        flavor: [sh, c]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -44,9 +44,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.17]
+        tag: [3.18]
         pkg: [librasterlite,libraw,libreplaygain,libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libupnp,libuvc,libwebm,libwordexp,libxcrypt,libxml2-utils,libyuv,lighttpd,lima,links,livego,llhttp,llvm,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat,mediainfo]
-        flavor: [c]
+        flavor: [sh, c]
 
     runs-on:   ubuntu-latest
     container: alpine:${{ matrix.tag }}
@@ -84,9 +84,6 @@ jobs:
     runs-on: macos-${{ matrix.tag }}
 
     steps:
-        - run: brew update
-        - run: brew install --overwrite python@3.10 python@3.11
-
         - uses: actions/checkout@v3
 
         - if: matrix.flavor == 'sh'
