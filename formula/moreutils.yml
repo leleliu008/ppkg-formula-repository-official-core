@@ -8,5 +8,5 @@ dep-pkg: perl
 dep-upp: libxml2-utils xsltproc docbook-xsl
 binbstd: 1
 install: |
-    gmakew all CFLAGS="'$CFLAGS'" DOCBOOKXSL="$("$UPPM" info docbook-xsl installed-dir)/xslt/1.0/nons"
+    gmakew all CFLAGS="'$CFLAGS'" DOCBOOKXSL="$("$PPKG_CORE_DIR/uppm" info docbook-xsl installed-dir)/xslt/1.0/nons"
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
