@@ -7,38 +7,6 @@ on:
     branches: [ master ]
 
 jobs:
-  ubuntu:
-    if: ${{ true }}
-    strategy:
-      fail-fast: false
-      matrix:
-        tag: [22.04]
-        pkg: [jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lexbor,lf,libaec,libao,libavif,libb2,libbcrypt,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdeflate,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmagic,libmaxminddb,libmetalink,libmill,libmms,libmnl,libphonenumber,libpipeline,libprotobuf,libproxy,libqalculate,libraqm]
-        flavor: [sh, c]
-
-    runs-on:   ubuntu-latest
-    container: ubuntu:${{ matrix.tag }}
-
-    steps:
-        - run: apt -y update
-        - run: apt -y install curl xz-utils g++ gfortran linux-headers-generic
-
-        - uses: actions/checkout@v3
-
-        - if: matrix.flavor == 'sh'
-          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg && chmod a+x ppkg
-
-        - if: matrix.flavor == 'c'
-          run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
-            tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
-            mv bin/ppkg .
-
-        - run: ./ppkg setup
-        - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-official-core
-        - run: mv formula ~/.ppkg/repos.d/test/
-        - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-full
-
   alpine:
     if: ${{ true }}
     strategy:
@@ -55,7 +23,7 @@ jobs:
         - run: apk update
         - run: apk add curl g++ gfortran libc-dev linux-headers
 
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
 
         - if: matrix.flavor == 'sh'
           run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg && chmod a+x ppkg
@@ -72,19 +40,52 @@ jobs:
         - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-full
 
 
-  macos:
-    if: ${{ false }}
+  ubuntu:
+    if: ${{ true }}
     strategy:
       fail-fast: false
       matrix:
-        tag: [12]
+        tag: [22.04]
+        pkg: [jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lexbor,lf,libaec,libao,libavif,libb2,libbcrypt,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdeflate,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmagic,libmaxminddb,libmetalink,libmill,libmms,libmnl,libphonenumber,libpipeline,libprotobuf,libproxy,libqalculate,libraqm]
+        flavor: [sh, c]
+
+    runs-on:   ubuntu-latest
+    container: ubuntu:${{ matrix.tag }}
+
+    steps:
+        - run: apt -y update
+        - run: apt -y install curl xz-utils g++ gfortran linux-headers-generic
+
+        - uses: actions/checkout@v4
+
+        - if: matrix.flavor == 'sh'
+          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg && chmod a+x ppkg
+
+        - if: matrix.flavor == 'c'
+          run: |
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
+            mv bin/ppkg .
+
+        - run: ./ppkg setup
+        - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-official-core
+        - run: mv formula ~/.ppkg/repos.d/test/
+        - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-most
+
+
+  macos:
+    if: ${{ true }}
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [13]
         pkg: [jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lexbor,lf,libaec,libao,libavif,libb2,libbcrypt,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdeflate,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmagic,libmaxminddb,libmetalink,libmill,libmms,libmnl,libphonenumber,libpipeline,libprotobuf,libproxy,libqalculate,libraqm]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}
 
     steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
 
         - if: matrix.flavor == 'sh'
           run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg && chmod a+x ppkg
