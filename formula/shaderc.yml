@@ -1,7 +1,7 @@
 summary: A collection of tools, libraries, and tests for Vulkan shader compilation
 git-url: https://github.com/google/shaderc
-src-url: https://github.com/google/shaderc/archive/refs/tags/v2023.4.tar.gz
-src-sha: 671c5750638ff5e42e0e0e5325b758a1ab85e6fd0fe934d369a8631c4292f12f
+src-url: https://github.com/google/shaderc/archive/refs/tags/v2023.7.tar.gz
+src-sha: 681e1340726a0bf46bea7e31f10cbfe78e01e4446a35d90fedc2b78d400fcdeb
 license: Apache-2.0
 dep-upp: python3 git
 dopatch: python3 utils/git-sync-deps

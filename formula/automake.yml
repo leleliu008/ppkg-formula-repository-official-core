@@ -5,4 +5,5 @@ src-url: https://ftp.gnu.org/gnu/automake/automake-1.16.5.tar.xz
 src-sha: f01d58cd6d9d77fbdca9eb4bbd5ead1988228fdb73d6f7a201f5f8d6b118b469
 license: GPL-2.0-or-later
 dep-pkg: autoconf
+dep-upp: gm4
 bsystem: configure

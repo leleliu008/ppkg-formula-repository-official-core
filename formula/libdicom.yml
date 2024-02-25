@@ -1,0 +1,7 @@
+summary: DICOM WSI read library
+git-url: https://github.com/ImagingDataCommons/libdicom
+src-url: https://github.com/ImagingDataCommons/libdicom/releases/download/v1.0.5/libdicom-1.0.5.tar.xz
+src-sha: 3b88f267b58009005bc1182d8bd0c4a3218013ce202da722e5e8c9867c6f94f4
+license: MIT
+dep-pkg: uthash
+install: mesonw -Dtests=false

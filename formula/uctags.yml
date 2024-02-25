@@ -8,5 +8,5 @@ install: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] || [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
         configure --disable-static
     else
-        configure
+        configure --disable-external-sort
     fi

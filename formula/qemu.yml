@@ -1,8 +1,8 @@
 summary: A generic and open source machine & userspace emulator and virtualizer
 web-url: https://www.qemu.org/
 git-url: https://git.qemu.org/git/qemu.git
-src-url: https://download.qemu.org/qemu-8.0.3.tar.xz
-src-sha: ecf4d32cbef9d397bfc8cc50e4d1e92a1b30253bf32e8ee73c7a8dcf9a232b09
+src-url: https://download.qemu.org/qemu-8.2.0.tar.xz
+src-sha: bf00d2fa12010df8b0ade93371def58e632cb32a6bfdc5f5a0ff8e6a1fb1bf32
 license: GPL-2.0-only
 dep-pkg: capstone libslirp libssh libusb libpng libjpeg-turbo pixman gnutls lzo nettle snappy dtc vde libzstd libcap-ng xattr
 dep-upp: bzip2 flex bison
