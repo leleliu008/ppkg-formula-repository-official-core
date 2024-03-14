@@ -1,7 +1,7 @@
-summary: Powerful, enterprise-ready, open source web server with automatic HTTPS
+summary: A powerful, enterprise-ready, open source web server with automatic HTTPS
 web-url: https://caddyserver.com/
 git-url: https://github.com/caddyserver/caddy
-src-url: https://github.com/caddyserver/caddy/archive/v2.6.4.tar.gz
-src-sha: 41f26a7e494eb0e33cd1f167b3f00a4d9030b2f9d29f673a1837dde7bb5e82b0
+src-url: https://github.com/caddyserver/caddy/archive/refs/tags/v2.7.6.tar.gz
+src-sha: e1c524fc4f4bd2b0d39df51679d9d065bb811e381b7e4e51466ba39a0083e3ed
 license: Apache-2.0
 install: gow ./cmd/caddy

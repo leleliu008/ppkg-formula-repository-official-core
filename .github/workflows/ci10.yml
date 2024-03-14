@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [unixodbc,unrar,uppm,usbutils,utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorriso,xpup,xsltproc,xxd,yajl,yaml-cpp,yasm,youtubedr,yq,yyjson,z3,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
+        pkg: [libxml2-utils,libyuv,lighttpd,lima,links,livego,llhttp,llvm,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
             tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [unixodbc,unrar,uppm,usbutils,utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorriso,xpup,xsltproc,xxd,yajl,yaml-cpp,yasm,youtubedr,yq,yyjson,z3,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
+        pkg: [libxml2-utils,libyuv,lighttpd,lima,links,livego,llhttp,llvm,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -63,7 +63,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
             tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
@@ -78,8 +78,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [13]
-        pkg: [unixodbc,unrar,uppm,usbutils,utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorriso,xpup,xsltproc,xxd,yajl,yaml-cpp,yasm,youtubedr,yq,yyjson,z3,zig,zip,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd,zsync]
+        tag: [14]
+        pkg: [libxml2-utils,libyuv,lighttpd,lima,links,livego,llhttp,llvm,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzip,lzop,magic_enum,mawk,mcfly,md4c,mdbook,mdcat]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}
@@ -92,7 +92,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-macos-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-macos-arm64.tar.xz
             tar vxf ppkg-*-macos-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 

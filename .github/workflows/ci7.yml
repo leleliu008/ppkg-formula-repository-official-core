@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [mesalink,mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mupdf,nano,nanomsg,nasm,navi,ncdu,neofetch,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patch,patchelf]
+        pkg: [helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit,lcov]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
             tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [mesalink,mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mupdf,nano,nanomsg,nasm,navi,ncdu,neofetch,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patch,patchelf]
+        pkg: [helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit,lcov]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -63,7 +63,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
             tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
@@ -78,8 +78,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [13]
-        pkg: [mesalink,mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mupdf,nano,nanomsg,nasm,navi,ncdu,neofetch,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patch,patchelf]
+        tag: [14]
+        pkg: [helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit,lcov]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}
@@ -92,7 +92,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-macos-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-macos-arm64.tar.xz
             tar vxf ppkg-*-macos-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 

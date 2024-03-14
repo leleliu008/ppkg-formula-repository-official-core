@@ -30,7 +30,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
             tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
@@ -63,7 +63,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
             tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
@@ -78,7 +78,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [13]
+        tag: [14]
         pkg: [PKGLIST]
         flavor: [sh, c]
 
@@ -92,7 +92,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-macos-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-macos-arm64.tar.xz
             tar vxf ppkg-*-macos-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 

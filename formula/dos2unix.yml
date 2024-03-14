@@ -1,7 +1,7 @@
 summary: Convert text between DOS, UNIX, and Mac formats
 web-url: https://waterlan.home.xs4all.nl/dos2unix.html
-src-url: https://waterlan.home.xs4all.nl/dos2unix/dos2unix-7.5.0.tar.gz
-src-sha: 7a3b01d01e214d62c2b3e04c3a92e0ddc728a385566e4c0356efa66fd6eb95af
+src-url: https://waterlan.home.xs4all.nl/dos2unix/dos2unix-7.5.2.tar.gz
+src-sha: 264742446608442eb48f96c20af6da303cb3a92b364e72cb7e24f88239c4bf3a
 license: BSD-2-Clause
 binbstd: 1
 dopatch: sed_in_place '/^ENABLE_NLS/d' Makefile

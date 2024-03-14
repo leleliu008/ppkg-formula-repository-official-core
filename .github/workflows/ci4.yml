@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [gmake,gn,gnu-barcode,gnupg,gnuplot,gnu-which,godu,gogs,golang,go-md2man,gomobile,google-benchmark,google-highway,goreleaser,gosh,go-tools,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,grep,grex,groff,gron,gsed,hashcat,helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto]
+        pkg: [dnsmap,dog,doggo,dos2unix,doxygen,dua,duf,dufs,dust,e2fsprogs,easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
             tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [gmake,gn,gnu-barcode,gnupg,gnuplot,gnu-which,godu,gogs,golang,go-md2man,gomobile,google-benchmark,google-highway,goreleaser,gosh,go-tools,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,grep,grex,groff,gron,gsed,hashcat,helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto]
+        pkg: [dnsmap,dog,doggo,dos2unix,doxygen,dua,duf,dufs,dust,e2fsprogs,easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -63,7 +63,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
             tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
@@ -78,8 +78,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [13]
-        pkg: [gmake,gn,gnu-barcode,gnupg,gnuplot,gnu-which,godu,gogs,golang,go-md2man,gomobile,google-benchmark,google-highway,goreleaser,gosh,go-tools,gotop,gotty,gox,gperf,gperftools,gping,gpsim,gputils,grep,grex,groff,gron,gsed,hashcat,helix,helm,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto]
+        tag: [14]
+        pkg: [dnsmap,dog,doggo,dos2unix,doxygen,dua,duf,dufs,dust,e2fsprogs,easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}
@@ -92,7 +92,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-macos-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-macos-arm64.tar.xz
             tar vxf ppkg-*-macos-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 

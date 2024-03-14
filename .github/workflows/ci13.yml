@@ -1,4 +1,4 @@
-name: workflow2
+name: workflow13
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [bgrep,binaryen,bind,binocle,bison,bitcoin,bk,bmake,botan,bottom,boxes,brook,broot,bsdtar,bullet,byacc,c-examples,caddy,cargo-c,cargo-deb,catch2,catimg,ccache,cdrtools,cereal,cfitsio,cflow,cgif,chafa,cheat]
+        pkg: [pkg-config,pkgconf,plog,plzip,pngquant,pocl,poco,ppkg,procs,progress,proj,proto-cli,pugixml,pup,putty,pybind11,python3-setup,python@3.12,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [bgrep,binaryen,bind,binocle,bison,bitcoin,bk,bmake,botan,bottom,boxes,brook,broot,bsdtar,bullet,byacc,c-examples,caddy,cargo-c,cargo-deb,catch2,catimg,ccache,cdrtools,cereal,cfitsio,cflow,cgif,chafa,cheat]
+        pkg: [pkg-config,pkgconf,plog,plzip,pngquant,pocl,poco,ppkg,procs,progress,proj,proto-cli,pugixml,pup,putty,pybind11,python3-setup,python@3.12,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [bgrep,binaryen,bind,binocle,bison,bitcoin,bk,bmake,botan,bottom,boxes,brook,broot,bsdtar,bullet,byacc,c-examples,caddy,cargo-c,cargo-deb,catch2,catimg,ccache,cdrtools,cereal,cfitsio,cflow,cgif,chafa,cheat]
+        pkg: [pkg-config,pkgconf,plog,plzip,pngquant,pocl,poco,ppkg,procs,progress,proj,proto-cli,pugixml,pup,putty,pybind11,python3-setup,python@3.12,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

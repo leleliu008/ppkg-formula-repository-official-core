@@ -1,4 +1,4 @@
-summary: A portable package manager for Unix-like system.
+summary: A portable package manager for Unix-like system
 git-url: https://github.com/leleliu008/ppkg
 git-ref: c
 license: Apache-2.0

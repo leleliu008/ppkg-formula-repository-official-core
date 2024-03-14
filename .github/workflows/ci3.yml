@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flex,flock,fortune,fselect,fsmon,fswatch,fzf,fzy,garble,gawk,gbt,gcc,gcc@13,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gh,gindent,git,git-lfs,gitui,gitwatch,glew,glib-tools,glow,glslviewer,glyr]
+        pkg: [check,chezmoi,chicken,choose,circleci-cli,cli11,cmake,coreutils,cpio,cppcheck,cppunit,cpu_features,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,delta,diffutils,distcc,dmalloc,dns2tcp]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
             tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flex,flock,fortune,fselect,fsmon,fswatch,fzf,fzy,garble,gawk,gbt,gcc,gcc@13,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gh,gindent,git,git-lfs,gitui,gitwatch,glew,glib-tools,glow,glslviewer,glyr]
+        pkg: [check,chezmoi,chicken,choose,circleci-cli,cli11,cmake,coreutils,cpio,cppcheck,cppunit,cpu_features,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,delta,diffutils,distcc,dmalloc,dns2tcp]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -63,7 +63,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
             tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
@@ -78,8 +78,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [13]
-        pkg: [easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flex,flock,fortune,fselect,fsmon,fswatch,fzf,fzy,garble,gawk,gbt,gcc,gcc@13,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gh,gindent,git,git-lfs,gitui,gitwatch,glew,glib-tools,glow,glslviewer,glyr]
+        tag: [14]
+        pkg: [check,chezmoi,chicken,choose,circleci-cli,cli11,cmake,coreutils,cpio,cppcheck,cppunit,cpu_features,cpuinfo,croc,crosstool-ng,crowbook,ctop,cue,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,delta,diffutils,distcc,dmalloc,dns2tcp]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}
@@ -92,7 +92,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-macos-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-macos-arm64.tar.xz
             tar vxf ppkg-*-macos-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 

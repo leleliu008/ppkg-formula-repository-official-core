@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [aalib,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,aptly,archiver,args,aria2,async++,atuin,automake,autossh,autotools-setup,axel,b3sum,bandwhich,base16,base64,bash,basis_universal,bat,bazelisk,bc,bcrypt,bear,bgrep,binaryen,bind,binocle,bison,bitcoin,bk,bmake,botan,bottom,boxes,brook,broot,bsdtar,bullet,byacc,caddy,cargo-c,cargo-deb,catch2]
+        pkg: [aalib,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,aptly,archiver,args,aria2,async++,atuin,automake,autossh,autotools-setup,axel,b3sum,bandwhich,base16,base64,bash,basis_universal,bat,bazelisk,bc,bcrypt,bear]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
             tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [aalib,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,aptly,archiver,args,aria2,async++,atuin,automake,autossh,autotools-setup,axel,b3sum,bandwhich,base16,base64,bash,basis_universal,bat,bazelisk,bc,bcrypt,bear,bgrep,binaryen,bind,binocle,bison,bitcoin,bk,bmake,botan,bottom,boxes,brook,broot,bsdtar,bullet,byacc,caddy,cargo-c,cargo-deb,catch2]
+        pkg: [aalib,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,aptly,archiver,args,aria2,async++,atuin,automake,autossh,autotools-setup,axel,b3sum,bandwhich,base16,base64,bash,basis_universal,bat,bazelisk,bc,bcrypt,bear]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -63,7 +63,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-linux-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
             tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
@@ -78,8 +78,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [13]
-        pkg: [aalib,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,aptly,archiver,args,aria2,async++,atuin,automake,autossh,autotools-setup,axel,b3sum,bandwhich,base16,base64,bash,basis_universal,bat,bazelisk,bc,bcrypt,bear,bgrep,binaryen,bind,binocle,bison,bitcoin,bk,bmake,botan,bottom,boxes,brook,broot,bsdtar,bullet,byacc,caddy,cargo-c,cargo-deb,catch2]
+        tag: [14]
+        pkg: [aalib,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,aptly,archiver,args,aria2,async++,atuin,automake,autossh,autotools-setup,axel,b3sum,bandwhich,base16,base64,bash,basis_universal,bat,bazelisk,bc,bcrypt,bear]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}
@@ -92,7 +92,7 @@ jobs:
 
         - if: matrix.flavor == 'c'
           run: |
-            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.1-macos-x86_64.tar.xz
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-macos-arm64.tar.xz
             tar vxf ppkg-*-macos-x86_64.tar.xz --strip-components=1
             mv bin/ppkg .
 
