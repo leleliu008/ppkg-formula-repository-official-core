@@ -1,8 +1,8 @@
 summary: The Universal WebAssembly Runtime
 web-url: https://wasmer.io
 git-url: https://github.com/wasmerio/wasmer
-src-url: https://github.com/wasmerio/wasmer/archive/v4.2.5.tar.gz
-src-sha: 66cb3c9d795932257f99bd64d8e8720a908e2fdf7a4519d12193a45157fab577
+src-url: https://github.com/wasmerio/wasmer/archive/refs/tags/v4.2.6.tar.gz
+src-sha: d68af69391b1a8a4d3379e9282aa3bcf08b5daaeb2edce8d3317f518bda4d851
 license: MIT
 dep-pkg: wabt
 bscript: lib/cli

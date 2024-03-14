@@ -1,7 +1,7 @@
-summary: Fastest and safest AV1 video encoder
+summary: The fastest and safest AV1 video encoder
 git-url: https://github.com/xiph/rav1e
-src-url: https://github.com/xiph/rav1e/archive/v0.6.6.tar.gz
-src-sha: 723696e93acbe03666213fbc559044f3cae5b8b888b2ddae667402403cff51e5
+src-url: https://github.com/xiph/rav1e/archive/refs/tags/v0.7.1.tar.gz
+src-sha: da7ae0df2b608e539de5d443c096e109442cdfa6c5e9b4014361211cf61d030c
 license: BSD-2-Clause
 dep-upp: nasm cargo-c
 install: |
