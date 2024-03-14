@@ -1,8 +1,8 @@
 summary: Official documentation format of the GNU project
 git-url: https://git.savannah.gnu.org/git/texinfo.git
 web-url: https://www.gnu.org/software/texinfo
-src-url: https://ftp.gnu.org/gnu/texinfo/texinfo-7.0.3.tar.xz
-src-sha: 74b420d09d7f528e84f97aa330f0dd69a98a6053e7a4e01767eed115038807bf
+src-url: https://ftp.gnu.org/gnu/texinfo/texinfo-7.1.tar.xz
+src-sha: deeec9f19f159e046fdf8ad22231981806dac332cc372f1c763504ad82b30953
 license: GPL-3.0-or-later
 dep-pkg: perl
 dopatch: sed_in_place '/libintl/d' tp/Texinfo/XS/parsetexi/api.c

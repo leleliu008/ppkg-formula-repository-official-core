@@ -1,7 +1,7 @@
 summary: BLAKE3 cryptographic hash function
 git-url: https://github.com/BLAKE3-team/BLAKE3
-src-url: https://github.com/BLAKE3-team/BLAKE3/archive/1.4.1.tar.gz
-src-sha: 33020ac83a8169b2e847cc6fb1dd38806ffab6efe79fe6c320e322154a3bea2c
+src-url: https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.5.1.tar.gz
+src-sha: 822cd37f70152e5985433d2c50c8f6b2ec83aaf11aa31be9fe71486a91744f37
 license: CC0-1.0
 bscript: b3sum
 bsystem: cargo

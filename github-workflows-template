@@ -93,7 +93,7 @@ jobs:
         - if: matrix.flavor == 'c'
           run: |
             curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-macos-arm64.tar.xz
-            tar vxf ppkg-*-macos-x86_64.tar.xz --strip-components=1
+            tar vxf ppkg-*-macos-arm64.tar.xz --strip-components=1
             mv bin/ppkg .
 
         - run: ./ppkg setup

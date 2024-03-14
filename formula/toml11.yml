@@ -1,6 +1,6 @@
-summary: TOML for Modern C++
-git-url: https://github.com/ToruNiina/toml11
-src-url: https://github.com/ToruNiina/toml11/archive/refs/tags/v3.7.1.tar.gz
-src-sha: afeaa9aa0416d4b6b2cd3897ca55d9317084103077b32a852247d8efd4cf6068
+summary: A header-only C++11 (or later) library for parsing TOML
+web-url: https://github.com/ToruNiina/toml11
+src-url: https://github.com/ToruNiina/toml11/archive/refs/tags/v3.8.1.tar.gz
+src-sha: 6a3d20080ecca5ea42102c078d3415bef80920f6c4ea2258e87572876af77849
 license: MIT
-bsystem: cmake
+install: cmakew -DCMAKE_CXX_STANDARD=11
