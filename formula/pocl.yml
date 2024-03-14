@@ -1,8 +1,8 @@
 summary: Portable Computing Language
-git-url: https://github.com/pocl/pocl
 web-url: http://portablecl.org/
-src-url: http://portablecl.org/downloads/pocl-4.0.tar.gz
-src-sha: 7f4e8ab608b3191c2b21e3f13c193f1344b40aba7738f78762f7b88f45e8ce03
+git-url: https://github.com/pocl/pocl
+src-url: https://github.com/pocl/pocl/archive/refs/tags/v5.0.tar.gz
+src-sha: fd0bb6e50c2286278c11627b71177991519e1f7ab2576bd8d8742974db414549
 license: MIT
 dep-pkg: ocl-icd hwloc llvm+clang+lld
 dep-upp: patch
