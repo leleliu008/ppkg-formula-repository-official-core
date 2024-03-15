@@ -6,4 +6,6 @@ src-sha: d68af69391b1a8a4d3379e9282aa3bcf08b5daaeb2edce8d3317f518bda4d851
 license: MIT
 dep-pkg: wabt
 bscript: lib/cli
-install: cargow install --features cranelift
+install: |
+    export RUSTUP_TOOLCHAIN=1.74
+    cargow install --features cranelift

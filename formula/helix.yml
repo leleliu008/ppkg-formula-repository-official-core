@@ -5,8 +5,8 @@ src-url: https://github.com/helix-editor/helix/releases/download/23.10/helix-23.
 src-sha: 4e7bcac200b1a15bc9f196bdfd161e4e448dc670359349ae14c18ccc512153e8
 license: MPL-2.0
 dep-upp: git
-dopatch: sed_in_place 's|1\.65\.0|1.67.0|' rust-toolchain.toml
 install: |
+    export RUSTUP_TOOLCHAIN=1.70
     cargow install --path helix-term
     rm -rf runtime/grammars/sources/
     install -d -v    "$PACKAGE_INSTALL_DIR/libexec"

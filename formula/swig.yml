@@ -1,10 +1,11 @@
-summary: Generate scripting interfaces to C/C++ code
+summary: A command-line tool for generating scripting interfaces to C/C++ code
 web-url: https://www.swig.org/
 git-url: https://github.com/swig/swig
-src-url: https://downloads.sourceforge.net/project/swig/swig/swig-4.1.1/swig-4.1.1.tar.gz
-src-sha: 2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b
+src-url: https://downloads.sourceforge.net/project/swig/swig/swig-4.2.1/swig-4.2.1.tar.gz
+src-sha: fa045354e2d048b2cddc69579e4256245d4676894858fcf0bab2290ecf59b7d8
 license: GPL-3.0-or-later
 dep-pkg: libpcre2
+
 install: |
     configure \
         --enable-ccache \
@@ -29,4 +30,5 @@ install: |
         --without-lua \
         --without-r \
         --without-d \
-        --without-go
+        --without-go \
+        PCRE2_CONFIG="$libpcre2_INSTALL_DIR/bin/pcre2-config"

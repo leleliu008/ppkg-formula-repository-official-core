@@ -1,7 +1,7 @@
 summary: A secure, fast, high-performance, compliant, and very flexible web server
 web-url: https://www.lighttpd.net/
-src-url: https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.73.tar.xz
-src-sha: 818816d0b314b0aa8728a7076513435f6d5eb227f3b61323468e1f10dbe84ca8
+src-url: https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.75.tar.xz
+src-sha: 8b721ca939d312afaa6ef31dcbd6afb5161ed385ac828e6fccd4c5b76be189d6
 license: BSD-3-Clause
 dep-pkg: openssl zlib libbz2 libpcre2 sys-queue.h
 dep-upp: libtool

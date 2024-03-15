@@ -1,8 +1,8 @@
 summary: HTTP/2 C Library
 web-url: https://nghttp2.org/
 git-url: https://github.com/nghttp2/nghttp2
-src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.58.0/nghttp2-1.58.0.tar.gz
-src-sha: 9ebdfbfbca164ef72bdf5fd2a94a4e6dfb54ec39d2ef249aeb750a91ae361dfb
+src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.60.0/nghttp2-1.60.0.tar.gz
+src-sha: ca2333c13d1af451af68de3bd13462de7e9a0868f0273dea3da5bc53ad70b379
 dep-pkg: libevent libev jansson libxml2 c-ares cunit
 license: MIT
 sfslink: 0
@@ -21,7 +21,7 @@ install: |
         -DENABLE_THREADS=ON \
         -DENABLE_APP=ON \
         -DENABLE_HTTP3=OFF \
-        -DENABLE_EXAMPLES=ON \
+        -DENABLE_EXAMPLES=OFF \
         -DENABLE_HPACK_TOOLS=ON \
         -DENABLE_ASIO_LIB=OFF \
         -DENABLE_STATIC_LIB=ON \

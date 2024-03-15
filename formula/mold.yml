@@ -1,15 +1,16 @@
-summary: A Modern Linker
+summary: Modern Linker
 git-url: https://github.com/rui314/mold
-src-url: https://github.com/rui314/mold/archive/refs/tags/v2.3.3.tar.gz
-src-sha: dcba90d5ee852ececb3a1a70110bb2d385079dcd1aa103e970296683c642f856
-license: MIT
-dep-pkg: tbb blake3 xxhash zlib libzstd
+src-url: https://github.com/rui314/mold/archive/refs/tags/v2.4.1.tar.gz
+src-sha: c9853d007d6a1b4f3e36b7314346751f4cc91bc43c76e30db51709b53b44dd68
+license: AGPL-3.0-only
+dep-pkg: mimalloc tbb xxhash zlib libzstd openssl
+dopatch: sed_in_place '/find_package(ZLIB/a find_package(Threads)' CMakeLists.txt
 install: |
     cmakew \
-        -DMOLD_LTO=ON \
+        -DMOLD_LTO=OFF \
         -DMOLD_USE_ASAN=OFF \
         -DMOLD_USE_TSAN=OFF \
         -DMOLD_USE_MIMALLOC=ON \
-        -DMOLD_USE_SYSTEM_MIMALLOC=OFF \
-        -DMOLD_USE_SYSTEM_TBB=OFF \
+        -DMOLD_USE_SYSTEM_MIMALLOC=ON \
+        -DMOLD_USE_SYSTEM_TBB=ON \
         -DCMAKE_SKIP_INSTALL_RULES=OFF

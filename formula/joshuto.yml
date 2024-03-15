@@ -4,3 +4,4 @@ src-url: https://github.com/kamiyaa/joshuto/archive/refs/tags/v0.9.6.tar.gz
 src-sha: 78d03e0c7971fe715da7e89c6e848112eedb993f04625e720997156c74578d42
 license: LGPL-3.0-or-later
 bsystem: cargo
+install: cargow install --locked
