@@ -4,6 +4,7 @@ git-url: https://github.com/distcc/distcc
 src-url: https://github.com/distcc/distcc/releases/download/v3.4/distcc-3.4.tar.gz
 src-sha: 2b99edda9dad9dbf283933a02eace6de7423fe5650daa4a728c950e5cd37bd7d
 license: GPL-2.0-or-later
-dep-pkg: libiberty python3
+dep-pkg: libiberty
+dep-upp: python3
 bsystem: autogen
 install: configure --disable-Werror

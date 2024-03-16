@@ -8,6 +8,7 @@ dopatch: |
     sed_in_place '/add_subdirectory(examples)/d' CMakeLists.txt
     sed_in_place 's|target_link_libraries(${PROG} libqpdf)|target_link_libraries(${PROG} libqpdf_static)|' qpdf/CMakeLists.txt
     sed_in_place 's|target_link_libraries(zlib-flate libqpdf)|target_link_libraries(zlib-flate libqpdf_static)|' zlib-flate/CMakeLists.txt
+    sed_in_place 's|target_link_libraries(qpdf-test-compare libqpdf)|target_link_libraries(qpdf-test-compare libqpdf_static)|' compare-for-test/CMakeLists.txt
 install: |
     cmakew \
         -DINSTALL_MANUAL=OFF \

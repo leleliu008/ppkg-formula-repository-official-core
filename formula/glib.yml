@@ -8,6 +8,7 @@ license: LGPL-2.1-or-later
 dep-pkg: gettext libffi libpcre2 zlib
 sfslink: 0
 dopatch: |
+    sed_in_place "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
     sed_in_place "/libiconv =/c libiconv = dependency('libiconv', method : 'pkg-config')" meson.build
     sed_in_place "s|dependency('zlib')|cc.find_library('z', static : true, dirs : ['$zlib_LIBRARY_DIR'])|" meson.build
     sed_in_place '2139,2165d'  meson.build

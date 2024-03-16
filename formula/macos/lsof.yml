@@ -1,10 +1,10 @@
-summary: Utility to list open files
+summary: A command-line tool to list open files
 web-url: https://people.freebsd.org/~abe
 git-url: https://github.com/lsof-org/lsof
-src-url: https://github.com/lsof-org/lsof/archive/4.96.4.tar.gz
-src-sha: b5a052cac8d6b2726bbb1de2b98c6d9204c7619263fb63e9b6b1bd6bbb37bf14
+src-url: https://github.com/lsof-org/lsof/archive/refs/tags/4.99.3.tar.gz
+src-sha: b9c56468b927d9691ab168c0b1e9f8f1f835694a35ff898c549d383bd8d09bd4
 license: Zlib
-
+dep-upp: perl
 bsystem: gmake
 binbstd: 1
 install: |
