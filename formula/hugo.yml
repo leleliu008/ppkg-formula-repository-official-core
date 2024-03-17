@@ -2,8 +2,8 @@ pkgtype: exe
 summary: A fast and flexible static site generator
 web-url: https://gohugo.io
 git-url: https://github.com/gohugoio/hugo
-src-url: https://github.com/gohugoio/hugo/archive/refs/tags/v0.123.8.tar.gz
-src-sha: 12eaeaa260037d88526fb5eb56348f0d781f415f3cd2cf265ea3508a66b33c48
+src-url: https://github.com/gohugoio/hugo/archive/refs/tags/v0.124.0.tar.gz
+src-sha: f6912383b411949a7dc8fe21e3c840c6cac4cd5df6ac236c78a94e06d2f26dbc
 license: Apache-2.0
 install: |
     export CGO_ENABLED=1
