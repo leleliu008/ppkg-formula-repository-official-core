@@ -1,0 +1,15 @@
+summary: Process Management Interface for HPC environments
+web-url: https://openpmix.github.io/
+git-url: https://github.com/openpmix/openpmix
+src-url: https://github.com/openpmix/openpmix/releases/download/v4.2.9/pmix-4.2.9.tar.bz2
+src-sha: 6b11f4fd5c9d7f8e55fc6ebdee9af04b839f44d06044e58cea38c87c168784b3
+license: BSD-3-Clause
+dep-upp: python3
+dep-pkg: libevent hwloc zlib
+install: |
+    configure \
+        --enable-sphinx \
+        --enable-ipv6 \
+        --with-sge \
+        --with-hwloc="$hwloc_INSTALL_DIR" \
+        --with-libevent="$libevent_INSTALL_DIR"

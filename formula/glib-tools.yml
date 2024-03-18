@@ -7,10 +7,12 @@ src-sha: 44eaab8b720877ce303c5540b657b126f12dc94972d9880b52959f43fb537b30
 license: LGPL-2.1-or-later
 dep-pkg: gettext libffi libpcre2 zlib
 dopatch: |
-    sed_in_place "/libiconv =/c libiconv = dependency('libiconv', method : 'pkg-config')" meson.build
+    sed_in_place "s|link_with : libglib|link_with : libglib.get_static_lib()|" glib/meson.build
+    sed_in_place "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
+    sed_in_place "/libiconv =/c libiconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
     sed_in_place "s|dependency('zlib')|cc.find_library('z', static : true, dirs : ['$zlib_LIBRARY_DIR'])|" meson.build
     sed_in_place '2139,2165d'  meson.build
-    sed_in_place "2139a libintl = cc.find_library('intl',  dirs: ['$gettext_LIBRARY_DIR'])" meson.build
+    sed_in_place "2139a libintl = cc.find_library('intl', static : true, dirs: ['$gettext_LIBRARY_DIR'])" meson.build
     sed_in_place '2140a libintl_deps = [libintl, libiconv]' meson.build
 
 install: |

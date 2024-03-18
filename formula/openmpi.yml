@@ -4,8 +4,9 @@ git-url: https://github.com/open-mpi/ompi
 src-url: https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.2.tar.bz2
 src-sha: ee46ad8eeee2c3ff70772160bff877cbf38c330a0bc3b3ddc811648b3396698f
 license: BSD-3-Clause
-dep-pkg: libevent
-dep-upp: perl
+dep-pkg: openpmix
+dep-upp: perl python3
+dep-pip: sphinx_rtd_theme
 install: |
     configure \
         --disable-coverage \
@@ -16,4 +17,9 @@ install: |
         --enable-sysv-shmem=no \
         --enable-sysv-sshmem=no \
         --enable-binaries \
+        --enable-sphinx \
+        --enable-ipv6 \
+        --with-sge \
+        --with-pmix="$openpmix_INSTALL_DIR" \
+        --with-hwloc="$hwloc_INSTALL_DIR" \
         --with-libevent="$libevent_INSTALL_DIR"
