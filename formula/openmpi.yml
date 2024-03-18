@@ -5,8 +5,8 @@ src-url: https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.2.tar.b
 src-sha: ee46ad8eeee2c3ff70772160bff877cbf38c330a0bc3b3ddc811648b3396698f
 license: BSD-3-Clause
 dep-pkg: openpmix
-dep-upp: perl python3
-dep-pym: sphinx_rtd_theme
+dep-upp: python3 perl
+dep-pym: Sphinx
 install: |
     configure \
         --disable-coverage \

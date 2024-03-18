@@ -10,4 +10,9 @@ install: |
     install -d "$PACKAGE_INSTALL_DIR/pocl/OpenCL/vendors"
     cmakew \
         -DENABLE_TESTS=OFF \
-        -DENABLE_EXAMPLES=OFF
+        -DENABLE_EXAMPLES=OFF \
+        -DLLVM_PREFIX="$llvm_clang_lld_INSTALL_DIR" \
+        -DLLVM_BINDIR="$llvm_clang_lld_INSTALL_DIR/bin" \
+        -DLLVM_LIBDIR="$llvm_clang_lld_INSTALL_DIR/lib" \
+        -DLLVM_INCLUDEDIR="$llvm_clang_lld_INSTALL_DIR/include" \
+        -DWITH_LLVM_CONFIG="$llvm_clang_lld_INSTALL_DIR/bin/llvm-config"

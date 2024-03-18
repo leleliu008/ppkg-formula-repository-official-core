@@ -4,8 +4,9 @@ git-url: https://github.com/openpmix/openpmix
 src-url: https://github.com/openpmix/openpmix/releases/download/v4.2.9/pmix-4.2.9.tar.bz2
 src-sha: 6b11f4fd5c9d7f8e55fc6ebdee9af04b839f44d06044e58cea38c87c168784b3
 license: BSD-3-Clause
-dep-upp: python3
 dep-pkg: libevent hwloc zlib
+dep-upp: python3
+dep-pym: Sphinx
 install: |
     configure \
         --enable-sphinx \
