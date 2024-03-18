@@ -1,7 +1,7 @@
 summary: Modular, composable client/server abstractions framework
 git-url: https://github.com/facebook/wangle
-src-url: https://github.com/facebook/wangle/archive/refs/tags/v2023.10.09.00.tar.gz
-src-sha: 2bf243056c97b2cb2966f615a19c5ec1af10350c0f2d93a9c4ed52625a1066dc
+src-url: https://github.com/facebook/wangle/archive/refs/tags/v2024.01.22.00.tar.gz
+src-sha: e29a68f293c0aa3bd9e5c2e0a137d7a0c4e86c26737344f1d1671d0984e3ff09
 license: Apache-2.0
 dep-pkg: fizz
 bscript: wangle
