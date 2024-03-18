@@ -5,6 +5,22 @@ src-url: https://github.com/jasper-software/jasper/releases/download/version-4.2
 src-sha: 5e397570b3110a8edef6d50127e20a2297939809cea25d29068823b442ecdd6d
 license: JasPer-2.0
 dep-pkg: libjpeg-turbo
+dep-upp: patch
+dopatch: |
+    # https://sourceware.org/bugzilla/show_bug.cgi?id=21264
+    printf '%s' '
+    LS0tIENNYWtlTGlzdHMudHh0CTIwMjQtMDMtMTIgMDQ6MzU6MDQuMDAwMDAwMDAwICswODAwCisr
+    KyBDTWFrZUxpc3RzLnR4dC5iYWsJMjAyNC0wMy0xOCAxMDozNTozNC4yMDk1Njk0OTEgKzA4MDAK
+    QEAgLTU3NSw3ICs1NzUsOSBAQAogIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMj
+    IyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMKIAogZmluZF9saWJy
+    YXJ5KFBUSFJFQURfTElCUkFSWSBwdGhyZWFkKQotaWYoTk9UIFBUSFJFQURfTElCUkFSWSkKK2lm
+    KFBUSFJFQURfTElCUkFSWSkKKwlzZXQoUFRIUkVBRF9MSUJSQVJZICItbHB0aHJlYWQiKQorZWxz
+    ZSgpCiAJc2V0KFBUSFJFQURfTElCUkFSWSAiIikKIGVuZGlmKCkKIApAQCAtNzg5LDcgKzc5MSw5
+    IEBACiAjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMj
+    IyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIwogCiBmaW5kX2xpYnJhcnkoTUFUSF9MSUJSQVJZ
+    IG0pCi1pZihOT1QgTUFUSF9MSUJSQVJZKQoraWYoTUFUSF9MSUJSQVJZKQorCXNldChNQVRIX0xJ
+    QlJBUlkgIi1sbSIpCitlbHNlKCkKIAlzZXQoTUFUSF9MSUJSQVJZICIiKQogZW5kaWYoKQogCg==' | base64 -d | patch -p0
+
 install: |
     cmakew \
         -DALLOW_IN_SOURCE_BUILD=ON \
