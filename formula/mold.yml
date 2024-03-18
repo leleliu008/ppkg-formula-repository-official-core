@@ -3,15 +3,12 @@ git-url: https://github.com/rui314/mold
 src-url: https://github.com/rui314/mold/archive/refs/tags/v2.30.0.tar.gz
 src-sha: 6e5178ccafe828fdb4ba0dd841d083ff6004d3cb41e56485143eb64c716345fd
 license: AGPL-3.0-only
-dep-pkg: mimalloc tbb xxhash zlib libzstd openssl
-dopatch: sed_in_place '/find_package(ZLIB/a find_package(Threads)' CMakeLists.txt
 install: |
     cmakew \
         -DMOLD_LTO=OFF \
         -DMOLD_USE_ASAN=OFF \
         -DMOLD_USE_TSAN=OFF \
         -DMOLD_USE_MIMALLOC=ON \
-        -DMOLD_USE_SYSTEM_MIMALLOC=ON \
-        -DMOLD_USE_SYSTEM_TBB=ON \
         -DMOLD_MOSTLY_STATIC=OFF \
+        -DBUILD_SHARED_LIBS=OFF \
         -DCMAKE_SKIP_INSTALL_RULES=OFF
