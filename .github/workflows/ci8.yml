@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [less,leveldb,lexbor,lf,libaec,libao,libavif,libb2,libbcrypt,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdeflate,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmagic,libmaxminddb]
+        pkg: [less,leveldb,lexbor,lf,libaec,libao,libavif,libb2,libbcrypt,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdeflate,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical,libilbc,libimagequant,libimobiledevice-glue,libirecovery,libisoburn,liblinear,libmagic]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [less,leveldb,lexbor,lf,libaec,libao,libavif,libb2,libbcrypt,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdeflate,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmagic,libmaxminddb]
+        pkg: [less,leveldb,lexbor,lf,libaec,libao,libavif,libb2,libbcrypt,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdeflate,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical,libilbc,libimagequant,libimobiledevice-glue,libirecovery,libisoburn,liblinear,libmagic]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [less,leveldb,lexbor,lf,libaec,libao,libavif,libb2,libbcrypt,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdeflate,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,libmagic,libmaxminddb]
+        pkg: [less,leveldb,lexbor,lf,libaec,libao,libavif,libb2,libbcrypt,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdeflate,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical,libilbc,libimagequant,libimobiledevice-glue,libirecovery,libisoburn,liblinear,libmagic]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [uctags,unbound,unixodbc,unrar,unzip,uppm,usbutils,utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip]
+        pkg: [twolame,typos,uctags,unbound,unixodbc,unrar,unzip,uppm,usbutils,utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [uctags,unbound,unixodbc,unrar,unzip,uppm,usbutils,utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip]
+        pkg: [twolame,typos,uctags,unbound,unixodbc,unrar,unzip,uppm,usbutils,utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [uctags,unbound,unixodbc,unrar,unzip,uppm,usbutils,utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip]
+        pkg: [twolame,typos,uctags,unbound,unixodbc,unrar,unzip,uppm,usbutils,utf8.h,utfcpp,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

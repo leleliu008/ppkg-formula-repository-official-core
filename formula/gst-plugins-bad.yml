@@ -4,7 +4,7 @@ web-url: https://gstreamer.freedesktop.org/
 src-url: https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.20.3.tar.xz
 src-sha: 7a11c13b55dd1d2386dd902219e41cbfcdda8e1e0aa3e738186c95074b35da4f
 license: LGPL-2.0-or-later
-dep-pkg: gst-plugins-base faac faad2 fdk-aac libjpeg-turbo libnice usrsctp openssl opus orc rtmpdump libsrtp
+dep-pkg: gst-plugins-base faac faad2 fdk-aac libjpeg-turbo libnice usrsctp openssl libopus orc rtmpdump libsrtp
 install: |
     mesonw \
         -Dgpl=enabled \

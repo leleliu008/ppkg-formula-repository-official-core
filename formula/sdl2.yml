@@ -1,8 +1,8 @@
 summary: Low-level access to audio, keyboard, mouse, joystick and graphics
-git-url: https://github.com/libsdl-org/SDL
 web-url: https://www.libsdl.org/
-src-url: https://www.libsdl.org/release/SDL2-2.28.5.tar.gz
-src-sha: 332cb37d0be20cb9541739c61f79bae5a477427d79ae85e352089afdaf6666e4
+git-url: https://github.com/libsdl-org/SDL
+src-url: https://github.com/libsdl-org/SDL/releases/download/release-2.30.1/SDL2-2.30.1.tar.gz
+src-sha: 01215ffbc8cfc4ad165ba7573750f15ddda1f971d5a66e9dcaffd37c587f473a
 license: Zlib
 dep-pkg: pulseaudio mesa libxkbcommon xorg-libice xorg-libxcursor xorg-libxscrnsaver xorg-libxxf86vm xorg-xinput libdecor
 install: |
