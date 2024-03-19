@@ -1,0 +1,6 @@
+summary: A collection of over 500 reusable autoconf macros
+web-url: https://savannah.gnu.org/projects/autoconf-archive/
+src-url: https://ftp.gnu.org/gnu/autoconf-archive/autoconf-archive-2023.02.20.tar.xz
+src-sha: 71d4048479ae28f1f5794619c3d72df9c01df49b1c628ef85fde37596dc31a33
+license: GPL-3.0-or-later
+bsystem: configure
