@@ -10,6 +10,8 @@ binbstd: 1
 install: |
     export CPPFLAGS="$CPPFLAGS -I. -I../src"
 
+    sed_in_place 's|-lunistring -lpcre2-32 -lncurses|-lunistring -lpcre2-32 -lncurses -liconv|' src/Makefile
+
     gmakew clean
     gmakew CC=$CC CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'"
 
