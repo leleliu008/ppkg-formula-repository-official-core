@@ -1,14 +1,14 @@
 summary: A collection utilities for manipulating PostScript documents
 git-url: https://github.com/rrthomas/psutils
-src-url: https://files.pythonhosted.org/packages/51/e1/84b207ea1ac7140a626988f6cb46e1ad30c46996715ab8940fbc079461ba/pspdfutils-3.1.1.tar.gz
-src-sha: 86f9c769b6b1a76ddda64fe0d28694545de0397aafa318dc2cae809037569018
+src-url: https://files.pythonhosted.org/packages/92/07/ebcf289c31f4da85ea94e103f0a58393c54133c64fcbef754c17b6405723/pspdfutils-3.3.2.tar.gz
+src-sha: a20a2a1359811bd0ad72e15349351a26774ddf8e355c2cde4250a70cf77fdf0c
 license: GPL-3.0-or-later
 dep-pkg: libpaper
 dep-pym: build
 dep-upp: python3
 binbstd: 1
 install: |
-    python3 -m build
-    pip3 install dist/*.whl
+    run python3 -m build
+    run pip3 install dist/*.whl
     install -d "$PACKAGE_INSTALL_DIR"
     mv dist/*  "$PACKAGE_INSTALL_DIR/"
