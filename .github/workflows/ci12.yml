@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patchelf,pax,pcre,pcre2,pget,physfs,pigz,pipewire,pjsip,pkg-config]
+        pkg: [ngtcp2,ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patchelf,pax,pcre,pcre2,pget,physfs,pigz,pipewire,pjsip]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patchelf,pax,pcre,pcre2,pget,physfs,pigz,pipewire,pjsip,pkg-config]
+        pkg: [ngtcp2,ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patchelf,pax,pcre,pcre2,pget,physfs,pigz,pipewire,pjsip]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patchelf,pax,pcre,pcre2,pget,physfs,pigz,pipewire,pjsip,pkg-config]
+        pkg: [ngtcp2,ninja,nng,nnn,nsh,ntbtls,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencolorio,openfst,openldap,openlibm,openmpi,openslide,p7zip,packcc,patchelf,pax,pcre,pcre2,pget,physfs,pigz,pipewire,pjsip]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

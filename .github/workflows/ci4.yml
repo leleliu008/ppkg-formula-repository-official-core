@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [dnsmap,dog,doggo,dos2unix,doxygen,dua,duf,dufs,dust,e2fsprogs,easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish]
+        pkg: [dns2tcp,dnsmap,dog,doggo,dos2unix,doxygen,dua,duf,dufs,dust,e2fsprogs,easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [dnsmap,dog,doggo,dos2unix,doxygen,dua,duf,dufs,dust,e2fsprogs,easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish]
+        pkg: [dns2tcp,dnsmap,dog,doggo,dos2unix,doxygen,dua,duf,dufs,dust,e2fsprogs,easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [dnsmap,dog,doggo,dos2unix,doxygen,dua,duf,dufs,dust,e2fsprogs,easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish]
+        pkg: [dns2tcp,dnsmap,dog,doggo,dos2unix,doxygen,dua,duf,dufs,dust,e2fsprogs,easyutils,ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

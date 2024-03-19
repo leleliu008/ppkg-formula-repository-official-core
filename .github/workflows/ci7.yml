@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit,lcov]
+        pkg: [helix,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit,lcov]
+        pkg: [helix,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit,lcov]
+        pkg: [helix,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,krb5,lazygit]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

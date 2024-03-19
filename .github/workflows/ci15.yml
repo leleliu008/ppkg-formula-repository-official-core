@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [svn-lite,syncthing,sysinfo,szip,talloc,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego]
+        pkg: [suricata,svn-lite,syncthing,sysinfo,szip,talloc,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [svn-lite,syncthing,sysinfo,szip,talloc,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego]
+        pkg: [suricata,svn-lite,syncthing,sysinfo,szip,talloc,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [svn-lite,syncthing,sysinfo,szip,talloc,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tweego]
+        pkg: [suricata,svn-lite,syncthing,sysinfo,szip,talloc,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}
