@@ -4,18 +4,11 @@ git-url: https://github.com/ascii-boxes/boxes
 src-url: https://github.com/ascii-boxes/boxes/archive/refs/tags/v2.3.0.tar.gz
 src-sha: e226b4ff91e1260fc80e8312b39cde5a783b96e9f248530eae941b7f1bf6342a
 license: GPL-2.0-only
-dep-pkg: libpcre2 libunistring
+dep-pkg: libpcre2 libunistring ncurses
 dep-upp: gm4 flex bison
 binbstd: 1
 install: |
-    if [ -e ../lib/libunistring.a ] ; then
-        rm  ../lib/libunistring.a
-        printf 'INPUT(%s %s)\n' "$libunistring_LIBRARY_DIR/libunistring.a" "$(pkg-config --libs-only-l libunistring | sed 's|-lunistring||g')" > ../lib/libunistring.a
-    fi
-
-    sed_in_place 's|STRIP=true||' src/Makefile
-
-    export CPPFLAGS="$CPPFLAGS -I. -I../src -include string.h"
+    export CPPFLAGS="$CPPFLAGS -I. -I../src"
 
     gmakew clean
     gmakew CC=$CC CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'"
