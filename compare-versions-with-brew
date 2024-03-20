@@ -89,7 +89,7 @@ package_name_transform_from_uppm_to_brew() {
         utfcpp)   printf '%s\n' 'utf8cpp'   ;;
         tcl-core) printf '%s\n' 'tcl-tk'    ;;
         openpmix) printf '%s\n' 'pmix'      ;;
-        xsltproc) printf '%s\n' 'libxml2'   ;;
+        xsltproc) printf '%s\n' 'libxslt'   ;;
 
         freetype2)printf '%s\n' 'freetype'  ;;
         freetype2-with-harfbuzz)
@@ -106,7 +106,7 @@ package_name_transform_from_uppm_to_brew() {
         libmediainfo|mediainfo)
                   printf '%s\n' 'media-info';;
 
-        libxml2-utils)
+        libxml2-utils|libxml2-python3)
                   printf '%s\n' 'libxml2'   ;;
 
         libprotobuf)

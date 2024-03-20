@@ -1,9 +1,9 @@
 summary: utilities provided by libxml2
 web-url: http://xmlsoft.org
 git-url: https://gitlab.gnome.org/GNOME/libxml2
-src-url: https://download.gnome.org/sources/libxml2/2.11/libxml2-2.11.4.tar.xz
-src-uri: http://distfiles.macports.org/libxml2/libxml2-2.11.4.tar.xz
-src-sha: 737e1d7f8ab3f139729ca13a2494fd17bf30ddb4b7a427cf336252cab57f57f7
+src-url: https://download.gnome.org/sources/libxml2/2.12/libxml2-2.12.6.tar.xz
+src-uri: http://distfiles.macports.org/libxml2/libxml2-2.12.6.tar.xz
+src-sha: 889c593a881a3db5fdd96cc9318c87df34eb648edfc458272ad46fd607353fbb
 license: MIT
 dep-pkg: libiconv zlib
 

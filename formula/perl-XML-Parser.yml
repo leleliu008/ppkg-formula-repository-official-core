@@ -1,11 +1,9 @@
 summary: A perl module for parsing XML documents
 git-url: https://github.com/toddr/XML-Parser
-src-url: https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.46.tar.gz
-src-sha: d331332491c51cccfb4cb94ffc44f9cd73378e618498d4a37df9e043661c515d
+src-url: https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz
+src-sha: ad4aae643ec784f489b956abe952432871a622d4e2b5c619e8855accbfc4d1d8
 dep-pkg: perl expat
 binbstd: 1
 install: |
-    run perl Makefile.PL EXPATLIBPATH=$expat_LIBRARY_DIR EXPATINCPATH=$expat_INCLUDE_DIR
+    run perl Makefile.PL "EXPATLIBPATH=$expat_LIBRARY_DIR" "EXPATINCPATH=$expat_INCLUDE_DIR" "INSTALL_BASE=$PACKAGE_INSTALL_DIR"
     gmakew install
-    install -d $PACKAGE_INSTALL_DIR
-    touch      $PACKAGE_INSTALL_DIR/perl-module

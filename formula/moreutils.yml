@@ -1,8 +1,8 @@
 summary: a growing collection of the Unix tools that nobody thought to write long ago, when Unix was young.
 web-url: https://joeyh.name/code/moreutils/
 git-url: https://git.joeyh.name/git/moreutils.git
-src-url: https://deb.debian.org/debian/pool/main/m/moreutils/moreutils_0.67.orig.tar.gz
-src-sha: 03872f42c22943b21c62f711b693c422a4b8df9d1b8b2872ef9a34bd5d13ad10
+src-url: https://git.joeyh.name/index.cgi/moreutils.git/snapshot/moreutils-0.69.tar.gz
+src-sha: 0f795d25356ca61544966646fb707d5be0b9864116be0269df5433f62d4e05d1
 license: GPL-2.0-or-later
 dep-pkg: perl
 dep-upp: libxml2-utils xsltproc docbook-xsl

@@ -4,7 +4,7 @@ dep-pkg: libev nghttp3
 
 install: |
     cmakew \
-        -DENABLE_ASAN=ON \
+        -DENABLE_ASAN=OFF \
         -DENABLE_DEBUG=OFF \
         -DENABLE_WERROR=OFF \
         -DENABLE_GNUTLS=OFF \
