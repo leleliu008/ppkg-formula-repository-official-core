@@ -1,20 +1,25 @@
 summary: System and service manager
 web-url: https://wiki.freedesktop.org/www/Software/systemd/
 git-url: https://github.com/systemd/systemd
-src-url: https://github.com/systemd/systemd/archive/v252.tar.gz
-src-sha: 113a9342ddf89618a17c4056c2dd72c4b20b28af8da135786d7e9b4f1d18acfb
+src-url: https://github.com/systemd/systemd-stable/archive/refs/tags/v255.4.tar.gz
+src-sha: 96e75bd08c57ad401677456fb88ef54a9f05bb1695693013bc6ecce839640fd5
 license: GPL-2.0-or-later LGPL-2.1-or-later
+dep-pkg: gettext-runtime libgpg-error libxcrypt libcap util-linux libzstd lz4 glib
+dep-upp: gettext-tools intltool gm4 gperf rsync xsltproc docbook-xsl
 dep-pym: jinja2-cli
-dep-upp: gm4 gperf rsync
-dep-pkg: docbook gettext intltool libgpg-error libcap util-linux libzstd lz4 libxslt
-ldflags: -lintl
+sfslink: 0
 install: |
     mesonw \
+        --sysconfdir=$PACKAGE_INSTALL_DIR/etc \
+        --localstatedir=$PACKAGE_INSTALL_DIR/var \
         -Drootprefix=$PACKAGE_INSTALL_DIR \
         -Dsysvinit-path=$PACKAGE_INSTALL_DIR/etc/init.d \
         -Dsysvrcnd-path=$PACKAGE_INSTALL_DIR/etc/rc.d \
         -Dpamconfdir=$PACKAGE_INSTALL_DIR/etc/pam.d \
+        -Dbashcompletiondir=$PACKAGE_INSTALL_DIR/share/bash_completion \
         -Dlz4=true \
         -Dhwdb=false \
         -Dgcrypt=false \
+        -Dgcrypt=false \
+        -Dp11kit=false \
         -Dcreate-log-dirs=false

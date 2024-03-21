@@ -1,7 +1,7 @@
 summary: OCI container runtime monitor
 git-url: https://github.com/containers/conmon
-src-url: https://github.com/containers/conmon/archive/refs/tags/v2.1.5.tar.gz
-src-sha: ee3179ee2b9a9107acec00eb546062cf7deb847f135a3b81503d22b0d226b3ed
+src-url: https://github.com/containers/conmon/archive/refs/tags/v2.1.10.tar.gz
+src-sha: 455fabcbd4a5a5dc5e05374a71b62dc0b08ee865c2ba398e9dc9acac1ea1836a
 license: Apache-2.0
 dep-pkg: glib libseccomp systemd
 bsystem: gmake go

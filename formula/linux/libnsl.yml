@@ -1,9 +1,7 @@
 summary: Public client interface for NIS(YP) and NIS+
 git-url: https://github.com/thkukuk/libnsl
-src-url: https://github.com/thkukuk/libnsl/archive/v2.0.0.tar.gz
-src-sha: eb37be57c1cf650b3a8a4fc7cd66c8b3dfc06215b41956a16325a9388171bc40
+src-url: https://github.com/thkukuk/libnsl/releases/download/v2.0.1/libnsl-2.0.1.tar.xz
+src-sha: 5c9e470b232a7acd3433491ac5221b4832f0c71318618dc6aa04dd05ffcd8fd9
 license: LGPL-2.1-or-later
-dep-upp: libtool
-dep-pkg: gettext libtirpc
-ldflags: -lintl
-bsystem: autogen
+dep-pkg: libtirpc
+bsystem: configure

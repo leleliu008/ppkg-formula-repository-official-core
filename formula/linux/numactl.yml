@@ -1,6 +1,6 @@
 summary: NUMA support for Linux
 git-url: https://github.com/numactl/numactl
-src-url: https://github.com/numactl/numactl/releases/download/v2.0.16/numactl-2.0.16.tar.gz
-src-sha: 1b242f893af977a1d31af6ce9d6b8dafdd2d8ec3dc9207f7c2dc0d3446e7c7c8
+src-url: https://github.com/numactl/numactl/releases/download/v2.0.18/numactl-2.0.18.tar.gz
+src-sha: b4fc0956317680579992d7815bc43d0538960dc73aa1dd8ca7e3806e30bc1274
 license: GPL-2.0-or-later
 bsystem: configure

@@ -84,14 +84,14 @@ main() {
     unset YDEPENDED_PACKAGES
     unset NDEPENDED_PACKAGES
 
-    AVAILABLE_PACKAGES=$(find formula -maxdepth 1 -type f -name '*.yml' -exec basename {} .yml \; | sort)
+    AVAILABLE_PACKAGES=$(ls formula/*.yml formula/linux/*.yml | xargs -I '{}' -n 1 basename '{}' .yml | sort | uniq)
 
     for item in test v8 webrtc skia
     do
         AVAILABLE_PACKAGES=$(printf '%s\n' "$AVAILABLE_PACKAGES" | sed "s|^$item$||")
     done
 
-    YDEPENDED_PACKAGES="$(sed -n '/^dep-pkg:/p' formula/*.yml | cut -c10- | tr ' ' '\n' | sort| uniq)"
+    YDEPENDED_PACKAGES="$(sed -n '/^dep-pkg:/p' formula/*.yml formula/linux/*.yml | cut -c10- | tr ' ' '\n' | sort| uniq)"
 
     printf '%s\n' "YDEPENDED_PACKAGES=$YDEPENDED_PACKAGES"
 
