@@ -147,7 +147,7 @@ main() {
         PACKAGE_VERSION="$(sed -n '/^version:/p' "$FORMULA_FILE" | cut -c10-)"
 
         if [ -z "$PACKAGE_VERSION" ] ; then
-            PACKAGE_SRC_URL="$(sed -n '/^src-url:/p' "$1" | cut -c10-)"
+            PACKAGE_SRC_URL="$(sed -n '/^src-url:/p' "$FORMULA_FILE" | cut -c10-)"
 
             if [ -n "$PACKAGE_SRC_URL" ] ; then
                 PACKAGE_VERSION="$(get_version_from_url "$PACKAGE_SRC_URL")"
