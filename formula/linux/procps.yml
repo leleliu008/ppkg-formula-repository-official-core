@@ -1,7 +1,7 @@
 summary: Utilities for browsing procfs
-git-url: https://gitlab.com/procps-ng/procps.git
-src-url: https://gitlab.com/procps-ng/procps/-/archive/v4.0.3/procps-v4.0.3.tar.gz
-src-sha: 14cc21219c45d196772274ea3f194f6d668b6cc667fbde9ee6d8039121b73fa6
+git-url: https://gitlab.com/procps-ng/procps
+src-url: https://gitlab.com/procps-ng/procps/-/archive/v4.0.4/procps-v4.0.4.tar.gz
+src-sha: 3214fab0f817d169f2c117842ba635bafb1cd6090273e311a8b5c6fc393ddb9d
 license: GPL-2.0-or-later
 dep-pkg: ncurses gettext
 dep-upp: libtool

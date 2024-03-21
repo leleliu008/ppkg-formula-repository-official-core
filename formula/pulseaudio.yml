@@ -3,6 +3,32 @@ web-url: https://wiki.freedesktop.org/www/Software/PulseAudio/
 git-url: https://gitlab.freedesktop.org/pulseaudio/pulseaudio
 src-url: https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz
 src-sha: 053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5
-dep-pkg: json-c libsndfile libsoxr openssl speexdsp expat glib libcap libtool
-dep-upp: gm4 perl
-bsystem: configure
+dep-pkg: gettext-runtime json-c libsndfile libsoxr libcap libtool openssl alsa-lib orc dbus speexdsp expat glib
+dep-upp: gettext-tools perl-XML-Parser gm4
+sfslink: 0
+dopatch: |
+    LIBSOXR="$(pkg-config --libs soxr | xargs -n 1 printf "'%s'," | sed 's|,$||')"
+    sed_in_place "/soxr_dep =/c soxr_dep = declare_dependency(link_args: [$LIBSOXR])" meson.build
+
+    sed_in_place "/cap_dep = /c cap_dep = cc.find_library('cap', static : true, dirs : ['$libcap_LIBRARY_DIR'])" meson.build
+    sed_in_place "/ltdl_dep =/c ltdl_dep = cc.find_library('ltdl', static : true, dirs : ['$libtool_LIBRARY_DIR'])" meson.build
+    sed_in_place "/iconv_dep =/c iconv_dep = dependency('libiconv', method : 'pkg-config')" meson.build
+    sed_in_place "/libintl_dep =/c libintl_dep = cc.find_library('intl',  dirs: ['$gettext_runtime_LIBRARY_DIR'])" meson.build
+    export PERL5LIB="$perl_XML_Parser_INSTALL_DIR/lib/perl5"
+install: |
+    mesonw \
+        -Ddatabase=simple \
+        -Ddoxygen=false \
+        -Dman=true \
+        -Dtests=false \
+        -Dstream-restore-clear-old-devices=true \
+        -Dgtk=disabled \
+        -Dx11=disabled \
+        -Dorc=enabled \
+        -Dglib=enabled \
+        -Dalsa=enabled \
+        -Ddbus=enabled \
+        -Dsoxr=enabled \
+        -Dspeex=enabled \
+        -Dopenssl=enabled \
+        -Dsystemd=disabled

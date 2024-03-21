@@ -1,7 +1,7 @@
 summary: New GNU portable threads library
 web-url: https://www.gnupg.org
 git-url: https://dev.gnupg.org/source/npth
-src-url: https://www.gnupg.org/ftp/gcrypt/npth/npth-1.7.tar.bz2
-src-sha: 8589f56937b75ce33b28d312fccbf302b3b71ec3f3945fde6aaa74027914ad05
+src-url: https://www.gnupg.org/ftp/gcrypt/npth/npth-1.6.tar.bz2
+src-sha: 1393abd9adcf0762d34798dc34fdcf4d0d22a8410721e76f1e3afcd1daa4e2d1
 license: LGPL-2.1-or-later
 install: configure --disable-tests

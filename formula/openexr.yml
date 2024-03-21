@@ -4,7 +4,7 @@ git-url: https://github.com/AcademySoftwareFoundation/openexr
 src-url: https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.2.3.tar.gz
 src-sha: f3f6c4165694d5c09e478a791eae69847cadb1333a2948ca222aa09f145eba63
 license: BSD-3-Clause
-dep-pkg: imath zlib
+dep-pkg: imath zlib libdeflate
 sfslink: 0
 dopatch: sed_in_place '/find_library(OPENEXR_EXTRA_MATH_LIB m)/c set(OPENEXR_EXTRA_MATH_LIB -lm)' cmake/CMakeLists.txt
 install: |

@@ -1,7 +1,7 @@
 summary: Oil Runtime Compiler (ORC)
 web-url: https://gstreamer.freedesktop.org/projects/orc.html
-src-url: https://gstreamer.freedesktop.org/src/orc/orc-0.4.34.tar.xz
-src-sha: 8f47abb3f097171e44eb807adcdabd860fba2effd37d8d3c4fbd5f341cadd41f
+src-url: https://gstreamer.freedesktop.org/src/orc/orc-0.4.38.tar.xz
+src-sha: a55a98d4772567aa3faed8fb84d540c3db77eaba16d3e2e10b044fbc9228668d
 license: BSD-3-Clause
 dopatch: |
     sed_in_place 's|link_with : orc_lib|link_with : orc_lib.get_static_lib()|' orc/meson.build

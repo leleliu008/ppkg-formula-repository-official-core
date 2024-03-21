@@ -80,6 +80,7 @@ package_name_transform_from_uppm_to_brew() {
         file)     printf '%s\n' 'file-formula' ;;
         gtar)     printf '%s\n' 'gnu-tar'   ;;
         gmake)    printf '%s\n' 'make'      ;;
+        gindent)  printf '%s\n' 'gnu-indent';;
         xattr)    printf '%s\n' 'attr'      ;;
         patch)    printf '%s\n' 'gpatch'    ;;
         delta)    printf '%s\n' 'git-delta' ;;
@@ -133,29 +134,25 @@ package_name_transform_from_uppm_to_brew() {
     esac
 }
 
-package_version() {
-    PACKAGE_VERSION="$(sed -n '/^version:/p' formula/$1.yml | cut -c10-)"
-
-    if [ -n "$PACKAGE_VERSION" ] ; then
-        printf '%s\n' "$PACKAGE_VERSION"
-        return 0
-    fi
-
-    PACKAGE_SRC_URL="$(sed -n '/^src-url:/p' formula/$1.yml | cut -c10-)"
-
-    if [ -z "$PACKAGE_SRC_URL" ] ; then
-        return 0
-    else
-        basename "$PACKAGE_SRC_URL" | tr '_@' - | sed -e 's|\.tar\.[glx]z$||' -e 's|\.tar\.bz2$||' -e 's|\.t[glx]z$||' -e 's|\.zip$||' -e 's|-stable||' -e 's|-source||' -e 's|[-.]src$||' -e 's|\.orig||' | awk -F- '{print $NF}' | sed -e 's|^v||'
-    fi
+get_version_from_url() {
+    basename "$1" | tr '_@' - | sed -e 's|\.tar\.[glx]z$||' -e 's|\.tar\.bz2$||' -e 's|\.t[glx]z$||' -e 's|\.zip$||' -e 's|-stable||' -e 's|-source||' -e 's|[-.]src$||' -e 's|\.orig||' | awk -F- '{print $NF}' | sed -e 's|^v||'
 }
 
 main() {
-    AVAILABLE_PACKAGE_NAMES="$(find formula -maxdepth 1 -type f -name '*.yml' -exec basename {} .yml \;)"
-
-    for PACKAGE_NAME in $AVAILABLE_PACKAGE_NAMES
+    for FORMULA_FILE in formula/linux/*.yml formula/*.yml
     do
-        PACKAGE_VERSION="$(package_version "$PACKAGE_NAME")"
+        PACKAGE_NAME="${FORMULA_FILE%.yml}"
+        PACKAGE_NAME="${PACKAGE_NAME##*/}"
+
+        PACKAGE_VERSION="$(sed -n '/^version:/p' "$FORMULA_FILE" | cut -c10-)"
+
+        if [ -z "$PACKAGE_VERSION" ] ; then
+            PACKAGE_SRC_URL="$(sed -n '/^src-url:/p' "$1" | cut -c10-)"
+
+            if [ -n "$PACKAGE_SRC_URL" ] ; then
+                PACKAGE_VERSION="$(get_version_from_url "$PACKAGE_SRC_URL")"
+            fi
+        fi
 
         BREW_PACKAGE_NMAE="$(package_name_transform_from_uppm_to_brew "$PACKAGE_NAME")"
 
