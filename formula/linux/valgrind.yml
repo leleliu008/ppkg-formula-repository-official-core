@@ -4,4 +4,5 @@ git-url: https://sourceware.org/git/valgrind.git
 src-url: https://sourceware.org/pub/valgrind/valgrind-3.22.0.tar.bz2
 src-sha: c811db5add2c5f729944caf47c4e7a65dcaabb9461e472b578765dd7bf6d2d4c
 license: GPL-2.0-or-later
+dep-upp: perl
 install: configure --enable-lto --enable-tls

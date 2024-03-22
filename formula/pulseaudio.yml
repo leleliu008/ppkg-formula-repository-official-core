@@ -14,7 +14,7 @@ dopatch: |
     sed_in_place "/ltdl_dep =/c ltdl_dep = cc.find_library('ltdl', static : true, dirs : ['$libtool_LIBRARY_DIR'])" meson.build
     sed_in_place "/iconv_dep =/c iconv_dep = dependency('libiconv', method : 'pkg-config')" meson.build
     sed_in_place "/libintl_dep =/c libintl_dep = cc.find_library('intl',  dirs: ['$gettext_runtime_LIBRARY_DIR'])" meson.build
-    export PERL5LIB="$perl_XML_Parser_INSTALL_DIR/lib/perl5"
+    export PERL5LIB="$NATIVE_PACKAGE_INSTALLED_ROOT/perl-XML-Parser/lib/perl5"
 install: |
     mesonw \
         -Ddatabase=simple \

@@ -7,5 +7,7 @@ dep-pkg: libxslt
 install: |
     mesonw \
         -DUSE_CAP=false \
+		-DUSE_IDN=false \
+		-DUSE_GETTEXT=false \
         -DBUILD_MANS=true \
         -DSKIP_TESTS=true

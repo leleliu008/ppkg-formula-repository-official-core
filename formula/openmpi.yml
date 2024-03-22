@@ -6,7 +6,7 @@ src-sha: ee46ad8eeee2c3ff70772160bff877cbf38c330a0bc3b3ddc811648b3396698f
 license: BSD-3-Clause
 dep-pkg: openpmix
 dep-upp: python3 perl
-dep-pym: Sphinx sphinx-rtd-theme
+dep-pym: Sphinx sphinx-rtd-theme recommonmark
 install: |
     configure \
         --disable-coverage \
