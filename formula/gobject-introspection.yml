@@ -1,8 +1,8 @@
-summary: Generate introspection data for GObject libraries
+summary: A middleware layer between C libraries (using GObject) and language bindings
 web-url: https://gi.readthedocs.io
 git-url: https://gitlab.gnome.org/GNOME/gobject-introspection
-src-url: https://download.gnome.org/sources/gobject-introspection/1.76/gobject-introspection-1.76.1.tar.xz
-src-sha: 196178bf64345501dcdc4d8469b36aa6fe80489354efe71cb7cb8ab82a3738bf
+src-url: https://download.gnome.org/sources/gobject-introspection/1.78/gobject-introspection-1.78.1.tar.xz
+src-sha: bd7babd99af7258e76819e45ba4a6bc399608fe762d83fde3cac033c50841bb4
 license: MIT
 dep-upp: gm4 flex bison
 dep-pkg: glib python3

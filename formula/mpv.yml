@@ -1,8 +1,8 @@
 summary: Media player based on MPlayer and mplayer2
 web-url: https://mpv.io
 git-url: https://github.com/mpv-player/mpv
-src-url: https://github.com/mpv-player/mpv/archive/v0.35.1.tar.gz
-src-sha: 41df981b7b84e33a2ef4478aaf81d6f4f5c8b9cd2c0d337ac142fc20b387d1a9
+src-url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.37.0.tar.gz
+src-sha: 1d2d4adbaf048a2fa6ee134575032c4b2dad9a7efafd5b3e69b88db935afaddf
 dep-pkg: libplacebo libjpeg-turbo libarchive libass lcms2 luajit mujs uchardet vapoursynth alsa-lib xorg-libxpresent
 binbstd: 1
 install: |
