@@ -1,0 +1,8 @@
+summary: Library for ARIB STD-B24, decoding JIS 8 bit characters and parsing MPEG-TS
+web-url: https://code.videolan.org/jeeb/aribb24
+src-url: https://code.videolan.org/jeeb/aribb24/-/archive/v1.0.4/aribb24-v1.0.4.tar.bz2
+src-sha: 88b58dd760609372701087e25557ada9f7c6d973306c017067c5dcaf9e2c9710
+license: LGPL-3.0-only
+dep-pkg: libpng
+dep-upp: libtool
+bsystem: autotools

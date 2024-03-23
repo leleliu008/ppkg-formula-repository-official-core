@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtorrent,ruff,runc,rust-analyzer,rustup-init,sassc,scc,sccache,sd,shaderc,shc,shell2http,shiori,silicon,six]
+        pkg: [proto-cli,pugixml,pup,putty,pybind11,python3-setup,python@3.12,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtorrent,ruff,runc,rust-analyzer,rustup-init,sassc]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtorrent,ruff,runc,rust-analyzer,rustup-init,sassc,scc,sccache,sd,shaderc,shc,shell2http,shiori,silicon,six]
+        pkg: [proto-cli,pugixml,pup,putty,pybind11,python3-setup,python@3.12,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtorrent,ruff,runc,rust-analyzer,rustup-init,sassc]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtorrent,ruff,runc,rust-analyzer,rustup-init,sassc,scc,sccache,sd,shaderc,shc,shell2http,shiori,silicon,six]
+        pkg: [proto-cli,pugixml,pup,putty,pybind11,python3-setup,python@3.12,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,rhash,ripgrep,rlwrap,rsass,rsync,rtorrent,ruff,runc,rust-analyzer,rustup-init,sassc]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

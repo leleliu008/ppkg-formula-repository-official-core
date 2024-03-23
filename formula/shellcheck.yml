@@ -1,0 +1,14 @@
+summary: A static analysis tool for shell scripts
+web-url: https://www.shellcheck.net/
+git-url: https://github.com/koalaman/shellcheck
+src-url: https://github.com/koalaman/shellcheck/archive/refs/tags/v0.10.0.tar.gz
+src-sha: 149ef8f90c0ccb8a5a9e64d2b8cdd079ac29f7d2f5a263ba64087093e9135050
+license: GPL-3.0-or-later
+dep-upp: ghc cabal-install
+dep-pkg: pandoc
+    #binbstd: 1
+install: |
+    run cabal v2-update
+    run cabal v2-install --enable-executable-static --jobs=$BUILD_NJOBS --max-backjumps=100000 --install-method=copy --installdir=$PACKAGE_INSTALL_DIR
+    run ./manpage
+    install_mans shellcheck.1

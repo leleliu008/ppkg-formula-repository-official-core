@@ -1,12 +1,13 @@
 summary: Graphics Library
 web-url: https://www.mesa3d.org/
 git-url: https://gitlab.freedesktop.org/mesa/mesa
-src-url: https://mesa.freedesktop.org/archive/mesa-22.3.6.tar.xz
-src-sha: 4ec8ec65dbdb1ee9444dba72970890128a19543a58cf05931bd6f54f124e117f
+src-url: https://mesa.freedesktop.org/archive/mesa-24.0.3.tar.xz
+src-sha: 77aec9a2a37b7d3596ea1640b3cc53d0b5d9b3b52abed89de07e3717e91bfdbe
 license: MIT
 dep-pym: Mako MarkupSafe
 dep-upp: gm4 flex bison
 dep-pkg: llvm+clang+lld glslang gettext xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxshmfence libvdpau libva elfutils libdrm wayland-protocols lm-sensors
+dopatch: export PATH="$NATIVE_PACKAGE_INSTALLED_ROOT/python3/bin:$PATH"
 install: |
     mesonw \
         -Db_ndebug=true \

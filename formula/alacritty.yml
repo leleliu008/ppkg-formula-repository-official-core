@@ -1,8 +1,8 @@
-summary: GPU-accelerated terminal emulator
+summary: A cross-platform, GPU-accelerated terminal emulator
 webpage: https://alacritty.org/
 git-url: https://github.com/alacritty/alacritty
-src-url: https://github.com/alacritty/alacritty/archive/refs/tags/v0.12.3.tar.gz
-src-sha: 7825639d971e561b2ea3cc41e30b57cde8e185a400fee001843bb634df6b28ab
+src-url: https://github.com/alacritty/alacritty/archive/refs/tags/v0.13.1.tar.gz
+src-sha: 38a42e23e1e6faaa9e300347df3f7b58b6182908a701517aac6e296fbdf37451
 license: Apache-2.0
 dep-pkg: python3 fontconfig freetype2 libxkbcommon
 bsystem: cargo cmake

@@ -11,7 +11,7 @@ sfslink: 0
 install: |
     configure \
         --with-isl="$isl_INSTALL_DIR" \
-        --with-gmp="$gmp_INSTALL_DIR" \
+        --with-gmp="$libgmp_INSTALL_DIR" \
         --with-mpc="$libmpc_INSTALL_DIR" \
         --with-mpfr="$mpfr_INSTALL_DIR" \
         --with-system-zlib \

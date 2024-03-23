@@ -4,11 +4,11 @@ web-url: https://www.mpfr.org
 src-url: https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz
 src-sha: 277807353a6726978996945af13e52829e3abd7a9a5b7fb2793894e18f1fcbb2
 license: LGPL-3.0-or-later
-dep-pkg: gmp
+dep-pkg: libgmp
 
 install: |
     configure \
-        --with-gmp="$gmp_INSTALL_DIR" \
+        --with-gmp="$libgmp_INSTALL_DIR" \
         --disable-logging \
         --disable-assert \
         --disable-lto \

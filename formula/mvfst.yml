@@ -1,7 +1,9 @@
 summary: QUIC transport protocol implementation
 git-url: https://github.com/facebookincubator/mvfst
-src-url: https://github.com/facebookincubator/mvfst/archive/refs/tags/v2024.01.22.00.tar.gz
-src-sha: 4c60554c2f22afea7e80c4cb42265d8c8e86f9ae052df83608c22759fb35fa09
+src-url: https://github.com/facebookincubator/mvfst/archive/refs/tags/v2024.03.18.00.tar.gz
+src-sha: 7f42ad4b8da5646a24ba5e96101da914f77fe581abd686568d1dcd6492df0240
 license: MIT
 dep-pkg: fizz
-install: cmakew -DBUILD_TESTS=OFF
+sfslink: 0
+dopatch: LINK_TYPE=shared-most
+install: cmakew -DBUILD_TESTS=OFF -DCMAKE_POSITION_INDEPENDENT_CODE=ON

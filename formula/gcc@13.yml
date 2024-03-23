@@ -9,7 +9,7 @@ install: |
     configure \
         --with-boot-ldflags="'-static-libstdc++ -static-libgcc $LDFLAGS'" \
         --with-isl="$isl_INSTALL_DIR" \
-        --with-gmp="$gmp_INSTALL_DIR" \
+        --with-gmp="$libgmp_INSTALL_DIR" \
         --with-mpc="$libmpc_INSTALL_DIR" \
         --with-mpfr="$mpfr_INSTALL_DIR" \
         --enable-languages=c,c++,fortran \

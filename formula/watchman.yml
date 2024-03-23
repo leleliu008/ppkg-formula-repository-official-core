@@ -1,7 +1,7 @@
 summary: Watch files and take action when they change
 git-url: https://github.com/facebook/watchman
-src-url: https://github.com/facebook/watchman/archive/refs/tags/v2024.01.22.00.tar.gz
-src-sha: 04b789729c37bd7a8b69f632d8c9e2daf1ba0ba2a28169f208a8a2ec3125cd4a
+src-url: https://github.com/facebook/watchman/archive/refs/tags/v2024.03.18.00.tar.gz
+src-sha: 9f60cbcd6e1afb25b468a8f8f65a75c23b132c7fa2d336fbd9053879068ce770
 license: MIT
 dep-pkg: python3 libpcre2 fb303 edencommon cpptoml
 bsystem: cmake cargo

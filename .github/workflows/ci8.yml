@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lexbor,lf,libaec,libaio,libao,libavif,libb2,libbcrypt,libbpf,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical]
+        pkg: [jj,joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,lazygit,lcov,less,leveldb,lexbor,lf,libaec,libaio,libao,libavif,libb2,libbcrypt,libbpf,libcaca,libcanberra,libcbor,libcddb,libcdio,libclc,libcroco,libcuefile]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lexbor,lf,libaec,libaio,libao,libavif,libb2,libbcrypt,libbpf,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical]
+        pkg: [jj,joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,lazygit,lcov,less,leveldb,lexbor,lf,libaec,libaio,libao,libavif,libb2,libbcrypt,libbpf,libcaca,libcanberra,libcbor,libcddb,libcdio,libclc,libcroco,libcuefile]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [k9s,kcp,kcptun,krb5,lazygit,lcov,less,leveldb,lexbor,lf,libaec,libaio,libao,libavif,libb2,libbcrypt,libbpf,libcaca,libcanberra,libcbor,libcddb,libcdio,libcroco,libcuefile,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical]
+        pkg: [jj,joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,lazygit,lcov,less,leveldb,lexbor,lf,libaec,libaio,libao,libavif,libb2,libbcrypt,libbpf,libcaca,libcanberra,libcbor,libcddb,libcdio,libclc,libcroco,libcuefile]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

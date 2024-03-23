@@ -1,14 +1,25 @@
 summary: Rich and complete approach to parallelism in C++
 git-url: https://github.com/oneapi-src/oneTBB
-src-url: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.9.0.tar.gz
-src-sha: 1ce48f34dada7837f510735ff1172f6e2c261b09460e3bf773b49791d247d24e
+src-url: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.11.0.tar.gz
+src-sha: 782ce0cab62df9ea125cdea253a50534862b563f1d85d4cda7ad4e77550ac363
 license: Apache-2.0
-
-dopatch: sed_in_place 's|RTLD_DEEPBIND|RTLD_LAZY|' src/tbb/dynamic_link.cpp
+dep-pkg: hwloc
+dep-upp: swig
+sfslink: 0
+dopatch: LINK_TYPE=shared-most
 install: |
     cmakew \
         -DTBB_TEST=OFF \
         -DTBB_EXAMPLES=OFF \
         -DTBB_STRICT=OFF \
         -DTBB4PY_BUILD=OFF \
-        -DTBB_ENABLE_IPO=ON
+        -DTBB_ENABLE_IPO=ON \
+        -DBUILD_SHARED_LIBS=ON
+    run rm CMakeCache.txt
+    cmakew \
+        -DTBB_TEST=OFF \
+        -DTBB_EXAMPLES=OFF \
+        -DTBB_STRICT=OFF \
+        -DTBB4PY_BUILD=OFF \
+        -DTBB_ENABLE_IPO=ON \
+        -DBUILD_SHARED_LIBS=OFF

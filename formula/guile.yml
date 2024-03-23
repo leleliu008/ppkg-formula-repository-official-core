@@ -1,0 +1,23 @@
+summary: GNU Ubiquitous Intelligent Language for Extensions
+git-url: https://git.savannah.gnu.org/git/guile.git
+web-url: https://www.gnu.org/software/guile/
+src-url: https://ftp.gnu.org/gnu/guile/guile-3.0.9.tar.xz
+src-uri: https://ftpmirror.gnu.org/guile/guile-3.0.9.tar.xz
+src-sha: 1a2625ac72b2366e95792f3fe758fd2df775b4044a90a4a9787326e66c0d750d
+license: LGPL-3.0-or-later
+dep-pkg: bdw-gc readline libgmp libffi libxcrypt libunistring
+dep-upp: texinfo
+sfslink: 0
+install: |
+    configure --disable-nls
+
+    cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
+    sed_in_place '/^Name: /,$d' guile-3.0.pc
+    cat >> guile-3.0.pc <<EOF
+    Name: Guile
+    Description: $PACKAGE_SUMMARY
+    Version: $PACKAGE_VERSION
+    Cflags: -I${pkgincludedir}/3.0
+    Libs: -L${libdir} -lguile-3.0
+    Requires: bdw-gc gmp libffi libxcrypt libunistring
+    EOF

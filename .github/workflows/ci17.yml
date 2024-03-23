@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [vsftpd,w3m,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorriso,xpup,xsltproc,xxd,yaml-cpp,yasm,youtubedr,yq,yyjson,z3,zig]
+        pkg: [uppm,usbutils,utf8.h,utfcpp,valgrind,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorg-libxtst]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [vsftpd,w3m,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorriso,xpup,xsltproc,xxd,yaml-cpp,yasm,youtubedr,yq,yyjson,z3,zig]
+        pkg: [uppm,usbutils,utf8.h,utfcpp,valgrind,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorg-libxtst]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [vsftpd,w3m,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorriso,xpup,xsltproc,xxd,yaml-cpp,yasm,youtubedr,yq,yyjson,z3,zig]
+        pkg: [uppm,usbutils,utf8.h,utfcpp,valgrind,vegeta,vim,virustotal-cli,viu,volta,vsftpd,w3m,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,xbps,xclip,xh,xmake,xmlto,xorg-libxtst]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

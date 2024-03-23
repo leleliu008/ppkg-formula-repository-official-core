@@ -1,13 +1,14 @@
 summary: A generic and open source machine & userspace emulator and virtualizer
 web-url: https://www.qemu.org/
-git-url: https://git.qemu.org/git/qemu.git
-src-url: https://download.qemu.org/qemu-8.2.0.tar.xz
-src-sha: bf00d2fa12010df8b0ade93371def58e632cb32a6bfdc5f5a0ff8e6a1fb1bf32
+git-url: https://gitlab.com/qemu-project/qemu
+src-url: https://download.qemu.org/qemu-8.2.1.tar.xz
+src-sha: 8562751158175f9d187c5f22b57555abe3c870f0325c8ced12c34c6d987729be
 license: GPL-2.0-only
 dep-pkg: capstone libslirp libssh libusb libpng libjpeg-turbo pixman gnutls lzo nettle snappy dtc vde libzstd libcap-ng xattr
 dep-upp: bzip2 flex bison
 ppflags: -UNDEBUG
 bsystem: gmake meson
+sfslink: 0
 dopatch: |
     if [ "$LINK_TYPE" = static-full ] || [ "$LINK_TYPE" = static-most ] ; then
         sed_in_place 's|meson setup --prefix|meson setup --prefer-static --prefix|' configure
@@ -15,10 +16,10 @@ dopatch: |
         sed_in_place "s|cc.find_library('cap-ng'|cc.find_library('cap-ng', static : true, dirs : ['$libcap_ng_LIBRARY_DIR']|" meson.build
         sed_in_place "s|cc.find_library('attr'|cc.find_library('attr', static : true, dirs : ['$xattr_LIBRARY_DIR']|" meson.build
         sed_in_place "s|cc.find_library('fdt'|cc.find_library('fdt', static : true, dirs : ['$dtc_LIBRARY_DIR']|" meson.build
+        sed_in_place "/iconv = /c iconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
     fi
 
 install: |
-    #export CPPFLAGS="$(printf '%s\n' "$CPPFLAGS" | sed 's|-DNDEBUG||')"
     ../configure \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --cc="$CC" \

@@ -1,7 +1,8 @@
-summary: a collection of reusable C++ library artifacts developed at Facebook
+summary: A collection of reusable C++ library artifacts developed at Facebook
 git-url: https://github.com/facebook/folly
-src-url: https://github.com/facebook/folly/archive/refs/tags/v2024.01.22.00.tar.gz
-src-sha: ba8d9c84403ab71ced8d34e9fd241d0df97ef3391aaffde96f89da8b91703fa4
+src-url: https://github.com/facebook/folly/archive/refs/tags/v2024.03.18.00.tar.gz
+src-sha: fc10684d7acaaa6bd8e57e129503cb2524b7433bff95aa40d4fed2c59b93fb60
 license: Apache-2.0
-dep-pkg: boost double-conversion fmt glog libevent openssl libbz2 lz4 liblzma libzstd snappy
+dep-pkg: boost double-conversion fmt glog libevent openssl snappy lz4 libbz2 liblzma libzstd zlib
+sfslink: 0
 bsystem: cmake

@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [fff,figlet,findent,findutils,fish,flatbuffers,flock,fortune,fselect,fsmon,fswatch,fuse-overlayfs,fzf,fzy,garble,gawk,gbt,gcc,gcc@13,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gh,git,git-lfs,gitui,gitwatch,glew]
+        pkg: [fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flock,fortune,fselect,fsmon,fswatch,fuse-overlayfs,fzf,fzy,garble,gawk,gbt,gcc,gcc@13,gdb,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gh,gindent]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [fff,figlet,findent,findutils,fish,flatbuffers,flock,fortune,fselect,fsmon,fswatch,fuse-overlayfs,fzf,fzy,garble,gawk,gbt,gcc,gcc@13,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gh,git,git-lfs,gitui,gitwatch,glew]
+        pkg: [fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flock,fortune,fselect,fsmon,fswatch,fuse-overlayfs,fzf,fzy,garble,gawk,gbt,gcc,gcc@13,gdb,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gh,gindent]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [fff,figlet,findent,findutils,fish,flatbuffers,flock,fortune,fselect,fsmon,fswatch,fuse-overlayfs,fzf,fzy,garble,gawk,gbt,gcc,gcc@13,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gh,git,git-lfs,gitui,gitwatch,glew]
+        pkg: [fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flock,fortune,fselect,fsmon,fswatch,fuse-overlayfs,fzf,fzy,garble,gawk,gbt,gcc,gcc@13,gdb,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gh,gindent]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}
