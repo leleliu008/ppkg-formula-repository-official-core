@@ -5,4 +5,6 @@ src-url: https://github.com/openslide/openslide/releases/download/v4.0.0/opensli
 src-sha: cc227c44316abb65fb28f1c967706eb7254f91dbfab31e9ae6a48db6cf4ae562
 license: LGPL-2.1-only
 dep-pkg: cairo gdk-pixbuf openjpeg libdicom libsqlite3
+dopatch: |
+    sed_in_place 's|link_with : libopenslide|link_with : libopenslide.get_static_lib()|' src/meson.build
 bsystem: meson

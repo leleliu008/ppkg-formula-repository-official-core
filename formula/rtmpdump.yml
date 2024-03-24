@@ -1,4 +1,4 @@
-summary: a command-line tool for downloading RTMP streaming media
+summary: A command-line tool for downloading RTMP streaming media
 web-url: https://rtmpdump.mplayerhq.hu
 git-url: https://git.ffmpeg.org/rtmpdump
 
@@ -10,7 +10,7 @@ fix-sha: 3c9167e642faa9a72c1789e7e0fb1ff66adb11d721da4bd92e648cb206c4a2bd
 
 version: 2.4+20151223
 license: GPL-2.0-or-later
-dep-pkg: zlib openssl@1.1
+dep-pkg: zlib openssl
 binbstd: 1
 parallel: 0
 

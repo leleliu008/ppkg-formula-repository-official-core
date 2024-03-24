@@ -1,7 +1,7 @@
-summary: Used as a compiler wrapper and avoids compilation when possible
+summary: A compiler wrapper to avoid compilation when possible
 git-url: https://github.com/mozilla/sccache
-src-url: https://github.com/mozilla/sccache/archive/v0.5.4.tar.gz
-src-sha: 86538bb9e2af88e1e5d519f7a3b6afeac25278eab283ff5a52a715b4f07427ab
+src-url: https://github.com/mozilla/sccache/archive/refs/tags/v0.7.7.tar.gz
+src-sha: a5f5dacbc8232d566239fa023ce5fbc803ad56af2910fa1558b6e08e68e067e0
 license: Apache-2.0
 dep-pkg: openssl
 install: cargow install --features all

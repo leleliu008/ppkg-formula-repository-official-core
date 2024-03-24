@@ -1,8 +1,8 @@
 summary: A command-line utility to convert all kinds of images to ANSI/Unicode characters
 web-url: https://hpjansson.org/chafa/
 git-url: https://github.com/hpjansson/chafa
-src-url: https://github.com/hpjansson/chafa/releases/download/1.12.5/chafa-1.12.5.tar.xz
-src-sha: 0f5490d52a500a6b386f15cc04c6e8702afd0285d422b9575b332e0c683957f2
+src-url: https://github.com/hpjansson/chafa/releases/download/1.14.0/chafa-1.14.0.tar.xz
+src-sha: 670e55c28b5ecd4c8187bd97f0898762712a480ec8ea439dae4a4836b178e084
 license: LGPL-3.0-or-later
-dep-pkg: libwebp libtiff libjpeg-turbo freetype2 glib librsvg 
+dep-pkg: librsvg libwebp libtiff libjpeg-turbo freetype2 glib
 bsystem: configure

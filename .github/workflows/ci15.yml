@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [scc,sccache,sd,shaderc,shc,shell2http,shellcheck,shiori,silicon,six,sjpeg,skcms,sl,slirp4netns,socat,soundtouch,spirv-tools,sqlite3,srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysinfo,szip,tarlz,tbb]
+        pkg: [sccache,sd,sdl2,shaderc,shc,shell2http,shellcheck,shiori,silicon,six,sjpeg,skcms,sl,slirp4netns,socat,soundtouch,spirv-tools,sqlite3,srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysinfo,szip,tarlz,tbb]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [scc,sccache,sd,shaderc,shc,shell2http,shellcheck,shiori,silicon,six,sjpeg,skcms,sl,slirp4netns,socat,soundtouch,spirv-tools,sqlite3,srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysinfo,szip,tarlz,tbb]
+        pkg: [sccache,sd,sdl2,shaderc,shc,shell2http,shellcheck,shiori,silicon,six,sjpeg,skcms,sl,slirp4netns,socat,soundtouch,spirv-tools,sqlite3,srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysinfo,szip,tarlz,tbb]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [scc,sccache,sd,shaderc,shc,shell2http,shellcheck,shiori,silicon,six,sjpeg,skcms,sl,slirp4netns,socat,soundtouch,spirv-tools,sqlite3,srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysinfo,szip,tarlz,tbb]
+        pkg: [sccache,sd,sdl2,shaderc,shc,shell2http,shellcheck,shiori,silicon,six,sjpeg,skcms,sl,slirp4netns,socat,soundtouch,spirv-tools,sqlite3,srs,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysinfo,szip,tarlz,tbb]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}

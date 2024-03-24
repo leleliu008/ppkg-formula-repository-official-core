@@ -6,7 +6,7 @@ src-uri: https://ftpmirror.gnu.org/guile/guile-3.0.9.tar.xz
 src-sha: 1a2625ac72b2366e95792f3fe758fd2df775b4044a90a4a9787326e66c0d750d
 license: LGPL-3.0-or-later
 dep-pkg: bdw-gc readline libgmp libffi libxcrypt libunistring
-dep-upp: texinfo
+dep-upp: gperf texinfo
 sfslink: 0
 install: |
     configure --disable-nls

@@ -1,4 +1,4 @@
-summary: Object-file caching compiler wrapper
+summary: A compiler wrapper to speed up recompilation by caching previous compilations and detecting when the same compilation is being done again
 web-url: https://ccache.dev
 git-url: https://github.com/ccache/ccache
 src-url: https://github.com/ccache/ccache/releases/download/v4.9.1/ccache-4.9.1.tar.xz

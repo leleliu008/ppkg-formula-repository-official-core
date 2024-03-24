@@ -1,4 +1,4 @@
-summary: a disk usage analyzer with an ncurses interface.
+summary: A disk usage analyzer with an ncurses interface
 web-url: https://dev.yorhel.nl/ncdu
 src-url: https://dev.yorhel.nl/download/ncdu-2.2.2.tar.gz
 src-sha: 90d920024e752318b469776ce57e03b3c702d49329ad9825aeeab36c3babf993

@@ -1,14 +1,31 @@
 summary: Development framework for multimedia applications
-git-url: https://gitlab.freedesktop.org/gstreamer/gstreamer
 web-url: https://gstreamer.freedesktop.org/
-src-url: https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.22.3.tar.xz
-src-sha: 9ffeab95053f9f6995eb3b3da225e88f21c129cd60da002d3f795db70d6d5974
+git-url: https://gitlab.freedesktop.org/gstreamer/gstreamer
+src-url: https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.10/gstreamer-1.22.10.tar.gz
+src-sha: bba3a87f82d509802d96a5caf2c47982234063928870623b222f60702f1f50eb
 license: LGPL-2.0-or-later
-dep-upp: gm4 bison flex
-dep-pkg: glib gobject-introspection gettext
+dep-pkg: graphene libsoup libshout libvpx libogg libopus libvorbis lame flac dav1d rav1e speex faad2 fdk-aac theora taglib orc cairo pango libpng libjpeg-turbo usrsctp libsrtp rtmpdump
+dep-upp: gm4 bison flex nasm yasm cargo cargo-c
 sfslink: 0
 install: |
     LINK_TYPE=shared-most
     mesonw \
+        -Dbase=enabled \
+        -Dgood=enabled \
+        -Dugly=enabled \
+        -Dbad=enabled \
         -Dintrospection=enabled \
+        -Drs=enabled \
+        -Dnls=enabled \
+        -Dorc=enabled \
+        -Dgpl=enabled \
+        -Dtls=enabled \
+        -Dqt5=disabled \
+        -Ddoc=disabled \
+        -Dgtk_doc=disabled \
+        -Dtests=disabled \
+        -Dtools=enabled \
+        -Ddevtools=enabled \
+        -Dexamples=disabled \
+        -Dlibnice=disabled \
         -Dptp-helper-permissions=none

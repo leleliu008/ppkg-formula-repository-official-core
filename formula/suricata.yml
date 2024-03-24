@@ -1,10 +1,10 @@
 summary: Network IDS, IPS, and security monitoring engine
 web-url: https://suricata-ids.org
 git-url: https://github.com/OISF/suricata
-src-url: https://www.openinfosecfoundation.org/download/suricata-7.0.0.tar.gz
-src-sha: 7bcd1313118366451465dc3f8385a3f6aadd084ffe44dd257dda8105863bb769
+src-url: https://www.openinfosecfoundation.org/download/suricata-7.0.4.tar.gz
+src-sha: 640060120024be70dbe81f6ec6efc72e46250fcb36219dff67e6417220ff21b7
 license: GPL-2.0-or-later
-dep-pkg: jansson file libnet libpcap libyaml lz4 libpcre2 libiconv
+dep-pkg: libnet libpcap libyaml libmagic libpcre2 libiconv jansson lz4
 bsystem: configure cargo
 dopatch: |
     LIBPCAP_LIBS="$(pkg-config --libs-only-l libpcap)"

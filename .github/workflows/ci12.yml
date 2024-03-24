@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [mpir,mpv,msgpack-c,mupdf,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencl-icd-loader,opencolorio]
+        pkg: [mpv,msgpack-c,mupdf,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencl-icd-loader,opencolorio,openfst]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [mpir,mpv,msgpack-c,mupdf,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencl-icd-loader,opencolorio]
+        pkg: [mpv,msgpack-c,mupdf,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencl-icd-loader,opencolorio,openfst]
         flavor: [sh, c]
 
     runs-on:   ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [mpir,mpv,msgpack-c,mupdf,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencl-icd-loader,opencolorio]
+        pkg: [mpv,msgpack-c,mupdf,musl-libc,nano,nanomsg,nasm,navi,ncdu,neofetch,netpbm,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencl-icd-loader,opencolorio,openfst]
         flavor: [sh, c]
 
     runs-on: macos-${{ matrix.tag }}
