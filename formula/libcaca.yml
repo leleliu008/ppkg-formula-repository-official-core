@@ -7,10 +7,10 @@ version: 0.99b20
 license: WTFPL
 dep-pkg: imlib2
 
-dopatch: |
-    if [ -e ../lib/libxcb.a ] ; then
-        rm  ../lib/libxcb.a
-        printf 'INPUT(%s %s)\n' "$xorg_libxcb_LIBRARY_DIR/libxcb.a" "$(pkg-config --libs-only-l xcb | sed 's|-lxcb||g')" > ../lib/libxcb.a
+dopatch2: |
+    if [ -e ../lib/libImlib2.a ] ; then
+        rm  ../lib/libImlib2.a
+        printf 'INPUT(%s %s)\n' "$imlib2_LIBRARY_DIR/libImlib2.a" "$(pkg-config --libs-only-l imlib2 | sed 's|-lImlib2||g')" > ../lib/libImlib2.a
     fi
 
 install: |

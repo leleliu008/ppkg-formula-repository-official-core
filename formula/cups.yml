@@ -4,6 +4,7 @@ src-url: https://github.com/OpenPrinting/cups/releases/download/v2.4.7/cups-2.4.
 src-sha: dd54228dd903526428ce7e37961afaed230ad310788141da75cebaa08362cf6c
 license: Apache-2.0
 dep-pkg: openssl krb5 zlib
+binbstd: 1
 install: |
     configure \
         --without-bundledir \
