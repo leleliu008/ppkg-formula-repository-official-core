@@ -122,8 +122,9 @@ package_name_transform_from_uppm_to_brew() {
         liblzma)  printf '%s\n' 'xz'        ;;
         libopus)  printf '%s\n' 'opus'      ;;
         libz3.a)  printf '%s\n' 'z3'        ;;
-        libzmq)   printf '%s\n' 'zeromq'    ;;
+        libgmp)   printf '%s\n' 'gmp'       ;;
         libbz2)   printf '%s\n' 'bzip2'     ;;
+        libzmq)   printf '%s\n' 'zeromq'    ;;
         libjxl)   printf '%s\n' 'jpeg-xl'   ;;
 
         toml++)   printf '%s\n' 'tomlplusplus'  ;;
