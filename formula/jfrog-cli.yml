@@ -4,5 +4,5 @@ git-url: https://github.com/jfrog/jfrog-cli
 src-url: https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.54.0.tar.gz
 src-sha: 1d6758df3c4fe13247e9f58512328960ee2668e4be45a46ede3a0a2b3ad8f803
 license: Apache-2.0
-dopatch: run go mod tidy
+prepare: run go mod tidy
 install: gow -o jfrog

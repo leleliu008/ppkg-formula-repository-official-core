@@ -6,5 +6,5 @@ license: Apache-2.0
 dep-pkg: fizz
 bscript: wangle
 sfslink: 0
-dopatch: LINK_TYPE=shared-most
+prepare: LINK_TYPE=shared-most
 install: cmakew -DBUILD_TESTS=OFF

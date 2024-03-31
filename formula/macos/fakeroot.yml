@@ -1,20 +1,13 @@
-summary: a command-line tool for simulating superuser privileges
+summary: A command-line tool for simulating superuser privileges
 web-url: https://tracker.debian.org/pkg/fakeroot
 src-url: https://deb.debian.org/debian/pool/main/f/fakeroot/fakeroot_1.29.orig.tar.gz
 src-sha: 8fbbafb780c9173e3ace4a04afbc1d900f337f3216883939f5c7db3431be7c20
-
-fix-url: https://salsa.debian.org/clint/fakeroot/-/commit/e1a7af793e58bddd4bbd04cfb4d26687fbaa9bcf.diff
-fix-sha: 60cfd8bbc416527981151237b7c403fba88975e97907a0ed5c31566d0cda078d
-
-res-url: https://raw.githubusercontent.com/macports/macports-ports/0ffd857cab7b021f9dbf2cbc876d8025b6aefeff/sysutils/fakeroot/files/patch-message.h.diff
-res-sha: 6540eef1c31ffb4ed636c1f4750ee668d2effdfe308d975d835aa518731c72dc
-
 license: GPL-3.0-or-later
 dep-upp: libtool
 bsystem: autotools
-dopatch: |
-    run "patch -p1 < ../fix/60cfd8bbc416527981151237b7c403fba88975e97907a0ed5c31566d0cda078d.diff"
-    run "patch -p0 < ../res/6540eef1c31ffb4ed636c1f4750ee668d2effdfe308d975d835aa518731c72dc.diff"
-    run ./bootstrap
-
+prepare: run ./bootstrap
 install: configure --disable-static
+
+patches: |
+    60cfd8bbc416527981151237b7c403fba88975e97907a0ed5c31566d0cda078d|https://salsa.debian.org/clint/fakeroot/-/commit/e1a7af793e58bddd4bbd04cfb4d26687fbaa9bcf.diff
+    6540eef1c31ffb4ed636c1f4750ee668d2effdfe308d975d835aa518731c72dc|https://raw.githubusercontent.com/macports/macports-ports/0ffd857cab7b021f9dbf2cbc876d8025b6aefeff/sysutils/fakeroot/files/patch-message.h.diff

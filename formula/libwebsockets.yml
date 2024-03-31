@@ -1,4 +1,4 @@
-summary: a simple-to-use C library providing client and server for http/1, http/2, websockets, MQTT and other protocols.
+summary: A simple-to-use C library providing client and server for http/1, http/2, websockets, MQTT and other protocols
 web-url: https://libwebsockets.org/
 git-url: https://github.com/warmcat/libwebsockets
 src-url: https://github.com/warmcat/libwebsockets/archive/refs/tags/v4.3.3.tar.gz

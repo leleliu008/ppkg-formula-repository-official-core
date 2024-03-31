@@ -6,7 +6,7 @@ license: Apache-2.0
 dep-pkg: hwloc
 dep-upp: swig
 sfslink: 0
-dopatch: LINK_TYPE=shared-most
+prepare: LINK_TYPE=shared-most
 install: |
     cmakew \
         -DTBB_TEST=OFF \

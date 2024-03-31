@@ -6,21 +6,14 @@ src-sha: 8b3cfd7bc695bd6cea0f37f53f0981f34f87496e79e2529874fd03a2f9dd3a8a
 license: Apache-2.0 with LLVM-exception
 dep-pkg: python3 binutils libelf libedit libffi libxml2 libz3.a
 dep-upp: perl swig patch
-
-# https://bugzilla.redhat.com/show_bug.cgi?id=2128646
-fix-url: https://github.com/llvm/llvm-project/commit/81fc5f7909a4ef5a8d4b5da2a10f77f7cb01ba63.patch?full_index=1
-fix-sha: d2a2b61f7024fdf45f24a8ad8592808fc94c9ce6db8df3152fd9f46180c43074
-
-res-url: https://github.com/llvm/llvm-project/commit/f0a25fe0b746f56295d5c02116ba28d2f965c175.patch?full_index=1
-res-sha: a2cf01ca5f632f7372f03c7a9db438f5f7083daae90a617241a0c41ece979267
-
 bscript: llvm
-dopatch: |
-    cd ..
-    patch -p1 < ../fix/d2a2b61f7024fdf45f24a8ad8592808fc94c9ce6db8df3152fd9f46180c43074.patch
-    patch -p1 < ../res/a2cf01ca5f632f7372f03c7a9db438f5f7083daae90a617241a0c41ece979267.patch
-    cd llvm
 
+patches: |
+    # https://bugzilla.redhat.com/show_bug.cgi?id=2128646
+    d2a2b61f7024fdf45f24a8ad8592808fc94c9ce6db8df3152fd9f46180c43074|https://github.com/llvm/llvm-project/commit/81fc5f7909a4ef5a8d4b5da2a10f77f7cb01ba63.patch?full_index=1
+    a2cf01ca5f632f7372f03c7a9db438f5f7083daae90a617241a0c41ece979267|https://github.com/llvm/llvm-project/commit/f0a25fe0b746f56295d5c02116ba28d2f965c175.patch?full_index=1
+
+prepare: |
     LIBELF_LIBRARIES="$(pkg-config --libs-only-l libelf)"
     sed_in_place "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
 

@@ -1,4 +1,4 @@
-summary: a collection of subroutines used by various GNU programs.
+summary: A collection of subroutines used by various GNU programs
 web-url: https://packages.debian.org/sid/libiberty-dev
 src-url: http://deb.debian.org/debian/pool/main/libi/libiberty/libiberty_20230104.orig.tar.xz
 src-sha: f0c873589b983a2e82287d1beea3b230959803121ede290154d44008984013ef

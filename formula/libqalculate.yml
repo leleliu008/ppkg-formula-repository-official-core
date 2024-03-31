@@ -8,4 +8,4 @@ dep-pkg: gettext readline icu4c libxml2 libcurl libgmp mpfr
 dep-upp: intltool
 xxflags: -std=c++11
 bsystem: configure
-dopatch: export PERL5LIB="$NATIVE_PACKAGE_INSTALLED_ROOT/perl-XML-Parser/lib/perl5"
+prepare: export PERL5LIB="$NATIVE_PACKAGE_INSTALLED_ROOT/perl-XML-Parser/lib/perl5"

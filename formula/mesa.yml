@@ -7,7 +7,7 @@ license: MIT
 dep-pym: Mako MarkupSafe
 dep-upp: gm4 flex bison
 dep-pkg: llvm+clang+lld glslang gettext xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxshmfence libvdpau libva elfutils libdrm wayland-protocols lm-sensors
-dopatch: export PATH="$NATIVE_PACKAGE_INSTALLED_ROOT/python3/bin:$PATH"
+prepare: export PATH="$NATIVE_PACKAGE_INSTALLED_ROOT/python3/bin:$PATH"
 install: |
     mesonw \
         -Db_ndebug=true \

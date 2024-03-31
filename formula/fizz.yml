@@ -6,5 +6,5 @@ license: BSD-2-Clause
 dep-pkg: folly zlib libsodium
 bscript: fizz
 sfslink: 0
-dopatch: LINK_TYPE=shared-most
+prepare: LINK_TYPE=shared-most
 install: cmakew -DBUILD_TESTS=OFF

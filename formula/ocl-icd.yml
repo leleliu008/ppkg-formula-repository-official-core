@@ -6,4 +6,4 @@ license: BSD-2-Clause
 dep-pkg: opencl-headers docbook ruby
 dep-upp: libtool
 bsystem: autotools
-dopatch: ./bootstrap
+prepare: ./bootstrap
