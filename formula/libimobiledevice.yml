@@ -8,4 +8,4 @@ dep-pkg: openssl libusbmuxd
 dopatch: |
     sed_in_place 's|PLIST_FORMAT_XML|PLIST_FORMAT_XML_|'       common/utils.h
     sed_in_place 's|PLIST_FORMAT_BINARY|PLIST_FORMAT_BINARY_|' common/utils.h
-install: configure --without-cython
+install: configure --without-cython LIBS=-lm

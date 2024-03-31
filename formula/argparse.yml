@@ -1,0 +1,6 @@
+summary: Argument Parser for Modern C++
+git-url: https://github.com/p-ranav/argparse
+src-url: https://github.com/p-ranav/argparse/archive/refs/tags/v3.0.tar.gz
+src-sha: ba7b465759bb01069d57302855eaf4d1f7d677f21ad7b0b00b92939645c30f47
+license: MIT
+bsystem: cmake

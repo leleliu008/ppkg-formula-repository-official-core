@@ -12,6 +12,5 @@ fix-sha: a94e7bdd8840a31cecacc301684dfdbf7b98773ad824aeaab611fabfdc513036
 parallel: 0
 binbstd: 1
 install: |
-    patch -p0 < ../fix/a94e7bdd8840a31cecacc301684dfdbf7b98773ad824aeaab611fabfdc513036.patch
     gmakew clean
     gmakew install PREFIX=$PACKAGE_INSTALL_DIR CC=$CC AR=$AR CFLAGS="'$CFLAGS'"

@@ -14,8 +14,6 @@ dep-upp: libtool
 bsystem: autotools
 
 dopatch: |
-    run "patch -p1 < ../fix/54aeff2adaea53902afc2660afb9534675b3ea522c767cbc24a5281080457b2c.patch"
-    run autoreconf -ivf
     #sed_in_place '203c return 0;'         src/aalinuxkbd.c
     #sed_in_place '1i #include <stdlib.h>' src/aalinuxkbd.c
     #sed_in_place 's|exit(1)|return 1|'    src/aasavefont.c
