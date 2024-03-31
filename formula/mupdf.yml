@@ -1,5 +1,5 @@
 summary: Lightweight PDF and XPS viewer
-git-url: https://git.ghostscript.com/mupdf
+git-url: git://git.ghostscript.com/mupdf.git
 web-url: https://mupdf.com/
 src-url: https://mupdf.com/downloads/archive/mupdf-1.23.11-source.tar.gz
 src-sha: 478f2a167feae2a291c8b8bc5205f2ce2f09f09b574a6eb0525bfad95a3cfe66
