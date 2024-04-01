@@ -1,100 +1,58 @@
 summary: Standard SGML representation system for technical documents
 web-url: https://docbook.org/
-src-url: https://docbook.org/xml/5.1/docbook-v5.1-os.zip
-src-sha: b3f3413654003c1e773360d7fc60ebb8abd0e8c9af8e7d6c4b55f124f34d1e7f
-dep-upp: bsdtar libxml2-utils
+dep-upp: libxml2-utils
+reslist: |
+    30f0644064e0ea71751438251940b1431f46acada814a062870f486c772e7772|https://docbook.org/xml/4.1.2/docbkx412.zip||xml/4.1|0
+    acc4601e4f97a196076b7e64b368d9248b07c7abf26b34a02cca40eeebe60fa2|https://docbook.org/xml/4.2/docbook-xml-4.2.zip||xml/4.2|0
+    23068a94ea6fd484b004c5a73ec36a66aa47ea8f0d6b62cc1695931f5c143464|https://docbook.org/xml/4.3/docbook-xml-4.3.zip||xml/4.3|0
+    02f159eb88c4254d95e831c51c144b1863b216d909b5ff45743a1ce6f5273090|https://docbook.org/xml/4.4/docbook-xml-4.4.zip||xml/4.4|0
+    4e4e037a2b83c98c6c94818390d4bdd3f6e10f6ec62dd79188594e26190dc7b4|https://docbook.org/xml/4.5/docbook-xml-4.5.zip||xml/4.5|0
+    3dcd65e1f5d9c0c891b3be204fa2bb418ce485d32310e1ca052e81d36623208e|https://docbook.org/xml/5.0/docbook-5.0.zip||xml/5.0|0
+    b3f3413654003c1e773360d7fc60ebb8abd0e8c9af8e7d6c4b55f124f34d1e7f|https://docbook.org/xml/5.1/docbook-v5.1-os.zip||xml/5.1|0
+    ee8b9eca0b7a8f89075832a2da7534bce8c5478fc8fc2676f512d5d87d832102|https://github.com/docbook/xslt10-stylesheets/releases/download/release%2F1.79.2/docbook-xsl-nons-1.79.2.tar.bz2||xslt/1.0/nons|0
+    316524ea444e53208a2fb90eeb676af755da96e1417835ba5f5eb719c81fa371|https://github.com/docbook/xslt10-stylesheets/releases/download/release%2F1.79.2/docbook-xsl-1.79.2.tar.bz2||xslt/1.0/ns|0
+
 install: |
-    DOCBOOK_XML_VERSION_LIST='
-    30f0644064e0ea71751438251940b1431f46acada814a062870f486c772e7772=https://docbook.org/xml/4.1.2/docbkx412.zip
-    acc4601e4f97a196076b7e64b368d9248b07c7abf26b34a02cca40eeebe60fa2=https://docbook.org/xml/4.2/docbook-xml-4.2.zip
-    23068a94ea6fd484b004c5a73ec36a66aa47ea8f0d6b62cc1695931f5c143464=https://docbook.org/xml/4.3/docbook-xml-4.3.zip
-    02f159eb88c4254d95e831c51c144b1863b216d909b5ff45743a1ce6f5273090=https://docbook.org/xml/4.4/docbook-xml-4.4.zip
-    4e4e037a2b83c98c6c94818390d4bdd3f6e10f6ec62dd79188594e26190dc7b4=https://docbook.org/xml/4.5/docbook-xml-4.5.zip
-    3dcd65e1f5d9c0c891b3be204fa2bb418ce485d32310e1ca052e81d36623208e=https://docbook.org/xml/5.0/docbook-5.0.zip
-    b3f3413654003c1e773360d7fc60ebb8abd0e8c9af8e7d6c4b55f124f34d1e7f=https://docbook.org/xml/5.1/docbook-v5.1-os.zip
-    '
+    run install -d "$PACKAGE_INSTALL_DIR/"
 
-    set -ex
-    for item in $DOCBOOK_XML_VERSION_LIST
-    do
-        unset URL
-        unset SHA
+    run mv "$PACKAGE_WORKING_DIR/res/xml"  "$PACKAGE_INSTALL_DIR/"
+    run mv "$PACKAGE_WORKING_DIR/res/xslt" "$PACKAGE_INSTALL_DIR/"
 
-        URL=$(printf '%s\n' "$item" | cut -d= -f2)
-        SHA=$(printf '%s\n' "$item" | cut -d= -f1)
+    run cd "$PACKAGE_INSTALL_DIR/"
 
-        FILEPATH="$PPKG_DOWNLOADS_DIR/$SHA.zip"
+    run cp xml/4.2/catalog.xml xml/4.1/catalog.xml
+    run mv xml/5.0/docbook-5.0/* xml/5.0/
 
-        wfetch "$URL" --sha256="$SHA" -o "$FILEPATH"
+    run xmlcatalog --noout --create catalog.xml
 
-        unset VER
-        VER=$(printf '%s\n' "$URL" | cut -c25-27)
-
-        DEST="$PACKAGE_INSTALL_DIR/xml/$VER"
-
-        install -v -d "$DEST"
-
-        bsdtar xvf "$FILEPATH" -C "$DEST"
-    done
-
-    cp "$PACKAGE_INSTALL_DIR/xml/4.2/catalog.xml"   "$PACKAGE_INSTALL_DIR/xml/4.1/catalog.xml"
-
-    mv "$PACKAGE_INSTALL_DIR/xml/5.0/docbook-5.0"/* "$PACKAGE_INSTALL_DIR/xml/5.0"
-
-    XML_CATALOG_FILES="$PACKAGE_INSTALL_DIR/catalog.xml"
-
-    xmlcatalog --noout --create "$XML_CATALOG_FILES"
-
-    find "$PACKAGE_INSTALL_DIR/xml" -mindepth 2 -name catalog.xml -exec xmlcatalog --noout --add nextCatalog '' 'file://{}' "$XML_CATALOG_FILES" \;
+    find xml -mindepth 2 -name catalog.xml -exec xmlcatalog --noout --add nextCatalog '' "file://$PWD/{}" catalog.xml \;
 
     ################################################################################################################
 
-    URL='https://github.com/docbook/xslt10-stylesheets/releases/download/release%2F1.79.2/docbook-xsl-nons-1.79.2.tar.bz2'
-    SHA=ee8b9eca0b7a8f89075832a2da7534bce8c5478fc8fc2676f512d5d87d832102
+    DEST="$PWD/xslt/1.0/nons"
 
-    FILEPATH="$PPKG_DOWNLOADS_DIR/$SHA.tar.bz2"
-
-    wfetch "$URL" --sha256="$SHA" -o "$FILEPATH"
-
-    DEST="$PACKAGE_INSTALL_DIR/xslt/1.0/nons"
-
-    install -d "$DEST"
-
-    bsdtar xvf "$FILEPATH" -C "$DEST" --strip-components 1 --no-same-owner
-
-    xmlcatalog --noout --add nextCatalog '' "file://$DEST/catalog.xml" "$XML_CATALOG_FILES"
+    xmlcatalog --noout --add nextCatalog '' "file://$DEST/catalog.xml" catalog.xml
 
     for ver in 1.79.2 current
     do
         for rewriteItem in rewriteSystem rewriteURI
         do
-            xmlcatalog --noout --add "$rewriteItem" "https://cdn.docbook.org/release/xsl-nons/$ver"   "file://$DEST" "$XML_CATALOG_FILES"
-            xmlcatalog --noout --add "$rewriteItem" "http://docbook.sourceforge.net/release/xsl/$ver" "file://$DEST" "$XML_CATALOG_FILES"
+            xmlcatalog --noout --add "$rewriteItem" "https://cdn.docbook.org/release/xsl-nons/$ver"   "file://$DEST" catalog.xml
+            xmlcatalog --noout --add "$rewriteItem" "http://docbook.sourceforge.net/release/xsl/$ver" "file://$DEST" catalog.xml
         done
     done
 
     ################################################################################################################
 
-    URL='https://github.com/docbook/xslt10-stylesheets/releases/download/release%2F1.79.2/docbook-xsl-1.79.2.tar.bz2'
-    SHA=316524ea444e53208a2fb90eeb676af755da96e1417835ba5f5eb719c81fa371
+    DEST="$PWD/xslt/1.0/ns"
 
-    FILEPATH="$PPKG_DOWNLOADS_DIR/$SHA.tbz2"
-
-    wfetch "$URL" --sha256="$SHA" -o "$FILEPATH"
-
-    DEST="$PACKAGE_INSTALL_DIR/xslt/1.0/ns"
-
-    install -d "$DEST"
-
-    bsdtar xvf "$FILEPATH" -C "$DEST" --strip-components 1 --no-same-owner
-
-    xmlcatalog --noout --add nextCatalog '' "file://$DEST/catalog.xml" "$XML_CATALOG_FILES"
+    xmlcatalog --noout --add nextCatalog '' "file://$DEST/catalog.xml" catalog.xml
 
     for ver in 1.79.2 current
     do
         for rewriteItem in rewriteSystem rewriteURI
         do
-            xmlcatalog --noout --add "$rewriteItem" "https://cdn.docbook.org/release/xsl/$ver"           "file://$DEST" "$XML_CATALOG_FILES"
-            xmlcatalog --noout --add "$rewriteItem" "http://docbook.sourceforge.net/release/xsl-ns/$ver" "file://$DEST" "$XML_CATALOG_FILES"
+            xmlcatalog --noout --add "$rewriteItem" "https://cdn.docbook.org/release/xsl/$ver"           "file://$DEST" catalog.xml
+            xmlcatalog --noout --add "$rewriteItem" "http://docbook.sourceforge.net/release/xsl-ns/$ver" "file://$DEST" catalog.xml
         done
     done
