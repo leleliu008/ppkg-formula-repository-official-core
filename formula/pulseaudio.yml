@@ -3,7 +3,7 @@ web-url: https://wiki.freedesktop.org/www/Software/PulseAudio/
 git-url: https://gitlab.freedesktop.org/pulseaudio/pulseaudio
 src-url: https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz
 src-sha: 053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5
-dep-pkg: gettext-runtime json-c libsndfile libsoxr libcap libtool openssl alsa-lib orc dbus speexdsp expat glib
+dep-pkg: gettext-runtime json-c libexpat libsndfile libsoxr libcap libtool openssl alsa-lib orc dbus speexdsp glib
 dep-upp: gettext-tools perl-XML-Parser gm4
 sfslink: 0
 dopatch: |
