@@ -29,5 +29,5 @@ install: |
     Description: SQL database engine
     Version: $PACKAGE_VERSION
     Cflags: -I\${includedir}
-    Libs: -L\${libdir} -lsqlite3 -lm 
+    Libs: -L\${libdir} -lsqlite3 -lm
     EOF

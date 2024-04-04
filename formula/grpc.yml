@@ -4,7 +4,7 @@ git-url: https://github.com/grpc/grpc
 src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.62.1.tar.gz
 src-sha: c9f9ae6e4d6f40464ee9958be4068087881ed6aa37e30d0e64d40ed7be39dd01
 license: Apache-2.0
-dep-pkg: abseil c-ares openssl protobuf re2
+dep-pkg: abseil c-ares openssl re2 libprotobuf
 
 install: |
     cmakew \

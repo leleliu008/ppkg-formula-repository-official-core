@@ -1,11 +1,11 @@
 summary: List detailed info about USB devices
 web-url: http://www.linux-usb.org/
-src-url: https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-015.tar.gz
-src-sha: 2b8140664578f39c3f6f0166a1b950f8655304e63e3d7f89899acb99bc5cb8e7
+src-url: https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-017.tar.gz
+src-sha: f704c4cb78a060db88b43aac6ebfd3d93c2c5cf1d6dd0e42936faaf00814ab00
 license: GPL-2.0-only GPL-3.0-only
 dep-pkg: libusb
 dep-upp: libtool
 bsystem: autotools
 
-fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/9ef20debdfb9995fec347e401f2b5eb7b6c76f07/usbutils/portable.patch
-fix-sha: 645cf353cd2ce0c0ee4f8c4129c3b39488c23d0ab13f4cfdef07f55f23381933
+fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/12f3d34/usbutils/portable.patch
+fix-sha: 0f504a173191a1e1e2f56b41584fcc0468eab7b7dfefd225910b91b5ea65cfbe

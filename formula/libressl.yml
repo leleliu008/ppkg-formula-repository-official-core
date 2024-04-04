@@ -1,8 +1,8 @@
 summary: Version of the SSL/TLS protocol forked from OpenSSL
 web-url: https://www.libressl.org/
 git-url: https://github.com/libressl-portable/portable
-src-url: https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.3.tar.gz
-src-sha: a65f40e3ef6e3c9451c8318e6f2c454c367e67f09c0cde1849731a4d6ecc7272
+src-url: https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.9.1.tar.gz
+src-sha: 6da0b954695f7ee62b03f64200a8a4f02af93717b60cce04ab6c8df262c07a51
 license: OpenSSL
 dep-upp: libtool
 bsystem: autotools
