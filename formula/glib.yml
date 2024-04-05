@@ -5,8 +5,8 @@ src-url: https://download.gnome.org/sources/glib/2.80/glib-2.80.0.tar.xz
 src-uri: https://distfiles.macports.org/glib2/glib-2.80.0.tar.xz
 src-sha: 8228a92f92a412160b139ae68b6345bd28f24434a7b5af150ebe21ff587a561d
 license: LGPL-2.1-or-later
-dep-pkg: gettext libffi libpcre2 zlib
-dep-upp: python3
+dep-pkg: gettext-runtime libffi libpcre2 zlib
+dep-upp: gettext-tools python3
 dep-pym: packaging
 sfslink: 0
 bsystem: meson
@@ -22,7 +22,7 @@ dopatch: |
     sed_in_place "/libz_dep =/c libz_dep = cc.find_library('z', static : true, dirs : ['$zlib_LIBRARY_DIR'])" meson.build
 
     sed_in_place '2228,2254d'  meson.build
-    sed_in_place "2228a libintl = cc.find_library('intl', static : true, dirs: ['$gettext_LIBRARY_DIR'])" meson.build
+    sed_in_place "2228a libintl = cc.find_library('intl', static : true, dirs: ['$gettext_runtime_LIBRARY_DIR'])" meson.build
     sed_in_place '2229a libintl_deps = [libintl, libiconv]' meson.build
 
 install: |
@@ -96,4 +96,5 @@ install: |
             -Dbsymbolic_functions=false
     fi
 
-    sed_in_place '/^Requires.private: /s|$| libintl|' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/glib-2.0.pc"
+dotweak: |
+    sed_in_place '/^Requires.private: /s|$| libintl libffi zlib|' lib/pkgconfig/glib-2.0.pc
