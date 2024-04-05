@@ -5,7 +5,7 @@ src-url: https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.15
 src-sha: 63a0658d0e06e0fa886106452b58ef04f21f58202ea02a94c39de0d3335d7c0e
 license: MIT
 dep-pkg: gettext-runtime json-c libexpat libuuid freetype2
-dep-upp: gettext-tools   gperf
+dep-upp: gettext-tools python3 gperf
 install: |
     configure \
         --enable-iconv \
