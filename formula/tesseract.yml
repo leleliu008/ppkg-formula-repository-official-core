@@ -4,6 +4,7 @@ src-url: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.3.tar.
 src-sha: dc4329f85f41191b2d813b71b528ba6047745813474e583ccce8795ff2ff5681
 license: Apache-2.0
 dep-pkg: leptonica icu4c pango libarchive libcurl
+
 dopatch: |
     CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl | tr ' ' ';')"
     cat > cmake/FindCURL.cmake <<EOF
@@ -72,4 +73,6 @@ install: |
         -DBUILD_TESTS=OFF \
         -DBUILD_TRAINING_TOOLS=ON \
         -DBUILD_SHARED_LIBS=OFF
-    sed_in_place '/^Requires\.private:/c Requires: lept libcurl libarchive' "$PACKAGE_INSTALL_DIR/lib/pkgconfig/tesseract.pc"
+
+dotweak: |
+    sed_in_place '/^Requires\.private:/c Requires: lept libcurl libarchive' lib/pkgconfig/tesseract.pc

@@ -11,8 +11,10 @@ do12345: configure --disable-zlib --disable-bzlib --disable-xzlib
 install: |
     export FILE_COMPILE="$NATIVE_INSTALL_DIR/bin/file"
     configure --enable-zlib --disable-bzlib --disable-xzlib
-    rm -rf "$PACKAGE_INSTALL_DIR/include"
-    rm -rf "$PACKAGE_INSTALL_DIR/lib"
-    rm -rf "$PACKAGE_INSTALL_DIR/share/man/man3"
-    rm -rf "$PACKAGE_INSTALL_DIR/share/man/man4"
-    rm -rf "$PACKAGE_INSTALL_DIR/share/man/man5"
+
+dotweak: |
+    rm -rf include
+    rm -rf lib
+    rm -rf share/man/man3
+    rm -rf share/man/man4
+    rm -rf share/man/man5

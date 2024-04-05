@@ -4,13 +4,15 @@ git-url: https://github.com/g-truc/glm
 src-url: https://github.com/g-truc/glm/archive/refs/tags/1.0.1.tar.gz
 src-sha: 9f3174561fd26904b23f0db5e560971cbf9b3cbda0b280f04d5c379d03bf234c
 license: MIT
+
 install: |
     cmakew -DGLM_BUILD_TESTS=OFF -DBUILD_SHARED_LIBS=ON
     rm CMakeCache.txt
     cmakew -DGLM_BUILD_TESTS=OFF -DBUILD_SHARED_LIBS=OFF
 
-    install -d "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-    cat >      "$PACKAGE_INSTALL_DIR/lib/pkgconfig/glm.pc" <<EOF
+dotweak: |
+    install -d lib/pkgconfig
+    cat >      lib/pkgconfig/glm.pc <<EOF
     prefix=$PACKAGE_INSTALL_DIR
     includedir=\${prefix}/include
 

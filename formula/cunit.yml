@@ -28,4 +28,5 @@ install: |
         --enable-console \
         --enable-memtrace \
         --enable-automated $CONFIGURE_EXTRA_ARGS
-    mv "$PACKAGE_INSTALL_DIR/doc" "$PACKAGE_INSTALL_DIR/share/"
+
+dotweak: mv -v doc share/

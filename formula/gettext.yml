@@ -5,6 +5,7 @@ src-url: https://ftp.gnu.org/gnu/gettext/gettext-0.22.5.tar.gz
 src-sha: ec1705b1e969b83a9f073144ec806151db88127f5e40fe5a94cb6c8fa48996a0
 license: GPL-3.0-or-later
 dep-pkg: ncurses libiconv
+
 install: |
     configure \
         --with-included-glib \
@@ -27,7 +28,9 @@ install: |
         --enable-nls \
         --enable-relocatable
 
-    cat > libintl.pc <<EOF
+dotweak: |
+    install -d lib/pkgconfig/
+    cat >      lib/pkgconfig/libintl.pc <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
@@ -40,6 +43,3 @@ install: |
     Libs: -L\${libdir} -lintl 
     Requires: libiconv
     EOF
-
-    run install -d    "$PACKAGE_INSTALL_DIR/lib/pkgconfig/"
-    run mv libintl.pc "$PACKAGE_INSTALL_DIR/lib/pkgconfig/"

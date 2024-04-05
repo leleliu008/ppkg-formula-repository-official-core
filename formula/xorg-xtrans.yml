@@ -5,7 +5,7 @@ src-sha: 377c4491593c417946efcd2c7600d1e62639f7a8bbca391887e2c4679807d773
 license: MIT
 dep-pkg: xorg-proto
 dopatch: sed_in_place 's|<sys/stropts.h>|<sys/ioctl.h>|' Xtranslcl.c
-install: |
-    configure --enable-docs=no
-    install -d "$PACKAGE_INSTALL_DIR/lib"
-    mv "$PACKAGE_INSTALL_DIR/share/pkgconfig" "$PACKAGE_INSTALL_DIR/lib/"
+install: configure --enable-docs=no
+dotweak: |
+    install -d lib/
+    mv -v share/pkgconfig lib/

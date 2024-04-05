@@ -8,6 +8,7 @@ license: LGPL-2.1-or-later
 dep-pkg: gettext libffi libpcre2 zlib
 dep-upp: python3
 dep-pym: packaging
+
 dopatch: |
     sed_in_place "s|link_with : libgio|link_with : libgio.get_static_lib()|" gio/meson.build
     sed_in_place "s|link_with : libglib|link_with : libglib.get_static_lib()|" glib/meson.build
@@ -38,5 +39,7 @@ install: |
         -Dtests=false \
         -Dinstalled_tests=false \
         -Dbsymbolic_functions=false
-    rm -rf "$PACKAGE_INSTALL_DIR/lib"
-    rm -rf "$PACKAGE_INSTALL_DIR/include"
+
+dotweak: |
+    rm -rfv lib
+    rm -rfv include

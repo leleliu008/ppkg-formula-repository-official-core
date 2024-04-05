@@ -5,11 +5,12 @@ src-url: https://ftp.gnu.org/gnu/gettext/gettext-0.22.5.tar.gz
 src-sha: ec1705b1e969b83a9f073144ec806151db88127f5e40fe5a94cb6c8fa48996a0
 license: GPL-3.0-or-later
 dep-pkg: ncurses libiconv
+
 dopatch: |
     sed_in_place '/SUBDIRS =/s|gettext-tools||g' Makefile.in
     sed_in_place '/SUBDIRS =/s|gnulib-tests||g' gettext-tools/Makefile.in
+
 install: |
-    #export LDFLAGS="$LDFLAGS -L$PWD/gettext-tools/gnulib-lib/.libs/"
     configure \
         --with-included-glib \
         --with-included-regex \
@@ -31,7 +32,9 @@ install: |
         --enable-nls \
         --enable-relocatable
 
-    cat > libintl.pc <<EOF
+dotweak: |
+    install -d lib/pkgconfig/
+    cat >      lib/pkgconfig/libintl.pc <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
@@ -41,9 +44,6 @@ install: |
     Description: National Language Support library
     Version: $PACKAGE_VERSION
     Cflags: -I\${includedir}
-    Libs: -L\${libdir} -lintl 
+    Libs: -L\${libdir} -lintl
     Requires: libiconv
     EOF
-
-    run install -d    "$PACKAGE_INSTALL_DIR/lib/pkgconfig/"
-    run mv libintl.pc "$PACKAGE_INSTALL_DIR/lib/pkgconfig/"

@@ -9,18 +9,18 @@ license: FTL
 symlink: 0
 install: |
     cmakew \
-        -DBUILD_SHARED_LIBS=OFF \
-        -DFT_WITH_BROTLI=ON \
-        -DFT_WITH_BZIP2=ON \
-        -DFT_WITH_ZLIB=ON \
-        -DFT_WITH_PNG=ON \
-        -DFT_WITH_HARFBUZZ=OFF \
-        -DCMAKE_DISABLE_FIND_PACKAGE_HarfBuzz=TRUE
+        -DFT_REQUIRE_PNG=TRUE \
+        -DFT_REQUIRE_ZLIB=TRUE \
+        -DFT_REQUIRE_BZIP2=TRUE \
+        -DFT_REQUIRE_BROTLI=TRUE \
+        -DFT_REQUIRE_HARFBUZZ=FALSE \
+        -DFT_DISABLE_HARFBUZZ=TRUE \
+        -DBUILD_SHARED_LIBS=OFF
     cmakew \
-        -DBUILD_SHARED_LIBS=ON \
-        -DFT_WITH_BROTLI=ON \
-        -DFT_WITH_BZIP2=ON \
-        -DFT_WITH_ZLIB=ON \
-        -DFT_WITH_PNG=ON \
-        -DFT_WITH_HARFBUZZ=OFF \
-        -DCMAKE_DISABLE_FIND_PACKAGE_HarfBuzz=TRUE
+        -DFT_REQUIRE_PNG=TRUE \
+        -DFT_REQUIRE_ZLIB=TRUE \
+        -DFT_REQUIRE_BZIP2=TRUE \
+        -DFT_REQUIRE_BROTLI=TRUE \
+        -DFT_REQUIRE_HARFBUZZ=FALSE \
+        -DFT_DISABLE_HARFBUZZ=TRUE \
+        -DBUILD_SHARED_LIBS=ON

@@ -27,8 +27,9 @@ install: |
         -DDISABLE_DAG=ON \
         -DDISABLE_TC=ON \
         -DDISABLE_SNF=ON
-    cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-    sed_in_place 's@-l[^ ]*/libssl\.a@-lssl@g'                    libpcap.pc
-    sed_in_place 's@-l[^ ]*/libcrypto\.a@-lcrypto@g'              libpcap.pc
-    sed_in_place 's@-l[^ ]*/libssl\.\(so\|dylib\)@-lssl@g'        libpcap.pc
-    sed_in_place 's@-l[^ ]*/libcrypto\.\(so\|dylib\)@-lcrypto@g'  libpcap.pc
+
+dotweak: |
+    sed_in_place 's@-l[^ ]*/libssl\.a@-lssl@g'                    lib/pkgconfig/libpcap.pc
+    sed_in_place 's@-l[^ ]*/libcrypto\.a@-lcrypto@g'              lib/pkgconfig/libpcap.pc
+    sed_in_place 's@-l[^ ]*/libssl\.\(so\|dylib\)@-lssl@g'        lib/pkgconfig/libpcap.pc
+    sed_in_place 's@-l[^ ]*/libcrypto\.\(so\|dylib\)@-lcrypto@g'  lib/pkgconfig/libpcap.pc

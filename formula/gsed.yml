@@ -12,5 +12,5 @@ install: |
         --with-included-regex \
         --disable-acl \
         --disable-assert
-    cd "$PACKAGE_INSTALL_DIR/bin"
-    ln -s gsed sed
+
+dotweak: cd bin && ln -s gsed sed

@@ -19,5 +19,7 @@ install: |
         -DgRPC_SSL_PROVIDER=package \
         -DgRPC_ZLIB_PROVIDER=package \
         -DgRPC_RE2_PROVIDER=package
-    rm -rf "$PACKAGE_INSTALL_DIR/lib"
-    rm -rf "$PACKAGE_INSTALL_DIR/include"
+
+dotweak: |
+    rm -rfv lib
+    rm -rfv include

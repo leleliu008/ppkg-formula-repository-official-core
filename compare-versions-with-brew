@@ -96,6 +96,9 @@ package_name_transform_from_uppm_to_brew() {
         freetype2-with-harfbuzz)
                   printf '%s\n' 'freetype'  ;;
 
+        dot_static)
+                  printf '%s\n' 'graphviz'  ;;
+
         glib-tools)
                   printf '%s\n' 'glib'      ;;
 
@@ -115,12 +118,14 @@ package_name_transform_from_uppm_to_brew() {
 
         libsqlite3)printf '%s\n' 'sqlite'   ;;
         libpcre2) printf '%s\n' 'pcre2'     ;;
+        libexpat) printf '%s\n' 'expat'     ;;
         libpcre)  printf '%s\n' 'pcre'      ;;
         libcurl)  printf '%s\n' 'curl'      ;;
         libwebp)  printf '%s\n' 'webp'      ;;
         libzstd)  printf '%s\n' 'zstd'      ;;
         liblzma)  printf '%s\n' 'xz'        ;;
         libopus)  printf '%s\n' 'opus'      ;;
+        libuuid)  printf '%s\n' 'util-linux';;
         libz3.a)  printf '%s\n' 'z3'        ;;
         libgmp)   printf '%s\n' 'gmp'       ;;
         libbz2)   printf '%s\n' 'bzip2'     ;;

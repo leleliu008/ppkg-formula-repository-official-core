@@ -6,7 +6,9 @@ src-sha: 05bbd2b698e9cfbab477c33aa5e99b4975501835a41b7ca6ca71de03d8849e76
 license: curl
 dep-pkg: libnghttp2 openssl libzstd zlib brotli
 dep-upp: perl
+
 dopatch: sed_in_place 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
+
 install: |
     configure \
         --enable-optimize \
@@ -20,11 +22,15 @@ install: |
         --without-libpsl \
         --without-librtmp \
         --without-libidn2
-    rm -rfv "$PACKAGE_INSTALL_DIR/bin/curl"
-    rm -rfv "$PACKAGE_INSTALL_DIR/share/man/man1/curl.1"
-    cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-    sed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lnghttp2||g' -e 's|-lzstd||g' -e 's|-lz||g' -e 's|-lbrotlidec||g' -e 's|-lbrotlicommon||g' libcurl.pc
-    printf 'Requires: libnghttp2 openssl libzstd zlib libbrotlidec\n' >> libcurl.pc
+
+dotweak: |
+    rm -rfv bin/curl
+    rm -rfv share/man/man1/curl.1
+
+    sed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lnghttp2||g' -e 's|-lzstd||g' -e 's|-lz||g' -e 's|-lbrotlidec||g' -e 's|-lbrotlicommon||g' lib/pkgconfig/libcurl.pc
+
+    printf 'Requires: libnghttp2 openssl libzstd zlib libbrotlidec\n' >> lib/pkgconfig/libcurl.pc
+
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sed_in_place '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' libcurl.pc
+        sed_in_place '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' lib/pkgconfig/libcurl.pc
     fi

@@ -1,7 +1,7 @@
 summary: base16 encoder and decoder
 git-url: https://github.com/leleliu008/C-examples
 bscript: algorithm/base16
-install: |
-    cmakew
-    rm -rf "$PACKAGE_INSTALL_DIR/lib"
-    rm -rf "$PACKAGE_INSTALL_DIR/include"
+bsystem: cmake
+dotweak: |
+    rm -rf lib
+    rm -rf include

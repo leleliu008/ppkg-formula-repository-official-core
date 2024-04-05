@@ -1,7 +1,7 @@
 summary: A command-line tool to get your system information
 git-url: https://github.com/leleliu008/C-examples
 bscript: utils/sysinfo
-install: |
-    cmakew
-    rm -rf "$PACKAGE_INSTALL_DIR/lib"
-    rm -rf "$PACKAGE_INSTALL_DIR/include"
+bsystem: cmake
+dotweak: |
+    rm -rfv lib
+    rm -rfv include

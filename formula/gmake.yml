@@ -4,7 +4,5 @@ web-url: https://www.gnu.org/software/make
 src-url: https://ftp.gnu.org/gnu/make/make-4.4.1.tar.lz
 src-sha: 8814ba072182b605d156d7589c19a43b89fc58ea479b9355146160946f8cf6e9
 license: GPL-3.0-or-later
-install: |
-    configure --program-prefix=g --without-guile --without-dmalloc
-    cd "$PACKAGE_INSTALL_DIR/bin"
-    ln -s gmake make
+install: configure --program-prefix=g --without-guile --without-dmalloc
+dotweak: cd bin && ln -s gmake make

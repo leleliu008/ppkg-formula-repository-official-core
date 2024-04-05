@@ -28,7 +28,9 @@ install: |
         --with-lzo2 \
         --with-zstd \
         --with-iconv
-    run rm -rf "$PACKAGE_INSTALL_DIR/lib"
-    run rm -rf "$PACKAGE_INSTALL_DIR/include"
-    run rm -rf "$PACKAGE_INSTALL_DIR/share/man/man3"
-    run rm -rf "$PACKAGE_INSTALL_DIR/share/man/man5"
+
+dotweak: |
+    run rm -rf lib
+    run rm -rf include
+    run rm -rf share/man/man3
+    run rm -rf share/man/man5

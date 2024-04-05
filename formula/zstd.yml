@@ -7,6 +7,7 @@ license: BSD-3-Clause
 dep-pkg: zlib liblzma
 
 bscript: build/cmake
+
 install: |
     cmakew \
         -DZSTD_MULTITHREAD_SUPPORT=ON \
@@ -18,5 +19,7 @@ install: |
         -DZSTD_ZLIB_SUPPORT=ON \
         -DZSTD_LZMA_SUPPORT=ON \
         -DZSTD_LZ4_SUPPORT=OFF
-    rm -rf "$PACKAGE_INSTALL_DIR/include"
-    rm -rf "$PACKAGE_INSTALL_DIR/lib"
+
+dotweak: |
+    rm -rfv include
+    rm -rfv lib

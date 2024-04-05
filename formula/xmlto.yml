@@ -3,5 +3,6 @@ web-url: https://pagure.io/xmlto/
 src-url: https://releases.pagure.org/xmlto/xmlto-0.0.28.tar.bz2
 src-sha: 1130df3a7957eb9f6f0d29e4aa1c75732a7dfb6d639be013859b5c7ec5421276
 license: GPL-2.0-or-later
-dep-pkg: libxslt docbook util-linux
+dep-pkg: libxslt docbook
+dep-upp: util-linux
 bsystem: configure

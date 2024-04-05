@@ -4,11 +4,14 @@ src-url: https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.12
 src-sha: e96b43014ac9d61a0775e28a46cf7befbd49654705df845001e849e44839481b
 license: Imlib2
 dep-pkg: libwebp freetype2 xorg-libxext
+
 dopatch: |
     if [ -e ../lib/libX11.a ] ; then
         rm  ../lib/libX11.a
         printf 'INPUT(%s %s)\n' "$xorg_libx11_LIBRARY_DIR/libX11.a" "$(pkg-config --libs-only-l x11 | sed 's|-lX11||g')" > ../lib/libX11.a
     fi
-install: |
-    configure --enable-amd64=no --without-id3
-    printf 'Requires: libwebp freetype2 xext\n' >> "$PACKAGE_INSTALL_DIR/lib/pkgconfig/imlib2.pc"
+
+install: configure --enable-amd64=no --without-id3
+
+dotweak: |
+    printf 'Requires: libwebp freetype2 xext\n' >> lib/pkgconfig/imlib2.pc

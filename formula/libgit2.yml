@@ -14,7 +14,6 @@ dopatch: |
 
 install: |
     cmakew \
-        -DCMAKE_FIND_DEBUG_MODE=TRUE \
         -DBUILD_CLI=OFF \
         -DBUILD_TESTS=OFF \
         -DBUILD_FUZZERS=OFF \
@@ -27,6 +26,7 @@ install: |
         -DUSE_HTTPS=OpenSSL \
         -DUSE_BUNDLED_ZLIB=OFF \
         -DREGEX_BACKEND=pcre2
-    cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-    sed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lz||g' -e 's|-lssh2||g' libgit2.pc
-    sed -i -e 's|openssl|libssh2|' -e 's|zlib|libiconv|' libgit2.pc
+
+dotweak: |
+    sed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lz||g' -e 's|-lssh2||g' lib/pkgconfig/libgit2.pc
+    sed -i -e 's|openssl|libssh2|' -e 's|zlib|libiconv|' lib/pkgconfig/libgit2.pc

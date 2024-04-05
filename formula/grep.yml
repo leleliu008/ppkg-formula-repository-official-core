@@ -11,5 +11,7 @@ install: |
         --disable-assert \
         --disable-gcc-warnings \
         --with-included-regex
-    sed_in_place 's|bash|sh|' $PACKAGE_INSTALL_DIR/bin/egrep
-    sed_in_place 's|bash|sh|' $PACKAGE_INSTALL_DIR/bin/fgrep
+
+dotweak: |
+    sed_in_place 's|bash|sh|' bin/egrep
+    sed_in_place 's|bash|sh|' bin/fgrep

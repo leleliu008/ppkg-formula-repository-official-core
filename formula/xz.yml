@@ -4,6 +4,7 @@ src-url: https://downloads.sourceforge.net/project/lzmautils/xz-5.4.6.tar.gz
 src-uri: https://archive.org/download/xz-5.4.6/xz-5.4.6.tar.gz
 src-sha: aeba3e03bf8140ddedf62a0a367158340520f6b384f75ca6045ccc6c0d43fd5c
 license: LGPL-2.1-or-later
+
 install: |
     configure \
         --disable-external-sha256 \
@@ -11,10 +12,11 @@ install: |
         --enable-assembler \
         --enable-threads=posix
 
+dotweak: |
+    rm -rf include
+    rm -rf lib
+
     for item in xzmore xzdiff xzdiff xzless xzgrep
     do
-        sed_in_place '1c #!/usr/bin/env bash' "$PACKAGE_INSTALL_DIR/bin/$item"
+        sed_in_place '1c #!/usr/bin/env bash' "bin/$item"
     done
-
-    rm -rf "$PACKAGE_INSTALL_DIR/include"
-    rm -rf "$PACKAGE_INSTALL_DIR/lib"

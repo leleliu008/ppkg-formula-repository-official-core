@@ -4,4 +4,5 @@ src-url: https://xorg.freedesktop.org/archive/individual/proto/xcb-proto-1.15.2.
 src-sha: 7072beb1f680a2fe3f9e535b797c146d22528990c72f63ddb49d2f350a3653ed
 license: MIT
 dep-upp: python3
-install: configure && mv "$PACKAGE_INSTALL_DIR/share/pkgconfig" "$PACKAGE_INSTALL_DIR/lib/"
+bsystem: configure
+dotweak: mv -v share/pkgconfig lib/

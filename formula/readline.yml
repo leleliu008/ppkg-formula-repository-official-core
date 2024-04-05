@@ -13,8 +13,9 @@ install: |
         --enable-multibyte \
         --enable-install-examples
 
-    if [ -e "$PACKAGE_INSTALL_DIR/lib/libreadline.so" ] ; then
-        patchelf --add-needed libncurses.so "$PACKAGE_INSTALL_DIR/lib/libreadline.so"
+dotweak: |
+    if [ -e lib/libreadline.so ] ; then
+        patchelf --add-needed libncurses.so lib/libreadline.so
     fi
 
 patches2: |

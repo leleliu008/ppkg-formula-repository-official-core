@@ -3,6 +3,7 @@ git-url: https://github.com/c-ares/c-ares
 web-url: https://c-ares.haxx.se
 src-url: https://c-ares.haxx.se/download/c-ares-1.27.0.tar.gz
 src-sha: 0a72be66959955c43e2af2fbd03418e82a2bd5464604ec9a62147e37aceb420b
+
 install: |
     cmakew \
         -DCARES_INSTALL=ON \
@@ -11,5 +12,5 @@ install: |
         -DCARES_STATIC_PIC=ON \
         -DCARES_BUILD_TOOLS=OFF \
         -DCARES_BUILD_TESTS=OFF
-    cd "$PACKAGE_INSTALL_DIR/lib"
-    cp libcares_static.a libcares.a
+
+dotweak: cp -v lib/libcares_static.a lib/libcares.a

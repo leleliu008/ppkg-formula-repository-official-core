@@ -19,10 +19,12 @@ install: |
         --without-python \
         --with-profiler \
         --with-plugins
-    rm -rfv "$PACKAGE_INSTALL_DIR/bin/xslt-config"
-    rm -rfv "$PACKAGE_INSTALL_DIR/include"
-    rm -rfv "$PACKAGE_INSTALL_DIR/lib"
-    rm -rfv "$PACKAGE_INSTALL_DIR/share/man/man3"
-    rm -rfv "$PACKAGE_INSTALL_DIR/share/aclocal"
-    rm -rfv "$PACKAGE_INSTALL_DIR/share/doc"
-    rm -rfv "$PACKAGE_INSTALL_DIR/share/gtk-doc"
+
+dotweak: |
+    rm -rfv bin/xslt-config
+    rm -rfv include
+    rm -rfv lib
+    rm -rfv share/man/man3
+    rm -rfv share/aclocal
+    rm -rfv share/doc
+    rm -rfv share/gtk-doc
