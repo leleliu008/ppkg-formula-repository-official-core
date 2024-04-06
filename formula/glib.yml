@@ -6,7 +6,7 @@ src-uri: https://distfiles.macports.org/glib2/glib-2.80.0.tar.xz
 src-sha: 8228a92f92a412160b139ae68b6345bd28f24434a7b5af150ebe21ff587a561d
 license: LGPL-2.1-or-later
 dep-pkg: gettext-runtime libffi libpcre2 zlib
-dep-upp: gettext-tools python3
+dep-upp: gettext-tools python3 flex bison
 dep-pym: packaging
 sfslink: 0
 bsystem: meson

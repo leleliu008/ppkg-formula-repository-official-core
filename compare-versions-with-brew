@@ -96,6 +96,10 @@ package_name_transform_from_uppm_to_brew() {
         freetype2-with-harfbuzz)
                   printf '%s\n' 'freetype'  ;;
 
+        golang@1.21)
+                  printf '%s\n' 'go@1.21'   ;;
+        golang)   printf '%s\n' 'go'        ;;
+
         dot_static)
                   printf '%s\n' 'graphviz'  ;;
 
