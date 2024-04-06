@@ -1,3 +1,4 @@
+pkgtype: exe
 summary: BSD tar
 git-url: https://github.com/libarchive/libarchive
 web-url: https://www.libarchive.org/
