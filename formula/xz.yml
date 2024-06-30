@@ -18,5 +18,5 @@ dotweak: |
 
     for item in xzmore xzdiff xzdiff xzless xzgrep
     do
-        sed_in_place '1c #!/usr/bin/env bash' "bin/$item"
+        sedInPlace '1c #!/usr/bin/env bash' "bin/$item"
     done

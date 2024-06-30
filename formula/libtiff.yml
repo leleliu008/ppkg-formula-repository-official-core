@@ -1,26 +1,36 @@
-summary: TIFF library and utilities
+summary: TIFF library
 web-url: https://libtiff.gitlab.io/libtiff
 git-url: https://gitlab.com/libtiff/libtiff
-src-url: https://fossies.org/linux/misc/tiff-4.6.0.tar.gz
-src-uri: https://download.osgeo.org/libtiff/tiff-4.6.0.tar.gz
+src-url: https://download.osgeo.org/libtiff/tiff-4.6.0.tar.gz
 src-sha: 88b3979e6d5c7e32b50d7ec72fb15af724f6ab2cbf7e10880c360a77e4b5d99a
-dep-pkg: libzstd liblzma zlib
+dep-pkg: libzstd liblzma libz
 
-dopatch: |
-    if [ "$LINK_TYPE" != 'static-full' ] ; then
-        sed_in_place "s|find_library(CMath_LIBRARY NAMES m)|find_library(CMath_LIBRARY NAMES libm$SHARED_LIBRARY_SUFFIX)|" cmake/FindCMath.cmake
-    fi
 install: |
     cmakew \
+        -Dlzw=ON \
         -Dzlib=ON \
         -Dzstd=ON \
         -Dlzma=ON \
-        -Dlzw=ON \
         -Dwebp=OFF \
         -Djpeg=OFF \
         -Djbig=OFF \
         -Dlerc=OFF \
         -Dtiff-docs=OFF \
-        -Dtiff-tools=ON \
+        -Dtiff-tools=OFF \
         -Dtiff-tests=OFF \
+        -Dtiff-contrib=OFF \
         -DBUILD_SHARED_LIBS=OFF
+    cmakew \
+        -Dlzw=ON \
+        -Dzlib=ON \
+        -Dzstd=ON \
+        -Dlzma=ON \
+        -Dwebp=OFF \
+        -Djpeg=OFF \
+        -Djbig=OFF \
+        -Dlerc=OFF \
+        -Dtiff-docs=OFF \
+        -Dtiff-tools=OFF \
+        -Dtiff-tests=OFF \
+        -Dtiff-contrib=OFF \
+        -DBUILD_SHARED_LIBS=ON

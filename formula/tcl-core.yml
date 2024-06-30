@@ -4,7 +4,7 @@ src-url: https://downloads.sourceforge.net/project/tcl/Tcl/8.6.14/tcl8.6.14-src.
 src-sha: 5880225babf7954c58d4fb0f5cf6279104ce1cd6aa9b71e9a6322540e1c4de66
 version: 8.6.14
 license: TCL
-dep-pkg: openssl zlib
+dep-pkg: libopenssl zlib
 bscript: unix
 install: |
     configure \

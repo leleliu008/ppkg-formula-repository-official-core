@@ -3,6 +3,6 @@ git-url: https://github.com/swsnr/mdcat
 src-url: https://github.com/swsnr/mdcat/archive/refs/tags/mdcat-2.1.2.tar.gz
 src-sha: 332c8e659a668ceeae70b0d268a46f00bf8bab696dbf7f84faa69b3c509da286
 license: MPL-2.0
-dep-pkg: openssl
+dep-pkg: libopenssl
 bsystem: cargo cmake
 install: RUSTUP_TOOLCHAIN=1.76 cargow install

@@ -114,7 +114,7 @@ package_name_transform_from_uppm_to_brew() {
         libmediainfo|mediainfo)
                   printf '%s\n' 'media-info';;
 
-        libxml2-utils|libxml2-python3)
+        libxml2-python3)
                   printf '%s\n' 'libxml2'   ;;
 
         libprotobuf)

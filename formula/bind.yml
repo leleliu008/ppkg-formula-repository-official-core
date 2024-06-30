@@ -4,7 +4,7 @@ git-url: https://github.com/isc-projects/bind9
 src-url: https://downloads.isc.org/isc/bind9/9.18.25/bind-9.18.25.tar.xz
 src-sha: 5a4a70432a33d009f0e6e9dbb328aae7a5e27507e98e28bf3c0c6b250ccb2ab3
 license: MPL-2.0
-dep-pkg: json-c openssl libxml2 libidn2 libnghttp2 libuv
+dep-pkg: json-c libopenssl libxml2 libidn2 libnghttp2 libuv
 dep-upp: perl
 install: |
     configure \

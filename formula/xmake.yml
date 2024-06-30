@@ -1,33 +1,8 @@
 summary: A cross-platform build utility based on Lua
 web-url: https://xmake.io/
 git-url: https://github.com/xmake-io/xmake
-src-url: https://github.com/xmake-io/xmake/releases/download/v2.8.9/xmake-v2.8.9.tar.gz
-src-sha: 5f793c393346ef80e47f083ade4d3c2fdfc448658a7917fda35ccd7bd2b911b8
+src-url: https://github.com/xmake-io/xmake/releases/download/v2.9.2/xmake-v2.9.2.tar.gz
+src-sha: 1f617b6a4568c7eb3e8ab0f3a67c16989245adc547e3a7d1fd861acb308fb5b2
 license: Apache-2.0
-binbstd: 1
-install: |
-    sed_in_place 's|if is_host "macosx"|if false|' configure
-    sed_in_place 's|\*/cc|*-cc|' configure
-    sed_in_place 's|\*/c++|*-c++|' configure
-
-    if [ "$CROSS_COMPILING" = 1 ] ; then
-        if [ "$TARGET_PLATFORM_NAME" = linux ] ; then
-            case $TARGET_PLATFORM_VERS in
-                glibc) TARGET_TRIPLE="$TARGET_PLATFORM_ARCH-unknown-linux-gnu"  ;;
-                musl)  TARGET_TRIPLE="$TARGET_PLATFORM_ARCH-unknown-linux-musl" ;;
-                *)     TARGET_TRIPLE="$TARGET_PLATFORM_ARCH-unknown-linux"
-            esac
-        elif [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-            TARGET_TRIPLE="$TARGET_PLATFORM_ARCH-apple-darwin"
-        else
-            TARGET_TRIPLE="$TARGET_PLATFORM_ARCH-unknown-$TARGET_PLATFORM_NAME"
-        fi
-
-        run ./configure --host="$TARGET_TRIPLE"
-    else
-        run ./configure
-    fi
-
-    gmakew clean
-    gmakew
-    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
+bscript: core
+bsystem: xmake

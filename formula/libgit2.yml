@@ -9,7 +9,7 @@ license: GPL-2.0-only
 dopatch: |
     # https://github.com/libgit2/libgit2/issues/6280
     if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
-        sed_in_place 's|sys/random.h|unistd.h|' src/util/rand.c
+        sedInPlace 's|sys/random.h|unistd.h|' src/util/rand.c
     fi
 
 install: |

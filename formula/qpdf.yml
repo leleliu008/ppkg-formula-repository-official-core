@@ -3,12 +3,12 @@ git-url: https://github.com/qpdf/qpdf
 src-url: https://github.com/qpdf/qpdf/releases/download/v11.9.0/qpdf-11.9.0.tar.gz
 src-sha: 9f5d6335bb7292cc24a7194d281fc77be2bbf86873e8807b85aeccfbff66082f
 license: Apache-2.0
-dep-pkg: libjpeg-turbo openssl zlib
+dep-pkg: libjpeg-turbo libopenssl zlib
 dopatch: |
-    sed_in_place '/add_subdirectory(examples)/d' CMakeLists.txt
-    sed_in_place 's|target_link_libraries(${PROG} libqpdf)|target_link_libraries(${PROG} libqpdf_static)|' qpdf/CMakeLists.txt
-    sed_in_place 's|target_link_libraries(zlib-flate libqpdf)|target_link_libraries(zlib-flate libqpdf_static)|' zlib-flate/CMakeLists.txt
-    sed_in_place 's|target_link_libraries(qpdf-test-compare libqpdf)|target_link_libraries(qpdf-test-compare libqpdf_static)|' compare-for-test/CMakeLists.txt
+    sedInPlace '/add_subdirectory(examples)/d' CMakeLists.txt
+    sedInPlace 's|target_link_libraries(${PROG} libqpdf)|target_link_libraries(${PROG} libqpdf_static)|' qpdf/CMakeLists.txt
+    sedInPlace 's|target_link_libraries(zlib-flate libqpdf)|target_link_libraries(zlib-flate libqpdf_static)|' zlib-flate/CMakeLists.txt
+    sedInPlace 's|target_link_libraries(qpdf-test-compare libqpdf)|target_link_libraries(qpdf-test-compare libqpdf_static)|' compare-for-test/CMakeLists.txt
 install: |
     cmakew \
         -DINSTALL_MANUAL=OFF \

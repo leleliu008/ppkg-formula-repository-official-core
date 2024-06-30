@@ -4,7 +4,7 @@ git-url: https://github.com/libevent/libevent
 src-url: https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
 src-sha: 92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb
 license: BSD-3-Clause
-dep-pkg: openssl
+dep-pkg: libopenssl
 
 install: |
     cmakew \
@@ -18,5 +18,4 @@ install: |
         -DEVENT__COVERAGE=OFF \
         -DEVENT__LIBRARY_TYPE=BOTH
 
-dotweak: |
-    sed_in_place '/Libs.private: /s|-Ldl|-lssl -lcrypto|' lib/pkgconfig/libevent_openssl.pc
+dotweak: sedInPlace '/Requires:/s|$| openssl|' lib/pkgconfig/libevent_openssl.pc

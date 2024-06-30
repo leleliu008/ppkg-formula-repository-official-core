@@ -4,5 +4,5 @@ git-url: https://github.com/axel-download-accelerator/axel
 src-url: https://github.com/axel-download-accelerator/axel/releases/download/v2.17.13/axel-2.17.13.tar.xz
 src-sha: 6af9c0238ca4fb850baa17878de0361868e3ff6d9302298d83c6d26931c28723
 license: GPL-2.0-or-later
-dep-pkg: openssl
+dep-pkg: libopenssl
 bsystem: configure

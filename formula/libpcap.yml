@@ -5,7 +5,7 @@ src-url: https://www.tcpdump.org/release/libpcap-1.10.4.tar.gz
 src-sha: ed19a0383fad72e3ad435fd239d7cd80d64916b87269550159d20e47160ebe5f
 license: BSD-3-Clause
 dep-upp: gm4 flex bison
-dep-pkg: openssl
+dep-pkg: libopenssl
 
 install: |
     # Due to freedesktop.org bug 74029, D-Bus capture support is not available on macOS
@@ -29,7 +29,7 @@ install: |
         -DDISABLE_SNF=ON
 
 dotweak: |
-    sed_in_place 's@-l[^ ]*/libssl\.a@-lssl@g'                    lib/pkgconfig/libpcap.pc
-    sed_in_place 's@-l[^ ]*/libcrypto\.a@-lcrypto@g'              lib/pkgconfig/libpcap.pc
-    sed_in_place 's@-l[^ ]*/libssl\.\(so\|dylib\)@-lssl@g'        lib/pkgconfig/libpcap.pc
-    sed_in_place 's@-l[^ ]*/libcrypto\.\(so\|dylib\)@-lcrypto@g'  lib/pkgconfig/libpcap.pc
+    sedInPlace 's@-l[^ ]*/libssl\.a@-lssl@g'                    lib/pkgconfig/libpcap.pc
+    sedInPlace 's@-l[^ ]*/libcrypto\.a@-lcrypto@g'              lib/pkgconfig/libpcap.pc
+    sedInPlace 's@-l[^ ]*/libssl\.\(so\|dylib\)@-lssl@g'        lib/pkgconfig/libpcap.pc
+    sedInPlace 's@-l[^ ]*/libcrypto\.\(so\|dylib\)@-lcrypto@g'  lib/pkgconfig/libpcap.pc

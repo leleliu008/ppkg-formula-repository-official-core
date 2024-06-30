@@ -8,7 +8,7 @@ dep-pkg: zlib libbz2 lz4 lzo
 dep-upp: libtool
 bsystem: autotools
 dopatch: |
-    sed_in_place 's|SUBDIRS = C ASM/x86|SUBDIRS = C|' lzma/Makefile.am
+    sedInPlace 's|SUBDIRS = C ASM/x86|SUBDIRS = C|' lzma/Makefile.am
     run autoreconf -ivf
 
 install: configure --disable-asm

@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: Toolkit for image loading and pixel buffer manipulation
 web-url: https://gtk.org/
 git-url: https://github.com/GNOME/gdk-pixbuf
@@ -6,24 +7,8 @@ src-sha: ee9b6c75d13ba096907a2e3c6b27b61bcd17f5c7ebeab5a5b439d2f2e39fe44b
 license: LGPL-2.1-or-later
 dep-upp: glib-tools
 dep-pkg: glib gobject-introspection libjpeg-turbo libpng libtiff shared-mime-info
-sfslink: 0
-dopatch2: |
-    unset LIBM
-
-    for item in $("$CC" -print-search-dirs | grep '^libraries: =' | cut -c13- | tr ':' '\n')
-    do
-        if [ -f "$item/libm.so" ] ; then
-            LIBM="$item/libm.so"
-            break
-        fi
-    done
-
-    LIBPNG_DEPS="$(pkg-config --libs-only-l libpng | sed 's|-lm||g')"
-    LIBTIFF_DEPS="$(pkg-config --libs-only-l libtiff-4 | sed 's|-lm||g')"
-    printf 'INPUT(%s)\n' "-ljpeg $LIBPNG_DEPS $LIBTIFF_DEPS $LIBM" > ../lib/libm.a
 
 install: |
-    LINK_TYPE=shared-most
     mesonw \
         -Drelocatable=true \
         -Dnative_windows_loaders=false \

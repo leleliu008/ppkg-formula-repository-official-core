@@ -6,6 +6,6 @@ src-sha: 3fb73364a5a30efe615046d07e6db9d09fd2b41c763c5f7d3bfb121cd5c5ac5a
 license: ISC
 bsystem: cmake
 dopatch: |
-    sed_in_place '/ADD_SUBDIRECTORY(test)/d' CMakeLists.txt
-    sed_in_place '/ADD_SUBDIRECTORY(example)/d' CMakeLists.txt
-    sed_in_place '/ADD_LIBRARY(yajl_s/a set_target_properties(yajl_s PROPERTIES OUTPUT_NAME yajl CLEAN_DIRECT_OUTPUT 1 EXPORT_NAME static)' src/CMakeLists.txt
+    sedInPlace '/ADD_SUBDIRECTORY(test)/d' CMakeLists.txt
+    sedInPlace '/ADD_SUBDIRECTORY(example)/d' CMakeLists.txt
+    sedInPlace '/ADD_LIBRARY(yajl_s/a set_target_properties(yajl_s PROPERTIES OUTPUT_NAME yajl CLEAN_DIRECT_OUTPUT 1 EXPORT_NAME static)' src/CMakeLists.txt

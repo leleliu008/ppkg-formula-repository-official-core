@@ -4,7 +4,7 @@ git-url: https://github.com/pjsip/pjproject
 src-url: https://github.com/pjsip/pjproject/archive/2.13.tar.gz
 src-sha: 4178bb9f586299111463fc16ea04e461adca4a73e646f8ddef61ea53dafa92d9
 license: GPL-2.0-or-later
-dep-pkg: openssl
+dep-pkg: libopenssl
 binbstd: 1
 sfslink: 0
 parallel: 0

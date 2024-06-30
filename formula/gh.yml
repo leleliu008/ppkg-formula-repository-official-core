@@ -1,9 +1,8 @@
 summary: A command-line interface that brings github.com functionality to your terminal
 git-url: https://github.com/cli/cli
-src-url: https://github.com/cli/cli/archive/refs/tags/v2.47.0.tar.gz
-src-sha: f87622443f143a84462a026534cf234b059c609a6053d7c9ff692c45b30e63f4
+src-url: https://github.com/cli/cli/archive/refs/tags/v2.51.0.tar.gz
+src-sha: babc66157676eadc30c150ab9151981792796d6f24663cebc6eb070eb14c390f
 license: MIT
-dopatch: sed_in_place 's|^go 1.22$|go 1.22.0|' go.mod
 install: |
     gow -X github.com/cli/cli/internal/build.Date=$(date +%Y-%m-%d) \
         -X github.com/cli/cli/internal/build.Version=$PACKAGE_VERSION \

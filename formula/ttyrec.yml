@@ -5,13 +5,13 @@ src-sha: ef5e9bf276b65bb831f9c2554cd8784bd5b4ee65353808f82b7e2aef851587ec
 
 binbstd: 1
 dopatch: |
-    sed_in_place 's|union wait status|int status|' ttyrec.c
+    sedInPlace 's|union wait status|int status|' ttyrec.c
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sed_in_place 's|libutil\.h|util.h|' ttyrec.c
+        sedInPlace 's|libutil\.h|util.h|' ttyrec.c
         export CPPFLAGS="$CPPFLAGS -DHAVE_openpty -Dset_progname=setprogname -include signal.h"
     else
-        sed_in_place '1i #include <fcntl.h>' ttyrec.c
+        sedInPlace '1i #include <fcntl.h>' ttyrec.c
     fi
 
 install: |

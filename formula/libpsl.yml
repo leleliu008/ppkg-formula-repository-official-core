@@ -6,8 +6,8 @@ src-sha: 1dcc9ceae8b128f3c0b3f654decd0e1e891afc6ff81098f227ef260449dae208
 license: MIT
 dep-pkg: libidn2
 dopatch: |
-    sed_in_place "/libidn2_dep =/c libidn2_dep = cc.find_library('idn2', static : true, dirs: ['$libidn2_LIBRARY_DIR'])" meson.build
-    sed_in_place "/libiconv_dep =/c libiconv_dep = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
-    sed_in_place "/libunistring =/c libunistring = cc.find_library('unistring', static : true, dirs: ['$libunistring_LIBRARY_DIR'])" meson.build
-    sed_in_place 's|link_with : libpsl|link_with : libpsl.get_static_lib()|' src/meson.build
+    sedInPlace "/libidn2_dep =/c libidn2_dep = cc.find_library('idn2', static : true, dirs: ['$libidn2_LIBRARY_DIR'])" meson.build
+    sedInPlace "/libiconv_dep =/c libiconv_dep = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
+    sedInPlace "/libunistring =/c libunistring = cc.find_library('unistring', static : true, dirs: ['$libunistring_LIBRARY_DIR'])" meson.build
+    sedInPlace 's|link_with : libpsl|link_with : libpsl.get_static_lib()|' src/meson.build
 install: mesonw -Druntime=libidn2 -Dtests=false -Ddocs=false

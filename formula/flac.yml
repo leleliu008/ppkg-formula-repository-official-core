@@ -1,11 +1,19 @@
+pkgtype: exe+lib
 summary: Free lossless audio codec
 web-url: https://xiph.org/flac/
 git-url: https://github.com/xiph/flac
 src-url: https://github.com/xiph/flac/releases/download/1.4.3/flac-1.4.3.tar.xz
 src-sha: 6c58e69cd22348f441b861092b825e591d0b822e106de6eb0ee4d05d27205b70
 license: GFDL-1.2-or-later
-dep-pkg: libogg libiconv gettext
+dep-pkg: libogg libintl
+
 dopatch: printf 'target_link_libraries(replaygain_analysis m)\n' >> src/share/replaygain_analysis/CMakeLists.txt
+
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        export LDFLAGS="$LDFLAGS -framework CoreFoundation"
+    fi
+
 install: |
     cmakew \
         -DWITH_OGG=ON \

@@ -61,7 +61,7 @@ install: |
     EOF
 
         run $CC $CFLAGS $CPPFLAGS -I. -c -o ftime.o ftime.c
-        sed_in_place 's|^LFLAGS2="|LFLAGS2="ftime.o |' unix/configure
+        sedInPlace 's|^LFLAGS2="|LFLAGS2="ftime.o |' unix/configure
     fi
 
     unset TARGET_COMPILE
@@ -73,7 +73,7 @@ install: |
     fi
 
     if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
-        sed_in_place 's|^LFLAGS2="|LFLAGS2="-static |' unix/configure
+        sedInPlace 's|^LFLAGS2="|LFLAGS2="-static |' unix/configure
     fi
 
     gmakew -f unix/Makefile clean

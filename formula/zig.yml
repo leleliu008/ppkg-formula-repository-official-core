@@ -5,5 +5,5 @@ src-url: https://ziglang.org/download/0.11.0/zig-0.11.0.tar.xz
 src-sha: 72014e700e50c0d3528cef3adf80b76b26ab27730133e8202716a187a799e951
 license: MIT
 dep-pkg: llvm+clang+lld
-dopatch: sed_in_place '/find_package(lld /a list(APPEND LLVM_LIBRARIES -lz3 -lncurses -lstdc++)' CMakeLists.txt
+dopatch: sedInPlace '/find_package(lld /a list(APPEND LLVM_LIBRARIES -lz3 -lncurses -lstdc++)' CMakeLists.txt
 install: cmakew -DCMAKE_FIND_DEBUG_MODE=ON -DZIG_STATIC=ON -DZIG_USE_LLVM_CONFIG=OFF

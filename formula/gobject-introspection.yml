@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: A middleware layer between C libraries (using GObject) and language bindings
 web-url: https://gi.readthedocs.io
 git-url: https://gitlab.gnome.org/GNOME/gobject-introspection
@@ -6,8 +7,4 @@ src-sha: 54a90b4a3cb82fd6a3e8b8a7775178ebc954af3c2bc726ed5961e6503ce62636
 license: MIT
 dep-upp: gm4 flex bison
 dep-pkg: glib python3
-sfslink: 0
-install: |
-    # gobject-inspection must link shared libraries: gobject-2.0, glib-2.0
-    LINK_TYPE=shared-most
-    mesonw
+bsystem: meson

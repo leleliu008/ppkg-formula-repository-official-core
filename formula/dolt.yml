@@ -4,5 +4,5 @@ src-url: https://github.com/dolthub/dolt/archive/refs/tags/v1.35.7.tar.gz
 src-sha: b21bc7224f3c32b68de590cb20a589cff43c7f4c66e5ad76b1065c3b7e98c898
 license: Apache-2.0
 bscript: go
-dopatch: sed_in_place 's|^go 1.22$|go 1.22.0|' go.mod
+dopatch: sedInPlace 's|^go 1.22$|go 1.22.0|' go.mod
 install: gow ./cmd/dolt

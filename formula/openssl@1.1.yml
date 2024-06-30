@@ -1,23 +1,48 @@
+pkgtype: lib
 summary: Cryptography and SSL/TLS Toolkit
 git-url: https://github.com/openssl/openssl
 web-url: https://www.openssl.org/
 src-url: https://www.openssl.org/source/openssl-1.1.1w.tar.gz
 src-sha: cf3098950cb4d853ad95c0841f1f9c6d3dc102dccfcacd521d93925208b76ac8
-dep-pkg: perl
 license: OpenSSL
-symlink: 0
-sfslink: 0
+dep-upp: perl
 bsystem: gmake
-binbstd: 1
+
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
+        sed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
+
+        if isCrossBuild ; then
+            export LDFLAGS="$LDFLAGS -fuse-ld=lld"
+            CONFIG_ARGS="$CONFIG_ARGS no-devcryptoeng"
+        fi
+    fi
+
+    unset OS_COMPILER
+
+    case $TARGET_PLATFORM_NAME in
+        macos)
+            OS_COMPILER="darwin64-$TARGET_PLATFORM_ARCH"
+            ;;
+        *bsd)
+            case $TARGET_PLATFORM_ARCH in
+                amd64)  OS_COMPILER='BSD-x86_64' ;;
+                *)      OS_COMPILER="BSD-$TARGET_PLATFORM_ARCH"
+            esac
+    esac
+
+# https://github.com/openssl/openssl/blob/master/INSTALL.md
 install: |
-    run ./config \
+    run ./Configure \
         no-tests \
         no-ssl2 \
         no-ssl3 \
         no-comp \
-        --prefix=$PACKAGE_INSTALL_DIR \
-        --libdir=$PACKAGE_INSTALL_DIR/lib \
-        --openssldir=$PACKAGE_INSTALL_DIR/etc/ssl
+        no-asm \
+        --prefix="$PACKAGE_INSTALL_DIR" \
+        --libdir=lib \
+        --openssldir=etc/ssl \
+        "$OS_COMPILER"
     gmakew clean
-    gmakew
-    gmakew install
+    gmakew build_libs
+    gmakew install_dev

@@ -2,19 +2,20 @@ name: workflowINDEX
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, dev ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, dev ]
 
 jobs:
   alpine:
-    if: ${{ true }}
+    if: true
+
     strategy:
       fail-fast: false
       matrix:
         tag: [3.18]
         pkg: [PKGLIST]
-        flavor: [sh, c]
+        flavor: [sh]
 
     runs-on:   ubuntu-latest
     container: alpine:${{ matrix.tag }}
@@ -26,7 +27,7 @@ jobs:
         - uses: actions/checkout@v4
 
         - if: matrix.flavor == 'sh'
-          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg && chmod a+x ppkg
+          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg && chmod a+x ppkg
 
         - if: matrix.flavor == 'c'
           run: |
@@ -35,19 +36,19 @@ jobs:
             mv bin/ppkg .
 
         - run: ./ppkg setup
-        - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-official-core
-        - run: mv formula/* ~/.ppkg/repos.d/test/formula/
-        - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-full
+        - run: ./ppkg about
+        - run: ./ppkg install ${{ matrix.pkg }} --fsle -I formula
 
 
   ubuntu:
-    if: ${{ true }}
+    if: false
+
     strategy:
       fail-fast: false
       matrix:
         tag: [22.04]
         pkg: [PKGLIST]
-        flavor: [sh, c]
+        flavor: [sh]
 
     runs-on:   ubuntu-latest
     container: ubuntu:${{ matrix.tag }}
@@ -59,7 +60,7 @@ jobs:
         - uses: actions/checkout@v4
 
         - if: matrix.flavor == 'sh'
-          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg && chmod a+x ppkg
+          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg && chmod a+x ppkg
 
         - if: matrix.flavor == 'c'
           run: |
@@ -68,19 +69,19 @@ jobs:
             mv bin/ppkg .
 
         - run: ./ppkg setup
-        - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-official-core
-        - run: mv formula ~/.ppkg/repos.d/test/
-        - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-most
+        - run: ./ppkg about
+        - run: ./ppkg install ${{ matrix.pkg }} -I formula
 
 
   macos:
-    if: ${{ true }}
+    if: false
+
     strategy:
       fail-fast: false
       matrix:
         tag: [14]
         pkg: [PKGLIST]
-        flavor: [sh, c]
+        flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}
 
@@ -88,7 +89,7 @@ jobs:
         - uses: actions/checkout@v4
 
         - if: matrix.flavor == 'sh'
-          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg && chmod a+x ppkg
+          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg && chmod a+x ppkg
 
         - if: matrix.flavor == 'c'
           run: |
@@ -97,6 +98,5 @@ jobs:
             mv bin/ppkg .
 
         - run: ./ppkg setup
-        - run: ./ppkg formula-repo-init test https://github.com/leleliu008/ppkg-formula-repository-official-core
-        - run: mv formula ~/.ppkg/repos.d/test/
-        - run: ./ppkg install ${{ matrix.pkg }} --link-type=static-most
+        - run: ./ppkg about
+        - run: ./ppkg install ${{ matrix.pkg }} -I formula

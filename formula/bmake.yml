@@ -5,10 +5,10 @@ src-sha: f9a906d7487699c9e0d2c135700c2d088da5fcd0f2f6761267a57aabfea31feb
 license: BSD-3-Clause
 binbstd: 1
 install: |
-    sed_in_place '1c set -x' boot-strap
-    #sed_in_place 's|MANTARGET?|MANTARGET|'   mk/man.mk
-    #sed_in_place '/deptgt-delete_on_error/d' unit-tests/Makefile
-    #sed_in_place '/shell-ksh/d'              unit-tests/Makefile
+    sedInPlace '1c set -x' boot-strap
+    #sedInPlace 's|MANTARGET?|MANTARGET|'   mk/man.mk
+    #sedInPlace '/deptgt-delete_on_error/d' unit-tests/Makefile
+    #sedInPlace '/shell-ksh/d'              unit-tests/Makefile
     run bash boot-strap --prefix=$PACKAGE_INSTALL_DIR -DWITHOUT_PROG_LINK --install BROKEN_TESTS=shell-ksh
     #install_bins ../*/bmake
     install_mans bmake.1

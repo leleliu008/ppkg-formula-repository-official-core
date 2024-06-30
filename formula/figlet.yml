@@ -8,7 +8,7 @@ binbstd: 1
 dopatch: |
     # https://wiki.musl-libc.org/faq.html
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
-        sed_in_place '/_DECLS/d' utf8.h
+        sedInPlace '/_DECLS/d' utf8.h
     fi
 install: |
     gmakew clean

@@ -10,7 +10,7 @@ dep-upp: bash
 binbstd: 1
 bscript: src
 bsystem: go
-dopatch: sed_in_place 's|^go 1.22$|go 1.22.0|' go.mod
+
 install: |
     run go env
 
@@ -23,7 +23,7 @@ install: |
     run rm -rf _
     run rm -rf pkg/obj
 
-    if [ "$CROSS_COMPILING" = 1 ] ; then
+    if isCrossBuild ; then
         run mv     bin/${GOOS}_${GOARCH}/* bin/
         run rm -rf bin/${GOOS}_${GOARCH}
     fi

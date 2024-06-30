@@ -6,7 +6,7 @@ license: GPL-2.0-or-later
 dep-pkg: libpng libpcre
 binbstd: 1
 sfslink: 0
-dopatch: sed_in_place 's|-ltermcap||g' configure
+dopatch: sedInPlace 's|-ltermcap||g' configure
 install: |
     configure \
         --with-pnglib="$libpng_LIBRARY_DIR" \

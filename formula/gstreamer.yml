@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Development framework for multimedia applications
 web-url: https://gstreamer.freedesktop.org/
 git-url: https://gitlab.freedesktop.org/gstreamer/gstreamer
@@ -6,9 +7,8 @@ src-sha: bba3a87f82d509802d96a5caf2c47982234063928870623b222f60702f1f50eb
 license: LGPL-2.0-or-later
 dep-pkg: graphene libsoup libshout libvpx libogg libopus libvorbis lame flac dav1d rav1e speex faad2 fdk-aac theora taglib orc cairo pango libpng libjpeg-turbo usrsctp libsrtp rtmpdump
 dep-upp: gm4 bison flex nasm yasm cargo cargo-c
-sfslink: 0
+
 install: |
-    LINK_TYPE=shared-most
     mesonw \
         -Dbase=enabled \
         -Dgood=enabled \

@@ -4,8 +4,8 @@ src-url: https://gstreamer.freedesktop.org/src/orc/orc-0.4.38.tar.xz
 src-sha: a55a98d4772567aa3faed8fb84d540c3db77eaba16d3e2e10b044fbc9228668d
 license: BSD-3-Clause
 dopatch: |
-    sed_in_place 's|link_with : orc_lib|link_with : orc_lib.get_static_lib()|' orc/meson.build
-    sed_in_place 's|link_with : orc_test_lib|link_with : orc_test_lib.get_static_lib()|' orc-test/meson.build
+    sedInPlace 's|link_with : orc_lib|link_with : orc_lib.get_static_lib()|' orc/meson.build
+    sedInPlace 's|link_with : orc_test_lib|link_with : orc_test_lib.get_static_lib()|' orc-test/meson.build
 install: |
     mesonw \
         -Dbenchmarks=disabled \

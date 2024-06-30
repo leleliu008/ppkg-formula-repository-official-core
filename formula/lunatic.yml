@@ -4,5 +4,5 @@ git-url: https://github.com/lunatic-solutions/lunatic
 src-url: https://github.com/lunatic-solutions/lunatic/archive/refs/tags/v0.13.2.tar.gz
 src-sha: 0b43d95935be9781ac24f53e095d53fdb34b7dbfe2ff67bb94cad28e4145f869
 license: MIT
-dep-pkg: openssl
+dep-pkg: libopenssl
 bsystem: cargo

@@ -1,0 +1,47 @@
+summary: Cryptography and SSL/TLS Toolkit
+git-url: https://github.com/openssl/openssl
+web-url: https://www.openssl.org/
+src-url: https://www.openssl.org/source/openssl-3.3.0.tar.gz
+src-sha: 53e66b043322a606abf0087e7699a0e033a37fa13feb9742df35c3a33b18fb02
+license: Apache-2.0
+dep-upp: perl
+bsystem: gmake
+
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
+        sed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
+
+        if isCrossBuild ; then
+            export LDFLAGS="$LDFLAGS -fuse-ld=lld"
+            CONFIG_ARGS="$CONFIG_ARGS no-devcryptoeng"
+        fi
+    fi
+
+    unset OS_COMPILER
+
+    case $TARGET_PLATFORM_NAME in
+        macos)
+            OS_COMPILER="darwin64-$TARGET_PLATFORM_ARCH"
+            ;;
+        *bsd)
+            case $TARGET_PLATFORM_ARCH in
+                amd64)  OS_COMPILER='BSD-x86_64' ;;
+                *)      OS_COMPILER="BSD-$TARGET_PLATFORM_ARCH"
+            esac
+    esac
+
+# https://github.com/openssl/openssl/blob/master/INSTALL.md
+install: |
+    run ./Configure \
+        no-tests \
+        no-ssl2 \
+        no-ssl3 \
+        no-comp \
+        no-asm \
+        --prefix="$PACKAGE_INSTALL_DIR" \
+        --libdir=lib \
+        --openssldir=etc/ssl \
+        "$OS_COMPILER"
+    gmakew clean
+    gmakew build_libs
+    gmakew install_dev

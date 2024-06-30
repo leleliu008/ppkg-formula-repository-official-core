@@ -3,5 +3,5 @@ git-url: https://github.com/mozilla/sccache
 src-url: https://github.com/mozilla/sccache/archive/refs/tags/v0.7.7.tar.gz
 src-sha: a5f5dacbc8232d566239fa023ce5fbc803ad56af2910fa1558b6e08e68e067e0
 license: Apache-2.0
-dep-pkg: openssl
+dep-pkg: libopenssl
 install: cargow install --features all

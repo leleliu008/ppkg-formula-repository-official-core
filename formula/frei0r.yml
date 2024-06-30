@@ -4,7 +4,7 @@ git-url: https://github.com/dyne/frei0r
 src-url: https://github.com/dyne/frei0r/archive/refs/tags/v2.3.2.tar.gz
 src-sha: 304291e0ecb456a8b054fe04e14adc50ace54d0223b7b29165ff5343e820ef9d
 license: GPL-2.0-or-later
-dopatch: sed_in_place '/find_package (Cairo)/d' CMakeLists.txt
+dopatch: sedInPlace '/find_package (Cairo)/d' CMakeLists.txt
 install: |
     cmakew \
         -DWITHOUT_GAVL=ON \

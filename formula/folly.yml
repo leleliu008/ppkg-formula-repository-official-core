@@ -3,6 +3,6 @@ git-url: https://github.com/facebook/folly
 src-url: https://github.com/facebook/folly/archive/refs/tags/v2024.03.18.00.tar.gz
 src-sha: fc10684d7acaaa6bd8e57e129503cb2524b7433bff95aa40d4fed2c59b93fb60
 license: Apache-2.0
-dep-pkg: boost double-conversion fmt glog libevent openssl snappy lz4 libbz2 liblzma libzstd zlib
+dep-pkg: boost double-conversion fmt glog libevent libopenssl snappy lz4 libbz2 liblzma libzstd zlib
 sfslink: 0
 bsystem: cmake

@@ -10,7 +10,7 @@ dep-upp: gperf texinfo
 sfslink: 0
 install: configure --disable-nls
 dotweak: |
-    sed_in_place '/^Name: /,$d' lib/pkgconfig/guile-3.0.pc
+    sedInPlace '/^Name: /,$d' lib/pkgconfig/guile-3.0.pc
     cat >> lib/pkgconfig/guile-3.0.pc <<EOF
     Name: Guile
     Description: $PACKAGE_SUMMARY

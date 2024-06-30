@@ -6,7 +6,7 @@ src-sha: 3799ca9924d3125038880367bf1468e53a1b7e3686a934f098b7e1d286cdb80e
 license: LGPL-2.1-or-later
 dep-pkg: libopus flac libvorbis libsqlite3
 dep-upp: python3
-dopatch: sed_in_place '/add_library (Opus::opus/a target_link_libraries(Opus::opus INTERFACE m)' cmake/FindOpus.cmake
+dopatch: sedInPlace '/add_library (Opus::opus/a target_link_libraries(Opus::opus INTERFACE m)' cmake/FindOpus.cmake
 install: |
     cmakew \
         -DBUILD_PROGRAMS=ON \

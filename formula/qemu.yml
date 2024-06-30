@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: A generic and open source machine & userspace emulator and virtualizer
 web-url: https://www.qemu.org/
 git-url: https://gitlab.com/qemu-project/qemu
@@ -8,16 +9,14 @@ dep-pkg: capstone libslirp libssh libusb libpng libjpeg-turbo pixman gnutls lzo 
 dep-upp: bzip2 flex bison
 ppflags: -UNDEBUG
 bsystem: gmake meson
-sfslink: 0
+
 dopatch: |
-    if [ "$LINK_TYPE" = static-full ] || [ "$LINK_TYPE" = static-most ] ; then
-        sed_in_place 's|meson setup --prefix|meson setup --prefer-static --prefix|' configure
-        sed_in_place "s|cc.find_library('vdeplug'|cc.find_library('vdeplug', static : true, dirs : ['$vde_LIBRARY_DIR']|" meson.build
-        sed_in_place "s|cc.find_library('cap-ng'|cc.find_library('cap-ng', static : true, dirs : ['$libcap_ng_LIBRARY_DIR']|" meson.build
-        sed_in_place "s|cc.find_library('attr'|cc.find_library('attr', static : true, dirs : ['$xattr_LIBRARY_DIR']|" meson.build
-        sed_in_place "s|cc.find_library('fdt'|cc.find_library('fdt', static : true, dirs : ['$dtc_LIBRARY_DIR']|" meson.build
-        sed_in_place "/iconv = /c iconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
-    fi
+    sedInPlace 's|meson setup --prefix|meson setup --prefer-static --prefix|' configure
+    sedInPlace "s|cc.find_library('vdeplug'|cc.find_library('vdeplug', static : true, dirs : ['$vde_LIBRARY_DIR']|" meson.build
+    sedInPlace "s|cc.find_library('cap-ng'|cc.find_library('cap-ng', static : true, dirs : ['$libcap_ng_LIBRARY_DIR']|" meson.build
+    sedInPlace "s|cc.find_library('attr'|cc.find_library('attr', static : true, dirs : ['$xattr_LIBRARY_DIR']|" meson.build
+    sedInPlace "s|cc.find_library('fdt'|cc.find_library('fdt', static : true, dirs : ['$dtc_LIBRARY_DIR']|" meson.build
+    sedInPlace "/iconv = /c iconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
 
 install: |
     ../configure \

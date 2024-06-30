@@ -4,16 +4,16 @@ git-url: https://github.com/git/git
 src-url: https://www.kernel.org/pub/software/scm/git/git-2.44.0.tar.xz
 src-sha: e358738dcb5b5ea340ce900a0015c03ae86e804e7ff64e47aa4631ddee681de3
 license: GPL-2.0-only
-dep-pkg: gettext-runtime libpcre2 libexpat libcurl zlib
+dep-pkg: libpcre2 libexpat libcurl libintl libz
 dep-upp: gettext-tools
-bsystem: configure
 binbstd: 1
-install: |
+
+prepare: |
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export ac_cv_c_regex_with_reg_startend=no
     fi
 
-    if [ "$CROSS_COMPILING" = 1 ] ; then
+    if isCrossBuild ; then
         # to bypass git error: cannot run test program while cross compiling
         export ac_cv_fread_reads_directories=yes
         export ac_cv_header_libintl_h=yes
@@ -21,22 +21,25 @@ install: |
         export ac_cv_snprintf_returns_bogus=no
 
         if [ "$TARGET_PLATFORM_NAME" = freebsd ] ; then
-            sed_in_place '/-DHAVE_SYSINFO/d' config.mak.uname
+            sedInPlace '/-DHAVE_SYSINFO/d' config.mak.uname
         fi
     fi
 
     export ac_cv_lib_curl_curl_global_init=yes
 
-    if [ -e ../lib/libcurl.a ] ; then
-        rm  ../lib/libcurl.a
-        printf 'INPUT(%s %s)\n' "$libcurl_LIBRARY_DIR/libcurl.a" "$(pkg-config --libs-only-l libcurl | sed 's|-lcurl||g')" > ../lib/libcurl.a
-    fi
+    export ac_cv_prog_CURL_CONFIG="$libcurl_INSTALL_DIR/bin/curl-config"
 
+    LIBCURL_LIBS="$(pkg-config --libs libcurl)"
+    printf 'LIBCURL_LIBS=%s\n' "$LIBCURL_LIBS"
+
+    export LDFLAGS="$LDFLAGS $LIBCURL_LIBS"
+
+install: |
     configure \
-        --with-zlib="$zlib_INSTALL_DIR" \
+        --with-zlib="$libz_INSTALL_DIR" \
         --with-curl="$libcurl_INSTALL_DIR" \
         --with-expat="$libexpat_INSTALL_DIR" \
         --with-iconv="$libiconv_INSTALL_DIR" \
-        --with-openssl="$openssl_INSTALL_DIR" \
+        --with-openssl="$libopenssl_INSTALL_DIR" \
         --with-libpcre2="$libpcre2_INSTALL_DIR" \
         --without-tcltk

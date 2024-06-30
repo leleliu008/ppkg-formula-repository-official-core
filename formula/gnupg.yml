@@ -8,7 +8,7 @@ license: GPL-3.0-or-later
 
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sed_in_place "s|\$(CC_FOR_BUILD)|\$(CC_FOR_BUILD) -isysroot $SDKROOT|" doc/Makefile.in
+        sedInPlace "s|\$(CC_FOR_BUILD)|\$(CC_FOR_BUILD) -isysroot $SDKROOT|" doc/Makefile.in
     fi
 
 install: |

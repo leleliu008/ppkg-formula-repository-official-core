@@ -4,7 +4,7 @@ web-url: https://www.midnight-commander.org/
 src-url: https://www.midnight-commander.org/downloads/mc-4.8.31.tar.xz
 src-sha: 24191cf8667675b8e31fc4a9d18a0a65bdc0598c2c5c4ea092494cd13ab4ab1a
 license: GPL-3.0-or-later
-dep-pkg: glib libssh2 openssl slang
+dep-pkg: glib libssh2 libopenssl slang
 dep-upp: perl
 sfslink: 0
 install: |

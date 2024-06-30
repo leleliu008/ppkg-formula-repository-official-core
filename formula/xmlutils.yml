@@ -1,0 +1,31 @@
+summary: A collections of command-line utilities provided by libxml2
+web-url: http://xmlsoft.org
+git-url: https://gitlab.gnome.org/GNOME/libxml2
+src-url: https://download.gnome.org/sources/libxml2/2.12/libxml2-2.12.7.tar.xz
+src-uri: http://distfiles.macports.org/libxml2/libxml2-2.12.7.tar.xz
+src-sha: 24ae78ff1363a973e6d8beba941a7945da2ac056e19b53956aeb6927fd6cfb56
+license: MIT
+dep-pkg: libiconv libz
+
+install: |
+    configure \
+        --with-iconv="$libiconv_INSTALL_DIR" \
+        --with-zlib \
+        --without-lzma \
+        --without-python \
+        --without-readline \
+        --without-coverage \
+        --without-debug \
+        --enable-ipv6 \
+        --enable-static \
+        --disable-shared \
+        LIBS=-liconv
+
+dotweak: |
+    rm -rfv include
+    rm -rfv lib
+    rm -rfv bin/xml2-config
+    rm -rfv share/aclocal
+    rm -rfv share/doc
+    rm -rfv share/gtk-doc
+    rm -rfv share/man/man1/xml2-config.1

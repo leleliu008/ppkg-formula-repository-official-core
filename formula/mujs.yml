@@ -6,8 +6,8 @@ src-sha: c015475880f6a382e706169c94371a7dd6cc22078832f6e0865af8289c2ef42b
 dep-pkg: readline
 binbstd: 1
 install: |
-    sed_in_place "s|CFLAGS = -std=c99|CFLAGS = $CPPFLAGS $LDFLAGS -std=c99|" Makefile
-    sed_in_place 's|-lreadline|-lreadline -lncurses|' Makefile
+    sedInPlace "s|CFLAGS = -std=c99|CFLAGS = $CPPFLAGS $LDFLAGS -std=c99|" Makefile
+    sedInPlace 's|-lreadline|-lreadline -lncurses|' Makefile
     gmakew clean
     gmakew release
     gmakew install-static prefix="$PACKAGE_INSTALL_DIR" VERSION=$PACKAGE_VERSION

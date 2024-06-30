@@ -4,7 +4,7 @@ web-url: https://www.python.org/
 src-url: https://www.python.org/ftp/python/3.12.2/Python-3.12.2.tgz
 src-sha: a7c4f6a9dc423d8c328003254ab0c9338b83037bd787d680826a5bf84308116e
 license: Python-2.0
-dep-pkg: gdbm openssl libsqlite3 libexpat libffi liblzma libbz2 zlib
+dep-pkg: gdbm libopenssl libsqlite3 libexpat libffi liblzma libbz2 zlib
 ccflags: -DOPENSSL_THREADS
 sfslink: 0
 install: |
@@ -31,7 +31,7 @@ install: |
     configure \
         --with-system-expat \
         --with-system-ffi \
-        --with-openssl="$openssl_INSTALL_DIR" \
+        --with-openssl="$libopenssl_INSTALL_DIR" \
         --with-ensurepip=yes \
         --with-lto \
         --enable-ipv6 \
