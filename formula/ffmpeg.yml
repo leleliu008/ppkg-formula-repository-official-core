@@ -1,70 +1,87 @@
-summary: Play, record, convert, and stream audio and video
+pkgtype: exe+lib
+summary: A complete, cross-platform solution to record, convert and stream audio and video
 git-url: https://github.com/FFmpeg/FFmpeg
 web-url: https://ffmpeg.org/
-src-url: https://ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz
-src-sha: 8684f4b00f94b85461884c3719382f1261f0d9eb3d59640a1f4ac0873616f968
+src-url: https://ffmpeg.org/releases/ffmpeg-7.0.tar.xz
+src-sha: 4426a94dd2c814945456600c8adfc402bee65ec14a70e8c531ec9a2cd651da7b
 license: GPL-2.0-or-later
-dep-pkg: gnutls aom dav1d rav1e libopus libvpx theora speex x264 x265 lame frei0r libass libbluray librist libsoxr libvidstab opencore-amr rubberband snappy srt tesseract xvid libzmq zimg alsa-lib xorg-libxv
-
+dep-pkg: libmp3lame libsamplerate libtheora libvorbis libspeex librav1e libdav1d libx264 libx265 libopus libxvid libsoxr libvpx libwebp libtiff libpng libjpeg-turbo libgif libsrt libzimg libzmq libxml2 libarchive libsdl2
+dep-upp: nasm
 bsystem: gmake
-binbstd: 1
+
 install: |
-    run ./configure \
-        --prefix=$PACKAGE_INSTALL_DIR \
-        --ar=$AR \
-        --as=$AS \
-        --ld=$CC \
-        --cc=$CC \
-        --cxx=$CXX \
-        --nm=$NM \
-        --ranlib=$RANLIB \
-        --strip=$STRIP \
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        CLANG_VERSION_MAJOR="$("$CC" -E -dM - < /dev/null | grep __clang_major__ | cut -d ' ' -f3)"
+
+        # https://github.com/spack/spack/issues/40159
+        if [ "$CLANG_VERSION_MAJOR" -ge 15 ] ; then
+            export LDFLAGS="$LDFLAGS -Wl,-ld_classic"
+        fi
+    fi
+
+    unset CONFIGURE_EXTRA_ARGS
+
+    case $TARGET_PLATFORM_ARCH in
+        aarch64) CONFIGURE_EXTRA_ARGS='--enable-neon' ;;
+        arm64)   CONFIGURE_EXTRA_ARGS='--enable-neon' ;;
+        armv7a)  CONFIGURE_EXTRA_ARGS='--enable-neon' ;;
+        i686)    CONFIGURE_EXTRA_ARGS='--disable-asm' ;;
+    esac
+
+    sedInPlace 's|-lxvidcore|-lxvidcore -lm|' configure
+    sedInPlace "/SDL2_CONFIG=/c SDL2_CONFIG='$libsdl2_INSTALL_DIR/bin/sdl2-config'" configure
+
+    if run ./configure \
+        --prefix="$PACKAGE_INSTALL_DIR" \
+        --sysroot="$SYSROOT" \
+        --ar="$AR" \
+        --as="$CC" \
+        --ld="$CC" \
+        --cc="$CC" \
+        --cxx="$CXX" \
+        --nm="$NM" \
+        --ranlib="$RANLIB" \
+        --strip="$STRIP" \
+        --pkg-config="$PKG_CONFIG" \
+        --arch="$TARGET_PLATFORM_ARCH" \
+        --target-os=darwin \
         --enable-pic \
         --enable-static \
         --enable-shared \
-        --enable-pthreads \
-        --enable-version3 \
-        --disable-asm \
-        --disable-doc \
-        --disable-debug \
         --enable-ffplay \
-        --enable-gnutls \
-        --enable-gpl \
-        --enable-libaom \
-        --enable-libbluray \
-        --enable-libdav1d \
+        --enable-ffprobe \
+        --enable-videotoolbox \
+        --enable-audiotoolbox \
         --enable-libmp3lame \
-        --enable-libopus \
-        --enable-librav1e \
-        --enable-librist \
-        --enable-librubberband \
-        --enable-libsnappy \
-        --enable-libsrt \
-        --enable-libtesseract \
         --enable-libtheora \
-        --enable-libvidstab \
-        --enable-libvmaf \
         --enable-libvorbis \
-        --enable-libvpx \
+        --enable-libspeex \
+        --enable-librav1e \
+        --enable-libdav1d \
+        --enable-libopus \
         --enable-libwebp \
+        --enable-libzimg \
         --enable-libx264 \
         --enable-libx265 \
-        --enable-libxml2 \
         --enable-libxvid \
-        --enable-lzma \
-        --enable-libfontconfig \
-        --enable-libfreetype \
-        --enable-frei0r \
-        --enable-libass \
-        --enable-libopencore-amrnb \
-        --enable-libopencore-amrwb \
-        --enable-libopenjpeg \
-        --enable-libspeex \
         --enable-libsoxr \
-        --enable-libzmq \
-        --enable-libzimg \
-        --disable-libjack \
-        --disable-indev=jack
-    gmakew clean
-    gmakew install
-    cp ffbuild/config.log "$PACKAGE_BCACHED_DIR/"
+        --enable-libvpx \
+        --enable-libsrt \
+        --enable-libxml2 \
+        --enable-lzma \
+        --enable-sdl \
+        --enable-gpl \
+        --disable-jni \
+        --disable-doc \
+        --disable-debug \
+        --disable-vulkan \
+        --disable-mediacodec \
+        --disable-libfdk-aac \
+        $CONFIGURE_EXTRA_ARGS ; then
+        gmakew clean
+        gmakew install V=1
+        run cp ffbuild/config.log .
+    else
+        cat ffbuild/config.log
+        return 1
+    fi

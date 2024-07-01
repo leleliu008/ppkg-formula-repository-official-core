@@ -4,5 +4,5 @@ git-url: https://gitlab.archlinux.org/pacman/pacman
 src-url: https://gitlab.archlinux.org/pacman/pacman/-/releases/v6.1.0/downloads/pacman-6.1.0.tar.xz
 src-sha: 5a60ac6e6bf995ba6140c7d038c34448df1f3daa4ae7141d2cad88eeb5f1f9d9
 license: GPL-2.0-or-later
-dep-pkg: libxslt libarchive libopenssl
+dep-pkg: libxslt libintl libarchive libopenssl
 install: mesonw -Ddoc=disabled

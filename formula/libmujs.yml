@@ -1,0 +1,26 @@
+summary: Embeddable Javascript interpreter
+web-url: https://www.mujs.com/
+git-url: https://github.com/ccxvii/mujs
+src-url: https://github.com/ccxvii/mujs/archive/refs/tags/1.3.4.tar.gz
+src-sha: c015475880f6a382e706169c94371a7dd6cc22078832f6e0865af8289c2ef42b
+
+install: |
+    gmakew clean
+    gmakew build/release/libmujs.a build/release/libmujs$SHARED_LIBRARY_SUFFIX CFLAGS="'-std=c99 $CFLAGS $CPPFLAGS'" OPTIM=
+    install_incs mujs.h
+    install_libs build/release/libmujs.a build/release/libmujs$SHARED_LIBRARY_SUFFIX
+
+dotweak: |
+    install -d lib/pkgconfig
+    cat >      lib/pkgconfig/mujs.pc <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include
+
+    Name: mujs
+    Description: $PACKAGE_SUMMARY
+    Version: $PACKAGE_VERSION
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lmujs -lm
+    EOF

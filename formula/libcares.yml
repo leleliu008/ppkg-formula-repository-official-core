@@ -1,0 +1,22 @@
+summary: Asynchronous DNS library
+web-url: https://c-ares.org/
+git-url: https://github.com/c-ares/c-ares
+src-url: https://github.com/c-ares/c-ares/archive/refs/tags/v1.30.0.tar.gz
+src-sha: 2f631573fb6ca91e1dfcafa8b43a24cf6fd6174b0c492220c6d2e72a45001ebe
+
+install: |
+    cmakew \
+        -DCARES_INSTALL=ON \
+        -DCARES_SHARED=ON \
+        -DCARES_STATIC=ON \
+        -DCARES_STATIC_PIC=ON \
+        -DCARES_BUILD_TOOLS=OFF \
+        -DCARES_BUILD_TESTS=OFF
+
+dotweak: |
+    cd lib 
+    ln -s libcares_static.a libcares.a
+
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        sedInPlace 's|-lcares|-lcares -lresolv|' pkgconfig/libcares.pc
+    fi

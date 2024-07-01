@@ -1,39 +1,23 @@
+pkgtype: lib
 summary: Media player based on MPlayer and mplayer2
 web-url: https://mpv.io
 git-url: https://github.com/mpv-player/mpv
-src-url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.37.0.tar.gz
-src-sha: 1d2d4adbaf048a2fa6ee134575032c4b2dad9a7efafd5b3e69b88db935afaddf
-dep-pkg: libplacebo libjpeg-turbo libarchive libass lcms2 luajit mujs uchardet vapoursynth alsa-lib xorg-libxpresent
-binbstd: 1
+src-url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.38.0.tar.gz
+src-sha: 86d9ef40b6058732f67b46d0bbda24a074fae860b3eaae05bab3145041303066
+dep-pkg: libplacebo libbluray luajit libmujs libass uchardet rubberband vapoursynth
+
+dopatch: |
+    sedInPlace "/iconv =/c iconv = dependency('libiconv', method : 'pkg-config')" meson.build
+
 install: |
     mesonw \
         -Dtests=false \
         -Dlibmpv=true \
         -Dcplayer=true \
-        -Dx11=enabled \
         -Dsdl2=enabled \
-        -Dpulse=enabled \
         -Dvulkan=enabled \
-        -Dwayland=enabled \
         -Duchardet=enabled \
         -Dlibbluray=enabled \
-        -Dlibplacebo=enabled \
         -Dlibarchive=enabled \
         -Djavascript=enabled \
         -Dlua=luajit
-
-install2: |
-    python3 bootstrap.py
-    python3 waf configure \
-        --prefix=$PACKAGE_INSTALL_DIR \
-        --enable-html-build \
-        --enable-javascript \
-        --enable-libmpv-shared \
-        --enable-lua \
-        --enable-sdl2 \
-        --enable-vulkan \
-        --enable-libplacebo \
-        --enable-libarchive \
-        --enable-uchardet \
-        --lua=luajit
-    python3 waf install
