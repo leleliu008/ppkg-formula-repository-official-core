@@ -7,4 +7,3 @@ license: GPL-2.0-or-later
 dep-pkg: ghostscript
 bsystem: configure
 binbstd: 1
-sfslink: 0

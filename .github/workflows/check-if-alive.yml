@@ -16,10 +16,12 @@ jobs:
     steps:
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/master/ppkg
       - run: chmod a+x ppkg
+
       - run: ./ppkg setup
-      - run: ./ppkg env
+      - run: ./ppkg about
       - run: ./ppkg sysinfo
       - run: ./ppkg update
+
       - run: |
           for item in $(./ppkg ls-available)
           do

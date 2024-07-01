@@ -4,5 +4,4 @@ src-url: https://dri.freedesktop.org/libdrm/libdrm-2.4.120.tar.xz
 src-sha: 3bf55363f76c7250946441ab51d3a6cc0ae518055c0ff017324ab76cdefb327a
 license: MIT
 dep-pkg: xorg-libpciaccess
-sfslink: 0
 install: mesonw -Dtests=false -Dcairo-tests=disabled -Dvalgrind=disabled

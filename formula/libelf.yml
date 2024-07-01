@@ -7,19 +7,21 @@ license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
 dep-pkg: libzstd liblzma libbz2 zlib argp-standalone musl-obstack musl-fts
 dep-upp: gm4
 ccflags: -Wno-error
-sfslink: 0
+
 dopatch: |
     sedInPlace '/libintl\.h/d' lib/eu-config.h
     sedInPlace '/dgettext/d'   lib/eu-config.h
     sedInPlace '/N_(Str/a #define _(Str) Str' lib/eu-config.h
     sedInPlace '/libasm debuginfod/d' Makefile.in
     sedInPlace '/^SUBDIRS =/c SUBDIRS = lib libelf' Makefile.in
-install: |
+
+prepare: |
     # FNM_EXTMATCH is a GNU externsion, musl does not define it
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export CPPFLAGS="$CPPFLAGS -DFNM_EXTMATCH=0"
     fi
 
+install: |
     configure \
         --program-prefix=elfutils- \
         --disable-libdebuginfod \
@@ -30,7 +32,9 @@ install: |
         --with-zlib \
         --with-bzlib
 
-    cat > libelf.pc <<EOF
+dotweak: |
+    install -d lib/pkgconfig/
+    cat >      lib/pkgconfig/libelf.pc <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
@@ -44,5 +48,3 @@ install: |
     Libs: -L\${libdir} -lelf
     Requires: zlib libzstd
     EOF
-
-    install_pcfs libelf.pc

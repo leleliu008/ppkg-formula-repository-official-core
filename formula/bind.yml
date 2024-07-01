@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: Implementation of the DNS protocols
 web-url: https://www.isc.org/downloads/bind
 git-url: https://github.com/isc-projects/bind9
@@ -6,6 +7,7 @@ src-sha: 5a4a70432a33d009f0e6e9dbb328aae7a5e27507e98e28bf3c0c6b250ccb2ab3
 license: MPL-2.0
 dep-pkg: json-c libopenssl libxml2 libidn2 libnghttp2 libuv
 dep-upp: perl
+
 install: |
     configure \
         --disable-linux-caps \
@@ -19,4 +21,3 @@ install: |
         --with-zlib
 
 # Static linking is not supported as it disables dlopen() and certain security features (e.g. RELRO, ASLR)
-sfslink: 0

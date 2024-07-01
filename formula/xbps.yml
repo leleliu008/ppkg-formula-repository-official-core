@@ -1,8 +1,9 @@
+pkgtype: pie
 summary: A binary package system designed and implemented from scratch
 git-url: https://github.com/void-linux/xbps
 dep-pkg: libarchive
 binbstd: 1
-sfslink: 0
+
 install: |
     ./configure --enable-rpath --prefix=/
     gmakew

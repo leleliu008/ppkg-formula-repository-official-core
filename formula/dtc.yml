@@ -5,7 +5,6 @@ src-sha: 29edce3d302a15563d8663198bbc398c5a0554765c83830d0d4c0409d21a16c4
 license: GPL-2.0-or-later BSD-2-Clause
 dep-upp: gm4 flex bison
 binbstd: 1
-sfslink: 0
 install: |
     gmakew clean
     gmakew NO_PYTHON=1

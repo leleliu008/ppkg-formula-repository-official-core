@@ -7,7 +7,6 @@ license: LGPL-2.1-or-later
 dep-upp: gdk-pixbuf
 dep-pkg: gdk-pixbuf pango
 bsystem: configure cargo
-sfslink: 0
 
 install: |
     configure \

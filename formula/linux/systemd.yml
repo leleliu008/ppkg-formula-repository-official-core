@@ -7,7 +7,7 @@ license: GPL-2.0-or-later LGPL-2.1-or-later
 dep-pkg: gettext-runtime libgpg-error libxcrypt libcap util-linux libzstd lz4 glib
 dep-upp: gettext-tools intltool gm4 gperf rsync xsltproc docbook-xsl
 dep-pym: jinja2-cli
-sfslink: 0
+
 install: |
     mesonw \
         --sysconfdir=$PACKAGE_INSTALL_DIR/etc \

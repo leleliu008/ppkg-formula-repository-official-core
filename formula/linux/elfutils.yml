@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: utilities and libraries to read, create and modify ELF binary files
 git-url: git://sourceware.org/git/elfutils.git
 web-url: https://sourceware.org/elfutils
@@ -7,11 +8,12 @@ license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
 dep-pkg: libzstd liblzma libbz2 zlib argp-standalone musl-obstack musl-fts
 dep-upp: gm4
 ccflags: -Wno-error
-sfslink: 0
+
 dopatch: |
-    sed_in_place '/libintl\.h/d' lib/eu-config.h
-    sed_in_place '/dgettext/d'   lib/eu-config.h
-    sed_in_place '/N_(Str/a #define _(Str) Str' lib/eu-config.h
+    sedInPlace '/libintl\.h/d' lib/eu-config.h
+    sedInPlace '/dgettext/d'   lib/eu-config.h
+    sedInPlace '/N_(Str/a #define _(Str) Str' lib/eu-config.h
+
 install: |
     # FNM_EXTMATCH is a GNU externsion, musl does not define it
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then

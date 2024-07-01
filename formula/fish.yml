@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: A smart and user-friendly command line shell for Linux, macOS, and the rest of the family
 web-url: https://fishshell.com/
 git-url: https://github.com/fish-shell/fish-shell
@@ -5,5 +6,4 @@ src-url: https://github.com/fish-shell/fish-shell/releases/download/3.7.1/fish-3
 src-sha: 614c9f5643cd0799df391395fa6bbc3649427bb839722ce3b114d3bbc1a3b250
 license: GPL-2.0-or-later
 dep-pkg: libpcre2 readline
-sfslink: 0
 install: cmakew -DWITH_GETTEXT=OFF

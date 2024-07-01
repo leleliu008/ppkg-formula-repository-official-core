@@ -1,10 +1,10 @@
+pkgtype: pie+lib
 summary: GNU C Library
 web-url: https://www.gnu.org/software/libc
 src-url: https://ftp.gnu.org/gnu/glibc/glibc-2.36.tar.gz
 src-sha: 02efa6ffbbaf3e10e88f16818a862608d04b0ef838c66f6025ae120530792c9c
 license: GPL-2.0-or-later LGPL-2.1-or-later
 dep-pkg: gcc
-sfslink: 0
 ccflags: -Wno-error
 install: |
     configure \

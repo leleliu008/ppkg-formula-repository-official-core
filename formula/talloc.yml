@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Hierarchical, reference-counted memory pool with destructors
 web-url: https://talloc.samba.org/
 src-url: https://www.samba.org/ftp/talloc/talloc-2.4.0.tar.gz
@@ -6,7 +7,7 @@ license: GPL-3.0-or-later
 dep-upp: python3
 bsystem: gmake
 binbstd: 1
-sfslink: 0
+
 install: |
     ./configure build \
         --prefix=$TARGET_INSTALL_DIR \

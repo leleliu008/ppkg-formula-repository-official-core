@@ -5,7 +5,7 @@ src-url: https://code.videolan.org/rist/librist/-/archive/v0.2.10/librist-v0.2.1
 src-sha: 797e486961cd09bc220c5f6561ca5a08e7747b313ec84029704d39cbd73c598c
 license: BSD-2-Clause
 dep-pkg: cjson cmocka mbedtls
-sfslink: 0
+
 install: |
     mesonw \
         -Dtest=false \

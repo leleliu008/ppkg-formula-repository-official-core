@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: Interpreted, interactive, object-oriented programming language
 git-url: https://github.com/python/cpython
 web-url: https://www.python.org/
@@ -6,7 +7,7 @@ src-sha: a7c4f6a9dc423d8c328003254ab0c9338b83037bd787d680826a5bf84308116e
 license: Python-2.0
 dep-pkg: gdbm libopenssl libsqlite3 libexpat libffi liblzma libbz2 zlib
 ccflags: -DOPENSSL_THREADS
-sfslink: 0
+
 install: |
     unset PYTHONHOME
     unset PYTHONPATH

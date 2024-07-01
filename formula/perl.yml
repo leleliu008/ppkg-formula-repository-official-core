@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: Highly capable, feature-rich programming language
 web-url: https://www.perl.org/
 git-url: https://github.com/perl/perl5
@@ -5,7 +6,6 @@ src-url: https://www.cpan.org/src/5.0/perl-5.38.2.tar.xz
 src-uri: https://cpan.metacpan.org/authors/id/R/RJ/RJBS/perl-5.38.2.tar.xz
 src-sha: d91115e90b896520e83d4de6b52f8254ef2b70a8d545ffab33200ea9f1cf29e8
 license: GPL-1.0-or-later
-sfslink: 0
 binbstd: 1
 install: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then

@@ -1,3 +1,4 @@
+pkgtype: pie
 summary: Interpreter for PostScript and PDF
 web-url: https://www.ghostscript.com/
 src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/ghostpdl-10.03.0.tar.xz
@@ -6,7 +7,6 @@ license: AGPL-3.0-or-later
 dep-pkg: fontconfig jbig2dec libidn lcms2 openjpeg tesseract
 
 binbstd: 1
-sfslink: 0
 
 dopatch: |
     rm -rf expat
