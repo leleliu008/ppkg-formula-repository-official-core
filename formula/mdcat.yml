@@ -5,4 +5,4 @@ src-sha: 332c8e659a668ceeae70b0d268a46f00bf8bab696dbf7f84faa69b3c509da286
 license: MPL-2.0
 dep-pkg: libopenssl
 bsystem: cargo cmake
-install: RUSTUP_TOOLCHAIN=1.76 cargow install
+install: RUSTUP_TOOLCHAIN=1.79 cargow install

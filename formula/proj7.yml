@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Cartographic Projections Library
 web-url: https://proj.org/
 git-url: https://github.com/OSGeo/PROJ
@@ -5,7 +6,8 @@ src-url: https://github.com/OSGeo/PROJ/releases/download/7.2.1/proj-7.2.1.tar.gz
 src-sha: b384f42e5fb9c6d01fe5fa4d31da2e91329668863a684f97be5d4760dbbf0a14
 license: MIT
 dep-upp: sqlite3
-dep-pkg: libtiff libcurl libsqlite3
+dep-pkg: libsqlite3 libtiff libcurl
+
 dopatch: |
     CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl | tr ' ' ';')"
     cat > cmake/FindCURL.cmake <<EOF
@@ -52,7 +54,9 @@ install: |
     rm -rf *
     cmakew -DENABLE_TIFF=ON -DENABLE_CURL=ON -DBUILD_EXAMPLES=OFF -DBUILD_CCT=OFF -DBUILD_CS2CS=OFF -DBUILD_GEOD=OFF -DBUILD_GIE=OFF -DBUILD_PROJ=OFF -DBUILD_PROJINFO=OFF -DBUILD_PROJSYNC=OFF -DBUILD_SHARED_LIBS=OFF
 
-    cat > proj.pc <<EOF
+dotweak: |
+    install -d lib/pkgconfig/
+    cat >      lib/pkgconfig/proj.pc <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib
@@ -65,5 +69,3 @@ install: |
     Libs: -L\${libdir} -lproj -lstdc++ -lm -ldl
     Requires: sqlite3 libtiff-4 libcurl
     EOF
-
-    install_pcfs proj.pc

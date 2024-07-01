@@ -4,6 +4,8 @@ src-url: https://xcb.freedesktop.org/dist/libxcb-1.15.tar.gz
 src-sha: 1cb65df8543a69ec0555ac696123ee386321dfac1964a3da39976c9a05ad724d
 license: MIT
 dep-pkg: xorg-xcb-proto xorg-libpthread-stubs xorg-libxau xorg-libxdmcp
+dep-upp: python3
+
 install: |
     configure \
         --enable-ge \

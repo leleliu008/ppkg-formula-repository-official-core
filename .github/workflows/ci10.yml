@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy,libqalculate,libraqm,librasterlite,libreplaygain,libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libupnp,libuvc,libwebm,libwordexp,libxml2-utils,libxml2@2.11,libyuv]
+        pkg: [libmill,libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy,libqalculate,libraqm,librasterlite,libreplaygain,libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libupnp,libuuid,libuvc,libwebm,libwordexp,libxml2-utils,libxml2@2.11]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy,libqalculate,libraqm,librasterlite,libreplaygain,libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libupnp,libuvc,libwebm,libwordexp,libxml2-utils,libxml2@2.11,libyuv]
+        pkg: [libmill,libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy,libqalculate,libraqm,librasterlite,libreplaygain,libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libupnp,libuuid,libuvc,libwebm,libwordexp,libxml2-utils,libxml2@2.11]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy,libqalculate,libraqm,librasterlite,libreplaygain,libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libunibreak,libupnp,libuvc,libwebm,libwordexp,libxml2-utils,libxml2@2.11,libyuv]
+        pkg: [libmill,libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy,libqalculate,libraqm,librasterlite,libreplaygain,libressl,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libupnp,libuuid,libuvc,libwebm,libwordexp,libxml2-utils,libxml2@2.11]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}
