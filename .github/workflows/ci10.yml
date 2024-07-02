@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [liblo,libmad,libmaxminddb,libmesalink,libmetalink,libmicrohttpd,libmill,libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy,libqalculate,libraqm,librasterlite,libreplaygain,libressl,librist,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree]
+        pkg: [libisoburn,liblinear,liblo,libmad,libmaxminddb,libmesalink,libmetalink,libmicrohttpd,libmill,libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy,libqalculate,libraqm,librasterlite,libreplaygain,libressl,librist,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [liblo,libmad,libmaxminddb,libmesalink,libmetalink,libmicrohttpd,libmill,libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy,libqalculate,libraqm,librasterlite,libreplaygain,libressl,librist,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree]
+        pkg: [libisoburn,liblinear,liblo,libmad,libmaxminddb,libmesalink,libmetalink,libmicrohttpd,libmill,libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy,libqalculate,libraqm,librasterlite,libreplaygain,libressl,librist,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [liblo,libmad,libmaxminddb,libmesalink,libmetalink,libmicrohttpd,libmill,libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy,libqalculate,libraqm,librasterlite,libreplaygain,libressl,librist,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree]
+        pkg: [libisoburn,liblinear,liblo,libmad,libmaxminddb,libmesalink,libmetalink,libmicrohttpd,libmill,libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy,libqalculate,libraqm,librasterlite,libreplaygain,libressl,librist,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}

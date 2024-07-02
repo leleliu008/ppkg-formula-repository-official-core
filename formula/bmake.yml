@@ -1,14 +1,19 @@
 summary: Portable version of NetBSD make(1)
 web-url: https://www.crufty.net/help/sjg/bmake.html
-src-url: https://www.crufty.net/ftp/pub/sjg/bmake-20240314.tar.gz
-src-sha: f9a906d7487699c9e0d2c135700c2d088da5fcd0f2f6761267a57aabfea31feb
+src-url: https://www.crufty.net/ftp/pub/sjg/bmake-20240520.tar.gz
+src-sha: 2210ccd455b008df7951f6dbd347bfcc1837c46473014e4b8dd5ff3091ae2894
 license: BSD-3-Clause
 binbstd: 1
+
 install: |
-    sedInPlace '1c set -x' boot-strap
-    #sedInPlace 's|MANTARGET?|MANTARGET|'   mk/man.mk
-    #sedInPlace '/deptgt-delete_on_error/d' unit-tests/Makefile
-    #sedInPlace '/shell-ksh/d'              unit-tests/Makefile
-    run bash boot-strap --prefix=$PACKAGE_INSTALL_DIR -DWITHOUT_PROG_LINK --install BROKEN_TESTS=shell-ksh
-    #install_bins ../*/bmake
+    # error: 'vfork' is deprecated: Use posix_spawn or fork [-Werror,-Wdeprecated-declarations]
+    export ac_cv_func_vfork=no
+
+    sedInPlace 's|MANTARGET?|MANTARGET|'   mk/man.mk
+    sedInPlace '/deptgt-delete_on_error/d' unit-tests/Makefile
+    sedInPlace '/shell-ksh/d'              unit-tests/Makefile
+
+    run ./configure
+    run sh ./make-bootstrap.sh
+    install_bins bmake
     install_mans bmake.1

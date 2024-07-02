@@ -1,12 +1,11 @@
 summary: A C++ library for parsing, formatting, and validating international phone numbers
 git-url: https://github.com/google/libphonenumber
-src-url: https://github.com/google/libphonenumber/archive/refs/tags/v8.13.33.tar.gz
-src-sha: 656c080c0fd713b9bed61efda4b006846d40914b5412d6d7082a5397653e2fef
-dep-pkg: boost icu4c protobuf googletest abseil
+src-url: https://github.com/google/libphonenumber/archive/refs/tags/v8.13.37.tar.gz
+src-sha: 350f99f5eb99c3220388019533b28f3f6e4ed1bbcffb64abdcaed43cae6b0d21
+dep-pkg: boost icu4c libprotobuf googletest abseil
 license: Apache-2.0
 bscript: cpp
-dopatch: printf 'INPUT(-licudata %s -lc++_shared)\n' "$(pkg-config --libs-only-l protobuf)" > ../../lib/libpthread.a
-ccflags: -Wno-sign-compare
+
 install: |
     cmakew \
         -DCMAKE_CXX_STANDARD=17 \
@@ -16,5 +15,4 @@ install: |
         -DUSE_POSIX_THREAD=ON \
         -DUSE_ICU_REGEXP=ON \
         -DUSE_BOOST=ON \
-        -DBoost_USE_STATIC_LIBS=ON \
         -DUSE_RE2=OFF

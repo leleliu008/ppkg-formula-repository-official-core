@@ -6,6 +6,8 @@ version: r3108
 license: GPL-2.0-only
 dep-upp: nasm
 
+dopatch: sedInPlace '1c \#!/usr/bin/env bash' configure
+
 prepare: |
     case $TARGET_PLATFORM_ARCH in
         x86_64) CONFIGURE_EXTRA_ARGS='--enable-asm' ; export AS=nasm ;;

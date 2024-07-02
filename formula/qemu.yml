@@ -5,7 +5,7 @@ git-url: https://gitlab.com/qemu-project/qemu
 src-url: https://download.qemu.org/qemu-8.2.1.tar.xz
 src-sha: 8562751158175f9d187c5f22b57555abe3c870f0325c8ced12c34c6d987729be
 license: GPL-2.0-only
-dep-pkg: capstone libslirp libssh libusb libpng libjpeg-turbo pixman gnutls lzo nettle snappy dtc vde libzstd libcap-ng xattr
+dep-pkg: capstone libslirp libssh libusb libpng libjpeg-turbo libpixman gnutls liblzo nettle snappy libfdt vde libzstd libcap-ng xattr
 dep-upp: bzip2 flex bison
 ppflags: -UNDEBUG
 bsystem: gmake meson
@@ -15,7 +15,7 @@ dopatch: |
     sedInPlace "s|cc.find_library('vdeplug'|cc.find_library('vdeplug', static : true, dirs : ['$vde_LIBRARY_DIR']|" meson.build
     sedInPlace "s|cc.find_library('cap-ng'|cc.find_library('cap-ng', static : true, dirs : ['$libcap_ng_LIBRARY_DIR']|" meson.build
     sedInPlace "s|cc.find_library('attr'|cc.find_library('attr', static : true, dirs : ['$xattr_LIBRARY_DIR']|" meson.build
-    sedInPlace "s|cc.find_library('fdt'|cc.find_library('fdt', static : true, dirs : ['$dtc_LIBRARY_DIR']|" meson.build
+    sedInPlace "s|cc.find_library('fdt'|cc.find_library('fdt', static : true, dirs : ['$libfdt_LIBRARY_DIR']|" meson.build
     sedInPlace "/iconv = /c iconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
 
 install: |

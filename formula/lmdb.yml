@@ -1,14 +1,12 @@
-summary: Lightning memory-mapped database, key-value data store
+pkgtype: exe+lib
+summary: An extraordinarily fast, memory-efficient, memory-mapped, key-value database
 web-url: https://symas.com/lmdb
-git-url: https://git.openldap.org/openldap/openldap.git
-src-url: https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.32/openldap-LMDB_0.9.32.tar.bz2
-src-sha: 039be48414f71299d04fb01da3e1a6461075bb77eaeeeda36ee5285de804ebf6
+src-url: https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.33/openldap-LMDB_0.9.33.tar.bz2
+src-sha: d19d52725800177b89d235161c0af8ae8b2932207e3c9eb87e95b61f1925206d
 license: OLDAP-2.8
 
-ppflags: -DMDB_USE_ROBUST=0
 bscript: libraries/liblmdb
-binbstd: 1
+
 install: |
     gmakew clean
-    gmakew CC=$CC XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR=$AR
-    gmakew install prefix=$PACKAGE_INSTALL_DIR
+    gmakew install prefix=$PACKAGE_INSTALL_DIR CC=$CC XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR=$AR SOEXT=$SHARED_LIBRARY_SUFFIX

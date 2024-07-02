@@ -12,7 +12,7 @@ install: |
     cmakew -DGRAPHITE2_NFILEFACE=ON -DBUILD_SHARED_LIBS=ON
     cmakew -DGRAPHITE2_NFILEFACE=ON -DBUILD_SHARED_LIBS=OFF
 
-dotweak: sedInPlace 's|-lgraphite2|-lgraphite2 -lc++|' lib/pkgconfig/graphite2.pc
+    #dotweak: sedInPlace 's|-lgraphite2|-lgraphite2 -lc++|' lib/pkgconfig/graphite2.pc
 
 fix-url: https://github.com/silnrsi/graphite/commit/290db2f1959862c3c116d5e7fe7161b893397468.diff
 fix-sha: fd1447d8d08966a743711bbe51a6443abc05197bcef91fdcd75f2662743f5588
