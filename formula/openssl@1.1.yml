@@ -21,6 +21,9 @@ prepare: |
     unset OS_COMPILER
 
     case $TARGET_PLATFORM_NAME in
+        linux)
+            OS_COMPILER="linux-$TARGET_PLATFORM_ARCH"
+            ;;
         macos)
             OS_COMPILER="darwin64-$TARGET_PLATFORM_ARCH-cc"
             ;;

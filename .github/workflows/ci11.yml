@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [libtorrent-rasterbar,libtree,libupnp,libuuid,libuvc,libvidstab,libwebm,libwordexp,libxml2@2.11,libyuv,lighttpd,lima,links,livego,llhttp,llvm,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx]
+        pkg: [libtins,libtorrent-rasterbar,libtree,libupnp,libuuid,libuvc,libvidstab,libwebm,libwordexp,libxml2@2.11,libyuv,lighttpd,lima,links,livego,llhttp,llvm,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [libtorrent-rasterbar,libtree,libupnp,libuuid,libuvc,libvidstab,libwebm,libwordexp,libxml2@2.11,libyuv,lighttpd,lima,links,livego,llhttp,llvm,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx]
+        pkg: [libtins,libtorrent-rasterbar,libtree,libupnp,libuuid,libuvc,libvidstab,libwebm,libwordexp,libxml2@2.11,libyuv,lighttpd,lima,links,livego,llhttp,llvm,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [libtorrent-rasterbar,libtree,libupnp,libuuid,libuvc,libvidstab,libwebm,libwordexp,libxml2@2.11,libyuv,lighttpd,lima,links,livego,llhttp,llvm,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx]
+        pkg: [libtins,libtorrent-rasterbar,libtree,libupnp,libuuid,libuvc,libvidstab,libwebm,libwordexp,libxml2@2.11,libyuv,lighttpd,lima,links,livego,llhttp,llvm,llvm@14,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}

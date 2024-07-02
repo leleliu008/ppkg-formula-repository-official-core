@@ -91,4 +91,9 @@ install: |
             -Dbsymbolic_functions=false
     fi
 
-dotweak: sedInPlace 's|libiconv|libintl libffi libz|' lib/pkgconfig/glib-2.0.pc
+dotweak: |
+    sedInPlace 's|libiconv|libintl libffi libz|' lib/pkgconfig/glib-2.0.pc
+
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        sedInPlace 's|-lintl|-lresolv|g'         lib/pkgconfig/glib-2.0.pc
+    fi

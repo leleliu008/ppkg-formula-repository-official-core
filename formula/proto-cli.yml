@@ -4,4 +4,5 @@ git-url: https://github.com/moonrepo/proto
 src-url: https://github.com/moonrepo/proto/archive/refs/tags/v0.26.4.tar.gz
 src-sha: f9e5ee7cca228f2911dd0b2b713a0dfe3abda733423c2b029966da43984fb488
 license: MIT
+prepare: export RUSTUP_TOOLCHAIN=1.76
 install: cargow install --path crates/cli
