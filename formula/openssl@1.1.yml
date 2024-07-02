@@ -22,7 +22,7 @@ prepare: |
 
     case $TARGET_PLATFORM_NAME in
         macos)
-            OS_COMPILER="darwin64-$TARGET_PLATFORM_ARCH"
+            OS_COMPILER="darwin64-$TARGET_PLATFORM_ARCH-cc"
             ;;
         *bsd)
             case $TARGET_PLATFORM_ARCH in

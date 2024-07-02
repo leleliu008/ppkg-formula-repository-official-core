@@ -1,17 +1,12 @@
 summary: Utility that provides fast incremental file transfer
-git-url: https://github.com/WayneD/rsync
+git-url: https://github.com/RsyncProject/rsync
 web-url: https://rsync.samba.org/
-
-src-url: https://rsync.samba.org/ftp/rsync/rsync-3.2.7.tar.gz
-src-sha: 4e7d9d3f6ed10878c58c5fb724a67dacf4b6aac7340b13e488fb2dc41346f2bb
-
-fix-url: https://download.samba.org/pub/rsync/src/rsync-patches-3.2.7.tar.gz
-fix-sha: e7e5e9ea0b6dd7639c7a5c6f49a1d06be20d449d59f60ba59b238e1aa79b13f0
-
+src-url: https://rsync.samba.org/ftp/rsync/rsync-3.3.0.tar.gz
+src-sha: 7399e9a6708c32d678a72a63219e96f23be0be2336e50fd1348498d07041df90
 license: GPL-3.0-or-later
+dep-pkg: libopenssl libpopt libz liblz4 libzstd libxxhash libiconv
+install: configure --disable-simd --enable-ipv6 --with-included-popt=no --with-included-zlib=no
 
-dep-pkg: libopenssl popt lz4 libzstd xxhash libiconv
-dep-upp: autoconf
-
+fix-url: https://download.samba.org/pub/rsync/src/rsync-patches-3.3.0.tar.gz
+fix-sha: 3dd51cd88d25133681106f68622ebedbf191ab25a21ea336ba409136591864b0
 dopatch: patch -p1 < ../fix/patches/fileflags.diff
-install: configure --disable-simd --enable-ipv6 --with-included-popt=no --with-included-zlib=no LIBS=-lpthread
