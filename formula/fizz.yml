@@ -4,6 +4,6 @@ web-url: https://github.com/facebookincubator/fizz
 src-url: https://github.com/facebookincubator/fizz/archive/refs/tags/v2024.03.18.00.tar.gz
 src-sha: 6d1eac512d474e265e1cbfa50b83d4834d2cbbbd3ece563e15fee0a49aa8b360
 license: BSD-2-Clause
-dep-pkg: folly zlib libsodium
+dep-pkg: libsodium libfolly libz
 bscript: fizz
 install: cmakew -DBUILD_TESTS=OFF

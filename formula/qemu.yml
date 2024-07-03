@@ -1,14 +1,15 @@
-pkgtype: pie
 summary: A generic and open source machine & userspace emulator and virtualizer
 web-url: https://www.qemu.org/
-git-url: https://gitlab.com/qemu-project/qemu
-src-url: https://download.qemu.org/qemu-8.2.1.tar.xz
-src-sha: 8562751158175f9d187c5f22b57555abe3c870f0325c8ced12c34c6d987729be
+git-url: https://git.qemu.org/git/qemu.git
+src-url: https://download.qemu.org/qemu-9.0.0.tar.xz
+src-sha: 32708ac66c30d8c892633ea968c771c1c76d597d70ddead21a0d22ccf386da69
 license: GPL-2.0-only
-dep-pkg: capstone libslirp libssh libusb libpng libjpeg-turbo libpixman gnutls liblzo nettle snappy libfdt vde libzstd libcap-ng xattr
+dep-pkg: ncurses capstone libfdt libusb libslirp libssh libpng libjpeg-turbo libpixman libsnappy libzstd liblzo gnutls nettle vde libcap-ng xattr
 dep-upp: bzip2 flex bison
-ppflags: -UNDEBUG
 bsystem: gmake meson
+
+ppflags: -UNDEBUG
+ldflags: -lc++
 
 dopatch: |
     sedInPlace 's|meson setup --prefix|meson setup --prefer-static --prefix|' configure
@@ -19,22 +20,23 @@ dopatch: |
     sedInPlace "/iconv = /c iconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
 
 install: |
-    ../configure \
-        --prefix="$PACKAGE_INSTALL_DIR" \
-        --cc="$CC" \
-        --host-cc="$CC_FOR_BUILD" \
+    ./configure \
+        --prefix=$PACKAGE_INSTALL_DIR \
+        --cc=$CC \
+        --host-cc=$CC \
         --extra-cflags="$CFLAGS $CPPFLAGS -DNCURSES_WIDECHAR=1" \
         --extra-ldflags="$LDFLAGS" \
         --disable-bsd-user \
         --disable-guest-agent \
         --enable-capstone \
+        --enable-virtfs \
         --enable-curses \
         --enable-libssh \
+        --enable-cocoa \
         --enable-slirp \
+        --enable-zstd \
         --enable-fdt=system \
         --enable-vde \
-        --enable-virtfs \
-        --enable-zstd \
         --disable-sdl \
         --disable-gtk
     gmakew install V=1

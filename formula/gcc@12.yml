@@ -3,7 +3,7 @@ web-url: https://gcc.gnu.org/
 git-url: https://gcc.gnu.org/git/gcc
 src-url: https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz
 src-sha: e549cf9cf3594a00e27b6589d4322d70e0720cdd213f39beb4181e06926230ff
-dep-pkg: isl libmpc zlib linux-headers
+dep-pkg: libisl libmpc zlib linux-headers
 dep-upp: rsync
 license: GPL-3.0-or-later
 
@@ -13,9 +13,9 @@ ccflags: -Wno-error=unused-variable
 install: |
     configure \
         --with-boot-ldflags="'-static-libstdc++ -static-libgcc $LDFLAGS'" \
-        --with-isl=$isl_INSTALL_DIR \
+        --with-isl=$libisl_INSTALL_DIR \
         --with-gmp=$libgmp_INSTALL_DIR \
         --with-mpc=$libmpc_INSTALL_DIR \
-        --with-mpfr=$mpfr_INSTALL_DIR \
+        --with-mpfr=$libmpfr_INSTALL_DIR \
         --enable-languages=c,c++,fortran \
         --disable-multilib

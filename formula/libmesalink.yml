@@ -9,4 +9,7 @@ install: |
     run install_incs mesalink/*.h
     run install_incs :openssl mesalink/openssl/*.h
     run install_libs target/$RUST_TARGET/release/libmesalink.a
-    run install_libs target/$RUST_TARGET/release/libmesalink$SHARED_LIBRARY_SUFFIX
+
+    if [ -f              "target/$RUST_TARGET/release/libmesalink$SHARED_LIBRARY_SUFFIX" ] ; then
+        run install_libs "target/$RUST_TARGET/release/libmesalink$SHARED_LIBRARY_SUFFIX"
+    fi

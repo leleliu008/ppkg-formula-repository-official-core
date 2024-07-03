@@ -6,12 +6,12 @@ src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz
 src-uri: https://sourceware.org/pub/binutils/releases/binutils-2.41.tar.xz
 src-sha: ae9a5789e23459e59606e6714723f2d3ffc31c03174191ef0d015bdf06007450
 license: GPL-2.0-or-later
-dep-pkg: isl libmpc zlib
+dep-pkg: libisl libmpc libz
 dep-upp: gm4 bison texinfo
 
 install: |
     configure \
-        --with-isl="$isl_INSTALL_DIR" \
+        --with-isl="$libisl_INSTALL_DIR" \
         --with-gmp="$libgmp_INSTALL_DIR" \
         --with-mpc="$libmpc_INSTALL_DIR" \
         --with-mpfr="$mpfr_INSTALL_DIR" \
