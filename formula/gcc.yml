@@ -6,6 +6,8 @@ src-sha: 61d684f0aa5e76ac6585ad8898a2427aade8979ed5e7f85492286c4dfc13ee86
 license: GPL-3.0-or-later
 dep-pkg: libisl libmpc libzstd linux-headers
 
+dopatch: sedInPlace 's|m64=../lib64|m64=|' gcc/config/i386/t-linux64
+
 install: |
     configure \
         --with-boot-ldflags="'-static-libstdc++ -static-libgcc $LDFLAGS'" \

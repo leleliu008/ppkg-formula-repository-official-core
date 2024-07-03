@@ -1,4 +1,4 @@
-summary: C XSLT library for GNOME
+summary: A command line tool for applying XSLT stylesheets to XML documents
 web-url: http://xmlsoft.org/XSLT
 git-url: https://github.com/GNOME/libxslt
 src-url: https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.39.tar.xz
@@ -12,13 +12,15 @@ dopatch: |
 
 install: |
     configure \
+        --enable-static \
+        --disable-shared \
         --without-debug \
         --without-mem-debug \
         --without-debugger \
         --without-crypto \
         --without-python \
         --with-profiler \
-        --with-plugins
+        --with-plugins LIBS=-ldl
 
 dotweak: |
     rm -rfv bin/xslt-config

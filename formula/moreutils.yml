@@ -6,7 +6,7 @@ src-sha: 0f795d25356ca61544966646fb707d5be0b9864116be0269df5433f62d4e05d1
 license: GPL-2.0-or-later
 dep-pkg: perl
 dep-upp: xmlutils xsltproc docbook-xsl
-binbstd: 1
+
 install: |
-    gmakew all CFLAGS="'$CFLAGS'" DOCBOOKXSL="$UPPM_PACKAGE_INSTALLED_ROOT/docbook-xsl/xslt/1.0/nons"
+    gmakew all CFLAGS="'$CFLAGS'" DOCBOOKXSL="$UPPM_HOME/installed/docbook-xsl/xslt/1.0/nons"
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

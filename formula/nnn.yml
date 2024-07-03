@@ -4,14 +4,15 @@ src-url: https://github.com/jarun/nnn/archive/refs/tags/v4.9.tar.gz
 src-sha: 9e25465a856d3ba626d6163046669c0d4010d520f2fb848b0d611e1ec6af1b22
 license: BSD-2-Clause
 dep-pkg: readline musl-fts
-binbstd: 1
-install: |
+
+prepare: |
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export LDLIBS=-lfts
     else
         unset LDLIBS
     fi
 
+install: |
     gmakew clean
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
     install_mans nnn.1

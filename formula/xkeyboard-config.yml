@@ -4,6 +4,5 @@ web-url: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/
 src-url: https://xorg.freedesktop.org/archive/individual/data/xkeyboard-config/xkeyboard-config-2.40.tar.xz
 src-sha: 7a3dba1bec7dc7191432da021242d17c9cf6c89690e6c57b0de048ff8c9d2ae3
 license: MIT
-dep-pkg: libxslt gettext
-dep-upp: perl
+dep-upp: perl xsltproc gettext-tools
 bsystem: meson

@@ -1,23 +1,26 @@
-pkgtype: pie
+pkgtype: exe+lib
 summary: Toolkit for image loading and pixel buffer manipulation
 web-url: https://gtk.org/
 git-url: https://github.com/GNOME/gdk-pixbuf
-src-url: https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.10.tar.xz
-src-sha: ee9b6c75d13ba096907a2e3c6b27b61bcd17f5c7ebeab5a5b439d2f2e39fe44b
+src-url: https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz
+src-sha: b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7
 license: LGPL-2.1-or-later
-dep-upp: glib-tools
-dep-pkg: glib gobject-introspection libjpeg-turbo libpng libtiff shared-mime-info
+dep-pkg: gobject-introspection libjpeg-turbo libpng libtiff
 
 install: |
     mesonw \
         -Drelocatable=true \
         -Dnative_windows_loaders=false \
         -Dinstalled_tests=false \
-        -Dtests=false \
         -Dgtk_doc=false \
         -Dman=false \
         -Dpng=enabled \
         -Djpeg=enabled \
         -Dtiff=enabled \
-        -Dbuiltin_loaders=all \
         -Dintrospection=enabled
+
+caveats: |
+    The following environment variables should be set if you move/copy this software to other location
+
+    export GDK_PIXBUF_MODULEDIR="$GDK_PIXBUF_INSTALL_DIR/lib/gdk-pixbuf-2.0/2.10.0/loaders"
+    export GDK_PIXBUF_MODULE_FILE="$GDK_PIXBUF_INSTALL_DIR/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"

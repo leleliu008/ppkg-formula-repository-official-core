@@ -10,15 +10,6 @@ dep-upp: nasm
 bsystem: gmake
 
 install: |
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        CLANG_VERSION_MAJOR="$("$CC" -E -dM - < /dev/null | grep __clang_major__ | cut -d ' ' -f3)"
-
-        # https://github.com/spack/spack/issues/40159
-        if [ "$CLANG_VERSION_MAJOR" -ge 15 ] ; then
-            export LDFLAGS="$LDFLAGS -Wl,-ld_classic"
-        fi
-    fi
-
     unset CONFIGURE_EXTRA_ARGS
 
     case $TARGET_PLATFORM_ARCH in
@@ -27,6 +18,21 @@ install: |
         armv7a)  CONFIGURE_EXTRA_ARGS='--enable-neon' ;;
         i686)    CONFIGURE_EXTRA_ARGS='--disable-asm' ;;
     esac
+
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        CONFIGURE_EXTRA_ARGS="$CONFIGURE_EXTRA_ARGS --enable-videotoolbox --enable-audiotoolbox"
+
+        CLANG_VERSION_MAJOR="$("$CC" -E -dM - < /dev/null | grep __clang_major__ | cut -d ' ' -f3)"
+
+        # https://github.com/spack/spack/issues/40159
+        if [ "$CLANG_VERSION_MAJOR" -ge 15 ] ; then
+            export LDFLAGS="$LDFLAGS -Wl,-ld_classic"
+        fi
+
+        TARGET_OS=darwin
+    else
+        TARGET_OS="$TARGET_PLATFORM_NAME"
+    fi
 
     sedInPlace 's|-lxvidcore|-lxvidcore -lm|' configure
     sedInPlace "/SDL2_CONFIG=/c SDL2_CONFIG='$libsdl2_INSTALL_DIR/bin/sdl2-config'" configure
@@ -44,14 +50,12 @@ install: |
         --strip="$STRIP" \
         --pkg-config="$PKG_CONFIG" \
         --arch="$TARGET_PLATFORM_ARCH" \
-        --target-os=darwin \
+        --target-os="$TARGET_OS" \
         --enable-pic \
         --enable-static \
         --enable-shared \
         --enable-ffplay \
         --enable-ffprobe \
-        --enable-videotoolbox \
-        --enable-audiotoolbox \
         --enable-libmp3lame \
         --enable-libtheora \
         --enable-libvorbis \

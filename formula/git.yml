@@ -34,6 +34,13 @@ prepare: |
 
     export LDFLAGS="$LDFLAGS $LIBCURL_LIBS"
 
+    if [ "$TARGET_PLATFORM_NAME" != macos ] ; then
+        if [ -f ../lib/libcurl.a ] ; then
+            rm  ../lib/libcurl.a
+            printf 'INPUT(%s %s)\n' "$libcurl_LIBRARY_DIR/libcurl.a" "$(pkg-config --libs-only-l libcurl | sed 's|-lcurl||g')" > ../lib/libcurl.a
+        fi
+    fi
+
 install: |
     configure \
         --with-zlib="$libz_INSTALL_DIR" \

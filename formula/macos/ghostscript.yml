@@ -43,4 +43,6 @@ install: |
     run make install-so
 
 patches: |
+    1929b7a925232986911e8cc4c746e54f4f9d602080daf225bddb0e60d9c6735b|https://raw.githubusercontent.com/macports/macports-ports/master/print/ghostscript/files/patch-base_unix-dll.mak.diff||-p0
+    3dcd0cd18c0c92cbd0068ebcb4c4daffcb4dfea9d820908492246f7add319426|https://raw.githubusercontent.com/macports/macports-ports/master/print/ghostscript/files/patch-base_unixinst.mak.diff||-p0
     544d34abad8b3b957bb83f1d1ee1b0b440d538afc8d9a5fa3b11d0ef89c4e3d2|https://raw.githubusercontent.com/macports/macports-ports/master/print/ghostscript/files/pdf_sec.c.diff||-p0

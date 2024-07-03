@@ -12,7 +12,6 @@ version: 3.0.11
 
 license: Info-ZIP
 dep-pkg: libbz2
-binbstd: 1
 
 dopatch: |
     for patchfile in $(cat ../fix/patches/series)

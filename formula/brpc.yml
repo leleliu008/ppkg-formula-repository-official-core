@@ -4,7 +4,7 @@ web-url: https://brpc.apache.org/
 src-url: https://dlcdn.apache.org/brpc/1.8.0/apache-brpc-1.8.0-src.tar.gz
 src-sha: fa640c55c2770aaf0e80ddb3a9bef423d1f377129662367133d46efb005955b2
 license: Apache-2.0
-dep-pkg: gflags gperftools leveldb libopenssl libprotobuf
+dep-pkg: gflags gperftools libleveldb libopenssl libprotobuf
 
 dopatch: sedInPlace "s|/usr/local/opt/openssl|$libopenssl_INSTALL_DIR|" CMakeLists.txt
 

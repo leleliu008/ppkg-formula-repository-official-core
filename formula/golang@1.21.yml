@@ -7,14 +7,12 @@ src-sha: 58f0c5ced45a0012bce2ff7a9df03e128abcc8818ebabe5027bb92bafe20e421
 license: BSD-3-Clause
 version: 1.21.9
 dep-upp: bash
-binbstd: 1
 bscript: src
 bsystem: go
 
+# https://go.dev/doc/install/source
 install: |
     run go env
-
-    # https://go.dev/doc/install/source
 
     run ./make.bash
 
@@ -32,3 +30,7 @@ install: |
 
     run install -d "$PACKAGE_INSTALL_DIR/"
     run mv src/*   "$PACKAGE_INSTALL_DIR/"
+
+    __check_elf_files() {
+        :
+    }
