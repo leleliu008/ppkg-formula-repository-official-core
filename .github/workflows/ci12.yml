@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [lunatic,lunzip,lychee,lynx,lzop,magic_enum,makepkg,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c]
+        pkg: [lunzip,lychee,lynx,lzop,magic_enum,makepkg,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mujs]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [lunatic,lunzip,lychee,lynx,lzop,magic_enum,makepkg,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c]
+        pkg: [lunzip,lychee,lynx,lzop,magic_enum,makepkg,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mujs]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [lunatic,lunzip,lychee,lynx,lzop,magic_enum,makepkg,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c]
+        pkg: [lunzip,lychee,lynx,lzop,magic_enum,makepkg,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mftrace,midnight-commander,mimalloc,miniz,mkcert,mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mujs]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}
