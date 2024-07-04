@@ -6,3 +6,11 @@ license: MIT
 dep-pkg: libfontconfig libharfbuzz xorg-libxcb
 dep-upp: python3
 bsystem: cargo cmake+gmake
+
+dopatch: |
+    if [ "$TARGET_PLATFORM_NAME" != macos ] ; then
+        if [ -e ../lib/libxcb.a ] ; then
+            rm  ../lib/libxcb.a
+            printf 'INPUT(%s %s)\n' "$xorg_libxcb_LIBRARY_DIR/libxcb.a" "$(pkg-config --libs-only-l xcb | sed 's|-lxcb||g')" > ../lib/libxcb.a
+        fi
+    fi

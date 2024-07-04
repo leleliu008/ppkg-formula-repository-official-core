@@ -5,3 +5,4 @@ src-sha: da7ae0df2b608e539de5d443c096e109442cdfa6c5e9b4014361211cf61d030c
 license: BSD-2-Clause
 dep-upp: nasm cargo-c
 install: cargow cinstall
+dotweak: sedInPlace 's|  -lunwind -lc  -lunwind -lc||' lib/pkgconfig/rav1e.pc
