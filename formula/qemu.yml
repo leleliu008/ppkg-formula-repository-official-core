@@ -9,7 +9,7 @@ dep-upp: bzip2 flex bison
 bsystem: gmake meson
 
 ppflags: -UNDEBUG
-ldflags: -lc++
+ldflags: -lstdc++
 
 dopatch: |
     sedInPlace 's|meson setup --prefix|meson setup --prefer-static --prefix|' configure
@@ -18,6 +18,13 @@ dopatch: |
     sedInPlace "s|cc.find_library('attr'|cc.find_library('attr', static : true, dirs : ['$xattr_LIBRARY_DIR']|" meson.build
     sedInPlace "s|cc.find_library('fdt'|cc.find_library('fdt', static : true, dirs : ['$libfdt_LIBRARY_DIR']|" meson.build
     sedInPlace "/iconv = /c iconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
+
+prepare: |
+    unset CONFIGURE_EXTRA_ARGS
+
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        CONFIGURE_EXTRA_ARGS='--enable-cocoa'
+    fi
 
 install: |
     ./configure \
@@ -32,11 +39,10 @@ install: |
         --enable-virtfs \
         --enable-curses \
         --enable-libssh \
-        --enable-cocoa \
         --enable-slirp \
         --enable-zstd \
         --enable-fdt=system \
         --enable-vde \
         --disable-sdl \
-        --disable-gtk
+        --disable-gtk $CONFIGURE_EXTRA_ARGS
     gmakew install V=1

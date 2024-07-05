@@ -3,7 +3,8 @@ web-url: https://pagure.io/libaio
 src-url: https://pagure.io/libaio/archive/libaio-0.3.113/libaio-libaio-0.3.113.tar.gz
 src-sha: 716c7059703247344eb066b54ecbc3ca2134f0103307192e6c2b7dab5f9528ab
 license: LGPL-2.1-or-later
-binbstd: 1
+
+onready: ENABLE_LTO=0
 
 dopatch: |
     # on macOS, some fs is non-case-sensitive. In this case, gmake install will always say make: 'install' is up to date.
@@ -14,5 +15,5 @@ install: |
     install -d $PACKAGE_INSTALL_DIR/include
     install -d $PACKAGE_INSTALL_DIR/lib
     gmakew clean
-    gmakew default CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS -I$PWD/src'" AR=$AR RANLIB=$RANLIB
-    gmakew install prefix=$PACKAGE_INSTALL_DIR
+    gmakew default CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS -I$PWD/src'" AR="$AR" RANLIB="$RANLIB"
+    gmakew install prefix="$PACKAGE_INSTALL_DIR"
