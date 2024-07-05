@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [elfcat,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flock,fortune,freetype2,frei0r,fselect,fsmon,fswatch,fuse-overlayfs,fzf,fzy,garble,gawk]
+        pkg: [elfcat,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flock,fortune,freetype2,frei0r,fselect,fsmon,fswatch,fuse-overlayfs,fzf,fzy,g,garble]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [elfcat,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flock,fortune,freetype2,frei0r,fselect,fsmon,fswatch,fuse-overlayfs,fzf,fzy,garble,gawk]
+        pkg: [elfcat,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flock,fortune,freetype2,frei0r,fselect,fsmon,fswatch,fuse-overlayfs,fzf,fzy,g,garble]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [elfcat,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flock,fortune,freetype2,frei0r,fselect,fsmon,fswatch,fuse-overlayfs,fzf,fzy,garble,gawk]
+        pkg: [elfcat,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flock,fortune,freetype2,frei0r,fselect,fsmon,fswatch,fuse-overlayfs,fzf,fzy,g,garble]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}

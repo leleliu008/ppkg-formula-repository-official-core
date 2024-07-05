@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [proot,proto-cli,pup,putty,python3-setup,python@3.10,python@3.11,python@3.12,python@3.9,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,rsass,rsync,rtorrent,rttr]
+        pkg: [procps,procs,progress,proj,proot,proto-cli,pup,putty,python3-setup,python@3.10,python@3.11,python@3.12,python@3.9,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [proot,proto-cli,pup,putty,python3-setup,python@3.10,python@3.11,python@3.12,python@3.9,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,rsass,rsync,rtorrent,rttr]
+        pkg: [procps,procs,progress,proj,proot,proto-cli,pup,putty,python3-setup,python@3.10,python@3.11,python@3.12,python@3.9,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [proot,proto-cli,pup,putty,python3-setup,python@3.10,python@3.11,python@3.12,python@3.9,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,rsass,rsync,rtorrent,rttr]
+        pkg: [procps,procs,progress,proj,proot,proto-cli,pup,putty,python3-setup,python@3.10,python@3.11,python@3.12,python@3.9,q,qpdf,quiche,quickjs,ragel,rang,ranger,rapidjson,rclone,re2c,redis,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}
