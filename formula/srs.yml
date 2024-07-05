@@ -9,15 +9,18 @@ dep-upp: unzip patch
 dep-pkg: perl
 bsystem: gmake
 bscript: trunk
-binbstd: 1
+
 install: |
     export SRS_EXTRA_FLAGS="$CFLAGS $CPPFLAGS"
     
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        CONFIGURE_EXTRA_ARGS=--osx
-    else
-        CONFIGURE_EXTRA_ARGS=
-    fi
+    case $TARGET_PLATFORM_NAME in
+        macos)
+            CONFIGURE_EXTRA_ARGS='--osx'
+            ;;
+        linux)
+            CONFIGURE_EXTRA_ARGS='--generic-linux=on'
+            ;;
+    esac
 
     run bash configure \
         --prefix=$PACKAGE_INSTALL_DIR \

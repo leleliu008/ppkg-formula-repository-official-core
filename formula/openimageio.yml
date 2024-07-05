@@ -4,7 +4,8 @@ git-url: https://github.com/AcademySoftwareFoundation/OpenImageIO
 src-url: https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v2.5.10.1.tar.gz
 src-sha: 8f6a547f6a5d510737ba436f867043db537def65f0fdb14ec30e5a185b619f93
 license: Apache-2.0
-dep-pkg: fmt boost ffmpeg libheif libraw opencolorio pugixml pybind11
+dep-pkg: fmt boost ffmpeg libheif libraw opencolorio pugixml pybind11 python3
+
 install: |
     cmakew \
         -DBUILD_MISSING_FMT=OFF \

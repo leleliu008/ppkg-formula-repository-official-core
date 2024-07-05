@@ -1,12 +1,15 @@
 summary: Better RPC framework
 git-url: https://github.com/apache/brpc
 web-url: https://brpc.apache.org/
-src-url: https://dlcdn.apache.org/brpc/1.8.0/apache-brpc-1.8.0-src.tar.gz
-src-sha: fa640c55c2770aaf0e80ddb3a9bef423d1f377129662367133d46efb005955b2
+src-url: https://dlcdn.apache.org/brpc/1.9.0/apache-brpc-1.9.0-src.tar.gz
+src-sha: 2ed6090845cf9f36bd267de7f151970881340ad775eeba65aec448db47fa25b9
 license: Apache-2.0
 dep-pkg: gflags gperftools libleveldb libopenssl libprotobuf
 
-dopatch: sedInPlace "s|/usr/local/opt/openssl|$libopenssl_INSTALL_DIR|" CMakeLists.txt
+dopatch: |
+    sedInPlace "s|/usr/local/opt/openssl|$libopenssl_INSTALL_DIR|" CMakeLists.txt
+    sedInPlace "s|set(CMAKE_C_FLAGS \"|set(CMAKE_C_FLAGS \"\${CMAKE_C_FLAGS}|" CMakeLists.txt
+    sedInPlace "s|set(CMAKE_CXX_FLAGS \"|set(CMAKE_CXX_FLAGS \"\${CMAKE_CXX_FLAGS}|" CMakeLists.txt
 
 install: |
     cmakew \
