@@ -11,7 +11,7 @@ xxflags: -std=c++11
 dopatch: |
     XXLIBS="$(pkg-config --libs-only-l tesseract)"
     echo "XXLIBS=$XXLIBS"
-    sedInPlace "s|-l\$(GPDL_SO_BASE)|-l$(GPDL_SO_BASE) $XXLIBS" base/unix-dll.mak
+    sedInPlace "s|-l\$(GPDL_SO_BASE)|-l\$(GPDL_SO_BASE) $XXLIBS|" base/unix-dll.mak
 
 prepare: |
     rm -rf expat

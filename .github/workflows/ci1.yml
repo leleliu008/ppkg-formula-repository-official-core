@@ -14,7 +14,8 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [llvm@15, llvm@16, llvm@17, llvm@18, glib, ghostscript]
+          #pkg: [llvm@15, llvm@16, llvm@17, llvm@18, ghostscript]
+        pkg: [python@3.9, python@3.10, python@3.11, python@3.11.6, ghostscript]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
