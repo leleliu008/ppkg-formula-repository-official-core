@@ -1,0 +1,7 @@
+summary: Fast and simple Node.js version manager
+git-url: https://github.com/Schniz/fnm
+src-url: https://github.com/Schniz/fnm/archive/refs/tags/v1.37.1.tar.gz
+src-sha: 56a170304ab281439a71e541c4db878848c3a891078ae3c2dcc84017cd0306b4
+license: GPL-3.0-only
+dep-pkg: libz
+bsystem: cargo

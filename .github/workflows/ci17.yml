@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysdig,sysinfo,szip,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tesseract,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++]
+        pkg: [sqlite3,srs,srt,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysdig,sysinfo,szip,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tesseract,tig,timg,tinysearch,tinyxml2]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysdig,sysinfo,szip,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tesseract,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++]
+        pkg: [sqlite3,srs,srt,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysdig,sysinfo,szip,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tesseract,tig,timg,tinysearch,tinyxml2]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysdig,sysinfo,szip,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tesseract,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++]
+        pkg: [sqlite3,srs,srt,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysdig,sysinfo,szip,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer,tectonic,tengo,terragrunt,tesseract,tig,timg,tinysearch,tinyxml2]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}

@@ -8,6 +8,15 @@ license: LGPL-3.0-or-later
 dep-pkg: bdw-gc readline libgmp libffi libxcrypt libunistring
 dep-upp: gperf texinfo
 
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        export LDFLAGS="$LDFLAGS -framework CoreFoundation"
+    fi
+
+    __tweak_pc_files() {
+        :
+    }
+
 install: configure --disable-nls
 
 dotweak: |
