@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [aalib,acl,adig,aerc,ag,age,alacritty,alass,algernon,anchor-cli,antibody,apkeep,apr,aptly,archiver,argparse,args,aria2,aribb24,async++,atuin,autogen,automake,autossh,autotools-setup,axel,azcopy,b3sum,bandwhich,base16]
+        pkg: [llvm@15, llvm@16, llvm@17, llvm@18, glib, ghostscript]
         flavor: [sh]
 
     runs-on:   ubuntu-latest

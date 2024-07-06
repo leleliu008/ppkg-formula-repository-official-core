@@ -1,0 +1,86 @@
+pkgtype: pie
+summary: Next-gen compiler infrastructure
+web-url: https://llvm.org/
+git-url: https://github.com/llvm/llvm-project
+src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.6/llvm-project-16.0.6.src.tar.xz
+src-sha: ce5e71081d17ce9e86d7cbcfa28c4b04b9300f8fb7e78422b1feb6bc52c3028e
+license: Apache-2.0 with LLVM-exception
+dep-pkg: python3 binutils libelf libedit libffi libxml2 libz3.a
+dep-upp: perl swig patch
+bscript: llvm
+
+dopatch: |
+    LibEdit_INCLUDE_DIRS="$libedit_INCLUDE_DIR;$libedit_INCLUDE_DIR/editline"
+    LibEdit_LIBRARIES="$(pkg-config --libs-only-l libedit | tr ' ' ';')"
+
+    cat > ../cmake/Modules/FindLibEdit.cmake <<EOF
+    set(LibEdit_INCLUDE_DIRS "$LibEdit_INCLUDE_DIRS")
+    set(LibEdit_LIBRARIES    "$LibEdit_LIBRARIES")
+    set(LibEdit_FOUND TRUE)
+
+    if (NOT TARGET  LibEdit::LibEdit)
+        add_library(LibEdit::LibEdit INTERFACE IMPORTED)
+        set_target_properties(LibEdit::LibEdit PROPERTIES
+            INTERFACE_INCLUDE_DIRECTORIES "\${LibEdit_INCLUDE_DIRS}"
+            INTERFACE_LINK_LIBRARIES      "\${LibEdit_LIBRARIES}"
+        )
+    endif()
+
+    include(FindPackageHandleStandardArgs)
+    find_package_handle_standard_args(LibEdit REQUIRED_VARS LibEdit_LIBRARIES LibEdit_INCLUDE_DIRS VERSION_VAR LibEdit_VERSION_STRING)
+    mark_as_advanced(LibEdit_INCLUDE_DIRS LibEdit_LIBRARIES)
+    EOF
+
+    sedInPlace '/find_library(LibEdit_LIBRARIES/c set(LibEdit_LIBRARIES "${PC_LIBEDIT_LINK_LIBRARIES}")' ../cmake/Modules/FindLibEdit.cmake
+    sedInPlace '/IMPORTED_LOCATION/c INTERFACE_LINK_LIBRARIES "${LibEdit_LIBRARIES}"'                    ../cmake/Modules/FindLibEdit.cmake
+
+    sedInPlace '/add_optional_dependency(LLDB_ENABLE_LIBXML2/c find_package(LibXml2 CONFIG REQUIRED)' ../lldb/cmake/modules/LLDBConfig.cmake
+    sedInPlace '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)'                                      ../lldb/cmake/modules/LLDBConfig.cmake
+
+    LIBELF_LIBRARIES="$(pkg-config --libs-only-l libelf)"
+    sedInPlace "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
+
+# https://llvm.org/docs/CMake.html
+# https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
+# https://lldb.llvm.org/resources/build.html
+install: |
+    cmakew \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DLLVM_TARGETS_TO_BUILD=all \
+        -DLLVM_ENABLE_PROJECTS="'clang;clang-tools-extra;lld;lldb;mlir;polly;openmp'" \
+        -DLLVM_ENABLE_RUNTIMES="'compiler-rt;libcxx;libcxxabi;libunwind'" \
+        -DLLVM_ENABLE_EH=ON \
+        -DLLVM_ENABLE_PIC=ON \
+        -DLLVM_ENABLE_FFI=ON \
+        -DLLVM_ENABLE_ZLIB=ON \
+        -DLLVM_ENABLE_ZSTD=ON \
+        -DLLVM_ENABLE_RTTI=ON \
+        -DLLVM_ENABLE_LIBXML2=OFF \
+        -DLLVM_ENABLE_SPHINX=OFF \
+        -DLLVM_ENABLE_DOXYGEN=OFF \
+        -DLLVM_ENABLE_Z3_SOLVER=ON \
+        -DLLVM_INCLUDE_DOCS=OFF \
+        -DLLVM_INCLUDE_TESTS=OFF \
+        -DLLVM_BUILD_DOCS=OFF \
+        -DLLVM_BUILD_TESTS=OFF \
+        -DLLVM_BUILD_TOOLS=ON \
+        -DLLVM_BUILD_EXAMPLES=OFF \
+        -DLLVM_BUILD_LLVM_DYLIB=ON \
+        -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
+        -DLLVM_LINK_LLVM_DYLIB=ON \
+        -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
+        -DLLVM_INSTALL_UTILS=ON \
+        -DLLVM_OPTIMIZED_TABLEGEN=ON \
+        -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
+        -DCLANG_BUILD_TOOLS=ON \
+        -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF \
+        -DLLD_BUILD_TOOLS=ON \
+        -DLLDB_USE_SYSTEM_DEBUGSERVER=ON \
+        -DLLDB_USE_SYSTEM_SIX=OFF \
+        -DLLDB_ENABLE_LUA=OFF \
+        -DLLDB_ENABLE_PYTHON=OFF \
+        -DLLDB_ENABLE_CURSES=ON \
+        -DLLDB_ENABLE_LIBEDIT=ON \
+        -DLLDB_ENABLE_LIBXML2=ON \
+        -DLLDB_ENABLE_LZMA=ON \
+        -DLIBOMP_INSTALL_ALIASES=OFF
