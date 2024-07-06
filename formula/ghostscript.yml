@@ -9,7 +9,7 @@ binbstd: 1
 xxflags: -std=c++11
 
 dopatch: |
-    XXLIBS="$(pkg-config --libs-only-l tesseract)"
+    XXLIBS="$(pkg-config --libs tesseract)"
     echo "XXLIBS=$XXLIBS"
     sedInPlace "s|-l\$(GPDL_SO_BASE)|-l\$(GPDL_SO_BASE) $XXLIBS|" base/unix-dll.mak
 
