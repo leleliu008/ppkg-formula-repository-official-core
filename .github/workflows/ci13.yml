@@ -1,4 +1,4 @@
-name: workflowINDEX
+name: workflow13
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.18]
-        pkg: [PKGLIST]
+        pkg: [mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mujs,mupdf,musl-libc,nano,nanomsg,nap,nasm,navi,ncdu,neofetch,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [22.04]
-        pkg: [PKGLIST]
+        pkg: [mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mujs,mupdf,musl-libc,nano,nanomsg,nap,nasm,navi,ncdu,neofetch,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [PKGLIST]
+        pkg: [mkcue,mksh,mm-wiki,mold,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mujs,mupdf,musl-libc,nano,nanomsg,nap,nasm,navi,ncdu,neofetch,nghttp2,nginx,ngtcp2,ninja,nng,nnn,nsh,ntbtls]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}

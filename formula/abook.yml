@@ -1,0 +1,10 @@
+summary: Address book with mutt support
+git-url: https://git.code.sf.net/p/abook/git.git
+web-url: https://abook.sourceforge.io/
+src-url: https://abook.sourceforge.io/devel/abook-0.6.1.tar.gz
+src-sha: f0a90df8694fb34685ecdd45d97db28b88046c15c95e7b0700596028bd8bc0f9
+license: GPL-2.0-only GPL-2.0-or-later GPL-3.0-or-later
+dep-upp: gettext-tools xz
+dep-pkg: readline
+bsystem: autotools
+dopatch: sedInPlace 's|inline int|int|' database.c
