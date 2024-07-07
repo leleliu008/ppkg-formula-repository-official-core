@@ -3,7 +3,7 @@ git-url: https://github.com/libbpf/libbpf
 src-url: https://github.com/libbpf/libbpf/archive/refs/tags/v1.3.0.tar.gz
 src-sha: 11db86acd627e468bc48b7258c1130aba41a12c4d364f78e184fd2f5a913d861
 license: BSD-2-Clause
-dep-pkg: elfutils zlib
+dep-pkg: elfutils libz
 bscript: src
 binbstd: 1
 install: |

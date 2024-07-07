@@ -4,6 +4,6 @@ web-url: https://www.nushell.sh
 git-url: https://github.com/nushell/nushell
 src-url: https://github.com/nushell/nushell/archive/refs/tags/0.92.1.tar.gz
 src-sha: bd4d0b90ff7ba53ac888df755372a794a907f93963e26ff8f441347aa0ff5a95
-dep-pkg: zlib libopenssl
+dep-pkg: libz libopenssl
 license: MIT
 bsystem: cargo

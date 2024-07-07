@@ -3,5 +3,5 @@ web-url: https://wiki.debian.org/Teams/Dpkg
 src-url: https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.22.6.tar.xz
 src-sha: 4379123466cf1804f82aaac7fbea7133c58aefa178dfbf7029cdc61a8d220655
 license: GPL-2.0-only
-dep-pkg: gettext perl patch gtar libmd liblzma libbz2 zlib
+dep-pkg: gettext perl patch gtar libmd liblzma libbz2 libz
 install: configure --disable-shared

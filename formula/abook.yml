@@ -7,4 +7,12 @@ license: GPL-2.0-only GPL-2.0-or-later GPL-3.0-or-later
 dep-upp: gettext-tools xz
 dep-pkg: readline
 bsystem: autotools
-dopatch: sedInPlace 's|inline int|int|' database.c
+dopatch: |
+    sedInPlace 's|inline int|int|' database.c
+
+    if [ "$TARGET_PLATFORM_NAME" != macos ] ; then
+        if [ -f ../lib/libreadline.a ] ; then
+            rm  ../lib/libreadline.a
+            printf 'INPUT(%s -lncursesw)\n' "$readline_LIBRARY_DIR/libreadline.a" > ../lib/libreadline.a
+        fi
+    fi

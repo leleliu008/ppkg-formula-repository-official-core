@@ -5,5 +5,5 @@ src-url: https://www.sqlite.org/2024/sqlite-autoconf-3450200.tar.gz
 src-sha: bc9067442eedf3dd39989b5c5cfbfff37ae66cc9c99274e0c3052dc4d4a8f6ae
 version: 3.45.2
 license: blessing
-dep-pkg: readline zlib
+dep-pkg: readline libz
 install: configure --disable-editline --enable-readline --enable-static-shell

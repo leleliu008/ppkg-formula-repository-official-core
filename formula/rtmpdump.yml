@@ -11,7 +11,7 @@ fix-opt: -p0
 
 version: 2.4+20151223
 license: GPL-2.0-or-later
-dep-pkg: zlib libopenssl
+dep-pkg: libz libopenssl
 binbstd: 1
 parallel: 0
 

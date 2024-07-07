@@ -4,7 +4,7 @@ web-url: https://hashcat.net/hashcat/
 src-url: https://hashcat.net/files/hashcat-6.2.6.tar.gz
 src-sha: b25e1077bcf34908cc8f18c1a69a2ec98b047b2cbcf0f51144dcf3ba1e0b7b2a
 license: MIT
-dep-pkg: xxhash minizip zlib opencl-headers
+dep-pkg: xxhash minizip libz opencl-headers
 bsystem: gmake
 binbstd: 1
 install: |

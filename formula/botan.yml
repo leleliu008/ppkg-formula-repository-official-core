@@ -4,7 +4,7 @@ web-url: https://botan.randombit.net/
 src-url: https://botan.randombit.net/releases/Botan-3.3.0.tar.xz
 src-sha: 368f11f426f1205aedb9e9e32368a16535dc11bd60351066e6f6664ec36b85b9
 license: BSD-2-Clause
-dep-pkg: python3 libsqlite3 libbz2 zlib
+dep-pkg: python3 libsqlite3 libbz2 libz
 bsystem: gmake
 binbstd: 1
 install: |
