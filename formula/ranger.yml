@@ -4,6 +4,6 @@ web-url: https://ranger.github.io
 src-url: https://ranger.github.io/ranger-1.9.3.tar.gz
 src-sha: ce088a04c91c25263a9675dc5c43514b7ec1b38c8ea43d9a9d00923ff6cdd251
 license: GPL-3.0-or-later
-dep-pkg: python3
+dep-pkg: python@3.11
 install: python3 setup.py install --prefix=$PACKAGE_INSTALL_DIR
 binbstd: 1
