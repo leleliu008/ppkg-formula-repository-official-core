@@ -6,7 +6,12 @@ license: MIT
 
 install: |
     gmakew clean
-    gmakew
+
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        gmakew FANOTIFY_CFLAGS="'-DHAVE_FANOTIFY=1 -DHAVE_SYS_FANOTIFY=0'"
+    else
+        gmakew
+    fi
 
     if [ -f fsmon-macos ] ; then
         mv  fsmon-macos fsmon
