@@ -1,0 +1,8 @@
+summary: Blazing fast terminal file manager written in Rust, based on async I/O
+git-url: https://github.com/sxyazi/yazi
+src-url: https://github.com/sxyazi/yazi/archive/refs/tags/v0.2.5.tar.gz
+src-sha: aea4a6ebd7f56c5d5fe6afbea143fc98c336d4ccd7852f2e8983c23e205988c4
+license: MIT
+install: |
+    cargow install --path yazi-fm
+    cargow install --path yazi-cli
