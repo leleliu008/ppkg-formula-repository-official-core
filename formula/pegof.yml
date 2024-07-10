@@ -1,0 +1,12 @@
+summary: PEG grammar optimizer and formatter. Supports any grammar supported by PackCC parser generator.
+git-url: https://github.com/dolik-rce/pegof
+
+dopatch: |
+    gsed -i '/add_executable(pegof_test/,$d' CMakeLists.txt
+
+    cat >> CMakeLists.txt <<EOF
+    include(GNUInstallDirs)
+    install(TARGETS pegof RUNTIME DESTINATION "\${CMAKE_INSTALL_BINDIR}")
+    EOF
+
+install: cmakew -DBUILD_SHARED_LIBS=OFF
