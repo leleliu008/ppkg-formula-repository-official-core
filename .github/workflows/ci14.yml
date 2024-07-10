@@ -37,7 +37,7 @@ jobs:
 
         - run: ./ppkg setup
         - run: ./ppkg about
-        - run: ./ppkg install ${{ matrix.pkg }} --fsle -I formula/linux -I formula
+        - run: ./ppkg install ${{ matrix.pkg }} --static -I formula/linux -I formula
 
 
   ubuntu:
@@ -74,7 +74,7 @@ jobs:
 
 
   macos:
-    if: false
+    if: true
 
     strategy:
       fail-fast: false
