@@ -1,0 +1,18 @@
+summary: A code-completion engine for Vim
+git-url: https://github.com/ycm-core/YouCompleteMe
+license: GPL-v3
+dep-pkg: vim
+binbstd: 1
+
+install: |
+    run python3 install.py --clang-completer
+    run install -d "$PACKAGE_INSTALL_DIR/"
+    run mv * "$PACKAGE_INSTALL_DIR/"
+    __check_mach_o_files() {
+        :
+    }
+
+caveats: |
+    configure for vim-plug:
+
+    Plug '~/.ppkg/installed/MacOSX-14.4.1-arm64/ycm'
