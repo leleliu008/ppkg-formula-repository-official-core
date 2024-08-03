@@ -2,13 +2,20 @@ summary: A code-completion engine for Vim
 git-url: https://github.com/ycm-core/YouCompleteMe
 license: GPL-v3
 dep-pkg: vim
+movable: 0
 binbstd: 1
 
 install: |
-    run python3 install.py --clang-completer
     run install -d "$PACKAGE_INSTALL_DIR/"
     run mv * "$PACKAGE_INSTALL_DIR/"
+    run cd "$PACKAGE_INSTALL_DIR/"
+
+    run python3 install.py --clang-completer
+
     __check_mach_o_files() {
+        :
+    }
+    __check_elf_files() {
         :
     }
 
