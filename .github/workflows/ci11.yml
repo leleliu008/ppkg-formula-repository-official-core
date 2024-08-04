@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [libqalculate,libraqm,librasterlite,libreplaygain,libressl,librist,librsync,libsigsegv,libsmi,libspectre,libspng,libthai,libtins,libtorrent-rasterbar,libtree,libupnp,libuuid,libuvc,libvidstab,libwebm,libwordexp,libxml2@2.11,libyuv,lighttpd,lima,links,livego,llhttp,llvm@14,llvm@15]
         flavor: [sh]
 

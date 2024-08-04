@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [fzf,fzy,g,garble,gat,gawk,gbt,gcc,gcc@12,gdb,gdbm,gdk-pixbuf-tools,gdu,geographiclib,germanium,gettext-tools,gf,gh,ghr,giflib,gindent,git,git-cliff,git-lfs,gitui,gitwatch,glew,glib-tools,glm,glow]
         flavor: [sh]
 

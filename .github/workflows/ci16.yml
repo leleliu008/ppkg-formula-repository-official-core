@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [rang,ranger,rapidjson,rclone,re2c,redis,restic,resvg,rhash,ripgrep,ripgrep-all,rlwrap,rsass,rsync,rtorrent,rttr,ruff,runc,rust-analyzer,rustup-init,sassc,scc,sccache,sd,shaderc,shc,shell2http,shellcheck,shiori,silicon]
         flavor: [sh]
 

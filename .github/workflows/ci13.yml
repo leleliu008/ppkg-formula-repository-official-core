@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [mkcert,mkcue,mksh,mm-wiki,mold,mono,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpir,mpv,msgpack-c,mujs,mupdf,musl-libc,nano,nanomsg,nap,nasm,navi,ncdu,neofetch,nghttp2,nginx,ngtcp2,ninja,nng,nnn]
         flavor: [sh]
 

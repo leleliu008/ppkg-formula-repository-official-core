@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [nsh,ntbtls,numactl,nushell,oat++,obfs4proxy,onefetch,open264,openal-soft,openblas,opencl-icd-loader,opencore-amr,openfst,openimageio,openldap,openlibm,openmpi,openslide,p7zip,packcc,patchelf,pax,pbzip2,pcre,pcre2,pegof,pget,physfs,pigz,pipewire]
         flavor: [sh]
 

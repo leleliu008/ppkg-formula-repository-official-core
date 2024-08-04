@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [glslviewer,glyr,gmake,gn,gnu-barcode,gnu-which,gnupg,gnuplot,go-md2man,go-tools,godu,gogs,golang,golang@1.21,gomobile,google-benchmark,google-highway,goreleaser,gosh,gotop,gotty,gox,gping,gpsim,gputils,grep,grex,groff,gron,grpc-plugins]
         flavor: [sh]
 

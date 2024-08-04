@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [pixman,pjsip,pkg-config,pkgconf,plog,plzip,pngquant,pocl,poco,pop,powertop,ppkg,procps,procs,progress,proj,proot,proto-cli,pup,putty,python3-setup,python@3.10,python@3.11.6,python@3.12,python@3.9,q,qpdf,quiche,quickjs,ragel]
         flavor: [sh]
 

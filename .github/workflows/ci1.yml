@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [aalib,abook,acl,adig,aerc,ag,age,agg,alacritty,alass,algernon,ali,anchor-cli,antibody,apkeep,apr,aptly,archiver,argparse,args,aria2,aribb24,async++,atuin,autogen,automake,autossh,autotools-setup,axel,azcopy]
         flavor: [sh]
 

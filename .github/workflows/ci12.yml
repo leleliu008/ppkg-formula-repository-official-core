@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [llvm@16,llvm@17,llvm@18,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsof,luau,lunatic,lunzip,lychee,lynx,lzop,magic_enum,makepkg,mawk,mcfly,md4c,mdbook,mdcat,mediainfo,mftrace,midnight-commander,mimalloc,minisign,miniz]
         flavor: [sh]
 

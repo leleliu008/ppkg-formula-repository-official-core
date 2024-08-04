@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [uppm@0.15.4,usbutils,utf8.h,utfcpp,valgrind,valijson,vegeta,virustotal-cli,viu,volta,vsftpd,w3m,walk,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,x264,x265,xbps,xclip,xh]
         flavor: [sh]
 

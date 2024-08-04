@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [tdu,tealdeer,tectonic,tengo,terragrunt,tesseract,tig,timg,tinysearch,tinyxml2,tmux,tokei,toml++,toml11,tree,ttyd,ttygif,ttyrec,tut,tweego,twolame,typos,uctags,unbound,unixodbc,unrar,unzip,uppm,uppm@0.15.1,uppm@0.15.2]
         flavor: [sh]
 

@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [cue,cups,curl,curlie,cxxopts,d2,darkhttpd,dasel,dash,delta,difftastic,diffutils,distcc,dmalloc,dns2tcp,dnsmap,dog,doggo,dolt,dos2unix,dot_static,doxygen,dpkg,dtc,dua,duf,dufs,dust,e2fsprogs,easyutils]
         flavor: [sh]
 

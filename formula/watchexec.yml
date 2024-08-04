@@ -1,8 +1,9 @@
 summary: Execute commands when watched files change
 git-url: https://github.com/watchexec/watchexec
-src-url: https://github.com/watchexec/watchexec/archive/refs/tags/v1.25.1.tar.gz
-src-sha: 9609163c14cd49ec651562838f38b88ed2d370e354af312ddc78c2be76c08d37
+src-url: https://github.com/watchexec/watchexec/archive/refs/tags/v2.1.2.tar.gz
+src-sha: 500b886038ccd553559fe19914e1a502728cfeb8ee9d81f3db448b05e5a890ec
 license: Apache-2.0
+dep-pkg: libz
 install: |
     cargow install --locked --path crates/cli
     run install_mans doc/watchexec.1

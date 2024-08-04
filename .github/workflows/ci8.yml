@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [gsed,gtime,gts,hashcat,helix,helm,help2man,hexdump,hexyl,htop,htslib,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,ideviceinstaller,imagemagick,incus,inotify-tools,invoice,iperf3,iputils,itstool,ixwebsocket,jackaudio,jemalloc,jfrog-cli,jj]
         flavor: [sh]
 

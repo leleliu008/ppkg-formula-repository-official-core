@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [libcyaml,libdecor,libdiscid,libdv,libdvdnav,libglob,libgphoto2,libical,libilbc,libimagequant,libirecovery,libisoburn,liblinear,liblo,libmad,libmaxminddb,libmesalink,libmetalink,libmicrohttpd,libmill,libminiz,libminizip-ng,libmms,libmnl,libnsl,libpciaccess,libphonenumber,libpipeline,libpq,libproxy]
         flavor: [sh]
 

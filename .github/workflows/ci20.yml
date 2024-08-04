@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [xmake,xmlto,xmlutils,xmlwf,xorg-libxpresent,xorg-libxscrnsaver,xorg-libxtst,xorriso,xpup,xsltproc,xvid,xxd,yaml-cpp,yasm,yazi,ycm,youtubedr,yq,yyjson,z3,zig,zip,zlib,zlib-ng,zlog,zola,zopfli,zoxide,zsh,zstd]
         flavor: [sh]
 

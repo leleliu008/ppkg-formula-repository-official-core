@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [joshuto,jpeg,jq,json-glib,jump,k9s,kcp,kcptun,ko,krb5,lazygit,lcov,ldns,less,lexbor,lf,libaec,libaio,libao,libb2,libb64,libbcrypt,libbpf,libcaca,libcanberra,libcddb,libcdio,libclc,libcroco,libcuefile]
         flavor: [sh]
 

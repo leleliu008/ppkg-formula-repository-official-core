@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [simdjson,six,sjpeg,skcms,sl,slirp4netns,socat,soundtouch,speex,spirv-tools,sqlite3,srs,srt,starship,strace,stylua,supervisord,suricata,svn-lite,syncthing,sysdig,sysinfo,szip,tarlz,tbb,tbls,tbox,tcc,tcl-core,tcpdump]
         flavor: [sh]
 

@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [b3sum,bandwhich,base16,base64,bash,basis_universal,bat,bazelisk,bc,bcrypt,bear,bgrep,binaryen,bind,binocle,bitcoin,bk,blake3,bmake,botan,bottom,boxes,brook,broot,brpc,bsdtar,bullet,byacc,c-examples,caddy]
         flavor: [sh]
 

@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [ed,effcee,eigen,elfcat,elvish,epsilon,esbuild,ethereum,eudev,exa,exhale,fakeroot,fcp,fd,fdroidcl,fff,figlet,findent,findutils,fish,flatbuffers,flock,fnm,fortune,freetype2,frei0r,fselect,fsmon,fswatch,fuse-overlayfs]
         flavor: [sh]
 

@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: [3.20]
+        tag: [3.19]
         pkg: [cargo-c,cargo-deb,catch2,catimg,ccache,cdrtools,cereal,cfitsio,cflow,cgif,chafa,cheat,check,chezmoi,chicken,choose,circleci-cli,cli11,cmake,conmon,coreutils,cpio,cppcheck,cppunit,cpuinfo,croc,crosstool-ng,crowbook,crun,ctop]
         flavor: [sh]
 
