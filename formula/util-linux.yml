@@ -4,7 +4,7 @@ src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.39/util-l
 src-sha: 7b6605e48d1a49f43cc4b4cfc59f313d0dd5402fa40b96810bd572e167dfed0f
 license: GPL-2.0-or-later
 dep-upp: automake libtool
-dep-pkg: readline
+dep-pkg: readline libz
 
 install: |
     export AUTOMAKE="$(command -v automake)"

@@ -3,6 +3,7 @@ git-url: https://github.com/sxyazi/yazi
 src-url: https://github.com/sxyazi/yazi/archive/refs/tags/v0.3.0.tar.gz
 src-sha: 0a0c1583accca16759392f258367156a2c36fb0b1d37152b07e1aa5239c531ff
 license: MIT
+dep-upp: gmake
 install: |
     cargow install --path yazi-fm
     cargow install --path yazi-cli
