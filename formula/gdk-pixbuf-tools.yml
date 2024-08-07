@@ -6,7 +6,9 @@ src-url: https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.t
 src-sha: b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7
 license: LGPL-2.1-or-later
 dep-upp: glib-tools
-dep-pkg: glib libjpeg-turbo libpng libtiff shared-mime-info
+dep-pkg: glib libjpeg-turbo libtiff libpng shared-mime-info
+
+dopatch: sedInPlace '15,$d' thumbnailer/meson.build
 
 install: |
     mesonw \

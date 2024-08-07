@@ -5,3 +5,4 @@ src-sha: 1dfa33f80b6797ce2f6c01f454fd486d30be4dca1b0c5c2ea9ba3c30a5c39855
 license: GPL-2.0-or-later
 dep-upp: libtool
 bsystem: autogen
+xxflags: -Wno-error=unused-parameter
