@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.19]
-        pkg: [uppm@0.15.4,usbutils,utf8.h,utfcpp,valgrind,valijson,vegeta,virustotal-cli,viu,volta,vsftpd,w3m,walk,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,x264,x265,xbps,xclip,xh]
+        pkg: [uppm,uppm@0.15.1,uppm@0.15.2,uppm@0.15.4,usbutils,utf8.h,utfcpp,valgrind,valijson,vegeta,virustotal-cli,viu,volta,vsftpd,w3m,walk,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,x264,x265]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [24.04]
-        pkg: [uppm@0.15.4,usbutils,utf8.h,utfcpp,valgrind,valijson,vegeta,virustotal-cli,viu,volta,vsftpd,w3m,walk,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,x264,x265,xbps,xclip,xh]
+        pkg: [uppm,uppm@0.15.1,uppm@0.15.2,uppm@0.15.4,usbutils,utf8.h,utfcpp,valgrind,valijson,vegeta,virustotal-cli,viu,volta,vsftpd,w3m,walk,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,x264,x265]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [uppm@0.15.4,usbutils,utf8.h,utfcpp,valgrind,valijson,vegeta,virustotal-cli,viu,volta,vsftpd,w3m,walk,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,x264,x265,xbps,xclip,xh]
+        pkg: [uppm,uppm@0.15.1,uppm@0.15.2,uppm@0.15.4,usbutils,utf8.h,utfcpp,valgrind,valijson,vegeta,virustotal-cli,viu,volta,vsftpd,w3m,walk,wasm-pack,wasm3,wasmer,wasmtime,watchexec,watchman,wavpack,webhook,websocketpp,wget,wolfssl,wuzz,x264,x265]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}

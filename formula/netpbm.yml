@@ -3,7 +3,7 @@ web-url: http://netpbm.sourceforge.net/
 src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.40/netpbm-10.86.40.tgz
 src-sha: 7098c0926474303c6fe2d17c0dfb88f24622d1b3a590b6d75495d62ea933b324
 license: GPL-3.0-or-later
-dep-pkg: jasper libtiff libpng libjpeg-turbo libxml2
+dep-pkg: libjasper libtiff libpng libxml2
 dep-upp: gm4 flex perl
 binbstd: 1
 parallel: 0
@@ -20,7 +20,7 @@ dopatch: |
 
 install: |
     gmakew clean
-    gmakew CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" TIFFLIB="'-ltiff -lzstd -llzma'" JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz JASPERLIB="'$(pkg-config --libs-only-l jasper)'" JASPERHDR_DIR="$jasper_INCLUDE_DIR/jasper"
+    gmakew CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" TIFFLIB="'-ltiff -lzstd -llzma'" JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz JASPERLIB="'$(pkg-config --libs-only-l jasper)'" JASPERHDR_DIR="$libjasper_INCLUDE_DIR/jasper"
     gmakew package pkgdir=$PACKAGE_INSTALL_DIR SONAME=libnetpbm.so
 
 dotweak: |

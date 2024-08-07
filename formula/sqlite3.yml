@@ -1,9 +1,9 @@
 summary: A small, fast, self-contained, high-reliability, full-featured, SQL database engine written in C
 git-url: https://github.com/sqlite/sqlite
 web-url: https://www.sqlite.org/
-src-url: https://www.sqlite.org/2024/sqlite-autoconf-3450200.tar.gz
-src-sha: bc9067442eedf3dd39989b5c5cfbfff37ae66cc9c99274e0c3052dc4d4a8f6ae
-version: 3.45.2
+src-url: https://www.sqlite.org/2024/sqlite-autoconf-3460000.tar.gz
+src-sha: 6f8e6a7b335273748816f9b3b62bbdc372a889de8782d7f048c653a447417a7d
+version: 3.46.0
 license: blessing
 dep-pkg: readline libz
 install: configure --disable-editline --enable-readline --enable-static-shell

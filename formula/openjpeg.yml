@@ -1,10 +1,11 @@
+pkgtype: exe+lib
 summary: Library for JPEG-2000 image manipulation
 web-url: https://www.openjpeg.org/
 git-url: https://github.com/uclouvain/openjpeg
 src-url: https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.2.tar.gz
 src-sha: 90e3896fed910c376aaf79cdd98bdfdaf98c6472efd8e1debf0a854938cbda6a
 license: BSD-2-Clause
-dep-pkg: libpng lcms2
+dep-pkg: libpng libtiff liblcms2
 
 dopatch: |
     sedInPlace 's|TIFF_LIBRARIES|PC_TIFF_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
