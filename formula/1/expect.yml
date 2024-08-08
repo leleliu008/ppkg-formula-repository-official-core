@@ -3,9 +3,9 @@ web-url: https://expect.sourceforge.io
 src-url: https://downloads.sourceforge.net/project/expect/Expect/5.45.4/expect5.45.4.tar.gz
 src-sha: 49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34
 version: 5.45.4
-dep-pkg: tcl-core
+dep-pkg: libtcl
 
 install: |
     configure \
-        --with-tclinclude=$tcl_core_INCLUDE_DIR \
-        --with-tcl=$tcl_core_LIBRARY_DIR
+        --with-tclinclude=$libtcl_INCLUDE_DIR \
+        --with-tcl=$libtcl_LIBRARY_DIR

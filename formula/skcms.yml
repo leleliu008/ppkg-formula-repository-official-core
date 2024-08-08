@@ -6,4 +6,4 @@ install: |
     run $CXX -c $CXXFLAGS $CPPFLAGS -std=c++17 ../skcms.cc
     run $AR crs libskcms.a skcms.o
     install_libs libskcms.a
-    install_incs skcms.h
+    install_incs ../skcms.h

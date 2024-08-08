@@ -5,10 +5,33 @@ version: 3.0.0
     #src-uri: https://mirrors.aliyun.com/macports/distfiles/mpir/mpir-3.0.0.tar.gz
     #src-sha: b0a4088134fb25f25725a04243f83039897c51139a0b5f1dcac1395963483c38
 license: GPL-3.0-or-later
-dep-upp: yasm texinfo libtool
+dep-upp: yasm gm4 libtool texinfo
 bsystem: autotools
+
+prepare: |
+    if [ "$TARGET_PLATFORM_ARCH" = 'x86' ] ; then
+        cat > ../bin/m4 <<EOF
+    #!/bin/sh
+    exec "$M4" -DPIC "\$@"
+    EOF
+        chmod +x ../bin/m4
+
+        export M4="$PWD/../bin/m4"
+    fi
+
+    if [ "$TARGET_PLATFORM_ARCH" = 'x86_64' ] ; then
+        YASM="$(command -v yasm)"
+
+        cat > ../bin/yasm <<EOF
+    #!/bin/sh
+    exec "$YASM" -D PIC "\$@"
+    EOF
+        chmod +x ../bin/yasm
+    fi
+
 install: |
     configure \
+        --with-pic \
         --disable-profiling \
         --disable-assert \
         --disable-fat \

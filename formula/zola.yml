@@ -10,7 +10,7 @@ install: |
     export RUSTONIG_SYSTEM_LIBONIG=1
     export RUSTONIG_STATIC_LIBONIG=1
 
-    # https://lib.rs/crates/libgit2-sys
+    # https://lib.rs/crates/openssl-sys
     export OPENSSL_STATIC=1
     export OPENSSL_NO_VENDOR=1
 

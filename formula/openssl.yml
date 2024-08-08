@@ -1,0 +1,41 @@
+summary: Cryptography and SSL/TLS Toolkit
+git-url: https://github.com/openssl/openssl
+web-url: https://www.openssl.org/
+src-url: https://www.openssl.org/source/openssl-3.1.3.tar.gz
+src-sha: f0316a2ebd89e7f2352976445458689f80302093788c466692fb2a188b2eacf6
+license: Apache-2.0
+dep-upp: perl
+bsystem: gmake
+
+install: |
+    case $TARGET_PLATFORM_NAME in
+        MacOSX)
+            os_compiler="darwin64-$TARGET_PLATFORM_ARCH"
+            ;;
+        *Simulator)
+            os_compiler='iossimulator-xcrun'
+            ;;
+        *)  case $TARGET_PLATFORM_ARCH in
+                armv*)
+                    os_compiler='ios-cross'
+                    ;;
+                arm64*)
+                    os_compiler='ios64-cross'
+                    ;;
+            esac
+    esac
+
+    run ./Configure \
+        no-engine \
+        no-tests \
+        no-ssl2 \
+        no-ssl3 \
+        no-comp \
+        no-asm \
+        no-hw \
+        --prefix="$PACKAGE_INSTALL_DIR" \
+        --libdir=$PACKAGE_INSTALL_DIR/lib \
+        "$os_compiler"
+    gmakew clean
+    gmakew CROSS_COMPILE=
+    gmakew CROSS_COMPILE= install

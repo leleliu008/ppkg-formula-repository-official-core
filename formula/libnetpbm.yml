@@ -1,0 +1,45 @@
+summary: A C library for manipulating Netpbm images
+web-url: http://netpbm.sourceforge.net/
+src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.41/netpbm-10.86.41.tgz
+src-sha: 045f7796224a801512efb5e7d6150a321674cbfb566128b21abf8d4ba65b4513
+license: GPL-3.0-or-later
+dep-upp: gm4 flex perl
+parallel: 0
+ppflags: -D_DARWIN_C_SOURCE
+
+dopatch: |
+    # https://stackoverflow.com/questions/9168150/implicit-declaration-using-std-c99
+    #sedInPlace 's|$(CFLAGS)|-D_DARWIN_C_SOURCE|' buildtools/Makefile
+    #sedInPlace 's|_XOPEN_SOURCE 500|_XOPEN_SOURCE 900|' lib/util/nstring.c
+    sedInPlace '/^CFLAGS_SHLIB =/c CFLAGS_SHLIB = -fPIC' config.mk.in
+    sedInPlace '/^STRIPFLAG =/c STRIPFLAG = ' config.mk.in
+    sedInPlace '/^INSTALL =/c INSTALL = install' config.mk.in
+    sedInPlace '/^LDSHLIB =/c LDSHLIB = -shared ' config.mk.in
+    sedInPlace 's/mkdir $(PKGDIR)/install -d $(PKGDIR)/' GNUmakefile
+    run cp config.mk.in config.mk
+
+install: |
+    gmakew clean
+    gmakew lib/util/all CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" STATICLIB_TOO=Y
+    gmakew -C lib libnetpbm.a libnetpbm STATICLIB_TOO=Y NETPBMLIBTYPE=dylib LIBNETPBM=libnetpbm.dylib SONAME=libnetpbm.dylib CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'"
+    gmakew install-dev pkgdir=$PACKAGE_INSTALL_DIR STATICLIB_TOO=Y NETPBMLIBTYPE=dylib LIBNETPBM=libnetpbm.dylib SONAME=libnetpbm.dylib
+
+dotweak: |
+    run mv staticlink/libnetpbm.a lib/
+    run rm -rf staticlink
+    run rm -rf sharedlink
+
+    install -d lib/pkgconfig
+
+    cat >      lib/pkgconfig/netpbm.pc <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include
+
+    Name: Netpbm
+    Description: $PACKAGE_SUMMARY
+    Version: $PACKAGE_VERSION
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lnetpbm
+    EOF

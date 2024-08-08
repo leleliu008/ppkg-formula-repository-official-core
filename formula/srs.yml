@@ -6,7 +6,7 @@ src-sha: 877954c8bfc9d258eeb7a1e46a497cc5f248a6d489fc83c5abe1fabbe9e71aef
 version: 5.0.5
 license: MIT
 dep-upp: unzip patch
-dep-pkg: perl
+dep-pkg: perl tclsh
 bsystem: gmake
 bscript: trunk
 

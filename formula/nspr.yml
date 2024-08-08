@@ -1,0 +1,18 @@
+summary: Platform-neutral API for system-level and libc-like functions
+web-url: https://developer.mozilla.org/docs/Mozilla/Projects/NSPR
+src-url: https://archive.mozilla.org/pub/nspr/releases/v4.35/src/nspr-4.35.tar.gz
+src-sha: 7ea3297ea5969b5d25a5dd8d47f2443cda88e9ee746301f6e1e1426f8a6abc8f
+license: MPL-2.0
+bscript: nspr
+
+install: |
+    configure \
+        --enable-strip \
+        --enable-ipv6 \
+        --disable-cplus \
+        --with-pthreads \
+        HOST_CC='/usr/bin/cc' \
+        HOST_CXX='/usr/bin/c++' \
+        HOST_CFLAGS='-O0' \
+        HOST_CXXFLAGS='-O0' \
+        HOST_LDFLAGS=''
