@@ -4,7 +4,15 @@ git-url: https://gitlab.com/libtiff/libtiff
 src-url: https://download.osgeo.org/libtiff/tiff-4.6.0.tar.gz
 src-sha: 88b3979e6d5c7e32b50d7ec72fb15af724f6ab2cbf7e10880c360a77e4b5d99a
 dep-pkg: libwebp libjpeg-turbo libzstd liblzma libz
-ldflags: -lsharpyuv
+
+dopatch: |
+    cat > cmake/FindCMath.cmake <<EOF
+    add_library(CMath::CMath INTERFACE IMPORTED)
+    target_link_libraries(CMath::CMath INTERFACE -lm)
+    EOF
+
+prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lsharpyuv"
+
 install: |
     cmakew \
         -Dlzw=ON \

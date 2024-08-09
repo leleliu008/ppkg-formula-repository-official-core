@@ -7,9 +7,12 @@ license: GPL-2.0-or-later
 dep-pkg: libexpat libcurl libssh inih
 
 dopatch: |
+    CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl)"
+
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl)"
         sedInPlace "s|\${CURL_LIBRARIES}|$CURL_LIBRARIES \"-framework CoreFoundation\" \"-framework SystemConfiguration\"|" src/CMakeLists.txt
+    else
+        sedInPlace "s|\${CURL_LIBRARIES}|$CURL_LIBRARIES|" src/CMakeLists.txt
     fi
 
 install: |

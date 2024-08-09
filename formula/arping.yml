@@ -5,6 +5,7 @@ src-sha: e443f65a44e247b27da8177decac31aa84336d5de87eab44fc02e33e7ba0b251
 license: GPL-2.0-or-later
 dep-pkg: libnet libpcap
 bsystem: autotools
-ldflags: -lssl -lcrypto
 
 dopatch: sedInPlace 's|mock_libpcap.c mock_libnet.c||g' src/Makefile.am
+
+prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lssl -lcrypto"

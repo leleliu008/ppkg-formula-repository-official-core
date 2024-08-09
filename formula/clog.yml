@@ -5,3 +5,5 @@ src-url: https://github.com/GothenburgBitFactory/clog/releases/download/v1.3.0/c
 src-sha: fed44a8d398790ab0cf426c1b006e7246e20f3fcd56c0ec4132d24b05d5d2018
 license: MIT
 bsystem: cmake
+
+dopatch: sedInPlace '/\<string\>/a \#include<cstdint>' src/libshared/src/JSON2.h
