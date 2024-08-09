@@ -5,7 +5,7 @@ src-url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.3.tar.gz
 src-sha: 1315e17d454bf4da3cc0edb857b1d2c143670f3485b537d0f946d9ed31d87b70
 license: GPL-2.0-or-later
 dep-pkg: libexpat libcurl libssh inih
-
+dep-upp: patch
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         export LDFLAGS="$LDFLAGS -framework CoreFoundation -framework SystemConfiguration"
@@ -21,6 +21,24 @@ dopatch: |
         INTERFACE_INCLUDE_DIRECTORIES "$libcurl_INCLUDE_DIR"
         INTERFACE_LINK_LIBRARIES      "$CURL_LIBRARIES"
     )
+    EOF
+
+    patch -p0 <<EOF
+    --- src/CMakeLists.txt.bak	2024-08-09 20:38:36
+    +++ src/CMakeLists.txt	2024-08-09 20:39:02
+    @@ -258,10 +258,10 @@
+     endif()
+     
+     if( EXIV2_ENABLE_INIH )
+    -  target_link_libraries( exiv2lib_int PRIVATE inih::libinih )
+       target_link_libraries( exiv2lib_int PRIVATE inih::inireader )
+    -  target_link_libraries( exiv2lib PRIVATE inih::libinih )
+    +  target_link_libraries( exiv2lib_int PRIVATE inih::libinih )
+       target_link_libraries( exiv2lib PRIVATE inih::inireader )
+    +  target_link_libraries( exiv2lib PRIVATE inih::libinih )
+       list(APPEND requires_private_list "INIReader")
+     endif()
+     
     EOF
 
 install: |
