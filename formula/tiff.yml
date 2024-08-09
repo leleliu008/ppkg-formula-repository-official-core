@@ -11,7 +11,7 @@ dopatch: |
     target_link_libraries(CMath::CMath INTERFACE -lm)
     EOF
 
-prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lsharpyuv"
+prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lsharpyuv -lm"
 
 install: |
     cmakew \
