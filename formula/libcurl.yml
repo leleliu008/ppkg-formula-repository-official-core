@@ -19,7 +19,9 @@ install: |
         --without-quiche \
         --without-libpsl \
         --without-librtmp \
-        --without-libidn2
+        --without-libidn2 \
+        --disable-ldap \
+        --disable-ldaps
 
 dotweak: |
     rm -rfv bin/curl
