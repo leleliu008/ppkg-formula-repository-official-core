@@ -48,3 +48,5 @@ install: |
     gmakew clean
     gmakew build_libs
     gmakew install_dev
+
+dotweak: sedInPlace '/Libs:/s|-lcrypto|-lcrypto -lpthread -ldl|' lib/pkgconfig/libcrypto.pc
