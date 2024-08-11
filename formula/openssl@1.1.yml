@@ -22,7 +22,10 @@ prepare: |
 
     case $TARGET_PLATFORM_NAME in
         linux)
-            OS_COMPILER="linux-$TARGET_PLATFORM_ARCH"
+            case $TARGET_PLATFORM_ARCH in
+                riscv64) OS_COMPILER='linux64-riscv64' ;;
+                *)       OS_COMPILER="linux-$TARGET_PLATFORM_ARCH"
+            esac
             ;;
         macos)
             OS_COMPILER="darwin64-$TARGET_PLATFORM_ARCH-cc"

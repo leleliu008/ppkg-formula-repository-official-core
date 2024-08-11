@@ -7,24 +7,37 @@ license: Apache-2.0
 dep-upp: perl
 bsystem: gmake
 
-install: |
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
+        sed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
+
+        if isCrossBuild ; then
+            export LDFLAGS="$LDFLAGS -fuse-ld=lld"
+            CONFIG_ARGS="$CONFIG_ARGS no-devcryptoeng"
+        fi
+    fi
+
+    unset OS_COMPILER
+
     case $TARGET_PLATFORM_NAME in
-        MacOSX)
-            os_compiler="darwin64-$TARGET_PLATFORM_ARCH"
+        linux)
+            case $TARGET_PLATFORM_ARCH in
+                riscv64) OS_COMPILER='linux64-riscv64' ;;
+                *)       OS_COMPILER="linux-$TARGET_PLATFORM_ARCH"
+            esac
             ;;
-        *Simulator)
-            os_compiler='iossimulator-xcrun'
+        macos)
+            OS_COMPILER="darwin64-$TARGET_PLATFORM_ARCH"
             ;;
-        *)  case $TARGET_PLATFORM_ARCH in
-                armv*)
-                    os_compiler='ios-cross'
-                    ;;
-                arm64*)
-                    os_compiler='ios64-cross'
-                    ;;
+        *bsd)
+            case $TARGET_PLATFORM_ARCH in
+                amd64)  OS_COMPILER='BSD-x86_64' ;;
+                *)      OS_COMPILER="BSD-$TARGET_PLATFORM_ARCH"
             esac
     esac
 
+# https://github.com/openssl/openssl/blob/master/INSTALL.md
+install: |
     run ./Configure \
         no-engine \
         no-tests \
