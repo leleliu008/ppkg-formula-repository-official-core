@@ -1,8 +1,8 @@
 summary: C++ Common Libraries
 web-url: https://abseil.io
 git-url: https://github.com/abseil/abseil-cpp
-src-url: https://github.com/abseil/abseil-cpp/archive/refs/tags/20240116.2.tar.gz
-src-sha: 733726b8c3a6d39a4120d7e45ea8b41a434cdacde401cba500f14236c49b39dc
+src-url: https://github.com/abseil/abseil-cpp/archive/refs/tags/20240722.0.tar.gz
+src-sha: f50e5ac311a81382da7fa75b97310e4b9006474f9560ac46f54a9967f07d4ae3
 license: Apache-2.0
 
 install: |
@@ -29,5 +29,5 @@ dotweak: |
         sedInPlace '/^Libs: /s|$| -framework CoreFoundation|' absl_time.pc
     fi
 
-    sedInPlace 's|-Xarch_x86_64 -Xarch_arm64||'           absl_random_internal_randen_hwaes.pc
-    sedInPlace 's|-Xarch_x86_64 -Xarch_arm64||'           absl_random_internal_randen_hwaes_impl.pc
+    sedInPlace 's|-Xarch_x86_64 -Xarch_arm64||' absl_random_internal_randen_hwaes.pc
+    sedInPlace 's|-Xarch_x86_64 -Xarch_arm64||' absl_random_internal_randen_hwaes_impl.pc

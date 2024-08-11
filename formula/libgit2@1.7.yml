@@ -1,0 +1,45 @@
+summary: C library of Git core methods that is re-entrant and linkable
+web-url: https://libgit2.github.com
+git-url: https://github.com/libgit2/libgit2
+src-url: https://github.com/libgit2/libgit2/archive/refs/tags/v1.7.2.tar.gz
+src-sha: de384e29d7efc9330c6cdb126ebf88342b5025d920dcb7c645defad85195ea7f
+dep-pkg: libssh2 libpcre2 libiconv
+license: GPL-2.0-only
+
+dopatch: |
+    # https://github.com/libgit2/libgit2/issues/6280
+    if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
+        sedInPlace 's|sys/random.h|unistd.h|' src/util/rand.c
+    fi
+
+install: |
+    cmakew \
+        -DBUILD_CLI=OFF \
+        -DBUILD_TESTS=OFF \
+        -DBUILD_FUZZERS=OFF \
+        -DBUILD_EXAMPLES=OFF \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DENABLE_WERROR=OFF \
+        -DDEPRECATE_HARD=OFF \
+        -DUSE_SSH=ON \
+        -DUSE_ICONV=ON \
+        -DUSE_HTTPS=OpenSSL \
+        -DUSE_BUNDLED_ZLIB=OFF \
+        -DREGEX_BACKEND=pcre2
+    cmakew \
+        -DBUILD_CLI=OFF \
+        -DBUILD_TESTS=OFF \
+        -DBUILD_FUZZERS=OFF \
+        -DBUILD_EXAMPLES=OFF \
+        -DBUILD_SHARED_LIBS=ON \
+        -DENABLE_WERROR=OFF \
+        -DDEPRECATE_HARD=OFF \
+        -DUSE_SSH=ON \
+        -DUSE_ICONV=ON \
+        -DUSE_HTTPS=OpenSSL \
+        -DUSE_BUNDLED_ZLIB=OFF \
+        -DREGEX_BACKEND=pcre2
+
+dotweak: |
+    sed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lz||g' -e 's|-lssh2||g' lib/pkgconfig/libgit2.pc
+    sed -i -e 's|openssl|libssh2|' -e 's|zlib|libiconv|' lib/pkgconfig/libgit2.pc
