@@ -1,7 +1,7 @@
 summary: A modern diagram scripting language that turns text to diagrams
 git-url: https://github.com/terrastruct/d2
-src-url: https://github.com/terrastruct/d2/archive/refs/tags/v0.6.3.tar.gz
-src-sha: e7df127e20ec37c83c881e15c6fb3fbefb55cbfeeb9380a78575164726144bd9
+src-url: https://github.com/terrastruct/d2/archive/refs/tags/v0.6.6.tar.gz
+src-sha: 5af111718346a3e16d04f8f7461d089543f0f57c4abf39969b47dad648834144
 license: MPL-2.0
 install: |
     gow -X oss.terrastruct.com/d2/lib/version.Version=$PACKAGE_VERSION
