@@ -23,6 +23,7 @@ prepare: |
         linux)
             case $TARGET_PLATFORM_ARCH in
                 riscv64) OS_COMPILER='linux64-riscv64' ;;
+                s390x)   OS_COMPILER='linux64-s390x'   ;;
                 *)       OS_COMPILER="linux-$TARGET_PLATFORM_ARCH"
             esac
             ;;
