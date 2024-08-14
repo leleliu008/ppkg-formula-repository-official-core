@@ -1,9 +1,9 @@
 summary: Cryptography and SSL/TLS Toolkit
 git-url: https://github.com/openssl/openssl
 web-url: https://www.openssl.org/
-src-url: https://www.openssl.org/source/openssl-3.3.1.tar.gz
-src-sha: 777cd596284c883375a2a7a11bf5d2786fc5413255efab20c50d6ffe6d020b7e
-license: Apache-2.0
+src-url: https://www.openssl.org/source/openssl-1.1.1w.tar.gz
+src-sha: cf3098950cb4d853ad95c0841f1f9c6d3dc102dccfcacd521d93925208b76ac8
+license: OpenSSL
 dep-upp: perl
 bsystem: gmake
 
@@ -45,7 +45,7 @@ install: |
     fi
 
     # https://github.com/openssl/openssl/blob/master/INSTALL.md
-    run "$CMD" no-tests no-ssl3 no-ssl3-method no-zlib --libdir=lib --openssldir=etc/ssl --prefix="$PACKAGE_INSTALL_DIR" "$OS_COMPILER"
+    run "$CMD" no-tests no-ssl2 no-ssl3 no-ssl3-method no-zlib --libdir=lib --openssldir=etc/ssl --prefix="$PACKAGE_INSTALL_DIR" "$OS_COMPILER"
     gmakew clean
     gmakew build_libs
     gmakew install_dev
