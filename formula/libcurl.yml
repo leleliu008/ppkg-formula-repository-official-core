@@ -7,6 +7,12 @@ license: curl
 dep-upp: perl
 dep-pkg: libnghttp2 libopenssl libbrotli libzstd libz
 
+dopatch: |
+    # https://gitlab.com/qemu-project/qemu/-/issues/2485
+    if [ "$TARGET_PLATFORM_ARCH" = s390x ] ; then
+        sedInPlace '/tst_links_getifaddrs=/c tst_links_getifaddrs=no' configure
+    fi
+
 install: |
     configure \
         --enable-optimize \

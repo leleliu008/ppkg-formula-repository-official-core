@@ -7,7 +7,13 @@ license: curl
 dep-upp: perl
 dep-pkg: libnghttp2 libopenssl libbrotli libzstd libz
 
-dopatch: sedInPlace 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
+dopatch: |
+    sedInPlace 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
+
+    # https://gitlab.com/qemu-project/qemu/-/issues/2485
+    if [ "$TARGET_PLATFORM_ARCH" = s390x ] ; then
+        sedInPlace '/tst_links_getifaddrs=/c tst_links_getifaddrs=no' configure
+    fi
 
 install: |
     configure \
