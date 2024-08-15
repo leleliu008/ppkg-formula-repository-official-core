@@ -1,22 +1,20 @@
-summary: A command-line tool and C++ library that performs content-preserving transformations on PDF files
+summary: A command-line tool that performs content-preserving transformations on PDF files
 git-url: https://github.com/qpdf/qpdf
-src-url: https://github.com/qpdf/qpdf/releases/download/v11.9.0/qpdf-11.9.0.tar.gz
-src-sha: 9f5d6335bb7292cc24a7194d281fc77be2bbf86873e8807b85aeccfbff66082f
+src-url: https://github.com/qpdf/qpdf/releases/download/v11.9.1/qpdf-11.9.1.tar.gz
+src-sha: 2ba4d248f9567a27c146b9772ef5dc93bd9622317978455ffe91b259340d13d1
 license: Apache-2.0
 dep-pkg: libjpeg-turbo libopenssl libz
-dopatch: |
-    sedInPlace '/add_subdirectory(examples)/d' CMakeLists.txt
-    sedInPlace 's|target_link_libraries(${PROG} libqpdf)|target_link_libraries(${PROG} libqpdf_static)|' qpdf/CMakeLists.txt
-    sedInPlace 's|target_link_libraries(zlib-flate libqpdf)|target_link_libraries(zlib-flate libqpdf_static)|' zlib-flate/CMakeLists.txt
-    sedInPlace 's|target_link_libraries(qpdf-test-compare libqpdf)|target_link_libraries(qpdf-test-compare libqpdf_static)|' compare-for-test/CMakeLists.txt
+
+# https://qpdf.readthedocs.io/en/stable/installation.html
 install: |
+    CMAKE_INSTALL_COMPONENTS='cli doc'
     cmakew \
         -DINSTALL_MANUAL=OFF \
         -DINSTALL_EXAMPLES=OFF \
-        -DINSTALL_PKGCONFIG=ON \
-        -DINSTALL_CMAKE_PACKAGE=ON \
+        -DINSTALL_PKGCONFIG=OFF \
+        -DINSTALL_CMAKE_PACKAGE=OFF \
         -DBUILD_DOC=OFF \
-        -DBUILD_SHARED_LIBS=ON \
+        -DBUILD_SHARED_LIBS=OFF \
         -DBUILD_STATIC_LIBS=ON \
         -DUSE_IMPLICIT_CRYPTO=OFF \
         -DREQUIRE_CRYPTO_OPENSSL=ON
