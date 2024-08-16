@@ -4,5 +4,5 @@ git-url: https://github.com/starship/starship
 src-url: https://github.com/starship/starship/archive/refs/tags/v1.20.1.tar.gz
 src-sha: 851d84be69f9171f10890e3b58b8c5ec6057dd873dc83bfe0bdf965f9844b5dc
 license: ISC
-dep-pkg: libopenssl
+dep-pkg: libopenssl libz
 bsystem: cargo cmake gmake
