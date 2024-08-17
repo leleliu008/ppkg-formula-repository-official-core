@@ -8,6 +8,8 @@ dep-upp: perl
 dep-pkg: libnghttp2 libopenssl libbrotli libzstd libz
 
 dopatch: |
+    sedInPlace '/^SUBDIRS = /s| src||' Makefile.in
+
     # https://gitlab.com/qemu-project/qemu/-/issues/2485
     if [ "$TARGET_PLATFORM_ARCH" = s390x ] ; then
         sedInPlace '/tst_links_getifaddrs=/c tst_links_getifaddrs=no' configure
@@ -30,7 +32,6 @@ install: |
         --disable-ldaps
 
 dotweak: |
-    rm -rfv bin/curl
     rm -rfv share/man/man1/curl.1
 
     sed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lnghttp2||g' -e 's|-lzstd||g' -e 's|-lz||g' -e 's|-lbrotlidec||g' -e 's|-lbrotlicommon||g' lib/pkgconfig/libcurl.pc
