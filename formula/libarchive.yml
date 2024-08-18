@@ -30,5 +30,4 @@ install: |
         --with-iconv
 
 dotweak: |
-    sedInPlace '/Libs: /s|$| -liconv|' lib/pkgconfig/libarchive.pc
-    sedInPlace '/Requires:/d'          lib/pkgconfig/libarchive.pc
+    sedInPlace '/Requires: /s|iconv|libiconv libcrypto|' lib/pkgconfig/libarchive.pc
