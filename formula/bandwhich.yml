@@ -1,4 +1,4 @@
-summary: Terminal bandwidth utilization tool
+summary: A command-line utility for displaying current network utilization by process, connection and remote IP/hostname
 git-url: https://github.com/imsnif/bandwhich
 src-url: https://github.com/imsnif/bandwhich/archive/refs/tags/v0.23.0.tar.gz
 src-sha: 58b94588ec919fd802fc25cd209084ecc9acdfd99d5478d5ec76670774ff5886
