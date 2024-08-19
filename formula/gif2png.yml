@@ -1,0 +1,7 @@
+summary: Convert GIFs to PNGs
+web-url: http://www.catb.org/~esr/gif2png/
+git-url: https://gitlab.com/esr/gif2png
+src-url: https://gitlab.com/esr/gif2png/-/archive/3.0.3/gif2png-3.0.3.tar.bz2
+src-sha: 5d2770dce994e08ef54871ea4b0774e0ec0476aad5b3e47e21b4af59fdc8158b
+license: BSD-2-Clause
+bsystem: go

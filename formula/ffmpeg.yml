@@ -2,8 +2,8 @@ pkgtype: exe+lib
 summary: A complete, cross-platform solution to record, convert and stream audio and video
 git-url: https://github.com/FFmpeg/FFmpeg
 web-url: https://ffmpeg.org/
-src-url: https://ffmpeg.org/releases/ffmpeg-7.0.tar.xz
-src-sha: 4426a94dd2c814945456600c8adfc402bee65ec14a70e8c531ec9a2cd651da7b
+src-url: https://ffmpeg.org/releases/ffmpeg-7.0.2.tar.xz
+src-sha: 8646515b638a3ad303e23af6a3587734447cb8fc0a0c064ecdb8e95c4fd8b389
 license: GPL-2.0-or-later
 dep-pkg: libmp3lame libsamplerate libtheora libvorbis libspeex librav1e libdav1d libx264 libx265 libopus libxvid libsoxr libvpx libwebp libtiff libpng libjpeg-turbo libgif libsrt libzimg libzmq libxml2 libarchive libsdl2
 dep-upp: nasm
