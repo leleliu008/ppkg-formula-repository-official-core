@@ -142,6 +142,8 @@ case $1 in
     libeigen) printf '%s\n' 'eigen'     ;;
     libcares) printf '%s\n' 'c-ares'    ;;
     libfolly) printf '%s\n' 'folly'     ;;
+    libbotan) printf '%s\n' 'botan'     ;;
+    libproj)  printf '%s\n' 'proj'      ;;
     libsrtp)  printf '%s\n' 'srtp'      ;;
     libflac)  printf '%s\n' 'flac'      ;;
     libx264)  printf '%s\n' 'x264'      ;;
