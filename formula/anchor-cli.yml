@@ -1,7 +1,8 @@
 summary: Anchor developer tools
 git-url: https://github.com/coral-xyz/anchor
-src-url: https://github.com/coral-xyz/anchor/archive/refs/tags/v0.29.0.tar.gz
-src-sha: 28cd6c367ffe938f14bcd22ec91289433f27a23c70c5c971db39acc21d4d7ddd
+src-url: https://github.com/coral-xyz/anchor/archive/refs/tags/v0.30.1.tar.gz
+src-sha: a6794066fe9120f8c80cb2f608ce8fb6ef54828b15420d36250448d95fa954ee
 license: Apache-2.0
 dep-pkg: libopenssl
-install: cargow build && run install_bins target/$RUST_TARGET/release/anchor
+install: cargow build --locked && run install_bins target/$RUST_TARGET/release/anchor
+prepare: export RUSTUP_TOOLCHAIN=1.76
