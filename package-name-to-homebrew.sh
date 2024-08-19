@@ -80,6 +80,10 @@ case $1 in
               printf '%s\n' 'pugixml'   ;;
     libminizip)
               printf '%s\n' 'minizip'   ;;
+    libopenssl)
+              printf '%s\n' 'openssl'   ;;
+    libopenexr)
+              printf '%s\n' 'openexr'   ;;
     libopenh264)
               printf '%s\n' 'openh264'  ;;
     libtinyxml2)
@@ -132,6 +136,8 @@ case $1 in
               printf '%s\n' 'physfs'    ;;
     libtalloc)
               printf '%s\n' 'talloc'    ;;
+    libSvtAv1)
+              printf '%s\n' 'svt-av1'   ;;
     libspeexdsp)
               printf '%s\n' 'speexdsp'  ;;
     libspeex) printf '%s\n' 'speex'     ;;
@@ -143,6 +149,7 @@ case $1 in
     libcares) printf '%s\n' 'c-ares'    ;;
     libfolly) printf '%s\n' 'folly'     ;;
     libbotan) printf '%s\n' 'botan'     ;;
+    libImath) printf '%s\n' 'imath'     ;;
     libproj)  printf '%s\n' 'proj'      ;;
     libsrtp)  printf '%s\n' 'srtp'      ;;
     libflac)  printf '%s\n' 'flac'      ;;
