@@ -2,6 +2,6 @@ summary: base16 encoder and decoder
 git-url: https://github.com/leleliu008/C-examples
 bscript: algorithm/base16
 bsystem: cmake
-dotweak: |
-    rm -rf lib
-    rm -rf include
+prepare: |
+    CMAKE_BUILD_TARGETS='base16-encode base16-decode'
+    CMAKE_INSTALL_COMPONENTS=bin
