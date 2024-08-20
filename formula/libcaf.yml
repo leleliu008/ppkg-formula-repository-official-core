@@ -2,8 +2,8 @@ pkgtype: lib
 summary: Implementation of the Actor Model for C++
 web-url: https://www.actor-framework.org/
 git-url: https://github.com/actor-framework/actor-framework
-src-url: https://github.com/actor-framework/actor-framework/archive/refs/tags/0.19.6.tar.gz
-src-sha: 48dc4c4abf5ab5a7c6f84b9259cc8be1b02c601d31893647ab44e143cdc4b6d5
+src-url: https://github.com/actor-framework/actor-framework/archive/refs/tags/1.0.1.tar.gz
+src-sha: 635bdd6e3b70886f1d9aa75c48e5bdb4084afae1f159bbfe5ea91f99b0460f6b
 license: BSD-3-Clause
 dep-pkg: libopenssl
 xxflags: -std=c++17
