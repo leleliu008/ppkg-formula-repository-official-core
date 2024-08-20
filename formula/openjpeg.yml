@@ -9,7 +9,6 @@ dep-pkg: libpng libtiff liblcms2
 dopatch: |
     sedInPlace 's|TIFF_LIBRARIES|PC_TIFF_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
     sedInPlace 's|LCMS2_LIBRARIES|PC_LCMS2_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
-    sedInPlace 's|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}|target_link_libraries(${exe} ${OPENJPEG_LIBRARY_NAME}_static|' src/bin/jp2/CMakeLists.txt
 
 install: |
     cmakew \
@@ -24,3 +23,7 @@ install: |
         -DBUILD_UNIT_TESTS=OFF \
         -DBUILD_LUTS_GENERATOR=OFF \
         -DBUILD_PKGCONFIG_FILES=ON
+
+dotweak: |
+    rm -rf include/
+    rm -rf lib/
