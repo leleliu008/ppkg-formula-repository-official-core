@@ -11,6 +11,7 @@ install: |
     case $TARGET_PLATFORM_NAME in
         linux) PLATFORM=linux ;;
         macos) PLATFORM=macosx;;
+        *bsd)  PLATFORM=bsd   ;;
     esac
 
     gmakew clean

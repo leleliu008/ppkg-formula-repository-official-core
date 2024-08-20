@@ -27,3 +27,4 @@ install: |
 dotweak: |
     rm -rf include/
     rm -rf lib/
+    rm -rf share/man/man3/
