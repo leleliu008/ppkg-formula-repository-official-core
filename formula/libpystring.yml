@@ -5,6 +5,7 @@ src-sha: 49da0fe2a049340d3c45cce530df63a2278af936003642330287b68cefd788fb
 
 install: |
     run $CXX -c $CXXFLAGS $CPPFLAGS -o pystring.o ../pystring.cpp
+    run $CXX -shared $LDFLAGS -o libpystring$SHARED_LIBRARY_SUFFIX pystring.o
     run $AR rsc libpystring.a pystring.o
     run install_incs :pystring ../pystring.h
-    run install_libs libpystring.a
+    run install_libs libpystring.*

@@ -14,7 +14,7 @@ prepare: |
     fi
 
 install: |
-    configure_only \
+    configure only \
         --disable-swig \
         --disable-php \
         --disable-tcl \

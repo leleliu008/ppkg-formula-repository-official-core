@@ -4,7 +4,7 @@ git-url: https://github.com/fontforge/fontforge
 src-url: https://github.com/fontforge/fontforge/releases/download/20230101/fontforge-20230101.tar.xz
 src-sha: ca82ec4c060c4dda70ace5478a41b5e7b95eb035fe1c4cf85c48f996d35c60f8
 license: GPL-3.0-or-later
-dep-pkg: pango libuninameslist libspiro libgif libjpeg-turbo libtiff libxml2 python3
+dep-pkg: pango libuninameslist libspiro libgif libjpeg-turbo libtiff python3
 dep-upp: gettext-tools
 
 dopatch: |

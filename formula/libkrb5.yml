@@ -8,7 +8,7 @@ dep-pkg: libopenssl libedit
 bscript: src
 
 install: |
-    configure_only \
+    configure only \
         --disable-nls \
         --enable-static \
         --disable-shared \

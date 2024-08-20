@@ -76,6 +76,8 @@ case $1 in
               printf '%s\n' 'freetype'  ;;
     libharfbuzz)
               printf '%s\n' 'harfbuzz'  ;;
+    libyaml-cpp)
+              printf '%s\n' 'yaml-cpp'  ;;
     libpugixml)
               printf '%s\n' 'pugixml'   ;;
     libminizip)
@@ -86,6 +88,8 @@ case $1 in
               printf '%s\n' 'openexr'   ;;
     libopenh264)
               printf '%s\n' 'openh264'  ;;
+    libopenblas)
+              printf '%s\n' 'openblas'  ;;
     libtinyxml2)
               printf '%s\n' 'tinyxml2'  ;;
     libtinyalsa)

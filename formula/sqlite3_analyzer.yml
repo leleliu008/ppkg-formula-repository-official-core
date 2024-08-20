@@ -7,6 +7,6 @@ license: blessing
 dep-pkg: libtcl
 
 install: |
-    configure_only --with-tcl="$libtcl_LIBRARY_DIR"
+    configure only --with-tcl="$libtcl_LIBRARY_DIR"
     gmakew sqlite3_analyzer
     install_bins sqlite3_analyzer

@@ -1,12 +1,19 @@
 summary: OCR (Optical Character Recognition) engine
 git-url: https://github.com/tesseract-ocr/tesseract
-src-url: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.3.tar.gz
-src-sha: dc4329f85f41191b2d813b71b528ba6047745813474e583ccce8795ff2ff5681
+src-url: https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.4.1.tar.gz
+src-sha: c4bc2a81c12a472f445b7c2fb4705a08bd643ef467f51ec84f0e148bd368051b
 license: Apache-2.0
-dep-pkg: leptonica icu4c pango libarchive libcurl
+dep-pkg: icu4c pango libleptonica libarchive libcurl
 
 dopatch: |
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        export LDFLAGS="$LDFLAGS -framework Foundation -framework CoreFoundation -framework SystemConfiguration -framework ApplicationServices"
+    fi
+
+    ####################################################################
+
     CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl | tr ' ' ';')"
+
     cat > cmake/FindCURL.cmake <<EOF
     set(CURL_INCLUDE_DIRS "$libcurl_INCLUDE_DIR")
     set(CURL_LIBRARIES    "$CURL_LIBRARIES")
@@ -24,7 +31,10 @@ dopatch: |
     mark_as_advanced(CURL_INCLUDE_DIRS CURL_LIBRARIES)
     EOF
 
+    ####################################################################
+
     TIFF_LIBRARIES="$(pkg-config --libs-only-l libtiff-4 | tr ' ' ';')"
+
     cat > cmake/FindTIFF.cmake <<EOF
     set(TIFF_INCLUDE_DIRS "$libtiff_INCLUDE_DIR")
     set(TIFF_LIBRARIES    "$TIFF_LIBRARIES")
@@ -42,7 +52,10 @@ dopatch: |
     mark_as_advanced(TIFF_INCLUDE_DIRS TIFF_LIBRARIES)
     EOF
 
+    ####################################################################
+
     LIBARCHIVE_LIBRARIES="$(pkg-config --libs-only-l libarchive | tr ' ' ';')"
+
     cat > cmake/FindLibArchive.cmake <<EOF
     set(LibArchive_INCLUDE_DIRS "$libarchive_INCLUDE_DIR")
     set(LibArchive_LIBRARIES    "$LIBARCHIVE_LIBRARIES")
@@ -60,9 +73,30 @@ dopatch: |
     mark_as_advanced(LibArchive_INCLUDE_DIRS LibArchive_LIBRARIES)
     EOF
 
+    ####################################################################
+
+    Leptonica_LIBRARIES="$(pkg-config --libs-only-l lept | tr ' ' ';')"
+    Leptonica_VERSION="$(pkg-config --modversion lept)"
+
+    cat > cmake/FindLeptonica.cmake <<EOF
+    set(Leptonica_INCLUDE_DIRS "$libleptonica_INCLUDE_DIR/leptonica")
+    set(Leptonica_LIBRARIES    "$Leptonica_LIBRARIES")
+    set(Leptonica_VERSION      "$Leptonica_VERSION")
+
+    include(FindPackageHandleStandardArgs)
+    find_package_handle_standard_args(Leptonica REQUIRED_VARS Leptonica_LIBRARIES Leptonica_INCLUDE_DIRS VERSION_VAR Leptonica_VERSION)
+    mark_as_advanced(Leptonica_INCLUDE_DIRS Leptonica_LIBRARIES)
+    EOF
+
+    ####################################################################
+
     PANGOCAIRO_LIBRARIES="$(pkg-config --libs-only-l pangocairo) -lintl -lpixman-1 -lffi  -lpcre2-8"
     echo "$PANGOCAIRO_LIBRARIES=$PANGOCAIRO_LIBRARIES"
     sedInPlace "s|PkgConfig::PANGO|$PANGOCAIRO_LIBRARIES|" src/training/CMakeLists.txt
+
+    ####################################################################
+
+    sedInPlace '/find_package(Leptonica/s|CONFIG||' CMakeLists.txt
 
 install: |
     cmakew \
@@ -75,4 +109,5 @@ install: |
         -DBUILD_SHARED_LIBS=OFF
 
 dotweak: |
-    sedInPlace '/Requires:/s|$| lept libcurl libarchive|' lib/pkgconfig/tesseract.pc
+    rm -rf include/
+    rm -rf lib/

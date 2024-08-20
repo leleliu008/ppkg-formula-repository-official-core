@@ -5,7 +5,7 @@ src-sha: d78b37a66f5922d70edf3bdfb01a6b33d34ed3c3cafd6628203b2a2b67c8e8b3
 license: GPL-2.0-or-later
 
 install: |
-    configure_only --disable-liblastlog2
+    configure only --disable-liblastlog2
     gmakew getopt misc-utils/getopt.1
     install_bins getopt
     install_mans misc-utils/getopt.1

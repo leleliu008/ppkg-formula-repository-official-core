@@ -7,7 +7,7 @@ license: TCL
 dep-pkg: libopenssl libz
 bscript: unix
 install: |
-    configure_only \
+    configure only \
         --disable-shared \
         --enable-dtrace \
         --enable-zipfs \

@@ -1,4 +1,3 @@
-pkgtype: exe+lib
 summary: Free lossless audio codec
 web-url: https://xiph.org/flac/
 git-url: https://github.com/xiph/flac
@@ -22,5 +21,9 @@ install: |
         -DBUILD_EXAMPLES=ON \
         -DBUILD_DOCS=OFF \
         -DINSTALL_MANPAGES=ON \
-        -DINSTALL_PKGCONFIG_MODULES=ON \
-        -DINSTALL_CMAKE_CONFIG_MODULE=ON
+        -DINSTALL_PKGCONFIG_MODULES=OFF \
+        -DINSTALL_CMAKE_CONFIG_MODULE=OFF
+
+dotweak: |
+    rm -rf include/
+    rm -rf lib/
