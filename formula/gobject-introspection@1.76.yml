@@ -1,0 +1,10 @@
+pkgtype: exe+lib
+summary: Generate introspection data for GObject libraries
+web-url: https://gi.readthedocs.io
+git-url: https://gitlab.gnome.org/GNOME/gobject-introspection
+src-url: https://download.gnome.org/sources/gobject-introspection/1.76/gobject-introspection-1.76.1.tar.xz
+src-sha: 196178bf64345501dcdc4d8469b36aa6fe80489354efe71cb7cb8ab82a3738bf
+license: MIT
+dep-upp: gm4 flex bison
+dep-pkg: glib python3
+install: mesonw

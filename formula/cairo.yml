@@ -8,6 +8,12 @@ src-sha: 243a0736b978a33dee29f9cca7521733b78a65b5418206fef7bd1c3d4cf10b64
 license: LGPL-2.1-or-later MPL-1.1
 dep-pkg: glib libfontconfig libxml2 libpixman libpng liblzo
 
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
+        https://man.netbsd.org/backtrace.3
+        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lexecinfo"
+    fi
+
 install: |
     mesonw \
         -Dtests=disabled \
