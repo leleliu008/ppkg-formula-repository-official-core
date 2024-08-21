@@ -5,11 +5,9 @@ git-url: https://github.com/jackaudio/jack2
 src-url: https://github.com/jackaudio/jack2/archive/refs/tags/v1.9.22.tar.gz
 src-sha: 1e42b9fc4ad7db7befd414d45ab2f8a159c0b30fcd6eee452be662298766a849
 license: GPL-2.0-or-later
-dep-pkg: readline libsamplerate berkeley-db alsa-lib
-dep-pkg: python@3.11
-binbstd: 1
+dep-pkg: readline libaften libsamplerate berkeley-db
 
 install: |
-    run python3 ./waf configure --prefix=$PACKAGE_INSTALL_DIR
-    run python3 ./waf build
-    run python3 ./waf install
+    waf configure --prefix=$PACKAGE_INSTALL_DIR
+    waf build
+    waf install
