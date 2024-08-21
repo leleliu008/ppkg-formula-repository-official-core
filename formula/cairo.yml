@@ -10,7 +10,7 @@ dep-pkg: glib libfontconfig libxml2 libpixman libpng liblzo
 
 prepare: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        https://man.netbsd.org/backtrace.3
+        # https://man.netbsd.org/backtrace.3
         export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lexecinfo"
     fi
 
