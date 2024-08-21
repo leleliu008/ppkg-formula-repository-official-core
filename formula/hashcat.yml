@@ -4,11 +4,11 @@ web-url: https://hashcat.net/hashcat/
 src-url: https://hashcat.net/files/hashcat-6.2.6.tar.gz
 src-sha: b25e1077bcf34908cc8f18c1a69a2ec98b047b2cbcf0f51144dcf3ba1e0b7b2a
 license: MIT
-dep-pkg: libxxhash minizip libz opencl-headers
-bsystem: gmake
+dep-pkg: libxxhash libminizip opencl-headers
 
 install: |
     export CFLAGS="$CFLAGS $CPPFLAGS"
+    export LDFLAGS="$LDFLAGS -lm"
 
     MAKE_FLAGS="
         CC=$CC
@@ -18,6 +18,7 @@ install: |
         USE_SYSTEM_ZLIB=1
         ENABLE_UNRAR=0"
 
+install: |
     gmakew clean
     gmakew         $MAKE_FLAGS
     gmakew install $MAKE_FLAGS
