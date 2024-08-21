@@ -1,4 +1,4 @@
-summary: Tools for monitoring the temperatures, voltages, and fans
+summary: Library for monitoring the temperatures, voltages, and fans
 git-url: https://github.com/lm-sensors/lm-sensors
 src-url: https://github.com/lm-sensors/lm-sensors/archive/V3-6-0.tar.gz
 src-sha: 0591f9fa0339f0d15e75326d0365871c2d4e2ed8aa1ff759b3a55d3734b7d197
@@ -8,5 +8,5 @@ dep-upp: gm4 flex bison
 
 install: |
     gmakew clean
-    gmakew all CC=$CC CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" BUILD_STATIC_LIB=1 DEBUG=0
-    gmakew install PREFIX=$PACKAGE_INSTALL_DIR MANDIR=$PACKAGE_INSTALL_DIR/share/man ETCDIR=$PACKAGE_INSTALL_DIR/etc
+    gmakew all-lib CC=$CC CPPFLAGS="'$CPPFLAGS'" CFLAGS="'$CFLAGS'" BUILD_STATIC_LIB=1 DEBUG=0
+    gmakew install-lib PREFIX=$PACKAGE_INSTALL_DIR MANDIR=$PACKAGE_INSTALL_DIR/share/man ETCDIR=$PACKAGE_INSTALL_DIR/etc
