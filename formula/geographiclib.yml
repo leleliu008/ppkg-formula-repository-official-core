@@ -5,7 +5,7 @@ src-url: https://github.com/geographiclib/geographiclib/archive/refs/tags/r2.4.t
 src-sha: 7b2a998c9a0917b49242671a7a6f5fe72e3e77d12f30de56142b1d7ea4dd4136
 license: MIT
 
-prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lm"
+prepare: export PROXIED_CXX_ARGS="$PROXIED_CC_ARGS -lm"
 
 install: |
     cmakew \
