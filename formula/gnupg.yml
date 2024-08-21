@@ -6,11 +6,6 @@ src-sha: f68f7d75d06cb1635c336d34d844af97436c3f64ea14bcb7c869782f96f44277
 dep-pkg: libgcrypt libassuan libksba npth libiconv libbz2 readline
 license: GPL-3.0-or-later
 
-dopatch: |
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace "s|\$(CC_FOR_BUILD)|\$(CC_FOR_BUILD) -isysroot $SDKROOT|" doc/Makefile.in
-    fi
-
 install: |
     configure \
         --disable-assert \
