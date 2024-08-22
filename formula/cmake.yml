@@ -5,6 +5,7 @@ src-url: https://github.com/Kitware/CMake/releases/download/v3.30.2/cmake-3.30.2
 src-sha: 46074c781eccebc433e98f0bbfa265ca3fd4381f245ca3b140e7711531d60db2
 license: BSD-3-Clause
 dep-pkg: ncurses libopenssl
+
 install: |
     cmakew \
         -DCMAKE_USE_SYSTEM_LIBRARIES=OFF \
@@ -12,3 +13,21 @@ install: |
         -DCMake_BUILD_LTO=ON \
         -DBUILD_QtDialog=OFF \
         -DBUILD_CursesDialog=ON
+
+dep-upp: patch
+dopatch: |
+    [ "$TARGET_PLATFORM_NAME" = netbsd ] || return 0
+
+    LIST='
+    patch-Source_kwsys_ProcessUNIX.c
+    patch-Source_Checks_cm__cxx17__check.cpp'
+
+    for f in $LIST
+    do
+        wfetch "https://raw.githubusercontent.com/NetBSD/pkgsrc/trunk/textproc/devel/cmake/$f"
+    done
+
+    for f in $LIST
+    do
+        patch -p0 < "$f"
+    done
