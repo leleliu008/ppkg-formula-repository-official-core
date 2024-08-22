@@ -13,7 +13,7 @@ dopatch: |
     patch-absl_base_internal_sysinfo.cc
     patch-absl_debugging_internal_elf__mem__image.cc
     patch-absl_debugging_internal_vdso__support.cc
-    patch-absl_time_internal_cctz_src_time__zone__format.cc
+    patch-absl_time_internal_cctz_src_time__zone__format.cc'
 
     for f in $LIST
     do
