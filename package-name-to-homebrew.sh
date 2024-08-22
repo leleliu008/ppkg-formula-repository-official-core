@@ -76,6 +76,8 @@ case $1 in
               printf '%s\n' 'freetype'  ;;
     libharfbuzz)
               printf '%s\n' 'harfbuzz'  ;;
+    libjbig2dec)
+              printf '%s\n' 'jbig2dec'  ;;
     libyaml-cpp)
               printf '%s\n' 'yaml-cpp'  ;;
     libpugixml)
