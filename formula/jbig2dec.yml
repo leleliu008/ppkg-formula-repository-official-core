@@ -7,5 +7,11 @@ license: AGPL-3.0-or-later
 dep-pkg: libpng
 dep-upp: libtool
 bsystem: autogen
+
 dopatch: sedInPlace '$d' autogen.sh && ./autogen.sh
-install: configure  --with-libpng="$libpng_INSTALL_DIR"
+
+install: |
+    configure only --enable-static --disable-shared --with-libpng="$libpng_INSTALL_DIR"
+    gmakew
+    gmakew install-man1
+    install_bins jbig2dec
