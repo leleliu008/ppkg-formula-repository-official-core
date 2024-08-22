@@ -24,7 +24,7 @@ dopatch: |
 
     for f in $LIST
     do
-        wfetch "https://raw.githubusercontent.com/NetBSD/pkgsrc/trunk/textproc/devel/cmake/patches/$f"
+        wfetch "https://raw.githubusercontent.com/NetBSD/pkgsrc/trunk/devel/cmake/patches/$f"
     done
 
     for f in $LIST
