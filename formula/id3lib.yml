@@ -7,7 +7,7 @@ dep-pkg: libiconv libz
 dep-upp: libtool
 bsystem: autotools
 
-dopatch: sedInPlace '/\<string\>/a \#include<cstring>|' include/id3/id3lib_strings.h
+dopatch: sedInPlace '/\<string\>/a \#include<cstring>' include/id3/id3lib_strings.h
 
 install: |
     configure \
