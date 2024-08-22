@@ -14,3 +14,26 @@ install: |
         --disable-tests \
         --disable-fuzzer \
         --disable-samples
+
+dep-upp: patch
+dopatch: |
+    LIST='
+    patch-common_putil.cpp
+    patch-common_putilimp.h
+    patch-common_ubidiimp.h
+    patch-common_umutex.h
+    patch-common_unicode_platform.h
+    patch-common_unicode_ptypes.h
+    patch-common_uposixdefs.h
+    patch-i18n_double-conversion-utils.h
+    patch-tools-toolutil-pkg_genc.cpp'
+
+    for f in $LIST
+    do
+        wfetch "https://raw.githubusercontent.com/NetBSD/pkgsrc/trunk/textproc/icu/patches/$f"
+    done
+
+    for f in $LIST
+    do
+        patch -p0 < "$f"
+    done
