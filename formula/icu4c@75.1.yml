@@ -17,6 +17,8 @@ install: |
 
 dep-upp: patch
 dopatch: |
+    [ "$TARGET_PLATFORM_NAME" = netbsd ] || return 0
+
     LIST='
     patch-common_putil.cpp
     patch-common_putilimp.h
