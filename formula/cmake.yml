@@ -19,8 +19,27 @@ dopatch: |
     [ "$TARGET_PLATFORM_NAME" = netbsd ] || return 0
 
     LIST='
+    patch-Auxiliary_CMakeLists.txt
+    patch-CMakeLists.txt
+    patch-Modules_Compiler_GNU.cmake
+    patch-Modules_FindCurses.cmake
+    patch-Modules_FindGTK2.cmake
+    patch-Modules_FindPythonInterp.cmake
+    patch-Modules_FindPythonLibs.cmake
+    patch-Modules_FindPython_Support.cmake
+    patch-Modules_FindX11.cmake
+    patch-Modules_FortranCInterface_CMakeLists.txt
+    patch-Modules_Platform_Darwin.cmake
+    patch-Modules_Platform_UnixPaths.cmake
+    patch-Source_Checks_Curses_CMakeLists.txt
+    patch-Source_Checks_Curses_CheckCurses.c
+    patch-Source_Checks_cm__cxx17__check.cpp
+    patch-Source_Modules_CMakeBuildUtilities.cmake
+    patch-Source_QtDialog_CMakeLists.txt
     patch-Source_kwsys_ProcessUNIX.c
-    patch-Source_Checks_cm__cxx17__check.cpp'
+    patch-Tests_CMakeLists.txt
+    patch-Utilities_KWIML_CMakeLists.txt
+    patch-bootstrap'
 
     for f in $LIST
     do
