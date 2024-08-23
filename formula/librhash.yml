@@ -1,4 +1,4 @@
-summary: Utility for computing and verifying hash sums of files
+summary: Library for computing and verifying hash sums of files
 web-url: http://rhash.sourceforge.net
 git-url: https://github.com/rhash/RHash
 src-url: https://github.com/rhash/RHash/archive/v1.4.4.tar.gz
@@ -16,7 +16,7 @@ install: |
         --prefix=$PACKAGE_INSTALL_DIR \
         --enable-static \
         --enable-lib-static \
-        --disable-lib-shared
+        --enable-lib-shared
     gmakew clean
-    gmakew
-    gmakew install-binary install-man install-conf
+    gmakew lib-shared lib-static
+    gmakew install-lib-headers install-lib-static install-lib-shared install-pkg-config

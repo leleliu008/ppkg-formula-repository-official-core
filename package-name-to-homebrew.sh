@@ -167,6 +167,7 @@ case $1 in
     libpcre2) printf '%s\n' 'pcre2'     ;;
     libexpat) printf '%s\n' 'expat'     ;;
     libmhash) printf '%s\n' 'mhash'     ;;
+    librhash) printf '%s\n' 'rhash'     ;;
     liblcms2) printf '%s\n' 'little-cms2' ;;
     libaften) printf '%s\n' 'aften'     ;;
     libsdl2)  printf '%s\n' 'sdl2'      ;;
