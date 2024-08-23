@@ -6,8 +6,15 @@ src-sha: da448ed4f52aba6bcb0cd48cac0dd51b8692bccc4cd127431402fca6f8171e8e
 license: LGPL-2.1-or-later
 dep-pkg: libpng
 
+dopatch: |
+    sedInPlace 's|PNG::PNG|PNG::PNG -lm|' CMakeLists.txt
+    sedInPlace '/install(FILES /d'        CMakeLists.txt
+    sedInPlace '/install(TARGETS /d'      CMakeLists.txt
+
 install: |
     cmakew \
         -DWITH_TOOLS=ON \
         -DWITH_TESTS=OFF \
         -DWITHOUT_PNG=OFF
+    install_bins qrencode
+    install_mans qrencode.1
