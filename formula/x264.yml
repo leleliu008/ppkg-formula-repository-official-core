@@ -8,9 +8,13 @@ license: GPL-2.0-only
 dopatch: sedInPlace '1c \#!/usr/bin/env bash' configure
 
 install: |
-    configure \
+    configure only \
         --disable-asm \
         --enable-cli \
         --enable-pic \
         --enable-lto \
-        --enable-strip
+        --enable-strip \
+        --enable-static \
+        --disable-shared
+    gmakew x264
+    install_bins x264
