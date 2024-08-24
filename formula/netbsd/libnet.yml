@@ -1,0 +1,9 @@
+summary: A portable C library for low-level network packet construction
+git-url: https://github.com/libnet/libnet
+src-url: https://github.com/libnet/libnet/releases/download/v1.2/libnet-1.2.tar.gz
+src-sha: caa4868157d9e5f32e9c7eac9461efeff30cb28357f7f6bf07e73933fb4edaa7
+license: BSD-2-Clause
+
+prepare: export CPPFLAGS="$CPPFLAGS -D__int64_t=int64_t"
+
+install: configure --with-link-layer=bpf

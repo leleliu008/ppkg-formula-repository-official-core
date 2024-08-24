@@ -1,10 +1,12 @@
-summary: C library for creating IP packets
+summary: A portable C library for low-level network packet construction
 git-url: https://github.com/libnet/libnet
 src-url: https://github.com/libnet/libnet/releases/download/v1.3/libnet-1.3.tar.gz
 src-sha: ad1e2dd9b500c58ee462acd839d0a0ea9a2b9248a1287840bc601e774fb6b28f
 license: BSD-2-Clause
-install: |
+
+prepare: |
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export CPPFLAGS="$CPPFLAGS -D__int64_t=uint64_t"
     fi
-    configure --enable-samples
+
+install: configure --enable-samples
