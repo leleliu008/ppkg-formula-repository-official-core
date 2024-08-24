@@ -5,9 +5,15 @@ src-url: https://www.tcpdump.org/release/tcpdump-4.99.4.tar.gz
 src-sha: 0232231bb2f29d6bf2426e70a08a7e0c63a0d59a9b44863b7f5e2357a6e49fea
 license: BSD-3-Clause
 dep-pkg: libpcap
+
 install: |
     cmakew \
         -DWITH_CRYPTO=ON \
         -DWITH_SMI=OFF \
         -DWITH_CAP_NG=OFF \
         -DENABLE_SMB=OFF
+
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
+        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lpthread"
+    fi
