@@ -142,6 +142,10 @@ case $1 in
               printf '%s\n' 'physfs'    ;;
     libtalloc)
               printf '%s\n' 'talloc'    ;;
+    libgnutls)
+              printf '%s\n' 'gnutls'    ;;
+    libnettle)
+              printf '%s\n' 'nettle'    ;;
     libSvtAv1)
               printf '%s\n' 'svt-av1'   ;;
     libspeexdsp)

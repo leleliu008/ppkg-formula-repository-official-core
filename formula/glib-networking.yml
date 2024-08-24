@@ -3,7 +3,7 @@ web-url: https://gitlab.gnome.org/GNOME/glib-networking.git
 src-url: https://download.gnome.org/sources/glib-networking/2.76/glib-networking-2.76.0.tar.xz
 src-sha: 149a05a179e629a538be25662aa324b499d7c4549c5151db5373e780a1bf1b9a
 license: LGPL-2.1-or-later
-dep-pkg: gsettings-desktop-schemas gnutls
+dep-pkg: gsettings-desktop-schemas libgnutls
 install: |
     mesonw \
         -Dopenssl=disabled \
