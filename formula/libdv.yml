@@ -2,8 +2,15 @@ summary: Codec for DV video encoding format
 web-url: https://libdv.sourceforge.io
 src-url: https://downloads.sourceforge.net/project/libdv/libdv/1.0.0/libdv-1.0.0.tar.gz
 src-sha: a305734033a9c25541a59e8dd1c254409953269ea7c710c39e540bd8853389ba
-dep-pkg: popt
+dep-pkg: libpopt
 binbstd: 1
+
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
+        # https://mail-index.netbsd.org/tech-pkg/2003/08/08/0007.html
+        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lossaudio"
+    fi
+
 install: |
     configure \
         --disable-sdltest \

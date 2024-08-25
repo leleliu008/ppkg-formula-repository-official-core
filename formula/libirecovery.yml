@@ -6,8 +6,3 @@ src-sha: 74448348f8a68b654015fe1952fdc4e0781db20dcf4e1d85ec97d6f91e95eb14
 license: LGPL-2.1-only
 dep-pkg: libimobiledevice-glue libusb readline
 bsystem: configure
-dopatch2: |
-    if [ -e ../lib/libreadline.a ] ; then
-        rm  ../lib/libreadline.a
-        printf 'INPUT(%s %s)\n' "$readline_LIBRARY_DIR/libreadline.a" "$(pkg-config --libs-only-l readline | sed 's|-lreadline||g')" > ../lib/libreadline.a
-    fi
