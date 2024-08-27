@@ -1,11 +1,11 @@
 summary: Berkeley Packet Filter library
 git-url: https://github.com/libbpf/libbpf
-src-url: https://github.com/libbpf/libbpf/archive/refs/tags/v1.3.0.tar.gz
-src-sha: 11db86acd627e468bc48b7258c1130aba41a12c4d364f78e184fd2f5a913d861
+src-url: https://github.com/libbpf/libbpf/archive/refs/tags/v1.4.5.tar.gz
+src-sha: e225c1fe694b9540271b1f2f15eb882c21c34511ba7b8835b0a13003b3ebde8c
 license: BSD-2-Clause
-dep-pkg: elfutils libz
+dep-pkg: libelf
 bscript: src
-binbstd: 1
+
 install: |
     gmakew clean
     gmakew install PREFIX=$PACKAGE_INSTALL_DIR LIBDIR=$PACKAGE_INSTALL_DIR/lib

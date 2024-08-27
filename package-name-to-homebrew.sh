@@ -211,6 +211,7 @@ case $1 in
     libtbb)   printf '%s\n' 'tbb'       ;;
     libsrt)   printf '%s\n' 'srt'       ;;
     libwv2)   printf '%s\n' 'wv2'       ;;
+    libelf)   printf '%s\n' 'elfutils'  ;;
     libdb)    printf '%s\n' 'berkeley-db' ;;
     libz3)    printf '%s\n' 'z3'        ;;
     libz)     printf '%s\n' 'zlib'      ;;

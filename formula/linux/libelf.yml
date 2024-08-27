@@ -1,11 +1,10 @@
-pkgtype: pie
-summary: utilities and libraries to read, create and modify ELF binary files
+summary: C library to read, create and modify ELF binary files
 git-url: git://sourceware.org/git/elfutils.git
 web-url: https://sourceware.org/elfutils
 src-url: https://sourceware.org/elfutils/ftp/0.191/elfutils-0.191.tar.bz2
 src-sha: df76db71366d1d708365fc7a6c60ca48398f14367eb2b8954efc8897147ad871
 license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
-dep-pkg: libzstd liblzma libbz2 libz argp-standalone musl-obstack musl-fts
+dep-pkg: libz
 dep-upp: gm4
 ccflags: -Wno-error
 
@@ -14,18 +13,22 @@ dopatch: |
     sedInPlace '/dgettext/d'   lib/eu-config.h
     sedInPlace '/N_(Str/a #define _(Str) Str' lib/eu-config.h
 
-install: |
+prepare: |
     # FNM_EXTMATCH is a GNU externsion, musl does not define it
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export CPPFLAGS="$CPPFLAGS -DFNM_EXTMATCH=0"
     fi
 
-    configure \
-        --program-prefix=elfutils- \
+install: |
+    configure only \
         --disable-libdebuginfod \
         --disable-debuginfod \
         --enable-install-elfh \
-        --with-zstd \
-        --with-lzma \
-        --with-zlib \
-        --with-bzlib
+        --with-zlib="$libz_INSTALL_DIR" \
+        --without-zstd \
+        --without-lzma \
+        --without-bzlib
+    gmake -C lib
+    gmake -C libelf
+    gmake -C libelf install
+    install_pcfs config/libelf.pc
