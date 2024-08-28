@@ -1,8 +1,7 @@
 summary: Music related metadata search engine with command-line interface and C API
 web-url: https://github.com/sahib/glyr
-src-url: https://github.com/sahib/glyr/archive/3df20bd653ebf8fed7fe52a7988409f017958817.tar.gz
+src-url: https://github.com/sahib/glyr/archive/refs/tags/1.0.10.tar.gz
 src-sha: 1068cf0d6dd301c5cbfa6417f1e49e586867dcb797436dd014e0bde673a69833
-version: 1.0.11
 license: LGPL-3.0-or-later
 dep-pkg: glib libsqlite3 libcurl libexecinfo
 bsystem: cmake
@@ -12,4 +11,13 @@ dopatch: |
     sedInPlace 's|CURL_LIBRARY|CURL_LIBRARIES|' lib/CMakeLists.txt
     sedInPlace 's|SHARED|STATIC|' lib/CMakeLists.txt
 
-prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -L$libexecinfo_LIBRARY_DIR"
+prepare: |
+    # https://www.gnu.org/software/gnulib/manual/html_node/execinfo_002eh.html
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -L$libexecinfo_LIBRARY_DIR -lexecinfo"
+    fi
+
+    # # https://man.netbsd.org/backtrace.3
+    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
+        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lexecinfo"
+    fi
