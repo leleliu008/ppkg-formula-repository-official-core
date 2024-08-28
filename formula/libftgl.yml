@@ -1,0 +1,29 @@
+summary: A free cross-platform Open Source C++ library that uses freetype2 to simplify rendering fonts in OpenGL applications
+web-url: https://sourceforge.net/projects/ftgl/
+git-url: https://github.com/frankheckenbach/ftgl
+src-url: https://github.com/frankheckenbach/ftgl/archive/refs/tags/v2.4.0.tar.gz
+src-sha: aa97da1c3442a8fd3941037655df18016d70b5266381c81d81e8b5335f196ea8
+license: MIT
+dep-pkg: libfreetype
+
+dopatch: sedInPlace '/FTLibrary\.h/d' src/CMakeLists.txt
+
+install: |
+    cmakew -DBUILD_SHARED_LIBS=OFF
+    cmakew -DBUILD_SHARED_LIBS=ON
+
+dotweak: |
+    install -d lib/pkgconfig
+    cat >      lib/pkgconfig/ftgl.pc <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include
+
+    Name: ftgl
+    Description: $PACKAGE_SUMMARY
+    Version: $PACKAGE_VERSION
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lftgl
+    Requires: freetype2
+    EOF

@@ -174,6 +174,7 @@ case $1 in
     librhash) printf '%s\n' 'rhash'     ;;
     liblcms2) printf '%s\n' 'little-cms2' ;;
     libaften) printf '%s\n' 'aften'     ;;
+    libftgl)  printf '%s\n' 'ftgl'      ;;
     libsdl2)  printf '%s\n' 'sdl2'      ;;
     libmujs)  printf '%s\n' 'mujs'      ;;
     libpcre)  printf '%s\n' 'pcre'      ;;
