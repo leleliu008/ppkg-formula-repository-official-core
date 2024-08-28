@@ -4,7 +4,7 @@ src-uri: http://mama.indstate.edu/users/ice/tree/src/tree-2.1.1.tgz
 src-url: https://fossies.org/linux/misc/tree-2.1.1.tgz
 src-sha: d3c3d55f403af7c76556546325aa1eca90b918cbaaf6d3ab60a49d8367ab90d5
 license: GPL-2.0-or-later
-binbstd: 1
+
 install: |
     gmakew clean
     gmakew install \

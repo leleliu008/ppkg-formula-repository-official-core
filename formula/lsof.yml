@@ -7,7 +7,7 @@ license: Zlib
 dep-pkg: libtirpc
 dep-upp: perl
 bsystem: gmake
-binbstd: 1
+
 install: |
     export LSOF_MAKE=gmake
     export LSOF_CC="$CC"
