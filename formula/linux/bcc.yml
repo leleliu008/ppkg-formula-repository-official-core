@@ -1,0 +1,4 @@
+summary: Tools for BPF-based Linux IO analysis, networking, monitoring, and more
+git-url: https://github.com/iovisor/bcc
+dep-upp: gm4 flex bison
+bsystem: cmake
