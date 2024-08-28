@@ -1,7 +1,7 @@
 summary: Music related metadata search engine with command-line interface and C API
 web-url: https://github.com/sahib/glyr
 src-url: https://github.com/sahib/glyr/archive/refs/tags/1.0.10.tar.gz
-src-sha: 1068cf0d6dd301c5cbfa6417f1e49e586867dcb797436dd014e0bde673a69833
+src-sha: 77e8da60221c8d27612e4a36482069f26f8ed74a1b2768ebc373c8144ca806e8
 license: LGPL-3.0-or-later
 dep-pkg: glib libsqlite3 libcurl libexecinfo
 bsystem: cmake
