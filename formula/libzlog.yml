@@ -5,7 +5,7 @@ src-sha: 3977dc8ea0069139816ec4025b320d9a7fc2035398775ea91429e83cb0d1ce4e
 license: LGPL-2.1-or-later
 bscript: src
 
-dopatch: sedInPlace '/cp -f/d' makefile
+dopatch: sedInPlace '/cp -f/d' Makefile
 
 install: |
     gmakew clean
