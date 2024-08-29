@@ -6,7 +6,7 @@ license: AGPL-3.0-only
 
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        sedInPlace 's|__OpenBSD__|__NetBSD__|' src/mold-wrapper.c
+        sedInPlace 's|__OpenBSD__|__NetBSD__|' elf/mold-wrapper.c
     fi
 
 install: |
