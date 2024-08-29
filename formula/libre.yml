@@ -7,6 +7,6 @@ dep-pkg: libopenssl libz
 bsystem: cmake
 
 dopatch: |
-    if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         sedInPlace 's|AI_V4MAPPED|0|' src/ice/icesdp.c
     fi
