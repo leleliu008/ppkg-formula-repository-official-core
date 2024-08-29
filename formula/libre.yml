@@ -6,7 +6,7 @@ license: BSD-3-Clause
 dep-pkg: libopenssl libz
 bsystem: cmake
 
-prepare: |
+dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
-        export CPPFLAGS="$CPPFLAGS -DAI_V4MAPPED=0"
+        sedInPlace 's|AI_V4MAPPED|0|' src/ice/icesdp.c
     fi
