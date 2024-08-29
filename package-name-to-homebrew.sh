@@ -25,6 +25,8 @@ case $1 in
     msgpack-c)printf '%s\n' 'msgpack'   ;;
     freetype2-with-harfbuzz)
               printf '%s\n' 'freetype'  ;;
+    zlog-chk-conf)
+              printf '%s\n' 'zlog'      ;;
     golang@1.21)
               printf '%s\n' 'go@1.21'   ;;
     golang)   printf '%s\n' 'go'        ;;
