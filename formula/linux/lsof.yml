@@ -4,11 +4,11 @@ git-url: https://github.com/lsof-org/lsof
 src-url: https://github.com/lsof-org/lsof/archive/refs/tags/4.99.3.tar.gz
 src-sha: b9c56468b927d9691ab168c0b1e9f8f1f835694a35ff898c549d383bd8d09bd4
 license: Zlib
+dep-pkg: libtirpc
 dep-upp: perl
 bsystem: gmake
 
 install: |
-    export LSOF_INCLUDE="$SDKROOT/usr/include"
     export LSOF_MAKE=gmake
     export LSOF_CC="$CC"
     export LSOF_AR="$AR rsc"
@@ -16,8 +16,10 @@ install: |
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
     export LSOF_CFGL="$LDFLAGS"
     
+    sedInPlace '1c #!/bin/sh' lib/dialects/linux/Mksrc
+
     run ./Configure -clean
-    run ./Configure -n darwin
+    run ./Configure -n linux
     gmakew
     run install_bins lsof
     run install_mans Lsof.8
