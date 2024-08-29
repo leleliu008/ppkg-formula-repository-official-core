@@ -5,3 +5,9 @@ src-sha: 4d1579cbb902aef46e561c3cd4cf2ed74148d84e1c79d9e42b4892c882fce88b
 license: GPL-2.0-or-later
 dep-pkg: libxapian libzstd liblzma icu4c
 bsystem: meson
+
+prepare: |
+    case $TARGET_PLATFORM_NAME in
+        netbsd)
+            export CPPFLAGS="$CPPFLAGS -DMAP_POPULATE=0"
+    esac
