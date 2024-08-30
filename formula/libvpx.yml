@@ -1,15 +1,15 @@
 summary: VP8/VP9 video codec
 web-url: https://www.webmproject.org/code/
 git-url: https://github.com/webmproject/libvpx
-src-url: https://github.com/webmproject/libvpx/archive/refs/tags/v1.13.1.tar.gz
-src-sha: 00dae80465567272abd077f59355f95ac91d7809a2d3006f9ace2637dd429d14
+src-url: https://github.com/webmproject/libvpx/archive/refs/tags/v1.14.1.tar.gz
+src-sha: 901747254d80a7937c933d03bd7c5d41e8e6c883e0665fadcb172542167c7977
 license: BSD-3-Clause
 dep-upp: nasm diffutils perl
 bsystem: gmake
+
 install: |
     case $TARGET_PLATFORM_ARCH in
-        i686)    export AS=nasm ;;
-        x86_64)  export AS=nasm ;;
+        i686|x86_64)  export AS=nasm
     esac
 
     case $TARGET_PLATFORM_NAME-$TARGET_PLATFORM_ARCH in
