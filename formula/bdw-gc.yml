@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Garbage collector for C and C++
 web-url: https://www.hboehm.info/gc/
 git-url: https://github.com/ivmai/bdwgc
