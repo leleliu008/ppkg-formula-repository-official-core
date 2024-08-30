@@ -15,7 +15,14 @@ dep-pkg: libz libopenssl
 
 parallel: 0
 
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        SYS=darwin
+    else
+        SYS=posix
+    fi
+
 install: |
-    gmakew -C librtmp clean   SYS=darwin
-    gmakew -C librtmp         SYS=darwin CC="$CC" LD="$LD" AR="$AR" OPT= XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'"
-    gmakew -C librtmp install SYS=darwin prefix="$PACKAGE_INSTALL_DIR"
+    gmakew -C librtmp clean   SYS=$SYS
+    gmakew -C librtmp         SYS=$SYS CC="$CC" LD="$LD" AR="$AR" OPT= XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'"
+    gmakew -C librtmp install SYS=$SYS prefix="$PACKAGE_INSTALL_DIR"

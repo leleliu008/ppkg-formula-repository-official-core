@@ -12,10 +12,10 @@ fix-opt: -p0
 version: 2.4+20151223
 license: GPL-2.0-or-later
 dep-pkg: libz libopenssl
-binbstd: 1
+
 parallel: 0
 
-install: |
+prepare: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         SYS=darwin
     else
@@ -25,6 +25,7 @@ install: |
     OPENSSL_LIBS="$(pkg-config --libs openssl)"
     printf 'OPENSSL_LIBS=%s\n' "$OPENSSL_LIBS"
 
+install: |
     gmakew clean   SYS=$SYS
     gmakew         SYS=$SYS CC=$CC LD=$LD CRYPTO=OPENSSL LIB_OPENSSL="'$OPENSSL_LIBS -lz'" OPT= XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'"
     gmakew install SYS=$SYS prefix="$PACKAGE_INSTALL_DIR" mandir="$PACKAGE_INSTALL_DIR/share/man"
