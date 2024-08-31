@@ -1,0 +1,10 @@
+summary: A command-line option parsing utility
+web-url: https://frodo.looijaard.name/project/getopt
+src-url: https://frodo.looijaard.name/system/files/software/getopt/getopt-1.1.6.tar.gz
+src-sha: d0bf1dc642a993e7388a1cddfb9409bed375c21d5278056ccca3a0acd09dc5fe
+
+install: |
+    gmakew clean
+    gmakew getopt "CC=$CC" "LD=$LD" WITHOUT_GETTEXT=1 LIBCGETOPT=0
+    install_bins getopt
+    install_mans getopt.1
