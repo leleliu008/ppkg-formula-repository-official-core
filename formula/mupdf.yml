@@ -6,6 +6,7 @@ src-sha: 478f2a167feae2a291c8b8bc5205f2ce2f09f09b574a6eb0525bfad95a3cfe66
 license: AGPL-3.0-or-later
 dep-pkg: libmujs libopenssl libopenjpeg libjpeg-turbo libjbig2dec libharfbuzz gumbo-parser
 
+dep-upp: patch
 dopatch: |
     for item in $(find thirdparty -maxdepth 1 -mindepth 1 -type d)
     do
@@ -13,6 +14,11 @@ dopatch: |
         [ "$item" = thirdparty/lcms2 ]   && continue
         run rm -rf "$item"
     done
+
+    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
+        wfetch "https://raw.githubusercontent.com/NetBSD/pkgsrc/trunk/print/mupdf/patches/patch-source_fitz_crypt-sha2.c"
+        patch -p0 < patch-source_fitz_crypt-sha2.c
+    fi
 
 install: |
     gmakew clean
