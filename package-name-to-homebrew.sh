@@ -60,6 +60,8 @@ case $1 in
               printf '%s\n' 'jpeg-turbo';;
     libflatbuffers|flatc)
               printf '%s\n' 'flatbuffers' ;;
+    libprotobuf.a)
+              printf '%s\n' 'protobuf'  ;;
     libprotobuf)
               printf '%s\n' 'protobuf'  ;;
     libmimalloc)
