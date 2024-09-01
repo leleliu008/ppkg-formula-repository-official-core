@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Lightweight unit testing framework for C
 web-url: https://cunit.sourceforge.io
 src-url: https://downloads.sourceforge.net/project/cunit/CUnit/2.1-3/CUnit-2.1-3.tar.bz2
@@ -15,7 +16,7 @@ dopatch: |
     sedInPlace 's/install-data-am: install-dochdrDATA/install-data-am: /' doc/headers/Makefile.in
 
 install: |
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+    if [ "$TARGET_PLATFORM_NAME" = macos ] || [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         CONFIGURE_EXTRA_ARGS=--disable-curses
     else
         CONFIGURE_EXTRA_ARGS=--enable-curses
