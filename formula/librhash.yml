@@ -6,6 +6,14 @@ src-sha: 8e7d1a8ccac0143c8fe9b68ebac67d485df119ea17a613f4038cda52f84ef52a
 license: 0BSD
 bsystem: gmake
 
+dep-upp: patch
+dopatch: |
+    [ "$TARGET_PLATFORM_NAME" = linux ] && return 0
+    [ "$TARGET_PLATFORM_NAME" = macos ] && return 0
+    # https://github.com/rhash/RHash/issues/238
+    wfetch https://github.com/rhash/RHash/commit/9ef90b958b7ae50aeeb5c269468034d73d6e2efe.diff
+    patch -p1 < 9ef90b958b7ae50aeeb5c269468034d73d6e2efe.diff
+
 install: |
     run ./configure \
         --cc=$CC \
