@@ -9,4 +9,5 @@ bsystem: cmake
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         sedInPlace 's|AI_V4MAPPED|0|' src/ice/icesdp.c
+        sedInPlace '/pthread_setname_np/s|);|, NULL);|' src/thread/thread.c
     fi
