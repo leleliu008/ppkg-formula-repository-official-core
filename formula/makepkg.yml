@@ -6,4 +6,10 @@ src-url: https://gitlab.archlinux.org/pacman/pacman/-/releases/v6.1.0/downloads/
 src-sha: 5a60ac6e6bf995ba6140c7d038c34448df1f3daa4ae7141d2cad88eeb5f1f9d9
 license: GPL-2.0-or-later
 dep-pkg: libxslt libarchive libopenssl
-install: mesonw -Ddoc=disabled -Di18n=false
+install: |
+    mesonw \
+        -Ddoc=disabled \
+        -Di18n=false \
+        -Dmakepkg-template-dir=$PACKAGE_INSTALL_DIR/share/makepkg-template \
+        -Dsysconfdir=$PACKAGE_INSTALL_DIR/etc \
+        -Dlocalstatedir=$PACKAGE_INSTALL_DIR/var
