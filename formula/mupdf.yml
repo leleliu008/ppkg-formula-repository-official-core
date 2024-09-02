@@ -16,7 +16,7 @@ dopatch: |
     done
 
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        wfetch "https://raw.githubusercontent.com/NetBSD/pkgsrc/trunk/print/mupdf/patches/patch-source_fitz_crypt-sha2.c"
+        wfetch https://raw.githubusercontent.com/NetBSD/pkgsrc/trunk/print/mupdf/patches/patch-source_fitz_crypt-sha2.c
         patch -p0 < patch-source_fitz_crypt-sha2.c
     fi
 
