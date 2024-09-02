@@ -23,6 +23,10 @@ dopatch: |
     fi
 
 prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
+        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lstdc++"
+    fi
+
     unset GMAKE_EXTRA_ARGS
 
     for KV in FREETYPE:freetype2 HARFBUZZ:harfbuzz OPENJPEG:libopenjp2 GUMBO:gumbo
