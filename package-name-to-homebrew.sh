@@ -163,6 +163,8 @@ case $1 in
     libcares) printf '%s\n' 'c-ares'    ;;
     libfolly) printf '%s\n' 'folly'     ;;
     libbotan) printf '%s\n' 'botan'     ;;
+    libgumbo) printf '%s\n' 'gumbo-parser' ;;
+    libmupdf) printf '%s\n' 'mupdf'     ;;
     libImath) printf '%s\n' 'imath'     ;;
     libproj)  printf '%s\n' 'proj'      ;;
     libsrtp)  printf '%s\n' 'srtp'      ;;

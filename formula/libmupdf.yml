@@ -1,4 +1,4 @@
-summary: Lightweight PDF and XPS viewer
+summary: The ultimate library for managing PDF documents
 git-url: git://git.ghostscript.com/mupdf.git
 web-url: https://mupdf.com/
 src-url: https://mupdf.com/downloads/archive/mupdf-1.23.11-source.tar.gz
@@ -38,9 +38,9 @@ prepare: |
 
 install: |
     gmakew clean
-    gmakew install-apps install-docs \
+    gmakew install-libs \
         build=release \
-        shared=no \
+        shared=yes \
         verbose=yes \
         prefix=$PACKAGE_INSTALL_DIR \
         CC=$CC \
