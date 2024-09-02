@@ -7,4 +7,4 @@ license: BSD-2-Clause
 
 install: |
     gmakew -C lib clean
-    gmakew -C lib install PREFIX="$PACKAGE_INSTALL_DIR" CC="$CC" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" V=1 BUILD_STATIC=yes BUILD_SHARED=yes
+    gmakew -C lib install PREFIX="$PACKAGE_INSTALL_DIR" CC="$CC" CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'" AR="$AR" V=1 BUILD_STATIC=yes BUILD_SHARED=yes PKGCONFIGDIR="$PACKAGE_INSTALL_DIR/lib/pkgconfig"
