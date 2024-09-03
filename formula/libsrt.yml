@@ -10,6 +10,10 @@ dopatch: |
     sedInPlace 's|RUNTIME DESTINATION|RUNTIME EXCLUDE_FROM_ALL DESTINATION|' CMakeLists.txt
     sedInPlace 's|scripts/srt-ffplay|scripts/srt-ffplay EXCLUDE_FROM_ALL|'   CMakeLists.txt
 
+    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
+        sedInPlace 's|, name)|, name, NULL)|' srtcore/threadname.h
+    fi
+
 install: |
     cmakew \
         -DENABLE_APPS=OFF \
