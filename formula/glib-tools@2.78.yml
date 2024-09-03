@@ -1,0 +1,42 @@
+summary: A general-purpose, portable utility library which provides many useful data types, macros, type conversions, string utilities, file utilities, a mainloop abstraction, and so on
+web-url: https://developer.gnome.org/glib
+git-url: https://github.com/GNOME/glib
+src-url: https://download.gnome.org/sources/glib/2.78/glib-2.78.4.tar.xz
+src-uri: https://distfiles.macports.org/glib2/glib-2.78.4.tar.xz
+src-sha: 24b8e0672dca120cc32d394bccb85844e732e04fe75d18bb0573b2dbc7548f63
+license: LGPL-2.1-or-later
+dep-pkg: libpcre2 libintl libffi libz
+
+dopatch: |
+    sedInPlace "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
+
+    sedInPlace "/libffi_dep =/c libffi_dep = cc.find_library('ffi', static : true, dirs: ['$libffi_LIBRARY_DIR'])" meson.build
+    sedInPlace "/libiconv =/c libiconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
+    sedInPlace "/libz_dep =/c libz_dep = cc.find_library('z', static : true, dirs : ['$libz_LIBRARY_DIR'])" meson.build
+
+    sedInPlace '2139,2165d'  meson.build
+    sedInPlace "2138a libintl = cc.find_library('intl',  dirs: ['$libintl_LIBRARY_DIR'])" meson.build
+
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        sedInPlace "2139a core_foundation = dependency('CoreFoundation', method : 'extraframework')" meson.build
+        sedInPlace '2140a libintl_deps = [libintl, libiconv, core_foundation]' meson.build
+    else
+        sedInPlace '2139a libintl_deps = [libintl, libiconv]' meson.build
+    fi
+
+install: |
+    mesonw \
+        -Ddefault_library=static \
+        -Dnls=disabled \
+        -Dman=false \
+        -Dgtk_doc=false \
+        -Ddtrace=false \
+        -Dglib_debug=disabled \
+        -Dglib_assert=false \
+        -Dtests=false \
+        -Dinstalled_tests=false \
+        -Dbsymbolic_functions=false
+
+dotweak: |
+    rm -rf include/
+    rm -rf lib/
