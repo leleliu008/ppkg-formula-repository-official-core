@@ -1,5 +1,4 @@
 summary: Disk usage analyzer with console interface written in Go
-git-url: https://github.com/dundee/gdu
 src-url: https://github.com/dundee/gdu/archive/refs/tags/v5.27.0.tar.gz
 src-sha: ea337207adea2860445f8a4b50a05045fd0a9055236e91a3e70c3462fc9e199f
 license: MIT

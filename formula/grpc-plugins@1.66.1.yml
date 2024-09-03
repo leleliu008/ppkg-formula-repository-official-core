@@ -1,6 +1,5 @@
 summary: grpc plugins
 web-url: https://grpc.io
-git-url: https://github.com/grpc/grpc
 src-url: https://github.com/grpc/grpc/archive/refs/tags/v1.66.1.tar.gz
 src-sha: 79ed4ab72fa9589b20f8b0b76c16e353e4cfec1d773d33afad605d97b5682c61
 license: Apache-2.0

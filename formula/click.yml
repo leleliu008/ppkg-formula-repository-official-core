@@ -1,5 +1,4 @@
 summary: Command-line interactive controller for Kubernetes
-git-url: https://github.com/databricks/click
 src-url: https://github.com/databricks/click/archive/refs/tags/v0.6.3.tar.gz
 src-sha: da64d1d205b6136f318dea967eec4e9d67569be8f332875afcc6b31c9a0ef1b7
 license: Apache-2.0

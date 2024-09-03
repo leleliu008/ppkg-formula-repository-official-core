@@ -1,6 +1,5 @@
 summary: A set of command-line tools to create, edit and convert fonts in OpenType, TrueType, UFO, CID-keyed, Multiple Master, and many other formats
 web-url: https://fontforge.github.io
-git-url: https://github.com/fontforge/fontforge
 src-url: https://github.com/fontforge/fontforge/releases/download/20230101/fontforge-20230101.tar.xz
 src-sha: ca82ec4c060c4dda70ace5478a41b5e7b95eb035fe1c4cf85c48f996d35c60f8
 license: GPL-3.0-or-later

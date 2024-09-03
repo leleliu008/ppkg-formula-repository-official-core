@@ -1,5 +1,4 @@
 summary: A command-line tool to generate HTML files from ELF files
-git-url: https://github.com/ruslashev/elfcat
 src-url: https://github.com/ruslashev/elfcat/archive/refs/tags/0.1.8.tar.gz
 src-sha: 91673c29ce9c91545cf4c5e0205a9753c1370d6fc05be4670fb63218a601db2b
 license: Zlib

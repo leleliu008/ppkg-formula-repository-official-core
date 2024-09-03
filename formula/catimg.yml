@@ -1,5 +1,4 @@
 summary: Insanely fast image printing in your terminal
-git-url: https://github.com/posva/catimg
 src-url: https://github.com/posva/catimg/archive/2.7.0.tar.gz
 src-sha: 3a6450316ff62fb07c3facb47ea208bf98f62abd02783e88c56f2a6508035139
 license: MIT

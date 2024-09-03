@@ -1,5 +1,4 @@
 summary: A security-aware parser for the HTTP protocol and the related bits and pieces
-git-url: https://github.com/OISF/libhtp
 src-url: https://github.com/OISF/libhtp/archive/refs/tags/0.5.48.tar.gz
 src-sha: 7f0719732fd0c82f9915e3df27e31548798590ad624fbad24f58b50885248ab8
 license: BSD-3-Clause

@@ -1,5 +1,4 @@
 summary: Execute commands when watched files change
-git-url: https://github.com/watchexec/watchexec
 src-url: https://github.com/watchexec/watchexec/archive/refs/tags/v2.1.2.tar.gz
 src-sha: 500b886038ccd553559fe19914e1a502728cfeb8ee9d81f3db448b05e5a890ec
 license: Apache-2.0

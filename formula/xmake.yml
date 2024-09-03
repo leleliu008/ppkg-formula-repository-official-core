@@ -1,6 +1,5 @@
 summary: A cross-platform build utility based on Lua
 web-url: https://xmake.io/
-git-url: https://github.com/xmake-io/xmake
 src-url: https://github.com/xmake-io/xmake/releases/download/v2.9.4/xmake-v2.9.4.tar.gz
 src-sha: 75e2dde2bd2a48a332989b801ae65077c452d491fec517a9db27a81c8713cdc5
 license: Apache-2.0

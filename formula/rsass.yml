@@ -1,5 +1,4 @@
 summary: Sass reimplemented in rust with nom
-git-url: https://github.com/kaj/rsass
 src-url: https://github.com/kaj/rsass/archive/refs/tags/v0.25.2.tar.gz
 src-sha: 56828f6d5212a730260c20f69725f496fb21551a7515bb37e8fc52470556a1b9
 license: MIT

@@ -1,5 +1,4 @@
 summary: Linux virtual machines
-git-url: https://github.com/lima-vm/lima
 src-url: https://github.com/lima-vm/lima/archive/refs/tags/v0.21.0.tar.gz
 src-sha: 86ecdc2758b6afd55faa06918b7a506108e95fbdfd93aa18a0ef5e7b59b4e7b4
 license: Apache-2.0

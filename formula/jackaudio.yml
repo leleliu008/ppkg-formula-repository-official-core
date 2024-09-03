@@ -1,7 +1,6 @@
 pkgtype: lib
 summary: Audio Connection Kit
 web-url: https://jackaudio.org/
-git-url: https://github.com/jackaudio/jack2
 src-url: https://github.com/jackaudio/jack2/archive/refs/tags/v1.9.22.tar.gz
 src-sha: 1e42b9fc4ad7db7befd414d45ab2f8a159c0b30fcd6eee452be662298766a849
 license: GPL-2.0-or-later

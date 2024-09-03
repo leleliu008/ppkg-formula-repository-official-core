@@ -1,5 +1,4 @@
 summary: C++ library of embedded Rest HTTP server
-git-url: https://github.com/etr/libhttpserver
 src-url: https://github.com/etr/libhttpserver/archive/refs/tags/0.19.0.tar.gz
 src-sha: b108769ed68d72c58961c517ab16c3a64e4efdc4c45687723bb45bb9e04c5193
 license: LGPL-2.1-or-later

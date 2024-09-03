@@ -1,5 +1,4 @@
 summary: A JSON parser for C
-git-url: https://github.com/json-c/json-c
 src-url: https://github.com/json-c/json-c/archive/json-c-0.17.tar.gz
 src-sha: fc1b9ed57f4cda51c52ec9b3b012f6973bd8d80fb70f363c5ca2754342389eb1
 license: MIT

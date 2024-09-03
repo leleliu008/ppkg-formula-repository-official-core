@@ -1,5 +1,4 @@
 summary: High-performance C logging library
-git-url: https://github.com/HardySimpson/zlog
 src-url: https://github.com/HardySimpson/zlog/archive/refs/tags/1.2.18.tar.gz
 src-sha: 3977dc8ea0069139816ec4025b320d9a7fc2035398775ea91429e83cb0d1ce4e
 license: LGPL-2.1-or-later

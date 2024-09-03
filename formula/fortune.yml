@@ -1,5 +1,4 @@
 summary: A command-line utility for displaying a random quotation
-git-url: https://github.com/shlomif/fortune-mod
 src-url: https://github.com/shlomif/fortune-mod/releases/download/fortune-mod-3.22.0/fortune-mod-3.22.0.tar.xz
 src-sha: 069321bb4d4ae3abf55493d043cea06534dc93f1a2c29e86694d9edb1380a0e3
 dep-upp: xsltproc docbook-xsl

@@ -1,6 +1,5 @@
 summary: Video processing framework with simplicity in mind
 web-url: https://www.vapoursynth.com
-git-url: https://github.com/vapoursynth/vapoursynth
 src-url: https://github.com/vapoursynth/vapoursynth/archive/R65.tar.gz
 src-sha: 2bde5233b82d914b5e985119ed9cc344e3c27c3c068b5c4ab909176cd1751dce
 license: LGPL-2.1-or-later

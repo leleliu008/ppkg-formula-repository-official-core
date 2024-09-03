@@ -1,5 +1,4 @@
 summary: API and commands for processing SPIR-V modules
-git-url: https://github.com/KhronosGroup/SPIRV-Tools
 src-url: https://github.com/KhronosGroup/SPIRV-Tools/archive/v2023.2.tar.gz
 src-sha: 7416cc8a98a10c32bacc36a39930b0c5b2a484963df5d68f388ed7ffee1faad3
 license: Apache-2.0

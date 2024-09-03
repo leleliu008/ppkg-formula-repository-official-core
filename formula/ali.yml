@@ -1,5 +1,4 @@
 summary: Generate HTTP load and plot the results in real-time
-git-url: https://github.com/nakabonne/ali
 src-url: https://github.com/nakabonne/ali/archive/refs/tags/v0.7.5.tar.gz
 src-sha: 3eed2d7cbdf8365cad78833362e99138e7c0945d6dbc19e1253f8e0438a72f81
 license: MIT

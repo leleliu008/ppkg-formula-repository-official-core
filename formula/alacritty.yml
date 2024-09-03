@@ -1,6 +1,5 @@
 summary: A cross-platform, GPU-accelerated terminal emulator
 webpage: https://alacritty.org/
-git-url: https://github.com/alacritty/alacritty
 src-url: https://github.com/alacritty/alacritty/archive/refs/tags/v0.13.2.tar.gz
 src-sha: e9a54aabc92bbdc25ab1659c2e5a1e9b76f27d101342c8219cc98a730fd46d90
 license: Apache-2.0

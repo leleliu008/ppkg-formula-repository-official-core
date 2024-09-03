@@ -1,7 +1,6 @@
 pkgtype: lib
 summary: Garbage collector for C and C++
 web-url: https://www.hboehm.info/gc/
-git-url: https://github.com/ivmai/bdwgc
 src-url: https://github.com/ivmai/bdwgc/releases/download/v8.2.6/gc-8.2.6.tar.gz
 src-sha: b9183fe49d4c44c7327992f626f8eaa1d8b14de140f243edb1c9dcff7719a7fc
 license: MIT

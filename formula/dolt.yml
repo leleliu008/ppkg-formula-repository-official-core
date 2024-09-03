@@ -1,5 +1,4 @@
 summary: Git for Data
-git-url: https://github.com/dolthub/dolt
 src-url: https://github.com/dolthub/dolt/archive/refs/tags/v1.42.10.tar.gz
 src-sha: e7438c839958b76b35a5862419ecde3ab20c4dc8943fbdbab2403196f1fe6435
 license: Apache-2.0

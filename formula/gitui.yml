@@ -1,5 +1,4 @@
 summary: Blazing fast terminal-ui for git written in rust
-git-url: https://github.com/extrawurst/gitui
 src-url: https://github.com/extrawurst/gitui/archive/refs/tags/v0.26.2.tar.gz
 src-sha: c69eccba2457c53c18b933794aa4ff3dfecb71af42349282108354d543e4d956
 license: MIT

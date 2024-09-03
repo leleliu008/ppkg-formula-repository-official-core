@@ -1,5 +1,4 @@
 summary: A simple, fast and user-friendly alternative to find(1)
-git-url: https://github.com/sharkdp/fd
 src-url: https://github.com/sharkdp/fd/archive/refs/tags/v9.0.0.tar.gz
 src-sha: 306d7662994e06e23d25587246fa3fb1f528579e42a84f5128e75feec635a370
 license: Apache-2.0

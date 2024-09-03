@@ -1,6 +1,5 @@
 summary: Library for reading, processing and writing images
 web-url: https://openimageio.readthedocs.io/en/stable/
-git-url: https://github.com/AcademySoftwareFoundation/OpenImageIO
 src-url: https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v2.5.14.0.tar.gz
 src-sha: 0e74372c658f083820872311d126867f10d59b526a856672746de7b2c772034d
 license: Apache-2.0

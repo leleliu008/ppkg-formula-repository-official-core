@@ -1,6 +1,5 @@
 summary: Portable Computing Language
 web-url: http://portablecl.org/
-git-url: https://github.com/pocl/pocl
 src-url: https://github.com/pocl/pocl/archive/refs/tags/v5.0.tar.gz
 src-sha: fd0bb6e50c2286278c11627b71177991519e1f7ab2576bd8d8742974db414549
 license: MIT

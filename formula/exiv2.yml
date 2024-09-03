@@ -1,6 +1,5 @@
 summary: A command-line utility to read, write, delete and modify Exif, IPTC, XMP and ICC image metadata
 web-url: https://exiv2.org/
-git-url: https://github.com/Exiv2/exiv2
 src-url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.3.tar.gz
 src-sha: 1315e17d454bf4da3cc0edb857b1d2c143670f3485b537d0f946d9ed31d87b70
 license: GPL-2.0-or-later

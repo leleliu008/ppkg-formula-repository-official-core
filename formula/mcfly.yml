@@ -1,5 +1,4 @@
 summary: Fly through your shell history
-git-url: https://github.com/cantino/mcfly
 src-url: https://github.com/cantino/mcfly/archive/refs/tags/v0.9.2.tar.gz
 src-sha: bfb6ca73c6a03047e3c61edf2b3c770e24ddbb0720e2a7dad3ea13a759572bb6
 license: MIT

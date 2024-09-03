@@ -1,5 +1,4 @@
 summary: A high performance JSON library written in ANSI C
-git-url: https://github.com/ibireme/yyjson
 src-url: https://github.com/ibireme/yyjson/archive/refs/tags/0.8.0.tar.gz
 src-sha: b2e39ac4c65f9050820c6779e6f7dd3c0d3fed9c6667f91caec0badbedce00f3
 license: MIT

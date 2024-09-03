@@ -1,5 +1,4 @@
 summary: A git-compatible distributed version control system
-git-url: https://github.com/martinvonz/jj
 src-url: https://github.com/martinvonz/jj/archive/refs/tags/v0.20.0.tar.gz
 src-sha: b2c898ea224fe45df81c241bf1f0bc8e74c0988b8f549e894b15a38f2f4d6665
 license: Apache-2.0

@@ -1,7 +1,6 @@
 pkgtype: lib
 summary: C library for multimedia protocols such as SIP, SDP, RTP and more
 web-url: https://www.pjsip.org/
-git-url: https://github.com/pjsip/pjproject
 src-url: https://github.com/pjsip/pjproject/archive/refs/tags/2.14.1.tar.gz
 src-sha: 6140f7a97e318caa89c17e8d5468599671c6eed12d64a7c160dac879ba004c68
 license: GPL-2.0-or-later

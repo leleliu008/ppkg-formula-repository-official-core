@@ -1,6 +1,5 @@
 summary: Multi-platform support library with a focus on asynchronous I/O
 web-url: https://libuv.org/
-git-url: https://github.com/libuv/libuv
 src-url: https://github.com/libuv/libuv/archive/refs/tags/v1.48.0.tar.gz
 src-sha: 8c253adb0f800926a6cbd1c6576abae0bc8eb86a4f891049b72f9e5b7dc58f33
 license: MIT

@@ -1,5 +1,4 @@
 summary: Library for handling paper characteristics
-git-url: https://github.com/rrthomas/libpaper
 src-url: https://github.com/rrthomas/libpaper/releases/download/v2.2.5/libpaper-2.2.5.tar.gz
 src-sha: 7be50974ce0df0c74e7587f10b04272cd53fd675cb6a1273ae1cc5c9cc9cab09
 license: LGPL-2.1-or-later

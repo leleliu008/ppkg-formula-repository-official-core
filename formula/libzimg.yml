@@ -1,5 +1,4 @@
 summary: Scaling, colorspace conversion, and dithering library
-git-url: https://github.com/sekrit-twc/zimg
 src-url: https://github.com/sekrit-twc/zimg/archive/release-3.0.5.tar.gz
 src-sha: a9a0226bf85e0d83c41a8ebe4e3e690e1348682f6a2a7838f1b8cbff1b799bcf
 license: WTFPL

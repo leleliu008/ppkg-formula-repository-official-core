@@ -1,5 +1,4 @@
 summary: Modern Linker
-git-url: https://github.com/rui314/mold
 src-url: https://github.com/rui314/mold/archive/refs/tags/v2.33.0.tar.gz
 src-sha: 37b3aacbd9b6accf581b92ba1a98ca418672ae330b78fe56ae542c2dcb10a155
 license: AGPL-3.0-only

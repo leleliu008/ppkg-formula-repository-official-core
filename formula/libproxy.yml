@@ -1,6 +1,5 @@
 summary: Library that provides automatic proxy configuration management
 web-url: https://libproxy.github.io/libproxy/
-git-url: https://github.com/libproxy/libproxy
 src-url: https://github.com/libproxy/libproxy/archive/refs/tags/0.5.4.tar.gz
 src-sha: a6e2220349b2025de9b6d9d7f8bb347bf0c728f02a921761ad5f9f66c7436de9
 license: LGPL-2.1-or-later

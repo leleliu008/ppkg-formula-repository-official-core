@@ -1,5 +1,4 @@
 summary: Hardware accelerated video processing library
-git-url: https://github.com/intel/libva
 src-url: https://github.com/intel/libva/releases/download/2.20.0/libva-2.20.0.tar.bz2
 src-sha: f72bdb4f48dfe71ad01f1cbefe069672a2c949a6abd51cf3c4d4784210badc49
 license: MIT

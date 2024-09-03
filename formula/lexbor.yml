@@ -1,6 +1,5 @@
 summary: A fast embeddable web browser engine written in C with no dependencies
 web-url: https://lexbor.com/
-git-url: https://github.com/lexbor/lexbor
 src-url: https://github.com/lexbor/lexbor/archive/refs/tags/v2.3.0.tar.gz
 src-sha: 522ad446cd01d89cb870c6561944674e897f8ada523f234d5be1f8d2d7d236b7
 license: Apache-2.0

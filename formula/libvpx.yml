@@ -1,6 +1,5 @@
 summary: VP8/VP9 video codec
 web-url: https://www.webmproject.org/code/
-git-url: https://github.com/webmproject/libvpx
 src-url: https://github.com/webmproject/libvpx/archive/refs/tags/v1.14.1.tar.gz
 src-sha: 901747254d80a7937c933d03bd7c5d41e8e6c883e0665fadcb172542167c7977
 license: BSD-3-Clause

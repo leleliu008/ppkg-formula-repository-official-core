@@ -1,5 +1,4 @@
 summary: A command-line interface that brings github.com functionality to your terminal
-git-url: https://github.com/cli/cli
 src-url: https://github.com/cli/cli/archive/refs/tags/v2.51.0.tar.gz
 src-sha: babc66157676eadc30c150ab9151981792796d6f24663cebc6eb070eb14c390f
 license: MIT
