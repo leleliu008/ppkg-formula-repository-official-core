@@ -26,7 +26,6 @@ dopatch: |
 
 install: |
     mesonw \
-        -Ddefault_library=static \
         -Dnls=disabled \
         -Dman=false \
         -Dgtk_doc=false \

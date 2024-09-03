@@ -10,13 +10,6 @@ dep-upp: python3
 dep-pym: packaging
 
 dopatch: |
-    sedInPlace "s|link_with : libgio|link_with : libgio.get_static_lib()|" gio/meson.build
-    sedInPlace "s|link_with : libglib|link_with : libglib.get_static_lib()|" glib/meson.build
-    sedInPlace "s|link_with : libgobject|link_with : libgobject.get_static_lib()|" gobject/meson.build
-    sedInPlace "s|link_with : libgmodule|link_with : libgmodule.get_static_lib()|" gmodule/meson.build
-    sedInPlace "s|link_with : libgthread|link_with : libgthread.get_static_lib()|" gthread/meson.build
-    sedInPlace "s|link_with: libgirepository,|link_with: libgirepository.get_static_lib(),|" girepository/meson.build
-
     sedInPlace "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
 
     sedInPlace "/libffi_dep =/c libffi_dep = cc.find_library('ffi', static : true, dirs: ['$libffi_LIBRARY_DIR'])" meson.build
