@@ -9,7 +9,7 @@ bsystem: gmake
 
 install: |
     case $TARGET_PLATFORM_ARCH in
-        i686|x86_64)  export AS=nasm
+        i686|x86_64|amd64) export AS=nasm
     esac
 
     case $TARGET_PLATFORM_NAME-$TARGET_PLATFORM_ARCH in
