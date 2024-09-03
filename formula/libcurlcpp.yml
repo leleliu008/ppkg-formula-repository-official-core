@@ -1,0 +1,9 @@
+summary: Object oriented C++ wrapper for libcurl
+web-url: https://josephp91.github.io/curlcpp
+src-url: https://github.com/JosephP91/curlcpp/archive/refs/tags/3.1.tar.gz
+src-sha: ba7aeed9fde9e5081936fbe08f7a584e452f9ac1199e5fabffbb3cfc95e85f4b
+license: MIT
+dep-pkg: libcurl
+install: |
+    cmakew -DBUILD_TEST=OFF -DCURLCPP_USE_PKGCONFIG=OFF -DBUILD_SHARED_LIBS=STATIC
+    cmakew -DBUILD_TEST=OFF -DCURLCPP_USE_PKGCONFIG=OFF -DBUILD_SHARED_LIBS=SHARED

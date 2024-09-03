@@ -88,6 +88,8 @@ case $1 in
               printf '%s\n' 'pugixml'   ;;
     libminizip)
               printf '%s\n' 'minizip'   ;;
+    libcurlcpp)
+              printf '%s\n' 'curlcpp'   ;;
     libopenssl)
               printf '%s\n' 'openssl'   ;;
     libopenexr)
@@ -213,6 +215,7 @@ case $1 in
     libjxl)   printf '%s\n' 'jpeg-xl'   ;;
     libaom)   printf '%s\n' 'aom'       ;;
     libcaf)   printf '%s\n' 'caf'       ;;
+    libcpr)   printf '%s\n' 'cpr'       ;;
     libglm)   printf '%s\n' 'glm'       ;;
     libhwy)   printf '%s\n' 'highway'   ;;
     libtbb)   printf '%s\n' 'tbb'       ;;
