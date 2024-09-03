@@ -1,5 +1,4 @@
 summary: User-mode networking for unprivileged network namespaces
-git-url: https://github.com/rootless-containers/slirp4netns
 src-url: https://github.com/rootless-containers/slirp4netns/archive/refs/tags/v1.2.3.tar.gz
 src-sha: acce648fab8fe5f113c41a8fd6d20177708519b4ddaa60f845e1998a17b22ca5
 license: GPL-2.0-or-later

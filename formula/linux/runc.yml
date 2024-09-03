@@ -1,6 +1,5 @@
 summary: a command-line tool for spawning and running containers according to the OCI specification
 web-url: https://opencontainers.org/
-git-url: https://github.com/opencontainers/runc
 src-url: https://github.com/opencontainers/runc/archive/refs/tags/v1.1.4.tar.gz
 src-sha: 4f02077432642eebd768fc857318ae7929290b3a3511eb1be338005e360cfa34
 dep-pkg: libseccomp

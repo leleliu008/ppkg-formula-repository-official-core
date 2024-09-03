@@ -1,5 +1,4 @@
 summary: Netlink Library based Linux kernel interfaces
-git-url: https://github.com/thom311/libnl
 src-url: https://github.com/thom311/libnl/releases/download/libnl3_9_0/libnl-3.9.0.tar.gz
 src-sha: aed507004d728a5cf11eab48ca4bf9e6e1874444e33939b9d3dfed25018ee9bb
 license: LGPL-2.1-or-later

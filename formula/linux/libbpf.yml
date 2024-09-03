@@ -1,5 +1,4 @@
 summary: Berkeley Packet Filter library
-git-url: https://github.com/libbpf/libbpf
 src-url: https://github.com/libbpf/libbpf/archive/refs/tags/v1.4.5.tar.gz
 src-sha: e225c1fe694b9540271b1f2f15eb882c21c34511ba7b8835b0a13003b3ebde8c
 license: BSD-2-Clause

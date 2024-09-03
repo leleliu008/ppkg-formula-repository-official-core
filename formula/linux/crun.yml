@@ -1,5 +1,4 @@
 summary: Fast and lightweight fully featured OCI runtime and C library
-git-url: https://github.com/containers/crun
 src-url: https://github.com/containers/crun/releases/download/1.14.4/crun-1.14.4.tar.xz
 src-sha: fd6af195a73ae9bf3aea1a6c976a914492324c828542f35a7f1570a659f2e512
 license: GPL-2.0-or-later LGPL-2.1-or-later

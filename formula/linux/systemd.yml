@@ -1,6 +1,5 @@
 summary: System and service manager
 web-url: https://wiki.freedesktop.org/www/Software/systemd/
-git-url: https://github.com/systemd/systemd
 src-url: https://github.com/systemd/systemd-stable/archive/refs/tags/v255.4.tar.gz
 src-sha: 96e75bd08c57ad401677456fb88ef54a9f05bb1695693013bc6ecce839640fd5
 license: GPL-2.0-or-later LGPL-2.1-or-later

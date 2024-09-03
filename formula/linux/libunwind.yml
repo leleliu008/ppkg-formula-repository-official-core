@@ -1,6 +1,5 @@
 summary: C API for determining the call-chain of a program
 web-url: https://www.nongnu.org/libunwind
-git-url: https://github.com/libunwind/libunwind
 src-url: https://github.com/libunwind/libunwind/releases/download/v1.8.1/libunwind-1.8.1.tar.gz
 src-sha: ddf0e32dd5fafe5283198d37e4bf9decf7ba1770b6e7e006c33e6df79e6a6157
 license: MIT
