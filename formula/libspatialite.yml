@@ -12,7 +12,7 @@ prepare: |
 
 install: |
     configure \
-        --with-geosconfig="$geos_INSTALL_DIR/bin/geos-config" \
+        --with-geosconfig="$libgeos_INSTALL_DIR/bin/geos-config" \
         LIBS="'$LIBS_PROJ $LIBS_FREEXL'" \
         ac_cv_search_GEOSCoveredBy="'$LIBS_GEOS'" \
         ac_cv_search_GEOSDelaunayTriangulation="'$LIBS_GEOS'" \

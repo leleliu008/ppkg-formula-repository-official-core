@@ -168,6 +168,7 @@ case $1 in
     libgumbo) printf '%s\n' 'gumbo-parser' ;;
     libmupdf) printf '%s\n' 'mupdf'     ;;
     libImath) printf '%s\n' 'imath'     ;;
+    libgeos)  printf '%s\n' 'geos'      ;;
     libproj)  printf '%s\n' 'proj'      ;;
     libsrtp)  printf '%s\n' 'srtp'      ;;
     libflac)  printf '%s\n' 'flac'      ;;

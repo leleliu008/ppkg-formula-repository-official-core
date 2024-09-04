@@ -1,0 +1,6 @@
+summary: A command-line tool to edit the rpath in ELF files
+web-url: https://tracker.debian.org/pkg/chrpath
+src-url: https://deb.debian.org/debian/pool/main/c/chrpath/chrpath_0.16.orig.tar.gz
+src-sha: bb0d4c54bac2990e1bdf8132f2c9477ae752859d523e141e72b3b11a12c26e7b
+license: GPL-2.0-or-later
+bsystem: configure
