@@ -12,7 +12,7 @@ dopatch: sedInPlace '15,$d' thumbnailer/meson.build
 
 install: |
     mesonw \
-        -Drelocatable=true \
+        -Drelocatable=false \
         -Dnative_windows_loaders=false \
         -Dinstalled_tests=false \
         -Dtests=false \
