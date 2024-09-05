@@ -1,6 +1,7 @@
 summary: Mount any Linux filesystem without root
 git-url: https://github.com/lkl/linux
 dep-pkg: libfuse
+dep-upp: python3
 bscript: tools/lkl
 install: |
     printf 'libs-y += lib/liblkl\n' > Targets
