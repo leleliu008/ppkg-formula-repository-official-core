@@ -1,0 +1,11 @@
+summary: A free, secure, portable, extendable, high-performance executable packer for several executable formats
+web-url: https://upx.github.io/
+src-url: https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-src.tar.xz
+src-sha: 5ed6561607d27fb4ef346fc19f08a93696fa8fa127081e7a7114068306b8e1c4
+license: GPL-2.0-or-later
+dep-pkg: libz
+install: |
+    cmakew \
+        -DUPX_CONFIG_DISABLE_WERROR=ON \
+        -DUPX_CONFIG_DISABLE_SANITIZE=ON \
+        -DUPX_CONFIG_DISABLE_GITREV=ON
