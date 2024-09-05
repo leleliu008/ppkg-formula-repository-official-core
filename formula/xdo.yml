@@ -16,6 +16,6 @@ install: |
 
     printf '#define VERSION "%s"\n' "$PACKAGE_VERSION" > version.h
 
-    run $CC $CPPFLAGS $CFLAGS -D_POSIX_C_SOURCE=200809L -include ./version.h $A1 $A2 $A3 -std=c99 $LDFLAGS $B1 $B2 $B3 $B4 -o xdo *.c
+    run $CC $CPPFLAGS $CFLAGS -D_POSIX_C_SOURCE=200809L -include ./version.h $A1 $A2 $A3 -std=c99 -o xdo *.c $LDFLAGS $B1 $B2 $B3 $B4
     install_bins xdo
     install_mans doc/xdo.1
