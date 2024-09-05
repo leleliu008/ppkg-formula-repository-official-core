@@ -1,0 +1,8 @@
+summary: Website copier/offline browser
+web-url: https://www.httrack.com/
+src-url: https://mirror.httrack.com/historical/httrack-3.49.2.tar.gz
+src-sha: 3477a0e5568e241c63c9899accbfcdb6aadef2812fcce0173688567b4c7d4025
+license: GPL-3.0-or-later
+dep-pkg: libopenssl libz
+bsystem: configure
+binbstd: 1

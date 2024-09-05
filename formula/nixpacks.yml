@@ -1,0 +1,6 @@
+summary: App source + Nix packages + Docker = Image
+web-url: https://nixpacks.com/
+src-url: https://github.com/railwayapp/nixpacks/archive/refs/tags/v1.28.0.tar.gz
+src-sha: c412f46f9243052e98cc847fefd4b53a006252a519c117868a5f10eed257661b
+license: MIT
+bsystem: cargo
