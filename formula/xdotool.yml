@@ -4,6 +4,7 @@ src-url: https://github.com/jordansissel/xdotool/releases/download/v3.20211022.1
 src-sha: 96f0facfde6d78eacad35b91b0f46fecd0b35e474c03e00e30da3fdd345f9ada
 license: BSD-3-Clause
 dep-pkg: libxkbcommon xorg-libxtst xorg-libxinerama
+dep-upp: perl
 
 # https://github.com/jordansissel/xdotool/issues/313
 dopatch: gsed -i 's|define _XOPEN_SOURCE 500|define _XOPEN_SOURCE 600|' xdo.c

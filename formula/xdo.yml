@@ -1,0 +1,21 @@
+summary: A command-line tool to perform elementary actions on your X windows
+src-url: https://github.com/baskerville/xdo/archive/refs/tags/0.5.7.tar.gz
+src-sha: b661229f0457939d3867cca1664c5671ae959b309feb58abe9142229c8c7ffb4
+license: BSD-2-Clause
+dep-pkg: xcb-util xcb-util-wm
+binbstd: 1
+install: |
+    A1="$(pkg-config --cflags xcb-aux)"
+    A2="$(pkg-config --cflags xcb-ewmh)"
+    A3="$(pkg-config --cflags xcb-icccm)"
+
+    B1="$(pkg-config --libs xcb-aux)"
+    B2="$(pkg-config --libs xcb-ewmh)"
+    B3="$(pkg-config --libs xcb-icccm)"
+    B4="$(pkg-config --libs xcb-xtest)"
+
+    printf '#define VERSION "%s"\n' "$PACKAGE_VERSION" > version.h
+
+    run $CC $CPPFLAGS $CFLAGS -D_POSIX_C_SOURCE=200809L -include ./version.h $A1 $A2 $A3 -std=c99 $LDFLAGS $B1 $B2 $B3 $B4 -o xdo *.c
+    install_bins xdo
+    install_mans doc/xdo.1
