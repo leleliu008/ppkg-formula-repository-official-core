@@ -1,0 +1,8 @@
+summary: A top-like tool to monitor I/O
+src-url: https://github.com/Tomas-M/iotop/archive/refs/tags/v1.26.tar.gz
+src-sha: b0a334cba89249bc7cbb87cf92cf4166911bf00dd2ea8841b572fd776018c487
+license: GPL-2.0-or-later
+dep-pkg: ncurses
+install: |
+    gmakew clean
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
