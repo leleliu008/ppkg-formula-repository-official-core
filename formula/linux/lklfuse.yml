@@ -3,8 +3,12 @@ git-url: https://github.com/lkl/linux
 dep-pkg: libfuse
 dep-upp: python3
 bscript: tools/lkl
-install: |
+
+dopatch: |
     printf 'libs-y += lib/liblkl\n' > Targets
+    gsed -i '1s|^|#include <sys/types.h>\n|' include/lkl.h
+
+install: |
     gmakew clean
     gmakew all
     run $CC $CFLAGS $CPPFLAGS -D_FILE_OFFSET_BITS=64 -Iinclude $LDFLAGS -o lklfuse lklfuse.c ./liblkl.a -lfuse3
