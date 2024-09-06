@@ -1,0 +1,16 @@
+summary: Linux Kernel Library, is aiming to allow reusing the Linux kernel code as extensively as possible with minimal effort and reduced maintenance overhead
+src-url: https://github.com/lkl/linux/archive/699f87c5ee5f2302e615f5e7dae671fc959adf80.zip
+src-sha: decc9aed5e867c42a9192618798c0adadf14f1d1c75087ea208591b052c870c0
+version: 1
+dep-upp: python3
+bscript: tools/lkl
+
+dopatch: |
+    printf 'libs-y += lib/liblkl\n' > Targets
+    gsed -i '1s|^|#include <sys/types.h>\n|' include/lkl.h
+
+install: |
+    gmakew clean
+    gmakew
+    install_libs liblkl.a lib/liblkl.so
+    mv include "$PACKAGE_INSTALL_DIR/"

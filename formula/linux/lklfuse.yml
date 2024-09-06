@@ -1,15 +1,10 @@
 summary: Mount any Linux filesystem without root
-git-url: https://github.com/lkl/linux
-dep-pkg: libfuse
-dep-upp: python3
+src-url: https://github.com/lkl/linux/archive/699f87c5ee5f2302e615f5e7dae671fc959adf80.zip
+src-sha: decc9aed5e867c42a9192618798c0adadf14f1d1c75087ea208591b052c870c0
+version: 1
+dep-pkg: liblkl libfuse
 bscript: tools/lkl
-
-dopatch: |
-    printf 'libs-y += lib/liblkl\n' > Targets
-    gsed -i '1s|^|#include <sys/types.h>\n|' include/lkl.h
-
+binbstd: 1
 install: |
-    gmakew clean
-    gmakew all
-    run $CC $CFLAGS $CPPFLAGS -D_FILE_OFFSET_BITS=64 -Iinclude $LDFLAGS -o lklfuse lklfuse.c ./liblkl.a -lfuse3
+    run $CC $CFLAGS $CPPFLAGS -D_FILE_OFFSET_BITS=64 -Iinclude $LDFLAGS -o lklfuse lklfuse.c -llkl -lfuse3
     install_bins lklfuse
