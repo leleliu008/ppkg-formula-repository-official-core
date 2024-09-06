@@ -3,9 +3,9 @@ web-url: https://crosstool-ng.github.io
 git-url: https://github.com/crosstool-ng/crosstool-ng
 src-url: http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.26.0.tar.xz
 src-sha: e8ce69c5c8ca8d904e6923ccf86c53576761b9cf219e2e69235b139c8e1b74fc
-dep-pkg: ncurses gettext libiconv libtool file gtar gzip lzip bzip2 xz gm4 flex bison patch
-dep-upp: help2man texinfo gperf unzip
 license: LGPL-2.1-or-later
+dep-upp: binutils help2man texinfo gperf unzip libtool file gtar gzip lzip bzip2 xz gm4 flex bison patch
+dep-pkg: gettext
 movable: 0
 install: |
     configure \

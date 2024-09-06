@@ -6,7 +6,7 @@ src-sha: 77aec9a2a37b7d3596ea1640b3cc53d0b5d9b3b52abed89de07e3717e91bfdbe
 license: MIT
 dep-pym: Mako MarkupSafe
 dep-upp: gm4 flex bison
-dep-pkg: llvm+clang+lld glslang gettext xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxshmfence libvdpau libva libdrm wayland-protocols
+dep-pkg: llvm+clang+lld glslang gettext xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxshmfence libvdpau libva libdrm wayland-protocols libsensors
 
 prepare: export PATH="$NATIVE_PACKAGE_INSTALLED_ROOT/python3/bin:$PATH"
 
