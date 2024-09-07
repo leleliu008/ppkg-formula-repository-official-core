@@ -8,6 +8,37 @@ dep-pkg: python3 binutils libelf libedit libffi libxml2 libz3.a
 dep-upp: swig
 bscript: llvm
 
+dopatch: |
+    LibEdit_INCLUDE_DIRS="$libedit_INCLUDE_DIR;$libedit_INCLUDE_DIR/editline"
+    LibEdit_LIBRARIES="$(pkg-config --libs-only-l libedit | tr ' ' ';')"
+
+    cat > ../cmake/Modules/FindLibEdit.cmake <<EOF
+    set(LibEdit_INCLUDE_DIRS "$LibEdit_INCLUDE_DIRS")
+    set(LibEdit_LIBRARIES    "$LibEdit_LIBRARIES")
+    set(LibEdit_FOUND TRUE)
+
+    if (NOT TARGET  LibEdit::LibEdit)
+        add_library(LibEdit::LibEdit INTERFACE IMPORTED)
+        set_target_properties(LibEdit::LibEdit PROPERTIES
+            INTERFACE_INCLUDE_DIRECTORIES "\${LibEdit_INCLUDE_DIRS}"
+            INTERFACE_LINK_LIBRARIES      "\${LibEdit_LIBRARIES}"
+        )
+    endif()
+
+    include(FindPackageHandleStandardArgs)
+    find_package_handle_standard_args(LibEdit REQUIRED_VARS LibEdit_LIBRARIES LibEdit_INCLUDE_DIRS VERSION_VAR LibEdit_VERSION_STRING)
+    mark_as_advanced(LibEdit_INCLUDE_DIRS LibEdit_LIBRARIES)
+    EOF
+
+    sedInPlace '/find_library(LibEdit_LIBRARIES/c set(LibEdit_LIBRARIES "${PC_LIBEDIT_LINK_LIBRARIES}")' ../cmake/Modules/FindLibEdit.cmake
+    sedInPlace '/IMPORTED_LOCATION/c INTERFACE_LINK_LIBRARIES "${LibEdit_LIBRARIES}"'                    ../cmake/Modules/FindLibEdit.cmake
+
+    sedInPlace '/add_optional_dependency(LLDB_ENABLE_LIBXML2/c find_package(LibXml2 CONFIG REQUIRED)' ../lldb/cmake/modules/LLDBConfig.cmake
+    sedInPlace '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)'                                      ../lldb/cmake/modules/LLDBConfig.cmake
+
+    LIBELF_LIBRARIES="$(pkg-config --libs-only-l libelf)"
+    sedInPlace "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
+
 # https://llvm.org/docs/CMake.html
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
 # https://lldb.llvm.org/resources/build.html
@@ -22,6 +53,7 @@ install: |
         -DLLVM_ENABLE_ZLIB=ON \
         -DLLVM_ENABLE_ZSTD=ON \
         -DLLVM_ENABLE_RTTI=ON \
+        -DLLVM_ENABLE_TERMINFO=OFF \
         -DLLVM_ENABLE_SPHINX=OFF \
         -DLLVM_ENABLE_DOXYGEN=OFF \
         -DLLVM_ENABLE_Z3_SOLVER=ON \
