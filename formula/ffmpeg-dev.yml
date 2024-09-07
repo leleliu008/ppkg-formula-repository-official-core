@@ -1,10 +1,11 @@
+pkgtype: lib
 summary: A complete, cross-platform solution to record, convert and stream audio and video
 git-url: https://github.com/FFmpeg/FFmpeg
 web-url: https://ffmpeg.org/
 src-url: https://ffmpeg.org/releases/ffmpeg-7.0.2.tar.xz
 src-sha: 8646515b638a3ad303e23af6a3587734447cb8fc0a0c064ecdb8e95c4fd8b389
 license: GPL-2.0-or-later
-dep-pkg: libmp3lame libsamplerate libtheora libvorbis libspeex librav1e libdav1d libx264 libx265 libopus libxvid libsoxr libvpx libwebp libtiff libpng libjpeg-turbo libgif libsrt libzimg libzmq libxml2 libarchive libsdl2 alsa-lib xorg-libxv
+dep-pkg: libmp3lame libsamplerate libtheora libvorbis libspeex librav1e libdav1d libx264 libx265 libopus libxvid libsoxr libvpx libwebp libtiff libpng libjpeg-turbo libgif libsrt libzimg libzmq libxml2 libarchive libsdl2
 dep-upp: nasm
 bsystem: gmake
 
@@ -36,8 +37,6 @@ install: |
     sedInPlace 's|-lxvidcore|-lxvidcore -lm|' configure
     sedInPlace "/SDL2_CONFIG=/c SDL2_CONFIG='$libsdl2_INSTALL_DIR/bin/sdl2-config'" configure
 
-    export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lgomp -lm"
-
     if run ./configure \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --sysroot="$SYSROOT" \
@@ -54,9 +53,9 @@ install: |
         --target-os="$TARGET_OS" \
         --enable-pic \
         --enable-static \
-        --disable-shared \
-        --enable-ffplay \
-        --enable-ffprobe \
+        --enable-shared \
+        --disable-ffplay \
+        --disable-ffprobe \
         --enable-libmp3lame \
         --enable-libtheora \
         --enable-libvorbis \

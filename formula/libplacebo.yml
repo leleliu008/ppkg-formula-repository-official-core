@@ -4,7 +4,7 @@ src-url: https://code.videolan.org/videolan/libplacebo/-/archive/v6.338.2/libpla
 src-sha: 1c02d21720f972cae02111a1286337e9d0e70d623b311a1e4245bac5ce987f28
 license: LGPL-2.1-or-later
 dep-plm: Mako MarkupSafe
-dep-pkg: ffmpeg vulkan-loader shaderc glslang libepoxy
+dep-pkg: ffmpeg-dev vulkan-loader shaderc glslang libepoxy
 install: |
     mesonw \
         -Dfuzz=false \

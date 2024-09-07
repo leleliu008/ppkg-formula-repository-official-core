@@ -223,6 +223,7 @@ case $1 in
     libsrt)   printf '%s\n' 'srt'       ;;
     libwv2)   printf '%s\n' 'wv2'       ;;
     libelf)   printf '%s\n' 'elfutils'  ;;
+    liborc)   printf '%s\n' 'orc'       ;;
     libdb)    printf '%s\n' 'berkeley-db' ;;
     libz3)    printf '%s\n' 'z3'        ;;
     libz)     printf '%s\n' 'zlib'      ;;
@@ -231,6 +232,8 @@ case $1 in
     png)      printf '%s\n' 'libpng'    ;;
     tiff)     printf '%s\n' 'libtiff'   ;;
     adig)     printf '%s\n' 'c-ares'    ;;
+    orcc)     printf '%s\n' 'orc'       ;;
+    sndfile)  printf '%s\n' 'libsndfile' ;;
 
     libtwolame|stwolame)
               printf '%s\n' 'two-lame'  ;;
