@@ -5,5 +5,5 @@ src-url: https://ftp.gnu.org/gnu/texinfo/texinfo-7.1.tar.xz
 src-sha: deeec9f19f159e046fdf8ad22231981806dac332cc372f1c763504ad82b30953
 license: GPL-3.0-or-later
 dep-pkg: perl
-dopatch: sedInPlace '/libintl/d' tp/Texinfo/XS/parsetexi/api.c
+dopatch: gsed -i '/libintl/d' tp/Texinfo/XS/parsetexi/api.c
 install: configure --with-included-regex --enable-threads=posix --disable-nls

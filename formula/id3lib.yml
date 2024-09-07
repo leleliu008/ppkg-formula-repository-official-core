@@ -8,8 +8,8 @@ dep-upp: libtool
 bsystem: autotools
 
 dopatch: |
-    sedInPlace '/\<string\>/a \#include<cstring>' include/id3/id3lib_strings.h
-    sedInPlace 's|//#include|#include|' include/id3/writers.h
+    gsed -i '/\<string\>/a \#include<cstring>' include/id3/id3lib_strings.h
+    gsed -i 's|//#include|#include|' include/id3/writers.h
 
 install: |
     configure \

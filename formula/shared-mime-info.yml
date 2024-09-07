@@ -6,5 +6,5 @@ src-sha: 32dc32ae39ff1c1bf8434dd3b36770b48538a1772bc0298509d034f057005992
 license: GPL-2.0-only
 dep-upp: gettext-tools
 dep-pkg: glib libxml2
-dopatch: sedInPlace 's|xmlto.found()|false|' data/meson.build
+dopatch: gsed -i 's|xmlto.found()|false|' data/meson.build
 install: mesonw -Dupdate-mimedb=false

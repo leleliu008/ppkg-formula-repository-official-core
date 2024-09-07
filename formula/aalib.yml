@@ -10,10 +10,10 @@ bsystem: autotools
 
 dopatch: |
     run autoreconf -ivf
-    sedInPlace '203c return 0;'         src/aalinuxkbd.c
-    sedInPlace '1i #include <stdlib.h>' src/aalinuxkbd.c
-    sedInPlace 's|exit(1)|return 1|'    src/aasavefont.c
-    sedInPlace 's|exit(1)|return 1|'    src/aainfo.c
-    sedInPlace '1i #include <string.h>' src/aaregist.c
+    gsed -i '203c return 0;'         src/aalinuxkbd.c
+    gsed -i '1i #include <stdlib.h>' src/aalinuxkbd.c
+    gsed -i 's|exit(1)|return 1|'    src/aasavefont.c
+    gsed -i 's|exit(1)|return 1|'    src/aainfo.c
+    gsed -i '1i #include <string.h>' src/aaregist.c
 
 install: configure --without-x --with-ncurses=$ncurses_INSTALL_DIR

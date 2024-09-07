@@ -6,11 +6,11 @@ license: MPL-2.0
 dep-pkg: libopenssl
 
 dopatch: |
-    sedInPlace 's|RUNTIME DESTINATION|RUNTIME EXCLUDE_FROM_ALL DESTINATION|' CMakeLists.txt
-    sedInPlace 's|scripts/srt-ffplay|scripts/srt-ffplay EXCLUDE_FROM_ALL|'   CMakeLists.txt
+    gsed -i 's|RUNTIME DESTINATION|RUNTIME EXCLUDE_FROM_ALL DESTINATION|' CMakeLists.txt
+    gsed -i 's|scripts/srt-ffplay|scripts/srt-ffplay EXCLUDE_FROM_ALL|'   CMakeLists.txt
 
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        sedInPlace 's|, name)|, name, NULL)|' srtcore/threadname.h
+        gsed -i 's|, name)|, name, NULL)|' srtcore/threadname.h
     fi
 
 install: |

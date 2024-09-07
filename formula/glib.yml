@@ -15,13 +15,13 @@ res-uri: https://distfiles.macports.org/gobject-introspection/gobject-introspect
 res-sha: a1df7c424e15bda1ab639c00e9051b9adf5cea1a9e512f8a603b53cd199bc6d8
 
 dopatch: |
-    sedInPlace "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
+    gsed -i "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
 
-    sedInPlace "/libiconv =/c libiconv = dependency('libiconv', method : 'pkg-config')" meson.build
+    gsed -i "/libiconv =/c libiconv = dependency('libiconv', method : 'pkg-config')" meson.build
 
-    sedInPlace '2228,2254d'  meson.build
-    sedInPlace "2228a libintl = cc.find_library('intl',  dirs: ['$libintl_LIBRARY_DIR'])" meson.build
-    sedInPlace '2229a libintl_deps = [libintl, libiconv]' meson.build
+    gsed -i '2228,2254d'  meson.build
+    gsed -i "2228a libintl = cc.find_library('intl',  dirs: ['$libintl_LIBRARY_DIR'])" meson.build
+    gsed -i '2229a libintl_deps = [libintl, libiconv]' meson.build
 
 install: |
     if isCrossBuild ; then
@@ -93,8 +93,8 @@ install: |
     fi
 
 dotweak: |
-    sedInPlace 's|libiconv|libintl libffi libz|' lib/pkgconfig/glib-2.0.pc
+    gsed -i 's|libiconv|libintl libffi libz|' lib/pkgconfig/glib-2.0.pc
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace 's|-lintl|-lresolv|g'         lib/pkgconfig/glib-2.0.pc
+        gsed -i 's|-lintl|-lresolv|g'         lib/pkgconfig/glib-2.0.pc
     fi

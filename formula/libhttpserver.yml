@@ -5,5 +5,5 @@ license: LGPL-2.1-or-later
 dep-pkg: libmicrohttpd
 dep-upp: libtool
 bsystem: autotools
-dopatch: sedInPlace 's|\!COND_CROSS_COMPILE|BUILD_EXAMPLES|' Makefile.am
+dopatch: gsed -i 's|\!COND_CROSS_COMPILE|BUILD_EXAMPLES|' Makefile.am
 install: configure --disable-examples

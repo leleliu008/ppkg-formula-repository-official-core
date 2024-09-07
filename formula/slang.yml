@@ -7,7 +7,7 @@ license: GPL-2.0-or-later
 dep-pkg: libpng libpcre
 binbstd: 1
 
-dopatch: sedInPlace 's|-ltermcap||g' configure
+dopatch: gsed -i 's|-ltermcap||g' configure
 
 install: |
     configure \

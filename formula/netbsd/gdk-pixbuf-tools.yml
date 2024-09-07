@@ -8,7 +8,7 @@ license: LGPL-2.1-or-later
 dep-pkg: glib libjpeg-turbo libtiff libpng shared-mime-info
 dep-upp: glib-tools
 
-dopatch: sedInPlace '15,$d' thumbnailer/meson.build
+dopatch: gsed -i '15,$d' thumbnailer/meson.build
 
 install: |
     mesonw \

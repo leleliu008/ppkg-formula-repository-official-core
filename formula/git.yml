@@ -21,7 +21,7 @@ prepare: |
         export ac_cv_snprintf_returns_bogus=no
 
         if [ "$TARGET_PLATFORM_NAME" = freebsd ] ; then
-            sedInPlace '/-DHAVE_SYSINFO/d' config.mak.uname
+            gsed -i '/-DHAVE_SYSINFO/d' config.mak.uname
         fi
     fi
 

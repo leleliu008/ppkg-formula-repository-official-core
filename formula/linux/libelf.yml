@@ -9,9 +9,9 @@ dep-upp: gm4
 ccflags: -Wno-error
 
 dopatch: |
-    sedInPlace '/libintl\.h/d' lib/eu-config.h
-    sedInPlace '/dgettext/d'   lib/eu-config.h
-    sedInPlace '/N_(Str/a #define _(Str) Str' lib/eu-config.h
+    gsed -i '/libintl\.h/d' lib/eu-config.h
+    gsed -i '/dgettext/d'   lib/eu-config.h
+    gsed -i '/N_(Str/a #define _(Str) Str' lib/eu-config.h
 
 prepare: |
     # FNM_EXTMATCH is a GNU externsion, musl does not define it

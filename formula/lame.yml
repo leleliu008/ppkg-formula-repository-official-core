@@ -7,7 +7,7 @@ license: LGPL-2.0-or-later
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         # https://sourceforge.net/p/lame/mailman/message/36081038/
-        sedInPlace '/lame_init_old/d' include/libmp3lame.sym
+        gsed -i '/lame_init_old/d' include/libmp3lame.sym
     fi
 
 install: |

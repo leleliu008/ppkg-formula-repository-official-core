@@ -4,7 +4,7 @@ src-sha: 3977dc8ea0069139816ec4025b320d9a7fc2035398775ea91429e83cb0d1ce4e
 license: LGPL-2.1-or-later
 bscript: src
 
-dopatch: sedInPlace 's|-L. -lzlog|libzlog.a|' Makefile
+dopatch: gsed -i 's|-L. -lzlog|libzlog.a|' Makefile
 
 install: |
     gmakew clean

@@ -7,7 +7,7 @@ license: MIT
 
 dopatch: |
     if isCrossBuild && [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
-        sedInPlace 's|-Bshareable|-shared|g' configure
+        gsed -i 's|-Bshareable|-shared|g' configure
         export LD="$CC"
     fi
 

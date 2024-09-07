@@ -8,7 +8,7 @@ dep-pkg: libintl
 
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        sedInPlace 's|static unsigned int popcount32|unsigned int popcount32|' lib/ext2fs/bitops.c
+        gsed -i 's|static unsigned int popcount32|unsigned int popcount32|' lib/ext2fs/bitops.c
     fi
 
 install: |

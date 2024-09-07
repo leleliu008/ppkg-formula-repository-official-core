@@ -6,7 +6,7 @@ license: MIT
 dep-pkg: libsqlite3 libtiff libcurl
 dep-upp: sqlite3
 
-dopatch: sedInPlace '/add_subdirectory(man)/d' CMakeLists.txt
+dopatch: gsed -i '/add_subdirectory(man)/d' CMakeLists.txt
 
 install: |
     cmakew -DENABLE_TIFF=ON -DENABLE_CURL=ON -DBUILD_EXAMPLES=OFF -DBUILD_APPS=OFF -DBUILD_SHARED_LIBS=ON

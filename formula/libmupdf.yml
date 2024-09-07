@@ -15,7 +15,7 @@ dopatch: |
         run rm -rf "$item"
     done
 
-    #sedInPlace 's|-lfreetype2|-lfreetype|' Makerules
+    #gsed -i 's|-lfreetype2|-lfreetype|' Makerules
 
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         wfetch https://raw.githubusercontent.com/NetBSD/pkgsrc/trunk/print/mupdf/patches/patch-source_fitz_crypt-sha2.c

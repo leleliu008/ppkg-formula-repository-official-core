@@ -5,8 +5,8 @@ src-sha: c015475880f6a382e706169c94371a7dd6cc22078832f6e0865af8289c2ef42b
 dep-pkg: readline
 
 dopatch: |
-    sedInPlace "s|CFLAGS = -std=c99|CFLAGS = $CPPFLAGS $LDFLAGS -std=c99|" Makefile
-    sedInPlace 's|-lreadline|-lreadline -lncurses|' Makefile
+    gsed -i "s|CFLAGS = -std=c99|CFLAGS = $CPPFLAGS $LDFLAGS -std=c99|" Makefile
+    gsed -i 's|-lreadline|-lreadline -lncurses|' Makefile
 
 install: |
     gmakew clean

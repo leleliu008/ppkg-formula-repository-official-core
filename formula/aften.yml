@@ -6,7 +6,7 @@ license: LGPL-2.1-or-later
 bsystem: cmake
 
 dopatch: |
-    sedInPlace '/INSTALL(FILES/d' CMakeLists.txt
-    sedInPlace 's|LIBRARY DESTINATION|LIBRARY EXCLUDE_FROM_ALL DESTINATION|' CMakeLists.txt
-    sedInPlace 's|ARCHIVE DESTINATION|ARCHIVE EXCLUDE_FROM_ALL DESTINATION|' CMakeLists.txt
-    sedInPlace '/static inline void cpu_caps_detect/a static inline void apply_simd_restrictions(AftenSimdInstructions *simd_instructions){}' libaften/cpu_caps.h
+    gsed -i '/INSTALL(FILES/d' CMakeLists.txt
+    gsed -i 's|LIBRARY DESTINATION|LIBRARY EXCLUDE_FROM_ALL DESTINATION|' CMakeLists.txt
+    gsed -i 's|ARCHIVE DESTINATION|ARCHIVE EXCLUDE_FROM_ALL DESTINATION|' CMakeLists.txt
+    gsed -i '/static inline void cpu_caps_detect/a static inline void apply_simd_restrictions(AftenSimdInstructions *simd_instructions){}' libaften/cpu_caps.h

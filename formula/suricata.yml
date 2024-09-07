@@ -9,7 +9,7 @@ bsystem: configure cargo
 
 dopatch: |
     LIBPCAP_LIBS="$(pkg-config --libs-only-l libpcap)"
-    sedInPlace "s|-lpcap|$LIBPCAP_LIBS|" configure
+    gsed -i "s|-lpcap|$LIBPCAP_LIBS|" configure
 
 prepare: |
     export CARGO_BUILD_TARGET="$RUST_TARGET"

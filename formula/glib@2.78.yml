@@ -9,17 +9,17 @@ license: LGPL-2.1-or-later
 dep-pkg: libpcre2 libintl libffi libz
 
 dopatch: |
-    sedInPlace "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
-    sedInPlace "/libiconv =/c libiconv = dependency('libiconv', method : 'pkg-config')" meson.build
+    gsed -i "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
+    gsed -i "/libiconv =/c libiconv = dependency('libiconv', method : 'pkg-config')" meson.build
 
-    sedInPlace '2139,2165d'  meson.build
-    sedInPlace "2138a libintl = cc.find_library('intl',  dirs: ['$libintl_LIBRARY_DIR'])" meson.build
+    gsed -i '2139,2165d'  meson.build
+    gsed -i "2138a libintl = cc.find_library('intl',  dirs: ['$libintl_LIBRARY_DIR'])" meson.build
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace "2139a core_foundation = dependency('CoreFoundation', method : 'extraframework')" meson.build
-        sedInPlace '2140a libintl_deps = [libintl, libiconv, core_foundation]' meson.build
+        gsed -i "2139a core_foundation = dependency('CoreFoundation', method : 'extraframework')" meson.build
+        gsed -i '2140a libintl_deps = [libintl, libiconv, core_foundation]' meson.build
     else
-        sedInPlace '2139a libintl_deps = [libintl, libiconv]' meson.build
+        gsed -i '2139a libintl_deps = [libintl, libiconv]' meson.build
     fi
 
 install: |
@@ -35,8 +35,8 @@ install: |
         -Dbsymbolic_functions=false
 
 dotweak: |
-    sedInPlace 's|libiconv|libintl libffi libz|' lib/pkgconfig/glib-2.0.pc
+    gsed -i 's|libiconv|libintl libffi libz|' lib/pkgconfig/glib-2.0.pc
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace 's|-lintl|-lresolv|g'         lib/pkgconfig/glib-2.0.pc
+        gsed -i 's|-lintl|-lresolv|g'         lib/pkgconfig/glib-2.0.pc
     fi

@@ -16,7 +16,7 @@ dopatch: |
     fi
 
     MINIZIP_LIBRARIES="$(pkg-config --libs-only-l minizip-ng)"
-    sedInPlace "s|INTERFACE ZLIB::ZLIB|INTERFACE ZLIB::ZLIB $MINIZIP_LIBRARIES|" share/cmake/modules/Findminizip-ng.cmake
+    gsed -i "s|INTERFACE ZLIB::ZLIB|INTERFACE ZLIB::ZLIB $MINIZIP_LIBRARIES|" share/cmake/modules/Findminizip-ng.cmake
 
 install: |
     cmakew \

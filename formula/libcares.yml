@@ -17,5 +17,5 @@ dotweak: |
     ln -s libcares_static.a libcares.a
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace 's|-lcares|-lcares -lresolv|' pkgconfig/libcares.pc
+        gsed -i 's|-lcares|-lcares -lresolv|' pkgconfig/libcares.pc
     fi

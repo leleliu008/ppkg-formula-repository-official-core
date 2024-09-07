@@ -8,7 +8,7 @@ license: BSD-3-Clause
 dopatch: |
     # https://wiki.musl-libc.org/faq.html
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
-        sedInPlace '/_DECLS/d' utf8.h
+        gsed -i '/_DECLS/d' utf8.h
     fi
 
 install: |

@@ -8,11 +8,11 @@ dep-upp: perl
 dep-pkg: libnghttp2 libopenssl libbrotli libzstd libz
 
 dopatch: |
-    sedInPlace 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
+    gsed -i 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
 
     # https://gitlab.com/qemu-project/qemu/-/issues/2485
     if [ "$TARGET_PLATFORM_ARCH" = s390x ] ; then
-        sedInPlace '/tst_links_getifaddrs=/c tst_links_getifaddrs=no' configure
+        gsed -i '/tst_links_getifaddrs=/c tst_links_getifaddrs=no' configure
     fi
 
 install: |
@@ -31,5 +31,5 @@ install: |
 
 dotweak: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' lib/pkgconfig/libcurl.pc
+        gsed -i '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' lib/pkgconfig/libcurl.pc
     fi

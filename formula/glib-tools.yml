@@ -10,15 +10,15 @@ dep-upp: python3
 dep-pym: packaging
 
 dopatch: |
-    sedInPlace "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
+    gsed -i "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
 
-    sedInPlace "/libffi_dep =/c libffi_dep = cc.find_library('ffi', static : true, dirs: ['$libffi_LIBRARY_DIR'])" meson.build
-    sedInPlace "/libiconv =/c libiconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
-    sedInPlace "/libz_dep =/c libz_dep = cc.find_library('z', static : true, dirs : ['$libz_LIBRARY_DIR'])" meson.build
+    gsed -i "/libffi_dep =/c libffi_dep = cc.find_library('ffi', static : true, dirs: ['$libffi_LIBRARY_DIR'])" meson.build
+    gsed -i "/libiconv =/c libiconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
+    gsed -i "/libz_dep =/c libz_dep = cc.find_library('z', static : true, dirs : ['$libz_LIBRARY_DIR'])" meson.build
 
-    sedInPlace '2228,2254d'  meson.build
-    sedInPlace "2228a libintl = cc.find_library('intl', static : true, dirs: ['$libintl_LIBRARY_DIR'])" meson.build
-    sedInPlace '2229a libintl_deps = [libintl, libiconv]' meson.build
+    gsed -i '2228,2254d'  meson.build
+    gsed -i "2228a libintl = cc.find_library('intl', static : true, dirs: ['$libintl_LIBRARY_DIR'])" meson.build
+    gsed -i '2229a libintl_deps = [libintl, libiconv]' meson.build
 
 install: |
     mesonw \

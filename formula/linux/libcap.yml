@@ -6,7 +6,7 @@ license: BSD-3-Clause GPL-2.0-or-later
 dep-upp: gperf gindent bash
 binbstd: 1
 
-dopatch: sedInPlace 's|/bin/bash|/usr/bin/env bash|' progs/mkcapshdoc.sh
+dopatch: gsed -i 's|/bin/bash|/usr/bin/env bash|' progs/mkcapshdoc.sh
 
 install: |
     gmakew clean

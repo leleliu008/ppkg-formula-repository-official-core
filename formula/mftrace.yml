@@ -8,6 +8,6 @@ dep-pkg: fontforge potrace t1utils
 binbstd: 1
 dopatch: |
     touch gf2pbm.1
-    sedInPlace 's/rm -f config.cache config.h config.log config.status GNUmakefile/rm -f config.cache config.log/' GNUmakefile.in
+    gsed -i 's/rm -f config.cache config.h config.log config.status GNUmakefile/rm -f config.cache config.log/' GNUmakefile.in
 
 bsystem: configure

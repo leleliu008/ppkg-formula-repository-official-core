@@ -6,10 +6,10 @@ license: LGPL-2.0-or-later
 dep-pkg: libiconv
 
 dopatch: |
-    sedInPlace 's/iomanip.h/iomanip/g' configure || return 1
+    gsed -i 's/iomanip.h/iomanip/g' configure || return 1
     for item in $(grep -l 'unsigned int argc' examples/*)
     do
-        sedInPlace 's/int main( unsigned int argc,/int main(int argc,/g' $item || return 1
+        gsed -i 's/int main( unsigned int argc,/int main(int argc,/g' $item || return 1
     done
 
 install: |

@@ -29,7 +29,7 @@ install: |
         -DDISABLE_SNF=ON
 
 dotweak: |
-    sedInPlace 's@-l[^ ]*/libssl\.a@-lssl@g'                    lib/pkgconfig/libpcap.pc
-    sedInPlace 's@-l[^ ]*/libcrypto\.a@-lcrypto@g'              lib/pkgconfig/libpcap.pc
-    sedInPlace 's@-l[^ ]*/libssl\.\(so\|dylib\)@-lssl@g'        lib/pkgconfig/libpcap.pc
-    sedInPlace 's@-l[^ ]*/libcrypto\.\(so\|dylib\)@-lcrypto@g'  lib/pkgconfig/libpcap.pc
+    gsed -i 's@-l[^ ]*/libssl\.a@-lssl@g'                    lib/pkgconfig/libpcap.pc
+    gsed -i 's@-l[^ ]*/libcrypto\.a@-lcrypto@g'              lib/pkgconfig/libpcap.pc
+    gsed -i 's@-l[^ ]*/libssl\.\(so\|dylib\)@-lssl@g'        lib/pkgconfig/libpcap.pc
+    gsed -i 's@-l[^ ]*/libcrypto\.\(so\|dylib\)@-lcrypto@g'  lib/pkgconfig/libpcap.pc

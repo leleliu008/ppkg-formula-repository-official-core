@@ -45,8 +45,8 @@ dotweak: |
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         # https://github.com/abseil/abseil-cpp/issues/1408
-        sedInPlace '/^Libs: /s|$| -framework CoreFoundation|' absl_time.pc
+        gsed -i '/^Libs: /s|$| -framework CoreFoundation|' absl_time.pc
     fi
 
-    sedInPlace 's|-Xarch_x86_64 -Xarch_arm64||' absl_random_internal_randen_hwaes.pc
-    sedInPlace 's|-Xarch_x86_64 -Xarch_arm64||' absl_random_internal_randen_hwaes_impl.pc
+    gsed -i 's|-Xarch_x86_64 -Xarch_arm64||' absl_random_internal_randen_hwaes.pc
+    gsed -i 's|-Xarch_x86_64 -Xarch_arm64||' absl_random_internal_randen_hwaes_impl.pc

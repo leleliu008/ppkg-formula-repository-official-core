@@ -5,7 +5,7 @@ license: ISC
 bsystem: autotools
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        sedInPlace 's|%1u|%1d|'  src/flock.c
+        gsed -i 's|%1u|%1d|'  src/flock.c
     else
-        sedInPlace 's|%1u|%1zu|' src/flock.c
+        gsed -i 's|%1u|%1zu|' src/flock.c
     fi

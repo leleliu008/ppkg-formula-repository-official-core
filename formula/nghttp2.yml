@@ -7,9 +7,9 @@ dep-pkg: libevent libev libcares libjansson libxml2 libbrotli cunit
 license: MIT
 
 dopatch: |
-    sedInPlace '/find_package(LibXml2/c find_package(LibXml2 CONFIG)' CMakeLists.txt
-    sedInPlace 's|${LIBCARES_LIBRARY}|${LIBCARES_LIBRARY} -lresolv|' cmake/FindLibcares.cmake
-    sedInPlace 's|return dconn;|return std::move(dconn);|' src/shrpx_client_handler.cc
+    gsed -i '/find_package(LibXml2/c find_package(LibXml2 CONFIG)' CMakeLists.txt
+    gsed -i 's|${LIBCARES_LIBRARY}|${LIBCARES_LIBRARY} -lresolv|' cmake/FindLibcares.cmake
+    gsed -i 's|return dconn;|return std::move(dconn);|' src/shrpx_client_handler.cc
 
 install: |
     cmakew \

@@ -6,8 +6,8 @@ license: LGPL-2.1-or-later
 dep-pkg: glib gsettings-desktop-schemas dbus libduktape libcurl
 
 dopatch: |
-    sedInPlace 's|/bin/bash|/usr/bin/env bash|' data/check-code-style
-    sedInPlace 's|/bin/bash|/usr/bin/env bash|' data/pre-commit-hook
-    sedInPlace 's|/bin/bash|/usr/bin/env bash|' data/install-git-hook.sh
+    gsed -i 's|/bin/bash|/usr/bin/env bash|' data/check-code-style
+    gsed -i 's|/bin/bash|/usr/bin/env bash|' data/pre-commit-hook
+    gsed -i 's|/bin/bash|/usr/bin/env bash|' data/install-git-hook.sh
 
 install: mesonw -Ddocs=false -Dtests=false -Dcurl=true -Dvapi=false -Dintrospection=false

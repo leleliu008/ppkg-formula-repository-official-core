@@ -5,19 +5,19 @@ license: MIT
 dep-pkg: gdk-pixbuf libcurl
 
 dopatch: |
-    sedInPlace '/sys\/unistd\.h/d' meson.build
-    sedInPlace '/sys\/unistd\.h/d' src/tty.c
-    sedInPlace '/sys\/unistd\.h/d' src/encoder.c
-    sedInPlace '/sys\/unistd\.h/d' src/decoder.c
-    sedInPlace '/sys\/unistd\.h/d' converters/img2sixel.c
+    gsed -i '/sys\/unistd\.h/d' meson.build
+    gsed -i '/sys\/unistd\.h/d' src/tty.c
+    gsed -i '/sys\/unistd\.h/d' src/encoder.c
+    gsed -i '/sys\/unistd\.h/d' src/decoder.c
+    gsed -i '/sys\/unistd\.h/d' converters/img2sixel.c
 
-    sedInPlace 's|if HAVE_JPEG|ifdef HAVE_JPEG|' src/loader.c
-    sedInPlace 's|if HAVE_JPEG|ifdef HAVE_JPEG|' src/status.c
+    gsed -i 's|if HAVE_JPEG|ifdef HAVE_JPEG|' src/loader.c
+    gsed -i 's|if HAVE_JPEG|ifdef HAVE_JPEG|' src/status.c
 
-    sedInPlace 's|and jpeg_found|and jpeg_found.found()|' meson.build
-    sedInPlace 's|and png_found|and png_found.found()|' meson.build
+    gsed -i 's|and jpeg_found|and jpeg_found.found()|' meson.build
+    gsed -i 's|and png_found|and png_found.found()|' meson.build
 
-    sedInPlace 's|link_with: libsixel|link_with: libsixel.get_static_lib()|' converters/meson.build
+    gsed -i 's|link_with: libsixel|link_with: libsixel.get_static_lib()|' converters/meson.build
 
 install: |
     mesonw \

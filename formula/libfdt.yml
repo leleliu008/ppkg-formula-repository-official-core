@@ -6,9 +6,9 @@ license: GPL-2.0-or-later BSD-2-Clause
 dep-upp: gm4 flex bison
 
 dopatch: |
-    sedInPlace 's|libfdt.$(SHAREDLIB_EXT).1|libfdt.1.$(SHAREDLIB_EXT)|' libfdt/Makefile.libfdt
-    sedInPlace 's|all: $(BIN)|all: |' Makefile
-    sedInPlace 's|install: install-bin|install: |' Makefile
+    gsed -i 's|libfdt.$(SHAREDLIB_EXT).1|libfdt.1.$(SHAREDLIB_EXT)|' libfdt/Makefile.libfdt
+    gsed -i 's|all: $(BIN)|all: |' Makefile
+    gsed -i 's|install: install-bin|install: |' Makefile
 
 install: |
     gmakew clean

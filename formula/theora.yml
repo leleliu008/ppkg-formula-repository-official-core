@@ -7,7 +7,7 @@ dep-upp: libtool
 license: BSD-3-Clause
 
 bsystem: autogen
-dopatch: sedInPlace '$d' autogen.sh && run ./autogen.sh
+dopatch: gsed -i '$d' autogen.sh && run ./autogen.sh
 install: |
     configure \
         --with-ogg="$libogg_INSTALL_DIR" \

@@ -28,5 +28,5 @@ install: |
 
 dotweak: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace '/^Libs:/s|$| -framework CoreFoundation -framework Security|' lib/pkgconfig/minizip-ng.pc
+        gsed -i '/^Libs:/s|$| -framework CoreFoundation -framework Security|' lib/pkgconfig/minizip-ng.pc
     fi

@@ -8,8 +8,8 @@ bsystem: autotools
 binbstd: 1
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace '$i void createIdentifierRef(_YangNode *node, char* prefix, char* ident);' lib/yang-data.h
-        sedInPlace '/#include "yang-data.h"/a #include "yang-check.h"' lib/parser-yang.y
-        sedInPlace '/#include "smi-data.h"/a #include "smi-check.h"' lib/error.h
+        gsed -i '$i void createIdentifierRef(_YangNode *node, char* prefix, char* ident);' lib/yang-data.h
+        gsed -i '/#include "yang-data.h"/a #include "yang-check.h"' lib/parser-yang.y
+        gsed -i '/#include "smi-data.h"/a #include "smi-check.h"' lib/error.h
     fi
     run autoreconf -ivf

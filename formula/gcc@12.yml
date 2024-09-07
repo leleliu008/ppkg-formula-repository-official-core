@@ -8,7 +8,7 @@ dep-upp: rsync
 license: GPL-3.0-or-later
 ccflags: -Wno-error=unused-variable
 
-dopatch: sedInPlace 's|m64=../lib64|m64=|' gcc/config/i386/t-linux64
+dopatch: gsed -i 's|m64=../lib64|m64=|' gcc/config/i386/t-linux64
 
 install: |
     configure \

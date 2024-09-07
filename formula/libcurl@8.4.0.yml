@@ -28,5 +28,5 @@ dotweak: |
     rm -rfv share/man/man1/curl.1
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' lib/pkgconfig/libcurl.pc
+        gsed -i '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' lib/pkgconfig/libcurl.pc
     fi

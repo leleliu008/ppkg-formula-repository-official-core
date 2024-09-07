@@ -7,9 +7,9 @@ dep-pkg: glib libsqlite3 libcurl libexecinfo
 bsystem: cmake
 
 dopatch: |
-    sedInPlace 's|FIND_PACKAGE(CURL|PKG_CHECK_MODULES(CURL libcurl|' CMakeLists.txt
-    sedInPlace 's|CURL_LIBRARY|CURL_LIBRARIES|' lib/CMakeLists.txt
-    sedInPlace 's|SHARED|STATIC|' lib/CMakeLists.txt
+    gsed -i 's|FIND_PACKAGE(CURL|PKG_CHECK_MODULES(CURL libcurl|' CMakeLists.txt
+    gsed -i 's|CURL_LIBRARY|CURL_LIBRARIES|' lib/CMakeLists.txt
+    gsed -i 's|SHARED|STATIC|' lib/CMakeLists.txt
 
 prepare: |
     # https://www.gnu.org/software/gnulib/manual/html_node/execinfo_002eh.html

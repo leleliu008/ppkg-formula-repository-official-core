@@ -7,9 +7,9 @@ license: Apache-2.0
 dep-pkg: gflags gperftools libleveldb libopenssl libprotobuf
 
 dopatch: |
-    sedInPlace "s|/usr/local/opt/openssl|$libopenssl_INSTALL_DIR|" CMakeLists.txt
-    sedInPlace "s|set(CMAKE_C_FLAGS \"|set(CMAKE_C_FLAGS \"\${CMAKE_C_FLAGS} |" CMakeLists.txt
-    sedInPlace "s|set(CMAKE_CXX_FLAGS \"|set(CMAKE_CXX_FLAGS \"\${CMAKE_CXX_FLAGS} |" CMakeLists.txt
+    gsed -i "s|/usr/local/opt/openssl|$libopenssl_INSTALL_DIR|" CMakeLists.txt
+    gsed -i "s|set(CMAKE_C_FLAGS \"|set(CMAKE_C_FLAGS \"\${CMAKE_C_FLAGS} |" CMakeLists.txt
+    gsed -i "s|set(CMAKE_CXX_FLAGS \"|set(CMAKE_CXX_FLAGS \"\${CMAKE_CXX_FLAGS} |" CMakeLists.txt
 
 install: |
     cmakew \

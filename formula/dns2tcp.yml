@@ -6,4 +6,4 @@ license: GPL-2.0-or-later
 
 bsystem: configure
 binbstd: 1
-dopatch: sedInPlace 's|int debug;|int debug __attribute__((common));|' common/includes/debug.h
+dopatch: gsed -i 's|int debug;|int debug __attribute__((common));|' common/includes/debug.h

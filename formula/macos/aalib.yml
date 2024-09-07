@@ -14,16 +14,16 @@ dep-upp: libtool
 bsystem: autotools
 
 dopatch: |
-    #sedInPlace '203c return 0;'         src/aalinuxkbd.c
-    #sedInPlace '1i #include <stdlib.h>' src/aalinuxkbd.c
-    #sedInPlace 's|exit(1)|return 1|'    src/aasavefont.c
-    #sedInPlace 's|exit(1)|return 1|'    src/aainfo.c
-    #sedInPlace 's|exit(1)|return 1|'    src/aatest.c
-    #sedInPlace 's|exit(2)|return 2|'    src/aatest.c
-    #sedInPlace '1i #include <string.h>' src/aatest.c
-    #sedInPlace '1i #include <string.h>' src/aaregist.c
-    #sedInPlace '1i #include <string.h>' src/aakbdreg.c
-    #sedInPlace '1i #include <string.h>' src/aamoureg.c
+    #gsed -i '203c return 0;'         src/aalinuxkbd.c
+    #gsed -i '1i #include <stdlib.h>' src/aalinuxkbd.c
+    #gsed -i 's|exit(1)|return 1|'    src/aasavefont.c
+    #gsed -i 's|exit(1)|return 1|'    src/aainfo.c
+    #gsed -i 's|exit(1)|return 1|'    src/aatest.c
+    #gsed -i 's|exit(2)|return 2|'    src/aatest.c
+    #gsed -i '1i #include <string.h>' src/aatest.c
+    #gsed -i '1i #include <string.h>' src/aaregist.c
+    #gsed -i '1i #include <string.h>' src/aakbdreg.c
+    #gsed -i '1i #include <string.h>' src/aamoureg.c
 
     export CPPFLAGS="$CPPFLAGS -include stdlib.h -include string.h"
 

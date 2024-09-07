@@ -20,8 +20,8 @@ dopatch: |
     done
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace '/-DZMEM/c true' unix/configure
-        sedInPlace '/-DNO_/c  true' unix/configure
+        gsed -i '/-DZMEM/c true' unix/configure
+        gsed -i '/-DNO_/c  true' unix/configure
     fi
 
 install: |

@@ -30,4 +30,4 @@ install: |
         --with-iconv
 
 dotweak: |
-    sedInPlace '/Requires: /s|iconv|libiconv libcrypto|' lib/pkgconfig/libarchive.pc
+    gsed -i '/Requires: /s|iconv|libiconv libcrypto|' lib/pkgconfig/libarchive.pc

@@ -50,4 +50,4 @@ install: |
     gmakew CROSS_COMPILE=
     gmakew CROSS_COMPILE= install
 
-dotweak: sedInPlace '/Libs:/s|-lcrypto|-lcrypto -lpthread -ldl|' lib/pkgconfig/libcrypto.pc
+dotweak: gsed -i '/Libs:/s|-lcrypto|-lcrypto -lpthread -ldl|' lib/pkgconfig/libcrypto.pc

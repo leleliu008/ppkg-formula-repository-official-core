@@ -6,4 +6,4 @@ src-sha: 6a5ca0652392a2d7c9db2ae5b40210843c0bbc081cbd410825ab00cc59f14a6c
 license: libpng-2.0
 dep-pkg: libz
 bsystem: configure
-dotweak: sedInPlace '/Libs:/s|-lz|-lm|g' lib/pkgconfig/libpng16.pc
+dotweak: gsed -i '/Libs:/s|-lz|-lm|g' lib/pkgconfig/libpng16.pc

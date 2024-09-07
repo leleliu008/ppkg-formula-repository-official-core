@@ -9,5 +9,5 @@ prepare: |
     case $TARGET_PLATFORM_NAME in
         netbsd)
             export CPPFLAGS="$CPPFLAGS -DMAP_POPULATE=0"
-            sedInPlace 's|__FreeBSD__|__NetBSD__|' src/fs_unix.cpp
+            gsed -i 's|__FreeBSD__|__NetBSD__|' src/fs_unix.cpp
     esac

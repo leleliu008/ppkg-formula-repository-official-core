@@ -9,7 +9,7 @@ dep-upp: gm4 flex bison
 install: |
     export CPPFLAGS="$CPPFLAGS -I. -I../src"
 
-    sedInPlace 's|-lunistring -lpcre2-32 -lncurses|-lunistring -lpcre2-32 -lncurses -liconv|' src/Makefile
+    gsed -i 's|-lunistring -lpcre2-32 -lncurses|-lunistring -lpcre2-32 -lncurses -liconv|' src/Makefile
 
     gmakew clean
     gmakew CC=$CC CFLAGS="'$CPPFLAGS $CFLAGS'" LDFLAGS="'$LDFLAGS'"

@@ -4,6 +4,6 @@ src-sha: b778dd72ee2251f4fe9e2666ee3fe1c26f06f517c3ffce572416db067546536c
 license: MIT
 dep-upp: git
 dopatch: |
-    sedInPlace '/target_link_libraries(${OUT_FILE} m3)/d'     CMakeLists.txt
-    sedInPlace '185i target_link_libraries(${OUT_FILE} m3 m)' CMakeLists.txt
+    gsed -i '/target_link_libraries(${OUT_FILE} m3)/d'     CMakeLists.txt
+    gsed -i '185i target_link_libraries(${OUT_FILE} m3 m)' CMakeLists.txt
 install: cmakew && install_bins wasm3

@@ -7,6 +7,6 @@ src-sha: 31da5562f44c5f15d63340a09a4fd62b48c45620cd302f77a6d9acf0077879bd
 parallel: 0
 
 install: |
-    sedInPlace 's#$(MAKE) -C doc#@mkdir -p doc \&\& ([ -f doc/giflib.1 ] || touch doc/giflib.1)#' Makefile
+    gsed -i 's#$(MAKE) -C doc#@mkdir -p doc \&\& ([ -f doc/giflib.1 ] || touch doc/giflib.1)#' Makefile
     gmakew clean
     gmakew install PREFIX=$PACKAGE_INSTALL_DIR CC=$CC AR=$AR CFLAGS="'$CFLAGS'"

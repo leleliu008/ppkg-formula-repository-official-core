@@ -4,5 +4,5 @@ src-sha: 3b88f267b58009005bc1182d8bd0c4a3218013ce202da722e5e8c9867c6f94f4
 license: MIT
 dep-pkg: uthash
 dopatch: |
-    sedInPlace 's|link_with : libdicom|link_with : libdicom.get_static_lib()|' meson.build
+    gsed -i 's|link_with : libdicom|link_with : libdicom.get_static_lib()|' meson.build
 install: mesonw -Dtests=false

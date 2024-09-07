@@ -7,5 +7,5 @@ license: GPL-3.0-or-later
 dep-pkg: libz libopenssl ncurses protobuf
 dep-upp: perl
 xxflags: -std=gnu++17
-dopatch: sedInPlace 's|if ( bind|if (::bind|' src/network/network.cc
+dopatch: gsed -i 's|if ( bind|if (::bind|' src/network/network.cc
 install: configure --with-ncurses

@@ -6,8 +6,8 @@ license: BSD-2-Clause
 dep-pkg: libpng libtiff liblcms2
 
 dopatch: |
-    sedInPlace 's|TIFF_LIBRARIES|PC_TIFF_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
-    sedInPlace 's|LCMS2_LIBRARIES|PC_LCMS2_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
+    gsed -i 's|TIFF_LIBRARIES|PC_TIFF_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
+    gsed -i 's|LCMS2_LIBRARIES|PC_LCMS2_STATIC_LIBRARIES|' thirdparty/CMakeLists.txt
 
 install: |
     cmakew \

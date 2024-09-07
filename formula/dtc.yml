@@ -6,8 +6,8 @@ license: GPL-2.0-or-later BSD-2-Clause
 dep-upp: gm4 flex bison
 
 dopatch: |
-    sedInPlace '/-static/d' Makefile
-    sedInPlace 's|sxdigit(unitname|sxdigit((int)unitname|' checks.c
+    gsed -i '/-static/d' Makefile
+    gsed -i 's|sxdigit(unitname|sxdigit((int)unitname|' checks.c
 
 install: |
     gmakew clean

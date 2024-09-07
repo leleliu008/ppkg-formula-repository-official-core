@@ -4,7 +4,7 @@ src-sha: b7e481b109d19aefdba31e9f5888aa0cdfbe7608fed9a43494c060ce1f8a34d2
 dep-pkg: icu4c glib libfreetype libgraphite2
 license: MIT
 
-dopatch: sedInPlace "/subdir('util')/d" meson.build
+dopatch: gsed -i "/subdir('util')/d" meson.build
 
 install: |
     mesonw \

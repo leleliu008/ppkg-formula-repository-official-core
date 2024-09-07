@@ -5,6 +5,6 @@ license: GPL-2.0-or-later
 dep-pkg: libnet libpcap
 bsystem: autotools
 
-dopatch: sedInPlace 's|mock_libpcap.c mock_libnet.c||g' src/Makefile.am
+dopatch: gsed -i 's|mock_libpcap.c mock_libnet.c||g' src/Makefile.am
 
 prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lssl -lcrypto"

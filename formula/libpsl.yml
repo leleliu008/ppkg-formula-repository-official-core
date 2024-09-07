@@ -6,9 +6,9 @@ license: MIT
 dep-pkg: libidn2
 
 dopatch: |
-    sedInPlace "/libidn2_dep =/c libidn2_dep = cc.find_library('idn2', static : true, dirs: ['$libidn2_LIBRARY_DIR'])" meson.build
-    sedInPlace "/libiconv_dep =/c libiconv_dep = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
-    sedInPlace "/libunistring =/c libunistring = cc.find_library('unistring', static : true, dirs: ['$libunistring_LIBRARY_DIR'])" meson.build
-    sedInPlace 's|link_with : libpsl|link_with : libpsl.get_static_lib()|' src/meson.build
+    gsed -i "/libidn2_dep =/c libidn2_dep = cc.find_library('idn2', static : true, dirs: ['$libidn2_LIBRARY_DIR'])" meson.build
+    gsed -i "/libiconv_dep =/c libiconv_dep = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
+    gsed -i "/libunistring =/c libunistring = cc.find_library('unistring', static : true, dirs: ['$libunistring_LIBRARY_DIR'])" meson.build
+    gsed -i 's|link_with : libpsl|link_with : libpsl.get_static_lib()|' src/meson.build
 
 install: mesonw -Druntime=libidn2 -Dtests=false -Ddocs=false

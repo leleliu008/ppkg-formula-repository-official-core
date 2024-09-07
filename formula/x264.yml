@@ -5,7 +5,7 @@ git-sha: 31e19f92f00c7003fa115047ce50978bc98c3a0d
 version: r3108
 license: GPL-2.0-only
 
-dopatch: sedInPlace '1c \#!/usr/bin/env bash' configure
+dopatch: gsed -i '1c \#!/usr/bin/env bash' configure
 
 install: |
     configure only \

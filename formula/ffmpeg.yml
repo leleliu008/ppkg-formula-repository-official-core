@@ -33,8 +33,8 @@ install: |
         TARGET_OS="$TARGET_PLATFORM_NAME"
     fi
 
-    sedInPlace 's|-lxvidcore|-lxvidcore -lm|' configure
-    sedInPlace "/SDL2_CONFIG=/c SDL2_CONFIG='$libsdl2_INSTALL_DIR/bin/sdl2-config'" configure
+    gsed -i 's|-lxvidcore|-lxvidcore -lm|' configure
+    gsed -i "/SDL2_CONFIG=/c SDL2_CONFIG='$libsdl2_INSTALL_DIR/bin/sdl2-config'" configure
 
     export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lgomp -lm"
 

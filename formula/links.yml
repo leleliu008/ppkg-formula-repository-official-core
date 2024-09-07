@@ -10,7 +10,7 @@ binbstd: 1
 install: |
     OPENSSL_LIBS="$(pkg-config --libs openssl)"
     printf 'OPENSSL_LIBS=%s\n' "$OPENSSL_LIBS"
-    sedInPlace "s|-lssl -lcrypto|$OPENSSL_LIBS|" configure || return 1
+    gsed -i "s|-lssl -lcrypto|$OPENSSL_LIBS|" configure || return 1
 
     # configure [options] [host]
     run ./configure \

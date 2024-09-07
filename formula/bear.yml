@@ -8,7 +8,7 @@ dep-upp: grpc-plugins
 
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace 's|spdlog::spdlog|spdlog::spdlog -lresolv|' source/intercept/CMakeLists.txt
+        gsed -i 's|spdlog::spdlog|spdlog::spdlog -lresolv|' source/intercept/CMakeLists.txt
     fi
 
 install: |

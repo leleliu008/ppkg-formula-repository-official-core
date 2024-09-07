@@ -9,7 +9,7 @@ dep-upp: gettext-tools gm4
 dep-plm: XML::Parser
 
 dopatch: |
-    sedInPlace "/libintl_dep =/c libintl_dep = cc.find_library('intl',  dirs: ['$libintl_LIBRARY_DIR'])" meson.build
+    gsed -i "/libintl_dep =/c libintl_dep = cc.find_library('intl',  dirs: ['$libintl_LIBRARY_DIR'])" meson.build
 
     export PERL5LIB="$NATIVE_PACKAGE_INSTALLED_ROOT/perl-XML-Parser/lib/perl5"
 

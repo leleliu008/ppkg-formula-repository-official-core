@@ -5,7 +5,7 @@ src-sha: 7779ef2c3d03c5ed95e13ff292de85c3f8cee301cd46baad0d2dc83c93bfe85c
 license: Apache-2.0
 dep-pkg: fmt boost ffmpeg-dev libheif libraw libopencolorio pugixml pybind11 python3
 
-dopatch: sedInPlace '/\<cstdio\>/a \#include <cstdarg>' src/include/OpenImageIO/strutil.h
+dopatch: gsed -i '/\<cstdio\>/a \#include <cstdarg>' src/include/OpenImageIO/strutil.h
 
 install: |
     cmakew \

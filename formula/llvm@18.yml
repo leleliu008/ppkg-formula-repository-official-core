@@ -30,14 +30,14 @@ dopatch: |
     mark_as_advanced(LibEdit_INCLUDE_DIRS LibEdit_LIBRARIES)
     EOF
 
-    sedInPlace '/find_library(LibEdit_LIBRARIES/c set(LibEdit_LIBRARIES "${PC_LIBEDIT_LINK_LIBRARIES}")' ../cmake/Modules/FindLibEdit.cmake
-    sedInPlace '/IMPORTED_LOCATION/c INTERFACE_LINK_LIBRARIES "${LibEdit_LIBRARIES}"'                    ../cmake/Modules/FindLibEdit.cmake
+    gsed -i '/find_library(LibEdit_LIBRARIES/c set(LibEdit_LIBRARIES "${PC_LIBEDIT_LINK_LIBRARIES}")' ../cmake/Modules/FindLibEdit.cmake
+    gsed -i '/IMPORTED_LOCATION/c INTERFACE_LINK_LIBRARIES "${LibEdit_LIBRARIES}"'                    ../cmake/Modules/FindLibEdit.cmake
 
-    sedInPlace '/add_optional_dependency(LLDB_ENABLE_LIBXML2/c find_package(LibXml2 CONFIG REQUIRED)' ../lldb/cmake/modules/LLDBConfig.cmake
-    sedInPlace '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)'                                      ../lldb/cmake/modules/LLDBConfig.cmake
+    gsed -i '/add_optional_dependency(LLDB_ENABLE_LIBXML2/c find_package(LibXml2 CONFIG REQUIRED)' ../lldb/cmake/modules/LLDBConfig.cmake
+    gsed -i '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)'                                      ../lldb/cmake/modules/LLDBConfig.cmake
 
     LIBELF_LIBRARIES="$(pkg-config --libs-only-l libelf)"
-    sedInPlace "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
+    gsed -i "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
 
 # https://llvm.org/docs/CMake.html
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration

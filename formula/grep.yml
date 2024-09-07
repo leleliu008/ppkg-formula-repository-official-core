@@ -13,5 +13,5 @@ install: |
         --with-included-regex
 
 dotweak: |
-    sedInPlace 's|bash|sh|' bin/egrep
-    sedInPlace 's|bash|sh|' bin/fgrep
+    gsed -i 's|bash|sh|' bin/egrep
+    gsed -i 's|bash|sh|' bin/fgrep

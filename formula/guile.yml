@@ -20,7 +20,7 @@ prepare: |
 install: configure --disable-nls
 
 dotweak: |
-    sedInPlace '/^Name: /,$d' lib/pkgconfig/guile-3.0.pc
+    gsed -i '/^Name: /,$d' lib/pkgconfig/guile-3.0.pc
     cat >> lib/pkgconfig/guile-3.0.pc <<EOF
     Name: Guile
     Description: $PACKAGE_SUMMARY

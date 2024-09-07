@@ -4,5 +4,5 @@ src-url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/op
 src-sha: 082e998cf542984d43634442dbe11da860759e510907152ea579bdc42fe39ea0
 license: OLDAP-2.8
 dep-pkg: libopenssl
-dopatch: sedInPlace '/SUBDIRS=/s|doc||' Makefile.in
+dopatch: gsed -i '/SUBDIRS=/s|doc||' Makefile.in
 install: configure --without-systemd

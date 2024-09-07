@@ -14,8 +14,8 @@ install: |
         -DBUILD_SHARED_LIBS=ON
 
 dotweak: |
-    sedInPlace 's|libcrypto|libcrypto libcbor libz|' lib/pkgconfig/libfido2.pc
+    gsed -i 's|libcrypto|libcrypto libcbor libz|' lib/pkgconfig/libfido2.pc
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace 's|-lfido2|-lfido2 -framework CoreFoundation -framework IOKit|' lib/pkgconfig/libfido2.pc
+        gsed -i 's|-lfido2|-lfido2 -framework CoreFoundation -framework IOKit|' lib/pkgconfig/libfido2.pc
     fi

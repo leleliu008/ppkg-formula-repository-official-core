@@ -8,7 +8,7 @@ dep-upp: gettext-tools xz
 dep-pkg: readline
 bsystem: autotools
 dopatch: |
-    sedInPlace 's|inline int|int|' database.c
+    gsed -i 's|inline int|int|' database.c
 
     if [ "$TARGET_PLATFORM_NAME" != macos ] ; then
         if [ -f ../lib/libreadline.a ] ; then

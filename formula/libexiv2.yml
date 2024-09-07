@@ -8,7 +8,7 @@ dep-pkg: libexpat libcurl libssh inih
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         CURL_LIBRARIES="$(pkg-config --libs-only-l libcurl)"
-        sedInPlace "s|\${CURL_LIBRARIES}|$CURL_LIBRARIES \"-framework CoreFoundation\" \"-framework SystemConfiguration\"|" src/CMakeLists.txt
+        gsed -i "s|\${CURL_LIBRARIES}|$CURL_LIBRARIES \"-framework CoreFoundation\" \"-framework SystemConfiguration\"|" src/CMakeLists.txt
     fi
 
 install: |

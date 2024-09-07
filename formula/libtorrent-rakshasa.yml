@@ -13,4 +13,4 @@ install: |
         --without-fastcgi \
         --with-zlib="$libz_INSTALL_DIR"
 
-dotweak: sedInPlace 's|-ltorrent|-ltorrent -lz|' lib/pkgconfig/libtorrent.pc
+dotweak: gsed -i 's|-ltorrent|-ltorrent -lz|' lib/pkgconfig/libtorrent.pc

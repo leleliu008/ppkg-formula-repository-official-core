@@ -7,7 +7,7 @@ src-sha: cc49931a20560968a8648c9ca079085976085ea96d59a01b1e17cb55af0ffe42
 license: Imlib2
 dep-pkg: libgif libpng libtiff libwebp libjpeg-turbo libfreetype xorg-libxext
 
-dopatch: sedInPlace '/keysym\.h/a \#include <sys/time.h>' src/bin/imlib2_view.c
+dopatch: gsed -i '/keysym\.h/a \#include <sys/time.h>' src/bin/imlib2_view.c
 
 install: |
     configure \

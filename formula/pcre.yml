@@ -6,8 +6,8 @@ license: BSD-3-Clause
 dep-pkg: libz libbz2 readline
 
 dopatch: |
-    sedInPlace 's|DESTINATION man/man1|DESTINATION share/man/man1|' CMakeLists.txt
-    sedInPlace 's|DESTINATION man/man3|DESTINATION share/man/man3|' CMakeLists.txt
+    gsed -i 's|DESTINATION man/man1|DESTINATION share/man/man1|' CMakeLists.txt
+    gsed -i 's|DESTINATION man/man3|DESTINATION share/man/man3|' CMakeLists.txt
 
 install: |
     cmakew \

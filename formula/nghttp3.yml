@@ -1,7 +1,7 @@
 summary: HTTP/3 library written in C
 git-url: https://github.com/ngtcp2/nghttp3
 license: MIT
-dopatch: sedInPlace 's|nghttp3|nghttp3_static|' examples/CMakeLists.txt
+dopatch: gsed -i 's|nghttp3|nghttp3_static|' examples/CMakeLists.txt
 install: |
     cmakew \
         -DENABLE_ASAN=ON \

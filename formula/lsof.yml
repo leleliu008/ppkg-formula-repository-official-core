@@ -15,7 +15,7 @@ install: |
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
     export LSOF_CFGL="$LDFLAGS"
     
-    sedInPlace '1c #!/bin/sh' lib/dialects/linux/Mksrc
+    gsed -i '1c #!/bin/sh' lib/dialects/linux/Mksrc
 
     run ./Configure -clean
     run ./Configure -n linux

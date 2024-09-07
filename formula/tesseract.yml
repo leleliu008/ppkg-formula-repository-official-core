@@ -91,11 +91,11 @@ dopatch: |
 
     PANGOCAIRO_LIBRARIES="$(pkg-config --libs-only-l pangocairo) -lintl -lpixman-1 -lffi  -lpcre2-8"
     echo "$PANGOCAIRO_LIBRARIES=$PANGOCAIRO_LIBRARIES"
-    sedInPlace "s|PkgConfig::PANGO|$PANGOCAIRO_LIBRARIES|" src/training/CMakeLists.txt
+    gsed -i "s|PkgConfig::PANGO|$PANGOCAIRO_LIBRARIES|" src/training/CMakeLists.txt
 
     ####################################################################
 
-    sedInPlace '/find_package(Leptonica/s|CONFIG||' CMakeLists.txt
+    gsed -i '/find_package(Leptonica/s|CONFIG||' CMakeLists.txt
 
 install: |
     cmakew \

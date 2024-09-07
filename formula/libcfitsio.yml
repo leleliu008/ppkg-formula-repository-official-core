@@ -8,7 +8,7 @@ binbstd: 1
 
 dopatch: |
     LIBCURL_LIBS="$(pkg-config --libs libcurl)"
-    sedInPlace "/CURL_LIB=/c CURL_LIB=$LIBCURL_LIBS" configure
+    gsed -i "/CURL_LIB=/c CURL_LIB=$LIBCURL_LIBS" configure
 
 prepare: export CFLAGS="$CFLAGS $LDFLAGS"
 

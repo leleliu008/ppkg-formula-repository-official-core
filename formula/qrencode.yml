@@ -7,9 +7,9 @@ license: LGPL-2.1-or-later
 dep-pkg: libpng
 
 dopatch: |
-    sedInPlace 's|PNG::PNG|PNG::PNG -lm|' CMakeLists.txt
-    sedInPlace '/install(FILES /d'        CMakeLists.txt
-    sedInPlace '/install(TARGETS /d'      CMakeLists.txt
+    gsed -i 's|PNG::PNG|PNG::PNG -lm|' CMakeLists.txt
+    gsed -i '/install(FILES /d'        CMakeLists.txt
+    gsed -i '/install(TARGETS /d'      CMakeLists.txt
 
 install: |
     cmakew \

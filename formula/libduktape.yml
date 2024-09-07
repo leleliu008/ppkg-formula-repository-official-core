@@ -6,7 +6,7 @@ license: MIT
 bsystem: gmake
 install: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        sedInPlace 's|\.so|.dylib|g' Makefile.sharedlibrary
+        gsed -i 's|\.so|.dylib|g' Makefile.sharedlibrary
         gmakew -f Makefile.sharedlibrary install INSTALL_PREFIX="$PACKAGE_INSTALL_DIR" OS=Darwin DETECTED_OS=Darwin
     else
         gmakew -f Makefile.sharedlibrary install INSTALL_PREFIX="$PACKAGE_INSTALL_DIR"
