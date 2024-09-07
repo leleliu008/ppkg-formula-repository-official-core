@@ -19,6 +19,7 @@ prepare: |
     # FNM_EXTMATCH is a GNU externsion, musl does not define it
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export CPPFLAGS="$CPPFLAGS -DFNM_EXTMATCH=0"
+        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -largp"
     fi
 
 install: |
