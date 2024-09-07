@@ -1,0 +1,6 @@
+summary: High-level tracing language for Linux
+src-url: https://github.com/bpftrace/bpftrace/archive/refs/tags/v0.21.2.tar.gz
+src-sha: 7c2cb089da6e6074574edc164cf9242e06843e66c493304a9d2739258e6a1459
+dep-pkg: libbpf libbcc libpcap
+dep-upp: gm4 flex bison
+install: cmakew

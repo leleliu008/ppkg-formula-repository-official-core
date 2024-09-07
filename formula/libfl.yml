@@ -12,4 +12,8 @@ prepare: |
         export LDFLAGS="$LDFLAGS -Wl,-undefined -Wl,dynamic_lookup"
     fi
 
-install: configure --enable-warnings --enable-static --disable-shared --disable-libfl
+install: |
+    configure only --enable-warnings
+    gmakew -C src clean
+    gmakew -C src libfl.la
+    gmakew -C src install-includeHEADERS install-libLTLIBRARIES

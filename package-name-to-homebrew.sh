@@ -226,6 +226,7 @@ case $1 in
     liborc)   printf '%s\n' 'orc'       ;;
     libdb)    printf '%s\n' 'berkeley-db' ;;
     libz3)    printf '%s\n' 'z3'        ;;
+    libfl)    printf '%s\n' 'flex'      ;;
     libz)     printf '%s\n' 'zlib'      ;;
 
     gif)      printf '%s\n' 'giflib'    ;;
