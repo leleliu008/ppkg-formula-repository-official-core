@@ -45,7 +45,7 @@ install: |
     fi
 
     # https://github.com/openssl/openssl/blob/master/INSTALL.md
-    run "$CMD" no-tests no-ssl3 no-ssl3-method no-zlib --libdir=lib --openssldir=etc/ssl --prefix="$PACKAGE_INSTALL_DIR" "$OS_COMPILER"
+    run "$CMD" no-tests no-ssl3 no-ssl3-method no-zlib --libdir=lib --openssldir=/etc/ssl --prefix="$PACKAGE_INSTALL_DIR" "$OS_COMPILER"
     gmakew clean
     gmakew build_libs
     gmakew install_dev
