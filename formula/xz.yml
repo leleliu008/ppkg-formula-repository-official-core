@@ -1,4 +1,4 @@
-summary: General-purpose data compression with high compression ratio
+summary: A free, general-purpose data compression with a high compression ratio
 web-url: https://tukaani.org/xz
 src-url: https://downloads.sourceforge.net/project/lzmautils/xz-5.4.6.tar.gz
 src-uri: https://archive.org/download/xz-5.4.6/xz-5.4.6.tar.gz

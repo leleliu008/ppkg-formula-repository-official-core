@@ -1,4 +1,4 @@
-summary: Graphics Library
+summary: An open source graphics library that implements OpenGL, OpenGL ES, Vulkan, OpenCL, and more
 web-url: https://www.mesa3d.org/
 git-url: https://gitlab.freedesktop.org/mesa/mesa
 src-url: https://mesa.freedesktop.org/archive/mesa-24.0.3.tar.xz
