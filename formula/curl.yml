@@ -1,4 +1,4 @@
-summary: A command-line tool to get a file from an HTTP, HTTPS or FTP server
+summary: A command-line tool for transferring data from/to an HTTP, HTTPS or FTP server
 git-url: https://github.com/curl/curl
 web-url: https://curl.haxx.se/
 src-url: https://curl.haxx.se/download/curl-8.9.1.tar.bz2
