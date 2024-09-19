@@ -8,14 +8,16 @@ dep-pkg: libnghttp2 libevent libexpat
 dep-upp: gm4 flex bison libtool
 
 install: |
-    configure \
-        --disable-pie \
-        --disable-flto \
-        --disable-gost \
+    configure only \
         --disable-systemd \
+        --disable-gost \
+        --disable-flto \
+        --disable-pie \
         --enable-event-api \
         --with-pthreads \
         --with-ssl="$libopenssl_INSTALL_DIR" \
         --with-libexpat="$libexpat_INSTALL_DIR" \
         --with-libevent="$libevent_INSTALL_DIR" \
         --with-libnghttp2="$libnghttp2_INSTALL_DIR"
+    gmakew lib
+    gmakew install-lib

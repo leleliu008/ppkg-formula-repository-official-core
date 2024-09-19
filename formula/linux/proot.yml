@@ -3,8 +3,8 @@ web-url: https://proot-me.github.io/
 src-url: https://github.com/proot-me/proot/archive/refs/tags/v5.4.0.tar.gz
 src-sha: 29248aac2a7ce10c3bd5ee5602742ec33b2532310ff9cf73b79f3c133e5a5f68
 license: GPL-2.0-or-later
-dep-pkg: libarchive talloc sys-queue.h
-binbstd: 1
+dep-pkg: libarchive libtalloc sys-queue.h
+
 install: |
     gmakew -C src clean
     gmakew -C src build.h proot V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP HAS_SWIG= HAS_PYTHON_CONFIG= PYTHON=true GIT=true

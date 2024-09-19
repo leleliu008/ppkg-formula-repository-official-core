@@ -9,8 +9,6 @@ binbstd: 1
 xxflags: -std=c++11
 
 dopatch: |
-    #XXLIBS="$(pkg-config --libs tesseract)"
-    #echo "XXLIBS=$XXLIBS"
     sed -i 's|-g -o|$(LDFLAGS) -o|' base/unix-dll.mak
 
 prepare: |

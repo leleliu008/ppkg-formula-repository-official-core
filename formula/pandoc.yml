@@ -1,10 +1,9 @@
 summary: A universal document converter
 web-url: https://pandoc.org/
-src-url: https://github.com/jgm/pandoc/archive/refs/tags/3.1.12.3.tar.gz
-src-sha: 999b119171b92a5f6697d2dec89df49b629506d0f34976a94fdf35e9ae4c5d0d
+src-url: https://github.com/jgm/pandoc/archive/refs/tags/3.4.tar.gz
+src-sha: 7885c3aa2426142fb6b9d0157c2bf8484a6d560e62aac29bce51bf0b581ba259
 license: GPL-2.0-or-later
 dep-upp: ghc cabal-install unzip
-dep-pkg: libz
 install: |
     run cabal v2-update
-    run cabal v2-install --enable-executable-static --jobs=$BUILD_NJOBS --max-backjumps=100000 --install-method=copy --installdir=$PACKAGE_INSTALL_DIR pandoc-cli
+    run cabal v2-install --jobs=$BUILD_NJOBS --max-backjumps=100000 --install-method=copy --installdir=$PACKAGE_INSTALL_DIR pandoc-cli

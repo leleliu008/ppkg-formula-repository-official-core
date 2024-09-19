@@ -1,0 +1,11 @@
+summary: Command-line interface for Cabal and Hackage
+web-url: https://www.haskell.org/cabal/
+git-url: https://github.com/haskell/cabal
+src-url: https://hackage.haskell.org/package/cabal-install-3.12.1.0/cabal-install-3.12.1.0.tar.gz
+src-sha: 6848acfd9c726fdcce544a8b669748d0fd9f2da26d28e841069dc4840276b1b2
+license: BSD-3-Clause
+dep-upp: ghc cabal-install
+binbstd: 1
+install: |
+    run cabal v2-update
+    run cabal v2-install --enable-executable-static --jobs=$BUILD_NJOBS --max-backjumps=100000 --install-method=copy --installdir=$PACKAGE_INSTALL_DIR

@@ -21,9 +21,7 @@ install: |
         --extra-ldflags="'$LDFLAGS'" \
         --target=$TARGET_TRIPLE \
         --prefix=$PACKAGE_INSTALL_DIR \
-        --enable-static \
         --enable-lib-static \
         --enable-lib-shared
     gmakew clean
-    gmakew lib-shared lib-static
     gmakew install-lib-headers install-lib-static install-lib-shared install-pkg-config

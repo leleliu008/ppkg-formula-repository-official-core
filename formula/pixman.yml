@@ -1,8 +1,0 @@
-pkgtype: lib
-summary: Low-level library for pixel manipulation
-git-url: https://gitlab.freedesktop.org/pixman/pixman
-web-url: https://cairographics.org
-src-url: https://cairographics.org/releases/pixman-0.42.2.tar.gz
-src-sha: ea1480efada2fd948bc75366f7c349e1c96d3297d09a3fe62626e38e234a625e
-license: MIT
-install: mesonw -Dneon=disabled -Darm-simd=disabled

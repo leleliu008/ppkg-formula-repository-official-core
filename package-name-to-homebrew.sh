@@ -41,6 +41,8 @@ case $1 in
               printf '%s\n' 'glib'      ;;
     gettext-tools)
               printf '%s\n' 'gettext'   ;;
+    libcpu_features)
+              printf '%s\n' 'cpu_features' ;;
     libtextstyle)
               printf '%s\n' 'gettext'   ;;
     libasprintf)
