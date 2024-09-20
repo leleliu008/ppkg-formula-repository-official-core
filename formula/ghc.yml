@@ -41,4 +41,8 @@ onstart: |
         :
     }
 
+    __check_elf_files() {
+        :
+    }
+
 install: configure only && gmakew install
