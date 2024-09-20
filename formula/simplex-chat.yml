@@ -2,10 +2,11 @@ summary: the first messaging network operating without user identifiers of any k
 src-url: https://github.com/simplex-chat/simplex-chat/archive/refs/tags/v6.0.4.tar.gz
 src-sha: bccc8a53bac6f3885bf5ec885f7e5515303c9a5927352b165961085865ee7e3f
 license: GPL-3.0-or-later
+dep-pkg: ghc
 bsystem: cabal
 
 prepare: |
     case $TARGET_PLATFORM_NAME in
-        macos) mv scripts/cabal.project.local.mac   cabal.project.local ;;
-        linux) mv scripts/cabal.project.local.linux cabal.project.local ;;
+        macos) run mv scripts/cabal.project.local.mac   cabal.project.local ;;
+        linux) run mv scripts/cabal.project.local.linux cabal.project.local ;;
     esac

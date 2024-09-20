@@ -1,0 +1,44 @@
+summary: Glorious Glasgow Haskell Compilation System
+web-url: https://haskell.org/ghc/
+license: BSD-3-Clause
+version: 9.8.2
+dep-pkg: libffi libgmp
+binbstd: 1
+
+onstart: |
+    case $NATIVE_OS_KIND in
+        darwin)
+            case $NATIVE_OS_ARCH in
+                x86_64)
+                    PACKAGE_SRC_URL='https://downloads.haskell.org/~ghc/9.8.2/ghc-9.8.2-x86_64-apple-darwin.tar.xz'
+                    PACKAGE_SRC_SHA='64e8cca6310443cd6de8255edcf391d937829792e701167f7e5fb234f7150078'
+                    ;;
+                arm64)
+                    PACKAGE_SRC_URL='https://downloads.haskell.org/~ghc/9.8.2/ghc-9.8.2-aarch64-apple-darwin.tar.xz'
+                    PACKAGE_SRC_SHA='67be089dedbe599d911efd8f82e4f9a19225761a3872be74dfd4b5a557fb8e1a'
+                    ;;
+            esac
+            ;;
+        linux)
+            case $NATIVE_OS_ARCH in
+                x86_64)
+                    PACKAGE_SRC_URL='https://downloads.haskell.org/~ghc/9.8.2/ghc-9.8.2-x86_64-ubuntu20_04-linux.tar.xz'
+                    PACKAGE_SRC_SHA='a65a4726203c606b58a7f6b714a576e7d81390158c8afa0dece3841a4c602de2'
+                    ;;
+                arm64)
+                    PACKAGE_SRC_URL='https://downloads.haskell.org/~ghc/9.8.2/ghc-9.8.2-aarch64-deb10-linux.tar.xz'
+                    PACKAGE_SRC_SHA='9a3776fd8dc02f95b751f0e44823d6727dea2c212857e2c5c5f6a38a034d1575'
+                    ;;
+            esac
+            ;;
+    esac
+
+    PACKAGE_SRC_FILETYPE=.txz
+    PACKAGE_SRC_FILENAME="$PACKAGE_SRC_SHA.txz"
+    PACKAGE_SRC_FILEPATH="$PPKG_DOWNLOADS_DIR/$PACKAGE_SRC_FILENAME"
+
+    __check_mach_o_files() {
+        :
+    }
+
+install: configure only && gmakew install
