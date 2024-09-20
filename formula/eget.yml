@@ -1,0 +1,5 @@
+summary: Easily install prebuilt binaries from GitHub
+src-url: https://github.com/zyedidia/eget/archive/refs/tags/v1.3.4.tar.gz
+src-sha: 1d36e2e77caa5654c01efb890993f489fc6ae3b5b7f3e6fb0159fe946d6e7a06
+license: MIT
+install: gow -X main.Version=$PACKAGE_VERSION
