@@ -20,17 +20,29 @@ onstart: |
             esac
             ;;
         linux)
-            case $NATIVE_OS_ARCH in
-                x86_64)
-                    PACKAGE_SRC_URL='https://downloads.haskell.org/~ghc/9.8.2/ghc-9.8.2-x86_64-ubuntu20_04-linux.tar.xz'
-                    PACKAGE_SRC_SHA='a65a4726203c606b58a7f6b714a576e7d81390158c8afa0dece3841a4c602de2'
+            case $NATIVE_OS_CODE in
+                alpine)
+                    case $NATIVE_OS_ARCH in
+                        x86_64)
+                            PACKAGE_SRC_URL='https://downloads.haskell.org/ghc/9.8.2/ghc-9.8.2-x86_64-alpine3_12-linux-static.tar.xz'
+                            PACKAGE_SRC_SHA='71eb4bf339d109cf3c883b896adaa7fa4a720496c11f84f2013e583cb5556608'
+                            ;;
+                        aarch64)
+                            PACKAGE_SRC_URL='https://downloads.haskell.org/ghc/9.8.2/ghc-9.8.2-aarch64-alpine3_18-linux.tar.xz'
+                            PACKAGE_SRC_SHA='0e1a8156ec82de77a7160db023b297cf00ab1e04e395f1e8b77f602ba051b1d5'
+                    esac
                     ;;
-                arm64)
-                    PACKAGE_SRC_URL='https://downloads.haskell.org/~ghc/9.8.2/ghc-9.8.2-aarch64-deb10-linux.tar.xz'
-                    PACKAGE_SRC_SHA='9a3776fd8dc02f95b751f0e44823d6727dea2c212857e2c5c5f6a38a034d1575'
-                    ;;
+                ubuntu)
+                    case $NATIVE_OS_ARCH in
+                        x86_64)
+                            PACKAGE_SRC_URL='https://downloads.haskell.org/~ghc/9.8.2/ghc-9.8.2-x86_64-ubuntu20_04-linux.tar.xz'
+                            PACKAGE_SRC_SHA='a65a4726203c606b58a7f6b714a576e7d81390158c8afa0dece3841a4c602de2'
+                            ;;
+                        aarch64)
+                            PACKAGE_SRC_URL='https://downloads.haskell.org/~ghc/9.8.2/ghc-9.8.2-aarch64-deb10-linux.tar.xz'
+                            PACKAGE_SRC_SHA='9a3776fd8dc02f95b751f0e44823d6727dea2c212857e2c5c5f6a38a034d1575'
+                    esac
             esac
-            ;;
     esac
 
     PACKAGE_SRC_FILETYPE=.txz
