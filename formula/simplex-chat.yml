@@ -2,7 +2,7 @@ summary: the first messaging network operating without user identifiers of any k
 src-url: https://github.com/simplex-chat/simplex-chat/archive/refs/tags/v6.0.4.tar.gz
 src-sha: bccc8a53bac6f3885bf5ec885f7e5515303c9a5927352b165961085865ee7e3f
 license: GPL-3.0-or-later
-dep-pkg: libopenssl
+dep-pkg: libopenssl libz
 
 dopatch: |
     cat > cabal.project.local <<EOF
@@ -16,6 +16,10 @@ dopatch: |
         extra-include-dirs: $libopenssl_INCLUDE_DIR
         extra-lib-dirs: $libopenssl_LIBRARY_DIR
         flags: +openssl
+
+    package digest
+        extra-include-dirs: $libz_INCLUDE_DIR
+        extra-lib-dirs: $libz_LIBRARY_DIR
 
     test-show-details: direct
     EOF
