@@ -2,8 +2,10 @@ summary: Glorious Glasgow Haskell Compilation System
 web-url: https://haskell.org/ghc/
 license: BSD-3-Clause
 version: 9.8.2
-dep-pkg: libffi libgmp
+dep-pkg: libffi libgmp libz
 binbstd: 1
+
+# https://www.haskell.org/ghcup/install/
 
 onstart: |
     case $NATIVE_OS_KIND in
