@@ -1,0 +1,7 @@
+summary: Installer for the general purpose language Haskell
+web-url: https://www.haskell.org/ghcup/
+src-url: https://github.com/haskell/ghcup-hs/archive/refs/tags/v0.1.30.0.tar.gz
+src-sha: 89d158023f634f079ac6a306bb87d208445384a725d47b432f6858c8876cbef6
+license: LGPL-3.0-only
+dep-pkg: ghc
+bsystem: cabal
