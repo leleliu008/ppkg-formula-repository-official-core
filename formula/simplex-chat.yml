@@ -2,11 +2,32 @@ summary: the first messaging network operating without user identifiers of any k
 src-url: https://github.com/simplex-chat/simplex-chat/archive/refs/tags/v6.0.4.tar.gz
 src-sha: bccc8a53bac6f3885bf5ec885f7e5515303c9a5927352b165961085865ee7e3f
 license: GPL-3.0-or-later
-dep-pkg: ghc
-bsystem: cabal
+dep-pkg: libopenssl
 
 prepare: |
     case $TARGET_PLATFORM_NAME in
         macos) run mv scripts/cabal.project.local.mac   cabal.project.local ;;
         linux) run mv scripts/cabal.project.local.linux cabal.project.local ;;
     esac
+
+    export BOOTSTRAP_HASKELL_GHC_VERSION='9.6.3'
+    export BOOTSTRAP_HASKELL_CABAL_VERSION='3.10.1.0'
+    export BOOTSTRAP_HASKELL_NONINTERACTIVE=1
+
+    export GHCUP_INSTALL_BASE_PREFIX="$PACKAGE_WORKING_DIR"
+
+    wfetch 'https://get-ghcup.haskell.org' -o ghcup-installer.sh
+    gsed -i '/GHCUP_INSTALL_BASE_PREFIX:=/d'  ghcup-installer.sh
+    run sh ghcup-installer.sh
+
+    export PATH="$GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin:$PATH"
+
+    if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then
+       gsed -i '/- -Wunused-type-patterns/a\  - -O2\n\  - -split-sections\n\  - -with-rtsopts=-N\n\  - -static\n\cc-options: -static\n\ld-options: -static -pthread' package.yaml
+
+        run cabal install --install-method=copy --installdir=/usr/local/bin hpack-0.36.0
+
+        run hpack
+    fi
+
+install: cabal_v2_install exe:simplex-chat
