@@ -21,6 +21,10 @@ dopatch: |
         extra-include-dirs: $libz_INCLUDE_DIR
         extra-lib-dirs: $libz_LIBRARY_DIR
 
+    package zlib
+        extra-include-dirs: $libz_INCLUDE_DIR
+        extra-lib-dirs: $libz_LIBRARY_DIR
+
     test-show-details: direct
     EOF
 
