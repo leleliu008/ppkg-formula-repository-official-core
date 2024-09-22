@@ -3,7 +3,7 @@ web-url: https://busybox.net/
 src-url: https://busybox.net/downloads/busybox-1.36.1.tar.bz2
 src-sha: b8cc24c9574d809e7279c3be349795c5d5ceb6fdf19ca709f80cde50e47de314
 license: GPL-2.0
-dep-upp: bzip2
+dep-upp: bzip2 perl
 install: |
     gmakew defconfig
     gmakew CC="$CC" AS="$CC" AR="$AR" NM="$NM" STRIP="$STRIP" OBJCOPY="$OBJCOPY" OBJDUMP="$OBJDUMP" PKG_CONFIG="$PKG_CONFIG" HOSTCC="$CC_FOR_BUILD" HOSTCXX="$CXX_FOR_BUILD" HOSTCFLAGS="'$CFLAGS_FOR_BUILD'" HOSTCXXFLAGS="'$CXXFLAGS_FOR_BUILD'"
