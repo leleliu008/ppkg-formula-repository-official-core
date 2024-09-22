@@ -13,8 +13,5 @@ install: |
     install_mans pigz.1
 
 dotweak: |
-    run cd bin
-    run ln -s pigz unpigz
-    run cd -
-    run cd share/man/man1
-    run ln -s pigz.1 unpigz.1
+    run ln -s pigz   bin/unpigz
+    run ln -s pigz.1 share/man/man1/unpigz.1

@@ -4,6 +4,7 @@ web-url: https://www.gnu.org/software/m4
 src-url: https://ftp.gnu.org/gnu/m4/m4-1.4.19.tar.xz
 src-sha: 63aede5c6d33b6d9b13511cd0be2cac046f2e70fd0a07aa9573a04a82783af96
 license: GPL-3.0-or-later
+
 install: |
     configure \
         --enable-threads=posix \
@@ -14,5 +15,5 @@ install: |
         --without-dmalloc \
         --with-included-regex \
         --program-prefix=g
-    cd "$PACKAGE_INSTALL_DIR/bin"
-    ln -s gm4 m4
+
+dotweak: ln -s gm4 bin/m4

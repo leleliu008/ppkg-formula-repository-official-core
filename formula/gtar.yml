@@ -21,4 +21,4 @@ install: |
         --disable-acl \
         --disable-gcc-warnings
 
-dotweak: cd bin && ln -s gtar tar
+dotweak: ln -s gtar bin/tar

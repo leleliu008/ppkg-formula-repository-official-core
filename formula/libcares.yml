@@ -13,9 +13,8 @@ install: |
         -DCARES_BUILD_TESTS=OFF
 
 dotweak: |
-    cd lib 
-    ln -s libcares_static.a libcares.a
+    ln -s libcares_static.a lib/libcares.a
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        gsed -i 's|-lcares|-lcares -lresolv|' pkgconfig/libcares.pc
+        gsed -i 's|-lcares|-lcares -lresolv|' lib/pkgconfig/libcares.pc
     fi

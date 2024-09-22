@@ -11,11 +11,11 @@ dopatch: |
         export LD="$CC"
     fi
 
-install: |
     unset TERMINFO
 
     export LDCONFIG=true
 
+install: |
     configure \
         --with-pkg-config-libdir="$PACKAGE_INSTALL_DIR/lib/pkgconfig" \
         --with-shared \
@@ -35,23 +35,18 @@ install: |
         --disable-gnat-projects \
         --disable-echo
 
-    cd "$PACKAGE_INSTALL_DIR/include"
-
-    for item in curses.h ncurses.h form.h menu.h panel.h term.h termcap.h
+dotweak: |
+    for f in curses.h ncurses.h form.h menu.h panel.h term.h termcap.h
     do
-        ln -s "ncursesw/$item" "$item"
+        ln -s "ncursesw/$f" "include/$f"
     done
-
-    cd "$PACKAGE_INSTALL_DIR/lib"
 
     for item in libncurses libpanel libmenu libform
     do
-        ln -s "${item}w$STATIC_LIBRARY_SUFFIX" "${item}$STATIC_LIBRARY_SUFFIX"
-        ln -s "${item}w$SHARED_LIBRARY_SUFFIX" "${item}$SHARED_LIBRARY_SUFFIX"
+        ln -s "${item}w$STATIC_LIBRARY_SUFFIX" "lib/${item}$STATIC_LIBRARY_SUFFIX"
+        ln -s "${item}w$SHARED_LIBRARY_SUFFIX" "lib/${item}$SHARED_LIBRARY_SUFFIX"
     done
 
-    ln -s libncurses++w.a libncurses++.a
+    ln -s libncurses++w.a lib/libncurses++.a
 
-    cd "$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-
-    ln -s ncursesw.pc ncurses.pc
+    ln -s ncursesw.pc lib/pkgconfig/ncurses.pc
