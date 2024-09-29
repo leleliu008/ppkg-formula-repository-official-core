@@ -5,34 +5,11 @@ src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/l
 src-sha: 0b58557a6d32ceee97c8d533a59b9212d87e0fc4d2833924eb6c611247db2f2a
 license: Apache-2.0 with LLVM-exception
 dep-pkg: python3 binutils libelf libedit libffi libxml2 libz3.a
+dep-lib: -lncurses
 dep-upp: perl swig patch
 bscript: llvm
 
 dopatch: |
-    LibEdit_INCLUDE_DIRS="$libedit_INCLUDE_DIR;$libedit_INCLUDE_DIR/editline"
-    LibEdit_LIBRARIES="$(pkg-config --libs-only-l libedit | tr ' ' ';')"
-
-    cat > ../cmake/Modules/FindLibEdit.cmake <<EOF
-    set(LibEdit_INCLUDE_DIRS "$LibEdit_INCLUDE_DIRS")
-    set(LibEdit_LIBRARIES    "$LibEdit_LIBRARIES")
-    set(LibEdit_FOUND TRUE)
-
-    if (NOT TARGET  LibEdit::LibEdit)
-        add_library(LibEdit::LibEdit INTERFACE IMPORTED)
-        set_target_properties(LibEdit::LibEdit PROPERTIES
-            INTERFACE_INCLUDE_DIRECTORIES "\${LibEdit_INCLUDE_DIRS}"
-            INTERFACE_LINK_LIBRARIES      "\${LibEdit_LIBRARIES}"
-        )
-    endif()
-
-    include(FindPackageHandleStandardArgs)
-    find_package_handle_standard_args(LibEdit REQUIRED_VARS LibEdit_LIBRARIES LibEdit_INCLUDE_DIRS VERSION_VAR LibEdit_VERSION_STRING)
-    mark_as_advanced(LibEdit_INCLUDE_DIRS LibEdit_LIBRARIES)
-    EOF
-
-    gsed -i '/find_library(LibEdit_LIBRARIES/c set(LibEdit_LIBRARIES "${PC_LIBEDIT_LINK_LIBRARIES}")' ../cmake/Modules/FindLibEdit.cmake
-    gsed -i '/IMPORTED_LOCATION/c INTERFACE_LINK_LIBRARIES "${LibEdit_LIBRARIES}"'                    ../cmake/Modules/FindLibEdit.cmake
-
     gsed -i '/add_optional_dependency(LLDB_ENABLE_LIBXML2/c find_package(LibXml2 CONFIG REQUIRED)' ../lldb/cmake/modules/LLDBConfig.cmake
     gsed -i '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)'                                      ../lldb/cmake/modules/LLDBConfig.cmake
 

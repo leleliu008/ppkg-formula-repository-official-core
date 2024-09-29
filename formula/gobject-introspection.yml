@@ -7,5 +7,5 @@ src-uri: https://distfiles.macports.org/gobject-introspection/gobject-introspect
 src-sha: a1df7c424e15bda1ab639c00e9051b9adf5cea1a9e512f8a603b53cd199bc6d8
 license: MIT
 dep-upp: gm4 flex bison
-dep-pkg: glib python3
+dep-pkg: glib
 bsystem: meson
