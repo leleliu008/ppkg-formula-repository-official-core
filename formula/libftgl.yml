@@ -7,13 +7,10 @@ dep-pkg: libfreetype
 
 dopatch: gsed -i '/FTLibrary\.h/d' src/CMakeLists.txt
 
-install: |
-    cmakew -DBUILD_SHARED_LIBS=OFF
-    cmakew -DBUILD_SHARED_LIBS=ON
+install: cmakew 2
 
 dotweak: |
-    install -d lib/pkgconfig
-    cat >      lib/pkgconfig/ftgl.pc <<EOF
+    writepc ftgl <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

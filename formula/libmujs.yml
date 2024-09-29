@@ -10,8 +10,7 @@ install: |
     install_libs build/release/libmujs.a build/release/libmujs$SHARED_LIBRARY_SUFFIX
 
 dotweak: |
-    install -d lib/pkgconfig
-    cat >      lib/pkgconfig/mujs.pc <<EOF
+    writepc mujs <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

@@ -16,6 +16,4 @@ install: |
         --with-libintl-prefix="$libintl_INSTALL_DIR" \
         --with-libiconv-prefix="$libiconv_INSTALL_DIR"
 
-dotweak: |
-    rm -rf include/
-    rm -rf lib/
+dotweak: rm -rf include/ lib/

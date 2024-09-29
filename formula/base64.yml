@@ -1,7 +1,4 @@
 summary: base64 encoder and decoder
 git-url: https://github.com/leleliu008/C-examples
 bscript: library/mbedTLS/base64
-bsystem: cmake
-prepare: |
-    CMAKE_BUILD_TARGETS='base64-encode base64-decode'
-    CMAKE_INSTALL_COMPONENTS=bin
+install: cmakew --targets=base64-encode,base64-decode --components=bin

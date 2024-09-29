@@ -24,8 +24,7 @@ install: |
         --disable-ldaps
 
 dotweak: |
-    rm -rfv bin/curl
-    rm -rfv share/man/man1/curl.1
+    rm bin/curl share/man/man1/curl.1
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         gsed -i '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' lib/pkgconfig/libcurl.pc

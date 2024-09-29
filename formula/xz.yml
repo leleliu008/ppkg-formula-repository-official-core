@@ -15,8 +15,7 @@ install: |
         --enable-threads=posix
 
 dotweak: |
-    rm -rf include
-    rm -rf lib
+    rm -rf include/ lib/
 
     for item in xzmore xzdiff xzdiff xzless xzgrep
     do

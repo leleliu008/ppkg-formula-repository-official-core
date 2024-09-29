@@ -9,9 +9,7 @@ dopatch: |
     gsed -i '/^Libs: /s|$| @OPENMP_RUNTIME@|' src/soxr.pc.in
     gsed -i '/^Libs: /s|$| @OPENMP_RUNTIME@|' src/soxr-lsr.pc.in
 
-install: |
-    cmakew -DWITH_OPENMP=ON -DBUILD_TESTS=OFF -DBUILD_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF
-    cmakew -DWITH_OPENMP=ON -DBUILD_TESTS=OFF -DBUILD_EXAMPLES=OFF -DBUILD_SHARED_LIBS=ON
+install: cmakew 2 -DWITH_OPENMP=ON -DBUILD_TESTS=OFF -DBUILD_EXAMPLES=OFF
 
 fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/76868b36263be42440501d3692fd3a258f507d82/libsoxr/arm64_defines.patch
 fix-sha: 9df5737a21b9ce70cc136c302e195fad9f9f6c14418566ad021f14bb34bb022c

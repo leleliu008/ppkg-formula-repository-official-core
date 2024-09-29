@@ -106,6 +106,10 @@ case $1 in
               printf '%s\n' 'tinyalsa'  ;;
     libsimdjson)
               printf '%s\n' 'simdjson'  ;;
+    libnghttp2)
+              printf '%s\n' 'nghttp2'   ;;
+    libnghttp3)
+              printf '%s\n' 'nghttp3'   ;;
     libsqlite3)
               printf '%s\n' 'sqlite'    ;;
     libmp3lame)
@@ -134,6 +138,8 @@ case $1 in
               printf '%s\n' 'jasper'    ;;
     libsnappy)
               printf '%s\n' 'snappy'    ;;
+    libbrotli)
+              printf '%s\n' 'brotli'    ;;
     libcrc32c)
               printf '%s\n' 'crc32c'    ;;
     libblake3)
@@ -188,6 +194,7 @@ case $1 in
     libftgl)  printf '%s\n' 'ftgl'      ;;
     libsdl2)  printf '%s\n' 'sdl2'      ;;
     libmujs)  printf '%s\n' 'mujs'      ;;
+    libqpdf)  printf '%s\n' 'qpdf'      ;;
     libpcre)  printf '%s\n' 'pcre'      ;;
     libcurl)  printf '%s\n' 'curl'      ;;
     libldns)  printf '%s\n' 'ldns'      ;;

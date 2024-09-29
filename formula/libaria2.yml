@@ -23,6 +23,4 @@ install: |
         --with-libz \
         LIBS=-liconv
 
-dotweak: |
-    rm -rf bin/
-    rm -rf share/man/
+dotweak: rm -rf bin/ share/man/

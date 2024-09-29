@@ -6,9 +6,7 @@ license: LGPL-2.1-or-later
 
 dopatch: gsed -i '/add_subdirectory(tests)/d' CMakeLists.txt
 
-install: |
-    cmakew -DGRAPHITE2_NFILEFACE=ON -DBUILD_SHARED_LIBS=ON
-    cmakew -DGRAPHITE2_NFILEFACE=ON -DBUILD_SHARED_LIBS=OFF
+install: cmakew 2 -DGRAPHITE2_NFILEFACE=ON
 
 fix-url: https://github.com/silnrsi/graphite/commit/290db2f1959862c3c116d5e7fe7161b893397468.diff
 fix-sha: fd1447d8d08966a743711bbe51a6443abc05197bcef91fdcd75f2662743f5588

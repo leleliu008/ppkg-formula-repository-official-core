@@ -4,6 +4,4 @@ src-url: https://github.com/libcpr/cpr/archive/refs/tags/1.10.5.tar.gz
 src-sha: c8590568996cea918d7cf7ec6845d954b9b95ab2c4980b365f582a665dea08d8
 license: MIT
 dep-pkg: libcurl
-install: |
-    cmakew -DCPR_USE_SYSTEM_CURL=ON -DCPR_BUILD_TESTS=OFF -DBUILD_SHARED_LIBS=OFF
-    cmakew -DCPR_USE_SYSTEM_CURL=ON -DCPR_BUILD_TESTS=OFF -DBUILD_SHARED_LIBS=ON
+install: cmakew 2 -DCPR_USE_SYSTEM_CURL=ON -DCPR_BUILD_TESTS=OFF

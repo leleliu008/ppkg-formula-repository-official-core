@@ -12,6 +12,4 @@ install: |
         -Denable_tests=false \
         -Denable_examples=false
 
-dotweak: |
-    rm -rf include/
-    rm -rf lib/
+dotweak: rm -rf include/ lib/

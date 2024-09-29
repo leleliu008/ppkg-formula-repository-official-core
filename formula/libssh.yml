@@ -6,10 +6,7 @@ src-sha: 1861d498f5b6f1741b6abc73e608478491edcf9c9d4b6630eef6e74596de9dc1
 license: LGPL-2.1-or-later
 dep-pkg: libopenssl libz
 
-install: |
-    cmakew -DWITH_SYMBOL_VERSIONING=OFF -DWITH_EXAMPLES=OFF -DBUILD_SHARED_LIBS=ON
-    rm -rf "$PACKAGE_INSTALL_DIR/lib/cmake"
-    cmakew -DWITH_SYMBOL_VERSIONING=OFF -DWITH_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF
+install: cmakew 2 -DWITH_SYMBOL_VERSIONING=OFF -DWITH_EXAMPLES=OFF
 
 dotweak: |
     printf 'Requires: openssl, zlib\n' >> lib/pkgconfig/libssh.pc

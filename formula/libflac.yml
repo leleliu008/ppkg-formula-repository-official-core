@@ -6,20 +6,8 @@ license: GFDL-1.2-or-later
 dep-pkg: libogg
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DWITH_OGG=ON \
-        -DBUILD_SHARED_LIBS=OFF \
-        -DBUILD_CXXLIBS=ON \
-        -DBUILD_PROGRAMS=OFF \
-        -DBUILD_EXAMPLES=OFF \
-        -DBUILD_TESTING=OFF \
-        -DBUILD_DOCS=OFF \
-        -DINSTALL_MANPAGES=ON \
-        -DINSTALL_PKGCONFIG_MODULES=ON \
-        -DINSTALL_CMAKE_CONFIG_MODULE=ON
-    cmakew \
-        -DWITH_OGG=ON \
-        -DBUILD_SHARED_LIBS=ON \
         -DBUILD_CXXLIBS=ON \
         -DBUILD_PROGRAMS=OFF \
         -DBUILD_EXAMPLES=OFF \

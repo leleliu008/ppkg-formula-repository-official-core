@@ -23,7 +23,4 @@ install: |
         -DBUILD_LUTS_GENERATOR=OFF \
         -DBUILD_PKGCONFIG_FILES=ON
 
-dotweak: |
-    rm -rf include/
-    rm -rf lib/
-    rm -rf share/man/man3/
+dotweak: rm -rf include/ lib/ share/man/man3/

@@ -17,8 +17,7 @@ install: |
         ac_cv_prog_ac_yasm=yasm
 
 dotweak: |
-    install -d lib/pkgconfig
-    cat >      lib/pkgconfig/xvidcore.pc <<EOF
+    writepc xvidcore <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
     libdir=\${exec_prefix}/lib

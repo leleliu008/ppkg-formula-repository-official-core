@@ -3,6 +3,4 @@ src-url: https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v2.1.2/SVT-AV1-v2.1.2
 src-sha: a1d95875f7539d49f7c8fdec0623fbf984804a168da6289705d53268e3b38412
 license: BSD-3-Clause
 dep-upp: yasm
-install: |
-    cmakew -DBUILD_APPS=OFF -DBUILD_SHARED_LIBS=ON
-    cmakew -DBUILD_APPS=OFF -DBUILD_SHARED_LIBS=OFF
+install: cmakew 2 -DBUILD_APPS=OFF

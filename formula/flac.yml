@@ -23,6 +23,4 @@ install: |
         -DINSTALL_PKGCONFIG_MODULES=OFF \
         -DINSTALL_CMAKE_CONFIG_MODULE=OFF
 
-dotweak: |
-    rm -rf include/
-    rm -rf lib/
+dotweak: rm -rf include/ lib/
