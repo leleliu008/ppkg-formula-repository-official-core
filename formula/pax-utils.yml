@@ -1,0 +1,5 @@
+summary: ELF related utils for ELF 32/64 binaries
+src-url: https://github.com/gentoo/pax-utils/archive/refs/tags/v1.3.8.tar.gz
+src-sha: 60a3ae882b0722806aa4f8f0f6256271553259eee0d3875f16c0e3b604503847
+license: GPL-2.0-only
+install: mesonw -Dlddtree_implementation=sh -Duse_seccomp=false
