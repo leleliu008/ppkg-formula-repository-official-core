@@ -4,9 +4,4 @@ git-url: https://github.com/universal-ctags/ctags
 dep-pkg: libjansson libyaml libxml2 libiconv
 license: GPL-2.0-or-later
 bsystem: autogen
-install: |
-    if [ "$TARGET_PLATFORM_NAME" = macos ] || [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
-        configure --disable-static
-    else
-        configure
-    fi
+install: configure --disable-static
