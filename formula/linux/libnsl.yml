@@ -1,4 +1,4 @@
-summary: Public client interface for NIS(YP) and NIS+
+summary: A standalone library that provides the public client interface for NIS (YP) and NIS+ in a IPv6 ready version. It was formerly part of glibc, but is now available as a separate package on GitHub.
 src-url: https://github.com/thkukuk/libnsl/releases/download/v2.0.1/libnsl-2.0.1.tar.xz
 src-sha: 5c9e470b232a7acd3433491ac5221b4832f0c71318618dc6aa04dd05ffcd8fd9
 license: LGPL-2.1-or-later
