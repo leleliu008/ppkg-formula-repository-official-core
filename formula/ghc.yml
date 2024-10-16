@@ -8,9 +8,9 @@ binbstd: 1
 # https://www.haskell.org/ghcup/install/
 
 onstart: |
-    case $NATIVE_OS_KIND in
+    case $NATIVE_PLATFORM_KIND in
         darwin)
-            case $NATIVE_OS_ARCH in
+            case $NATIVE_PLATFORM_ARCH in
                 x86_64)
                     PACKAGE_SRC_URL='https://downloads.haskell.org/~ghc/9.8.2/ghc-9.8.2-x86_64-apple-darwin.tar.xz'
                     PACKAGE_SRC_SHA='64e8cca6310443cd6de8255edcf391d937829792e701167f7e5fb234f7150078'
@@ -22,9 +22,9 @@ onstart: |
             esac
             ;;
         linux)
-            case $NATIVE_OS_CODE in
+            case $NATIVE_PLATFORM_CODE in
                 alpine)
-                    case $NATIVE_OS_ARCH in
+                    case $NATIVE_PLATFORM_ARCH in
                         x86_64)
                             PACKAGE_SRC_URL='https://downloads.haskell.org/ghc/9.8.2/ghc-9.8.2-x86_64-alpine3_12-linux-static.tar.xz'
                             PACKAGE_SRC_SHA='71eb4bf339d109cf3c883b896adaa7fa4a720496c11f84f2013e583cb5556608'
@@ -35,7 +35,7 @@ onstart: |
                     esac
                     ;;
                 ubuntu)
-                    case $NATIVE_OS_ARCH in
+                    case $NATIVE_PLATFORM_ARCH in
                         x86_64)
                             PACKAGE_SRC_URL='https://downloads.haskell.org/~ghc/9.8.2/ghc-9.8.2-x86_64-ubuntu20_04-linux.tar.xz'
                             PACKAGE_SRC_SHA='a65a4726203c606b58a7f6b714a576e7d81390158c8afa0dece3841a4c602de2'
