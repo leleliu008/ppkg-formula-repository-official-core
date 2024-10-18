@@ -6,7 +6,6 @@ src-url: https://www.python.org/ftp/python/3.11.9/Python-3.11.9.tgz
 src-sha: e7de3240a8bc2b1e1ba5c81bf943f06861ff494b69fda990ce2722a504c6153d
 license: Python-2.0
 dep-pkg: ncurses libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
-movable: 0
 
 onready: ENABLE_LTO=0
 

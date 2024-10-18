@@ -3,11 +3,11 @@ src-url: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.12.0.tar.g
 src-sha: c7bb7aa69c254d91b8f0041a71c5bcc3936acb64408a1719aec0b2b7639dd84f
 license: Apache-2.0
 dep-pkg: hwloc
-dep-upp: swig
+
 install: |
     cmakew \
         -DTBB_TEST=OFF \
         -DTBB_EXAMPLES=OFF \
         -DTBB_STRICT=OFF \
-        -DTBB4PY_BUILD=OFF \
-        -DTBB_ENABLE_IPO=ON
+        -DTBB_ENABLE_IPO=ON \
+        -DTBB4PY_BUILD=OFF

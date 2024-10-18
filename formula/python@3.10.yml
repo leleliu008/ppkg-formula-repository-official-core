@@ -6,7 +6,6 @@ src-url: https://www.python.org/ftp/python/3.10.14/Python-3.10.14.tgz
 src-sha: cefea32d3be89c02436711c95a45c7f8e880105514b78680c14fe76f5709a0f6
 license: Python-2.0
 dep-pkg: ncurses libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
-movable: 0
 
 onready: ENABLE_LTO=0
 
