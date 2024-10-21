@@ -5,4 +5,3 @@ dep-pkg: libjansson libyaml libxml2 libiconv
 license: GPL-2.0-or-later
 bsystem: autogen
 install: configure --disable-static
-version: 2024.10.12
