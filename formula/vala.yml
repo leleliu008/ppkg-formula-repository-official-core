@@ -6,5 +6,5 @@ src-sha: 05487b5600f5d2f09e66a753cccd8f39c1bff9f148aea1b7774d505b9c8bca9b
 license: LGPL-2.1-or-later
 dep-upp: gm4 flex bison
 dep-pkg: gobject-introspection glib graphviz
-dep-lib: -lxml2 -liconv -lltdl
+dep-lib: -lexpat -lltdl
 install: configure --with-cgraph
