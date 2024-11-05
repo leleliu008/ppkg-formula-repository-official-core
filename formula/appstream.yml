@@ -17,7 +17,7 @@ prepare: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         MESON_EXTRA_ARGS='-Dsystemd=false'
     else
-        MESON_EXTRA_ARGS=
+        MESON_EXTRA_ARGS='-Dsystemd=false'
     fi
 
 install: |
