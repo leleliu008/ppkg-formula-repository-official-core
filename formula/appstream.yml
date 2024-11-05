@@ -1,0 +1,30 @@
+pkgtype: lib
+summary: Tools and libraries to work with AppStream metadata
+web-url: https://www.freedesktop.org/wiki/Distributions/AppStream/
+src-url: https://github.com/ximion/appstream/archive/refs/tags/v1.0.3.tar.gz
+src-sha: dd7222519b5d855124fa803ce82a7cbf090ac6b2e44a5bc515e729b1f20a63ae
+license: LGPL-2.1-or-later
+dep-pkg: libxmlb libxml2 libyaml libcurl
+dep-upp: itstool xsltproc docbook-xsl gperf
+
+prepare: |
+    gsed -i '/tests/d' meson.build
+
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        LDFLAGS="$LDFLAGS -framework CoreFoundation -framework SystemConfiguration"
+    fi
+
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        MESON_EXTRA_ARGS='-Dsystemd=false'
+    else
+        MESON_EXTRA_ARGS=
+    fi
+
+install: |
+    mesonw $MESON_EXTRA_ARGS \
+        -Dstemming=false \
+        -Dvapi=true \
+        -Dgir=true \
+        -Ddocs=false \
+        -Dapidocs=false \
+        -Dinstall-docs=false

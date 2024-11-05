@@ -1,7 +1,7 @@
 summary: An open source graph visualization software
 web-url: https://www.graphviz.org/
-src-url: https://gitlab.com/graphviz/graphviz/-/archive/10.0.1/graphviz-10.0.1.tar.bz2
-src-sha: eaa60fea2b3ad904e3bf6919710c1ba3207ce31b5d7da1687dd3b734de8736f6
+src-url: https://gitlab.com/graphviz/graphviz/-/archive/12.2.0/graphviz-12.2.0.tar.bz2
+src-sha: 56090fb1e5986919d6099041871744d84231d632f8649ea07028052a5487d444
 license: EPL-1.0
 dep-pkg: gd pango libtool
 dep-upp: gm4 flex bison gawk git python3 libtool
