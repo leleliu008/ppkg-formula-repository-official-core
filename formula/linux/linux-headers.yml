@@ -1,8 +1,8 @@
 summary: linux headers
 git-url: https://github.com/torvalds/linux
 web-url: https://www.kernel.org/
-src-url: https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.19.5.tar.xz
-src-sha: 8c3f1cc4f93e50056bb0a8c15a41a8eb6acc7fd71bff6de60b1ef8c4532537bd
+src-url: https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.8.tar.xz
+src-sha: c969dea4e8bb6be991bbf7c010ba0e0a5643a3a8d8fb0a2aaa053406f1e965f3
 license: GPL-2.0 WITH Linux-syscall-note
 dep-upp: rsync
 
