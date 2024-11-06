@@ -1,9 +1,10 @@
+pkgtype: exe+lib
 summary: System and service manager
 web-url: https://wiki.freedesktop.org/www/Software/systemd/
-src-url: https://github.com/systemd/systemd-stable/archive/refs/tags/v255.4.tar.gz
-src-sha: 96e75bd08c57ad401677456fb88ef54a9f05bb1695693013bc6ecce839640fd5
+src-url: https://github.com/systemd/systemd/archive/refs/tags/v256.7.tar.gz
+src-sha: 896d76ff65c88f5fd9e42f90d152b0579049158a163431dd77cdc57748b1d7b0
 license: GPL-2.0-or-later LGPL-2.1-or-later
-dep-pkg: gettext-runtime libgpg-error libxcrypt libcap util-linux libzstd lz4 glib
+dep-pkg: libxcrypt libmount libzstd liblzma liblz4 libcap glib
 dep-upp: gettext-tools intltool gm4 gperf rsync xsltproc docbook-xsl
 dep-pym: jinja2-cli
 
@@ -16,9 +17,18 @@ install: |
         -Dsysvrcnd-path=$PACKAGE_INSTALL_DIR/etc/rc.d \
         -Dpamconfdir=$PACKAGE_INSTALL_DIR/etc/pam.d \
         -Dbashcompletiondir=$PACKAGE_INSTALL_DIR/share/bash_completion \
-        -Dlz4=true \
+        -Dstatic-libsystemd=pic \
+        -Dman=enabled \
+        -Dacl=disabled \
+        -Dpam=disabled \
+        -Dlz4=enabled \
         -Dhwdb=false \
-        -Dgcrypt=false \
-        -Dgcrypt=false \
-        -Dp11kit=false \
+        -Dtests=false \
+        -Dp11kit=disabled \
+        -Dgnutls=disabled \
+        -Dlibcurl=disabled \
+        -Dmicrohttpd=disabled \
         -Dcreate-log-dirs=false
+
+dotweak: |
+    printf 'Requires: libcap\n' >> lib/pkgconfig/libsystemd.pc
