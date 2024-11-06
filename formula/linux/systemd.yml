@@ -5,7 +5,7 @@ src-url: https://github.com/systemd/systemd/archive/refs/tags/v256.7.tar.gz
 src-sha: 896d76ff65c88f5fd9e42f90d152b0579049158a163431dd77cdc57748b1d7b0
 license: GPL-2.0-or-later LGPL-2.1-or-later
 dep-pkg: libxcrypt libmount libzstd liblzma liblz4 libcap glib
-dep-upp: gettext-tools intltool gm4 gperf rsync xsltproc docbook-xsl
+dep-upp: gettext-tools intltool gm4 gperf rsync xsltproc docbook-xsl patch
 dep-pym: jinja2-cli
 
 prepare: |
@@ -13,6 +13,47 @@ prepare: |
 
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         MESON_EXTRA_ARGS='-Dnss-systemd=false -Dnss-myhostname=false'
+
+        LIST='
+        0001-binfmt-Don-t-install-dependency-links-at-install-tim.patch
+        0002-implment-systemd-sysv-install-for-OE.patch
+        0003-coredump-set-ProtectHome-to-read-only.patch
+        0004-missing_type.h-add-comparison_fn_t.patch
+        0005-add-fallback-parse_printf_format-implementation.patch
+        0006-don-t-fail-if-GLOB_BRACE-and-GLOB_ALTDIRFUNC-is-not-.patch
+        0007-add-missing-FTW_-macros-for-musl.patch
+        0008-Use-uintmax_t-for-handling-rlim_t.patch
+        0009-don-t-pass-AT_SYMLINK_NOFOLLOW-flag-to-faccessat.patch
+        0010-Define-glibc-compatible-basename-for-non-glibc-syste.patch
+        0011-Do-not-disable-buffering-when-writing-to-oom_score_a.patch
+        0012-distinguish-XSI-compliant-strerror_r-from-GNU-specif.patch
+        0013-avoid-redefinition-of-prctl_mm_map-structure.patch
+        0014-do-not-disable-buffer-in-writing-files.patch
+        0015-Handle-__cpu_mask-usage.patch
+        0016-Handle-missing-gshadow.patch
+        0017-missing_syscall.h-Define-MIPS-ABI-defines-for-musl.patch
+        0018-pass-correct-parameters-to-getdents64.patch
+        0019-Adjust-for-musl-headers.patch
+        0020-test-bus-error-strerror-is-assumed-to-be-GNU-specifi.patch
+        0021-errno-util-Make-STRERROR-portable-for-musl.patch
+        0022-sd-event-Make-malloc_trim-conditional-on-glibc.patch
+        0023-shared-Do-not-use-malloc_info-on-musl.patch
+        0024-avoid-missing-LOCK_EX-declaration.patch
+        0025-include-signal.h-to-avoid-the-undeclared-error.patch
+        0026-undef-stdin-for-references-using-stdin-as-a-struct-m.patch
+        0027-adjust-header-inclusion-order-to-avoid-redeclaration.patch
+        0028-build-path.c-avoid-boot-time-segfault-for-musl.patch
+        '
+
+        for f in $LIST
+        do
+            wfetch "https://github.com/openembedded/openembedded-core/blob/master/meta/recipes-core/systemd/systemd/$f"
+        done
+
+        for f in $LIST
+        do
+            patch -p1 < "$f"
+        done
     fi
 
 install: |
