@@ -8,6 +8,13 @@ dep-pkg: libxcrypt libmount libzstd liblzma liblz4 libcap glib
 dep-upp: gettext-tools intltool gm4 gperf rsync xsltproc docbook-xsl
 dep-pym: jinja2-cli
 
+prepare: |
+    unset MESON_EXTRA_ARGS
+
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        MESON_EXTRA_ARGS='-Dnss-systemd=false -Dnss-myhostname=false'
+    fi
+
 install: |
     mesonw \
         --sysconfdir=$PACKAGE_INSTALL_DIR/etc \
@@ -28,7 +35,7 @@ install: |
         -Dgnutls=disabled \
         -Dlibcurl=disabled \
         -Dmicrohttpd=disabled \
-        -Dcreate-log-dirs=false
+        -Dcreate-log-dirs=false $MESON_EXTRA_ARGS
 
 dotweak: |
     printf 'Requires: libcap\n' >> lib/pkgconfig/libsystemd.pc
