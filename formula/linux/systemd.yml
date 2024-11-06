@@ -12,7 +12,7 @@ prepare: |
     unset MESON_EXTRA_ARGS
 
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
-        MESON_EXTRA_ARGS='-Dnss-systemd=false -Dnss-myhostname=false'
+        MESON_EXTRA_ARGS='-Dnss-systemd=false -Dnss-myhostname=false -Dnss-mymachines=false -Dnss-resolve=false'
 
         LIST='
         0001-binfmt-Don-t-install-dependency-links-at-install-tim.patch
