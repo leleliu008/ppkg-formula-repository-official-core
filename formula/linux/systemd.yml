@@ -47,7 +47,7 @@ prepare: |
 
         for f in $LIST
         do
-            wfetch "https://github.com/openembedded/openembedded-core/blob/master/meta/recipes-core/systemd/systemd/$f"
+            wfetch "https://raw.githubusercontent.com/openembedded/openembedded-core/refs/heads/master/meta/recipes-core/systemd/systemd/$f"
         done
 
         for f in $LIST
