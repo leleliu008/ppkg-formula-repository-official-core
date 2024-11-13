@@ -1,0 +1,5 @@
+summary: System information fetcher, with an emphasis on performance and minimalism
+src-url: https://github.com/Macchina-CLI/macchina/archive/refs/tags/v6.4.0.tar.gz
+src-sha: edd7591565f199c1365420655a144507bcd2838aed09b79fefdc8b661180432f
+license: MIT
+bsystem: cargo
