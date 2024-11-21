@@ -1,0 +1,9 @@
+summary: Package management made easy
+web-url: https://pixi.sh
+src-url: https://github.com/prefix-dev/pixi/archive/refs/tags/v0.37.0.tar.gz
+src-sha: 326f0326839672d84d4e5efe8ba56e743e84d88693686e5b9fdd64e5ca9dc876
+license: BSD-3-Clause
+dep-pkg: libbz2 liblzma libopenssl
+bsystem: cargo cmake
+prepare: export PIXI_VERSION="$PACKAGE_VERSION"
+install: cargow install --locked
