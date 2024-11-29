@@ -1,7 +1,7 @@
 summary: Modern Linker
-src-url: https://github.com/rui314/mold/archive/refs/tags/v2.33.0.tar.gz
-src-sha: 37b3aacbd9b6accf581b92ba1a98ca418672ae330b78fe56ae542c2dcb10a155
-license: AGPL-3.0-only
+src-url: https://github.com/rui314/mold/archive/refs/tags/v2.34.1.tar.gz
+src-sha: a8cf638045b4a4b2697d0bcc77fd96eae93d54d57ad3021bf03b0333a727a59d
+license: MIT
 
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
