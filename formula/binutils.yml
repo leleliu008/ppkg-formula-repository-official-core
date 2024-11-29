@@ -2,9 +2,9 @@ pkgtype: pie
 summary: GNU binary tools for native development
 git-url: https://sourceware.org/git/binutils-gdb
 web-url: https://www.gnu.org/software/binutils/binutils.html
-src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz
-src-uri: https://sourceware.org/pub/binutils/releases/binutils-2.41.tar.xz
-src-sha: ae9a5789e23459e59606e6714723f2d3ffc31c03174191ef0d015bdf06007450
+src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.xz
+src-uri: https://sourceware.org/pub/binutils/releases/binutils-2.43.1.tar.xz
+src-sha: 13f74202a3c4c51118b797a39ea4200d3f6cfbe224da6d1d95bb938480132dfd
 license: GPL-2.0-or-later
 dep-pkg: libisl libmpc libz
 dep-upp: gm4 bison texinfo
