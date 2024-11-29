@@ -6,5 +6,9 @@ license: GPL-2.0-or-later LGPL-2.1-or-later
 dep-upp: gm4 bison python3
 install: configure --without-selinux
 
-# https://sourceware.org/pipermail/libc-alpha/2024-September/159664.html
-prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -U_FORTIFY_SOURCE"
+prepare: |
+    # https://sourceware.org/pipermail/libc-alpha/2024-September/159664.html
+    export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -U_FORTIFY_SOURCE"
+
+    # error: #error "glibc cannot be compiled without optimization"
+    CFLAGS="$(printf '%s\n' "$CFLAGS" | sed 's|-O0|-O2|g')"
