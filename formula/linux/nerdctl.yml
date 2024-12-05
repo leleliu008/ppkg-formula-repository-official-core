@@ -1,0 +1,5 @@
+summary: ContaiNERD CTL - Docker-compatible CLI for containerd
+src-url: https://github.com/containerd/nerdctl/archive/refs/tags/v2.0.1.tar.gz
+src-sha: 916d67ca74f343f6a169caed3187a71c338c342deaf253101ffd4e04e7a43d8b
+license: Apache-2.0
+install: gow -X github.com/containerd/nerdctl/v2/pkg/version.Version=$PACKAGE_VERSION ./cmd/nerdctl
