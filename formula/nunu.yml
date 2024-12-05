@@ -1,0 +1,5 @@
+summary: A CLI tool for building Go applications
+src-url: https://github.com/go-nunu/nunu/archive/refs/tags/v1.1.0.tar.gz
+src-sha: 9564326c60ee6ca8a568604666272322f98e7dcd293afea7de37846c4ec3f879
+license: MIT
+bsystem: go

@@ -1,0 +1,6 @@
+summary: Develop LLM Apps in Natural Language
+web-url: https://gptscript.ai
+src-url: https://github.com/gptscript-ai/gptscript/archive/refs/tags/v0.9.5.tar.gz
+src-sha: 48cc2e6ec6425c030e9d10a81135a5e20ab15ec8eee0a49d35a83eda06c5cc92
+license: Apache-2.0
+install: gow -X github.com/gptscript-ai/gptscript/pkg/version.Tag=v$PACKAGE_VERSION
