@@ -1,0 +1,18 @@
+summary: tools to create and extract Squashfs filesystems
+src-url: https://github.com/plougher/squashfs-tools/archive/refs/tags/4.6.1.tar.gz
+src-sha: 94201754b36121a9f022a190c75f718441df15402df32c2b520ca331a107511c
+license: GPL-2.0-or-later
+dep-pkg: liblz4 liblzo libzstd liblzma libz
+dep-upp: help2man
+bscript: squashfs-tools
+install: |
+    gmakew clean
+    gmakew \
+        LZMA_XZ_SUPPORT=1 \
+        XZ_SUPPORT=1 \
+        LZ4_SUPPORT=1 \
+        LZO_SUPPORT=1 \
+        ZSTD_SUPPORT=1 \
+        GZIP_SUPPORT=1 \
+        XATTR_SUPPORT=1
+    gmakew install INSTALL_PREFIX="$PACKAGE_INSTALL_DIR"

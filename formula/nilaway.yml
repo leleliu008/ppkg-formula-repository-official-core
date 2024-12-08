@@ -1,0 +1,4 @@
+summary: A static analysis tool to detect potential nil panics in Go code
+git-url: https://github.com/uber-go/nilaway
+license: Apache-2.0
+install: gow ./cmd/nilaway
