@@ -1,0 +1,6 @@
+summary: Sampling profiler for Ruby
+web-url: https://rbspy.github.io/
+src-url: https://github.com/rbspy/rbspy/archive/refs/tags/v0.27.0.tar.gz
+src-sha: ff5bf1c1b0cb012737bb7892a7f24f5030099b5633581d98a684f7837d06e3ce
+license: MIT
+bsystem: cargo

@@ -1,8 +1,7 @@
 summary: Key directory that maps social media identities to encryption keys
 web-url: https://keybase.io
-git-url: https://github.com/keybase/client
-src-url: https://github.com/keybase/client/releases/download/v6.0.2/keybase-v6.0.2.tar.xz
-src-sha: 22e5ae4d1f951ea9f3ffc3cb74de9b9f41b828b2c8a4e5cb6401de6fbccf497b
+src-url: https://github.com/keybase/client/releases/download/v6.4.0/keybase-v6.4.0.tar.xz
+src-sha: 506916263f71a3ac8385228b3855d6ddb3f3168574179a0b10ab9867d18b0e3d
 license: BSD-3-Clause
 
 bsystem: go
