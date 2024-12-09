@@ -1,6 +1,8 @@
-summary: a fork of libudev
-git-url: https://github.com/gentoo/eudev
-src-url: https://dev.gentoo.org/~blueness/eudev/eudev-3.2.9.tar.gz
-src-sha: 89618619084a19e1451d373c43f141b469c9fd09767973d73dd268b92074d4fc
-dep-pkg: gperf
-install: configure --disable-selinux
+summary: A device manager that provides a drop-in replacement for systemd udev
+git-url: https://github.com/eudev-project/eudev
+src-url: https://github.com/eudev-project/eudev/releases/download/v3.2.14/eudev-3.2.14.tar.gz
+src-sha: 8da4319102f24abbf7fff5ce9c416af848df163b29590e666d334cc1927f006f
+license: GPL-2.0-or-later
+dep-pkg: kmod libblkid glib
+dep-upp: gperf
+install: configure --enable-kmod --disable-selinux
