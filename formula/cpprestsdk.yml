@@ -1,9 +1,10 @@
 summary: C++ libraries for cloud-based client-server communication
 git-url: https://github.com/Microsoft/cpprestsdk
-src-url: https://github.com/microsoft/cpprestsdk/archive/refs/tags/2.10.18.tar.gz
-src-sha: 6bd74a637ff182144b6a4271227ea8b6b3ea92389f88b25b215e6f94fd4d41cb
+git-sha: 411a109150b270f23c8c97fa4ec9a0a4a98cdecf
+version: 2.10.19
 license: MIT
-dep-pkg: websocketpp libopenssl boost
+dep-pkg: libopenssl boost
+
 install: |
     cmakew \
         -DBUILD_TESTS=OFF \

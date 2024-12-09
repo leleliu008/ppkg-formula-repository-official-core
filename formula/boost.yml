@@ -1,5 +1,5 @@
 pkgtype: lib
-summary: A collection of portable C++ source libraries
+summary: A set of libraries for the C++ programming language
 web-url: https://www.boost.org
 src-url: https://github.com/boostorg/boost/releases/download/boost-1.84.0/boost-1.84.0.tar.xz
 src-sha: 2e64e5d79a738d0fa6fb546c6e5c2bd28f88d268a2a080546f74e5ff98f29d0e
