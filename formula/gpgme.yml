@@ -7,3 +7,8 @@ dep-pkg: gnupg
 dep-upp: swig python3
 xxflags: -std=c++14
 bsystem: configure
+
+dopatch: |
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        gsed -i -e 's|ino64_t d_ino|ino_t d_ino|' -e 's|off64_t d_off|off_t d_off|' src/posix-io.c
+    fi
