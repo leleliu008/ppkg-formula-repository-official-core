@@ -1,0 +1,9 @@
+summary: Library access to GnuPG
+web-url: https://www.gnupg.org/related_software/gpgme/
+src-url: https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.0.tar.bz2
+src-sha: 61e3a6ad89323fecfaff176bc1728fb8c3312f2faa83424d9d5077ba20f5f7da
+license: LGPL-2.1-or-later
+dep-pkg: gnupg
+dep-upp: swig python3
+xxflags: -std=c++14
+bsystem: configure

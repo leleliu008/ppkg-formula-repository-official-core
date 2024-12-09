@@ -1,0 +1,4 @@
+summary: A command-line tool to generate an AppImage from an existing AppDir
+git-url: https://github.com/AppImage/appimagetool
+dep-pkg: gpgme
+bsystem: cmake
