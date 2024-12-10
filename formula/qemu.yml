@@ -4,7 +4,7 @@ git-url: https://git.qemu.org/git/qemu.git
 src-url: https://download.qemu.org/qemu-9.0.0.tar.xz
 src-sha: 32708ac66c30d8c892633ea968c771c1c76d597d70ddead21a0d22ccf386da69
 license: GPL-2.0-only
-dep-pkg: ncurses capstone libfdt libusb libslirp libssh libpng libjpeg-turbo libpixman libsnappy libzstd liblzo libgnutls libnettle vde libcap-ng xattr
+dep-pkg: libncurses capstone libfdt libusb libslirp libssh libpng libjpeg-turbo libpixman libsnappy libzstd liblzo libgnutls libnettle vde libcap-ng xattr
 dep-upp: bzip2 gm4 flex bison
 bsystem: gmake meson
 

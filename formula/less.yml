@@ -4,7 +4,7 @@ web-url: http://www.greenwoodsoftware.com/less/index.html
 src-url: http://www.greenwoodsoftware.com/less/less-661.tar.gz
 src-sha: 2b5f0167216e3ef0ffcb0c31c374e287eb035e4e223d5dae315c2783b6e738ed
 license: GPL-3.0-or-later
-dep-pkg: ncurses libpcre2
+dep-pkg: libncurses libpcre2
 install: configure --with-regex=pcre2 --with-secure
 
 fix-url: https://github.com/gwsw/less/commit/26c7a12154ae4f84e60840129684831b27701b96.diff

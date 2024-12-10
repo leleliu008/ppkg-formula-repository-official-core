@@ -5,7 +5,7 @@ web-url: https://www.python.org/
 src-url: https://www.python.org/ftp/python/3.9.19/Python-3.9.19.tar.xz
 src-sha: d4892cd1618f6458cb851208c030df1482779609d0f3939991bd38184f8c679e
 license: Python-2.0
-dep-pkg: ncurses libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
+dep-pkg: libncurses libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
 
 onready: ENABLE_LTO=0
 

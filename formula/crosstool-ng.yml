@@ -13,6 +13,6 @@ install: |
         --with-ncurses \
         --with-libiconv-prefix=$libiconv_INSTALL_DIR \
         --with-libintl-prefix=$gettext_INSTALL_DIR \
-        CURSES_LIBS=$ncurses_LIBRARY_DIR/libncurses$SHARED_LIBRARY_SUFFIX \
-        PANEL_LIBS=$ncurses_LIBRARY_DIR/libpanel$SHARED_LIBRARY_SUFFIX \
-        MENU_LIBS=$ncurses_LIBRARY_DIR/libmenu$SHARED_LIBRARY_SUFFIX
+        CURSES_LIBS=$libncurses_LIBRARY_DIR/libncurses$SHARED_LIBRARY_SUFFIX \
+        PANEL_LIBS=$libncurses_LIBRARY_DIR/libpanel$SHARED_LIBRARY_SUFFIX \
+        MENU_LIBS=$libncurses_LIBRARY_DIR/libmenu$SHARED_LIBRARY_SUFFIX

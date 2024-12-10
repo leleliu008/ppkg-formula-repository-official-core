@@ -3,7 +3,7 @@ web-url: https://sysdig.com/
 src-url: https://github.com/draios/sysdig/archive/refs/tags/0.36.0.tar.gz
 src-sha: 2e519bfa7e6af885cf686f3f85a16fb398c3eb5a6763da7ff8e4ba570cdc2701
 license: Apache-2.0
-#dep-pkg: libjsoncpp re2 libtbb uthash libyaml-cpp libcurl libzstd libz ncurses abseil elfutils grpc protobuf jq libopenssl
+#dep-pkg: libjsoncpp re2 libtbb uthash libyaml-cpp libcurl libzstd libz libncurses abseil elfutils grpc protobuf jq libopenssl
 dep-upp: perl
 
 install: |

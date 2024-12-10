@@ -3,7 +3,7 @@ git-url: https://gitlab.freedesktop.org/pipewire/pipewire
 src-url: https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/0.3.60/pipewire-0.3.60.tar.bz2
 src-sha: 8164eb53c9eafedfa22fe1adc4b8e38f3173c6f33695c735a17ed1a3d43c664e
 license: MIT
-dep-pkg: readline xorg-libxfixes libusb pulseaudio dbus libcamera
+dep-pkg: libreadline xorg-libxfixes libusb pulseaudio dbus libcamera
 install: |
     mesonw \
         -Dman=disabled \

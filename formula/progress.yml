@@ -1,7 +1,7 @@
 summary: A command-line tool to show progress for cp, mv, dd, ...
 src-url: https://github.com/Xfennec/progress/archive/refs/tags/v0.17.tar.gz
 src-sha: ee9538fce98895dcf0d108087d3ee2e13f5c08ed94c983f0218a7a3d153b725d
-dep-pkg: ncurses
+dep-pkg: libncurses
 license: GPL-3.0-or-later
 
 install: |

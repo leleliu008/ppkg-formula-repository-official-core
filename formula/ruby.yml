@@ -5,5 +5,5 @@ web-url: https://www.ruby-lang.org/
 src-url: https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.5.tar.gz
 src-sha: 3781a3504222c2f26cb4b9eb9c1a12dbf4944d366ce24a9ff8cf99ecbce75196
 license: Ruby
-dep-pkg: libyaml libffi libopenssl libz readline
+dep-pkg: libyaml libffi libopenssl libz libreadline
 install: configure

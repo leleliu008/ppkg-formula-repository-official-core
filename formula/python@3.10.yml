@@ -5,7 +5,7 @@ web-url: https://www.python.org/
 src-url: https://www.python.org/ftp/python/3.10.15/Python-3.10.15.tgz
 src-sha: a27864e5ba2a4474f8f6c58ab92ff52767ac8b66f1646923355a53fe3ef15074
 license: Python-2.0
-dep-pkg: ncurses libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
+dep-pkg: libncurses libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
 
 onready: ENABLE_LTO=0
 

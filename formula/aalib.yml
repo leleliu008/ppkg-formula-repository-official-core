@@ -4,7 +4,7 @@ src-url: https://downloads.sourceforge.net/project/aa-project/aa-lib/1.4rc5/aali
 src-sha: fbddda9230cf6ee2a4f5706b4b11e2190ae45f5eda1f0409dc4f99b35e0a70ee
 version: 1.4rc5
 license: GPL-2.0-or-later
-dep-pkg: ncurses
+dep-pkg: libncurses
 dep-upp: libtool
 bsystem: autotools
 
@@ -16,4 +16,4 @@ dopatch: |
     gsed -i 's|exit(1)|return 1|'    src/aainfo.c
     gsed -i '1i #include <string.h>' src/aaregist.c
 
-install: configure --without-x --with-ncurses=$ncurses_INSTALL_DIR
+install: configure --without-x --with-ncurses=$libncurses_INSTALL_DIR

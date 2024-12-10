@@ -3,10 +3,10 @@ web-url: https://dev.yorhel.nl/ncdu
 src-url: https://dev.yorhel.nl/download/ncdu-2.2.2.tar.gz
 src-sha: 90d920024e752318b469776ce57e03b3c702d49329ad9825aeeab36c3babf993
 license: MIT
-dep-pkg: ncurses
+dep-pkg: libncurses
 dep-upp: zig@0.10
 binbstd: 1
 install: |
-    gsed -i "s|linkSystemLibrary(\"ncursesw\")|addObjectFile(\"$ncurses_LIBRARY_DIR/libncursesw.a\")|" build.zig
-    run zig build --prefix "$PACKAGE_INSTALL_DIR" -Drelease-fast=true --search-prefix "$ncurses_INSTALL_DIR"
+    gsed -i "s|linkSystemLibrary(\"ncursesw\")|addObjectFile(\"$libncurses_LIBRARY_DIR/libncursesw.a\")|" build.zig
+    run zig build --prefix "$PACKAGE_INSTALL_DIR" -Drelease-fast=true --search-prefix "$libncurses_INSTALL_DIR"
     install_mans ncdu.1

@@ -9,7 +9,7 @@ fix-sha: 54aeff2adaea53902afc2660afb9534675b3ea522c767cbc24a5281080457b2c
 
 version: 1.4rc5
 license: GPL-2.0-or-later
-dep-pkg: ncurses
+dep-pkg: libncurses
 dep-upp: libtool
 bsystem: autotools
 
@@ -27,4 +27,4 @@ dopatch: |
 
     export CPPFLAGS="$CPPFLAGS -include stdlib.h -include string.h"
 
-install: configure --without-x --with-ncurses=$ncurses_INSTALL_DIR
+install: configure --without-x --with-ncurses=$libncurses_INSTALL_DIR
