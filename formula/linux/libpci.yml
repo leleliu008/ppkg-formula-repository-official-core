@@ -1,0 +1,12 @@
+summary: A portable C library for accessing PCI devices and their configuration space
+src-url: https://github.com/pciutils/pciutils/archive/refs/tags/v3.13.0.tar.gz
+src-sha: 861fc26151a4596f5c3cb6f97d6c75c675051fa014959e26fb871c8c932ebc67
+license: GPL-2.0-or-later
+dep-pkg: libz
+
+install: |
+    GAMKE_OPTIONS="ZLIB=yes DNS=yes PREFIX=$PACKAGE_INSTALL_DIR MANDIR=$PACKAGE_INSTALL_DIR/man CC=$CC AR=$AR RANLIB=$RANLIB CFLAGS='$CFLAGS $CPPFLAGS' LDFLAGS='$LDFLAGS'"
+    gmakew             $GAMKE_OPTIONS SHARED=no
+    gmakew             $GAMKE_OPTIONS SHARED=yes
+    gmakew install-lib $GAMKE_OPTIONS SHARED=no
+    gmakew install-lib $GAMKE_OPTIONS SHARED=yes

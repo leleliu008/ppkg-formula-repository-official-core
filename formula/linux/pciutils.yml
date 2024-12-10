@@ -1,11 +1,10 @@
 summary: PCI utilities
-src-url: https://github.com/pciutils/pciutils/archive/refs/tags/v3.11.1.tar.gz
-src-sha: 464644e3542a8d3aaf5373a2be6cb9ddfaa583cb39fbafbbedc10ca458fb48a1
+src-url: https://github.com/pciutils/pciutils/archive/refs/tags/v3.13.0.tar.gz
+src-sha: 861fc26151a4596f5c3cb6f97d6c75c675051fa014959e26fb871c8c932ebc67
 license: GPL-2.0-or-later
 dep-pkg: libz
-binbstd: 1
+
 install: |
     GAMKE_OPTIONS="ZLIB=yes DNS=yes SHARED=no PREFIX=$PACKAGE_INSTALL_DIR MANDIR=$PACKAGE_INSTALL_DIR/man CC=$CC AR=$AR RANLIB=$RANLIB CFLAGS='$CFLAGS $CPPFLAGS' LDFLAGS='$LDFLAGS'"
-    gmakew             $GAMKE_OPTIONS
-    gmakew install     $GAMKE_OPTIONS
-    gmakew install-lib $GAMKE_OPTIONS
+    gmakew         $GAMKE_OPTIONS
+    gmakew install $GAMKE_OPTIONS
