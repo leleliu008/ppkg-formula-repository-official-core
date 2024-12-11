@@ -1,0 +1,45 @@
+pkgtype: pie
+summary: Next-gen compiler infrastructure
+web-url: https://llvm.org/
+src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/llvm-project-18.1.8.src.tar.xz
+src-sha: 0b58557a6d32ceee97c8d533a59b9212d87e0fc4d2833924eb6c611247db2f2a
+license: Apache-2.0 with LLVM-exception
+dep-pkg: binutils libelf libedit libffi libxml2 libzstd libz3.a
+dep-lib: -lncurses
+dep-upp: python3 perl swig
+bscript: llvm
+
+# https://llvm.org/docs/CMake.html
+# https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
+# https://lldb.llvm.org/resources/build.html
+install: |
+    cmakew \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DLLVM_TARGETS_TO_BUILD=host \
+        -DLLVM_ENABLE_PROJECTS=clang \
+        -DLLVM_ENABLE_EH=ON \
+        -DLLVM_ENABLE_PIC=ON \
+        -DLLVM_ENABLE_FFI=ON \
+        -DLLVM_ENABLE_ZLIB=ON \
+        -DLLVM_ENABLE_ZSTD=ON \
+        -DLLVM_ENABLE_RTTI=ON \
+        -DLLVM_ENABLE_LIBXML2=OFF \
+        -DLLVM_ENABLE_TERMINFO=OFF \
+        -DLLVM_ENABLE_SPHINX=OFF \
+        -DLLVM_ENABLE_DOXYGEN=OFF \
+        -DLLVM_ENABLE_Z3_SOLVER=ON \
+        -DLLVM_INCLUDE_DOCS=OFF \
+        -DLLVM_INCLUDE_TESTS=OFF \
+        -DLLVM_BUILD_DOCS=OFF \
+        -DLLVM_BUILD_TESTS=OFF \
+        -DLLVM_BUILD_TOOLS=ON \
+        -DLLVM_BUILD_EXAMPLES=OFF \
+        -DLLVM_BUILD_LLVM_DYLIB=ON \
+        -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
+        -DLLVM_LINK_LLVM_DYLIB=ON \
+        -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
+        -DLLVM_INSTALL_UTILS=ON \
+        -DLLVM_OPTIMIZED_TABLEGEN=ON \
+        -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
+        -DCLANG_BUILD_TOOLS=ON \
+        -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF
