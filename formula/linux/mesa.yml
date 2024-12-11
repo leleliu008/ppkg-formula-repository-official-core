@@ -1,27 +1,27 @@
+pkgtype: lib
 summary: Graphics Library
 web-url: https://www.mesa3d.org/
 git-url: https://gitlab.freedesktop.org/mesa/mesa
-src-url: https://mesa.freedesktop.org/archive/mesa-24.0.3.tar.xz
-src-sha: 77aec9a2a37b7d3596ea1640b3cc53d0b5d9b3b52abed89de07e3717e91bfdbe
+src-url: https://mesa.freedesktop.org/archive/mesa-24.2.8.tar.xz
+src-sha: 999d0a854f43864fc098266aaf25600ce7961318a1e2e358bff94a7f53580e30
 license: MIT
 dep-pym: Mako MarkupSafe
 dep-upp: gm4 flex bison
-dep-pkg: llvm+clang+lld glslang gettext xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxshmfence libvdpau libva libdrm wayland-protocols libsensors
-
-prepare: export PATH="$NATIVE_PACKAGE_INSTALLED_ROOT/python3/bin:$PATH"
+dep-pkg: xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxshmfence wayland-protocols libvdpau libva libdrm libclc libsensors glslang
 
 install: |
     mesonw \
         -Db_ndebug=true \
         -Dplatforms=x11,wayland \
         -Dglx=auto \
-        -Ddri3=true \
+        -Ddri3=enabled \
         -Dgallium-drivers=auto \
         -Dgallium-omx=disabled \
         -Degl=enabled \
         -Dgbm=enabled \
+        -Dllvm=disabled \
         -Dopengl=true \
         -Dgles1=enabled \
         -Dgles2=enabled \
-        -Dvalgrind=false \
+        -Dvalgrind=enabled \
         -Dtools=drm-shim,etnaviv,freedreno,glsl,nir,nouveau,lima

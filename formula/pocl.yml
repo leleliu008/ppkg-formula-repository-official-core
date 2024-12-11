@@ -1,17 +1,17 @@
 summary: Portable Computing Language
 web-url: http://portablecl.org/
-src-url: https://github.com/pocl/pocl/archive/refs/tags/v5.0.tar.gz
-src-sha: fd0bb6e50c2286278c11627b71177991519e1f7ab2576bd8d8742974db414549
+src-url: https://github.com/pocl/pocl/archive/refs/tags/v6.0.tar.gz
+src-sha: de9710223fc1855f833dbbf42ea2681e06aa8ec0464f0201104dc80a74dfd1f2
 license: MIT
-dep-pkg: ocl-icd hwloc llvm+clang+lld
-dep-upp: patch
+dep-pkg: opencl-icd-loader hwloc llvm+clang@18
+dep-upp: python3
 install: |
     install -d "$PACKAGE_INSTALL_DIR/pocl/OpenCL/vendors"
     cmakew \
         -DENABLE_TESTS=OFF \
         -DENABLE_EXAMPLES=OFF \
-        -DLLVM_PREFIX="$llvm_clang_lld_INSTALL_DIR" \
-        -DLLVM_BINDIR="$llvm_clang_lld_INSTALL_DIR/bin" \
-        -DLLVM_LIBDIR="$llvm_clang_lld_INSTALL_DIR/lib" \
-        -DLLVM_INCLUDEDIR="$llvm_clang_lld_INSTALL_DIR/include" \
-        -DWITH_LLVM_CONFIG="$llvm_clang_lld_INSTALL_DIR/bin/llvm-config"
+        -DLLVM_PREFIX="$llvm_clang_18_INSTALL_DIR" \
+        -DLLVM_BINDIR="$llvm_clang_18_INSTALL_DIR/bin" \
+        -DLLVM_LIBDIR="$llvm_clang_18_INSTALL_DIR/lib" \
+        -DLLVM_INCLUDEDIR="$llvm_clang_18_INSTALL_DIR/include" \
+        -DWITH_LLVM_CONFIG="$llvm_clang_18_INSTALL_DIR/bin/llvm-config"

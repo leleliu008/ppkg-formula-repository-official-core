@@ -1,8 +1,8 @@
 summary: Media player based on MPlayer and mplayer2
 web-url: https://mpv.io
-src-url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.38.0.tar.gz
-src-sha: 86d9ef40b6058732f67b46d0bbda24a074fae860b3eaae05bab3145041303066
-dep-pkg: libplacebo libbluray luajit libmujs libass libuchardet librubberband
+src-url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.39.0.tar.gz
+src-sha: 2ca92437affb62c2b559b4419ea4785c70d023590500e8a52e95ea3ab4554683
+dep-pkg: libplacebo libbluray luajit libmujs libass libuchardet librubberband vapoursynth
 
 dopatch: |
     gsed -i "/iconv =/c iconv = dependency('libiconv', method : 'pkg-config')" meson.build
@@ -11,7 +11,7 @@ install: |
     mesonw \
         -Dtests=false \
         -Dlibmpv=true \
-        -Dcplayer=true \
+        -Dcplayer=false \
         -Dsdl2=enabled \
         -Dvulkan=enabled \
         -Duchardet=enabled \

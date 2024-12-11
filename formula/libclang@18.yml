@@ -1,0 +1,17 @@
+summary: Next-gen compiler infrastructure
+web-url: https://llvm.org/
+    #src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/llvm-project-18.1.8.src.tar.xz
+    #src-sha: 0b58557a6d32ceee97c8d533a59b9212d87e0fc4d2833924eb6c611247db2f2a
+src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang-18.1.8.src.tar.xz
+src-sha: 5724fe0a13087d5579104cedd2f8b3bc10a212fb79a0fcdac98f4880e19f4519
+license: Apache-2.0 with LLVM-exception
+dep-pkg: libllvm@18
+dep-upp: python3 perl
+
+# https://llvm.org/docs/CMake.html
+# https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
+# https://lldb.llvm.org/resources/build.html
+install: |
+    cmakew \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DLLVM_INCLUDE_TESTS=OFF

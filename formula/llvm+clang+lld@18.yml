@@ -9,13 +9,6 @@ dep-lib: -lncurses
 dep-upp: python3 perl swig
 bscript: llvm
 
-dopatch: |
-    gsed -i '/add_optional_dependency(LLDB_ENABLE_LIBXML2/c find_package(LibXml2 CONFIG REQUIRED)' ../lldb/cmake/modules/LLDBConfig.cmake
-    gsed -i '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)'                                      ../lldb/cmake/modules/LLDBConfig.cmake
-
-    LIBELF_LIBRARIES="$(pkg-config --libs-only-l libelf)"
-    gsed -i "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
-
 # https://llvm.org/docs/CMake.html
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
 # https://lldb.llvm.org/resources/build.html
@@ -23,8 +16,7 @@ install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \
         -DLLVM_TARGETS_TO_BUILD=all \
-        -DLLVM_ENABLE_PROJECTS="'clang;clang-tools-extra;lld;lldb;mlir;polly;openmp'" \
-        -DLLVM_ENABLE_RUNTIMES="'compiler-rt;libcxx;libcxxabi;libunwind'" \
+        -DLLVM_ENABLE_PROJECTS="'clang;lld'" \
         -DLLVM_ENABLE_EH=ON \
         -DLLVM_ENABLE_PIC=ON \
         -DLLVM_ENABLE_FFI=ON \
@@ -51,13 +43,4 @@ install: |
         -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
         -DCLANG_BUILD_TOOLS=ON \
         -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF \
-        -DLLD_BUILD_TOOLS=ON \
-        -DLLDB_USE_SYSTEM_DEBUGSERVER=ON \
-        -DLLDB_USE_SYSTEM_SIX=OFF \
-        -DLLDB_ENABLE_LUA=OFF \
-        -DLLDB_ENABLE_PYTHON=OFF \
-        -DLLDB_ENABLE_CURSES=ON \
-        -DLLDB_ENABLE_LIBEDIT=ON \
-        -DLLDB_ENABLE_LIBXML2=ON \
-        -DLLDB_ENABLE_LZMA=ON \
-        -DLIBOMP_INSTALL_ALIASES=OFF
+        -DLLD_BUILD_TOOLS=ON

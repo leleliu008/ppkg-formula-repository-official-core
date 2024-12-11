@@ -1,6 +1,8 @@
-summary: Language Server for Zig
-src-url: https://github.com/zigtools/zls/archive/refs/tags/0.13.0.tar.gz
-src-sha: 2e8046b6b0de765a4bf4bb828345e2badc8b828bc257dc931d0f56b147684d9f
+summary: A package manager for the Zig programming language
+web-url: https://nektro.github.io/zigmod/
+src-url: https://github.com/nektro/zigmod/archive/refs/tags/r93.tar.gz
+src-sha: 302162e6ba66ee8abe028b5d61fe1c474ec50eadfb6481dc782702126fddb639
+license: MIT
 dep-upp: zig@0.13
 bsystem: zig
 binbstd: 1
@@ -16,4 +18,4 @@ install: |
             ZIG_BUILD_TARGET=$TARGET_PLATFORM_ARCH-$TARGET_PLATFORM_NAME
     fi
 
-    run zig build --prefix $PACKAGE_INSTALL_DIR -Dtarget=$ZIG_BUILD_TARGET
+    run zig build --prefix $PACKAGE_INSTALL_DIR -Dtarget=$ZIG_BUILD_TARGET -Dtag=$PACKAGE_VERSION -Dmode=ReleaseSafe -Dstrip=true

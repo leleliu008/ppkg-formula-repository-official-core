@@ -1,18 +1,18 @@
+pkgtype: pie
 summary: Next-gen compiler infrastructure
 web-url: https://llvm.org/
-src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/llvm-project-14.0.6.src.tar.xz
-src-sha: 8b3cfd7bc695bd6cea0f37f53f0981f34f87496e79e2529874fd03a2f9dd3a8a
+src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.5/llvm-project-19.1.5.src.tar.xz
+src-sha: bd8445f554aae33d50d3212a15e993a667c0ad1b694ac1977f3463db3338e542
 license: Apache-2.0 with LLVM-exception
-dep-pkg: binutils libelf libedit libffi libxml2 libzstd libz3.a
-dep-upp: python3 perl swig patch
+dep-pkg: python3 binutils libelf libedit libffi libxml2 libz3.a
+dep-lib: -lncurses
+dep-upp: perl swig patch
 bscript: llvm
 
-# https://bugzilla.redhat.com/show_bug.cgi?id=2128646
-patches: |
-    d2a2b61f7024fdf45f24a8ad8592808fc94c9ce6db8df3152fd9f46180c43074|https://github.com/llvm/llvm-project/commit/81fc5f7909a4ef5a8d4b5da2a10f77f7cb01ba63.patch?full_index=1
-    a2cf01ca5f632f7372f03c7a9db438f5f7083daae90a617241a0c41ece979267|https://github.com/llvm/llvm-project/commit/f0a25fe0b746f56295d5c02116ba28d2f965c175.patch?full_index=1
+dopatch: |
+    gsed -i '/add_optional_dependency(LLDB_ENABLE_LIBXML2/c find_package(LibXml2 CONFIG REQUIRED)' ../lldb/cmake/modules/LLDBConfig.cmake
+    gsed -i '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)'                                      ../lldb/cmake/modules/LLDBConfig.cmake
 
-prepare: |
     LIBELF_LIBRARIES="$(pkg-config --libs-only-l libelf)"
     gsed -i "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
 
@@ -31,6 +31,7 @@ install: |
         -DLLVM_ENABLE_ZLIB=ON \
         -DLLVM_ENABLE_ZSTD=ON \
         -DLLVM_ENABLE_RTTI=ON \
+        -DLLVM_ENABLE_LIBXML2=OFF \
         -DLLVM_ENABLE_TERMINFO=OFF \
         -DLLVM_ENABLE_SPHINX=OFF \
         -DLLVM_ENABLE_DOXYGEN=OFF \
@@ -39,6 +40,7 @@ install: |
         -DLLVM_INCLUDE_TESTS=OFF \
         -DLLVM_BUILD_DOCS=OFF \
         -DLLVM_BUILD_TESTS=OFF \
+        -DLLVM_BUILD_TOOLS=ON \
         -DLLVM_BUILD_EXAMPLES=OFF \
         -DLLVM_BUILD_LLVM_DYLIB=ON \
         -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
@@ -47,6 +49,9 @@ install: |
         -DLLVM_INSTALL_UTILS=ON \
         -DLLVM_OPTIMIZED_TABLEGEN=ON \
         -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
+        -DCLANG_BUILD_TOOLS=ON \
+        -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF \
+        -DLLD_BUILD_TOOLS=ON \
         -DLLDB_USE_SYSTEM_DEBUGSERVER=ON \
         -DLLDB_USE_SYSTEM_SIX=OFF \
         -DLLDB_ENABLE_LUA=OFF \
@@ -55,5 +60,4 @@ install: |
         -DLLDB_ENABLE_LIBEDIT=ON \
         -DLLDB_ENABLE_LIBXML2=ON \
         -DLLDB_ENABLE_LZMA=ON \
-        -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF \
         -DLIBOMP_INSTALL_ALIASES=OFF
