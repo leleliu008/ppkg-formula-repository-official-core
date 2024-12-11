@@ -1,0 +1,15 @@
+summary: Efficient rsh-like utility, for using hosts in parallel
+src-url: https://github.com/chaos/pdsh/releases/download/pdsh-2.35/pdsh-2.35.tar.gz
+src-sha: 75ef15347848fff43f8d6ff9c4424fe05c7dd2cdba029139901f861a05093cfe
+license: GPL-2.0-or-later
+dep-pkg: libreadline
+install: |
+    configure \
+        --with-nodeupdown \
+        --with-readline \
+        --with-ssh \
+        --with-dshgroups \
+        --with-netgroup \
+        --with-slurm \
+        --without-rsh \
+        --without-xcpu
