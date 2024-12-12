@@ -4,6 +4,7 @@ src-sha: a7d2cc4c3d0c0ffe6aff7eb0029212f2b098313029126dcd12dc542723972379
 license: GPL-2.0-or-later
 bsystem: autotools
 dep-upp: libtool patch
+
 dopatch: |
     if [ "$TARGET_PLATFORM_VERS" != musl ] ; then
         return 0

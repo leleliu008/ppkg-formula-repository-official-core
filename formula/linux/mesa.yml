@@ -11,17 +11,25 @@ dep-pkg: xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxsh
 
 install: |
     mesonw \
-        -Db_ndebug=true \
-        -Dplatforms=x11,wayland \
         -Dglx=auto \
-        -Ddri3=enabled \
-        -Dgallium-drivers=auto \
-        -Dgallium-omx=disabled \
         -Degl=enabled \
         -Dgbm=enabled \
-        -Dllvm=disabled \
+        -Ddri3=enabled \
+        -Dllvm=enabled \
         -Dopengl=true \
         -Dgles1=enabled \
         -Dgles2=enabled \
         -Dvalgrind=enabled \
-        -Dtools=drm-shim,etnaviv,freedreno,glsl,nir,nouveau,lima
+        -Dintel-clc=enabled \
+        -Dlmsensors=enabled \
+        -Dgallium-extra-hud=true \
+        -Dgallium-nine=true \
+        -Dgallium-opencl=icd \
+        -Dgallium-va=enabled \
+        -Dgallium-xa=enabled \
+        -Dgallium-vdpau=enabled \
+        -Dgallium-omx=disabled \
+        -Dgallium-drivers=auto \
+        -Dplatforms=x11,wayland \
+        -Dtools=drm-shim,etnaviv,freedreno,glsl,nir,nouveau,lima \
+        -Db_ndebug=true

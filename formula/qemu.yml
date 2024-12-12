@@ -1,17 +1,19 @@
 summary: A generic and open source machine & userspace emulator and virtualizer
 web-url: https://www.qemu.org/
 git-url: https://git.qemu.org/git/qemu.git
-src-url: https://download.qemu.org/qemu-9.0.0.tar.xz
-src-sha: 32708ac66c30d8c892633ea968c771c1c76d597d70ddead21a0d22ccf386da69
+src-url: https://download.qemu.org/qemu-9.1.2.tar.xz
+src-sha: 19fd9d7535a54d6e044e186402aa3b3b1bdfa87c392ec8884855592c8510c96f
 license: GPL-2.0-only
-dep-pkg: libncurses capstone libfdt libusb libslirp libssh libpng libjpeg-turbo libpixman libsnappy libzstd liblzo libgnutls libnettle vde libcap-ng xattr
+dep-pkg: libncurses libcapstone libfdt libusb libslirp libssh libpng libjpeg-turbo libpixman libsnappy libzstd liblzo libgnutls libnettle vde libcap-ng xattr
 dep-upp: bzip2 gm4 flex bison
+dep-pym: packaging
 bsystem: gmake meson
 
 ppflags: -UNDEBUG
 ldflags: -lstdc++
 
 dopatch: |
+    gsed -i '/-static-pie/d' meson.build
     gsed -i 's|meson setup |meson setup --prefer-static |' configure
     gsed -i "s|cc.find_library('vdeplug'|cc.find_library('vdeplug', static : true, dirs : ['$vde_LIBRARY_DIR']|" meson.build
     gsed -i "s|cc.find_library('cap-ng'|cc.find_library('cap-ng', static : true, dirs : ['$libcap_ng_LIBRARY_DIR']|" meson.build
