@@ -15,7 +15,7 @@ bscript: llvm
 install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \
-        -DLLVM_TARGETS_TO_BUILD=host \
+        -DLLVM_TARGETS_TO_BUILD=all \
         -DLLVM_ENABLE_PROJECTS=clang \
         -DLLVM_ENABLE_EH=ON \
         -DLLVM_ENABLE_PIC=ON \
