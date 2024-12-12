@@ -1,7 +1,7 @@
 summary: Library for accessing the direct rendering manager
 web-url: https://dri.freedesktop.org/
-src-url: https://dri.freedesktop.org/libdrm/libdrm-2.4.120.tar.xz
-src-sha: 3bf55363f76c7250946441ab51d3a6cc0ae518055c0ff017324ab76cdefb327a
+src-url: https://dri.freedesktop.org/libdrm/libdrm-2.4.124.tar.xz
+src-sha: ac36293f61ca4aafaf4b16a2a7afff312aa4f5c37c9fbd797de9e3c0863ca379
 license: MIT
 dep-pkg: xorg-libpciaccess
 install: mesonw -Dtests=false -Dcairo-tests=disabled -Dvalgrind=disabled
