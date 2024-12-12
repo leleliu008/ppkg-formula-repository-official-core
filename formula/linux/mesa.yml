@@ -11,7 +11,7 @@ dep-pkg: xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxsh
 
 install: |
     mesonw \
-        -Dglx=auto \
+        -Dglx=dri \
         -Degl=enabled \
         -Dgbm=enabled \
         -Ddri3=enabled \
@@ -31,5 +31,6 @@ install: |
         -Dgallium-omx=disabled \
         -Dgallium-drivers=auto \
         -Dplatforms=x11,wayland \
+        -Dvideo-codecs=all \
         -Dtools=drm-shim,etnaviv,freedreno,glsl,nir,nouveau,lima \
         -Db_ndebug=true
