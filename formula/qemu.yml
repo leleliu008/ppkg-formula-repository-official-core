@@ -13,6 +13,31 @@ ppflags: -UNDEBUG
 ldflags: -lstdc++
 
 dopatch: |
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        LIST='
+        0006-linux-user-signal.c-define-__SIGRTMIN-MAX-for-non-GN.patch
+        xattr_size_max.patch
+        MAP_SYNC-fix.patch
+        fix-sockios-header.patch
+        guest-agent-shutdown.patch
+        lfs64.patch
+        musl-initialise-msghdr.patch
+        fix-strerrorname_np.patch
+        liburing.patch
+        0001-util-util-cpuinfo-riscv.c-fix-riscv64-build-on-musl-.patch
+        '
+
+        for f in $LIST
+        do
+            wfetch "https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/community/qemu/$f"
+        done
+
+        for f in $LIST
+        do
+            patch -p1 < "$f"
+        done
+    fi
+
     gsed -i '/-static-pie/d' meson.build
     gsed -i 's|meson setup |meson setup --prefer-static |' configure
     gsed -i "s|cc.find_library('vdeplug'|cc.find_library('vdeplug', static : true, dirs : ['$vde_LIBRARY_DIR']|" meson.build
