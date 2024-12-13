@@ -4,15 +4,16 @@ src-url: https://code.videolan.org/videolan/libplacebo/-/archive/v7.349.0/libpla
 src-sha: 38c9c75d9c1bb412baf34845d1ca58c41a9804d1d0798091d7a8602a0d7c9aa6
 license: LGPL-2.1-or-later
 dep-pym: MarkupSafe Jinja2 glad2
-dep-pkg: ffmpeg-dev vulkan-loader shaderc glslang libepoxy
+dep-pkg: ffmpeg-dev vulkan-loader shaderc liblcms2
 install: |
     mesonw \
         -Dfuzz=false \
         -Ddemos=false \
         -Dtests=false \
         -Dbench=false \
-        -Dunwind=disabled \
+        -Dlcms=enabled \
         -Dvulkan=enabled \
         -Dopengl=enabled \
-        -Dglslang=enabled \
+        -Dshaderc=enabled \
+        -Dunwind=disabled \
         -Dvulkan-registry=$vulkan_headers_INSTALL_DIR/share/vulkan/registry/vk.xml

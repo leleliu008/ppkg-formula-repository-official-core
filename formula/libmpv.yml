@@ -2,7 +2,7 @@ summary: Media player based on MPlayer and mplayer2
 web-url: https://mpv.io
 src-url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.39.0.tar.gz
 src-sha: 2ca92437affb62c2b559b4419ea4785c70d023590500e8a52e95ea3ab4554683
-dep-pkg: libplacebo libbluray luajit libmujs libass libuchardet librubberband vapoursynth
+dep-pkg: libplacebo libbluray luajit libmujs libass libuchardet librubberband vapoursynth mesa
 
 dopatch: |
     gsed -i "/iconv =/c iconv = dependency('libiconv', method : 'pkg-config')" meson.build
