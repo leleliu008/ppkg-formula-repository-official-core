@@ -1,8 +1,8 @@
 summary: Dynamic analysis tools (memory, debug, profiling)
 web-url: https://valgrind.org/
 git-url: https://sourceware.org/git/valgrind.git
-src-url: https://sourceware.org/pub/valgrind/valgrind-3.22.0.tar.bz2
-src-sha: c811db5add2c5f729944caf47c4e7a65dcaabb9461e472b578765dd7bf6d2d4c
+src-url: https://sourceware.org/pub/valgrind/valgrind-3.24.0.tar.bz2
+src-sha: 71aee202bdef1ae73898ccf7e9c315134fa7db6c246063afc503aef702ec03bd
 license: GPL-2.0-or-later
 dep-upp: perl
 install: configure --enable-lto --enable-tls

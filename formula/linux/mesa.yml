@@ -19,7 +19,7 @@ install: |
         -Dopengl=true \
         -Dgles1=enabled \
         -Dgles2=enabled \
-        -Dvalgrind=enabled \
+        -Dvalgrind=disabled \
         -Dintel-clc=enabled \
         -Dlmsensors=enabled \
         -Dgallium-extra-hud=true \
@@ -30,6 +30,7 @@ install: |
         -Dgallium-vdpau=enabled \
         -Dgallium-omx=disabled \
         -Dgallium-drivers=auto \
+        -Dvulkan-drivers=auto  \
         -Dplatforms=x11,wayland \
         -Dvideo-codecs=all \
         -Dtools=drm-shim,etnaviv,freedreno,glsl,nir,nouveau,lima \
