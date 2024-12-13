@@ -7,7 +7,7 @@ src-sha: 999d0a854f43864fc098266aaf25600ce7961318a1e2e358bff94a7f53580e30
 license: MIT
 dep-pym: Mako PyYAML ply
 dep-upp: gm4 flex bison
-dep-pkg: xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxshmfence wayland-protocols libvdpau libva libdrm libclc libsensors glslang spirv-tools
+dep-pkg: xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxshmfence wayland-protocols libvdpau libva libdrm libclc libsensors glslang spirv-tools bindgen cbindgen
 
 install: |
     mesonw \
