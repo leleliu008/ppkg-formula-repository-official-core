@@ -6,7 +6,7 @@ src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.xz
 src-uri: https://sourceware.org/pub/binutils/releases/binutils-2.43.1.tar.xz
 src-sha: 13f74202a3c4c51118b797a39ea4200d3f6cfbe224da6d1d95bb938480132dfd
 license: GPL-2.0-or-later
-dep-pkg: libisl libmpc libz
+dep-pkg: libisl libmpc libz libzstd
 dep-upp: gm4 bison texinfo
 
 install: |
@@ -16,6 +16,7 @@ install: |
         --with-mpc="$libmpc_INSTALL_DIR" \
         --with-mpfr="$mpfr_INSTALL_DIR" \
         --with-static-standard-libraries \
+        --with-zstd \
         --with-system-zlib \
         --disable-gprofng \
         --disable-werror \
