@@ -5,9 +5,12 @@ src-sha: e91acbe181cf6ffa3ef15870b8e620131002240ba24c5c779fd0131db021517f
 version: 2.1.1732813678
 license: MIT
 
+dopatch: |
+    gsed -i '/^INSTALL_DEP= /c INSTALL_DEP= src/libluajit.a src/libluajit.so' Makefile
+    gsed -i '/cd src\/jit/d' Makefile
+
 install: |
-    gmakew clean install \
-        PREFIX="$PACKAGE_INSTALL_DIR" \
+    gmakew -C src clean libluajit.a libluajit.so \
         CC="$CC" \
         LD="$CC" \
         CFLAGS="'$CFLAGS'" \
@@ -19,3 +22,7 @@ install: |
         TARGET_AR="'$AR rcus'" \
         TARGET_STRIP="$STRIP" \
         Q=
+    touch src/luajit
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
+
+dotweak: rm -rf bin/ share/
