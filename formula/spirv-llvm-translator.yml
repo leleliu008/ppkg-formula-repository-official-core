@@ -2,5 +2,5 @@ summary: Tool and a library for bi-directional translation between SPIR-V and LL
 src-url: https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v18.1.7.tar.gz
 src-sha: 54b48f8fdc31a59377ea18c36993d7a4a4c2a3c19420006abc1ac0a450bc2ad2
 license: Apache-2.0
-dep-pkg: llvm+clang@18
+dep-pkg: llvm+clang@18 spirv-tools
 install: cmakew -DLLVM_BUILD_TOOLS=ON
