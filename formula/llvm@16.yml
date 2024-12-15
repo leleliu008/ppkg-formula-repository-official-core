@@ -4,8 +4,8 @@ web-url: https://llvm.org/
 src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.6/llvm-project-16.0.6.src.tar.xz
 src-sha: ce5e71081d17ce9e86d7cbcfa28c4b04b9300f8fb7e78422b1feb6bc52c3028e
 license: Apache-2.0 with LLVM-exception
-dep-pkg: python3 binutils libelf libedit libffi libxml2 libz3.a
-dep-upp: perl swig patch
+dep-pkg: binutils-dev libelf libedit libffi libxml2 libz3.a
+dep-upp: python3 perl swig patch
 bscript: llvm
 
 dopatch: |
