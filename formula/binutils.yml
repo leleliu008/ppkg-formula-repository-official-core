@@ -15,10 +15,14 @@ install: |
         --with-gmp="$libgmp_INSTALL_DIR" \
         --with-mpc="$libmpc_INSTALL_DIR" \
         --with-mpfr="$mpfr_INSTALL_DIR" \
+        --with-static-standard-libraries \
         --with-system-zlib \
         --disable-gprofng \
         --disable-werror \
         --disable-nls \
+        --disable-install-libbfd \
+        --disable-shared \
+        --enable-static \
         --enable-gold \
         --enable-64-bit-bfd \
         --enable-plugins \
