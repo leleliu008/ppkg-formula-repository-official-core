@@ -19,12 +19,12 @@ install: |
     gmakew
 
     run cd ../bfd
-    run ./configure --enable-static --enable-shared --prefix="$PACKAGE_INSTALL_DIR" --enable-install-libbfd --with-system-zlib --with-zstd
+    run ./configure --enable-static --enable-shared --prefix="$PACKAGE_INSTALL_DIR" --enable-install-libbfd --disable-nls --with-system-zlib --with-zstd
     gmakew
     gmakew install
 
     run cd ../opcodes
-    run ./configure --enable-static --enable-shared --prefix="$PACKAGE_INSTALL_DIR" --enable-install-libbfd --enable-64-bit-bfd --disable-nls
+    run ./configure --enable-static --enable-shared --prefix="$PACKAGE_INSTALL_DIR" --enable-install-libbfd --disable-nls --enable-64-bit-bfd
     gmakew
     gmakew install
 
