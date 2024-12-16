@@ -10,8 +10,6 @@ dep-upp: python3 perl swig
 bscript: llvm
 
 # https://llvm.org/docs/CMake.html
-# https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
-# https://lldb.llvm.org/resources/build.html
 install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \
@@ -45,4 +43,6 @@ install: |
         -DCLANG_BUILD_TOOLS=ON \
         -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF
 
-dotweak: gsed -i -e 's|zstd::libzstd_static|zstd|' -e "s|$PACKAGE_WORKING_DIR/lib/libz3\.a|z3|" lib/cmake/llvm/LLVMExports.cmake
+dotweak: |
+    gsed -i -e 's|zstd::libzstd_static|zstd|' -e "s|$PACKAGE_WORKING_DIR/lib/libz3\.a|z3|" lib/cmake/llvm/LLVMExports.cmake
+    run cat lib/cmake/llvm/LLVMExports.cmake
