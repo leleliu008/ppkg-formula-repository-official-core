@@ -36,6 +36,7 @@ install: |
         -DLLVM_BUILD_EXAMPLES=OFF \
         -DLLVM_BUILD_LLVM_DYLIB=OFF \
         -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
+        -DLLVM_STATIC_LINK_CXX_STDLIB=ON \
         -DLLVM_LINK_LLVM_DYLIB=OFF \
         -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
         -DLLVM_INSTALL_UTILS=ON \
@@ -43,3 +44,5 @@ install: |
         -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
         -DCLANG_BUILD_TOOLS=ON \
         -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF
+
+dotweak: gsed -i -e 's|zstd::libzstd_static|zstd|' -e "s|$PACKAGE_WORKING_DIR/lib/libz3\.a|z3|" lib/cmake/llvm/LLVMExports.cmake

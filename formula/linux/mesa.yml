@@ -16,6 +16,7 @@ install: |
         -Dgbm=enabled \
         -Ddri3=enabled \
         -Dllvm=enabled \
+        -Dshared-llvm=disabled \
         -Dopengl=true \
         -Dgles1=enabled \
         -Dgles2=enabled \

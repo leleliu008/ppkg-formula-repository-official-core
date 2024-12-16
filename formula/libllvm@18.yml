@@ -40,4 +40,4 @@ install: |
         -DLLVM_OPTIMIZED_TABLEGEN=ON \
         -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF
 
-dotweak: gsed -i 's|zstd::libzstd_shared|zstd|' lib/cmake/llvm/LLVMExports.cmake
+dotweak: gsed -i -e 's|zstd::libzstd_static|zstd|' -e "s|$PACKAGE_WORKING_DIR/lib/libz3\.a|z3|" lib/cmake/llvm/LLVMExports.cmake
