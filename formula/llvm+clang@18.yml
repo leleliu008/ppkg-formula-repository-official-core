@@ -9,6 +9,9 @@ dep-lib: -lncurses
 dep-upp: python3 perl swig
 bscript: llvm
 
+    #dopatch: gsed -i 's|${Z3_LIBRARIES}|z3|g' lib/Support/CMakeLists.txt
+dopatch: printf 'set(Z3_LIBRARIES z3)\n' >> cmake/modules/FindZ3.cmake
+
 # https://llvm.org/docs/CMake.html
 install: |
     cmakew \
@@ -44,5 +47,5 @@ install: |
         -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF
 
 dotweak: |
-    gsed -i -e 's|zstd::libzstd_static|zstd|' -e "s|$PACKAGE_WORKING_DIR/lib/libz3\.a|z3|" lib/cmake/llvm/LLVMExports.cmake
+    #gsed -i -e 's|zstd::libzstd_static|zstd|' -e "s|$PACKAGE_WORKING_DIR/lib/libz3\.a|z3|" lib/cmake/llvm/LLVMExports.cmake
     run cat lib/cmake/llvm/LLVMExports.cmake
