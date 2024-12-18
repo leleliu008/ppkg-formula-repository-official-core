@@ -1,0 +1,10 @@
+summary: C++ header-only HTTP/HTTPS server and client library
+src-url: https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.18.3.tar.gz
+src-sha: a0567bcd6c3fe5cef1b329b96245119047f876b49e06cc129a36a7a8dffe173e
+license: MIT
+dep-pkg: libz libbrotli libopenssl
+install: |
+    cmakew \
+        -DHTTPLIB_REQUIRE_ZLIB=ON \
+        -DHTTPLIB_REQUIRE_BROTLI=ON \
+        -DHTTPLIB_REQUIRE_OPENSSL=ON

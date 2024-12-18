@@ -57,6 +57,8 @@ install: |
         --disable-shared \
         --enable-ffplay \
         --enable-ffprobe \
+        --enable-openssl \
+        --enable-version3 \
         --enable-libmp3lame \
         --enable-libtheora \
         --enable-libvorbis \
