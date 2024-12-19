@@ -1,6 +1,6 @@
 summary: A TCP, UDP, and SCTP network bandwidth measurement tool
-src-url: https://github.com/esnet/iperf/releases/download/3.17.1/iperf-3.17.1.tar.gz
-src-sha: 84404ca8431b595e86c473d8f23d8bb102810001f15feaf610effd3b318788aa
+src-url: https://github.com/esnet/iperf/releases/download/3.18/iperf-3.18.tar.gz
+src-sha: c0618175514331e766522500e20c94bfb293b4424eb27d7207fb427b88d20bab
 license: BSD-3-Clause
 dep-pkg: libopenssl
 install: configure --with-openssl="$libopenssl_INSTALL_DIR"

@@ -1,4 +1,4 @@
-summary: Lightweight RPC library (based on XML and HTTP)
+summary: A lightweight RPC library for C/C++ based on XML and HTTP
 web-url: https://xmlrpc-c.sourceforge.io/
 src-url: https://downloads.sourceforge.net/project/xmlrpc-c/Xmlrpc-c%20Super%20Stable/1.59.03/xmlrpc-c-1.59.03.tgz
 src-sha: bdb71db42ab0be51591555885d11682b044c1034d4a3296401bf921ec0b233fe
@@ -10,5 +10,7 @@ prepare: |
     if printf 'int main() { return 0; }\n' | "$CC" -c -x c -Werror -Wimplicit-function-declaration -o /dev/null - ; then
         export CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
     fi
+
+    export PROXIED_CC_ARGS="$PROXIED_CC_ARGS $CFLAGS $CPPFLAGS $LDFLAGS"
 
 install: configure --enable-libxml2-backend

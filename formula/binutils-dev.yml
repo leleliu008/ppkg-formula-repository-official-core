@@ -15,8 +15,9 @@ install: |
     gmakew install
 
     run cd ../libiberty
-    run ./configure --enable-static --enable-shared --prefix="$PACKAGE_INSTALL_DIR"
+    run ./configure --enable-static --enable-shared --prefix="$PACKAGE_INSTALL_DIR" --enable-install-libiberty
     gmakew
+    gmakew install
 
     run cd ../bfd
     run ./configure --enable-static --enable-shared --prefix="$PACKAGE_INSTALL_DIR" --enable-install-libbfd --disable-nls --with-system-zlib --with-zstd
