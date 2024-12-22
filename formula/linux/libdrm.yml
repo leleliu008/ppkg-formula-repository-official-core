@@ -5,3 +5,7 @@ src-sha: ac36293f61ca4aafaf4b16a2a7afff312aa4f5c37c9fbd797de9e3c0863ca379
 license: MIT
 dep-pkg: xorg-libpciaccess
 install: mesonw -Dtests=false -Dcairo-tests=disabled -Dvalgrind=disabled
+
+# https://gitlab.freedesktop.org/mesa/drm/-/merge_requests/273
+fix-url: https://raw.githubusercontent.com/leleliu008/ppkg-formula-repository-official-core/refs/heads/master/patches/libdrm-2.4.124.patch
+fix-sha: c0af4e6a60891b1ccb765565f1845b7c573e1e3d9339ee9e09d3d941c1da2c90
