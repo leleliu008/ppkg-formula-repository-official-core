@@ -1,0 +1,7 @@
+summary: Fallback theme for FreeDesktop.org icon themes
+web-url: https://wiki.freedesktop.org/www/Software/icon-theme/
+got-url: https://gitlab.freedesktop.org/xdg/default-icon-theme.git
+src-url: https://icon-theme.freedesktop.org/releases/hicolor-icon-theme-0.18.tar.xz
+src-sha: db0e50a80aa3bf64bb45cbca5cf9f75efd9348cf2ac690b907435238c3cf81d7
+license: GPL-2.0-only
+bsystem: meson
