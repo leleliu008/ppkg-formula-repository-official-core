@@ -1,0 +1,102 @@
+name: workflow21
+
+on:
+  push:
+    branches: [ master, dev ]
+  pull_request:
+    branches: [ master, dev ]
+
+jobs:
+  alpine:
+    if: false
+
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [3.19]
+        pkg: [pkg-config,pkgconf,plog,plzip,png,pngcheck,pngquant,pngsplit,pocl,poco,pop,powertop,ppkg,procps,procs,progress,proj,proot,proto-cli,psimd,pup,putty,pv,python@3.10,python@3.11.6,python@3.12,python@3.13,python@3.9,q,qpdf]
+        flavor: [sh]
+
+    runs-on:   ubuntu-latest
+    container: alpine:${{ matrix.tag }}
+
+    steps:
+        - run: apk update
+        - run: apk add curl g++ gfortran libc-dev linux-headers
+
+        - uses: actions/checkout@v4
+
+        - if: matrix.flavor == 'sh'
+          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg && chmod a+x ppkg
+
+        - if: matrix.flavor == 'c'
+          run: |
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
+            tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
+            mv bin/ppkg .
+
+        - run: ./ppkg setup
+        - run: ./ppkg about
+        - run: ./ppkg install ${{ matrix.pkg }} --static -I formula/linux -I formula
+
+
+  ubuntu:
+    if: true
+
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [24.04]
+        pkg: [pkg-config,pkgconf,plog,plzip,png,pngcheck,pngquant,pngsplit,pocl,poco,pop,powertop,ppkg,procps,procs,progress,proj,proot,proto-cli,psimd,pup,putty,pv,python@3.10,python@3.11.6,python@3.12,python@3.13,python@3.9,q,qpdf]
+        flavor: [sh]
+
+    runs-on:   ubuntu-latest
+    container: ubuntu:${{ matrix.tag }}
+
+    steps:
+        - run: apt -y update
+        - run: apt -y install curl xz-utils g++ gfortran linux-headers-generic
+
+        - uses: actions/checkout@v4
+
+        - if: matrix.flavor == 'sh'
+          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg && chmod a+x ppkg
+
+        - if: matrix.flavor == 'c'
+          run: |
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-linux-x86_64.tar.xz
+            tar vxf ppkg-*-linux-x86_64.tar.xz --strip-components=1
+            mv bin/ppkg .
+
+        - run: ./ppkg setup
+        - run: ./ppkg about
+        - run: ./ppkg install ${{ matrix.pkg }} -I formula/linux -I formula
+
+
+  macos:
+    if: false
+
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [14]
+        pkg: [pkg-config,pkgconf,plog,plzip,png,pngcheck,pngquant,pngsplit,pocl,poco,pop,powertop,ppkg,procps,procs,progress,proj,proot,proto-cli,psimd,pup,putty,pv,python@3.10,python@3.11.6,python@3.12,python@3.13,python@3.9,q,qpdf]
+        flavor: [sh]
+
+    runs-on: macos-${{ matrix.tag }}
+
+    steps:
+        - uses: actions/checkout@v4
+
+        - if: matrix.flavor == 'sh'
+          run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg && chmod a+x ppkg
+
+        - if: matrix.flavor == 'c'
+          run: |
+            curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/ppkg-0.1000.2-macos-14.0-arm64.tar.xz
+            tar vxf ppkg-0.1000.2-macos-14.0-arm64.tar.xz --strip-components=1
+            mv bin/ppkg .
+
+        - run: ./ppkg setup
+        - run: ./ppkg about
+        - run: ./ppkg install ${{ matrix.pkg }} -I formula/macos -I formula
