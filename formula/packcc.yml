@@ -1,5 +1,5 @@
 summary: A packrat parser generator for C
-git-url: https://github.com/enechaev/packcc
+git-url: https://github.com/arithy/packcc
 
 install: |
     run $CC $CPPFLAGS $CFLAGS $LDFLAGS -o packcc ../packcc.c

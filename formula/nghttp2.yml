@@ -1,9 +1,8 @@
-pkgtype: exe+lib
 summary: HTTP/2 C Library
 web-url: https://nghttp2.org/
-src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.61.0/nghttp2-1.61.0.tar.gz
-src-sha: aa7594c846e56a22fbf3d6e260e472268808d3b49d5e0ed339f589e9cc9d484c
-dep-pkg: libevent libev libcares libjansson libxml2 libbrotli cunit
+src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.64.0/nghttp2-1.64.0.tar.gz
+src-sha: 20e73f3cf9db3f05988996ac8b3a99ed529f4565ca91a49eb0550498e10621e8
+dep-pkg: libevent libev libcares libnghttp2 libjansson libxml2 libbrotli cunit
 license: MIT
 
 dopatch: |
@@ -13,8 +12,8 @@ dopatch: |
 
 install: |
     cmakew \
-        -DBUILD_SHARED_LIBS=ON \
-        -DBUILD_STATIC_LIBS=OFF \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DBUILD_STATIC_LIBS=ON \
         -DENABLE_DEBUG=OFF \
         -DENABLE_WERROR=OFF \
         -DENABLE_THREADS=ON \

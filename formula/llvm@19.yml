@@ -4,7 +4,7 @@ web-url: https://llvm.org/
 src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.5/llvm-project-19.1.5.src.tar.xz
 src-sha: bd8445f554aae33d50d3212a15e993a667c0ad1b694ac1977f3463db3338e542
 license: Apache-2.0 with LLVM-exception
-dep-pkg: python3 binutils-dev libelf libedit libffi libxml2 libz3.a
+dep-pkg: python3 binutils-dev libelf libedit libffi libxml2 liblzma libz3.a
 dep-lib: -lncurses
 dep-upp: perl swig patch
 bscript: llvm
@@ -14,7 +14,7 @@ dopatch: |
     gsed -i '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)'                                      ../lldb/cmake/modules/LLDBConfig.cmake
 
     LIBELF_LIBRARIES="$(pkg-config --libs-only-l libelf)"
-    gsed -i "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
+    #gsed -i "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
 
 # https://llvm.org/docs/CMake.html
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration

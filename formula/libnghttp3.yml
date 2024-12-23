@@ -3,9 +3,9 @@ git-url: https://github.com/ngtcp2/nghttp3
 license: MIT
 install: |
     cmakew \
-        -DENABLE_ASAN=ON \
+        -DENABLE_ASAN=OFF \
         -DENABLE_DEBUG=OFF \
         -DENABLE_WERROR=OFF \
-        -DENABLE_LIB_ONLY=OFF \
+        -DENABLE_LIB_ONLY=ON \
         -DENABLE_STATIC_LIB=ON \
-        -DENABLE_SHARED_LIB=OFF
+        -DENABLE_SHARED_LIB=ON

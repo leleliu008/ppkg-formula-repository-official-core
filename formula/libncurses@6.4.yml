@@ -1,0 +1,65 @@
+summary: Text-based UI library
+git-url: https://github.com/mirror/ncurses
+web-url: https://www.gnu.org/software/ncurses
+src-url: https://ftp.gnu.org/gnu/ncurses/ncurses-6.4.tar.gz
+src-sha: 6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159
+license: MIT
+
+dopatch: |
+    if isCrossBuild ; then
+        gsed -i 's|cf_ok_build_cc=unknown|cf_ok_build_cc=yes|' configure
+
+        if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
+            gsed -i 's|-Bshareable|-shared|g' configure
+            export LD="$CC"
+        fi
+    fi
+
+prepare: |
+    export BUILD_CC="$CC_FOR_BUILD"
+    export BUILD_CFLAGS="$CFLAGS_FOR_BUILD"
+    export BUILD_CPPFLAGS="$CPPFLAGS_FOR_BUILD"
+    export BUILD_LDFLAGS="$LDFLAGS_FOR_BUILD"
+    unset  BUILD_LIBS
+
+    unset TERMINFO
+
+    export LDCONFIG=true
+
+install: |
+    configure \
+        --with-pkg-config-libdir="$PACKAGE_INSTALL_DIR/lib/pkgconfig" \
+        --with-shared \
+        --without-ada \
+        --without-progs \
+        --without-tests \
+        --without-debug \
+        --without-valgrind \
+        --enable-const \
+        --enable-widec \
+        --enable-termcap \
+        --enable-warnings \
+        --enable-pc-files \
+        --enable-ext-mouse \
+        --enable-ext-colors \
+        --disable-stripping \
+        --disable-assertions \
+        --disable-gnat-projects \
+        --disable-db-install \
+        --disable-echo
+
+dotweak: |
+    for f in curses.h ncurses.h form.h menu.h panel.h term.h termcap.h
+    do
+        ln -s "ncursesw/$f" "include/$f"
+    done
+
+    for item in libncurses libpanel libmenu libform
+    do
+        ln -s "${item}w$STATIC_LIBRARY_SUFFIX" "lib/${item}$STATIC_LIBRARY_SUFFIX"
+        ln -s "${item}w$SHARED_LIBRARY_SUFFIX" "lib/${item}$SHARED_LIBRARY_SUFFIX"
+    done
+
+    ln -s libncurses++w.a lib/libncurses++.a
+
+    ln -s ncursesw.pc lib/pkgconfig/ncurses.pc

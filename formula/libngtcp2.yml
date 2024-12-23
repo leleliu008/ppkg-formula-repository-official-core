@@ -1,6 +1,5 @@
 summary: QUIC library written in C
 git-url: https://github.com/ngtcp2/ngtcp2
-dep-pkg: libev libnghttp3 libopenssl
 
 install: |
     cmakew \
@@ -8,10 +7,10 @@ install: |
         -DENABLE_DEBUG=OFF \
         -DENABLE_WERROR=OFF \
         -DENABLE_GNUTLS=OFF \
-        -DENABLE_OPENSSL=ON \
+        -DENABLE_OPENSSL=OFF \
         -DENABLE_WOLFSSL=OFF \
         -DENABLE_PICOTLS=OFF \
         -DENABLE_BORINGSSL=OFF \
-        -DENABLE_LIB_ONLY=OFF \
+        -DENABLE_LIB_ONLY=ON \
         -DENABLE_STATIC_LIB=ON \
-        -DENABLE_SHARED_LIB=OFF
+        -DENABLE_SHARED_LIB=ON

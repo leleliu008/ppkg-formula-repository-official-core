@@ -4,7 +4,7 @@ src-url: https://github.com/pocl/pocl/archive/refs/tags/v6.0.tar.gz
 src-sha: de9710223fc1855f833dbbf42ea2681e06aa8ec0464f0201104dc80a74dfd1f2
 license: MIT
 dep-pkg: opencl-icd-loader hwloc llvm+clang@18
-dep-upp: python3
+dep-upp: python3 patch
 install: |
     install -d "$PACKAGE_INSTALL_DIR/pocl/OpenCL/vendors"
     cmakew \

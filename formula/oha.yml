@@ -1,6 +1,6 @@
 summary: HTTP load generator, inspired by rakyll/hey with tui animation
-src-url: https://github.com/hatoo/oha/archive/refs/tags/v1.4.7.tar.gz
-src-sha: a0fa13d33a5607f3ba4321522d0b2626a0eb52c94471e26e05350cd25d15d2ec
+src-url: https://github.com/hatoo/oha/archive/refs/tags/v1.5.0.tar.gz
+src-sha: 2e8d42df346486d3ed5be5016361f40a12989aeffd1c239e307e3bcb414d84c9
 license: MIT
 dep-pkg: libopenssl
 bsystem: cargo cmake

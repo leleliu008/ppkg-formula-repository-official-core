@@ -1,9 +1,9 @@
 summary: Data wrangler with jq-like query language
 web-url: https://sq.io
-src-url: https://github.com/neilotoole/sq/archive/refs/tags/v0.48.3.tar.gz
-src-sha: 46e75e2db83a6cbc98b07dbcfb23de03fc41b2b2cbc7de7aaee0425cef4fb9bb
+src-url: https://github.com/neilotoole/sq/archive/refs/tags/v0.48.4.tar.gz
+src-sha: 4692a71da5302f0f392721e9d9f28676d5120aefe90e81dcab54bc3214882977
 license: MIT
-dep-pkg: libsqlite3
+    #dep-pkg: libsqlite3
 install: |
     gow \
         -X github.com/neilotoole/sq/cli/buildinfo.Version=v$PACKAGE_VERSION \

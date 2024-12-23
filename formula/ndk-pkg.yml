@@ -1,6 +1,6 @@
 summary: A package builder for Android NDK to build projects written in C, C++, Rust, Golang, etc
 git-url: https://github.com/leleliu008/ndk-pkg
-src-url: dir:///Users/fpliu/ndk-pkg/implementation-in-c
+    #src-url: dir:///Users/fpliu/ndk-pkg/implementation-in-c
 license: Apache-2.0
 dep-pkg: libcurl libgit2 libarchive libyaml libjansson
 dopatch: PACKAGE_VERSION=$(sed -n '/set(PROJECT_VERSION /p' CMakeLists.txt | sed 's|set(PROJECT_VERSION[[:space:]]*\(.*\))|\1|')

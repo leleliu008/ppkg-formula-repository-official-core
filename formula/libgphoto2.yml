@@ -5,5 +5,6 @@ src-url: https://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.31/libgp
 src-sha: 4f81c34c0b812bee67afd5f144940fbcbe01a2055586a6a1fa2d0626024a545b
 license: LGPL-2.1-or-later
 dep-pkg: gd libjpeg-turbo libexif libusb-compat libcurl libxml2 libtool
+dep-upp: gettext-tools
 bsystem: autotools
 install: configure --enable-debug

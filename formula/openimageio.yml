@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Library for reading, processing and writing images
 web-url: https://openimageio.readthedocs.io/en/stable/
 src-url: https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v2.5.15.0.tar.gz

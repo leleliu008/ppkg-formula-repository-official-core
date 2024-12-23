@@ -5,8 +5,8 @@ src-url: https://download.gnome.org/sources/libsoup/3.4/libsoup-3.4.4.tar.xz
 src-sha: 291c67725f36ed90ea43efff25064b69c5a2d1981488477c05c481a3b4b0c5aa
 license: LGPL-2.0-or-later
 dep-pkg: vala glib-networking libnghttp2 libpsl libxml2 libsqlite3
+bsystem: meson
 
-install: |
+prepare: |
     # https://docs.gtk.org/gio/overview.html#running-gio-applications
-    export GIO_MODULE_DIR=$glib_networking_INSTALL_DIR/lib/gio/modules
-    mesonw
+    export GIO_MODULE_DIR="$glib_networking_INSTALL_DIR/lib/gio/modules"

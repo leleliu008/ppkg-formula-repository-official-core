@@ -1,8 +1,8 @@
 summary: Pluggable terminal workspace, with terminal multiplexer as the base feature
 web-url: https://zellij.dev
-src-url: https://github.com/zellij-org/zellij/archive/refs/tags/v0.40.1.tar.gz
-src-sha: 1f0bfa13f2dbe657d76341a196f98a3b4caa47ac63abee06b39883a11ca220a8
+src-url: https://github.com/zellij-org/zellij/archive/refs/tags/v0.41.2.tar.gz
+src-sha: 12e7f0f80c1e39deed5638c4662fc070855cee0250a7eb1d76cefbeef8c2f376
 license: MIT
 dep-pkg: libopenssl libz
 bsystem: cargo
-prepare: export RUSTUP_TOOLCHAIN=1.76
+prepare: export RUSTUP_TOOLCHAIN=1.81
