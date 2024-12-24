@@ -1,0 +1,16 @@
+summary: OpenBSD freely-licensed SSH connectivity tools
+git-url: https://github.com/openssh/openssh-portable
+web-url: https://www.openssh.com/
+src-url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.9p1.tar.gz
+src-sha: b343fbcdbff87f15b1986e6e15d6d4fc9a7d36066be6b7fb507087ba8f966c02
+version: 9.9.1
+license: SSH-OpenSSH
+dep-pkg: libfido2 libldns libedit libpam
+
+install: |
+    configure \
+        --with-pam \
+        --with-ldns \
+        --with-libedit \
+        --with-kerberos5 \
+        --with-security-key-builtin

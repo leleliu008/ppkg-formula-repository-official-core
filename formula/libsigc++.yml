@@ -1,0 +1,7 @@
+summary: Callback framework for C++
+web-url: https://libsigcplusplus.github.io/libsigcplusplus/
+src-url: https://download.gnome.org/sources/libsigc++/3.6/libsigc++-3.6.0.tar.xz
+src-sha: c3d23b37dfd6e39f2e09f091b77b1541fbfa17c4f0b6bf5c89baef7229080e17
+license: LGPL-3.0-or-later
+dep-upp: gm4
+install: mesonw -Dbuild-examples=false -Dbuild-tests=false

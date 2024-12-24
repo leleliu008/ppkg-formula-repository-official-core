@@ -1,0 +1,8 @@
+pkgtype: lib
+summary: C++ interface to glib
+web-url: https://gtkmm.gnome.org/
+src-url: https://download.gnome.org/sources/glibmm/2.82/glibmm-2.82.0.tar.xz
+src-sha: 38684cff317273615c67b8fa9806f16299d51e5506d9b909bae15b589fa99cb6
+license: LGPL-2.1-or-later
+dep-pkg: glib libsigc++
+install: mesonw -Dbuild-examples=false

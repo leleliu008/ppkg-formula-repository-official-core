@@ -1,9 +1,8 @@
+pkgtype: lib
 summary: C library to read whole-slide images (a.k.a. virtual slides)
 web-url: https://openslide.org/
 src-url: https://github.com/openslide/openslide/releases/download/v4.0.0/openslide-4.0.0.tar.xz
 src-sha: cc227c44316abb65fb28f1c967706eb7254f91dbfab31e9ae6a48db6cf4ae562
 license: LGPL-2.1-only
-dep-pkg: cairo gdk-pixbuf libopenjpeg libdicom libsqlite3
-dopatch: |
-    gsed -i 's|link_with : libopenslide|link_with : libopenslide.get_static_lib()|' src/meson.build
+dep-pkg: libcairo libgdk-pixbuf libopenjpeg libdicom libsqlite3
 bsystem: meson

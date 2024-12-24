@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.19]
-        pkg: [fff,ffmpeg,fftw,figlet,file,findent,findutils,fish,flac,flatbuffers,flatc,flex,flock,flowgrind,fnm,fontconfig,fortune,frei0r,fselect,fsmon,fswatch,fuse-overlayfs,fx,fzf,fzy,g,garble,gat,gawk,gbt]
+        pkg: [fff,ffmpeg,fftw,figlet,file,findent,findutils,fish,flac,flatbuffers,flatc,flex,flock,flowgrind,fnm,fontconfig,fortune,frei0r,fribidi,fselect,fsmon,fswatch,fuse-overlayfs,fx,fzf,fzy,g,garble,gat,gawk]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [24.04]
-        pkg: [fff,ffmpeg,fftw,figlet,file,findent,findutils,fish,flac,flatbuffers,flatc,flex,flock,flowgrind,fnm,fontconfig,fortune,frei0r,fselect,fsmon,fswatch,fuse-overlayfs,fx,fzf,fzy,g,garble,gat,gawk,gbt]
+        pkg: [fff,ffmpeg,fftw,figlet,file,findent,findutils,fish,flac,flatbuffers,flatc,flex,flock,flowgrind,fnm,fontconfig,fortune,frei0r,fribidi,fselect,fsmon,fswatch,fuse-overlayfs,fx,fzf,fzy,g,garble,gat,gawk]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [fff,ffmpeg,fftw,figlet,file,findent,findutils,fish,flac,flatbuffers,flatc,flex,flock,flowgrind,fnm,fontconfig,fortune,frei0r,fselect,fsmon,fswatch,fuse-overlayfs,fx,fzf,fzy,g,garble,gat,gawk,gbt]
+        pkg: [fff,ffmpeg,fftw,figlet,file,findent,findutils,fish,flac,flatbuffers,flatc,flex,flock,flowgrind,fnm,fontconfig,fortune,frei0r,fribidi,fselect,fsmon,fswatch,fuse-overlayfs,fx,fzf,fzy,g,garble,gat,gawk]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}

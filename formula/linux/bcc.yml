@@ -1,5 +1,7 @@
-summary: Tools for BPF-based Linux IO analysis, networking, monitoring, and more
-git-url: https://github.com/iovisor/bcc
-dep-pkg: libelf libfl
-dep-upp: gm4 flex bison
-bsystem: cmake
+summary: A toolkit for creating efficient kernel tracing and manipulation programs
+src-url: https://github.com/iovisor/bcc/archive/refs/tags/v0.32.0.tar.gz
+src-sha: 06d868f789c087dbdf7b52a456b7f3eea1702160dda95a4f0c11298bdd70b1cd
+license: Apache-2.0
+dep-pkg: llvm+clang@18 libbpf
+dep-upp: gm4 flex bison python3
+install: cmakew -DENABLE_EXAMPLES=ON -DENABLE_TESTS=OFF -DCMAKE_USE_LIBBPF_PACKAGE=ON -DENABLE_CLANG_JIT=ON

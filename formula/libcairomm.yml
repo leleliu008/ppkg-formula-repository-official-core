@@ -1,0 +1,7 @@
+summary: Vector graphics library with cross-device output support
+web-url: https://cairographics.org/cairomm/
+src-url: https://cairographics.org/releases/cairomm-1.18.0.tar.xz
+src-sha: b81255394e3ea8e8aa887276d22afa8985fc8daef60692eb2407d23049f03cfb
+license: LGPL-2.0-or-later
+dep-pkg: libcairo libsigc++
+bsystem: meson

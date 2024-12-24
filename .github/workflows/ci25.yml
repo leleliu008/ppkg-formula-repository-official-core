@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [3.19]
-        pkg: [tiff,tig,timg,tinysearch,tlrc,tmux,tokei,toml++,toml11,totp-cli,tree,tree-sitter,trietool,ttyd,ttygif,ttyrec,tut,tweego,typos,uctags,unbound,unixodbc,unrar,unzip,uppm,uppm@0.15.1,uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,upx]
+        pkg: [tdu,tealdeer,tectonic,tengo,terragrunt,tesseract,tic,tiff,tig,timg,tinysearch,tlrc,tmux,tokei,toml++,toml11,totp-cli,tree,tree-sitter,trietool,ttyd,ttygif,ttyrec,tut,tweego,typos,uctags,unbound,unixodbc,unrar]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [24.04]
-        pkg: [tiff,tig,timg,tinysearch,tlrc,tmux,tokei,toml++,toml11,totp-cli,tree,tree-sitter,trietool,ttyd,ttygif,ttyrec,tut,tweego,typos,uctags,unbound,unixodbc,unrar,unzip,uppm,uppm@0.15.1,uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,upx]
+        pkg: [tdu,tealdeer,tectonic,tengo,terragrunt,tesseract,tic,tiff,tig,timg,tinysearch,tlrc,tmux,tokei,toml++,toml11,totp-cli,tree,tree-sitter,trietool,ttyd,ttygif,ttyrec,tut,tweego,typos,uctags,unbound,unixodbc,unrar]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [tiff,tig,timg,tinysearch,tlrc,tmux,tokei,toml++,toml11,totp-cli,tree,tree-sitter,trietool,ttyd,ttygif,ttyrec,tut,tweego,typos,uctags,unbound,unixodbc,unrar,unzip,uppm,uppm@0.15.1,uppm@0.15.2,uppm@0.15.3,uppm@0.15.4,upx]
+        pkg: [tdu,tealdeer,tectonic,tengo,terragrunt,tesseract,tic,tiff,tig,timg,tinysearch,tlrc,tmux,tokei,toml++,toml11,totp-cli,tree,tree-sitter,trietool,ttyd,ttygif,ttyrec,tut,tweego,typos,uctags,unbound,unixodbc,unrar]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}

@@ -4,8 +4,8 @@ git-url: https://gitlab.gnome.org/GNOME/librsvg
 src-url: https://download.gnome.org/sources/librsvg/2.58/librsvg-2.58.3.tar.xz
 src-sha: 49f29a0a92f4c2d19a2cb41e96ab2fce7eb5bde41850c8a914fcf655e3110944
 license: LGPL-2.1-or-later
-dep-upp: gdk-pixbuf
-dep-pkg: gdk-pixbuf pango
+    #dep-upp: gdk-pixbuf
+dep-pkg: libgdk-pixbuf libpango
 bsystem: configure cargo
 
 install: |

@@ -3,7 +3,7 @@ git-url: https://github.com/Microsoft/cpprestsdk
 git-sha: 411a109150b270f23c8c97fa4ec9a0a4a98cdecf
 version: 2.10.19
 license: MIT
-dep-pkg: libopenssl boost
+dep-pkg: libopenssl boost@1.85
 
 install: |
     cmakew \

@@ -3,7 +3,7 @@ web-url: https://www.graphviz.org/
 src-url: https://gitlab.com/graphviz/graphviz/-/archive/12.2.0/graphviz-12.2.0.tar.bz2
 src-sha: 56090fb1e5986919d6099041871744d84231d632f8649ea07028052a5487d444
 license: EPL-1.0
-dep-pkg: gd pango libtool
-dep-upp: gm4 flex bison gawk git python3 libtool
+dep-pkg: libtool libgd libpango
+dep-upp: libtool gm4 flex bison gawk git python3
 bsystem: autogen
 install: configure --disable-swig

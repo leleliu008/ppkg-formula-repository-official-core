@@ -1,13 +1,15 @@
-pkgtype: exe+lib
 summary: Toolkit for image loading and pixel buffer manipulation
 web-url: https://gtk.org/
 git-url: https://github.com/GNOME/gdk-pixbuf
 src-url: https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz
 src-sha: b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7
 license: LGPL-2.1-or-later
-dep-pkg: gobject-introspection shared-mime-info libjpeg-turbo libpng libtiff
+dep-pkg: glib shared-mime-info libjpeg-turbo libpng libgif libtiff
+dep-lib: libpng libjpeg libtiff-4
 
-dopatch: gsed -i '15,$d' thumbnailer/meson.build
+    #dopatch: gsed -i '15,$d' thumbnailer/meson.build
+
+dopatch: gsed -i 's/--quiet/--verbose/' gdk-pixbuf/meson.build
 
 install: |
     mesonw \
@@ -16,10 +18,14 @@ install: |
         -Dinstalled_tests=false \
         -Dgtk_doc=false \
         -Dman=false \
+        -Dtests=false \
+        -Dgif=enabled \
         -Dpng=enabled \
         -Djpeg=enabled \
         -Dtiff=enabled \
-        -Dintrospection=enabled
+        -Dothers=disabled \
+        -Dintrospection=disabled \
+        -Dbuiltin_loaders=all
 
 caveats: |
     The following environment variables should be set if you move/copy this software to other location

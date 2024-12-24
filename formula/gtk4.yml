@@ -1,10 +1,11 @@
+pkgtype: lib
 summary: Toolkit for creating graphical user interfaces
 web-url: https://gtk.org/
 src-url: https://download.gnome.org/sources/gtk/4.16/gtk-4.16.7.tar.xz
 src-sha: 5303c7624e15a48880591b9ddd43389afba3de4fb92a219719519bb1642ce3dc
 license: LGPL-2.1-or-later
-dep-pkg: cups pango gdk-pixbuf libepoxy libgraphene libxkbcommon xorg-libxcursor
-dep-upp: gettext-tools docbook-xsl xsltproc sassc
+dep-pkg: libcups libgdk-pixbuf libpango libepoxy libgraphene libxkbcommon xorg-libxcursor sassc
+dep-upp: gettext-tools docbook-xsl xsltproc
 dep-pym: docutils
 ppflags: -DG_DISABLE_ASSERT -DG_DISABLE_CAST_CHECKS
 prepare: export DESTDIR=/
@@ -12,7 +13,7 @@ install: |
     mesonw \
         -Dbuild-tests=false \
         -Dbuild-examples=false \
-        -Dintrospection=enabled \
+        -Dintrospection=disabled \
         -Dman-pages=true \
         -Dmedia-gstreamer=disabled \
         -Dvulkan=disabled

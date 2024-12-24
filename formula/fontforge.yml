@@ -3,27 +3,13 @@ web-url: https://fontforge.github.io
 src-url: https://github.com/fontforge/fontforge/releases/download/20230101/fontforge-20230101.tar.xz
 src-sha: ca82ec4c060c4dda70ace5478a41b5e7b95eb035fe1c4cf85c48f996d35c60f8
 license: GPL-3.0-or-later
-dep-pkg: pango libuninameslist libspiro libgif libjpeg-turbo libtiff python3
+dep-pkg: libuninameslist libpango libspiro libjpeg-turbo libtiff libgif libwoff2 libxml2 python3
+dep-lib: libtiff-4 gobject-2.0 gio-2.0 freetype2
 dep-upp: gettext-tools
 
-dopatch: |
-    TIFF_LIBRARIES="$(pkg-config --libs-only-l libtiff-4 | tr ' ' ';')"
-    cat > cmake/packages/FindTIFF.cmake <<EOF
-    set(TIFF_INCLUDE_DIRS "$libtiff_INCLUDE_DIR")
-    set(TIFF_LIBRARIES    "$TIFF_LIBRARIES")
-
-    if (NOT TARGET  TIFF::TIFF)
-        add_library(TIFF::TIFF INTERFACE IMPORTED)
-        set_target_properties(TIFF::TIFF PROPERTIES
-            INTERFACE_INCLUDE_DIRECTORIES "\${TIFF_INCLUDE_DIRS}"
-            INTERFACE_LINK_LIBRARIES      "\${TIFF_LIBRARIES}"
-        )
-    endif()
-
-    include(FindPackageHandleStandardArgs)
-    find_package_handle_standard_args(TIFF REQUIRED_VARS TIFF_LIBRARIES TIFF_INCLUDE_DIRS VERSION_VAR TIFF_VERSION)
-    mark_as_advanced(TIFF_INCLUDE_DIRS TIFF_LIBRARIES)
-    EOF
+# https://github.com/fontforge/fontforge/issues/5251
+fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/9403988/fontforge/20230101.patch
+fix-sha: e784c4c0fcf28e5e6c5b099d7540f53436d1be2969898ebacd25654d315c0072
 
 install: |
     cmakew \

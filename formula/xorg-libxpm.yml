@@ -1,0 +1,8 @@
+summary: X.Org Pixmap (XPM) image file format library
+web-url: https://www.x.org/
+src-url: https://www.x.org/archive/individual/lib/libXpm-3.5.17.tar.gz
+src-sha: 959466c7dfcfcaa8a65055bfc311f74d4c43d9257900f85ab042604d286df0c6
+license: MIT
+dep-pkg: xorg-libx11
+dep-upp: gettext-tools
+install: configure --disable-open-zfile --disable-stat-zfile

@@ -1,12 +1,11 @@
-pkgtype: lib
 summary: Vector graphics library with cross-device output support
 git-url: https://gitlab.freedesktop.org/cairo/cairo
 web-url: https://cairographics.org/
-src-url: https://cairographics.org/releases/cairo-1.18.0.tar.xz
-src-uri: https://distfiles.macports.org/cairo/cairo-1.18.0.tar.xz
-src-sha: 243a0736b978a33dee29f9cca7521733b78a65b5418206fef7bd1c3d4cf10b64
+src-url: https://cairographics.org/releases/cairo-1.18.2.tar.xz
+src-uri: https://distfiles.macports.org/cairo/cairo-1.18.2.tar.xz
+src-sha: a62b9bb42425e844cc3d6ddde043ff39dbabedd1542eba57a2eb79f85889d45a
 license: LGPL-2.1-or-later MPL-1.1
-dep-pkg: glib libfontconfig libxml2 libpixman libpng liblzo
+dep-pkg: libfontconfig libpixman liblzo glib xorg-libxext xorg-libxrender
 
 prepare: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
@@ -17,9 +16,11 @@ prepare: |
 install: |
     mesonw \
         -Dtests=disabled \
+        -Dtee=disabled \
         -Dpng=enabled \
         -Dzlib=enabled \
         -Dglib=enabled \
-        -Dtee=disabled \
+        -Dxcb=enabled \
+        -Dxlib=enabled \
         -Dfreetype=enabled \
         -Dfontconfig=enabled

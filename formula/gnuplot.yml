@@ -4,7 +4,7 @@ git-url: https://git.code.sf.net/p/gnuplot/gnuplot-main.git
 src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.0/gnuplot-6.0.0.tar.gz
 src-sha: 635a28f0993f6ab0d1179e072ad39b8139d07f51237f841d93c6c2ff4b1758ec
 license: gnuplot
-dep-pkg: libcerf pango gd lua libreadline 
+dep-pkg: libgd liblua libcerf libpango libreadline 
 install: |
     configure \
         --disable-wxwidgets \

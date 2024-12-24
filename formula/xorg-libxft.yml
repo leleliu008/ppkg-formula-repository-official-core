@@ -1,0 +1,7 @@
+summary: X.Org FreeType library
+web-url: https://www.x.org/
+src-url: https://www.x.org/archive/individual/lib/libXft-2.3.8.tar.xz
+src-sha: 5e8c3c4bc2d4c0a40aef6b4b38ed2fb74301640da29f6528154b5009b1c6dd49
+license: MIT
+dep-pkg: libfontconfig xorg-libxrender
+bsystem: configure

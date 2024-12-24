@@ -7,4 +7,4 @@ license: GPL-2.0-only
 dep-upp: gettext-tools
 dep-pkg: glib libxml2
 dopatch: gsed -i 's|xmlto.found()|false|' data/meson.build
-install: mesonw -Dupdate-mimedb=false
+install: mesonw -Dbuild-tools=true -Dbuild-tests=false -Dbuild-translations=false -Dupdate-mimedb=false

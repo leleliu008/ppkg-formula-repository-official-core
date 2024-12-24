@@ -6,8 +6,9 @@ src-url: https://download.gnome.org/sources/gobject-introspection/1.80/gobject-i
 src-uri: https://distfiles.macports.org/gobject-introspection/gobject-introspection-1.80.1.tar.xz
 src-sha: a1df7c424e15bda1ab639c00e9051b9adf5cea1a9e512f8a603b53cd199bc6d8
 license: MIT
-dep-upp: gm4 flex bison
 dep-pkg: glib
+dep-upp: gm4 flex bison
+dep-pym: Mako MarkupSafe 'setuptools<65'
 bsystem: meson
 
 onfinal: |

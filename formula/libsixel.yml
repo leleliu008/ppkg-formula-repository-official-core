@@ -2,7 +2,7 @@ summary: A SIXEL encoder/decoder
 src-url: https://github.com/libsixel/libsixel/archive/refs/tags/v1.10.3.tar.gz
 src-sha: 028552eb8f2a37c6effda88ee5e8f6d87b5d9601182ddec784a9728865f821e0
 license: MIT
-dep-pkg: gdk-pixbuf libcurl
+dep-pkg: libgdk-pixbuf libcurl
 
 dopatch: |
     gsed -i '/sys\/unistd\.h/d' meson.build

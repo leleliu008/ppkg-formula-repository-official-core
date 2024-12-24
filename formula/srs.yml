@@ -5,7 +5,7 @@ src-sha: 877954c8bfc9d258eeb7a1e46a497cc5f248a6d489fc83c5abe1fabbe9e71aef
 version: 5.0.5
 license: MIT
 dep-upp: unzip patch cmake
-dep-pkg: perl tclsh
+dep-pkg: perl tclsh automake autoconf
 bsystem: gmake
 bscript: trunk
 

@@ -3,7 +3,7 @@ git-url: https://gitlab.gnome.org/jadahl/libdecor
 src-url: https://gitlab.gnome.org/jadahl/libdecor/-/archive/0.1.1/libdecor-0.1.1.tar.bz2
 src-sha: 69deadfd0c77afc8122f7caa8ecf65fdd9531d2c3da9bea012a6d964f322e1c4
 license: MIT
-dep-pkg: wayland-protocols pango dbus
+dep-pkg: wayland-protocols libpango dbus
 install: |
     mesonw \
         -Ddemo=false \
