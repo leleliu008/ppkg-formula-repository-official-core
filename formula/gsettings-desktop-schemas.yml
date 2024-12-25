@@ -1,7 +1,7 @@
 summary: GSettings schemas for desktop components
 web-url: https://download.gnome.org/sources/gsettings-desktop-schemas/
-src-url: https://download.gnome.org/sources/gsettings-desktop-schemas/46/gsettings-desktop-schemas-46.0.tar.xz
-src-sha: 493a46a1161b6388d57aa72f632a79ce96c42d5ffbd1d0b00f496ec5876f8575
+src-url: https://download.gnome.org/sources/gsettings-desktop-schemas/47/gsettings-desktop-schemas-47.1.tar.xz
+src-sha: a60204d9c9c0a1b264d6d0d134a38340ba5fc6076a34b84da945d8bfcc7a2815
 license: LGPL-2.1-or-later
 dep-pkg: glib gobject-introspection
 bsystem: meson

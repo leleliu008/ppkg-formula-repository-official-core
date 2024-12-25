@@ -3,4 +3,4 @@ src-url: https://github.com/hatoo/oha/archive/refs/tags/v1.5.0.tar.gz
 src-sha: 2e8d42df346486d3ed5be5016361f40a12989aeffd1c239e307e3bcb414d84c9
 license: MIT
 dep-pkg: libopenssl
-bsystem: cargo cmake
+bsystem: cargo cmake gmake

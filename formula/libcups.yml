@@ -7,6 +7,8 @@ binbstd: 1
 
 dopatch: gsed -i 's|lib64|lib|g' configure
 
+prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS $CFLAGS $CPPFLAGS $LDFLAGS"
+
 install: |
     configure only\
         --without-bundledir \
