@@ -7,5 +7,6 @@ dep-pkg: gsettings-desktop-schemas libopenssl
 install: |
     mesonw \
         -Dopenssl=enabled \
+        -Dgnutls=disabled \
         -Dlibproxy=disabled \
         -Dgnome_proxy=disabled

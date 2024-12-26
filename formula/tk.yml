@@ -1,0 +1,24 @@
+summary: GUI toolkit for the Tcl scripting language
+web-url: https://www.tcl-lang.org/
+src-url: https://downloads.sourceforge.net/sourceforge/tcl/tk8.6.16-src.tar.gz
+src-sha: be9f94d3575d4b3099d84bc3c10de8994df2d7aa405208173c709cc404a7e5fe
+version: 8.6.16
+dep-pkg: libtcl xorg-libxft
+bscript: unix
+
+prepare: |
+    case $TARGET_PLATFORM_ARCH in
+        *64)    CONFIGURE_EXTRA_ARGS=--enable-64bit ;;
+        *)      CONFIGURE_EXTRA_ARGS=--disable-64bit ;;
+    esac
+
+install: |
+    configure \
+        --enable-load \
+        --enable-threads \
+        $CONFIGURE_EXTRA_ARGS \
+        --enable-xft \
+        --with-x \
+        --with-tcl="$libtcl_LIBRARY_DIR"
+
+dotweak: chmod +w lib/libtk8.6.so

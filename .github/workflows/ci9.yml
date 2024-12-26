@@ -8,13 +8,13 @@ on:
 
 jobs:
   alpine:
-    if: false
+    if: true
 
     strategy:
       fail-fast: false
       matrix:
         tag: [3.19]
-        pkg: [glib-tools,glib-tools@2.78,glib@2.78,glibc,glow,glslviewer,glyr,gmake,gn,gnu-barcode,gnu-which,gnuplot,gnutls,go-md2man,go-tools,gobject-introspection@1.76,gobject-introspection@1.78,godu,gogs,gojq,golang,golang@1.21,gomobile,google-benchmark,google-highway,gopls,goreleaser,gosh,gotop,gotty]
+        pkg: [livego,lklfuse,llhttp,llvm+clang+lld,llvm@14,llvm@15,llvm@16,llvm@17,llvm@18,llvm@19,lm-sensors,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsdvd,lsof,luajit,luau,lunatic,lunzip,lychee,lynx,lz4,lzip,lzop,macchina,magic_enum,makepkg,mawk,mcfly,md4c,mdbook,mdcat,mdf2iso,mediainfo,mftrace,midnight-commander,minisign,mkcert,mkcue,mksh,mm-wiki,mold,mono,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpv,msgpack-c,mujs,mupdf,musl-libc,nano,nanomsg]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [24.04]
-        pkg: [glib-tools,glib-tools@2.78,glib@2.78,glibc,glow,glslviewer,glyr,gmake,gn,gnu-barcode,gnu-which,gnuplot,gnutls,go-md2man,go-tools,gobject-introspection@1.76,gobject-introspection@1.78,godu,gogs,gojq,golang,golang@1.21,gomobile,google-benchmark,google-highway,gopls,goreleaser,gosh,gotop,gotty]
+        pkg: [livego,lklfuse,llhttp,llvm+clang+lld,llvm@14,llvm@15,llvm@16,llvm@17,llvm@18,llvm@19,lm-sensors,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsdvd,lsof,luajit,luau,lunatic,lunzip,lychee,lynx,lz4,lzip,lzop,macchina,magic_enum,makepkg,mawk,mcfly,md4c,mdbook,mdcat,mdf2iso,mediainfo,mftrace,midnight-commander,minisign,mkcert,mkcue,mksh,mm-wiki,mold,mono,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpv,msgpack-c,mujs,mupdf,musl-libc,nano,nanomsg]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [glib-tools,glib-tools@2.78,glib@2.78,glibc,glow,glslviewer,glyr,gmake,gn,gnu-barcode,gnu-which,gnuplot,gnutls,go-md2man,go-tools,gobject-introspection@1.76,gobject-introspection@1.78,godu,gogs,gojq,golang,golang@1.21,gomobile,google-benchmark,google-highway,gopls,goreleaser,gosh,gotop,gotty]
+        pkg: [livego,lklfuse,llhttp,llvm+clang+lld,llvm@14,llvm@15,llvm@16,llvm@17,llvm@18,llvm@19,lm-sensors,lmdb,lnd,lodepng,log4cplus,lolcat,lrzip,lsd,lsdvd,lsof,luajit,luau,lunatic,lunzip,lychee,lynx,lz4,lzip,lzop,macchina,magic_enum,makepkg,mawk,mcfly,md4c,mdbook,mdcat,mdf2iso,mediainfo,mftrace,midnight-commander,minisign,mkcert,mkcue,mksh,mm-wiki,mold,mono,moreutils,mosh,mozjpeg,mpdecimal,mpg123,mpv,msgpack-c,mujs,mupdf,musl-libc,nano,nanomsg]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}

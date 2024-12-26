@@ -2,8 +2,8 @@ pkgtype: pie
 summary: Interpreted, interactive, object-oriented programming language
 git-url: https://github.com/python/cpython
 web-url: https://www.python.org/
-src-url: https://www.python.org/ftp/python/3.9.19/Python-3.9.19.tar.xz
-src-sha: d4892cd1618f6458cb851208c030df1482779609d0f3939991bd38184f8c679e
+src-url: https://www.python.org/ftp/python/3.9.21/Python-3.9.21.tar.xz
+src-sha: 3126f59592c9b0d798584755f2bf7b081fa1ca35ce7a6fea980108d752a05bb1
 license: Python-2.0
 dep-pkg: libncurses libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
 

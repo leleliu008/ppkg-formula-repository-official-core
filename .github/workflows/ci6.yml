@@ -8,13 +8,13 @@ on:
 
 jobs:
   alpine:
-    if: false
+    if: true
 
     strategy:
       fail-fast: false
       matrix:
         tag: [3.19]
-        pkg: [doxygen,dpkg,dtc,dua,duf,dufs,duktape,dust,e2fsprogs,easyutils,ed,effcee,eget,elfcat,elfutils,elvish,epsilon,erdtree,esbuild,ethereum,eudev,exa,exhale,exif,exiv2,eza,fakeroot,fcp,fd,fdroidcl]
+        pkg: [ht,htop,htslib,httpx,httrack,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,icu4c@75.1,id3lib,ideviceinstaller,incus,inotify-tools,invoice,iotop,iperf,iperf3,iputils,iso-codes,itstool,ixwebsocket,jackaudio,jasper,jbig2dec,jemalloc,jfrog-cli,jj,jless,jo,joshuto,jpegoptim,jq,json-glib,jump,k9s,kcp,kcptun,ko,krb5,lame,lazygit,lcms2,lcov,leptonica,less,lexbor,lf,libaec,libaio,libao,libaria2,libart,libasprintf,libasync++,libb2,libb64,libbcrypt]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [24.04]
-        pkg: [doxygen,dpkg,dtc,dua,duf,dufs,duktape,dust,e2fsprogs,easyutils,ed,effcee,eget,elfcat,elfutils,elvish,epsilon,erdtree,esbuild,ethereum,eudev,exa,exhale,exif,exiv2,eza,fakeroot,fcp,fd,fdroidcl]
+        pkg: [ht,htop,htslib,httpx,httrack,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,icu4c@75.1,id3lib,ideviceinstaller,incus,inotify-tools,invoice,iotop,iperf,iperf3,iputils,iso-codes,itstool,ixwebsocket,jackaudio,jasper,jbig2dec,jemalloc,jfrog-cli,jj,jless,jo,joshuto,jpegoptim,jq,json-glib,jump,k9s,kcp,kcptun,ko,krb5,lame,lazygit,lcms2,lcov,leptonica,less,lexbor,lf,libaec,libaio,libao,libaria2,libart,libasprintf,libasync++,libb2,libb64,libbcrypt]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [doxygen,dpkg,dtc,dua,duf,dufs,duktape,dust,e2fsprogs,easyutils,ed,effcee,eget,elfcat,elfutils,elvish,epsilon,erdtree,esbuild,ethereum,eudev,exa,exhale,exif,exiv2,eza,fakeroot,fcp,fd,fdroidcl]
+        pkg: [ht,htop,htslib,httpx,httrack,hugo,hunspell,hunter,hurl,hydroxide,hyperfine,icu4c@75.1,id3lib,ideviceinstaller,incus,inotify-tools,invoice,iotop,iperf,iperf3,iputils,iso-codes,itstool,ixwebsocket,jackaudio,jasper,jbig2dec,jemalloc,jfrog-cli,jj,jless,jo,joshuto,jpegoptim,jq,json-glib,jump,k9s,kcp,kcptun,ko,krb5,lame,lazygit,lcms2,lcov,leptonica,less,lexbor,lf,libaec,libaio,libao,libaria2,libart,libasprintf,libasync++,libb2,libb64,libbcrypt]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}

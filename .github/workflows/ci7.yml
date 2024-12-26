@@ -8,13 +8,13 @@ on:
 
 jobs:
   alpine:
-    if: false
+    if: true
 
     strategy:
       fail-fast: false
       matrix:
         tag: [3.19]
-        pkg: [fff,ffmpeg,fftw,figlet,file,findent,findutils,fish,flac,flatbuffers,flatc,flex,flock,flowgrind,fnm,fontconfig,fortune,frei0r,fribidi,fselect,fsmon,fswatch,fuse-overlayfs,fx,fzf,fzy,g,garble,gat,gawk]
+        pkg: [libblake3,libbotan,libcaca,libcaf,libcanberra,libcddb,libcdio,libcfitsio,libcgif,libclang@18,libcpr,libcpu_features,libcpuid,libcroco,libcuefile,libcurl@8.4.0,libcurlcpp,libcyaml,libdecor,libdiscid,libdv,libdvdnav,libexhale,libexiv2,libfl,libflatbuffers,libftgl,libglm,libglob,libgphoto2,libhtp,libhttpserver,libical,libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libjpeg,libkvazaar,liblinear,liblmdb,liblo,libmad,libmaxminddb,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiz,libmms,libmnl,libmpir,libmpv,libmupdf,libnetpbm,libngtcp2,libnng,liboggz]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [24.04]
-        pkg: [fff,ffmpeg,fftw,figlet,file,findent,findutils,fish,flac,flatbuffers,flatc,flex,flock,flowgrind,fnm,fontconfig,fortune,frei0r,fribidi,fselect,fsmon,fswatch,fuse-overlayfs,fx,fzf,fzy,g,garble,gat,gawk]
+        pkg: [libblake3,libbotan,libcaca,libcaf,libcanberra,libcddb,libcdio,libcfitsio,libcgif,libclang@18,libcpr,libcpu_features,libcpuid,libcroco,libcuefile,libcurl@8.4.0,libcurlcpp,libcyaml,libdecor,libdiscid,libdv,libdvdnav,libexhale,libexiv2,libfl,libflatbuffers,libftgl,libglm,libglob,libgphoto2,libhtp,libhttpserver,libical,libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libjpeg,libkvazaar,liblinear,liblmdb,liblo,libmad,libmaxminddb,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiz,libmms,libmnl,libmpir,libmpv,libmupdf,libnetpbm,libngtcp2,libnng,liboggz]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [fff,ffmpeg,fftw,figlet,file,findent,findutils,fish,flac,flatbuffers,flatc,flex,flock,flowgrind,fnm,fontconfig,fortune,frei0r,fribidi,fselect,fsmon,fswatch,fuse-overlayfs,fx,fzf,fzy,g,garble,gat,gawk]
+        pkg: [libblake3,libbotan,libcaca,libcaf,libcanberra,libcddb,libcdio,libcfitsio,libcgif,libclang@18,libcpr,libcpu_features,libcpuid,libcroco,libcuefile,libcurl@8.4.0,libcurlcpp,libcyaml,libdecor,libdiscid,libdv,libdvdnav,libexhale,libexiv2,libfl,libflatbuffers,libftgl,libglm,libglob,libgphoto2,libhtp,libhttpserver,libical,libilbc,libimagequant,libintl-lite,libirecovery,libisoburn,libjpeg,libkvazaar,liblinear,liblmdb,liblo,libmad,libmaxminddb,libmesalink,libmetalink,libmhash,libmill,libmimalloc,libminiz,libmms,libmnl,libmpir,libmpv,libmupdf,libnetpbm,libngtcp2,libnng,liboggz]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}

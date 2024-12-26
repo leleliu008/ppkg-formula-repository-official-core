@@ -8,7 +8,7 @@ on:
 
 jobs:
   alpine:
-    if: false
+    if: true
 
     strategy:
       fail-fast: false

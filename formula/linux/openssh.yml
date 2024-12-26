@@ -5,7 +5,7 @@ src-url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.9p1.tar.
 src-sha: b343fbcdbff87f15b1986e6e15d6d4fc9a7d36066be6b7fb507087ba8f966c02
 version: 9.9.1
 license: SSH-OpenSSH
-dep-pkg: libfido2 libldns libedit libpam
+dep-pkg: libfido2 libldns libkrb5 libpam
 
 install: |
     configure \

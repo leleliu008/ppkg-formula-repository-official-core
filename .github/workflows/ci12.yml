@@ -8,13 +8,13 @@ on:
 
 jobs:
   alpine:
-    if: false
+    if: true
 
     strategy:
       fail-fast: false
       matrix:
         tag: [3.19]
-        pkg: [jless,jo,joshuto,jpegoptim,jq,json-glib,jump,k9s,kcp,kcptun,ko,krb5,lame,lazygit,lcms2,lcov,leptonica,less,lexbor,lf,libaec,libaio,libao,libaria2,libart,libasprintf,libasync++,libb2,libb64,libbcrypt]
+        pkg: [ruby,ruff,runc,rust-analyzer,rustscan,rustup-init,ruy,samurai,scc,sccache,sd,shc,shell2http,shellcheck,shellharden,shiori,silicon,simplex-chat,six,sjpeg,skcms,sl,slirp4netns,sndfile,socat,soundtouch,speex,spirv-headers,sq,sqlite3,sqlite3_analyzer,squashfs,squashfuse,srs,srt,sshfs,starship,stow,strace,stwolame,stylua,subfinder,superfile,supervisord,suricata,svn-lite,svt-av1,swig,syncthing,sysdig,sysinfo,szip,tarlz,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [24.04]
-        pkg: [jless,jo,joshuto,jpegoptim,jq,json-glib,jump,k9s,kcp,kcptun,ko,krb5,lame,lazygit,lcms2,lcov,leptonica,less,lexbor,lf,libaec,libaio,libao,libaria2,libart,libasprintf,libasync++,libb2,libb64,libbcrypt]
+        pkg: [ruby,ruff,runc,rust-analyzer,rustscan,rustup-init,ruy,samurai,scc,sccache,sd,shc,shell2http,shellcheck,shellharden,shiori,silicon,simplex-chat,six,sjpeg,skcms,sl,slirp4netns,sndfile,socat,soundtouch,speex,spirv-headers,sq,sqlite3,sqlite3_analyzer,squashfs,squashfuse,srs,srt,sshfs,starship,stow,strace,stwolame,stylua,subfinder,superfile,supervisord,suricata,svn-lite,svt-av1,swig,syncthing,sysdig,sysinfo,szip,tarlz,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [jless,jo,joshuto,jpegoptim,jq,json-glib,jump,k9s,kcp,kcptun,ko,krb5,lame,lazygit,lcms2,lcov,leptonica,less,lexbor,lf,libaec,libaio,libao,libaria2,libart,libasprintf,libasync++,libb2,libb64,libbcrypt]
+        pkg: [ruby,ruff,runc,rust-analyzer,rustscan,rustup-init,ruy,samurai,scc,sccache,sd,shc,shell2http,shellcheck,shellharden,shiori,silicon,simplex-chat,six,sjpeg,skcms,sl,slirp4netns,sndfile,socat,soundtouch,speex,spirv-headers,sq,sqlite3,sqlite3_analyzer,squashfs,squashfuse,srs,srt,sshfs,starship,stow,strace,stwolame,stylua,subfinder,superfile,supervisord,suricata,svn-lite,svt-av1,swig,syncthing,sysdig,sysinfo,szip,tarlz,tbls,tbox,tcc,tcl-core,tcpdump,tdu,tealdeer]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}

@@ -8,13 +8,13 @@ on:
 
 jobs:
   alpine:
-    if: false
+    if: true
 
     strategy:
       fail-fast: false
       matrix:
         tag: [3.19]
-        pkg: [async++,at-spi2-core,atuin,autogen,autossh,awk,axel,azcopy,b3sum,bandwhich,base16,base64,bash,basis_universal,bat,bazelisk,bc,bcc,bcrypt,bear,berkeley-db,bgrep,binaryen,bind,binocle,bison,bit,bitcoin,bk,blockhash]
+        pkg: [bmake,boringssl,bottom,boxes,bpftrace,brook,broot,brotli,brpc,bsdtar,bullet,busybox,byacc,bzip2,c-examples,cabal-install,caddy,cargo-c,cargo-deb,cargo-llvm-cov,cargo-llvm-lines,catch2,catimg,ccache,cdrtools,cfitsio,cflow,cgal,cgif,cgit,chafa,cheat,check,chezmoi,chicken,chinese-calendar,choose,chrpath,cilium-cli,circleci-cli,cli11,click,clog,cmake,cmark,cmatrix,cobalt,code-cli,conmon,coreutils,cotp,cpio,cpp-httplib,cppcheck,cpprestsdk,cppunit,cpuid,cpuinfo,croc,crosstool-ng]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [24.04]
-        pkg: [async++,at-spi2-core,atuin,autogen,autossh,awk,axel,azcopy,b3sum,bandwhich,base16,base64,bash,basis_universal,bat,bazelisk,bc,bcc,bcrypt,bear,berkeley-db,bgrep,binaryen,bind,binocle,bison,bit,bitcoin,bk,blockhash]
+        pkg: [bmake,boringssl,bottom,boxes,bpftrace,brook,broot,brotli,brpc,bsdtar,bullet,busybox,byacc,bzip2,c-examples,cabal-install,caddy,cargo-c,cargo-deb,cargo-llvm-cov,cargo-llvm-lines,catch2,catimg,ccache,cdrtools,cfitsio,cflow,cgal,cgif,cgit,chafa,cheat,check,chezmoi,chicken,chinese-calendar,choose,chrpath,cilium-cli,circleci-cli,cli11,click,clog,cmake,cmark,cmatrix,cobalt,code-cli,conmon,coreutils,cotp,cpio,cpp-httplib,cppcheck,cpprestsdk,cppunit,cpuid,cpuinfo,croc,crosstool-ng]
         flavor: [sh]
 
     runs-on:   ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix:
         tag: [14]
-        pkg: [async++,at-spi2-core,atuin,autogen,autossh,awk,axel,azcopy,b3sum,bandwhich,base16,base64,bash,basis_universal,bat,bazelisk,bc,bcc,bcrypt,bear,berkeley-db,bgrep,binaryen,bind,binocle,bison,bit,bitcoin,bk,blockhash]
+        pkg: [bmake,boringssl,bottom,boxes,bpftrace,brook,broot,brotli,brpc,bsdtar,bullet,busybox,byacc,bzip2,c-examples,cabal-install,caddy,cargo-c,cargo-deb,cargo-llvm-cov,cargo-llvm-lines,catch2,catimg,ccache,cdrtools,cfitsio,cflow,cgal,cgif,cgit,chafa,cheat,check,chezmoi,chicken,chinese-calendar,choose,chrpath,cilium-cli,circleci-cli,cli11,click,clog,cmake,cmark,cmatrix,cobalt,code-cli,conmon,coreutils,cotp,cpio,cpp-httplib,cppcheck,cpprestsdk,cppunit,cpuid,cpuinfo,croc,crosstool-ng]
         flavor: [sh]
 
     runs-on: macos-${{ matrix.tag }}
