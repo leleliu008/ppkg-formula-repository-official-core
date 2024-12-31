@@ -19,9 +19,5 @@ install: |
         :
     }
 
-onfinal: |
-    cat <<EOF
-    Caveats:
-
-        configure for vim-plug: Plug '$PACKAGE_LINKAGE_DIR'
-    EOF
+caveats: |
+        configure for vim-plug: Plug '${PACKAGE_INSTALL_DIR%/*}/ycm'

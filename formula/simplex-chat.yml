@@ -1,6 +1,6 @@
 summary: the first messaging network operating without user identifiers of any kind
-src-url: https://github.com/simplex-chat/simplex-chat/archive/refs/tags/v6.0.4.tar.gz
-src-sha: bccc8a53bac6f3885bf5ec885f7e5515303c9a5927352b165961085865ee7e3f
+src-url: https://github.com/simplex-chat/simplex-chat/archive/refs/tags/v6.2.1.tar.gz
+src-sha: 14ef4e0955134bc978baa431c5f7daeb7da2f586a69054745bc4a4be7d4ebfea
 license: GPL-3.0-or-later
 dep-pkg: libopenssl libffi libgmp libz
 

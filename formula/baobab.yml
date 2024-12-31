@@ -1,0 +1,7 @@
+summary: Gnome disk usage analyzer
+web-url: https://apps.gnome.org/Baobab/
+src-url: https://download.gnome.org/sources/baobab/47/baobab-47.0.tar.xz
+src-sha: b88f74f9c052d3c2388f7062d228cf5e927545acf7408c56841df80ccd1f9c37
+license: GPL-2.0-or-later
+dep-pkg: desktop-file-utils hicolor-icon-theme adwaita-icon-theme libadwaita
+bsystem: meson

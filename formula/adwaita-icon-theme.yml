@@ -1,0 +1,7 @@
+summary: Icons for the GNOME project
+web-url: https://developer.gnome.org
+src-url: https://download.gnome.org/sources/adwaita-icon-theme/47/adwaita-icon-theme-47.0.tar.xz
+src-sha: ad088a22958cb8469e41d9f1bba0efb27e586a2102213cd89cc26db2e002bdfe
+license: LGPL-3.0-or-later CC-BY-SA-3.0
+dep-pkg: gtk4 librsvg
+bsystem: meson

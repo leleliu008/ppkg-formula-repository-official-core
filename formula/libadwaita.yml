@@ -1,0 +1,7 @@
+summary: Building blocks for modern adaptive GNOME applications
+web-url: https://gnome.pages.gitlab.gnome.org/libadwaita/
+src-url: https://download.gnome.org/sources/libadwaita/1.6/libadwaita-1.6.2.tar.xz
+src-sha: 7542f8354e6808dd4e9a31551bbdfc0170735e4af4d1b3e69186500ccb9c01eb
+license: LGPL-2.1-or-later
+dep-pkg: gtk4
+install: mesonw -Dtests=false

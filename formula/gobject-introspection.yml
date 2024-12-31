@@ -10,8 +10,3 @@ dep-pkg: glib
 dep-upp: gm4 flex bison
 dep-pym: Mako MarkupSafe 'setuptools<65'
 bsystem: meson
-
-onfinal: |
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        run install_name_tool -add_rpath @loader_path/../../../.ppkg/dependencies/lib lib/gobject-introspection/giscanner/_giscanner.cpython-*-darwin.so
-    fi

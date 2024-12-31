@@ -30,5 +30,7 @@ install: |
 caveats: |
     The following environment variables should be set if you move/copy this software to other location
 
+    GDK_PIXBUF_INSTALL_DIR=/somewhere
+
     export GDK_PIXBUF_MODULEDIR="$GDK_PIXBUF_INSTALL_DIR/lib/gdk-pixbuf-2.0/2.10.0/loaders"
     export GDK_PIXBUF_MODULE_FILE="$GDK_PIXBUF_INSTALL_DIR/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
