@@ -38,6 +38,8 @@ install: |
             -Dbsymbolic_functions=false
     else
         (
+            export LDFLAGS="$LDFLAGS -Wl,-rpath,$PACKAGE_INSTALL_DIR/lib"
+
             PACKAGE_BCACHED_DIR="$PACKAGE_WORKING_DIR/tmp/glib"
             PACKAGE_INSTALL_DIR="$PACKAGE_WORKING_DIR/tmp/out"
 
@@ -56,7 +58,6 @@ install: |
             ###########################################################################
 
             export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$PACKAGE_INSTALL_DIR/lib/pkgconfig"
-            export LD_LIBRARY_PATH="$PACKAGE_INSTALL_DIR/lib"
 
             PACKAGE_BSCRIPT_DIR="$PACKAGE_WORKING_DIR/res"
             PACKAGE_BCACHED_DIR="$PACKAGE_WORKING_DIR/tmp/gobject-introspection"
@@ -66,7 +67,6 @@ install: |
         )
 
         export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$PACKAGE_WORKING_DIR/tmp/out/lib/pkgconfig"
-        export LD_LIBRARY_PATH="$PACKAGE_WORKING_DIR/tmp/out/lib"
         export PATH="$PACKAGE_WORKING_DIR/tmp/out/bin:$PATH"
 
         mesonw \
