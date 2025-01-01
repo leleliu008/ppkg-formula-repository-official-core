@@ -38,10 +38,10 @@ install: |
             -Dbsymbolic_functions=false
     else
         (
-            export LDFLAGS="$LDFLAGS -Wl,-rpath,$PACKAGE_INSTALL_DIR/lib"
-
             PACKAGE_BCACHED_DIR="$PACKAGE_WORKING_DIR/tmp/glib"
             PACKAGE_INSTALL_DIR="$PACKAGE_WORKING_DIR/tmp/out"
+
+            export LDFLAGS="$LDFLAGS -Wl,-rpath,$PACKAGE_INSTALL_DIR/lib"
 
             mesonw \
                 -Dintrospection=disabled \
