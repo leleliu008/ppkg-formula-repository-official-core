@@ -1,0 +1,8 @@
+summary: Helper library for reading and writing AppStream metadata
+version: 0.8.3
+src-url: https://github.com/hughsie/appstream-glib/archive/refs/tags/appstream_glib_0_8_3.tar.gz
+src-sha: 15ad7690b0132d883bd066699a7b55f6cef4c0f266d18d781ce5d8112fb4ee63
+license: LGPL-2.1-or-later
+dep-pkg: json-glib libgdk-pixbuf libarchive libcurl libuuid
+dep-upp: gperf docbook-xsl
+install: mesonw -Dintrospection=false -Dbuilder=false -Drpm=false -Ddep11=false

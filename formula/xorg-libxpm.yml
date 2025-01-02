@@ -5,4 +5,5 @@ src-sha: 959466c7dfcfcaa8a65055bfc311f74d4c43d9257900f85ab042604d286df0c6
 license: MIT
 dep-pkg: xorg-libx11
 dep-upp: gettext-tools
+prepare: ac_cv_search_gettext=no
 install: configure --disable-open-zfile --disable-stat-zfile

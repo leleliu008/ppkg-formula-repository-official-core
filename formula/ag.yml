@@ -4,8 +4,9 @@ src-sha: 6a0a19ca5e73b2bef9481c29a508d2413ca1a0a9a5a6b1bd9bbd695a7626cbf9
 license: Apache-2.0
 dep-pkg: libpcre liblzma libz
 bsystem: autogen
-install: |
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        export CFLAGS="$CFLAGS -fcommon"
-    fi
-    configure
+install: configure
+prepare: |
+    case $TARGET_PLATFORM_NAME in
+        macos) export CFLAGS="$CFLAGS -fcommon" ;;
+        linux) export CPPFLAGS="$CPPFLAGS -Doff64_t=off_t"
+    esac
