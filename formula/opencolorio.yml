@@ -1,7 +1,7 @@
 summary: Color management solution geared towards motion picture production
 web-url: https://opencolorio.org/
-src-url: https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/v2.3.2.tar.gz
-src-sha: 6bbf4e7fa4ea2f743a238cb22aff44890425771a2f57f62cece1574e46ceec2f
+src-url: https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.4.1.tar.gz
+src-sha: d4eb15408b33dffd6ba0bba9a53328085b40bdd9319fa3d0d7348d06a8cbe842
 license: BSD-3-Clause
 dep-pkg: libopenexr liblcms2 libexpat libyaml-cpp libpystring libminizip-ng sse2neon.h
 dep-upp: git

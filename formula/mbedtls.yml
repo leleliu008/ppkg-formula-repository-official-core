@@ -1,10 +1,11 @@
+pkgtype: lib
 summary: Cryptographic and SSL/TLS library
 web-url: https://tls.mbed.org
-src-url: https://github.com/Mbed-TLS/mbedtls/releases/download/v3.6.0/mbedtls-3.6.0.tar.bz2
-src-sha: 3ecf94fcfdaacafb757786a01b7538a61750ebd85c4b024f56ff8ba1490fcd38
+src-url: https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-3.6.2/mbedtls-3.6.2.tar.bz2
+src-sha: 8b54fb9bcf4d5a7078028e0520acddefb7900b3e66fec7f7175bb5b7d85ccdca
 license: Apache-2.0
+dep-upp: python3
 dep-pkg: libz
-
 install: |
     cmakew \
         -DUSE_STATIC_MBEDTLS_LIBRARY=ON \

@@ -1,11 +1,15 @@
+pkgtype: pie
 summary: High dynamic-range image file format
 web-url: https://www.openexr.com/
-src-url: https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.2.4.tar.gz
-src-sha: 81e6518f2c4656fdeaf18a018f135e96a96e7f66dbe1c1f05860dd94772176cc
+src-url: https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.3.2.tar.gz
+src-sha: 5013e964de7399bff1dd328cbf65d239a989a7be53255092fa10b85a8715744d
 license: BSD-3-Clause
-dep-pkg: libImath libz libdeflate
+dep-pkg: libImath.a libz libdeflate
+ldflags: -static-libstdc++ -static-libgcc
 
-dopatch: gsed -i '/find_library(OPENEXR_EXTRA_MATH_LIB m)/c set(OPENEXR_EXTRA_MATH_LIB -lm)' cmake/CMakeLists.txt
+dopatch: |
+    gsed -i '/find_library(OPENEXR_EXTRA_MATH_LIB m)/c set(OPENEXR_EXTRA_MATH_LIB -lm)' cmake/CMakeLists.txt
+    gsed -i 's|libdeflate_shared|libdeflate_static|' cmake/OpenEXRSetup.cmake
 
 install: |
     cmakew \

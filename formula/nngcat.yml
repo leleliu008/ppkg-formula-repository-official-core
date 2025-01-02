@@ -1,0 +1,18 @@
+summary: Nanomsg-next-generation -- light-weight brokerless messaging
+web-url: https://nng.nanomsg.org
+src-url: https://github.com/nanomsg/nng/archive/refs/tags/v1.9.0.tar.gz
+src-sha: ff882bda0a854abd184a7c1eb33329e526928ef98e80ef0457dd9a708bb5b0b1
+license: MIT
+dep-pkg: mbedtls
+
+dopatch: |
+    run rm cmake/FindMbedTLS.cmake
+    gsed -i -e 's|MbedTLS::mbedtls|MbedTLS::mbedtls_static|' -e 's|MbedTLS::mbedcrypto|MbedTLS::mbedcrypto_static|' -e 's|MbedTLS::mbedx509|MbedTLS::mbedx509_static|' src/supplemental/tls/mbedtls/CMakeLists.txt
+
+install: |
+    cmakew --components=Tools \
+        -DNNG_TESTS=OFF \
+        -DNNG_TOOLS=ON \
+        -DNNG_ENABLE_TLS=ON \
+        -DNNG_ENABLE_HTTP=ON \
+        -DBUILD_SHARED_LIBS=OFF
