@@ -32,4 +32,19 @@ install: |
 
     run cp -L public/nss/*.h public/dbm/*.h "$PACKAGE_INSTALL_DIR/include/nss/"
 
-dotweak: rm lib/libssl.a
+dotweak: |
+    rm lib/libssl.a
+
+    writepc nss <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include/nss
+
+    Name: NSS
+    Description: Mozilla Network Security Services
+    Version: $PACKAGE_VERSION
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lnss3 -lsmime3
+    Requires: nspr >= 4.12
+    EOF

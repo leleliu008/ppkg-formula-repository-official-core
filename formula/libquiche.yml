@@ -8,4 +8,7 @@ install: |
     cargow build --package quiche
     install_incs quiche/include/quiche.h
     install_libs target/$RUST_TARGET/release/libquiche.a
+
+    if [ -f "target/$RUST_TARGET/release/libquiche$SHARED_LIBRARY_SUFFIX" ] ; then
     install_libs target/$RUST_TARGET/release/libquiche$SHARED_LIBRARY_SUFFIX
+    fi
