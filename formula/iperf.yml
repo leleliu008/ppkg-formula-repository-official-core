@@ -4,3 +4,9 @@ src-url: https://downloads.sourceforge.net/project/iperf2/iperf-2.2.1.tar.gz
 src-sha: 754ab0a7e28033dbea81308ef424bc7df4d6e2fe31b60cc536b61b51fefbd8fb
 license: BSD-3-Clause
 bsystem: configure
+
+dopatch: |
+    # https://sourceforge.net/p/iperf2/tickets/342/
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        gsed -i '/headers\.h/i #define _GNU_SOURCE' src/checksums.c
+    fi

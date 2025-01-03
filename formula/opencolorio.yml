@@ -4,7 +4,10 @@ src-url: https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/t
 src-sha: d4eb15408b33dffd6ba0bba9a53328085b40bdd9319fa3d0d7348d06a8cbe842
 license: BSD-3-Clause
 dep-pkg: libopenexr liblcms2 libexpat libyaml-cpp libpystring libminizip-ng sse2neon.h
+dep-lib: OpenEXR
 dep-upp: git
+
+ldflags: -static-libstdc++ -static-libgcc
 
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then

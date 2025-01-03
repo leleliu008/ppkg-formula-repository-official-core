@@ -1,7 +1,7 @@
 summary: Library access to GnuPG
 web-url: https://www.gnupg.org/related_software/gpgme/
-src-url: https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.0.tar.bz2
-src-sha: 61e3a6ad89323fecfaff176bc1728fb8c3312f2faa83424d9d5077ba20f5f7da
+src-url: https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.1.tar.bz2
+src-sha: ea05d0258e71061d61716584ec34cef59330a91340571edc46b78374973ba85f
 license: LGPL-2.1-or-later
 dep-pkg: gnupg
 dep-upp: swig python3
@@ -12,3 +12,7 @@ dopatch: |
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         gsed -i -e 's|ino64_t d_ino|ino_t d_ino|' -e 's|off64_t d_off|off_t d_off|' src/posix-io.c
     fi
+
+    gsed -i '/unset PYTHON$/d' configure
+
+    export PYTHON="$(command -v python3)"

@@ -4,7 +4,7 @@ src-url: https://git.zx2c4.com/cgit/snapshot/cgit-1.2.3.tar.xz
 src-sha: 5a5f12d2f66bd3629c8bc103ec8ec2301b292e97155d30a9a61884ea414a6da4
 license: GPL-2.0-only
 dep-pkg: libopenssl libz
- 
+
 res-url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.25.1.tar.gz
 res-sha: 4999ae0ee6cc7dfb280d7051e39a82a5630b00c1d8cd54890f07b4b7193d25aa
 
@@ -16,6 +16,7 @@ dopatch: gsed -i "/ALL_LDFLAGS/s|$| $CFLAGS $CPPFLAGS $LDFLAGS|" cgit.mk
 prepare: run mv ../res/* git/
 
 install: |
+    export ac_cv_header_libintl_h=no
     gmakew clean
     gmakew
     gmakew install \

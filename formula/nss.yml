@@ -1,0 +1,35 @@
+pkgtype: lib
+summary: Libraries for security-enabled client and server applications
+web-url: https://firefox-source-docs.mozilla.org/security/nss/index.html
+src-url: https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_107_RTM/src/nss-3.107.tar.gz
+src-url: dir:///home/leleliu008/Downloads/nss-3.107/
+src-sha: 7f7e96473e38150771a615f5d40e8c41ba3a19385301ae0c525091f2fc9d6729
+license: MPL-2.0
+dep-pkg: nspr libsqlite3 libz
+bscript: nss
+
+prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS $CPPFLAGS $CFLAGS $LDFLAGS"
+
+install: |
+    gmakew clean USE_64=1
+    gmakew all \
+        USE_64=1 \
+        BUILD_OPT=1 \
+        NSS_ALLOW_SSLKEYLOGFILE=1 \
+        NSS_DISABLE_GTESTS=1 \
+        NSS_USE_SYSTEM_SQLITE=1 \
+        NSPR_INCLUDE_DIR=$nspr_INCLUDE_DIR/nspr \
+        NSPR_LIB_DIR=$nspr_LIBRARY_DIR
+
+    run cd ../dist/
+
+    run install -d "$PACKAGE_INSTALL_DIR/bin/"
+    run install -d "$PACKAGE_INSTALL_DIR/lib/"
+    run install -d "$PACKAGE_INSTALL_DIR/include/nss/"
+
+    run cp -L */bin/* "$PACKAGE_INSTALL_DIR/bin/"
+    run cp -L */lib/* "$PACKAGE_INSTALL_DIR/lib/"
+
+    run cp -L public/nss/*.h public/dbm/*.h "$PACKAGE_INSTALL_DIR/include/nss/"
+
+dotweak: rm lib/libssl.a

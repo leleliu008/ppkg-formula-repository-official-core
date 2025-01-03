@@ -15,3 +15,5 @@ install: |
         -DENABLE_TOOLS=OFF \
         -DENABLE_EXAMPLES=OFF \
         -DCONFIG_RUNTIME_CPU_DETECT=0
+
+dotweak: gsed -i '/^Requires:/s|$| libjxl libvmaf|' lib/pkgconfig/aom.pc

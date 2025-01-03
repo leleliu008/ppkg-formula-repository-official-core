@@ -15,4 +15,5 @@ install: |
         -DNNG_TOOLS=ON \
         -DNNG_ENABLE_TLS=ON \
         -DNNG_ENABLE_HTTP=ON \
-        -DBUILD_SHARED_LIBS=OFF
+        -DBUILD_SHARED_LIBS=OFF \
+        -DCMAKE_SKIP_INSTALL_RPATH=ON
