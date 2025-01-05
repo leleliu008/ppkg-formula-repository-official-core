@@ -1,0 +1,18 @@
+summary: test C++
+web-url: https://dd
+install: |
+    cat > test.cc <<EOF
+    #include<iostream>
+    using namespace std;
+
+    int main() {
+        cout << "Hello C++" << endl;
+        return 0;
+    }
+    EOF
+
+    export PPKG_VERBOSE=1
+    #run $CXX_FOR_BUILD $CXXFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD test.cc
+    run $CXX $CXXFLAGS $CPPFLAGS $LDFLAGS test.cc /usr/lib/x86_64-linux-gnu/libm-2.39.a
+    ./a.out
+    #install_bins a.out

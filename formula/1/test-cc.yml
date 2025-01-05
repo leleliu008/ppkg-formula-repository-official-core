@@ -1,0 +1,15 @@
+summary: test project
+web-url: https://dd
+install: |
+    cat > test.c <<EOF
+    #include<stdio.h>
+    int main() {
+        puts("Hello");
+        return 0;
+    }
+    EOF
+
+    #run $CC_FOR_BUILD $CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD test.c
+    run $CC $CFLAGS $CPPFLAGS $LDFLAGS test.c
+    ./a.out
+    install_bins a.out

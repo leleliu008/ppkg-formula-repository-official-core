@@ -1,0 +1,37 @@
+summary: SMB/CIFS file, print, and login server for UNIX
+web-url: https://www.samba.org/
+src-url: https://download.samba.org/pub/samba/stable/samba-4.21.2.tar.gz
+src-sha: bde66be3d2025cb949de38518ad2652f3795f824c7fa89d4e443ede1ae828ea6
+license: GPL-3.0-or-later
+dep-pkg: libgnutls libz liblmdb libtdb libtevent libxcrypt libcups libtirpc libpopt libreadline icu4c
+dep-lib: -lncurses
+dep-upp: gm4 flex bison perl python3
+dep-plm: Parse::Yapp
+bsystem: gmake
+install: |
+    run ./configure \
+            --bundled-libraries=NONE \
+            --private-libraries=!ldb \
+            --disable-cephfs \
+            --enable-cups \
+            --disable-iprint \
+            --disable-glusterfs \
+            --disable-python \
+            --without-acl-support \
+            --without-ad-dc \
+            --without-ads \
+            --without-ldap \
+            --without-libarchive \
+            --without-json \
+            --without-pam \
+            --without-regedit \
+            --without-syslog \
+            --without-utmp \
+            --without-winbind \
+            --with-shared-modules=!vfs_snapper \
+            --prefix=$PACKAGE_INSTALL_DIR
+    gmakew
+    gmakew install
+
+fix-url: https://gitlab.com/samba-team/samba/-/commit/a2736fe78a4e75e71b9bc53dc24c36d71b911d2a.diff
+fix-sha: 7d1bf9eb26211e2ab9e3e67ae32308a3704ff9904ab2369e5d863e079ea8a03f

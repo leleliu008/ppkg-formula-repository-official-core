@@ -2,7 +2,7 @@ summary: Common UNIX Printing System
 src-url: https://github.com/OpenPrinting/cups/releases/download/v2.4.11/cups-2.4.11-source.tar.gz
 src-sha: 9a88fe1da3a29a917c3fc67ce6eb3178399d68e1a548c6d86c70d9b13651fd71
 license: Apache-2.0
-dep-pkg: libopenssl libkrb5 libz
+dep-pkg: libopenssl libz
 binbstd: 1
 
 dopatch: gsed -i 's|lib64|lib|g' configure
@@ -11,6 +11,8 @@ prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -L$PACKAGE_WORKING_DIR/lib -ls
 
 install: |
     configure \
-        --without-bundledir \
+        --disable-shared \
+        --disable-gssapi \
         --with-tls=openssl \
-        --with-components=core
+        --with-components=core \
+        --without-bundledir

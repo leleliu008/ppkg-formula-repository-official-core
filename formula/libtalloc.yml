@@ -13,3 +13,5 @@ install: |
         --disable-python \
         --without-gettext
     gmakew install
+    run "$AR" cru libtalloc.a bin/default/talloc*.o
+    install_libs  libtalloc.a

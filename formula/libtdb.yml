@@ -1,0 +1,9 @@
+summary: Trivial DataBase, by the Samba project
+web-url: https://tdb.samba.org/
+src-url: https://www.samba.org/ftp/tdb/tdb-1.4.12.tar.gz
+src-sha: 6ce4b27498812d09237ece65a0d6dfac0941610e709848ecb822aa241084cd7a
+license: GPL-3.0-or-later
+dep-upp: python3
+install: |
+    run ./configure --prefix=$PACKAGE_INSTALL_DIR --bundled-libraries=NONE --disable-python --disable-rpath
+    gmakew install
