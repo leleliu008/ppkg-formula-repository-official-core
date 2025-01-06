@@ -17,6 +17,10 @@ prepare: |
         :
     }
 
+    __check_elf_files() {
+        :
+    }
+
 install: configure --disable-nls
 
 dotweak: |
