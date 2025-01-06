@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Network related modules for glib
 web-url: https://gitlab.gnome.org/GNOME/glib-networking.git
 src-url: https://download.gnome.org/sources/glib-networking/2.80/glib-networking-2.80.0.tar.xz

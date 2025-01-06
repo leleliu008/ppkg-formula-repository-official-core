@@ -20,11 +20,9 @@ dopatch: |
         MAP_SYNC-fix.patch
         fix-sockios-header.patch
         guest-agent-shutdown.patch
-        lfs64.patch
         musl-initialise-msghdr.patch
         fix-strerrorname_np.patch
         liburing.patch
-        0001-util-util-cpuinfo-riscv.c-fix-riscv64-build-on-musl-.patch
         '
 
         for f in $LIST
