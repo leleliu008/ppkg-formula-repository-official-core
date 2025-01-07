@@ -5,6 +5,6 @@ src-uri: https://ftpmirror.gnu.org/autogen/rel5.18.16/autogen-5.18.16.tar.xz
 src-sha: f8a13466b48faa3ba99fe17a069e71c9ab006d9b1cfabe699f8c60a47d5bb49a
 license: GPL-3.0-or-later
 dep-pkg: guile
-ccflags: -Wno-error=unknown-warning-option
+    #ccflags: -Wno-error=unknown-warning-option
 dopatch: gsed -i 's|2\.2 2\.0 1\.8|3.0|' configure
 install: configure --disable-dependency-tracking

@@ -8,4 +8,4 @@ ldflags: -static-libstdc++ -static-libgcc
 
 dopatch: gsed -i '/^install(/,$d' CMakeLists.txt
 
-install: cmakew -DBUILD_SHARED_LIBS=OFF -DCMAKE_SKIP_INSTALL_RPATH=TRUE
+install: cmakew -DBUILD_SHARED_LIBS=OFF
