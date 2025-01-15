@@ -1,6 +1,6 @@
 summary: the first messaging network operating without user identifiers of any kind
-src-url: https://github.com/simplex-chat/simplex-chat/archive/refs/tags/v6.2.1.tar.gz
-src-sha: 14ef4e0955134bc978baa431c5f7daeb7da2f586a69054745bc4a4be7d4ebfea
+src-url: https://github.com/simplex-chat/simplex-chat/archive/refs/tags/v6.2.4.tar.gz
+src-sha: 15048bc41ccb582dd6e0ad03b4bd5724d37ae2dcd6ecce91a77c85bb2b984555
 license: GPL-3.0-or-later
 dep-pkg: libopenssl libffi libgmp libz
 
@@ -29,6 +29,8 @@ dopatch: |
     EOF
 
 prepare: |
+    export PROXIED_CC_ARGS="$PROXIED_CC_ARGS $CPPFLAGS $LDFLAGS"
+
     export BOOTSTRAP_HASKELL_GHC_VERSION='9.6.3'
     export BOOTSTRAP_HASKELL_CABAL_VERSION='3.10.1.0'
     export BOOTSTRAP_HASKELL_NONINTERACTIVE=1
