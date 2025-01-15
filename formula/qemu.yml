@@ -36,8 +36,8 @@ dopatch: |
         done
     fi
 
-    gsed -i '/-static-pie/d' meson.build
-    gsed -i 's|meson setup |meson setup --prefer-static |' configure
+    gsed -i 's|-static-pie|-pie|' meson.build
+    gsed -i 's|$meson setup |meson setup --prefer-static |' configure
     gsed -i "s|cc.find_library('vdeplug'|cc.find_library('vdeplug', static : true, dirs : ['$vde_LIBRARY_DIR']|" meson.build
     gsed -i "s|cc.find_library('cap-ng'|cc.find_library('cap-ng', static : true, dirs : ['$libcap_ng_LIBRARY_DIR']|" meson.build
     gsed -i "s|cc.find_library('attr'|cc.find_library('attr', static : true, dirs : ['$xattr_LIBRARY_DIR']|" meson.build

@@ -18,6 +18,8 @@ prepare: |
 
 install: configure --enable-zlib --disable-bzlib --disable-xzlib --enable-static --disable-shared
 
+doextra: rm -rf include/ lib/ share/man/man3/
+
 caveats: |
     The following environment variables should be set if you move/copy this software to other location
 

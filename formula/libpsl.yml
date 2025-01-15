@@ -12,3 +12,7 @@ dopatch: |
     gsed -i 's|link_with : libpsl|link_with : libpsl.get_static_lib()|' src/meson.build
 
 install: mesonw -Druntime=libidn2 -Dtests=false -Ddocs=false
+
+dotweak: |
+    gsed -i 's|-liconv||'         lib/pkgconfig/libpsl.pc
+    printf 'Requires: libidn2' >> lib/pkgconfig/libpsl.pc

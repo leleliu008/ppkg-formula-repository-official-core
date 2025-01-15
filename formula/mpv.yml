@@ -32,3 +32,15 @@ install: |
         -Dlibarchive=enabled \
         -Djavascript=enabled \
         -Dlua=luajit
+
+doextra: |
+    run cp -r "$libfontconfig_INSTALL_DIR/etc/fonts" etc/
+    run cp -r "$libdrm_INSTALL_DIR/share/libdrm" share/
+
+caveats: |
+    The following environment variables should be set if you move/copy this software to other location
+
+    MPV_INSTALLED_DIR=/somewhere
+
+    export FONTCONFIG_FILE=$MPV_INSTALLED_DIR/etc/fonts/fonts.conf
+    export AMDGPU_ASIC_ID_TABLE_PATH=$MPV_INSTALLED_DIR/share/libdrm/amdgpu.ids
