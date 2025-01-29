@@ -5,7 +5,6 @@ src-sha: e5d5e0dd96fe9452fe24cc8c827381dca484c54d171fb512a198025fec81a3c8
 license: Apache-2.0
 dep-pkg: libprotobuf.a libopenssl libcares libre2
 dep-upp: grpc-plugins
-ldflags: -static-libstdc++ -static-libgcc
 
 install: |
     cmakew \

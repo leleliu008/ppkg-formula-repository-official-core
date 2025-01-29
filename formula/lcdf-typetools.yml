@@ -4,5 +4,4 @@ web-url: https://www.lcdf.org/type/
 src-url: https://www.lcdf.org/type/lcdf-typetools-2.110.tar.gz
 src-sha: 517f9ee879208679d3224a14d5e6eb20598fc648d5c3562708083d003088a934
 license: GPL-2.0-or-later
-ldflags: -static-libstdc++ -static-libgcc
 install: configure --without-kpathsea

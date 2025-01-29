@@ -8,7 +8,6 @@ dep-pkg: libz libopenssl libncurses libprotobuf.a
 dep-upp: perl
 
 xxflags: -std=gnu++17
-ldflags: -static-libstdc++ -static-libgcc
 
 dopatch: gsed -i 's|if ( bind|if (::bind|' src/network/network.cc
 install: configure --with-ncurses

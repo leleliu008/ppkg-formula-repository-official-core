@@ -5,7 +5,6 @@ src-url: https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/
 src-sha: 5013e964de7399bff1dd328cbf65d239a989a7be53255092fa10b85a8715744d
 license: BSD-3-Clause
 dep-pkg: libImath.a libz libdeflate
-ldflags: -static-libstdc++ -static-libgcc
 
 dopatch: |
     gsed -i '/find_library(OPENEXR_EXTRA_MATH_LIB m)/c set(OPENEXR_EXTRA_MATH_LIB -lm)' cmake/CMakeLists.txt

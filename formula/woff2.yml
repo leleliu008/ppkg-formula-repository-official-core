@@ -4,7 +4,6 @@ src-sha: add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594
 license: MIT
 dep-pkg: libbrotli
 dep-lib: -lbrotlicommon
-ldflags: -static-libstdc++ -static-libgcc
 
 dopatch: gsed -i '/^install(/,$d' CMakeLists.txt
 

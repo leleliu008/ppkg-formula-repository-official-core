@@ -7,8 +7,6 @@ dep-pkg: libopenexr liblcms2 libexpat libyaml-cpp libpystring libminizip-ng sse2
 dep-lib: OpenEXR
 dep-upp: git
 
-ldflags: -static-libstdc++ -static-libgcc
-
 dopatch: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         export LDFLAGS="$LDFLAGS -framework CoreFoundation -framework Security"
