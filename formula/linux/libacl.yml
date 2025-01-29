@@ -4,5 +4,5 @@ git-url: https://git.savannah.nongnu.org/git/acl.git
 src-url: https://download.savannah.nongnu.org/releases/acl/acl-2.3.2.tar.gz
 src-sha: 5f2bdbad629707aa7d85c623f994aa8a1d2dec55a73de5205bac0bf6058a2f7c
 license: GPL-2.0-or-later
-dep-pkg: xattr
+dep-pkg: libattr
 bsystem: configure
