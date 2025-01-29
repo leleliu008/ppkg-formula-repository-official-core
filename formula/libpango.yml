@@ -4,8 +4,8 @@ git-url: https://gitlab.gnome.org/GNOME/pango
 src-url: https://download.gnome.org/sources/pango/1.55/pango-1.55.5.tar.xz
 src-sha: e396126ea08203cbd8ef12638e6222e2e1fd8aa9cac6743072fedc5f2d820dd8
 license: LGPL-2.0-or-later
-dep-upp: glib-tools
 dep-pkg: libcairo libfribidi libharfbuzz xorg-libxft
+dep-upp: glib-tools
 
 install: |
     mesonw \

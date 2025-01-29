@@ -1,7 +1,7 @@
 summary: X.Org Client API for the XTEST & RECORD extensions
 web-url: https://www.x.org/
-src-url: https://www.x.org/archive/individual/lib/libXtst-1.2.4.tar.gz
-src-sha: 01366506aeb033f6dffca5326af85f670746b0cabbfd092aabefb046cf48c445
+src-url: https://www.x.org/archive/individual/lib/libXtst-1.2.5.tar.gz
+src-sha: 244ba6e1c5ffa44f1ba251affdfa984d55d99c94bb925a342657e5e7aaf6d39c
 license: MIT
 dep-pkg: xorg-libxi
 install: configure --enable-specs=no

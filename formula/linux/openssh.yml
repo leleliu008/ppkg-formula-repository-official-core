@@ -7,11 +7,19 @@ version: 9.9.1
 license: SSH-OpenSSH
 dep-pkg: libfido2 libldns libkrb5.a libpam
 dep-lib: -lresolv
+
+prepare: |
+    if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then
+        CONFIGURE_EXTRA_ARGS='--without-pam'
+    else
+        CONFIGURE_EXTRA_ARGS='--with-pam'
+    fi
+
 install: |
     configure \
-        --with-pam \
         --with-ldns \
         --with-libedit \
         --with-kerberos5 \
         --with-security-key-builtin \
-        --with-privsep-path=$PACKAGE_INSTALL_DIR/var/lib/sshd
+        --with-privsep-path=$PACKAGE_INSTALL_DIR/var/lib/sshd \
+        $CONFIGURE_EXTRA_ARGS
