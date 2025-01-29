@@ -5,3 +5,8 @@ src-url: https://download.savannah.nongnu.org/releases/attr/attr-2.5.2.tar.gz
 src-sha: 39bf67452fa41d0948c2197601053f48b3d78a029389734332a6309a680c6c87
 license: GPL-2.0-or-later
 install: configure
+
+dopatch: |
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        gsed -i '/include <locale.h>/a #include <libgen.h>' tools/attr.c
+    fi
