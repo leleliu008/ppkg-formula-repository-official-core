@@ -7,7 +7,7 @@ src-sha: 24e029c5dfc9b44e4573697adf33078a9827c48938555004b3b9096fa4ea034f
 license: LGPL-2.1-or-later
 dep-pkg: libpcre2 libintl libffi libz
 dep-upp: gettext-tools gm4 flex bison
-dep-pym: packaging
+dep-pym: packaging 'setuptools<65'
 bsystem: meson
 
 res-url: https://download.gnome.org/sources/gobject-introspection/1.80/gobject-introspection-1.80.1.tar.xz
