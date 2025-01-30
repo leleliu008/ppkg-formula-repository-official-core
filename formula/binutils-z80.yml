@@ -1,0 +1,32 @@
+pkgtype: pie
+summary: GNU binary tools for Z80 development
+git-url: https://sourceware.org/git/binutils-gdb
+web-url: https://www.gnu.org/software/binutils/binutils.html
+src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.xz
+src-uri: https://sourceware.org/pub/binutils/releases/binutils-2.43.1.tar.xz
+src-sha: 13f74202a3c4c51118b797a39ea4200d3f6cfbe224da6d1d95bb938480132dfd
+license: GPL-2.0-or-later
+dep-pkg: libisl libmpc libz libzstd
+dep-upp: gm4 bison texinfo
+
+install: |
+    configure \
+        --with-isl="$libisl_INSTALL_DIR" \
+        --with-gmp="$libgmp_INSTALL_DIR" \
+        --with-mpc="$libmpc_INSTALL_DIR" \
+        --with-mpfr="$mpfr_INSTALL_DIR" \
+        --with-static-standard-libraries \
+        --with-zstd \
+        --with-system-zlib \
+        --disable-gprofng \
+        --disable-werror \
+        --disable-nls \
+        --disable-install-libbfd \
+        --disable-shared \
+        --enable-static \
+        --enable-gold \
+        --enable-64-bit-bfd \
+        --enable-plugins \
+        --enable-interwork \
+        --enable-multilib \
+        --target=z80-elf
