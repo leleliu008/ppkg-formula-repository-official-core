@@ -1,0 +1,16 @@
+summary: A Highly portable Zilog Z80 CPU emulator written in ANSI C
+src-url: https://github.com/redcode/Z80/archive/refs/tags/v0.2-pre-2024-09-21.tar.gz
+src-sha: cde20c936c629e67bfd5e988603f1a651ac39d368e8de18dec9b260e4230165f
+version: 0.2
+license: LGPL-3.0
+dep-pkg: zeta
+
+install: |
+    cmakew 2 \
+        -DZ80_WITH_Q=YES \
+        -DZ80_WITH_EXECUTE=YES \
+        -DZ80_WITH_FULL_IM0=YES \
+        -DZ80_WITH_IM0_RETX_NOTIFICATIONS=YES \
+        -DZ80_WITH_ZILOG_NMOS_LD_A_IR_BUG=YES \
+        -DZ80_WITH_PKGCONFIG_SUPPORT=YES \
+        -DZ80_WITH_CMAKE_SUPPORT=YES
