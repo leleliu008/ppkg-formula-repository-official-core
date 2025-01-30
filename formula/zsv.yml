@@ -1,0 +1,10 @@
+summary: A command-line utility for parsing CSV
+src-url: https://github.com/liquidaty/zsv/archive/refs/tags/v0.4.4-alpha.tar.gz
+src-sha: 37747732d434b931c22ca54a1f2301d7bb6c75bd001325d374e0cacf5242684c
+version: 0.4.4
+dep-pkg: libncurses jq
+install: |
+    export CFLAGS="$CFLAGS $CPPFLAGS"
+    run ./configure --disable-termcap --prefix="$PACKAGE_INSTALL_DIR"
+    gmakew -C app
+    gmakew -C app install
