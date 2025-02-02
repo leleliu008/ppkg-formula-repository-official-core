@@ -8,6 +8,8 @@ license: Artistic-2.0
 bsystem: configure
 binbstd: 1
 
+ccflags: -Wno-incompatible-pointer-types
+
 # http://ftp.tku.edu.tw/Linux/Gentoo/gentoo-portage/net-misc/zsync/files/zsync-0.6.2-musl-off_t-fix.patch
 dep-upp: patch
 dopatch: |
