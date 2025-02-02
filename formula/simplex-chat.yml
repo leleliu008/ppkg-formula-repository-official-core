@@ -10,20 +10,20 @@ dopatch: |
 
     package simplexmq
         extra-include-dirs: $libopenssl_INCLUDE_DIR
-        extra-lib-dirs: $libopenssl_LIBRARY_DIR
+        extra-lib-dirs: $PACKAGE_WORKING_DIR/lib
 
     package direct-sqlcipher
         extra-include-dirs: $libopenssl_INCLUDE_DIR
-        extra-lib-dirs: $libopenssl_LIBRARY_DIR
+        extra-lib-dirs: $PACKAGE_WORKING_DIR/lib
         flags: +openssl
 
     package digest
         extra-include-dirs: $libz_INCLUDE_DIR
-        extra-lib-dirs: $libz_LIBRARY_DIR
+        extra-lib-dirs: $PACKAGE_WORKING_DIR/lib
 
     package zlib
         extra-include-dirs: $libz_INCLUDE_DIR
-        extra-lib-dirs: $libz_LIBRARY_DIR
+        extra-lib-dirs: $PACKAGE_WORKING_DIR/lib
 
     test-show-details: direct
     EOF

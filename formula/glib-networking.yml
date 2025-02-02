@@ -1,8 +1,8 @@
 pkgtype: lib
 summary: Network related modules for glib
 web-url: https://gitlab.gnome.org/GNOME/glib-networking.git
-src-url: https://download.gnome.org/sources/glib-networking/2.80/glib-networking-2.80.0.tar.xz
-src-sha: d8f4f1aab213179ae3351617b59dab5de6bcc9e785021eee178998ebd4bb3acf
+src-url: https://download.gnome.org/sources/glib-networking/2.80/glib-networking-2.80.1.tar.xz
+src-sha: b80e2874157cd55071f1b6710fa0b911d5ac5de106a9ee2a4c9c7bee61782f8e
 license: LGPL-2.1-or-later
 dep-pkg: gsettings-desktop-schemas libopenssl
 install: |

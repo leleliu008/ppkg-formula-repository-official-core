@@ -1,9 +1,9 @@
 summary: GNOME XML library
 web-url: http://xmlsoft.org
 git-url: https://gitlab.gnome.org/GNOME/libxml2
-src-url: https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.5.tar.xz
-src-uri: https://distfiles.macports.org/libxml2/libxml2-2.13.5.tar.xz
-src-sha: 74fc163217a3964257d3be39af943e08861263c4231f9ef5b496b6f6d4c7b2b6
+src-url: https://download.gnome.org/sources/libxml2/2.12/libxml2-2.12.7.tar.xz
+src-uri: https://distfiles.macports.org/libxml2/libxml2-2.12.7.tar.xz
+src-sha: 24ae78ff1363a973e6d8beba941a7945da2ac056e19b53956aeb6927fd6cfb56
 license: MIT
 dep-pkg: libiconv libz
 
