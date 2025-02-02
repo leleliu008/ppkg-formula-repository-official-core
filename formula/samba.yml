@@ -3,7 +3,7 @@ web-url: https://www.samba.org/
 src-url: https://download.samba.org/pub/samba/stable/samba-4.21.2.tar.gz
 src-sha: bde66be3d2025cb949de38518ad2652f3795f824c7fa89d4e443ede1ae828ea6
 license: GPL-3.0-or-later
-dep-pkg: libgnutls libz liblmdb libtdb libtevent libxcrypt libcups libtirpc libpopt libreadline icu4c
+dep-pkg: libgnutls libz liblmdb libtdb libtevent libxcrypt libcups libtirpc libpopt libreadline libicu
 dep-lib: -lncurses
 dep-upp: gm4 flex bison perl python3
 dep-plm: Parse::Yapp

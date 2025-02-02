@@ -4,7 +4,7 @@ web-url: https://www.boost.org
 src-url: https://github.com/boostorg/boost/releases/download/boost-1.85.0/boost-1.85.0-b2-nodocs.tar.xz
 src-sha: 09f0628bded81d20b0145b30925d7d7492fd99583671586525d5d66d4c28266a
 license: BSL-1.0
-dep-pkg: libz libbz2 liblzma libzstd libiconv icu4c
+dep-pkg: libz libbz2 liblzma libzstd libiconv libicu
 binbstd: 1
 
 do12345: run ./bootstrap.sh
@@ -17,7 +17,7 @@ install: |
         --reconfigure \
         --without-python \
         --prefix=$PACKAGE_INSTALL_DIR \
-        -sICU_PATH=$icu4c_INSTALL_DIR \
+        -sICU_PATH=$libicu_INSTALL_DIR \
         -sICONV_PATH=$libiconv_INSTALL_DIR \
         link=static,shared \
         variant=release \
