@@ -5,6 +5,26 @@ src-url: https://distfiles.macports.org/zsync/zsync-0.6.2.tar.bz2
 src-sha: 0b9d53433387aa4f04634a6c63a5efa8203070f2298af72a705f9be3dda65af2
 license: Artistic-2.0
 
-ccflags: -include sys/types.h
 bsystem: configure
 binbstd: 1
+
+# http://ftp.tku.edu.tw/Linux/Gentoo/gentoo-portage/net-misc/zsync/files/zsync-0.6.2-musl-off_t-fix.patch
+dep-upp: patch
+dopatch: |
+    patch -p1 <<EOF
+    diff --git a/libzsync/sha1.h b/libzsync/sha1.h
+    index 3946505..8840570 100644
+    --- a/libzsync/sha1.h
+    +++ b/libzsync/sha1.h
+    @@ -11,9 +11,10 @@
+     
+     #include "config.h"
+     
+    -#ifdef HAVE_INTTYPES_H
+    +#if defined(HAVE_INTTYPES_H) && defined(__GLIBC__)
+     #include <inttypes.h>
+     #else
+    +#include <stdint.h>
+     #include <sys/types.h>
+     #endif
+    EOF
