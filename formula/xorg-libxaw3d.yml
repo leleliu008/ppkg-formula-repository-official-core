@@ -1,0 +1,11 @@
+summary: X.Org 3D Athena widget set based on the Xt library
+web-url: https://www.x.org
+src-url: https://xorg.freedesktop.org/archive/individual/lib/libXaw3d-1.6.6.tar.gz
+src-sha: 0cdb8f51c390b0f9f5bec74454e53b15b6b815bc280f6b7c969400c9ef595803
+license: MIT
+dep-pkg: xorg-libxmu xorg-libxpm
+install: |
+    configure \
+        --enable-gray-stipples \
+        --enable-arrow-scrollbars \
+        --enable-multiplane-bitmaps

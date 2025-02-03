@@ -1,0 +1,15 @@
+summary: Spice circuit simulator
+web-url: https://ngspice.sourceforge.io/
+git-url: https://git.code.sf.net/p/ngspice/ngspice.git
+src-url: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/44.2/ngspice-44.2.tar.gz
+src-sha: e7dadfb7bd5474fd22409c1e5a67acdec19f77e597df68e17c5549bc1390d7fd
+dep-pkg: libreadline libfftw3 xorg-libxaw xorg-libxft
+dep-upp: gm4 flex bison
+install: |
+    configure \
+        --enable-pss \
+        --enable-cider \
+        --enable-xspice \
+        --enable-openmp \
+        --with-readline=yes \
+        --with-x

@@ -1,0 +1,7 @@
+summary: X.Org Athena Widget Set
+web-url: https://www.x.org/
+src-url: https://www.x.org/archive/individual/lib/libXaw-1.0.16.tar.xz
+src-sha: 731d572b54c708f81e197a6afa8016918e2e06dfd3025e066ca642a5b8c39c8f
+license: MIT
+dep-pkg: xorg-libxmu xorg-libxpm
+install: configure --disable-specs
