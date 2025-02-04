@@ -1,0 +1,18 @@
+summary: Create, run, and share large language models (LLMs)
+web-url: https://ollama.com/
+git-url: https://github.com/ollama/ollama
+git-sha: a420a453b4783841e3e79c248ef0fe9548df6914
+version: 0.5.7
+license: MIT
+bsystem: go cmake-gmake
+
+dopatch: gsed -i 's|//go:generate make -j|//go:generate make -C .. -j|' llama/llama.go
+
+prepare: |
+    export CGO_ENABLED=1
+    run go generate llama/llama.go
+
+install: |
+    gow \
+        -X github.com/ollama/ollama/version.Version=$PACKAGE_VERSION \
+        -X github.com/ollama/ollama/server.mode=release
