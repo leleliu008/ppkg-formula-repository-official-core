@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: A general-purpose, portable utility library which provides many useful data types, macros, type conversions, string utilities, file utilities, a mainloop abstraction, and so on
 web-url: https://developer.gnome.org/glib
 git-url: https://github.com/GNOME/glib
@@ -5,12 +6,12 @@ src-url: https://download.gnome.org/sources/glib/2.82/glib-2.82.4.tar.xz
 src-uri: https://distfiles.macports.org/glib2/glib-2.82.4.tar.xz
 src-sha: 37dd0877fe964cd15e9a2710b044a1830fb1bd93652a6d0cb6b8b2dff187c709
 license: LGPL-2.1-or-later
-dep-pkg: libpcre2 libintl libffi libz
+dep-pkg: gobject-introspection
 dep-upp: gettext-tools
 
 install: |
     mesonw \
-        -Dintrospection=disabled \
+        -Dintrospection=enabled \
         -Ddocumentation=false \
         -Dman-pages=disabled \
         -Dnls=disabled \
@@ -20,10 +21,3 @@ install: |
         -Dtests=false \
         -Dinstalled_tests=false \
         -Dbsymbolic_functions=false
-
-dotweak: |
-    gsed -i 's|libiconv|libintl libffi libz|' lib/pkgconfig/glib-2.0.pc
-
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        gsed -i 's|-lintl|-lresolv|g'         lib/pkgconfig/glib-2.0.pc
-    fi
