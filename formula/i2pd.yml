@@ -5,7 +5,9 @@ src-sha: f5792a1c0499143c716663e90bfb105aaa7ec47d1c4550b5f90ebfc25da00c6c
 license: BSD-3-Clause
 dep-pkg: boost libminiupnpc libopenssl
 
-dopatch: gsed -i 's|-lcrypto -lssl|-lssl -lcrypto|' Makefile.linux
+dopatch: |
+    gsed -i 's|-lcrypto -lssl|-lssl -lcrypto|' Makefile.*
+    gsed -i 's|ln -sf |ln -sfr |' Makefile.*
 
 prepare: export CXXFLAGS="$CXXFLAGS $CPPFLAGS"
 
