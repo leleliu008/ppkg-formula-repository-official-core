@@ -1,0 +1,8 @@
+summary: UPnP IGD client library and daemon
+web-url: https://miniupnp.tuxfamily.org
+src-url: http://miniupnp.free.fr/files/miniupnpc-2.3.0.tar.gz
+src-sha: 025c9ab95677f02a69bc64ac0a747f07e02ba99cf797bc679a5a552fed8d990c
+license: BSD-3-Clause
+install: |
+    gmakew clean
+    gmakew install INSTALLPREFIX="$PACKAGE_INSTALL_DIR"

@@ -1,0 +1,19 @@
+summary: Full-featured C++ implementation of I2P client
+web-url: https://i2pd.website/
+src-url: https://github.com/PurpleI2P/i2pd/archive/refs/tags/2.55.0.tar.gz
+src-sha: f5792a1c0499143c716663e90bfb105aaa7ec47d1c4550b5f90ebfc25da00c6c
+license: BSD-3-Clause
+dep-pkg: boost libminiupnpc libopenssl
+
+dopatch: gsed -i 's|-lcrypto -lssl|-lssl -lcrypto|' Makefile.linux
+
+prepare: export CXXFLAGS="$CXXFLAGS $CPPFLAGS"
+
+install: |
+    gmakew clean
+    gmakew install \
+        DEBUG=no \
+        HOMEBREW=0 \
+        USE_UPNP=yes \
+        PREFIX=$PACKAGE_INSTALL_DIR \
+        SSLROOT=$libopenssl_INSTALL_DIR
