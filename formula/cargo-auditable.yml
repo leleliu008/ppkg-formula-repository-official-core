@@ -1,0 +1,6 @@
+summary: Make production Rust binaries auditable
+src-url: https://github.com/rust-secure-code/cargo-auditable/archive/refs/tags/v0.6.6.tar.gz
+src-sha: adecc1ccf8e86f4e3734767ee6a1c90e04c6639a4f73a59ac2db68a07220c807
+license: Apache-2.0 MIT
+bscript: cargo-auditable
+bsystem: cargo
