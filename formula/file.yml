@@ -20,9 +20,4 @@ install: configure --enable-zlib --disable-bzlib --disable-xzlib --enable-static
 
 doextra: rm -rf include/ lib/ share/man/man3/
 
-caveats: |
-    The following environment variables should be set if you move/copy this software to other location
-
-    FILE_INSTALLED_DIR=/somewhere
-
-    export MAGIC="$FILE_INSTALLED_DIR/share/misc/magic.mgc"
+bindenv: MAGIC=%s/share/misc/magic.mgc

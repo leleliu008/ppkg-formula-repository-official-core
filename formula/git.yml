@@ -1,8 +1,8 @@
 summary: Distributed revision control system
 web-url: https://git-scm.com/
 git-url: https://github.com/git/git
-src-url: https://www.kernel.org/pub/software/scm/git/git-2.46.0.tar.xz
-src-sha: 7f123462a28b7ca3ebe2607485f7168554c2b10dfc155c7ec46300666ac27f95
+src-url: https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.xz
+src-sha: 1c5d545f5dc1eb51e95d2c50d98fdf88b1a36ba1fa30e9ae5d5385c6024f82ad
 license: GPL-2.0-only
 dep-pkg: libpcre2 libexpat libcurl libintl libz
 dep-upp: gettext-tools
@@ -50,3 +50,8 @@ install: |
         --with-openssl="$libopenssl_INSTALL_DIR" \
         --with-libpcre2="$libpcre2_INSTALL_DIR" \
         --without-tcltk
+
+bindenv: |
+    GIT_EXEC_PATH=%s/libexec/git-core
+    GIT_TEMPLATE_DIR=%s/share/git-core/templates
+    GIT_CONFIG_NOSYSTEM=1
