@@ -1,0 +1,10 @@
+summary: A simple terminal UI for both docker and docker-compose
+src-url: https://github.com/jesseduffield/lazydocker/archive/refs/tags/v0.24.1.tar.gz
+src-sha: f54197d333a28e658d2eb4d9b22461ae73721ec9e4106ba23ed177fc530c21f4
+license: MIT
+install: |
+    gow \
+        -mod=vendor \
+        -X main.version=$PACKAGE_VERSION \
+        -X main.date=$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
+        -X main.buildSource=ppkg
