@@ -5,6 +5,8 @@ src-sha: 29248aac2a7ce10c3bd5ee5602742ec33b2532310ff9cf73b79f3c133e5a5f68
 license: GPL-2.0-or-later
 dep-pkg: libarchive libtalloc sys-queue.h
 
+dopatch: gsed -i '/string\.h/a \#include<libgen.h>' src/cli/cli.c
+
 install: |
     gmakew -C src clean
     gmakew -C src build.h proot V=1 CC=$CC LD=$CC STRIP=$STRIP OBJCOPY=$OBJCOPY OBJDUMP=$OBJDUMP HAS_SWIG= HAS_PYTHON_CONFIG= PYTHON=true GIT=true
