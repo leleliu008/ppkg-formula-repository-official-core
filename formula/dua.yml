@@ -1,5 +1,10 @@
 summary: View disk space usage and delete unwanted data, fast
-src-url: https://github.com/Byron/dua-cli/archive/refs/tags/v2.17.8.tar.gz
-src-sha: fc4df99b4445ade9c44eb71c0a5f3f329066af867fcb509abf78dea4c49df8e2
+src-url: https://github.com/Byron/dua-cli/archive/refs/tags/v2.30.0.tar.gz
+src-sha: 8c5b0b30d9f2a5d7fef5621d8dd38690a4394d428206bb0473c2b48234d43331
 license: MIT
 bsystem: cargo
+
+prepare: |
+    if [ "$TARGET_PLATFORM_SPEC" = linux-musl-armv7l ] ; then
+        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lgcc_s"
+    fi
