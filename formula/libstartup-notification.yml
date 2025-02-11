@@ -1,0 +1,10 @@
+summary: Reference implementation of startup notification protocol
+web-url: https://www.freedesktop.org/wiki/Software/startup-notification/
+src-url: https://www.freedesktop.org/software/startup-notification/releases/startup-notification-0.12.tar.gz
+src-sha: 3c391f7e930c583095045cd2d10eb73a64f085c7fde9d260f2652c7cb3cfbe4a
+license: LGPL-2.0-or-later
+dep-pkg: xorg-libx11 xorg-libxcb-util
+bsystem: configure
+
+dotweak: |
+    printf 'Requires: x11-xcb xcb-util' >> lib/pkgconfig/libstartup-notification-1.0.pc

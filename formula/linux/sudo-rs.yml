@@ -4,3 +4,7 @@ src-sha: 2371c91644185c2bcf1f02408c2cc7a79b1dd1ba740088a9a16f0f947b649cdc
 license: MIT
 dep-pkg: libpam
 bsystem: cargo
+
+# sudo-rs: sudo must be owned by uid 0 and have the setuid bit set
+#run $sudo chown root:root bin/sudo
+#run $sudo chmod u+s       bin/sudo

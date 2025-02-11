@@ -1,0 +1,8 @@
+summary: Convenience functions for the X Render extension
+git-url: https://gitlab.freedesktop.org/xorg/lib/libxcb-render-util
+web-url: https://xcb.freedesktop.org
+src-url: https://xcb.freedesktop.org/dist/xcb-util-renderutil-0.3.10.tar.gz
+src-sha: e04143c48e1644c5e074243fa293d88f99005b3c50d1d54358954404e635128a
+license: X11 HPND-sell-variant
+dep-pkg: xorg-libxcb
+bsystem: configure

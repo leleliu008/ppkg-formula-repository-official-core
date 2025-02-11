@@ -1,0 +1,10 @@
+summary: A tiling window manager for X11
+web-url: https://i3wm.org/
+src-url: https://github.com/i3/i3/archive/refs/tags/4.24.tar.gz
+src-sha: 8a09f02c2583020899ee95dfd41d12300a0c1c0239b0d752b676437cbf916cc8
+dep-pkg: xorg-libxcb-wm xorg-libxcb-xrm xorg-libxcb-cursor xorg-libxcb-keysyms libstartup-notification libxkbcommon libpango libyajl libev
+dep-upp: gm4 flex bison perl
+bsystem: meson
+
+dopatch: |
+    gsed -i "s|cc.find_library('ev'|cc.find_library('ev', static : true, dirs : ['$libev_LIBRARY_DIR']|" meson.build

@@ -1,0 +1,8 @@
+summary: Standard X constants and conversion to/from keycodes
+git-url: https://gitlab.freedesktop.org/xorg/lib/libxcb-keysyms
+web-url: https://xcb.freedesktop.org
+src-url: https://xcb.freedesktop.org/dist/xcb-util-keysyms-0.4.1.tar.gz
+src-sha: 1fa21c0cea3060caee7612b6577c1730da470b88cbdf846fa4e3e0ff78948e54
+license: X11
+dep-pkg: xorg-libxcb
+bsystem: configure
