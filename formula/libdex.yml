@@ -1,0 +1,7 @@
+summary: Future-based programming for GLib-based applications
+git-url: https://gitlab.gnome.org/GNOME/libdex
+src-url: https://gitlab.gnome.org/GNOME/libdex/-/archive/0.9.0/libdex-0.9.0.tar.gz
+src-sha: c4da72a9215dc30e51c7ca17be169233e26ed56298645c28445d0da71e69aec2
+license: LGPL-2.1-or-later
+dep-pkg: vala glib-gir
+install: mesonw -Dtests=false -Dexamples=false -Dsysprof=false
