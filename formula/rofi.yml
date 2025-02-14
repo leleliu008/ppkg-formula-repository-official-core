@@ -1,0 +1,7 @@
+summary: A window switcher, application launcher and dmenu replacement
+src-url: https://github.com/davatorium/rofi/releases/download/1.7.8/rofi-1.7.8.tar.xz
+src-sha: 2ad90a8c492e0b64202088e788795bf0b31ecfaa59fe7441ad263298d150655e
+license: MIT
+dep-pkg: xorg-libxcb-wm xorg-libxcb-xrm xorg-libxcb-cursor xorg-libxcb-keysyms libstartup-notification libxkbcommon libpango libgdk-pixbuf
+dep-upp: gm4 flex bison
+bsystem: meson

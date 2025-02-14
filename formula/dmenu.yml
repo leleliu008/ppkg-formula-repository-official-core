@@ -1,0 +1,17 @@
+summary: Dynamic menu for X11
+git-url: https://git.suckless.org/dmenu/
+web-url: https://tools.suckless.org/dmenu/
+src-url: https://dl.suckless.org/tools/dmenu-5.3.tar.gz
+src-sha: 1a8f53e6fd2d749839ec870c5e27b3e14da5c3eeacbfcb945d159e1d5433795f
+license: MIT
+dep-pkg: libfontconfig xorg-libxft xorg-libxinerama
+dep-lib: fontconfig xft xinerama
+
+dopatch: |
+    gsed -i 's|CPPFLAGS =|CPPFLAGS +=|' config.mk
+    gsed -i 's|CFLAGS   =|CFLAGS   +=|' config.mk
+    gsed -i 's|LDFLAGS  =|LDFLAGS  +=|' config.mk
+
+install: |
+    gmakew clean
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" X11INC="$xorg_libx11_INCLUDE_DIR" X11LIB="$xorg_libx11_LIBRARY_DIR"  FREETYPEINC="$libfreetype_INCLUDE_DIR/freetype2" CC="$CC" LIBS=
