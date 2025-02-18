@@ -1,0 +1,46 @@
+summary: UNIX manpage compiler toolset
+web-url: https://mandoc.bsd.lv/
+src-url: https://mandoc.bsd.lv/snapshots/mandoc-1.14.6.tar.gz
+src-sha: 8bf0d570f01e70a6e124884088870cbed7537f36328d512909eb10cd53179d9c
+license: ISC
+dep-pkg: libz
+bsystem: configure
+binbstd: 1
+
+prepare: |
+    mv cgi.h.example cgi.h
+
+    cat > configure.local <<EOF
+    CC="$CC"
+    AR="$AR"
+    CFLAGS="$CFLAGS $CPPFLAGS"
+    LDFLAGS="$LDFLAGS"
+
+    PREFIX=$PACKAGE_INSTALL_DIR
+    INCLUDEDIR=$PACKAGE_INSTALL_DIR/include
+    LIBDIR=$PACKAGE_INSTALL_DIR/lib
+    MANDIR=$PACKAGE_INSTALL_DIR/share/man
+    WWWPREFIX=$PACKAGE_INSTALL_DIR/var/www
+    EXAMPLEDIR=$PACKAGE_INSTALL_DIR/share/examples
+
+    BINM_MAN=bsdman
+    BINM_APROPOS=bsdapropos
+    BINM_WHATIS=bsdwhatis
+    BINM_MAKEWHATIS=bsdmakewhatis
+    BINM_SOELIM=bsdsoelim
+
+    MANM_MAN=man
+    MANM_MDOC=mdoc
+    MANM_ROFF=mandoc_roff
+    MANM_EQN=eqn
+    MANM_TBL=tbl
+
+    MANPATH_DEFAULT=$PACKAGE_INSTALL_DIR/share/man
+
+    HAVE_MANPATH=0
+    STATIC=
+
+    BUILD_CGI=1
+    EOF
+
+dotweak: chmod +w bin/* sbin/*

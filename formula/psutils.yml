@@ -1,7 +1,7 @@
-summary: A collection utilities for manipulating PostScript documents
+summary: A collection utilities for manipulating PDF and PostScript documents
 git-url: https://github.com/rrthomas/psutils
-src-url: https://files.pythonhosted.org/packages/92/07/ebcf289c31f4da85ea94e103f0a58393c54133c64fcbef754c17b6405723/pspdfutils-3.3.2.tar.gz
-src-sha: a20a2a1359811bd0ad72e15349351a26774ddf8e355c2cde4250a70cf77fdf0c
+src-url: https://files.pythonhosted.org/packages/6f/c9/ed4c246612b0e42afe8fad52a2dddde28f1389997c043e8cf8d414d5a0ee/psutils-3.3.9.tar.gz
+src-sha: 12bfde60145846e6aaae9eead8c5f0c4a959528cd171727b6ff7044da5d7e57c
 license: GPL-3.0-or-later
 dep-pkg: libpaper
 dep-pym: build

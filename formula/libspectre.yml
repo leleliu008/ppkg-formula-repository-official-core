@@ -4,6 +4,6 @@ git-url: https://gitlab.freedesktop.org/libspectre/libspectre
 src-url: https://libspectre.freedesktop.org/releases/libspectre-0.2.12.tar.gz
 src-sha: 55a7517cd3572bd2565df0cf450944a04d5273b279ebb369a895391957f0f960
 license: GPL-2.0-or-later
-dep-pkg: ghostscript
+dep-pkg: ghostscript-dev
 bsystem: configure
 binbstd: 1
