@@ -13,6 +13,10 @@ dopatch: |
 
     sed -i 's|-g -o|$(LDFLAGS) -o|' base/unix-dll.mak
 
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        gsed -i 's|DO_NOT_USE_SPRINTF|sprintf|' base/stdio_.h
+    fi
+
 prepare: |
     if isCrossBuild ; then
         export CCAUX="$CC_FOR_BUILD"
