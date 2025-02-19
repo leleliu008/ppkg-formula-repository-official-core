@@ -1,9 +1,10 @@
+pkgtype: exe+lib
 summary: Tools and libraries to manipulate images in many formats
 git-url: https://github.com/ImageMagick/ImageMagick
 web-url: https://imagemagick.org/
-src-url: https://imagemagick.org/archive/releases/ImageMagick-7.1.1-29.tar.xz
-src-sha: f140465fbeb0b4724cba4394bc6f6fb32715731c1c62572d586f4f1c8b9b0685
-version: 7.1.1.29
+src-url: https://imagemagick.org/archive/releases/ImageMagick-7.1.1-43.tar.xz
+src-sha: fa79401342b409b9b7f7d3146bd6595787373811e72be1669c39b58d1489da4f
+version: 7.1.1.43
 license: ImageMagick
 dep-pkg: ghostscript-dev libheif liblqr libtool
 
@@ -23,3 +24,9 @@ install: |
         --without-wmf \
         --without-fftw \
         --disable-opencl
+
+# https://imagemagick.org/script/resources.php#environment
+bindenv: |
+    MAGICK_HOME=%s
+    MAGICK_CODER_MODULE_PATH=%s/lib/ImageMagick-7.1.1/modules-Q16HDRI/coders
+    MAGICK_CONFIGURE_PATH=%s/etc/ImageMagick-7
