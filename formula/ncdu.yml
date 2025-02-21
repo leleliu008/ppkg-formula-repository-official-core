@@ -6,7 +6,29 @@ license: MIT
 dep-pkg: libncurses libzstd
 dep-upp: zig@0.13
 binbstd: 1
+
+dopatch: |
+    run ln -s ../lib/libncursesw.a libncursesw.a
+    run ln -s ../lib/libzstd.a     libzstd.a
+
+    gsed -i "s|linkSystemLibrary(\"ncursesw\", \.{})|addObjectFile(b.path(\"libncursesw.a\"))|" build.zig
+    gsed -i "s|linkSystemLibrary(\"libzstd\", \.{})|addObjectFile(b.path(\"libzstd.a\"))|" build.zig
+
+    if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] && [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        gsed -i '/addExecutable/a .linkage = .static,'  build.zig
+    else
+        gsed -i '/addExecutable/a .linkage = .dynamic,' build.zig
+    fi
+
+    case $PROFILE in
+        debug)   ZIG_BUILD_EXTRA_ARGS='-Doptimize=Debug       -Dstrip=false' ;;
+        release) ZIG_BUILD_EXTRA_ARGS='-Doptimize=ReleaseSafe -Dstrip=true'  ;;
+    esac
+
+    if [ "$LOG_LEVEL" -ge 2 ] ; then
+        ZIG_BUILD_EXTRA_ARGS="$ZIG_BUILD_EXTRA_ARGS --verbose"
+    fi
+
 install: |
-    gsed -i "s|linkSystemLibrary(\"ncursesw\")|addObjectFile(\"$libncurses_LIBRARY_DIR/libncursesw.a\")|" build.zig
-    run zig build --prefix "$PACKAGE_INSTALL_DIR" --search-prefix "$libncurses_INSTALL_DIR"
+    run zig build $ZIG_BUILD_EXTRA_ARGS --verbose --prefix "$PACKAGE_INSTALL_DIR" --search-prefix "$libncurses_INSTALL_DIR" --search-prefix "$libzstd_INSTALL_DIR"
     install_mans ncdu.1

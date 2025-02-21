@@ -10,5 +10,6 @@ dopatch: gsed -i 's|src tools|src|' Makefile.in
 install: configure --enable-libgdbm-compat --without-readline
 
 dotweak: |
+    ln -s ndbm.h include/gdbm-ndbm.h
     rm -rf share/info
     rm -rf share/man/man1

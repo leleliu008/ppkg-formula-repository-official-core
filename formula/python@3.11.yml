@@ -5,7 +5,7 @@ web-url: https://www.python.org/
 src-url: https://www.python.org/ftp/python/3.11.11/Python-3.11.11.tgz
 src-sha: 883bddee3c92fcb91cf9c09c5343196953cbb9ced826213545849693970868ed
 license: Python-2.0
-dep-pkg: libncurses libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
+dep-pkg: libreadline libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
 
 onready: ENABLE_LTO=0
 
@@ -13,35 +13,70 @@ onready: ENABLE_LTO=0
 # configure: error: cross build not supported for x86_64-apple-darwin
 # https://bugs.python.org/issue46749
 
-install: |
+dopatch: gsed -i 's|"" tinfo ncursesw ncurses curses termcap|ncurses|' configure
+
+prepare: |
     unset PYTHONHOME
     unset PYTHONPATH
 
+    export MODULE_BUILDTYPE=static
+
     export ZLIB_CFLAGS="-I$libz_INCLUDE_DIR"
-    export ZLIB_LIBS="-L$libz_LIBRARY_DIR -lz"
+    export ZLIB_LIBS="-L$PACKAGE_WORKING_DIR/lib -lz"
 
     export BZIP2_CFLAGS="-I$libbz2_INCLUDE_DIR"
-    export BZIP2_LIBS="-L$libbz2_LIBRARY_DIR -lbz2"
+    export BZIP2_LIBS="-L$PACKAGE_WORKING_DIR/lib -lbz2"
 
     export LIBLZMA_CFLAGS="-I$liblzma_INCLUDE_DIR"
-    export LIBLZMA_LIBS="-L$liblzma_LIBRARY_DIR -llzma"
+    export LIBLZMA_LIBS="-L$PACKAGE_WORKING_DIR/lib -llzma"
 
     export LIBSQLITE3_CFLAGS="-I$libsqlite3_INCLUDE_DIR"
-    export LIBSQLITE3_LIBS="-L$libsqlite3_LIBRARY_DIR -lsqlite3"
+    export LIBSQLITE3_LIBS="-L$PACKAGE_WORKING_DIR/lib -lsqlite3"
 
     export GDBM_CFLAGS="-I$libgdbm_INCLUDE_DIR"
-    export GDBM_LIBS="-L$libgdbm_LIBRARY_DIR -lgdbm -lgdbm_compat"
+    export GDBM_LIBS="-L$PACKAGE_WORKING_DIR/lib -lgdbm_compat -lgdbm"
+
+    unset LIBUUID_CFLAGS
+    unset LIBUUID_LIBS
+
+    unset LIBEDIT_CFLAGS
+    unset LIBEDIT_LIBS
+
+    unset LIBNSL_CFLAGS
+    unset LIBNSL_LIBS
+
+    unset LIBMPDEC_CFLAGS
+    unset LIBMPDEC_LIBS
+
+    unset TCLTK_CFLAGS
+    unset TCLTK_LIBS
+
+    unset X11_CFLAGS
+    unset X11_LIBS
 
     export LIBS='-lm'
 
-    configure \
+install: |
+    configure only \
         --build=$($PACKAGE_BSCRIPT_DIR/config.guess) \
         --with-system-expat \
         --with-system-ffi \
+        --with-readline \
         --with-openssl="$libopenssl_INSTALL_DIR" \
         --with-ensurepip=yes \
         --with-lto \
         --enable-ipv6 \
-        --enable-shared \
+        --disable-shared \
         --enable-loadable-sqlite-extensions \
         --disable-profiling
+
+    run cp Modules/Setup.stdlib Modules/Setup.local
+
+    gsed -i 's|#@MODULE_.*_TRUE@||'  Modules/Setup.local
+    gsed -i '/^_testinternalcapi/d'  Modules/Setup.local
+    gsed -i '/^_dbm/s|$| -DUSE_GDBM_COMPAT -lgdbm_compat -lgdbm|' Modules/Setup.local
+    gsed -i '/^_ctypes/s|$| -lffi|'                         Modules/Setup.local
+    gsed -i '/^readline/s|$| -lreadline -lpanel -lncurses|' Modules/Setup.local
+
+    gmakew
+    gmakew install
