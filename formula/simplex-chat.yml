@@ -3,6 +3,7 @@ src-url: https://github.com/simplex-chat/simplex-chat/archive/refs/tags/v6.2.5.t
 src-sha: c55c0f7104aa8bdc2353594e1b0d9abc0d3a885075f3af85e3714c19b68851e1
 license: GPL-3.0-or-later
 dep-pkg: libopenssl libffi libgmp libz
+dep-upp: gmake
 
 dopatch: |
     cat > cabal.project.local <<EOF
