@@ -18,4 +18,14 @@ install: |
             ZIG_BUILD_TARGET=$TARGET_PLATFORM_ARCH-$TARGET_PLATFORM_NAME
     fi
 
-    run zig build --prefix $PACKAGE_INSTALL_DIR -Dtarget=$ZIG_BUILD_TARGET -Dtag=$PACKAGE_VERSION -Dmode=ReleaseSafe -Dstrip=true
+    case $PROFILE in
+        debug)   ZIG_BUILD_EXTRA_ARGS='-Dmode=Debug       -Dstrip=false' ;;
+        release) ZIG_BUILD_EXTRA_ARGS='-Dmode=ReleaseSafe -Dstrip=true'  ;;
+    esac
+
+    if [ "$LOG_LEVEL" -ge 1 ] ; then
+        ZIG_BUILD_EXTRA_ARGS="$ZIG_BUILD_EXTRA_ARGS --verbose"
+    fi
+
+
+    run zig build $ZIG_BUILD_EXTRA_ARGS "-Dtarget=$ZIG_BUILD_TARGET" "-Dtag=$PACKAGE_VERSION" --prefix "$PACKAGE_INSTALL_DIR"

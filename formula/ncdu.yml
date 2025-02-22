@@ -25,7 +25,7 @@ dopatch: |
         release) ZIG_BUILD_EXTRA_ARGS='-Doptimize=ReleaseSafe -Dstrip=true'  ;;
     esac
 
-    if [ "$LOG_LEVEL" -ge 2 ] ; then
+    if [ "$LOG_LEVEL" -ge 1 ] ; then
         ZIG_BUILD_EXTRA_ARGS="$ZIG_BUILD_EXTRA_ARGS --verbose"
     fi
 
