@@ -2,7 +2,7 @@ summary: the first messaging network operating without user identifiers of any k
 src-url: https://github.com/simplex-chat/simplex-chat/archive/refs/tags/v6.2.5.tar.gz
 src-sha: c55c0f7104aa8bdc2353594e1b0d9abc0d3a885075f3af85e3714c19b68851e1
 license: GPL-3.0-or-later
-dep-pkg: libopenssl libffi libgmp libz
+dep-pkg: libopenssl libncurses libffi libgmp libz
 dep-upp: gmake
 
 dopatch: |
@@ -26,7 +26,15 @@ prepare: |
     export BOOTSTRAP_HASKELL_NONINTERACTIVE=1
     export BOOTSTRAP_HASKELL_VERBOSE=1
     export BOOTSTRAP_HASKELL_INSTALL_NO_STACK=1
+
     unset  BOOTSTRAP_HASKELL_INSTALL_HLS
+    unset  BOOTSTRAP_HASKELL_CABAL_XDG
+    unset  BOOTSTRAP_HASKELL_DOWNLOADER
+    unset  BOOTSTRAP_HASKELL_ADJUST_BASHRC
+    unset  BOOTSTRAP_HASKELL_MINIMAL
+
+    unset  GHCUP_USE_XDG_DIRS
+    unset  GHCUP_BASE_URL
 
     export GHCUP_INSTALL_BASE_PREFIX="$PACKAGE_WORKING_DIR"
 
