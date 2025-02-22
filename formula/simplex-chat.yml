@@ -38,6 +38,10 @@ prepare: |
     gsed -i '/GHCUP_INSTALL_BASE_PREFIX:=/d'  ghcup-installer.sh
     run sh ghcup-installer.sh
 
+    X="$GHCUP_INSTALL_BASE_PREFIX/.ghcup/ghc/$BOOTSTRAP_HASKELL_GHC_VERSION/lib/ghc-$BOOTSTRAP_HASKELL_GHC_VERSION/lib/$NATIVE_PLATFORM_ARCH-$NATIVE_PLATFORM_KIND-ghc-$BOOTSTRAP_HASKELL_GHC_VERSION"
+
+    run ln -s "$libgmp_LIBRARY_DIR/libgmp.so" "$X/libgmp.so"
+
     export PATH="$GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin:$PATH"
 
 install: cabal_v2_install exe:simplex-chat
