@@ -2,7 +2,7 @@ summary: the first messaging network operating without user identifiers of any k
 src-url: https://github.com/simplex-chat/simplex-chat/archive/refs/tags/v6.2.5.tar.gz
 src-sha: c55c0f7104aa8bdc2353594e1b0d9abc0d3a885075f3af85e3714c19b68851e1
 license: GPL-3.0-or-later
-dep-pkg: libopenssl libncurses libffi libgmp libz
+dep-pkg: libopenssl libncurses libgmp libz
 dep-upp: gmake
 
 dopatch: |
@@ -46,9 +46,11 @@ prepare: |
     gsed -i '/GHCUP_INSTALL_BASE_PREFIX:=/d'  ghcup-installer.sh
     run sh ghcup-installer.sh
 
-    X="$GHCUP_INSTALL_BASE_PREFIX/.ghcup/ghc/$BOOTSTRAP_HASKELL_GHC_VERSION/lib/ghc-$BOOTSTRAP_HASKELL_GHC_VERSION/lib/$NATIVE_PLATFORM_ARCH-$NATIVE_PLATFORM_KIND-ghc-$BOOTSTRAP_HASKELL_GHC_VERSION"
+    export LD_LIBRARY_PATH="$libncurses_LIBRARY_DIR:$libgmp_LIBRARY_DIR"
 
-    run ln -s "$libgmp_LIBRARY_DIR/libgmp.so" "$X/libgmp.so"
+    #X="$GHCUP_INSTALL_BASE_PREFIX/.ghcup/ghc/$BOOTSTRAP_HASKELL_GHC_VERSION/lib/ghc-$BOOTSTRAP_HASKELL_GHC_VERSION/lib/$NATIVE_PLATFORM_ARCH-$NATIVE_PLATFORM_KIND-ghc-$BOOTSTRAP_HASKELL_GHC_VERSION"
+
+    #run ln -s "$libgmp_LIBRARY_DIR/libgmp.so" "$X/libgmp.so"
 
     export PATH="$GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin:$PATH"
 
