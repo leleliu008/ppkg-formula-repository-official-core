@@ -1,6 +1,6 @@
 summary: A modern format for Haskell packages
-src-url: https://github.com/sol/hpack/archive/refs/tags/0.37.0.tar.gz
-src-sha: 5d292d70744435d67586f9a8a759debbf160cb70a069a8d65403f123fac84091
+src-url: https://github.com/sol/hpack/archive/refs/tags/0.38.0.tar.gz
+src-sha: 2bd41314b87e4cff9bfec7ac327f8f0bf8b2b6461c209a3241629aeeb05111a3
 license: MIT
 dep-pkg: ghc
 bsystem: cabal

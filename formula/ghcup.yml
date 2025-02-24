@@ -1,7 +1,18 @@
 summary: Installer for the general purpose language Haskell
 web-url: https://www.haskell.org/ghcup/
-src-url: https://github.com/haskell/ghcup-hs/archive/refs/tags/v0.1.30.0.tar.gz
-src-sha: 89d158023f634f079ac6a306bb87d208445384a725d47b432f6858c8876cbef6
+src-url: https://github.com/haskell/ghcup-hs/archive/refs/tags/v0.1.40.0.tar.gz
+src-sha: 80c4c1152ebc35372b987ffa5b46fedc4e940eaf581e6ab11d93d0892bd16fe4
 license: LGPL-3.0-only
-dep-pkg: ghc
+dep-pkg: ghc libbz2
 bsystem: cabal
+
+prepare: |
+    if [ "$TARGET_PLATFORM_VERS" = glibc ] ; then
+        X="$("$CC_FOR_BUILD" -print-file-name=libtinfo.so.6)"
+
+        if [ -n "$X" ] ; then
+            run ln -s "$X" ../lib/libtinfo.so
+        fi
+    fi
+
+    export LD_LIBRARY_PATH="$PACKAGE_WORKING_DIR/lib:$libgmp_LIBRARY_DIR"
