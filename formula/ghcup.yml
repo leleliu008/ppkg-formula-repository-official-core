@@ -6,7 +6,7 @@ license: LGPL-3.0-only
 dep-pkg: ghc libbz2
 bsystem: cabal
 
-prepare: |
+dosetup: |
     if [ "$TARGET_PLATFORM_VERS" = glibc ] ; then
         X="$("$CC_FOR_BUILD" -print-file-name=libtinfo.so.6)"
 

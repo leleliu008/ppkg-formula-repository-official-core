@@ -11,7 +11,7 @@ dopatch: |
     gsed -i 's|CURL_LIBRARY|CURL_LIBRARIES|' lib/CMakeLists.txt
     gsed -i 's|SHARED|STATIC|' lib/CMakeLists.txt
 
-prepare: |
+dosetup: |
     # https://www.gnu.org/software/gnulib/manual/html_node/execinfo_002eh.html
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -L$libexecinfo_LIBRARY_DIR -lexecinfo"

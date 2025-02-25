@@ -20,7 +20,7 @@ dopatch: |
         patch -p0 < patch-source_fitz_crypt-sha2.c
     fi
 
-prepare: |
+dosetup: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lstdc++"
     fi

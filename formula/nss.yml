@@ -7,7 +7,7 @@ license: MPL-2.0
 dep-pkg: nspr libsqlite3 libz
 bscript: nss
 
-prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS $CPPFLAGS $CFLAGS $LDFLAGS"
+dosetup: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS $CPPFLAGS $CFLAGS $LDFLAGS"
 
 install: |
     gmakew clean USE_64=1

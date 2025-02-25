@@ -7,7 +7,7 @@ license: GPL-2.0-or-later LGPL-2.1-or-later
 dep-upp: gm4 bison python3
 install: configure --without-selinux
 
-prepare: |
+dosetup:: |
     # https://sourceware.org/pipermail/libc-alpha/2024-September/159664.html
     export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -U_FORTIFY_SOURCE"
 

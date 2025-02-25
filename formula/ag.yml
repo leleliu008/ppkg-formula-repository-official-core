@@ -5,7 +5,7 @@ license: Apache-2.0
 dep-pkg: libpcre liblzma libz
 bsystem: autogen
 install: configure
-prepare: |
+dosetup: |
     case $TARGET_PLATFORM_NAME in
         macos) export CFLAGS="$CFLAGS -fcommon" ;;
         linux) export CPPFLAGS="$CPPFLAGS -Doff64_t=off_t"

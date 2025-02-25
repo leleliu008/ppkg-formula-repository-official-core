@@ -5,7 +5,7 @@ license: GPL-2.0-or-later
 dep-pkg: libxapian libzstd liblzma libicu
 bsystem: meson
 
-prepare: |
+dosetup: |
     case $TARGET_PLATFORM_NAME in
         netbsd)
             export CPPFLAGS="$CPPFLAGS -DMAP_POPULATE=0"

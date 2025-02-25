@@ -15,7 +15,7 @@ dep-pkg: libz libopenssl
 
 parallel: 0
 
-prepare: |
+dosetup: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         SYS=darwin
     else

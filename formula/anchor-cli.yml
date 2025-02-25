@@ -4,4 +4,4 @@ src-sha: a6794066fe9120f8c80cb2f608ce8fb6ef54828b15420d36250448d95fa954ee
 license: Apache-2.0
 dep-pkg: libopenssl
 install: cargow build --locked && run install_bins target/$RUST_TARGET/release/anchor
-prepare: export RUSTUP_TOOLCHAIN=1.76
+dosetup: export RUSTUP_TOOLCHAIN=1.76

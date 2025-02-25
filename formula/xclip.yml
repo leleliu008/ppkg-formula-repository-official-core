@@ -15,6 +15,6 @@ dopatch: |
     printf 'INPUT(%s %s)\n' "$xorg_libx11_LIBRARY_DIR/libX11.a" "$(pkg-config --libs-only-l x11 | sed 's|-lX11||g')" > ../lib/libX11.a
     printf 'INPUT(%s %s)\n' "$xorg_libxt_LIBRARY_DIR/libXt.a"   "$(pkg-config --libs-only-l xt  | sed 's|-lXt||g')"  > ../lib/libXt.a
 
-prepare: |
+dosetup: |
     export CFLAGS="$CFLAGS $CPPFLAGS"
     export LIBS="$(pkg-config --libs xmu)"

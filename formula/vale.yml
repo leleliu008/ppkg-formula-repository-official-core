@@ -3,5 +3,5 @@ web-url: https://vale.sh/
 src-url: https://github.com/errata-ai/vale/archive/refs/tags/v3.9.4.tar.gz
 src-sha: 47b852a6cf88207af2899fd868004eab6b6bb8390d3bb56f452b92e1833dcc35
 license: MIT
-prepare: export CGO_ENABLED=1
+dosetup: export CGO_ENABLED=1
 install: gow -X main.version=$PACKAGE_VERSION ./cmd/vale

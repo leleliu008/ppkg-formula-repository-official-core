@@ -8,7 +8,7 @@ dep-upp: nasm
 
 dopatch: gsed -i '1c \#!/usr/bin/env bash' configure
 
-prepare: |
+dosetup: |
     case $TARGET_PLATFORM_ARCH in
         x86_64) CONFIGURE_EXTRA_ARGS='--enable-asm' ; export AS=nasm ;;
         *)      CONFIGURE_EXTRA_ARGS='--disable-asm' ;;

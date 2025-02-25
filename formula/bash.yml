@@ -6,7 +6,7 @@ src-sha: c8e31bdc59b69aaffc5b36509905ba3e5cbb12747091d27b4b977f078560d5b8
 license: GPL-3.0-or-later
 dep-pkg: libreadline
 
-prepare: |
+dosetup: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         export ac_cv_lib_dl_dlopen=no
     fi

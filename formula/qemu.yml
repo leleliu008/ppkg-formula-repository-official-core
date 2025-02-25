@@ -44,7 +44,7 @@ dopatch: |
     gsed -i "s|cc.find_library('fdt'|cc.find_library('fdt', static : true, dirs : ['$libfdt_LIBRARY_DIR']|" meson.build
     gsed -i "/iconv = /c iconv = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
 
-prepare: |
+dosetup: |
     unset CONFIGURE_EXTRA_ARGS
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then

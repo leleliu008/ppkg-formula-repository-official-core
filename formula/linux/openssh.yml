@@ -8,7 +8,7 @@ license: SSH-OpenSSH
 dep-pkg: libfido2 libldns libkrb5.a libpam
 dep-lib: -lresolv
 
-prepare: |
+dosetup:: |
     if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then
         CONFIGURE_EXTRA_ARGS='--without-pam'
     else

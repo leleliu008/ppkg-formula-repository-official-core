@@ -7,7 +7,7 @@ license: Apache-2.0
 dep-upp: perl
 bsystem: gmake
 
-prepare: |
+dosetup: |
     if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
         sed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
 

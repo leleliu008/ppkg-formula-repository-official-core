@@ -9,7 +9,7 @@ dopatch: |
     gsed -i 's|-lcrypto -lssl|-lssl -lcrypto|' Makefile.*
     gsed -i 's|ln -sf |ln -sfr |' Makefile.*
 
-prepare: export CXXFLAGS="$CXXFLAGS $CPPFLAGS"
+dosetup: export CXXFLAGS="$CXXFLAGS $CPPFLAGS"
 
 install: |
     gmakew clean

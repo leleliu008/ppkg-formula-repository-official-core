@@ -9,7 +9,7 @@ dopatch: |
     gsed -i 's|include(LwsCheckRequirements)|include(${LWS_CMAKE_DIR}/LwsCheckRequirements.cmake)|' cmake/libwebsockets-config.cmake.in
     gsed -i 's|websockets websockets_shared|websockets|' cmake/libwebsockets-config.cmake.in
 
-prepare: |
+dosetup: |
     # https://github.com/baresip/re/pull/1181
     case $TARGET_PLATFORM_NAME in
         openbsd|netbsd)

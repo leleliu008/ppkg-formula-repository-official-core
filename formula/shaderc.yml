@@ -4,7 +4,7 @@ src-sha: c761044e4e204be8e0b9a2d7494f08671ca35b92c4c791c7049594ca7514197f
 license: Apache-2.0
 dep-upp: python3
 
-prepare: |
+dosetup: |
     git_checkout https://github.com/KhronosGroup/SPIRV-Headers --ref-from=5e3ad389ee56fca27c9705d093ae5387ce404df4 -C third_party/spirv-headers
     git_checkout https://github.com/KhronosGroup/SPIRV-Tools   --ref-from=dd4b663e13c07fea4fbb3f70c1c91c86731099f7 -C third_party/spirv-tools
     git_checkout https://github.com/KhronosGroup/glslang       --ref-from=142052fa30f9eca191aa9dcf65359fcaed09eeec -C third_party/glslang

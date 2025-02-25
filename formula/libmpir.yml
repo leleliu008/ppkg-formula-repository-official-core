@@ -8,7 +8,7 @@ license: GPL-3.0-or-later
 dep-upp: yasm gm4 libtool texinfo
 bsystem: autotools
 
-prepare: |
+dosetup: |
     if [ "$TARGET_PLATFORM_ARCH" = 'x86' ] ; then
         cat > ../bin/m4 <<EOF
     #!/bin/sh

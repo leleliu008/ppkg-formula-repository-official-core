@@ -22,7 +22,7 @@ dopatch: |
         patch -p0 < patch-source_fitz_crypt-sha2.c
     fi
 
-prepare: |
+dosetup: |
     unset GMAKE_EXTRA_ARGS
 
     for KV in FREETYPE:freetype2 HARFBUZZ:harfbuzz OPENJPEG:libopenjp2 GUMBO:gumbo

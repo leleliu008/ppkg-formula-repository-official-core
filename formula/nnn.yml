@@ -4,7 +4,7 @@ src-sha: 9e25465a856d3ba626d6163046669c0d4010d520f2fb848b0d611e1ec6af1b22
 license: BSD-2-Clause
 dep-pkg: libreadline musl-fts
 
-prepare: |
+dosetup: |
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export LDLIBS=-lfts
     else

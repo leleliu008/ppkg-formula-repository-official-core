@@ -15,7 +15,7 @@ dopatch: |
     gsed -i '/libasm debuginfod/d' Makefile.in
     gsed -i '/^SUBDIRS =/c SUBDIRS = lib libelf' Makefile.in
 
-prepare: |
+dosetup: |
     # FNM_EXTMATCH is a GNU externsion, musl does not define it
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export CPPFLAGS="$CPPFLAGS -DFNM_EXTMATCH=0"

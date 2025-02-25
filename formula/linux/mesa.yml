@@ -13,7 +13,7 @@ dep-pkg: xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxsh
 dopatch: |
     gsed -i "/clangBasic/a cpp.find_library('clangAPINotes', dirs : llvm_libdir)," src/gallium/targets/opencl/meson.build
 
-prepare: |
+dosetup:: |
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export CPPFLAGS="$CPPFLAGS -Doff64_t=off_t"
     fi

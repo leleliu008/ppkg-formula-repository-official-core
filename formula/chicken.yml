@@ -7,7 +7,7 @@ license: BSD-3-Clause
 
 parallel: 0
 
-prepare: |
+dosetup: |
     case $TARGET_PLATFORM_NAME in
         linux) PLATFORM=linux ;;
         macos) PLATFORM=macosx;;

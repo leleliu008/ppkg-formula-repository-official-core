@@ -15,7 +15,7 @@ onready: ENABLE_LTO=0
 
 dopatch: gsed -i 's|"" tinfo ncursesw ncurses curses termcap|ncurses|' configure
 
-prepare: |
+dosetup: |
     unset PYTHONHOME
     unset PYTHONPATH
 
@@ -72,11 +72,7 @@ install: |
 
     run cp Modules/Setup.stdlib Modules/Setup.local
 
-    gsed -i 's|#@MODULE_.*_TRUE@||'  Modules/Setup.local
-    gsed -i '/^_testinternalcapi/d'  Modules/Setup.local
-    gsed -i '/^_dbm/s|$| -DUSE_GDBM_COMPAT -lgdbm_compat -lgdbm|' Modules/Setup.local
-    gsed -i '/^_ctypes/s|$| -lffi|'                         Modules/Setup.local
-    gsed -i '/^readline/s|$| -lreadline -lpanel -lncurses|' Modules/Setup.local
+    gsed -i -e 's|#@MODULE_.*_TRUE@||' -e '/^_testinternalcapi/d' -e '/^_dbm/s|$| -DUSE_GDBM_COMPAT -lgdbm_compat -lgdbm|' -e '/^_ctypes/s|$| -lffi|' -e '/^readline/s|$| -lreadline -lpanel -lncurses|' Modules/Setup.local
 
     gmakew
     gmakew install

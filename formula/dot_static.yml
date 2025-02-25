@@ -7,7 +7,7 @@ dep-pkg: libpango libgd
 dep-upp: libtool gm4 flex bison gawk git python3
 bsystem: autogen
 
-prepare: |
+dosetup: |
     if [ "$TARGET_PLATFORM_NAME" != macos ] ; then
         export LDFLAGS="$LDFLAGS --static -static"
     fi

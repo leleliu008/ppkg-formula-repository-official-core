@@ -5,7 +5,7 @@ license: GPL-3.0-or-later
 dep-pkg: libjpeg-turbo
 binbstd: 1
 
-prepare: |
+dosetup: |
     for h in "$libjpeg_turbo_INCLUDE_DIR"/*.h
     do
         ln -sv "$h" "$PACKAGE_WORKING_DIR/include/"

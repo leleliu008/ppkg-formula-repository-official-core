@@ -6,7 +6,7 @@ license: BSD-3-Clause
 dep-pkg: libcurl libxml2
 binbstd: 1
 
-prepare: |
+dosetup: |
     if printf 'int main() { return 0; }\n' | "$CC" -c -x c -Werror -Wimplicit-function-declaration -o /dev/null - ; then
         export CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
     fi

@@ -4,7 +4,7 @@ src-sha: 8f8b487e20e062c3abfbc86c4541faf767588d167b395ec94f2a7f996ef40efe
 license: Apache-2.0
 dep-upp: python3 git
 
-prepare: git_checkout https://github.com/KhronosGroup/SPIRV-Headers --ref-from=2acb319af38d43be3ea76bfabf3998e5281d8d12 -C external/spirv-headers
+dosetup: git_checkout https://github.com/KhronosGroup/SPIRV-Headers --ref-from=2acb319af38d43be3ea76bfabf3998e5281d8d12 -C external/spirv-headers
 
 install: |
     cmakew \

@@ -6,7 +6,7 @@ src-sha: 820440072f8f5b50188c1dae104f2ad25984de268785be40c41a099a510f0aec
 license: Zlib
 dep-pkg: libiconv
 
-prepare: |
+dosetup:: |
     case $TARGET_PLATFORM_ARCH in
         arm*)
             _3DNOW=OFF

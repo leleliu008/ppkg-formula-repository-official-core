@@ -8,7 +8,7 @@ dep-pkg: libcups libgdk-pixbuf libpango libepoxy libgraphene libxkbcommon xorg-l
 dep-upp: gettext-tools docbook-xsl xsltproc
 dep-pym: docutils
 ppflags: -DG_DISABLE_ASSERT -DG_DISABLE_CAST_CHECKS
-prepare: export DESTDIR=/
+dosetup: export DESTDIR=/
 install: |
     mesonw \
         -Dbuild-tests=false \

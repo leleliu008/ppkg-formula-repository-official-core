@@ -5,4 +5,4 @@ src-sha: 12e7f0f80c1e39deed5638c4662fc070855cee0250a7eb1d76cefbeef8c2f376
 license: MIT
 dep-pkg: libopenssl libz
 bsystem: cargo
-prepare: export RUSTUP_TOOLCHAIN=1.81
+dosetup: export RUSTUP_TOOLCHAIN=1.81

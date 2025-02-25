@@ -3,7 +3,7 @@ git-url: https://github.com/AppImage/appimagetool
 dep-pkg: glib libcurl libgpgme argp-standalone
 bsystem: cmake
 
-prepare: |
+dosetup: |
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -L$argp_standalone_LIBRARY_DIR -largp -lintl -liconv"
     fi

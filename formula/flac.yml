@@ -7,7 +7,7 @@ dep-pkg: libogg libintl
 
 dopatch: printf 'target_link_libraries(replaygain_analysis m)\n' >> src/share/replaygain_analysis/CMakeLists.txt
 
-prepare: |
+dosetup: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         export LDFLAGS="$LDFLAGS -framework CoreFoundation"
     fi

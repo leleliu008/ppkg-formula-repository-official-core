@@ -7,7 +7,7 @@ dep-pkg: libopenssl libz libintl libncurses bdw-gc
 
 install: configure -disable-image --with-ssl=$libopenssl_INSTALL_DIR
 
-prepare: |
+dosetup: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lpthread"
     fi

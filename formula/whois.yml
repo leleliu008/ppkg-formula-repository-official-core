@@ -5,7 +5,7 @@ license: GPL-2.0-or-later
 dep-pkg: libidn2
 dep-upp: perl
 
-prepare: |
+dosetup: |
     if printf 'int main() { return 0; }\n' | "$CC" -c -x c -Werror -Wimplicit-function-declaration -o /dev/null - ; then
         export CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
     fi

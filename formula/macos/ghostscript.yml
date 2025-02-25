@@ -8,7 +8,7 @@ dep-pkg: libidn libexpat liblcms2 libjbig2dec libfreetype libtesseract
 binbstd: 1
 xxflags: -std=c++11
 
-prepare: |
+dosetup:: |
     rm -rf tesseract
     rm -rf freetype
     rm -rf jbig2dec

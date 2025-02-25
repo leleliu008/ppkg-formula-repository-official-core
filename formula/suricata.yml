@@ -11,7 +11,7 @@ dopatch: |
     LIBPCAP_LIBS="$(pkg-config --libs-only-l libpcap)"
     gsed -i "s|-lpcap|$LIBPCAP_LIBS|" configure
 
-prepare: |
+dosetup: |
     export CARGO_BUILD_TARGET="$RUST_TARGET"
     export RUST_TARGET="--target $RUST_TARGET"
 

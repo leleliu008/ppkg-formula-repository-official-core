@@ -6,5 +6,5 @@ version: 1.30
 license: LGPL-2.1-or-later
 dep-upp: libtool
 bsystem: autotools
-prepare: ./bootstrap
+dosetup: ./bootstrap
 install: configure --disable-shared --enable-static
