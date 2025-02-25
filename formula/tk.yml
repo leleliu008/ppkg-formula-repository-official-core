@@ -13,12 +13,12 @@ prepare: |
     esac
 
 install: |
-    configure \
+    configure $CONFIGURE_EXTRA_ARGS \
+        --disable-shared \
         --enable-load \
         --enable-threads \
-        $CONFIGURE_EXTRA_ARGS \
         --enable-xft \
         --with-x \
         --with-tcl="$libtcl_LIBRARY_DIR"
 
-dotweak: chmod +w lib/libtk8.6.so
+        #dotweak: chmod +w lib/libtk8.6.so

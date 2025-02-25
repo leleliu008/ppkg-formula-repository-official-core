@@ -6,6 +6,7 @@ version: 8.6.16
 license: TCL
 dep-pkg: libopenssl libz
 bscript: unix
+
 install: |
     configure only \
         --disable-shared \
@@ -18,3 +19,6 @@ install: |
         --with-tzdata LIBS=-lm
     gmakew install-binaries
     gmakew install-headers
+    gmakew install-private-headers
+
+dotweak: gsed -i -e "/TCL_SRC_DIR=/c TCL_SRC_DIR='$PACKAGE_INSTALL_DIR'" -e 's|-ltcl8\.6|-ltcl8.6 -lz|g' lib/tclConfig.sh
