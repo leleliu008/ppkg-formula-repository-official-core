@@ -4,7 +4,7 @@ web-url: https://openimageio.readthedocs.io/en/stable/
 src-url: https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v2.5.15.0.tar.gz
 src-sha: 7779ef2c3d03c5ed95e13ff292de85c3f8cee301cd46baad0d2dc83c93bfe85c
 license: Apache-2.0
-dep-pkg: fmt boost ffmpeg-dev libheif libraw libopencolorio libpugixml pybind11 python3
+dep-pkg: boost ffmpeg-dev libfmt libheif libraw libopencolorio libpugixml pybind11 python3
 
 dopatch: gsed -i '/\<cstdio\>/a \#include <cstdarg>' src/include/OpenImageIO/strutil.h
 
@@ -13,6 +13,7 @@ install: |
         -DBUILD_MISSING_FMT=OFF \
         -DCCACHE_FOUND= \
         -DEMBEDPLUGINS=ON \
+        -DOIIO_BUILD_TOOLS=ON \
         -DOIIO_BUILD_TESTS=OFF \
         -DUSE_QT=OFF \
         -DUSE_PTEX=OFF \

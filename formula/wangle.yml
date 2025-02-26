@@ -1,7 +1,7 @@
 pkgtype: lib
 summary: Modular, composable client/server abstractions framework
-src-url: https://github.com/facebook/wangle/archive/refs/tags/v2024.03.18.00.tar.gz
-src-sha: 697fe55422662b31eca4bab5357674ed84f4442d678ac4ff66fb8b2d7b9963e8
+src-url: https://github.com/facebook/wangle/archive/refs/tags/v2025.02.17.00.tar.gz
+src-sha: 55204f982aa01cb239ac5766a9f106e2a16ac6518d9048de77a5e0d4694d8016
 license: Apache-2.0
 dep-pkg: fizz
 bscript: wangle

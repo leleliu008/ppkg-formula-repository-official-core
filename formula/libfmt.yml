@@ -5,7 +5,7 @@ src-sha: 1250e4cc58bf06ee631567523f48848dc4596133e163f02615c97f78bab6c811
 license: MIT
 
 install: |
-    cmakew \
+    cmakew 2 \
         -DFMT_FUZZ=OFF \
         -DFMT_TEST=OFF \
         -DFMT_INSTALL=ON \
