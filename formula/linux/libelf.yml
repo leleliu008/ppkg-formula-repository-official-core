@@ -4,7 +4,7 @@ web-url: https://sourceware.org/elfutils
 src-url: https://sourceware.org/elfutils/ftp/0.191/elfutils-0.191.tar.bz2
 src-sha: df76db71366d1d708365fc7a6c60ca48398f14367eb2b8954efc8897147ad871
 license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
-dep-pkg: libz argp-standalone musl-obstack musl-fts
+dep-pkg: libz libargp musl-obstack musl-fts
 dep-upp: gm4
 ccflags: -Wno-error
 

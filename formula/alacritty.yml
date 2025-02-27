@@ -4,7 +4,7 @@ src-url: https://github.com/alacritty/alacritty/archive/refs/tags/v0.15.1.tar.gz
 src-sha: b814e30c6271ae23158c66e0e2377c3600bb24041fa382a36e81be564eeb2e36
 license: Apache-2.0
 dep-pkg: libfontconfig libxkbcommon
-dep-upp: python3 tic
+dep-upp: python3 tic scdoc
 bsystem: cargo cmake
 install: |
     cargow install --path alacritty
@@ -16,11 +16,21 @@ install: |
 
     run install -d "$PACKAGE_INSTALL_DIR/share/applications/"
     run cp -L extra/linux/Alacritty.desktop "$PACKAGE_INSTALL_DIR/share/applications/org.alacritty.Alacritty.desktop"
+
     run install -d "$PACKAGE_INSTALL_DIR/share/metainfo/"
     run cp -L extra/linux/org.alacritty.Alacritty.appdata.xml "$PACKAGE_INSTALL_DIR/share/metainfo/"
+
     run install -d "$PACKAGE_INSTALL_DIR/share/icons/hicolor/scalable/apps/"
     run cp -L extra/logo/compat/alacritty-simple.svg "$PACKAGE_INSTALL_DIR/share/icons/hicolor/scalable/apps/Alacritty.svg"
+
     run install -d "$PACKAGE_INSTALL_DIR/share/terminfo/"
     run tic -x -e alacritty,alacritty-direct "-o$PACKAGE_INSTALL_DIR/share/terminfo/" extra/alacritty.info
+
+    for f in extra/man/*.scd
+    do
+        o="${f%.*}"
+        run "scdoc < $f > $o"
+        install_mans "$o"
+    done
 
 bindenv: TERMINFO=%s/share/terminfo

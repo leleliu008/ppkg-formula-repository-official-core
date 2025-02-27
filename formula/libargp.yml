@@ -7,3 +7,5 @@ bsystem: meson
 
 fix-url: https://git.alpinelinux.org/aports/plain/main/argp-standalone/gnu89-inline.patch
 fix-sha: 29be7cf514ecebe0c8879e9c510931d5ed03cb5f06ddd230f08b541b168fd5b6
+
+dopatch: gsed -i 's|static_library|library|' meson.build
