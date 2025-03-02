@@ -1,0 +1,17 @@
+pkgtype: lib
+summary: PAM module for two-factor authentication
+src-url: https://github.com/google/google-authenticator-libpam/archive/refs/tags/1.11.tar.gz
+src-sha: 3ee08a6dd46aace7dba1c88cf47e9cd267447ccd1cd8be1d5a05fd0e6816062d
+license: Apache-2.0
+dep-pkg: libpam
+dep-upp: libtool
+bsystem: autotools
+
+caveats: |
+    This module will look for libqrencode.so.[234], if found, a QRCode would be shown.
+
+    Add 2-factor authentication for ssh:
+        printf 'auth required %s/lib/security/pam_google_authenticator.so' "$INSTALL_DIR" | sudo tee -a /etc/pam.d/sshd
+
+    Add 2-factor authentication for ssh allowing users to log in without OTP:
+        printf 'auth required %s/lib/security/pam_google_authenticator.so nullok' "$INSTALL_DIR" | sudo tee -a /etc/pam.d/sshd

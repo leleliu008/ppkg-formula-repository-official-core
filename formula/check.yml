@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: C unit testing framework
 web-url: https://libcheck.github.io/check
 src-url: https://github.com/libcheck/check/releases/download/0.15.2/check-0.15.2.tar.gz

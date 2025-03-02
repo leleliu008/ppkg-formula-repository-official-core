@@ -2,10 +2,11 @@ pkgtype: pie
 summary: Highly capable, feature-rich programming language
 git-url: https://github.com/perl/perl5
 web-url: https://www.perl.org/
-src-url: https://www.cpan.org/src/5.0/perl-5.38.2.tar.xz
-src-uri: https://cpan.metacpan.org/authors/id/R/RJ/RJBS/perl-5.38.2.tar.xz
-src-sha: d91115e90b896520e83d4de6b52f8254ef2b70a8d545ffab33200ea9f1cf29e8
+src-url: https://www.cpan.org/src/5.0/perl-5.40.1.tar.xz
+src-uri: https://cpan.metacpan.org/authors/id/S/SH/SHAY/perl-5.40.1.tar.xz
+src-sha: dfa20c2eef2b4af133525610bbb65dd13777ecf998c9c5b1ccf0d308e732ee3f
 license: GPL-1.0-or-later
+dep-pkg: libdb libgdbm
 bsystem: gmake
 
 # https://perldoc.perl.org/Config
@@ -18,9 +19,11 @@ install: |
         -Dcc="'$CC'" \
         -Dar="'$AR'" \
         -Dnm="'$NM'" \
-        -Dccflags="'$CFLAGS'" \
-        -Dldflags="'$LDFLAGS'" \
-        -Dcppflags="'$CPPFLAGS'" \
+        -Dlocincpth="'$libdb_INCLUDE_DIR $libgdbm_INCLUDE_DIR'" \
+        -Accflags="'$CFLAGS'" \
+        -Aldflags="'$LDFLAGS'" \
+        -Alddlflags="'-shared $LDFLAGS'" \
+        -Acppflags="'$CPPFLAGS'" \
         -Dmake=gmake \
         -Dusenm=false \
         -Dusedl=true \

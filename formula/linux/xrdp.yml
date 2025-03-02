@@ -1,0 +1,33 @@
+pkgtype: pie
+summary: An open source RDP server
+web-url: https://www.xrdp.org/
+license: Apache-2.0
+src-url: https://github.com/neutrinolabs/xrdp/releases/download/v0.10.2/xrdp-0.10.2.tar.gz
+src-sha: 6e2b4fb719fbd74a42c1008afc670e5e2940c8cbf3d8977e78c8451f7d267b62
+dep-pkg: libopus libjpeg-turbo libopenssl libpam libfuse xorg-libxfixes xorg-libxrandr check cmocka
+dep-lib: xrandr xfixes -lm
+dep-upp: libtool
+bsystem: autotools
+
+onstart: PACKAGE_CREATE_MOSTLY_STATICALLY_LINKED_EXECUTABLE=0
+
+dopatch: gsed -i 's|-Werror||g' configure.ac
+
+dosetup: |
+    run ./bootstrap
+    export TURBOJPEG_PATH="$libjpeg_turbo_INSTALL_DIR"
+
+install: |
+    configure \
+        --enable-pam \
+        --enable-fuse \
+        --enable-ipv6 \
+        --enable-opus \
+        --enable-tjpeg \
+        --enable-vsock \
+        --enable-shared \
+        --disable-static \
+        --disable-tests \
+        --enable-strict-locations \
+        --sysconfdir="$PACKAGE_INSTALL_DIR/etc" \
+        --localstatedir="$PACKAGE_INSTALL_DIR/var"
