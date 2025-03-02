@@ -1,4 +1,4 @@
-summary: A Free Remote Desktop Protocol Implementation
+summary: A free implementation of the Remote Desktop Protocol (RDP)
 web-url: https://www.freerdp.com/
 src-url: https://github.com/FreeRDP/FreeRDP/releases/download/3.12.0/freerdp-3.12.0.tar.gz
 src-sha: b08c1bfe867cde0feb3e51f72f32ee3fa3a37acbd20d6fdeb5a0f614b549f5cb

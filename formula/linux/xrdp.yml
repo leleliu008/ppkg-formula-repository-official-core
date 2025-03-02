@@ -6,7 +6,7 @@ src-url: https://github.com/neutrinolabs/xrdp/releases/download/v0.10.2/xrdp-0.1
 src-sha: 6e2b4fb719fbd74a42c1008afc670e5e2940c8cbf3d8977e78c8451f7d267b62
 dep-pkg: libopus libjpeg-turbo libopenssl libpam libfuse xorg-libxfixes xorg-libxrandr check cmocka
 dep-lib: xrandr xfixes -lm
-dep-upp: libtool
+dep-upp: libtool nasm
 bsystem: autotools
 
 onstart: PACKAGE_CREATE_MOSTLY_STATICALLY_LINKED_EXECUTABLE=0
