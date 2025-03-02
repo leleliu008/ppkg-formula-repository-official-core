@@ -1,0 +1,7 @@
+summary: A highly flexible and configurable library to parse and manage key=value configuration files
+web-url: https://opensuse.github.io/libeconf/
+src-url: https://github.com/openSUSE/libeconf/archive/refs/tags/v0.7.7.tar.gz
+src-sha: d340187f0bba5d2c5fdc9dd6486a83432c4504cb7cc0e1a172ccb112591aee35
+license: MIT
+install: cmakew 2
+dosetup: gsed -i 's|SHARED||' lib/CMakeLists.txt
