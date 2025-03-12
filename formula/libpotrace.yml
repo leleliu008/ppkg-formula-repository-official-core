@@ -6,4 +6,4 @@ src-uri: https://distfiles.macports.org/potrace/potrace-1.16.tar.gz
 src-sha: be8248a17dedd6ccbaab2fcc45835bb0502d062e40fbded3bc56028ce5eb7acc
 license: GPL-2.0-or-later
 dep-pkg: libz
-install: configure --without-libpotrace
+install: configure --with-libpotrace
