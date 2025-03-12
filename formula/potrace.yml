@@ -1,4 +1,4 @@
-summary: Convert bitmaps to vector graphics
+summary: A command-line tool for converting bitmaps to vector graphics
 git-url: https://github.com/skyrpex/potrace
 web-url: https://potrace.sourceforge.io/
 src-url: https://potrace.sourceforge.io/download/1.16/potrace-1.16.tar.gz

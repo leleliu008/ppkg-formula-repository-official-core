@@ -1,4 +1,4 @@
-summary: Command-line tools for dealing with Type 1 fonts
+summary: A collection of command-line tools for manipulating PostScript Type 1 fonts
 git-url: https://github.com/kohler/t1utils
 web-url: https://www.lcdf.org/type/
 src-url: https://www.lcdf.org/type/t1utils-1.42.tar.gz
