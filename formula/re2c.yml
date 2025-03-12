@@ -4,13 +4,6 @@ src-url: https://github.com/skvadrik/re2c/releases/download/4.1/re2c-4.1.tar.xz
 src-sha: cd7d9bbadb3f04f20da25e20e155655de57beef48e0807266938069f0e322e8b
 dep-upp: python3
 
-dopatch: |
-    # macos-14.5
-    # fatal error: 'src/parse/lex.h' file not found
-    # I have no idea why this happened, but it works
-    install -d _/src/parse/
-    cp -v bootstrap/src/parse/lex.h _/src/parse/lex.h
-
 install: |
     cmakew \
         -DRE2C_REBUILD_DOCS=OFF \
