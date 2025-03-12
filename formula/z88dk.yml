@@ -2,8 +2,8 @@ summary: A collection of software development tools that targets the 8080 and z8
 src-url: https://github.com/z88dk/z88dk/releases/download/v2.3/z88dk-src-2.3.tgz
 src-sha: e08887ef9344f8dbd9d669bb904e17c35290a316bb1fe8b02c1a45b0d291292f
 license: The Clarified Artistic License
-dep-pkg: libxml2 libgmp ragel re2c
-dep-upp: gm4 flex bison dos2unix texinfo
+dep-upp: gm4 flex bison dos2unix texinfo ragel re2c
+dep-pkg: libxml2 libgmp
 install: |
     run ./build.sh -C -v
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
