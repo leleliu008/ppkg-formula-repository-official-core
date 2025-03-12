@@ -1,10 +1,14 @@
+pkgtype: lib
 summary: Better RPC framework
 git-url: https://github.com/apache/brpc
 web-url: https://brpc.apache.org/
-src-url: https://dlcdn.apache.org/brpc/1.9.0/apache-brpc-1.9.0-src.tar.gz
-src-sha: 2ed6090845cf9f36bd267de7f151970881340ad775eeba65aec448db47fa25b9
+src-url: https://dlcdn.apache.org/brpc/1.12.1/apache-brpc-1.12.1-src.tar.gz
+src-sha: 6b315b33ae264e17e4f84bebbd4c3b7c313f5a64de7b398764c68a1dbb4a9e8e
 license: Apache-2.0
 dep-pkg: gflags gperftools libleveldb libopenssl libprotobuf
+
+fix-url: https://github.com/apache/brpc/commit/cf6b81f9f7ab31626e942c2ef1b56432a242d1a1.patch?full_index=1
+fix-sha: 12c062d417e32a1810a8b223d5582748c2f3c4521864a2dd74575b4a10c4484d
 
 dopatch: |
     gsed -i "s|/usr/local/opt/openssl|$libopenssl_INSTALL_DIR|" CMakeLists.txt

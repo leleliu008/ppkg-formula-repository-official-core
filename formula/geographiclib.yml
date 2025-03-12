@@ -1,10 +1,8 @@
 summary: C++ geography library
 web-url: https://geographiclib.sourceforge.io/
-src-url: https://github.com/geographiclib/geographiclib/archive/refs/tags/r2.4.tar.gz
-src-sha: 7b2a998c9a0917b49242671a7a6f5fe72e3e77d12f30de56142b1d7ea4dd4136
+src-url: https://github.com/geographiclib/geographiclib/archive/refs/tags/r2.5.tar.gz
+src-sha: 4b646358189799491e669f0de5072e94e3988d4a7486823344d182d57665ed35
 license: MIT
-
-dosetup: export PROXIED_CXX_ARGS="$PROXIED_CXX_ARGS -lm"
 
 install: |
     cmakew \

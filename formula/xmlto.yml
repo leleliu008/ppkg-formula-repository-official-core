@@ -1,8 +1,8 @@
-summary: Convert XML to another format (based on XSL or other tools)
+summary: A command-line tool for converting XML files to various formats
 web-url: https://pagure.io/xmlto/
-src-url: https://releases.pagure.org/xmlto/xmlto-0.0.28.tar.bz2
-src-sha: 1130df3a7957eb9f6f0d29e4aa1c75732a7dfb6d639be013859b5c7ec5421276
+src-url: https://pagure.io/xmlto/archive/0.0.29/xmlto-0.0.29.tar.gz
+src-sha: 40504db68718385a4eaa9154a28f59e51e59d006d1aa14f5bc9d6fded1d6017a
 license: GPL-2.0-or-later
-dep-pkg: libxslt docbook
-dep-upp: getopt
-bsystem: configure
+dep-upp: getopt xmlutils xsltproc docbook-xsl
+bsystem: autotools
+dosetup: export GETOPT="$(command -v getopt)"

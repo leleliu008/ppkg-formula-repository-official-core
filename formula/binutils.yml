@@ -14,7 +14,7 @@ install: |
         --with-isl="$libisl_INSTALL_DIR" \
         --with-gmp="$libgmp_INSTALL_DIR" \
         --with-mpc="$libmpc_INSTALL_DIR" \
-        --with-mpfr="$mpfr_INSTALL_DIR" \
+        --with-mpfr="$libmpfr_INSTALL_DIR" \
         --with-static-standard-libraries \
         --with-zstd \
         --with-system-zlib \

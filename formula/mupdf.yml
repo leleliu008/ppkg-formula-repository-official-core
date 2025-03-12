@@ -1,10 +1,10 @@
 summary: Lightweight PDF and XPS viewer
 git-url: git://git.ghostscript.com/mupdf.git
 web-url: https://mupdf.com/
-src-url: https://mupdf.com/downloads/archive/mupdf-1.23.11-source.tar.gz
-src-sha: 478f2a167feae2a291c8b8bc5205f2ce2f09f09b574a6eb0525bfad95a3cfe66
+src-url: https://mupdf.com/downloads/archive/mupdf-1.25.4-source.tar.gz
+src-sha: 74b943038fe81594bf7fc5621c60bca588b2847f0d46fb2e99652a21fa0d9491
 license: AGPL-3.0-or-later
-dep-pkg: libopenssl libopenjpeg libjpeg-turbo libjbig2dec libharfbuzz libgumbo libmujs
+dep-pkg: libopenssl libtesseract libjbig2dec libharfbuzz libgumbo libmujs
 
 dep-upp: patch
 dopatch: |
@@ -27,7 +27,7 @@ dosetup: |
 
     unset GMAKE_EXTRA_ARGS
 
-    for KV in FREETYPE:freetype2 HARFBUZZ:harfbuzz OPENJPEG:libopenjp2 GUMBO:gumbo
+    for KV in FREETYPE:freetype2 HARFBUZZ:harfbuzz TESSERACT:tesseract LEPTONICA:lept OPENJPEG:libopenjp2 LIBJPEG:libjpeg GUMBO:gumbo
     do
         K="${KV%:*}"
         V="${KV#*:}"
@@ -44,6 +44,7 @@ install: |
         build=$PROFILE \
         shared=no \
         verbose=yes \
+        tesseract=yes \
         prefix=$PACKAGE_INSTALL_DIR \
         CC=$CC \
         AR=$AR \
@@ -51,4 +52,5 @@ install: |
         XCFLAGS="'$CFLAGS $CPPFLAGS'" \
         USE_SYSTEM_LIBS=yes \
         USE_SYSTEM_MUJS=yes \
+        HAVE_SYS_LEPTONICA=yes \
         $GMAKE_EXTRA_ARGS
