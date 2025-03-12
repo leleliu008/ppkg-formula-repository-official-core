@@ -4,7 +4,7 @@ web-url: https://gstreamer.freedesktop.org/
 src-url: https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.20.3.tar.xz
 src-sha: 7e30b3dd81a70380ff7554f998471d6996ff76bbe6fc5447096f851e24473c9f
 license: LGPL-2.0-or-later
-dep-pkg: gstreamer graphene libintl libogg libvorbis libopus libtheora liborc libpango
+dep-pkg: gstreamer libgraphene libintl libogg libvorbis libopus libtheora liborc libpango
 
 install: |
     mesonw \

@@ -1,10 +1,11 @@
 summary: Command-driven, interactive function plotting
 web-url: http://www.gnuplot.info/
 git-url: https://git.code.sf.net/p/gnuplot/gnuplot-main.git
-src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.0/gnuplot-6.0.0.tar.gz
-src-sha: 635a28f0993f6ab0d1179e072ad39b8139d07f51237f841d93c6c2ff4b1758ec
+src-url: https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.2/gnuplot-6.0.2.tar.gz
+src-sha: f68a3b0bbb7bbbb437649674106d94522c00bf2f285cce0c19c3180b1ee7e738
 license: gnuplot
-dep-pkg: libgd lua libcerf libpango libreadline 
+dep-pkg: libgd liblua libcerf libpango libreadline
+
 install: |
     configure \
         --disable-wxwidgets \

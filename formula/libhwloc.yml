@@ -7,4 +7,10 @@ src-sha: 06a0a2bdc0a5714e839164683846a0e936a896213758e9d37e49e232b89c58d4
 license: BSD-3-Clause
 dep-pkg: libxml2
 
-install: configure --disable-cairo --without-x
+install: |
+    configure only --disable-cairo --without-x
+    gmakew -C hwloc
+    gmakew -C hwloc install
+    gmakew -C include
+    gmakew -C include install
+    gmakew install-hwlocpkgconfigDATA

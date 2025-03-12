@@ -1,8 +1,8 @@
 summary: A portable C++ library for parallel programming developed by Intel
-src-url: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.12.0.tar.gz
-src-sha: c7bb7aa69c254d91b8f0041a71c5bcc3936acb64408a1719aec0b2b7639dd84f
+src-url: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2022.0.0.tar.gz
+src-sha: e8e89c9c345415b17b30a2db3095ba9d47647611662073f7fbf54ad48b7f3c2a
 license: Apache-2.0
-dep-pkg: hwloc
+dep-pkg: libhwloc
 
 install: |
     cmakew \

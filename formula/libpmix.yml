@@ -1,0 +1,16 @@
+summary: Process Management Interface for HPC environments
+web-url: https://openpmix.github.io/
+src-url: https://github.com/openpmix/openpmix/releases/download/v5.0.6/pmix-5.0.6.tar.bz2
+src-sha: ea51baa0fdee688d54bc9f2c11937671381f00de966233eec6fd88807fb46f83
+license: BSD-3-Clause
+dep-pkg: libevent libhwloc
+dep-upp: python3
+
+onready: ENABLE_LTO=0
+
+install: |
+    configure \
+        --enable-ipv6 \
+        --with-sge \
+        --with-hwloc="$libhwloc_INSTALL_DIR" \
+        --with-libevent="$libevent_INSTALL_DIR"
