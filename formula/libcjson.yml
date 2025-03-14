@@ -1,0 +1,9 @@
+summary: C library for parsing and manipulating JSON
+src-url: https://github.com/DaveGamble/cJSON/archive/refs/tags/v1.7.18.tar.gz
+src-sha: 3aa806844a03442c00769b83e99970be70fbef03735ff898f4811dd03b9f5ee5
+license: MIT
+install: |
+    cmakew \
+        -DENABLE_CJSON_UTILS=ON \
+        -DENABLE_CJSON_TEST=OFF \
+        -DBUILD_SHARED_AND_STATIC_LIBS=ON

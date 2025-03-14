@@ -4,7 +4,7 @@ web-url: https://ffmpeg.org/
 src-url: https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz
 src-sha: 40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6
 license: GPL-2.0-or-later
-dep-pkg: libmp3lame libsamplerate libtheora libvorbis libspeex librav1e libdav1d libx264 libx265 libopus libxvid libsoxr libvpx libwebp libtiff libpng libjpeg-turbo libgif libsrt libzimg libzmq libxml2 libarchive libsdl2
+dep-pkg: libtesseract librubberband libbluray libaribb24 libass libarchive libvidstab libopencore-amr libSvtAv1 libmp3lame libtheora libspeex librav1e libdav1d libx264 libx265 libxvid libvpx libaom libsdl2 libzimg libzmq libssh libsrt librist xorg-libxv
 dep-upp: nasm
 bsystem: gmake
 
@@ -53,26 +53,46 @@ install: |
         --enable-pic \
         --enable-static \
         --enable-shared \
-        --disable-ffplay \
-        --disable-ffprobe \
+        --enable-ffplay \
+        --enable-ffprobe \
         --enable-openssl \
         --enable-version3 \
+        --enable-libtesseract \
+        --enable-librubberband \
+        --enable-libfontconfig \
+        --enable-libharfbuzz \
+        --enable-libfreetype \
+        --enable-libfribidi \
+        --enable-libopenjpeg \
+        --enable-libaribb24 \
+        --enable-libbluray \
+        --enable-libvidstab \
+        --enable-libopencore-amrnb \
+        --enable-libopencore-amrwb \
         --enable-libmp3lame \
         --enable-libtheora \
         --enable-libvorbis \
+        --enable-libsvtav1 \
         --enable-libspeex \
         --enable-librav1e \
         --enable-libdav1d \
         --enable-libopus \
         --enable-libwebp \
-        --enable-libzimg \
         --enable-libx264 \
         --enable-libx265 \
         --enable-libxvid \
         --enable-libsoxr \
         --enable-libvpx \
         --enable-libsrt \
+        --enable-libssh \
+        --enable-libass \
+        --enable-libaom \
+        --enable-libjxl \
+        --enable-libvmaf \
         --enable-libxml2 \
+        --enable-librist \
+        --enable-libzimg \
+        --enable-libzmq \
         --enable-lzma \
         --enable-sdl \
         --enable-gpl \
@@ -80,6 +100,8 @@ install: |
         --disable-doc \
         --disable-debug \
         --disable-vulkan \
+        --disable-libjack \
+        --disable-indev=jack \
         --disable-mediacodec \
         --disable-libfdk-aac \
         $CONFIGURE_EXTRA_ARGS ; then

@@ -1,10 +1,11 @@
 summary: A complete, cross-platform solution to record, convert and stream audio and video
 git-url: https://github.com/FFmpeg/FFmpeg
 web-url: https://ffmpeg.org/
-src-url: https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz
-src-sha: 40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6
+src-url: https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz
+src-sha: 733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1
 license: GPL-2.0-or-later
-dep-pkg: libmp3lame libsamplerate libtheora libvorbis libspeex librav1e libdav1d libx264 libx265 libopus libxvid libsoxr libvpx libwebp libtiff libpng libjpeg-turbo libgif libsrt libzimg libzmq libxml2 libarchive libsdl2 xorg-libxv
+dep-pkg: libtesseract librubberband libbluray libaribb24 libass libarchive libvidstab libopencore-amr libSvtAv1 libmp3lame libtheora libspeex librav1e libdav1d libx264 libx265 libxvid libvpx libaom libsdl2 libzimg libzmq libssh libsrt librist xorg-libxv
+dep-lib: tesseract -lstdc++ -lgomp -lm
 dep-upp: nasm
 bsystem: gmake
 
@@ -36,8 +37,6 @@ install: |
     gsed -i 's|-lxvidcore|-lxvidcore -lm|' configure
     gsed -i "/SDL2_CONFIG=/c SDL2_CONFIG='$libsdl2_INSTALL_DIR/bin/sdl2-config'" configure
 
-    export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lgomp -lm"
-
     if run ./configure \
         --prefix="$PACKAGE_INSTALL_DIR" \
         --sysroot="$SYSROOT" \
@@ -59,22 +58,42 @@ install: |
         --enable-ffprobe \
         --enable-openssl \
         --enable-version3 \
+        --enable-libtesseract \
+        --enable-librubberband \
+        --enable-libfontconfig \
+        --enable-libharfbuzz \
+        --enable-libfreetype \
+        --enable-libfribidi \
+        --enable-libopenjpeg \
+        --enable-libaribb24 \
+        --enable-libbluray \
+        --enable-libvidstab \
+        --enable-libopencore-amrnb \
+        --enable-libopencore-amrwb \
         --enable-libmp3lame \
         --enable-libtheora \
         --enable-libvorbis \
+        --enable-libsvtav1 \
         --enable-libspeex \
         --enable-librav1e \
         --enable-libdav1d \
         --enable-libopus \
         --enable-libwebp \
-        --enable-libzimg \
         --enable-libx264 \
         --enable-libx265 \
         --enable-libxvid \
         --enable-libsoxr \
         --enable-libvpx \
         --enable-libsrt \
+        --enable-libssh \
+        --enable-libass \
+        --enable-libaom \
+        --enable-libjxl \
+        --enable-libvmaf \
         --enable-libxml2 \
+        --enable-librist \
+        --enable-libzimg \
+        --enable-libzmq \
         --enable-lzma \
         --enable-sdl \
         --enable-gpl \
@@ -82,6 +101,8 @@ install: |
         --disable-doc \
         --disable-debug \
         --disable-vulkan \
+        --disable-libjack \
+        --disable-indev=jack \
         --disable-mediacodec \
         --disable-libfdk-aac \
         $CONFIGURE_EXTRA_ARGS ; then
