@@ -1,0 +1,24 @@
+summary: OpenGL Shading Language compiler
+src-url: https://github.com/google/shaderc/archive/refs/tags/v2025.1.tar.gz
+src-sha: 358f9fa87b503bc7a3efe1575fbf581fca7f16dbc6d502ea2b02628d2d0d4014
+license: Apache-2.0
+dep-upp: python3
+
+dopatch: |
+    gsed -i 's|(SHADERC_ENABLE_INSTALL)|(OFF)|' CMakeLists.txt libshaderc/CMakeLists.txt
+
+dosetup: |
+    git_checkout https://github.com/KhronosGroup/SPIRV-Headers --ref-from=54a521dd130ae1b2f38fef79b09515702d135bdd -C third_party/spirv-headers
+    git_checkout https://github.com/KhronosGroup/SPIRV-Tools   --ref-from=f289d047f49fb60488301ec62bafab85573668cc -C third_party/spirv-tools
+    git_checkout https://github.com/KhronosGroup/glslang       --ref-from=8b822ee8ac2c3e52926820f46ad858532a895951 -C third_party/glslang
+
+install: |
+    cmakew \
+        -DSHADERC_SKIP_TESTS=ON \
+        -DSHADERC_SKIP_INSTALL=OFF \
+        -DSHADERC_SKIP_EXAMPLES=OFF \
+        -DSHADERC_ENABLE_WGSL_OUTPUT=OFF \
+        -DSHADERC_ENABLE_WERROR_COMPILE=ON \
+        -DBUILD_SHARED_LIBS=OFF
+
+dotweak: run rm -rf include/ lib/

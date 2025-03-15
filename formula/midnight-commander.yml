@@ -2,8 +2,8 @@ pkgtype: pie
 summary: Terminal-based visual file manager
 git-url: https://github.com/MidnightCommander/mc
 web-url: https://www.midnight-commander.org/
-src-url: https://www.midnight-commander.org/downloads/mc-4.8.31.tar.xz
-src-sha: 24191cf8667675b8e31fc4a9d18a0a65bdc0598c2c5c4ea092494cd13ab4ab1a
+src-url: https://www.midnight-commander.org/downloads/mc-4.8.33.tar.xz
+src-sha: cae149d42f844e5185d8c81d7db3913a8fa214c65f852200a9d896b468af164c
 license: GPL-3.0-or-later
 dep-pkg: glib libssh2 libopenssl slang
 dep-upp: perl

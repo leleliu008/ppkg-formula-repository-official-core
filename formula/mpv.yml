@@ -3,22 +3,12 @@ summary: A free, open source, and cross-platform media player based on MPlayer a
 web-url: https://mpv.io
 src-url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.39.0.tar.gz
 src-sha: 2ca92437affb62c2b559b4419ea4785c70d023590500e8a52e95ea3ab4554683
-dep-pkg: libplacebo libluajit libmujs libuchardet mesa
-dep-lib: soxr xcb-dri3
+dep-pkg: libplacebo libluajit libmujs libuchardet ffmpeg-dev mesa
+
+onstart: PACKAGE_CREATE_MOSTLY_STATICALLY_LINKED_EXECUTABLE=0
 
 dopatch: |
     gsed -i "/iconv =/c iconv = dependency('libiconv', method : 'pkg-config')" meson.build
-    ln -s "$libexpat_LIBRARY_DIR/libexpat$SHARED_LIBRARY_SUFFIX" "../lib/libexpat$SHARED_LIBRARY_SUFFIX"
-    rm ../lib/libexpat.a
-    install -d ../lib/pkgconfig
-    cat > ../lib/pkgconfig/expat.pc <<EOF
-    Name: expat
-    Version: 2.6.4
-    Description: expat XML parser
-    URL: https://libexpat.github.io/
-    Libs: -L$PACKAGE_WORKING_DIR/lib -lexpat -lm
-    Cflags: -I$libexpat_INCLUDE_DIR
-    EOF
 
 install: |
     mesonw \

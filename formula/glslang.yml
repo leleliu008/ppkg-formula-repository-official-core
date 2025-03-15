@@ -1,7 +1,15 @@
 summary: OpenGL and OpenGL ES reference compiler for shading languages
 web-url: https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/
-src-url: https://github.com/KhronosGroup/glslang/archive/refs/tags/14.1.0.tar.gz
-src-sha: b5e4c36d60eda7613f36cfee3489c6f507156829c707e1ecd7f48ca45b435322
+src-url: https://github.com/KhronosGroup/glslang/archive/refs/tags/15.1.0.tar.gz
+src-sha: 4bdcd8cdb330313f0d4deed7be527b0ac1c115ff272e492853a6e98add61b4bc
 license: BSD-3-Clause GPL-3.0-or-later MIT Apache-2.0
+dep-pkg: libspirv-tools
 dep-upp: python3
-install: cmakew -DBUILD_EXTERNAL=OFF -DENABLE_CTEST=OFF -DENABLE_OPT=OFF -DBUILD_SHARED_LIBS=OFF
+
+install: |
+    cmakew \
+        -DBUILD_EXTERNAL=OFF \
+        -DALLOW_EXTERNAL_SPIRV_TOOLS=ON \
+        -DENABLE_OPT=ON \
+        -DENABLE_CTEST=OFF \
+        -DBUILD_SHARED_LIBS=ON

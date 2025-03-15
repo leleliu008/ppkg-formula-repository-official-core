@@ -1,0 +1,7 @@
+summary: OpenCL Installable Client Driver (ICD) Loader
+web-url: https://www.khronos.org/registry/OpenCL/
+src-url: https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/refs/tags/v2024.10.24.tar.gz
+src-sha: 95f2f0cda375b13d2760290df044ebea9c6ff954a7d7faa0867422442c9174dc
+license: Apache-2.0
+dep-pkg: opencl-headers
+bsystem: cmake
