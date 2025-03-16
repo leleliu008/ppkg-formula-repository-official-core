@@ -1,20 +1,14 @@
 summary: Powerful, lightweight programming language
 git-url: https://github.com/lua/lua
 web-url: https://www.lua.org/
-src-url: https://www.lua.org/ftp/lua-5.4.6.tar.gz
-src-sha: 7d5ea1b9cb6aa0b59ca3dde1c6adcb57ef83a1ba8e5432c0ecd06bf439b3ad88
+src-url: https://www.lua.org/ftp/lua-5.4.7.tar.gz
+src-sha: 9fbf5e28ef86c69858f6d3d34eccc32e911c1a28b4120ff3e84aaa70cfbf1e30
 license: MIT
 bscript: src
 
-dosetup: |
-    case $TARGET_PLATFORM_NAME in
-        macos)  PLAT=macosx ;;
-        linux)  PLAT=linux  ;;
-    esac
-
 install: |
     gmakew clean
-    gmakew liblua.a "PLAT=$PLAT" CC="$CC" AR="'$AR crs'" RANLIB="$RANLIB" CFLAGS="'$CFLAGS -std=c99 -DLUA_COMPAT_5_3 $CPPFLAGS'"
+    gmakew liblua.a PLAT=generic CC="$CC" AR="'$AR crs'" RANLIB="$RANLIB" CFLAGS="'$CFLAGS -std=c99 -DLUA_COMPAT_5_3 $CPPFLAGS'"
     run "$CC" -shared "$CFLAGS" "$LDFLAGS" -o liblua$SHARED_LIBRARY_SUFFIX *.o
     install_libs liblua.a liblua$SHARED_LIBRARY_SUFFIX
     install_incs lua.h luaconf.h lualib.h lauxlib.h lua.hpp
