@@ -4,12 +4,12 @@ web-url: https://wiki.freedesktop.org/www/Software/PulseAudio/
 git-url: https://gitlab.freedesktop.org/pulseaudio/pulseaudio
 src-url: https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz
 src-sha: 053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5
-dep-pkg: libjson-c libspeexdsp libsndfile libsoxr libcap libopenssl libtool alsa-lib liborc dbus glib
+dep-pkg: libjson-c libspeexdsp libsndfile libsoxr libcap libopenssl libltdl alsa-lib liborc dbus glib
 dep-upp: gettext-tools gm4 orcc
 dep-plm: XML::Parser
 
 dopatch: |
-    gsed -i "/libintl_dep =/c libintl_dep = cc.find_library('intl',  dirs: ['$libintl_LIBRARY_DIR'])" meson.build
+    gsed -i "/libintl_dep =/c libintl_dep = dependency('libintl', method : 'pkg-config')" meson.build
 
     export PERL5LIB="$NATIVE_PACKAGE_INSTALLED_ROOT/perl-XML-Parser/lib/perl5"
 

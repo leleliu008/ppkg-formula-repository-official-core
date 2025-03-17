@@ -1,6 +1,6 @@
 summary: Diagnostic, instructional, and debugging tool for the Linux kernel
 web-url: https://strace.io/
-src-url: https://github.com/strace/strace/releases/download/v6.8/strace-6.8.tar.xz
-src-sha: ba6950a96824cdf93a584fa04f0a733896d2a6bc5f0ad9ffe505d9b41e970149
+src-url: https://github.com/strace/strace/releases/download/v6.13/strace-6.13.tar.xz
+src-sha: e209daf0ee038ca5adcc4c277e9273b4d51f46a2ff86da575d36742ac3508a17
 license: LGPL-2.1-or-later
 install: configure --enable-mpers=no

@@ -1,7 +1,8 @@
-summary: High quality, portable, open source libm implementation
+pkgtype: lib
+summary: A high quality, portable, standalone C mathematical library (libm)
 web-url: https://openlibm.org
-src-url: https://github.com/JuliaMath/openlibm/archive/refs/tags/v0.8.2.tar.gz
-src-sha: 7244f9aa468584744e260cef740d57d10eab6e9c05f62084f8f2ba457f4b4b1d
+src-url: https://github.com/JuliaMath/openlibm/archive/refs/tags/v0.8.6.tar.gz
+src-sha: 347998968cfeb2f9b91de6a8e85d2ba92dec0915d53500a4bc483e056f85b94c
 license: MIT ISC BSD-2-Clause
 
 install: |

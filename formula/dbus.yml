@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: Message bus system, providing inter-application communication
 git-url: https://gitlab.freedesktop.org/dbus/dbus
 web-url: https://wiki.freedesktop.org/www/Software/dbus
