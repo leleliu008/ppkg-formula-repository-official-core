@@ -29,3 +29,5 @@ install: |
         -Dspeex=enabled \
         -Dopenssl=enabled \
         -Dsystemd=disabled
+
+dotweak: run ln -sr lib/pulseaudio/lib*.so lib/

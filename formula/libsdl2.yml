@@ -1,7 +1,7 @@
 summary: Low-level access to audio, keyboard, mouse, joystick and graphics
 web-url: https://www.libsdl.org/
-src-url: https://github.com/libsdl-org/SDL/releases/download/release-2.30.7/SDL2-2.30.7.tar.gz
-src-sha: 2508c80438cd5ff3bbeb8fe36b8f3ce7805018ff30303010b61b03bb83ab9694
+src-url: https://github.com/libsdl-org/SDL/releases/download/release-2.32.2/SDL2-2.32.2.tar.gz
+src-sha: c5f30c427fd8107ee4a400c84d4447dd211352512eaf0b6e89cc6a50a2821922
 license: Zlib
 dep-pkg: pulseaudio xorg-xinput xorg-libice xorg-libxcursor xorg-libxscrnsaver xorg-libxxf86vm
 
@@ -44,3 +44,7 @@ install: |
         -DVIDEO_OPENGL=OFF \
         -DVIDEO_OPENGLES=OFF \
         -DVIDEO_COCOA=OFF
+
+        #-DSDL_ALSA_SHARED=OFF \
+        #-DSDL_PULSEAUDIO_SHARED=OFF \
+        #-DSDL_LIBSAMPLERATE_SHARED=OFF
