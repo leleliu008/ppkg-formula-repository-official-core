@@ -6,7 +6,6 @@ src-url: https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-17.
 src-sha: 053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5
 dep-pkg: libjson-c libspeexdsp libsndfile libsoxr libcap libopenssl libltdl alsa-lib liborc dbus glib
 dep-upp: gettext-tools gm4 orcc
-dep-plm: XML::Parser
 
 dopatch: |
     gsed -i "/libintl_dep =/c libintl_dep = dependency('libintl', method : 'pkg-config')" meson.build
@@ -17,7 +16,7 @@ install: |
     mesonw \
         -Ddatabase=simple \
         -Ddoxygen=false \
-        -Dman=true \
+        -Dman=false \
         -Dtests=false \
         -Dstream-restore-clear-old-devices=true \
         -Dgtk=disabled \
