@@ -15,6 +15,12 @@ dosetup: |
     git_checkout https://chromium.googlesource.com/chromium/src/third_party/jinja2.git      --ref-from=2f6f2ff5e4c1d727377f5e1b9e1903d871f41e74 -C third_party/jinja2
     git_checkout https://chromium.googlesource.com/chromium/src/third_party/markupsafe.git  --ref-from=e582d7f0edb9d67499b0f5abd6ae5550e91da7f2 -C third_party/markupsafe
 
+    cat > build/config/gclient_args.gni <<EOF
+    declare_args() {
+        checkout_google_benchmark = false
+    }
+    EOF
+
 install: |
     case $TARGET_PLATFORM_ARCH in
         armv7a)  GN_ARG_TARGET_CPU=arm   ;;
@@ -36,7 +42,8 @@ install: |
     treat_warnings_as_errors=false
     EOF
 
-    run ninja
+    run ninja --version
+    run ninja --verbose d8
     run install_bins d8
     run install_incs "$PACKAGE_BSCRIPT_DIR"/include/*.h
     run install_libs *.so
