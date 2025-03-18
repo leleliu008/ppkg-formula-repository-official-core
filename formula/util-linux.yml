@@ -3,10 +3,21 @@ git-url: https://github.com/util-linux/util-linux
 src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.4.tar.xz
 src-sha: 5c1daf733b04e9859afdc3bd87cc481180ee0f88b5c0946b16fdec931975fb79
 license: GPL-2.0-or-later
-dep-upp: automake libtool
 dep-pkg: libreadline libsqlite3 libz
+dep-upp: automake libtool
 
-install: |
+dopatch: |
+    for f in tools/*
+    do
+        [ -f "$f" ] || continue
+        [ -L "$f" ] && continue
+
+        if [ "$(head -n 1 "$f")" = '#!/bin/bash' ] ; then
+            gsed -i '1c #!/usr/bin/env bash' "$f"
+        fi
+    done
+
+dosetup: |
     export AUTOMAKE="$(command -v automake)"
     export ACLOCAL="$(command -v aclocal)"
 
@@ -16,6 +27,7 @@ install: |
         macos) EXTRA_CONFIGURE_ARGS='--disable-libmount --disable-ipcrm --disable-ipcs --disable-wall' ;;
     esac
 
+install: |
     configure \
         --without-python \
         --without-systemd \
