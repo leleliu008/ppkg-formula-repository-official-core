@@ -20,7 +20,6 @@ dopatch: |
         patch -p1 < ../fix/patches/$patchfile || return 1
     done
 
-install: |
     if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
         # https://www.gnu.org/software/gnulib/manual/html_node/sys_002ftimeb_002eh.html
         # https://github.com/facebook/zstd/issues/319
@@ -64,18 +63,20 @@ install: |
         gsed -i 's|^LFLAGS2="|LFLAGS2="ftime.o |' unix/configure
     fi
 
-    unset TARGET_COMPILE
+    if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then
+        gsed -i 's|^LFLAGS2="|LFLAGS2="-static |' unix/configure
+    fi
 
+    gsed -i -e '/-DNO_DIR/c true' unix/configure
+
+dosetup: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         TARGET_COMPILE=macosx
     else
         TARGET_COMPILE=generic
     fi
 
-    if printf '%s\n' "$LDFLAGS" | grep -q '\-static' ; then
-        gsed -i 's|^LFLAGS2="|LFLAGS2="-static |' unix/configure
-    fi
-
+install: |
     gmakew -f unix/Makefile clean
     gmakew -f unix/Makefile $TARGET_COMPILE \
         CC="$CC" \
