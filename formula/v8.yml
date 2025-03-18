@@ -5,6 +5,7 @@ src-sha: 00425fe7fd851f11839537256922addbfee0f5d27c6bf5ab375b9d0347d8ed94
 license: BSD-3-Clause
 dep-upp: git gn ninja python3
 dep-pkg: glib
+bsystem: gn
 
 dosetup: |
     git_checkout https://chromium.googlesource.com/chromium/src/build.git                   --ref-from=faf20f32f1d19bd492f8f16ac4a7ecfabdbb60c1 -C build
