@@ -5,7 +5,7 @@ src-sha: 2388d9fb186576633aa725ff163552a5dba7a6a375a8cb9a9014ab57ee7d99a2
 license: BSD-3-Clause
 binbstd: 1
 
-dopatch: gsed -i '/deptgt-delete_on_error/d' unit-tests/Makefile
+dopatch: gsed -i -e '/deptgt-delete_on_error/d' -e '/directive-export$/d' -e '/directive-export-gmake$/d' unit-tests/Makefile
 
 install: |
     run sh boot-strap --prefix=$PACKAGE_INSTALL_DIR -DWITHOUT_PROG_LINK --install BROKEN_TESTS=shell-ksh
