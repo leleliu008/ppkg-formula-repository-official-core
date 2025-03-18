@@ -1,0 +1,42 @@
+summary: A high-performance JavaScript and WebAssembly Engine powered by Google
+web-url: https://v8.dev/
+src-url: https://github.com/v8/v8/archive/refs/tags/12.7.224.16.tar.gz
+src-sha: 00425fe7fd851f11839537256922addbfee0f5d27c6bf5ab375b9d0347d8ed94
+license: BSD-3-Clause
+dep-upp: git gn ninja python3
+
+dosetup: |
+    git_checkout https://chromium.googlesource.com/chromium/src/build.git                   --ref-from=faf20f32f1d19bd492f8f16ac4a7ecfabdbb60c1 -C build
+    git_checkout https://chromium.googlesource.com/external/github.com/Maratyszcza/FP16.git --ref-from=0a92994d729ff76a58f692d3028ca1b64b145d91 -C third_party/fp16/src
+    git_checkout https://chromium.googlesource.com/external/github.com/google/googletest.git --ref-from=a7f443b80b105f940225332ed3c31f2790092f47 -C third_party/googletest/src
+    git_checkout https://chromium.googlesource.com/chromium/deps/icu.git                    --ref-from=98f2494518c2dbb9c488e83e507b070ea5910e95 -C third_party/icu
+    git_checkout https://chromium.googlesource.com/chromium/src/third_party/zlib.git        --ref-from=209717dd69cd62f24cbacc4758261ae2dd78cfac -C third_party/zlib
+    git_checkout https://chromium.googlesource.com/chromium/src/third_party/abseil-cpp.git  --ref-from=bfe59c2726fda7494a800f7d0ee461f0564653b3 -C third_party/abseil-cpp
+    git_checkout https://chromium.googlesource.com/chromium/src/third_party/jinja2.git      --ref-from=2f6f2ff5e4c1d727377f5e1b9e1903d871f41e74 -C third_party/jinja2
+    git_checkout https://chromium.googlesource.com/chromium/src/third_party/markupsafe.git  --ref-from=e582d7f0edb9d67499b0f5abd6ae5550e91da7f2 -C third_party/markupsafe
+
+install: |
+    case $TARGET_PLATFORM_ARCH in
+        armv7a)  GN_ARG_TARGET_CPU=arm   ;;
+        aarch64) GN_ARG_TARGET_CPU=arm64 ;;
+        i686)    GN_ARG_TARGET_CPU=x86   ;;
+        x86_64)  GN_ARG_TARGET_CPU=x64   ;;
+    esac
+
+    run gn gen . --root="$PACKAGE_BSCRIPT_DIR"
+
+    cat >> args.gn <<EOF
+    is_debug=false
+    is_component_build=true
+    target_os="linux"
+    target_cpu="$GN_ARG_TARGET_CPU"
+    v8_target_cpu="$GN_ARG_TARGET_CPU"
+    v8_enable_fuzztest=false
+    v8_enable_i18n_support=false
+    treat_warnings_as_errors=false
+    EOF
+
+    run ninja
+    run install_bins d8
+    run install_incs "$PACKAGE_BSCRIPT_DIR"/include/*.h
+    run install_libs *.so

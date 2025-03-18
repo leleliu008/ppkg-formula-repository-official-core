@@ -1,0 +1,50 @@
+summary: Low-level access to audio, keyboard, mouse, joystick and graphics
+web-url: https://www.libsdl.org/
+src-url: https://github.com/libsdl-org/SDL/releases/download/release-3.2.8/SDL3-3.2.8.tar.gz
+src-sha: 13388fabb361de768ecdf2b65e52bb27d1054cae6ccb6942ba926e378e00db03
+license: Zlib
+dep-pkg: pulseaudio xorg-xinput xorg-libice xorg-libxcursor xorg-libxscrnsaver xorg-libxxf86vm
+
+dosetup: |
+    case $TARGET_PLATFORM_ARCH in
+        arm*)
+            _3DNOW=OFF
+            ARMNEON=ON
+            ARMSIMD=ON
+            ;;
+        i386|x86_64)
+            _3DNOW=ON
+            ARMNEON=OFF
+            ARMSIMD=OFF
+            ;;
+        *)  _3DNOW=OFF
+            ARMNEON=OFF
+            ARMSIMD=OFF
+    esac
+
+install: |
+    cmakew \
+        -DSDL_SHARED=ON \
+        -DSDL_STATIC=ON \
+        -DSDL_TEST=OFF \
+        -DSDL_HAPTIC=OFF \
+        -DSDL_HIDAPI=ON \
+        -DSDL_FRAMEWORK_IOKIT=OFF \
+        -DSDL_JOYSTICK=OFF \
+        -DSDL_POWER=OFF \
+        -DPTHREADS=ON \
+        -DPTHREADS_SEM=ON \
+        -DLIBSAMPLERATE=OFF \
+        -DPULSEAUDIO=ON \
+        -DALSA=ON \
+        -DASSEMBLY=ON \
+        -D3DNOW="$_3DNOW" \
+        -DARMNEON="$ARMNEON" \
+        -DARMSIMD="$ARMSIMD" \
+        -DVIDEO_OPENGL=OFF \
+        -DVIDEO_OPENGLES=OFF \
+        -DVIDEO_COCOA=OFF
+
+        #-DSDL_ALSA_SHARED=OFF \
+        #-DSDL_PULSEAUDIO_SHARED=OFF \
+        #-DSDL_LIBSAMPLERATE_SHARED=OFF
