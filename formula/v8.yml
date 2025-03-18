@@ -36,4 +36,4 @@ install: |
     run ninja --verbose d8
     run install_bins d8
     run install_incs "$PACKAGE_BSCRIPT_DIR"/include/*.h
-    run install_libs *.so
+    run install_libs *.a
