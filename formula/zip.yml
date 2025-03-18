@@ -8,6 +8,9 @@ src-sha: f0e8bb1f9b7eb0b01285495a2699df3a4b766784c1765a8f1aeedf63c0806369
 fix-url: https://deb.debian.org/debian/pool/main/z/zip/zip_3.0-11.debian.tar.xz
 fix-sha: c5c0714a88592f9e02146bfe4a8d26cd9bd97e8d33b1efc8b37784997caa40ed
 
+res-url: https://raw.githubusercontent.com/Homebrew/formula-patches/d2b59930/zip/xcode15.diff
+res-sha: 99cb7eeeb6fdb8df700f40bfffbc30516c94774cbf585f725d81c3224a2c530c
+
 version: 3.0.11
 
 license: Info-ZIP
@@ -19,9 +22,10 @@ dopatch: |
         patch -p1 < ../fix/patches/$patchfile || return 1
     done
 
+    patch -p1 < ../res/99cb7eeeb6fdb8df700f40bfffbc30516c94774cbf585f725d81c3224a2c530c.diff
+
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        gsed -i '/-DZMEM/c true' unix/configure
-        gsed -i '/-DNO_/c  true' unix/configure
+        gsed -i -e '/-DZMEM/c true' -e '/-DNO_/c  true' unix/configure
     fi
 
 install: |
