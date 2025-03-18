@@ -24,19 +24,19 @@ dopatch: |
 
     patch -p1 < ../res/99cb7eeeb6fdb8df700f40bfffbc30516c94774cbf585f725d81c3224a2c530c.diff
 
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        gsed -i -e '/-DZMEM/c true' -e '/-DNO_/c  true' unix/configure
-    fi
+    gsed -i -e '/-DNO_DIR/c true' -e '/-DZMEM/c true' -e "/^LFLAGS2=/c LFLAGS2='$LDFLAGS'" unix/configure
+
+    run ln -s "$libbz2_INCLUDE_DIR/bzlib.h"  bzip2/
+    run ln -s "$libbz2_LIBRARY_DIR/libbz2.a" bzip2/
 
 install: |
     gmakew -f unix/Makefile clean
     gmakew -f unix/Makefile generic \
         CC="$CC" \
-        CPP="'$CPP'" \
         AS="$AS" \
-        AR="$AR" \
-        LOCAL_ZIP="'$CFLAGS $CPPFLAGS'" \
-        LFLAGS2="'$LDFLAGS'"
+        LD="'$CC'" \
+        STRIP=true \
+        LOCAL_ZIP="'$CFLAGS $CPPFLAGS'"
     gmakew -f unix/Makefile install \
         prefix="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"

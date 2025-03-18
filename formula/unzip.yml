@@ -11,8 +11,6 @@ fix-sha: e51364116c84739c591728ecc841113a914fa11358fd10ff0d6813524d811bb9
 version: 6.0.28
 license: Info-ZIP
 dep-pkg: libbz2
-binbstd: 1
-ccflags: -include time.h
 
 dopatch: |
     for patchfile in $(cat ../fix/patches/series)
@@ -63,11 +61,12 @@ dopatch: |
         gsed -i 's|^LFLAGS2="|LFLAGS2="ftime.o |' unix/configure
     fi
 
-    if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then
-        gsed -i 's|^LFLAGS2="|LFLAGS2="-static |' unix/configure
-    fi
+    gsed -i -e '/-DNO_DIR/c true' -e '/-DZMEM/c true' -e "/^LFLAGS2=/c LFLAGS2='$LDFLAGS'" -e 's| != "bzip2"| = "bzip2"|' unix/configure
 
-    gsed -i -e '/-DNO_DIR/c true' unix/configure
+    gsed -i '/$(RM) /s| libbz2.a||' bzip2/Makebz2.iz
+
+    run ln -s "$libbz2_INCLUDE_DIR/bzlib.h"  bzip2/
+    run ln -s "$libbz2_LIBRARY_DIR/libbz2.a" bzip2/
 
 dosetup: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
@@ -80,14 +79,10 @@ install: |
     gmakew -f unix/Makefile clean
     gmakew -f unix/Makefile $TARGET_COMPILE \
         CC="$CC" \
-        CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
         AS="$AS" \
         LD="'$CC'" \
-        STRIP="$STRIP" \
-        LOCAL_UNZIP="'$CFLAGS $CPPFLAGS $LDFLAGS'" \
-        LOC=-DLARGE_FILE_SUPPORT \
-        D_USE_BZ2=-DUSE_BZIP2 \
-        L_BZ2=-lbz2
+        STRIP=true \
+        LOCAL_UNZIP="'$CFLAGS $CPPFLAGS -include time.h'"
     gmakew -f unix/Makefile install \
         prefix="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"
