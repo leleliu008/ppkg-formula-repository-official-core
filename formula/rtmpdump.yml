@@ -27,5 +27,5 @@ dosetup: |
 
 install: |
     gmakew clean   SYS=$SYS
-    gmakew         SYS=$SYS CC=$CC LD=$LD CRYPTO=OPENSSL LIB_OPENSSL="'$OPENSSL_LIBS -lz'" OPT= XCFLAGS="'$CFLAGS $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'"
+    gmakew         SYS=$SYS CC=$CC LD=$LD CRYPTO=OPENSSL LIB_OPENSSL="'$OPENSSL_LIBS -lz'" OPT= XCFLAGS="'$CFLAGS -Wno-error=incompatible-pointer-types $CPPFLAGS'" XLDFLAGS="'$LDFLAGS'"
     gmakew install SYS=$SYS prefix="$PACKAGE_INSTALL_DIR" mandir="$PACKAGE_INSTALL_DIR/share/man"
