@@ -32,7 +32,7 @@ dosetup: |
     target_cpu="$GN_ARG_TARGET_CPU"
     EOF
 
-    GN_ARGS='is_debug=false is_component_build=true treat_warnings_as_errors=false v8_enable_fuzztest=false v8_enable_i18n_support=false'
+    GN_ARGS='is_debug=false is_component_build=true treat_warnings_as_errors=false v8_enable_fuzztest=false v8_enable_i18n_support=false v8_use_external_startup_data=false use_lld=false use_custom_libcxx=false clang_use_chrome_plugins=false'
 
     case $TARGET_PLATFORM_NAME in
         linux)  GN_ARGS="$GN_ARGS is_clang=false use_sysroot=false use_rbe=false target_os=\"linux\" custom_toolchain=\"//build/toolchain/linux/unbundle:default\" host_toolchain=\"//build/toolchain/linux/unbundle:default\"" ;;
