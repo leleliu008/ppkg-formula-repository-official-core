@@ -1,4 +1,4 @@
-pkgtype: lib
+pkgtype: pie
 summary: A high-performance JavaScript and WebAssembly Engine powered by Google
 web-url: https://v8.dev/
 src-url: https://github.com/v8/v8/archive/refs/tags/12.7.224.16.tar.gz
@@ -24,7 +24,7 @@ dosetup: |
     }
     EOF
 
-    GN_ARGS='is_debug=false is_cfi=false is_component_build=false is_official_build=true treat_warnings_as_errors=false v8_static_library=false v8_enable_future=true v8_enable_fuzztest=false v8_enable_i18n_support=false v8_use_external_startup_data=false use_lld=false use_custom_libcxx=false clang_use_chrome_plugins=false'
+    GN_ARGS='is_debug=false is_cfi=false is_component_build=false is_official_build=true treat_warnings_as_errors=false v8_static_library=true v8_enable_future=true v8_enable_fuzztest=false v8_enable_i18n_support=false v8_use_external_startup_data=false use_lld=false use_custom_libcxx=false clang_use_chrome_plugins=false'
 
     case $TARGET_PLATFORM_NAME in
         linux)  GN_ARGS="$GN_ARGS is_clang=false use_sysroot=false use_rbe=false target_os=\"linux\" custom_toolchain=\"//build/toolchain/linux/unbundle:default\" host_toolchain=\"//build/toolchain/linux/unbundle:default\"" ;;
@@ -34,7 +34,5 @@ dosetup: |
 
 install: |
     run ninja --version
-    run ninja --verbose
+    run ninja --verbose d8
     run install_bins d8
-    run install_incs "$PACKAGE_BSCRIPT_DIR"/include/*.h
-    run install_libs *.so
