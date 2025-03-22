@@ -5,4 +5,7 @@ src-sha: e797636aadf072c9b0851dba39b121e93c739d12d78398c91f12e8ed355d6a95
 license: Apache-2.0
 dep-pkg: libreadline
 bscript: core
-bsystem: xmake
+
+dosetup: run ln -s libncurses.a ../../lib/libcurses.a
+
+install: xmakew --charset=y --small=y --xml=y --demo=n --curses=y
