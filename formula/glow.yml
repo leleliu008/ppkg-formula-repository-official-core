@@ -1,5 +1,5 @@
 summary: Render markdown on the CLI
-src-url: https://github.com/charmbracelet/glow/archive/v1.5.1.tar.gz
-src-sha: b4ecf269b7c6447e19591b1d23f398ef2b38a6a75be68458390b42d3efc44b92
+src-url: https://github.com/charmbracelet/glow/archive/v2.1.0.tar.gz
+src-sha: f1875a73ed81e5d8e6c81443e9a9d18bd9d1489c563c9fa2ff5425f2f8e2af6f
 license: MIT
 install: gow -X main.Version=$PACKAGE_VERSION

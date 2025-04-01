@@ -1,5 +1,5 @@
-summary: Converts markdown into roff (man pages)
-src-url: https://github.com/cpuguy83/go-md2man/archive/refs/tags/v2.0.4.tar.gz
-src-sha: b0a4c7c077ede56967deef6ab7e7696c0f46124b0b3360fd05564ec5a536f11f
+summary: A command-line tool to convert markdown into roff (man pages)
+src-url: https://github.com/cpuguy83/go-md2man/archive/refs/tags/v2.0.6.tar.gz
+src-sha: 5fa29154237bc840a10a06231c066f9ddbe06bb31d1c3372eab12e1ed977271f
 license: MIT
 install: gow
