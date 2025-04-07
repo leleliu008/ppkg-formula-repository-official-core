@@ -123,29 +123,84 @@ int main(int argc, char* argv[]) {
 
     ////////////////////////////////////////////////////
 
-    char* argv2[argc + 9];
+    int   argc3 = 8;
+    char* argv3[argc3];
 
-    argv2[0] = realExePath;
-    argv2[1] = (char*)"--bear-path";
-    argv2[2] = selfExePath;
-    argv2[3] = (char*)"--library";
-    argv2[4] = libexecFilePath;
-    argv2[5] = (char*)"--wrapper";
-    argv2[6] = wrapperFilePath;
-    argv2[7] = (char*)"--wrapper-dir";
-    argv2[8] = wrapperdFilePath;
+    argv3[0] = (char*)"--bear-path"; 
+    argv3[1] = selfExePath,
+    argv3[2] = (char*)"--library";
+    argv3[3] = libexecFilePath;
+    argv3[4] = (char*)"--wrapper";
+    argv3[5] = wrapperFilePath,
+    argv3[6] = (char*)"--wrapper-dir";
+    argv3[7] = wrapperdFilePath;
 
-    for (int i = 1; i < argc; i++) {
-        argv2[i + 8] = argv[i];
+    ////////////////////////////////////////////////////
+
+#if defined(__linux__) && defined(__USE_DYNAMIC_LOADER__)
+    const char * dynamicLoaderName = "DYNAMIC_LOADER_FILENAME";
+    const char * libraryPathRelativeToSelfExePath = "/LIBRARY_PATH_RELATIVE_TO_SELF_EXE_PATH";
+
+    ////////////////////////////////////////////////////
+
+    char libraryPath[PATH_MAX];
+
+    for (int i = 0; i <= slashIndex; i++) {
+        libraryPath[i] = selfExePath[i];
     }
 
-    argv2[argc + 8] = NULL;
+    for (int i = 1; ; i++) {
+        libraryPath[slashIndex + i] = libraryPathRelativeToSelfExePath[i];
+
+        if (libraryPathRelativeToSelfExePath[i] == '\\0') {
+            break;
+        }
+    }
+
+    ////////////////////////////////////////////////////
+
+    char dynamicLoaderPath[PATH_MAX];
+
+    int ret = snprintf(dynamicLoaderPath, PATH_MAX, "%s/%s", libraryPath, dynamicLoaderName);
+
+    if (ret < 0) {
+        perror(NULL);
+        return 2;
+    }
+
+    ////////////////////////////////////////////////////
+
+    char* argv2[argc + argc3 + 5 + 1];
+
+    argv2[0] = dynamicLoaderPath;
+    argv2[1] = (char*)"--library-path";
+    argv2[2] = libraryPath;
+    argv2[3] = (char*)"--argv0";
+    argv2[4] = selfExePath;
+
+    n = 5;
+#else
+    char* argv2[argc + argc3 + 1];
+    n = 0;
+#endif
+
+    argv2[n++] = realExePath;
+
+    for (int i = 0; i < argc3; i++) {
+        argv2[n++] = argv3[i];
+    }
+
+    for (int i = 1; i < argc; i++) {
+        argv2[n++] = argv[i];
+    }
+
+    argv2[n] = NULL;
 
     //for (int i = 0; argv2[i] != NULL; i++) {
-    //    printf("%d:%s\n", i, argv2[i]);
+    //    fprintf(stderr, "%d:%s\n", i, argv2[i]);
     //}
 
-    execv (realExePath, argv2);
-    perror(realExePath);
+    execv (argv2[0], argv2);
+    perror(argv2[0]);
     return 255;
 }
