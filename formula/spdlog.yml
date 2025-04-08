@@ -1,9 +1,11 @@
 summary: Super fast C++ logging library
-src-url: https://github.com/gabime/spdlog/archive/refs/tags/v1.13.0.tar.gz
-src-sha: 534f2ee1a4dcbeb22249856edfb2be76a1cf4f708a20b0ac2ed090ee24cfdbc9
+src-url: https://github.com/gabime/spdlog/archive/refs/tags/v1.15.2.tar.gz
+src-sha: 7a80896357f3e8e920e85e92633b14ba0f229c506e6f978578bdc35ba09e9a5d
 license: MIT
 dep-pkg: libfmt
+
 dopatch: gsed -i 's| OR BUILD_SHARED_LIBS||' CMakeLists.txt
+
 install: |
     cmakew \
         -DSPDLOG_FMT_EXTERNAL=ON \

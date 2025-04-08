@@ -83,7 +83,7 @@ dotweak: |
 
         ////////////////////////////////////////////////////
 
-        const char * const s1 = "../lib/bear/libexec.dylib";
+        const char * const s1 = "../lib/bear/libexec.so";
         const char * const s2 = "../lib/bear/wrapper";
         const char * const s3 = "../lib/bear/wrapper.d";
 
