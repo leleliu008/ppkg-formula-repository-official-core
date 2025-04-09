@@ -1,0 +1,10 @@
+summary: A more modern man page viewer for our terminals
+src-url: https://github.com/plp13/qman/archive/refs/tags/v1.4.0.tar.gz
+src-sha: e59365d83b670e197a9596db5cdd806795fbe86ecd6853a0bd362c9261339ed8
+license: BSD-2-Clause
+dep-pkg: libncurses liblzma libbz2 libz
+dep-pym: cogapp
+
+dopatch: gsed -i "s|dependency('bzip2'|dependency('libbz2'|" src/meson.build
+
+install: mesonw -Dtests=disabled -Dconfigdir="$PACKAGE_INSTALL_DIR/etc/xdg/qman"
