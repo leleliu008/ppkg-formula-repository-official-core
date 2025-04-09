@@ -5,6 +5,8 @@ license: BSD-2-Clause
 dep-pkg: libncurses liblzma libbz2 libz
 dep-pym: cogapp
 
-dopatch: gsed -i "s|dependency('bzip2'|dependency('libbz2'|" src/meson.build
+dopatch: |
+    gsed -i "s|dependency('bzip2'|dependency('libbz2'|" src/meson.build
+    gsed -i '1i #include<signal.h>' src/tui.c
 
 install: mesonw -Dtests=disabled -Dconfigdir="$PACKAGE_INSTALL_DIR/etc/xdg/qman"
