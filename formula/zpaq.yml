@@ -1,0 +1,9 @@
+summary: Incremental, journaling command-line archiver
+web-url: https://mattmahoney.net/dc/zpaq.html
+src-url: https://github.com/zpaq/zpaq/archive/refs/tags/7.15.tar.gz
+src-sha: 64280d86cd38ad5ebc1c6415b17eb09ee292078d772176b90e16287687191efe
+license: Unlicense MIT public_domain
+install: |
+    gmakew clean
+    gmakew 
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

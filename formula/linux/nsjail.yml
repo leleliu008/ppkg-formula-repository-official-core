@@ -3,6 +3,7 @@ git-url: https://github.com/google/nsjail
 git-sha: refs/tags/3.4
 version: 3.4
 dep-pkg: libprotobuf.a libnl
+dep-res: sys/queue.h
 dep-upp: gm4 flex bison
 ppflags: -Wno-error=return-type
 

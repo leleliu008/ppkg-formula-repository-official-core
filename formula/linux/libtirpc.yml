@@ -4,7 +4,7 @@ git-url: https://src.fedoraproject.org/rpms/libtirpc.git
 src-url: https://downloads.sourceforge.net/project/libtirpc/libtirpc/1.3.5/libtirpc-1.3.5.tar.bz2
 src-sha: 9b31370e5a38d3391bf37edfa22498e28fe2142467ae6be7a17c9068ec0bf12f
 license: BSD-3-Clause
-dep-pkg: sys-queue.h
+dep-res: sys/queue.h
 install: |
     configure \
         --enable-ipv6 \
