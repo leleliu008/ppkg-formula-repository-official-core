@@ -1,0 +1,8 @@
+summary: A better and stronger spiritual successor to BZip2
+src-url: https://github.com/kspalaiologos/bzip3/releases/download/1.5.1/bzip3-1.5.1.tar.gz
+src-sha: cc7cacda6d15f24d3fe73fd87b895d5fd2c0f8b6dd0630ae4993aa45c4853c3b
+license: LGPL-3.0-only
+
+install: configure --disable-arch-native --disable-shared --enable-static
+
+dotweak: run rm -rf include/ lib/
