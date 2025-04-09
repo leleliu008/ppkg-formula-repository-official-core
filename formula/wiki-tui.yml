@@ -1,0 +1,5 @@
+summary: A simple and easy to use Wikipedia Text User Interface
+src-url: https://github.com/Builditluc/wiki-tui/archive/refs/tags/v0.9.1.tar.gz
+src-sha: 907eb93b7480435fa52727b4c56b22b7cbdc34e6bdda912411721234406c8eef
+license: MIT
+bsystem: cargo

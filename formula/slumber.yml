@@ -1,0 +1,6 @@
+summary: Terminal-based HTTP/REST client
+web-url: https://slumber.lucaspickering.me/
+src-url: https://github.com/LucasPickering/slumber/archive/refs/tags/v3.0.1.tar.gz
+src-sha: 979c06dafc9ac619e6eb6d83ea42876241223c5d0fe9b628edf479459a4d6ebb
+license: MIT
+bsystem: cargo
