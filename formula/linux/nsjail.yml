@@ -1,0 +1,15 @@
+summary: A lightweight process isolation tool that utilizes Linux namespaces, cgroups, rlimits and seccomp-bpf syscall filters, leveraging the Kafel BPF language for enhanced security
+git-url: https://github.com/google/nsjail
+git-sha: refs/tags/3.4
+version: 3.4
+dep-pkg: libprotobuf.a libnl
+dep-upp: gm4 flex bison
+ppflags: -Wno-error=return-type
+
+install: |
+    gmakew clean
+    gmakew
+    install_bins nsjail
+
+fix-url: https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/community/nsjail/protobuf-23.patch
+fix-sha: ff06210d23fba3d531895e8b225a2fe999938141a3ba39bca52f5b560d0ec6ac
