@@ -3,7 +3,7 @@ src-url: https://github.com/herrhotzenplotz/gcli/archive/refs/tags/v2.7.0.tar.gz
 src-sha: 4f03fba680567fcbc35e205da8b533daf14b73bc1b09eb7470ed5c1e6872056a
 license: BSD-2-Clause
 dep-pkg: libcurl liblowdown libreadline
-deo-upp: gm4 flex bison
+dep-upp: gm4 flex bison
 
 dopatch: |
     run ln -s "$(command -v flex)" ../bin/lex
