@@ -7,3 +7,6 @@ install: |
     gmakew clean
     gmakew CROSS_COMPILE= CC=$CC CXX=$CXX AR=$AR
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
+
+fix-url: https://github.com/hmgle/graftcp/commit/15d05927fde8cb84409b8a886f03a877fcb8ccdf.diff
+fix-sha: 29cd0c2c40591e0de4d0a2d049dd7fd4b55ca776410c744e277c8a32500842fb
