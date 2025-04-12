@@ -1,0 +1,8 @@
+summary: A tcpdump-compatible packet analyzer powered by eBPF, automatically annotating packets with process/container/pod metadata when detectable
+src-url: https://github.com/mozillazg/ptcpdump/archive/refs/tags/v0.33.0.tar.gz
+src-sha: de91ce2150bbfa4ead9da6630dff3fb750c2f1502087103e99123981c8eb4e6b
+dep-pkg: libpcap
+install: |
+    gmakew clean
+    gmakew
+    gmakew install

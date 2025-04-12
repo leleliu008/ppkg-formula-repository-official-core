@@ -1,4 +1,4 @@
-pkgtype: pie
+exetype: ~static
 summary: Interpreted, interactive, object-oriented programming language
 git-url: https://github.com/python/cpython
 web-url: https://www.python.org/
@@ -7,7 +7,7 @@ src-sha: f2e22ed965a93cfeb642378ed6e6cdbc127682664b24123679f3d013fafe9cd0
 license: Python-2.0
 dep-pkg: libncurses libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
 
-onready: ENABLE_LTO=0
+ltoable: 0
 
 # CPython do not support cross-compiling on macOS
 # configure: error: cross build not supported for x86_64-apple-darwin

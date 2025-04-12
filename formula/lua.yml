@@ -7,7 +7,7 @@ license: MIT
 dep-pkg: libreadline
 bscript: src
 
-dosetup: |
+prepare: |
     if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" != 1 ] ; then
         export CPPFLAGS="$CPPFLAGS -DLUA_USE_DLOPEN"
     fi

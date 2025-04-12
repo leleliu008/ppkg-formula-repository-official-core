@@ -5,7 +5,7 @@ src-sha: c5f30c427fd8107ee4a400c84d4447dd211352512eaf0b6e89cc6a50a2821922
 license: Zlib
 dep-pkg: pulseaudio xorg-xinput xorg-libice xorg-libxcursor xorg-libxscrnsaver xorg-libxxf86vm
 
-dosetup: |
+prepare: |
     case $TARGET_PLATFORM_ARCH in
         arm*)
             _3DNOW=OFF

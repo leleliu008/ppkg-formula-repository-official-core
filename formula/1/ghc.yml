@@ -51,6 +51,7 @@ onstart: |
     PACKAGE_SRC_FILENAME="$PACKAGE_SRC_SHA.txz"
     PACKAGE_SRC_FILEPATH="$PPKG_DOWNLOADS_DIR/$PACKAGE_SRC_FILENAME"
 
+prepare: |
     __check_mach_o_files() {
         :
     }

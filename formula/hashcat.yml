@@ -6,7 +6,7 @@ src-sha: b25e1077bcf34908cc8f18c1a69a2ec98b047b2cbcf0f51144dcf3ba1e0b7b2a
 license: MIT
 dep-pkg: libxxhash libminizip opencl-headers
 
-dosetup: |
+prepare: |
     export CFLAGS="$CFLAGS $CPPFLAGS"
     export LDFLAGS="$LDFLAGS -lm"
 

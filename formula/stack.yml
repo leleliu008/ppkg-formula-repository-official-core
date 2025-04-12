@@ -3,6 +3,5 @@ web-url: https://haskellstack.org/
 src-url: https://github.com/commercialhaskell/stack/archive/refs/tags/v3.3.1.tar.gz
 src-sha: 9a8dc9dd403fa8fd56339353091d438fd5d97ee6f2001a0cc11ba94b19271d98
 license: BSD-3-Clause
-dep-pkg: ghc
 bsystem: cabal
 dopatch: gsed -i '/with-compiler:/d' cabal.project

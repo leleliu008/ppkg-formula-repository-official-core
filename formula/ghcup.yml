@@ -3,10 +3,10 @@ web-url: https://www.haskell.org/ghcup/
 src-url: https://github.com/haskell/ghcup-hs/archive/refs/tags/v0.1.40.0.tar.gz
 src-sha: 80c4c1152ebc35372b987ffa5b46fedc4e940eaf581e6ab11d93d0892bd16fe4
 license: LGPL-3.0-only
-dep-pkg: ghc libbz2
+dep-pkg: libbz2
 bsystem: cabal
 
-dosetup: |
+prepare: |
     if [ "$TARGET_PLATFORM_VERS" = glibc ] ; then
         X="$("$CC_FOR_BUILD" -print-file-name=libtinfo.so.6)"
 

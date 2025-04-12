@@ -5,7 +5,7 @@ src-sha: a305734033a9c25541a59e8dd1c254409953269ea7c710c39e540bd8853389ba
 dep-pkg: libpopt
 binbstd: 1
 
-dosetup: |
+prepare: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         # https://mail-index.netbsd.org/tech-pkg/2003/08/08/0007.html
         export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lossaudio"

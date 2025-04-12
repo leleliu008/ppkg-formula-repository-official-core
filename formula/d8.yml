@@ -1,4 +1,4 @@
-pkgtype: pie
+exetype: ~static
 summary: A high-performance JavaScript and WebAssembly Engine powered by Google
 web-url: https://v8.dev/
 src-url: https://github.com/v8/v8/archive/refs/tags/12.7.224.16.tar.gz
@@ -8,7 +8,7 @@ dep-upp: git gn ninja python3
 dep-pkg: glib
 bsystem: gn
 
-dosetup: |
+prepare: |
     git_checkout https://chromium.googlesource.com/chromium/src/build.git                   --ref-from=faf20f32f1d19bd492f8f16ac4a7ecfabdbb60c1 -C build
     git_checkout https://chromium.googlesource.com/external/github.com/Maratyszcza/FP16.git --ref-from=0a92994d729ff76a58f692d3028ca1b64b145d91 -C third_party/fp16/src
     git_checkout https://chromium.googlesource.com/external/github.com/google/googletest.git --ref-from=a7f443b80b105f940225332ed3c31f2790092f47 -C third_party/googletest/src

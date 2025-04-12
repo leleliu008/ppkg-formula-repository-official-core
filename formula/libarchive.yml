@@ -29,5 +29,4 @@ install: |
         --with-zstd \
         --with-iconv
 
-dotweak: |
-    gsed -i '/Requires: /s|iconv|libiconv libcrypto|' lib/pkgconfig/libarchive.pc
+dotweak: gsed -i -e 's| -lcrypto .*||' -e '/^Requires/s|iconv|libiconv expat libzstd liblzma liblz4 libbz2 libz lzo2|' lib/pkgconfig/libarchive.pc

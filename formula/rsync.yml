@@ -11,7 +11,7 @@ fix-url: https://download.samba.org/pub/rsync/src/rsync-patches-3.4.1.tar.gz
 fix-sha: f56566e74cfa0f68337f7957d8681929f9ac4c55d3fb92aec0d743db590c9a88
 dopatch: patch -p1 < ../fix/patches/fileflags.diff
 
-dosetup: |
+prepare: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lpthread"
     fi

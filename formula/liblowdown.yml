@@ -1,0 +1,24 @@
+summary: Simple markdown translator
+web-url: https://kristaps.bsd.lv/lowdown/
+src-url: https://github.com/kristapsdz/lowdown/archive/refs/tags/VERSION_2_0_2.tar.gz
+src-sha: 9718c0f6c99a2cef923357feced0e0f86d8047260238c5c37fd2b51ca620e373
+license: ISC
+dep-upp: bmake
+binbstd: 1
+install: |
+    cat > configure.local <<EOF
+    HAVE_SANDBOX_INIT=0
+    EOF
+
+    BMAKE="$(command -v bmake)"
+    export MAKESYSPATH=${BMAKE%/bmake}/../share/mk
+
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        LINKER_SONAME=-install_name
+    else
+        LINKER_SONAME=-soname
+    fi
+
+    run ./configure LINKER_SONAME=$LINKER_SONAME PREFIX="$PACKAGE_INSTALL_DIR"
+    run "$BMAKE"
+    run "$BMAKE" install_libs

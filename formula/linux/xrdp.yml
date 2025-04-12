@@ -1,4 +1,4 @@
-pkgtype: pie
+exetype: ~static ~static-most
 summary: An open source RDP server
 web-url: https://www.xrdp.org/
 license: Apache-2.0
@@ -9,11 +9,9 @@ dep-lib: xrandr xfixes -lm
 dep-upp: libtool nasm
 bsystem: autotools
 
-onstart: PACKAGE_CREATE_MOSTLY_STATICALLY_LINKED_EXECUTABLE=0
-
 dopatch: gsed -i 's|-Werror||g' configure.ac
 
-dosetup: |
+prepare: |
     run ./bootstrap
     export TURBOJPEG_PATH="$libjpeg_turbo_INSTALL_DIR"
 

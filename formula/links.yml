@@ -6,7 +6,7 @@ src-sha: c4631c6b5a11527cdc3cb7872fc23b7f2b25c2b021d596be410dadb40315f166
 dep-pkg: libbz2 libtiff libjpeg-turbo libopenssl
 license: GPL-2.0-or-later
 
-dosetup: |
+prepare: |
     run ./configure \
         --prefix=$PACKAGE_INSTALL_DIR \
         --enable-ipv6 \

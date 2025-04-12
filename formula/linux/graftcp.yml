@@ -1,0 +1,9 @@
+summary: A flexible command-line tool for redirecting a given program TCP traffic to SOCKS5 or HTTP proxy
+src-url: https://github.com/hmgle/graftcp/archive/refs/tags/v0.7.1.tar.gz
+src-sha: 3a1b262fa0fe74b0e1b685a99f3070592fc9d809b23f5d5d53c2bc876f140b68
+license: GPL-3.0
+dep-upp: golang
+install: |
+    gmakew clean
+    gmakew CROSS_COMPILE= CC=$CC CXX=$CXX AR=$AR
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

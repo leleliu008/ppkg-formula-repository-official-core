@@ -1,4 +1,4 @@
-pkgtype: pie
+exetype: ~static
 summary: Next-gen compiler infrastructure
 web-url: https://llvm.org/
 src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.6/llvm-project-16.0.6.src.tar.xz

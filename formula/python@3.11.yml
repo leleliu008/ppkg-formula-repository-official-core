@@ -1,4 +1,4 @@
-pkgtype: pie
+exetype: ~static
 summary: Interpreted, interactive, object-oriented programming language
 git-url: https://github.com/python/cpython
 web-url: https://www.python.org/
@@ -7,7 +7,7 @@ src-sha: 883bddee3c92fcb91cf9c09c5343196953cbb9ced826213545849693970868ed
 license: Python-2.0
 dep-pkg: libreadline libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
 
-onready: ENABLE_LTO=0
+ltoable: 0
 
 # CPython do not support cross-compiling on macOS
 # configure: error: cross build not supported for x86_64-apple-darwin
@@ -15,7 +15,7 @@ onready: ENABLE_LTO=0
 
 dopatch: gsed -i 's|"" tinfo ncursesw ncurses curses termcap|ncurses|' configure
 
-dosetup: |
+prepare: |
     unset PYTHONHOME
     unset PYTHONPATH
 

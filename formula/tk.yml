@@ -6,7 +6,7 @@ version: 8.6.16
 dep-pkg: libtcl xorg-libxft
 bscript: unix
 
-dosetup: |
+prepare: |
     case $TARGET_PLATFORM_ARCH in
         *64)    CONFIGURE_EXTRA_ARGS=--enable-64bit ;;
         *)      CONFIGURE_EXTRA_ARGS=--disable-64bit ;;

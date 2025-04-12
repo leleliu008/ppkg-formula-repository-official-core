@@ -11,7 +11,7 @@ do12345: |
         configure --disable-zlib --disable-bzlib --disable-xzlib
     fi
 
-dosetup: |
+prepare: |
     if isCrossBuild ; then
         export FILE_COMPILE="$NATIVE_INSTALL_DIR/bin/file"
     fi

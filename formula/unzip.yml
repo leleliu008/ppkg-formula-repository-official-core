@@ -68,7 +68,7 @@ dopatch: |
     run ln -s "$libbz2_INCLUDE_DIR/bzlib.h"  bzip2/
     run ln -s "$libbz2_LIBRARY_DIR/libbz2.a" bzip2/
 
-dosetup: |
+prepare: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         TARGET_COMPILE=macosx
     else

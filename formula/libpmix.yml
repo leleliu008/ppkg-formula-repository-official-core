@@ -5,8 +5,7 @@ src-sha: ea51baa0fdee688d54bc9f2c11937671381f00de966233eec6fd88807fb46f83
 license: BSD-3-Clause
 dep-pkg: libevent libhwloc
 dep-upp: python3
-
-onready: ENABLE_LTO=0
+ltoable: 0
 
 install: |
     configure \

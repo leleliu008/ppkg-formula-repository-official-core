@@ -6,7 +6,7 @@ license: Apache-2.0
 dep-pkg: wayland ffmpeg-dev libicu libusb libcups libfuse libkrb5 libsdl2_ttf libpkcs11-helper libxkbcommon xorg-libxv
 dep-lib: xcb libavcodec SDL2_ttf -lffi -lgomp -lstdc++
 
-dosetup: export CPPFLAGS="$CPPFLAGS -I$libsdl2_ttf_INCLUDE_DIR/SDL2"
+prepare: export CPPFLAGS="$CPPFLAGS -I$libsdl2_ttf_INCLUDE_DIR/SDL2"
 
 install: |
     cmakew \

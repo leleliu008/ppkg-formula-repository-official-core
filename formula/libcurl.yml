@@ -1,8 +1,8 @@
 summary: A free and easy-to-use client-side URL transfer library
 git-url: https://github.com/curl/curl
 web-url: https://curl.haxx.se/
-src-url: https://curl.haxx.se/download/curl-8.9.1.tar.bz2
-src-sha: b57285d9e18bf12a5f2309fc45244f6cf9cb14734e7454121099dd0a83d669a3
+src-url: https://curl.haxx.se/download/curl-8.12.1.tar.bz2
+src-sha: 18681d84e2791183e0e5e4650ccb2a080c1f3a4e57ed2fbc2457228579d68269
 license: curl
 dep-upp: perl
 dep-pkg: libnghttp2 libopenssl libbrotli libzstd libz
@@ -32,9 +32,9 @@ install: |
         --disable-ldaps
 
 dotweak: |
-    rm -rfv share/man/man1/curl.1
+    run rm share/man/man1/curl.1
 
-    sed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lnghttp2||g' -e 's|-lzstd||g' -e 's|-lz||g' -e 's|-lbrotlidec||g' -e 's|-lbrotlicommon||g' lib/pkgconfig/libcurl.pc
+    gsed -i '/Libs.private:/d' lib/pkgconfig/libcurl.pc
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         gsed -i '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' lib/pkgconfig/libcurl.pc

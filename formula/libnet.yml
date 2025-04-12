@@ -3,7 +3,7 @@ src-url: https://github.com/libnet/libnet/releases/download/v1.3/libnet-1.3.tar.
 src-sha: ad1e2dd9b500c58ee462acd839d0a0ea9a2b9248a1287840bc601e774fb6b28f
 license: BSD-2-Clause
 
-dosetup: |
+prepare: |
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export CPPFLAGS="$CPPFLAGS -D__int64_t=uint64_t"
     fi

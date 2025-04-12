@@ -5,5 +5,5 @@ src-sha: d588bca36357eda8bcafd5bc1f95df1afe613fdc70c80e426fc89eecb828fc3e
 license: BSD-3-Clause
 dep-pkg: libpq
 xxflags: -std=c++17
-dosetup: export PG_CONFIG="$libpq_INSTALL_DIR/bin/pg_config"
+prepare: export PG_CONFIG="$libpq_INSTALL_DIR/bin/pg_config"
 install: configure

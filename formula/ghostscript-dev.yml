@@ -16,7 +16,7 @@ dopatch: |
         gsed -i 's|DO_NOT_USE_SPRINTF|sprintf|' base/stdio_.h
     fi
 
-dosetup: |
+prepare: |
     if isCrossBuild ; then
         export CCAUX="$CC_FOR_BUILD"
         export CFLAGSAUX="$CFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD"

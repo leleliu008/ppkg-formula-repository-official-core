@@ -8,7 +8,7 @@ license: LGPL-3.0-or-later
 dep-pkg: bdw-gc libreadline libgmp libffi libxcrypt libunistring
 dep-upp: gperf texinfo
 
-dosetup: |
+prepare: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         export LDFLAGS="$LDFLAGS -framework CoreFoundation"
     fi

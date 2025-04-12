@@ -4,7 +4,7 @@ src-sha: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995
 license: BSD-2-Clause
 dep-pkg: gm4
 
-dosetup: |
+prepare: |
     # https://github.com/westes/flex/issues/428
     export ac_cv_func_reallocarray=no
 

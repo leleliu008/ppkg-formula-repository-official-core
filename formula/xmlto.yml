@@ -5,4 +5,4 @@ src-sha: 40504db68718385a4eaa9154a28f59e51e59d006d1aa14f5bc9d6fded1d6017a
 license: GPL-2.0-or-later
 dep-upp: getopt xmlutils xsltproc docbook-xsl
 bsystem: autotools
-dosetup: export GETOPT="$(command -v getopt)"
+prepare: export GETOPT="$(command -v getopt)"

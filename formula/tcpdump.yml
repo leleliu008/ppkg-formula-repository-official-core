@@ -13,7 +13,7 @@ install: |
         -DWITH_CAP_NG=OFF \
         -DENABLE_SMB=OFF
 
-dosetup: |
+prepare: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lpthread"
     fi

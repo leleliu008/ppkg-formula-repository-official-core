@@ -5,5 +5,5 @@ src-sha: 326f0326839672d84d4e5efe8ba56e743e84d88693686e5b9fdd64e5ca9dc876
 license: BSD-3-Clause
 dep-pkg: libbz2 liblzma libopenssl
 bsystem: cargo cmake
-dosetup: export PIXI_VERSION="$PACKAGE_VERSION"
+prepare: export PIXI_VERSION="$PACKAGE_VERSION"
 install: cargow install --locked

@@ -1,15 +1,9 @@
 summary: C library of Git core methods that is re-entrant and linkable
 web-url: https://libgit2.github.com
-src-url: https://github.com/libgit2/libgit2/archive/refs/tags/v1.8.1.tar.gz
-src-sha: 8c1eaf0cf07cba0e9021920bfba9502140220786ed5d8a8ec6c7ad9174522f8e
+src-url: https://github.com/libgit2/libgit2/archive/refs/tags/v1.9.0.tar.gz
+src-sha: 75b27d4d6df44bd34e2f70663cfd998f5ec41e680e1e593238bbe517a84c7ed2
 dep-pkg: libssh2 libpcre2 libiconv
 license: GPL-2.0-only
-
-dopatch: |
-    # https://github.com/libgit2/libgit2/issues/6280
-    if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
-        gsed -i 's|sys/random.h|unistd.h|' src/util/rand.c
-    fi
 
 install: |
     cmakew 2 \
@@ -25,6 +19,4 @@ install: |
         -DUSE_BUNDLED_ZLIB=OFF \
         -DREGEX_BACKEND=pcre2
 
-dotweak: |
-    sed -i -e 's|-lssl||g' -e 's|-lcrypto||g' -e 's|-lz||g' -e 's|-lssh2||g' lib/pkgconfig/libgit2.pc
-    sed -i -e 's|openssl|libssh2|' -e 's|zlib|libiconv|' lib/pkgconfig/libgit2.pc
+dotweak: gsed -i -e '/Libs.private:/d' -e '/^Requires/s|openssl|libssh2|' -e '/^Requires/s|zlib|libiconv|' lib/pkgconfig/libgit2.pc

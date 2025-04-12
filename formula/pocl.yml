@@ -1,4 +1,4 @@
-pkgtype: pie
+exetype: ~static
 summary: Portable Computing Language
 web-url: http://portablecl.org/
 src-url: https://github.com/pocl/pocl/archive/refs/tags/v6.0.tar.gz

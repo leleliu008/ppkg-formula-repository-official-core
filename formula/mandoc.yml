@@ -7,7 +7,7 @@ dep-pkg: libz
 bsystem: configure
 binbstd: 1
 
-dosetup: |
+prepare: |
     mv cgi.h.example cgi.h
 
     cat > configure.local <<EOF

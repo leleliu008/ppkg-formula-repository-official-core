@@ -2,7 +2,7 @@ summary: A high-performance, extensible alternative to ls
 src-url: https://github.com/triyanox/lla/archive/refs/tags/v0.3.10.tar.gz
 src-sha: 360a0ab6134eea58d46a762b6697d5f8fa423904beb26119fa7866b2668b34e4
 license: MIT
-dosetup: export RUSTUP_TOOLCHAIN=1.81
+prepare: export RUSTUP_TOOLCHAIN=1.81
 install: |
     cargow install --path lla
 

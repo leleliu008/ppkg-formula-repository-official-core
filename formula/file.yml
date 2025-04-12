@@ -11,13 +11,13 @@ do12345: |
         configure --disable-zlib --disable-bzlib --disable-xzlib
     fi
 
-dosetup: |
+prepare: |
     if isCrossBuild ; then
         export FILE_COMPILE="$NATIVE_INSTALL_DIR/bin/file"
     fi
 
 install: configure --enable-zlib --disable-bzlib --disable-xzlib --enable-static --disable-shared
 
-doextra: rm -rf include/ lib/ share/man/man3/
+dotweak: rm -rf include/ lib/ share/man/man3/
 
 bindenv: MAGIC=%s/share/misc/magic.mgc

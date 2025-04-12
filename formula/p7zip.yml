@@ -3,7 +3,7 @@ src-url: https://github.com/p7zip-project/p7zip/archive/v17.05.tar.gz
 src-sha: d2788f892571058c08d27095c22154579dfefb807ebe357d145ab2ddddefb1a6
 license: LGPL-2.1-or-later
 
-dosetup: |
+prepare: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         mv makefile.macosx_llvm_64bits makefile.machine
     else

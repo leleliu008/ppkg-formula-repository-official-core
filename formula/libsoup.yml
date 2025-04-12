@@ -7,6 +7,6 @@ license: LGPL-2.0-or-later
 dep-pkg: vala glib-networking libnghttp2 libpsl libxml2 libsqlite3
 bsystem: meson
 
-dosetup: |
+prepare: |
     # https://docs.gtk.org/gio/overview.html#running-gio-applications
     export GIO_MODULE_DIR="$glib_networking_INSTALL_DIR/lib/gio/modules"

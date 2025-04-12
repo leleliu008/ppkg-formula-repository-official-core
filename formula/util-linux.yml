@@ -17,7 +17,7 @@ dopatch: |
         fi
     done
 
-dosetup: |
+prepare: |
     export AUTOMAKE="$(command -v automake)"
     export ACLOCAL="$(command -v aclocal)"
 

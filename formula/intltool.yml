@@ -4,5 +4,5 @@ src-url: https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.t
 src-sha: 67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd
 license: GPL-2.0-or-later
 dep-pkg: perl-XML-Parser
-dosetup: export PERL5LIB="$perl_XML_Parser_INSTALL_DIR/lib/perl5"
+prepare: export PERL5LIB="$perl_XML_Parser_INSTALL_DIR/lib/perl5"
 bsystem: configure

@@ -7,9 +7,9 @@ license: OpenSSL
 dep-upp: perl
 bsystem: gmake
 
-dosetup: |
+prepare: |
     if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
-        sed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
+        gsed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
 
         if isCrossBuild ; then
             export LDFLAGS="$LDFLAGS -fuse-ld=lld"

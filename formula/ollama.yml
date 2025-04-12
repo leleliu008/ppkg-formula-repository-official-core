@@ -8,7 +8,7 @@ bsystem: go cmake-gmake
 
 dopatch: gsed -i 's|//go:generate make -j|//go:generate make -C .. -j|' llama/llama.go
 
-dosetup: |
+prepare: |
     export CGO_ENABLED=1
     run go generate llama/llama.go
 

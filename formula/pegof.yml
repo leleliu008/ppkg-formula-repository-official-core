@@ -2,7 +2,7 @@ summary: PEG grammar optimizer and formatter. Supports any grammar supported by 
 git-url: https://github.com/dolik-rce/pegof
 
 dopatch: |
-    sed -i '/add_executable(pegof_test/,$d' CMakeLists.txt
+    gsed -i '/add_executable(pegof_test/,$d' CMakeLists.txt
 
     cat >> CMakeLists.txt <<EOF
     include(GNUInstallDirs)

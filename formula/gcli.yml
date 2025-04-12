@@ -1,0 +1,18 @@
+summary: A command-line tool for interacting with GitHub, GitLab, GitTea, Forgejo and Bugzilla
+src-url: https://github.com/herrhotzenplotz/gcli/archive/refs/tags/v2.7.0.tar.gz
+src-sha: 4f03fba680567fcbc35e205da8b533daf14b73bc1b09eb7470ed5c1e6872056a
+license: BSD-2-Clause
+dep-pkg: libcurl liblowdown libreadline
+deo-upp: gm4 flex bison
+
+dopatch: |
+    run ln -s "$(command -v flex)" ../bin/lex
+
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        gsed -i 's|-lrt|-lc|' Makefile.in
+    fi
+
+install: |
+    run ./configure --prefix="$PACKAGE_INSTALL_DIR" --enable-liblowdown --enable-libreadline --$PROFILE
+    gmakew
+    gmakew install

@@ -1,11 +1,9 @@
-pkgtype: pie
+exetype: ~static ~static-most
 summary: A free, open source, and cross-platform media player based on MPlayer and mplayer2
 web-url: https://mpv.io
 src-url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.39.0.tar.gz
 src-sha: 2ca92437affb62c2b559b4419ea4785c70d023590500e8a52e95ea3ab4554683
 dep-pkg: libplacebo libluajit libmujs libuchardet ffmpeg-dev mesa
-
-onstart: PACKAGE_CREATE_MOSTLY_STATICALLY_LINKED_EXECUTABLE=0
 
 dopatch: |
     gsed -i "/iconv =/c iconv = dependency('libiconv', method : 'pkg-config')" meson.build
@@ -23,7 +21,7 @@ install: |
         -Djavascript=enabled \
         -Dlua=luajit
 
-doextra: |
+dotweak: |
     run cp -r "$libfontconfig_INSTALL_DIR/etc/fonts" etc/
     run cp -r "$libdrm_INSTALL_DIR/share/libdrm" share/
 

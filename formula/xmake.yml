@@ -6,6 +6,6 @@ license: Apache-2.0
 dep-pkg: libreadline
 bscript: core
 
-dosetup: run ln -s libncurses.a ../../lib/libcurses.a
+prepare: run ln -s libncurses.a ../../lib/libcurses.a
 
 install: xmakew --charset=y --small=y --xml=y --demo=n --curses=y

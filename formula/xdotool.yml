@@ -9,7 +9,7 @@ dep-upp: perl
 # https://github.com/jordansissel/xdotool/issues/313
 dopatch: gsed -i 's|define _XOPEN_SOURCE 500|define _XOPEN_SOURCE 600|' xdo.c
 
-dosetup: |
+prepare: |
     A="$(pkg-config --libs xkbcommon-x11)"
     B="$(pkg-config --libs xtst)"
     C="$(pkg-config --libs xinerama)"

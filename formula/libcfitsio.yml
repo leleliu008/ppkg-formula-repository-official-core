@@ -10,6 +10,6 @@ dopatch: |
     LIBCURL_LIBS="$(pkg-config --libs libcurl)"
     gsed -i "/CURL_LIB=/c CURL_LIB=$LIBCURL_LIBS" configure
 
-dosetup: export CFLAGS="$CFLAGS $LDFLAGS"
+prepare: export CFLAGS="$CFLAGS $LDFLAGS"
 
 install: configure --enable-reentrant

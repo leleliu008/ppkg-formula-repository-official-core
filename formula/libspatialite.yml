@@ -5,7 +5,7 @@ src-sha: 43be2dd349daffe016dd1400c5d11285828c22fea35ca5109f21f3ed50605080
 license: MPL-1.1
 dep-pkg: libfreexl librttopo libproj libxml2 libminizip
 
-dosetup: |
+prepare: |
     LIBS_PROJ="$(pkg-config --libs proj)"
     LIBS_GEOS="$(pkg-config --libs geos)"
     LIBS_FREEXL="$(pkg-config --libs freexl)"

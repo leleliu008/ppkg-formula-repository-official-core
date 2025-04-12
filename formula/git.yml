@@ -8,7 +8,7 @@ dep-pkg: libpcre2 libexpat libcurl libintl libz
 dep-upp: gettext-tools
 binbstd: 1
 
-dosetup: |
+prepare: |
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export ac_cv_c_regex_with_reg_startend=no
     fi

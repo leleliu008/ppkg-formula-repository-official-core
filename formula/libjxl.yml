@@ -5,7 +5,7 @@ src-sha: 7ce4ec8bb37a435a73ac18c4c9ff56c2dc6c98892bf3f53a328e3eca42efb9cf
 license: BSD-3-Clause
 dep-pkg: libhwy libbrotli liblcms2 libwebp libgif libpng libjpeg-turbo libopenexr
 
-dosetup: git_checkout https://github.com/webmproject/sjpeg --ref-from=e5ab13008bb214deb66d5f3e17ca2f8dbff150bf -C third_party/sjpeg
+prepare: git_checkout https://github.com/webmproject/sjpeg --ref-from=e5ab13008bb214deb66d5f3e17ca2f8dbff150bf -C third_party/sjpeg
 
 install: |
     cmakew 2 \

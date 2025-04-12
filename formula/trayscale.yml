@@ -5,7 +5,9 @@ license: MIT
 dep-pkg: libadwaita gobject-introspection
 dep-lib: libcurl libxml-2.0 yaml-0.1 xmlb
 bsystem: go
-onstart: PACKAGE_CREATE_MOSTLY_STATICALLY_LINKED_EXECUTABLE=0
+
+exetype: ~static ~static-most
+
 install: |
     export CGO_LDFLAGS="-L$PACKAGE_WORKING_DIR/lib -L$libintl_LIBRARY_DIR -L$libiconv_LIBRARY_DIR -L$libbz2_LIBRARY_DIR -L$libcurl_LIBRARY_DIR -L$libxml2_LIBRARY_DIR -L$libxmlb_LIBRARY_DIR -L$libyaml_LIBRARY_DIR -L$libopenssl_LIBRARY_DIR -L$libnghttp2_LIBRARY_DIR"
     export CGO_ENABLED=1
