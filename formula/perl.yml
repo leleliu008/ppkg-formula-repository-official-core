@@ -8,6 +8,7 @@ license: GPL-1.0-or-later
 dep-pkg: libdb libgdbm
 bsystem: gmake
 exetype: ~static
+
 # https://perldoc.perl.org/Config
 install: |
     run ./Configure \
@@ -31,8 +32,3 @@ install: |
         -Dusethreads
     gmakew
     gmakew install
-
-dotweak: |
-    __check_elf_files() {
-        :
-    }
