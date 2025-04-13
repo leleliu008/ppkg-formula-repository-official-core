@@ -4,8 +4,7 @@ src-url: https://dev.yorhel.nl/download/ncdu-2.7.tar.gz
 src-sha: b218cc14a2bb9852cf951db4e21aec8980e7a8c3aca097e3aa3417f20eb93000
 license: MIT
 dep-pkg: libncurses libzstd
-dep-upp: zig@0.13
-binbstd: 1
+bsystem: zig@0.13
 
 dopatch: |
     run ln -s ../lib/libncursesw.a libncursesw.a
@@ -20,17 +19,8 @@ dopatch: |
         gsed -i '/addExecutable/a .linkage = .dynamic,' build.zig
     fi
 
-    case $PROFILE in
-        debug)   ZIG_BUILD_EXTRA_ARGS='-Doptimize=Debug       -Dstrip=false' ;;
-        release) ZIG_BUILD_EXTRA_ARGS='-Doptimize=ReleaseSafe -Dstrip=true'  ;;
-    esac
-
-    if [ "$LOG_LEVEL" -ge 1 ] ; then
-        ZIG_BUILD_EXTRA_ARGS="$ZIG_BUILD_EXTRA_ARGS --verbose"
-    fi
-
 install: |
-    run zig build $ZIG_BUILD_EXTRA_ARGS --verbose --prefix "$PACKAGE_INSTALL_DIR" --search-prefix "$libncurses_INSTALL_DIR" --search-prefix "$libzstd_INSTALL_DIR"
+    zig -Doptimize=ReleaseSafe -Dstrip=true --search-prefix "$libncurses_INSTALL_DIR" --search-prefix "$libzstd_INSTALL_DIR"
     install_mans ncdu.1
 
 caveats: |

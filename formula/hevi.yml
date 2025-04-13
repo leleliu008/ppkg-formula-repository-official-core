@@ -1,0 +1,14 @@
+summary: A hex viewer, just like xxd or hexdump
+src-url: https://github.com/Arnau478/hevi/archive/refs/tags/v1.1.0.tar.gz
+src-sha: d1c444301c65910b171541f1e3d1445cc3ff003dfc8218b976982f80bccd9ee0
+license: GPL-3.0-or-later
+bsystem: zig@0.13
+
+dopatch: |
+    if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then
+        ZIG_BUILD_EXTRA_ARGS=-Dpie=false
+    else
+        ZIG_BUILD_EXTRA_ARGS=-Dpie=true
+    fi
+
+install: zig $ZIG_BUILD_EXTRA_ARGS

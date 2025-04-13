@@ -1,28 +1,5 @@
 summary: Language Server for Zig
-src-url: https://github.com/zigtools/zls/archive/refs/tags/0.13.0.tar.gz
-src-sha: 2e8046b6b0de765a4bf4bb828345e2badc8b828bc257dc931d0f56b147684d9f
-dep-upp: zig@0.13
-bsystem: zig
-binbstd: 1
-install: |
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        # https://zig.guide/build-system/cross-compilation/
-        if [ $TARGET_PLATFORM_ARCH = arm64 ] ; then
-            ZIG_BUILD_TARGET='aarch64-macos'
-        else
-            ZIG_BUILD_TARGET=$TARGET_PLATFORM_ARCH-macos
-        fi
-    else
-            ZIG_BUILD_TARGET=$TARGET_PLATFORM_ARCH-$TARGET_PLATFORM_NAME
-    fi
-
-    case $PROFILE in
-        debug)   ZIG_BUILD_EXTRA_ARGS='-Doptimize=Debug' ;;
-        release) ZIG_BUILD_EXTRA_ARGS='-Doptimize=ReleaseFast --release=fast'
-    esac
-
-    if [ "$LOG_LEVEL" -ge 1 ] ; then
-        ZIG_BUILD_EXTRA_ARGS="$ZIG_BUILD_EXTRA_ARGS --verbose"
-    fi
-
-    run zig build $ZIG_BUILD_EXTRA_ARGS "-Dtarget=$ZIG_BUILD_TARGET" --prefix "$PACKAGE_INSTALL_DIR"
+src-url: https://github.com/zigtools/zls/archive/refs/tags/0.14.0.tar.gz
+src-sha: 44cae74073b2f75cf627755398afadafaa382cccf7555b5b66b147dcaa6cef0d
+license: MIT
+bsystem: zig@0.14

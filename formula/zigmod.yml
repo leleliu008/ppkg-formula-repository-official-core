@@ -3,29 +3,12 @@ web-url: https://nektro.github.io/zigmod/
 src-url: https://github.com/nektro/zigmod/archive/refs/tags/r93.tar.gz
 src-sha: 302162e6ba66ee8abe028b5d61fe1c474ec50eadfb6481dc782702126fddb639
 license: MIT
-dep-upp: zig@0.13
-bsystem: zig
-binbstd: 1
-install: |
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        # https://zig.guide/build-system/cross-compilation/
-        if [ $TARGET_PLATFORM_ARCH = arm64 ] ; then
-            ZIG_BUILD_TARGET='aarch64-macos'
-        else
-            ZIG_BUILD_TARGET=$TARGET_PLATFORM_ARCH-macos
-        fi
-    else
-            ZIG_BUILD_TARGET=$TARGET_PLATFORM_ARCH-$TARGET_PLATFORM_NAME
-    fi
+bsystem: zig@0.13
 
+prepare: |
     case $PROFILE in
         debug)   ZIG_BUILD_EXTRA_ARGS='-Dmode=Debug       -Dstrip=false' ;;
         release) ZIG_BUILD_EXTRA_ARGS='-Dmode=ReleaseSafe -Dstrip=true'  ;;
     esac
 
-    if [ "$LOG_LEVEL" -ge 1 ] ; then
-        ZIG_BUILD_EXTRA_ARGS="$ZIG_BUILD_EXTRA_ARGS --verbose"
-    fi
-
-
-    run zig build $ZIG_BUILD_EXTRA_ARGS "-Dtarget=$ZIG_BUILD_TARGET" "-Dtag=$PACKAGE_VERSION" --prefix "$PACKAGE_INSTALL_DIR"
+install: zig -Dtag=$PACKAGE_VERSION $ZIG_BUILD_EXTRA_ARGS
