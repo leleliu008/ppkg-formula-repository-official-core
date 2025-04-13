@@ -1,0 +1,8 @@
+summary: A strongly-typed language meant to be compiled to JavaScript
+web-url: https://www.purescript.org/
+git-url: https://github.com/purescript/purescript
+src-url: https://hackage.haskell.org/package/purescript-0.15.15/purescript-0.15.15.tar.gz
+src-sha: 9c4a23ea47ff09adc34e260610beabd940ec5c15088234cf120e8660dd220e67
+license: BSD-3-Clause
+prepare: export BOOTSTRAP_HASKELL_GHC_VERSION='9.6.6'
+install: cabal_v2_install --allow-newer=aeson,base,memory,template-haskell

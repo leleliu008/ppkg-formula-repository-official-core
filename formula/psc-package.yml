@@ -1,0 +1,9 @@
+summary: Package manager for PureScript based on package sets
+web-url: https://psc-package.readthedocs.io
+src-url: https://github.com/purescript/psc-package/archive/refs/tags/v0.6.2.tar.gz
+src-sha: 96c3bf2c65d381c61eff3d16d600eadd71ac821bbe7db02acec1d8b3b6dbecfc
+license: BSD-3-Clause
+dep-pkg: purescript
+
+prepare: export BOOTSTRAP_HASKELL_GHC_VERSION='9.10.1'
+install: cabal_v2_install --allow-newer=turtle:text

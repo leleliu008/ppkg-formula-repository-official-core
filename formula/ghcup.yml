@@ -5,15 +5,3 @@ src-sha: 80c4c1152ebc35372b987ffa5b46fedc4e940eaf581e6ab11d93d0892bd16fe4
 license: LGPL-3.0-only
 dep-pkg: libbz2
 bsystem: cabal
-
-prepare: |
-    if [ "$TARGET_PLATFORM_VERS" = glibc ] ; then
-        X="$("$CC_FOR_BUILD" -print-file-name=libtinfo.so.6)"
-
-        if [ -n "$X" ] ; then
-            run ln -s "$X" ../lib/libtinfo.so
-        fi
-    fi
-
-    export LD_LIBRARY_PATH="$PACKAGE_WORKING_DIR/lib:$libgmp_LIBRARY_DIR"
-    export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -L$PACKAGE_WORKING_DIR/lib"

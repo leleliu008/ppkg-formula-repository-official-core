@@ -1,0 +1,5 @@
+summary: A smarter Dockerfile linter that helps you build best practice Docker images
+src-url: https://github.com/hadolint/hadolint/archive/refs/tags/v2.12.0.tar.gz
+src-sha: 1f972f070fa068a8a18b62016c9cbd00df994006e069647038694fc6cde45545
+license: GPL-3.0-only
+bsystem: cabal

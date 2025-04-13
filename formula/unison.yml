@@ -1,0 +1,16 @@
+summary: File synchronization tool
+web-url: https://www.cis.upenn.edu/~bcpierce/unison/
+src-url: https://github.com/bcpierce00/unison/archive/refs/tags/v2.53.7.tar.gz
+src-sha: a259537cef465c4806d6c1638c382620db2dd395ae42a0dd2efa3ba92712bed5
+license: GPL-3.0-or-later
+dep-pkg: ocaml
+
+install: |
+    gmakew clean
+    gmakew src/unison
+    install_bins src/unison
+
+    if [ "$TARGET_PLATFORM_NAME" = linux ] ; then
+        gmakew src/unison-fsmonitor
+        install_bins src/unison-fsmonitor
+    fi
