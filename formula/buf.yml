@@ -1,0 +1,8 @@
+summary: New way of working with Protocol Buffers
+src-url: https://github.com/bufbuild/buf/archive/refs/tags/v1.52.1.tar.gz
+src-sha: 08489aa993fe36ad5965381a3ff2848c8d4f3a4f76096f0fdc19355f77826253
+license: Apache-2.0
+install: |
+    gow ./cmd/buf
+    gow ./cmd/protoc-gen-buf-lint
+    gow ./cmd/protoc-gen-buf-breaking

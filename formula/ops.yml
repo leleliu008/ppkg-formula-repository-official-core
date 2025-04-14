@@ -1,0 +1,6 @@
+summary: Build and Run Nanos Unikernels
+web-url: https://nanos.org/
+src-url: https://github.com/nanovms/ops/archive/refs/tags/0.1.42.tar.gz
+src-sha: fd7b6fe1333d773df5bdc03b563f3b14836cc0a79f09cef030689698bcb5a3e9
+license: Apache-2.0
+bsystem: go
