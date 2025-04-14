@@ -1,0 +1,5 @@
+summary: Integration point for ghcide and haskell-ide-engine. One IDE to rule them all
+src-url: https://github.com/haskell/haskell-language-server/releases/download/2.10.0.0/haskell-language-server-2.10.0.0-src.tar.gz
+src-sha: dd7ba032767e9a955f334617eef8f4b8b12b260191f97ad883545851f498dc0a
+license: Apache-2.0
+bsystem: cabal
