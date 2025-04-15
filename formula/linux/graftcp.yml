@@ -3,9 +3,17 @@ src-url: https://github.com/hmgle/graftcp/archive/refs/tags/v0.7.1.tar.gz
 src-sha: 3a1b262fa0fe74b0e1b685a99f3070592fc9d809b23f5d5d53c2bc876f140b68
 license: GPL-3.0
 dep-upp: golang
+
+dopatch: |
+    gsed -i 's|$^ -o $@|$^ -o $@ $(LDFLAGS)|' Makefile
+
+    if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then
+        gsed -i 's|-s -w|-s -w -linkmode external -extldflags=-static|' local/Makefile
+    fi
+
 install: |
     gmakew clean
-    gmakew CROSS_COMPILE= CC=$CC CXX=$CXX AR=$AR
+    gmakew CROSS_COMPILE= CC=$CC CXX=$CXX AR=$AR VERSION="v$PACKAGE_VERSION"
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
 
 fix-url: https://github.com/hmgle/graftcp/commit/15d05927fde8cb84409b8a886f03a877fcb8ccdf.diff
