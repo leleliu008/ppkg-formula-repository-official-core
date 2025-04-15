@@ -12,6 +12,7 @@ dopatch: |
     fi
 
 install: |
+    export CGO_ENABLED=1
     gmakew clean
     gmakew CROSS_COMPILE= CC=$CC CXX=$CXX AR=$AR VERSION="v$PACKAGE_VERSION"
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
