@@ -1,8 +1,8 @@
 summary: Improved top (interactive process viewer)
 web-url: https://htop.dev
-src-url: https://github.com/htop-dev/htop/archive/refs/tags/3.3.0.tar.gz
-src-sha: 1e5cc328eee2bd1acff89f860e3179ea24b85df3ac483433f92a29977b14b045
+src-url: https://github.com/htop-dev/htop/archive/refs/tags/3.4.1.tar.gz
+src-sha: af9ec878f831b7c27d33e775c668ec79d569aa781861c995a0fbadc1bdb666cf
 license: GPL-2.0-or-later
 dep-pkg: libncurses
 bsystem: autogen
-install: configure --disable-static --enable-unicode LIBS="$libncurses_LIBRARY_DIR/libncursesw.a"
+install: configure --disable-static --enable-unicode
