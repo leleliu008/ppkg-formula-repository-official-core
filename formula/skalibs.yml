@@ -1,0 +1,16 @@
+summary: A set of general-purpose C programming libraries for skarnet.org softwares
+web-url: https://skarnet.org/software/skalibs/
+src-url: https://skarnet.org/software/skalibs/skalibs-2.14.3.0.tar.gz
+src-sha: a14aa558c9b09b062fa16acec623b2c8f93d69f5cba4d07f6d0c58913066c427
+license: ISC
+binbstd: 1
+
+dopatch: |
+    if [ "$TARGET_PLATFORM_NAME" != macos ] ; then
+        gsed -i 's|-soname|-install_name|' Makefile
+    fi
+
+install: |
+    configure \
+        --with-sysdep-devurandom=yes \
+        --with-sysdep-posixspawnearlyreturn=no

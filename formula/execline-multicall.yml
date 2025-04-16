@@ -1,0 +1,13 @@
+summary: A non-interactive scripting language interpreter like sh, but its syntax is quite different from a traditional shell syntax
+src-url: https://github.com/skarnet/execline/archive/refs/tags/v2.9.6.1.tar.gz
+src-sha: e718d73a0fa667f270763776a58213a027cb85dd5db9ad8331fa62b123911b29
+license: ISC
+dep-pkg: skalibs
+binbstd: 1
+
+dopatch: |
+    if [ "$TARGET_PLATFORM_NAME" != macos ] ; then
+        gsed -i 's|-soname|-install_name|' Makefile
+    fi
+
+install: configure --enable-multicall --with-sysdeps="$skalibs_INSTALL_DIR/lib/skalibs/sysdeps"
