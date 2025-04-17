@@ -1,0 +1,9 @@
+summary: Anonymizing overlay network for TCP
+web-url: https://www.torproject.org/
+src-uri: https://www.torproject.org/dist/tor-0.4.8.16.tar.gz
+src-url: https://fossies.org/linux/misc/tor-0.4.8.16.tar.gz
+src-sha: 6540dd377a120fb8e7d27530aa3b7ff72a0fa5b4f670fe1d64c987c1cfd390cb
+license: BSD-2-Clause BSD-3-Clause MIT NCSA
+dep-pkg: libevent libscrypt libzstd liblzma libz
+ppflags: -UNDEBUG
+install: configure --enable-gpl --disable-html-manual
