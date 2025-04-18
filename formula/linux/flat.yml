@@ -16,4 +16,4 @@ prepare: |
 
     run go generate ./...
 
-install: gow ./cmd/
+install: gow -o flat ./cmd/
