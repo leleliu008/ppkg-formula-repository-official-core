@@ -3,6 +3,17 @@ src-url: https://github.com/pouriyajamshidi/flat/archive/refs/tags/v0.3.0.tar.gz
 src-sha: 61ede81b1399977f9d516812f8d1a015a87c8a90ccb29e47275bb3ad2b6b4199
 license: GPL-3.0
 dep-pkg: libbpf
-install: |
+
+prepare: |
+    # https://github.com/cilium/ebpf/blob/main/cmd/bpf2go/main.go
+    unset BPF2GO_CC
+    unset BPF2GO_STRIP
+    unset BPF2GO_MAKEBASE
+    unset GOFILE
+    unset GOPACKAGE
+
+    export BPF2GO_CFLAGS="$CPPFLAFS $LDFLAGS"
+
     run go generate ./...
-    gow ./cmd/
+
+install: gow ./cmd/
