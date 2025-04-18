@@ -12,7 +12,7 @@ prepare: |
     unset GOFILE
     unset GOPACKAGE
 
-    export BPF2GO_CFLAGS="$CPPFLAFS -v"
+    export BPF2GO_CFLAGS="$CPPFLAGS -v"
 
     run go generate ./...
 
