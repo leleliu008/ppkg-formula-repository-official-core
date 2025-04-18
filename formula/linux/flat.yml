@@ -2,6 +2,7 @@ summary: Measure UDP and TCP flow latency for both IPv4 and IPv6 using eBPF
 src-url: https://github.com/pouriyajamshidi/flat/archive/refs/tags/v0.3.0.tar.gz
 src-sha: 61ede81b1399977f9d516812f8d1a015a87c8a90ccb29e47275bb3ad2b6b4199
 license: GPL-3.0
+dep-pkg: libbpf
 install: |
     run go generate ./...
     gow ./cmd/
