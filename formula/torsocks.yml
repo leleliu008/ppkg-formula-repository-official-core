@@ -13,3 +13,5 @@ prepare: |
     if printf 'int main() { return 0; }\n' | "$CC" -c -x c -Werror -Wimplicit-function-declaration -o /dev/null - ; then
         export CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
     fi
+
+dotweak: run rm -rf lib/
