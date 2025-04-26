@@ -3,11 +3,11 @@ git-url: https://gitlab.torproject.org/tpo/core/torsocks
 src-url: https://gitlab.torproject.org/tpo/core/torsocks/-/archive/v2.5.0/torsocks-v2.5.0.tar.bz2
 src-sha: 31a917328b221e955230b7663abfbc50d3a9b445a68cb0313c11cf884f8cb41f
 license: GPL-2.0-only
+dep-upp: libtool
+bsystem: autogen
 
 fix-url: https://gitlab.torproject.org/legacy/trac/uploads/9efc1c0c47b3950aa91e886b01f7e87d/0001-Fix-macros-for-accept4-2.patch
 fix-sha: 97881f0b59b3512acc4acb58a0d6dfc840d7633ead2f400fad70dda9b2ba30b0
-
-bsystem: autogen
 
 prepare: |
     if printf 'int main() { return 0; }\n' | "$CC" -c -x c -Werror -Wimplicit-function-declaration -o /dev/null - ; then
