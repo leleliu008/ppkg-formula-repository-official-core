@@ -17,5 +17,5 @@ prepare: |
 
 install: |
     gmakew clean
-    gmakew ZSTD=1 LZMA=1 ZLIB=0 BZIP2=1 LDEF=1 MD5=1 CC="$CC"
+    gmakew ZSTD=1 LZMA=1 ZLIB=0 BZIP2=1 LDEF=1 MD5=1 CC="$CC" PATCH_LINK="'$LDFLAGS'" DIFF_LINK="'$LDFLAGS'"
     install_bins hdiffz hpatchz
