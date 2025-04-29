@@ -1,0 +1,12 @@
+summary: A command-line tool for displaying the CPU information in a clean and beautiful way
+src-url: https://github.com/Dr-Noob/cpufetch/archive/refs/tags/v1.06.tar.gz
+src-sha: b8ec1339cf3a3bb9325cde7fb0748dd609043e8d2938c292956da7e457bdb7d9
+license: GPL-2.0-only
+
+dopatch: gsed -i '/-o $(OUTPUT)/s|$| $(LDFLAGS)|' Makefile
+
+install: |
+    gmakew clean
+    gmakew
+    install_bins cpufetch
+    install_mans cpufetch.1
