@@ -1,0 +1,8 @@
+summary: Health Checking for Linux Virtual Server & High-Availability
+git-url: https://github.com/acassen/keepalived
+web-url: https://www.keepalived.org/
+src-url: https://www.keepalived.org/software/keepalived-2.3.1.tar.gz
+src-sha: 92f4b69bfd998e2306d1995ad16fdad1b59e70be694c883385c5f55e02c62aa3
+license: GPL-2.0-only
+dep-pkg: libnl libnfnetlink libopenssl
+bsystem: autogen
