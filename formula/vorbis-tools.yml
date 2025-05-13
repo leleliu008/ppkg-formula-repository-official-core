@@ -1,0 +1,9 @@
+summary: Ogg Vorbis CODEC tools
+git-url: https://github.com/xiph/vorbis-tools
+src-url: https://ftp.osuosl.org/pub/xiph/releases/vorbis/vorbis-tools-1.4.3.tar.gz
+src-uri: https://mirror.csclub.uwaterloo.ca/xiph/releases/vorbis/vorbis-tools-1.4.3.tar.gz
+src-sha: a1fe3ddc6777bdcebf6b797e7edfe0437954b24756ffcc8c6b816b63e0460dde
+license: LGPL-2.0-or-later GPL-2.0-or-later GPL-2.0-only
+dep-pkg: libvorbis libflac libao libcurl
+dep-upp: libtool
+bsystem: autotools
