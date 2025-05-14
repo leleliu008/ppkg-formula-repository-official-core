@@ -3,4 +3,6 @@ src-url: https://github.com/krallin/tini/archive/v0.10.0.tar.gz
 src-sha: 67ab1f8fda1b3fcceeea2e0b1e06874fc20938d605cecf96e95898b1c38f60ec
 license: MIT
 bsystem: cmake
-dopatch: gsed -i '/tini-static/d' CMakeLists.txt
+dopatch: |
+    gsed -i '/tini-static/d' CMakeLists.txt
+    gsed -i 's|basename(name)|name|g' src/tini.c
