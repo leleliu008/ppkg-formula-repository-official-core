@@ -1,6 +1,6 @@
 summary: A package builder/manager for Xcode to build projects written in C, C++, Rust, Zig, Go, Haskell, etc
 git-url: https://github.com/leleliu008/xcpkg
-src-url: dir:///Users/fpliu/github.com/xcpkg
+    #src-url: dir:///Users/fpliu/github.com/xcpkg
 license: Apache-2.0
 dep-pkg: libcurl libgit2 libarchive libyaml libjansson
 bsystem: cmake
