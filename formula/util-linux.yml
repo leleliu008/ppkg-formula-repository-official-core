@@ -7,15 +7,17 @@ dep-pkg: libreadline libsqlite3 libz
 dep-upp: automake libtool
 
 dopatch: |
-    for f in tools/*
-    do
-        [ -f "$f" ] || continue
-        [ -L "$f" ] && continue
+    if [ ! -f /bin/bash ] ; then
+        for f in tools/*
+        do
+            [ -f "$f" ] || continue
+            [ -L "$f" ] && continue
 
-        if [ "$(head -n 1 "$f")" = '#!/bin/bash' ] ; then
-            gsed -i '1c #!/usr/bin/env bash' "$f"
-        fi
-    done
+            if [ "$(head -n 1 "$f")" = '#!/bin/bash' ] ; then
+                gsed -i '1c #!/usr/bin/env bash' "$f"
+            fi
+        done
+    fi
 
 prepare: |
     export AUTOMAKE="$(command -v automake)"
