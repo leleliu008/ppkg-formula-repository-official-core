@@ -1,0 +1,17 @@
+summary: Bash-compatible Unix shell with more consistent syntax and semantics
+web-url: https://oils.pub/
+src-url: https://oils.pub/download/oils-for-unix-0.29.0.tar.gz
+src-sha: 34fdb53f1dbd2b8742ef74cd3a46d87abfcda18d0d645f29762c4fddb9a2b3ac
+license: Apache-2.0
+dep-pkg: libreadline
+bsystem: custom
+binbstd: 1
+install: |
+    export OILS_CXX_VERBOSE=1
+    export OILS_PARALLEL_BUILD="$BUILD_NJOBS"
+
+    gsed -i "s|-lreadline|-lreadline -lncurses -L$PACKAGE_WORKING_DIR/lib|" build/ninja-rules-cpp.sh
+
+    run ./configure --prefix="$PACKAGE_INSTALL_DIR" --with-readline --readline="$libreadline_INSTALL_DIR"
+    run _build/oils.sh --cxx "$CXX"
+    run ./install _bin/$CXX-opt-sh/oils-for-unix
