@@ -1,0 +1,9 @@
+summary: A command-line tool for visualizing the different regions of a binary file
+git-url: https://github.com/8dcc/bin-graph
+license: GPL-3.0
+dep-pkg: libpng
+
+install: |
+    gmakew clean
+    gmakew CC="$CC" CFLAGS="'$CFLAGS $CPPFLAGS $LDFLAGS'" LDLIBS="'-lpng -lz -lm'"
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

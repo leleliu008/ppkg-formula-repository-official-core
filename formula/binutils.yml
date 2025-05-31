@@ -30,5 +30,3 @@ install: |
         --enable-interwork \
         --enable-multilib \
         --enable-targets=all
-
-        # https://www.mail-archive.com/bug-binutils@gnu.org/msg38641.html

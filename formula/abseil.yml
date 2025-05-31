@@ -1,3 +1,4 @@
+pkgtype: lib
 summary: C++ Common Libraries
 web-url: https://abseil.io
 src-url: https://github.com/abseil/abseil-cpp/archive/refs/tags/20240722.1.tar.gz
