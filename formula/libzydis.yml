@@ -1,0 +1,7 @@
+summary: Fast and lightweight x86/x86_64 disassembler library
+web-url: https://zydis.re/
+git-url: https://github.com/zyantific/zydis
+git-sha: a2278f1d254e492f6a6b39f6cb5d1f5d515659dc
+version: 4.1.1
+license: MIT
+install: mesonw -Dexamples=disabled -Dtools=disabled && mv ../include/Zydis/Generated "$PACKAGE_INSTALL_DIR/include/Zydis/"

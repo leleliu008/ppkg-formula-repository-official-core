@@ -2,8 +2,8 @@ exetype: ~static
 summary: A collection of utilities to read, create and modify ELF binary files
 git-url: git://sourceware.org/git/elfutils.git
 web-url: https://sourceware.org/elfutils
-src-url: https://sourceware.org/elfutils/ftp/0.191/elfutils-0.191.tar.bz2
-src-sha: df76db71366d1d708365fc7a6c60ca48398f14367eb2b8954efc8897147ad871
+src-url: https://sourceware.org/elfutils/ftp/0.193/elfutils-0.193.tar.bz2
+src-sha: 7857f44b624f4d8d421df851aaae7b1402cfe6bcdd2d8049f15fc07d3dde7635
 license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
 dep-pkg: libzstd liblzma libbz2 libz libargp musl-obstack musl-fts
 dep-upp: gm4

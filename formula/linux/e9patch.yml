@@ -2,7 +2,7 @@ summary: A powerful static binary rewriting tool
 src-url: https://github.com/GJDuck/e9patch/archive/refs/tags/v1.0.0-rc10.tar.gz
 src-sha: d083339fce0e9c9fdb9912ab7b52cb6041cc3c9f59c385c74cb9b404e9b6a94b
 license: GPL-3.0
-dep-pkg: elfutils
+dep-pkg: libzydis elfutils
 
 install: |
     gmakew clean
