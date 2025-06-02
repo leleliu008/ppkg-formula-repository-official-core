@@ -1,0 +1,8 @@
+summary: A program that logs process fork(), exec() and exit() activity
+src-url: https://github.com/ColinIanKing/forkstat/archive/refs/tags/V0.04.00.tar.gz
+src-sha: 1c47d11ba312dd2bf8cfb14290d3bd6eeb189c85ae7ec23c6c46ea160db4e5c9
+license: GPL-2.0
+
+install: |
+    run "$CC" "$CFLAGS" -DVERSION="\"$PACKAGE_VERSION\"" "$LDFLAGS" -o forkstat ../forkstat.c
+    install_bins forkstat
