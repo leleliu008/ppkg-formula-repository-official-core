@@ -1,4 +1,4 @@
-exetype: ~static
+pkgtype: exe+lib
 summary: Use SOCKS-friendly applications with Tor
 git-url: https://gitlab.torproject.org/tpo/core/torsocks
 src-url: https://gitlab.torproject.org/tpo/core/torsocks/-/archive/v2.5.0/torsocks-v2.5.0.tar.bz2
