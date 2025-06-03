@@ -1,0 +1,9 @@
+summary: C++ library for date and time operations based on <chrono>
+src-url: https://github.com/HowardHinnant/date/archive/refs/tags/v3.0.4.tar.gz
+src-sha: 56e05531ee8994124eeb498d0e6a5e1c3b9d4fccbecdf555fe266631368fb55f
+license: MIT
+install: |
+    cmakew 2 \
+        -DENABLE_DATE_TESTING=OFF \
+        -DUSE_SYSTEM_TZ_DB=ON \
+        -DBUILD_TZ_LIB=ON

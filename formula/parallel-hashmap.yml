@@ -1,0 +1,6 @@
+summary: Family of header-only, fast, memory-friendly C++ hashmap and btree containers
+web-url: https://greg7mdp.github.io/parallel-hashmap/
+src-url: https://github.com/greg7mdp/parallel-hashmap/archive/refs/tags/v2.0.0.tar.gz
+src-sha: 4f462f51a3468166ea4cf87c80e001dc1999093264cf55cbda3492ca39a7730b
+license: Apache-2.0
+bsystem: cmake
