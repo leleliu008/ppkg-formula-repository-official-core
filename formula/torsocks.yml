@@ -15,10 +15,4 @@ prepare: |
         export CFLAGS="$CFLAGS -Wno-implicit-function-declaration"
     fi
 
-dotweak: |
-    gsed -i '/^prefix=/c
-    prefix="$(dirname "$0")"
-    cd "$prefix"
-    prefix="${PWD%/*}"
-    cd - > /dev/null
-    ' bin/torsocks
+dotweak: gsed -i '/^prefix=/c prefix="$(dirname "$0")"\ncd "$prefix"\nprefix="${PWD%/*}"\ncd - > /dev/null' bin/torsocks
