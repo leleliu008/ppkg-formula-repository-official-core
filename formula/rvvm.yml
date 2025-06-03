@@ -1,0 +1,7 @@
+summary: A virtual machine / emulator for RISC-V guests, which emphasizes on performance, security, lean code and portability
+src-url: https://github.com/LekKit/RVVM/archive/refs/tags/v0.6.tar.gz
+src-sha: 97e98c95d8785438758b81fb5c695b8eafb564502c6af7f52555b056e3bb7d7a
+license: GPL-3.0 MPL-2.0
+install: |
+    cmakew -DRVVM_USE_LIB=OFF -DRVVM_USE_JNI=OFF -DRVVM_USE_JIT=ON
+    install_bins rvvm
