@@ -5,6 +5,7 @@ license: GPL-3.0-or-later
 dep-pkg: libfolly libflac libxxhash libbrotli libarchive utfcpp nlohmann-json parallel-hashmap howard-hinnant-date range-v3 googletest
 dep-upp: python3
 dep-lib: -lgflags
+
 install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \
@@ -20,3 +21,5 @@ install: |
         -DDISABLE_CCACHE=ON \
         -DDISABLE_MOLD=ON \
         -DPREFER_SYSTEM_GTEST=ON
+
+dotweak: run rm -rf include/ lib/
