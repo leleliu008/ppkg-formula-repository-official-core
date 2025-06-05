@@ -1,10 +1,7 @@
 summary: A file archiver with a high compression ratio
 web-url: https://7-zip.org/
-git-url: https://github.com/ip7z/7zip
-    #src-url: https://github.com/ip7z/7zip/archive/refs/tags/24.09.tar.gz
-    #src-sha: e4757b307925227724a2044651193664ba3d04e9ac13b8e631f1667896014bbf
-src-url: https://github.com/leleliu008/test/releases/download/2023.10.08/7zip-24.09.tar.xz
-src-sha: 8d0a70d78e085214b9cf09fb76a7d42c1489a8c0190726635e966727d9721f41
+src-url: https://github.com/ip7z/7zip/archive/refs/tags/24.09.tar.gz
+src-sha: e4757b307925227724a2044651193664ba3d04e9ac13b8e631f1667896014bbf
 license: LGPL-2.1-or-later BSD-3-Clause
 bscript: CPP/7zip/Bundles/Alone2
 
@@ -14,10 +11,7 @@ install: |
 
 dopatch: |
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
-        LIST='
-        7-zip-flags.patch
-        7-zip-musl.patch
-        '
+        LIST='7-zip-flags.patch 7-zip-musl.patch'
 
         for f in $LIST
         do
@@ -26,6 +20,6 @@ dopatch: |
 
         for f in $LIST
         do
-            patch -p1 --binary < "$f"
+            run "patch -p1 --binary < $f"
         done
     fi
