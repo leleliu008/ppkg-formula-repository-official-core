@@ -7,6 +7,29 @@ prepare: |
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         # https://github.com/anatol/smart.go need cgo enabled on macOS.
         export CGO_ENABLED=1
+    elif [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        # https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/community/gotop/0001-logging-add-support-for-riscv64.patch
+        printf '%s\n' '
+    RnJvbSAxM2M2YWNkNmZlMWY4MzdlMThmMjgzNTMyM2NkZGNmYTdkMzViY2RlIE1vbiBTZXAgMTcg
+    MDA6MDA6MDAgMjAwMQpGcm9tOiBNYXJ2aW4gUHJldXNzIDxtYXJ2aW5AeHN0ZWFkZmFzdHgub3Jn
+    PgpEYXRlOiBUaHUsIDEyIEF1ZyAyMDIxIDEzOjEzOjE3ICswMjAwClN1YmplY3Q6IFtQQVRDSF0g
+    bG9nZ2luZzogYWRkIHN1cHBvcnQgZm9yIHJpc2N2NjQKCi0tLQogbG9nZ2luZy9sb2dnaW5nX290
+    aGVyLmdvICAgfCAgMiArLQogbG9nZ2luZy9sb2dnaW5nX3Jpc2N2NjQuZ28gfCAxMiArKysrKysr
+    KysrKysKIDIgZmlsZXMgY2hhbmdlZCwgMTMgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQog
+    Y3JlYXRlIG1vZGUgMTAwNjQ0IGxvZ2dpbmcvbG9nZ2luZ19yaXNjdjY0LmdvCgpkaWZmIC0tZ2l0
+    IGEvbG9nZ2luZy9sb2dnaW5nX290aGVyLmdvIGIvbG9nZ2luZy9sb2dnaW5nX290aGVyLmdvCmlu
+    ZGV4IGQ3ZDc1ZDUuLjIxYzg4ZGEgMTAwNjQ0Ci0tLSBhL2xvZ2dpbmcvbG9nZ2luZ19vdGhlci5n
+    bworKysgYi9sb2dnaW5nL2xvZ2dpbmdfb3RoZXIuZ28KQEAgLTEsNCArMSw0IEBACi0vLyArYnVp
+    bGQgbGludXgsIWFybTY0IG9wZW5ic2QsIWFybTY0IGZyZWVic2QgZGFyd2luCisvLyArYnVpbGQg
+    bGludXgsIWFybTY0LCFyaXNjdjY0IG9wZW5ic2QsIWFybTY0LCFyaXNjdjY0IGZyZWVic2QsIXJp
+    c2N2NjQgZGFyd2luLCFyaXNjdjY0CiAKIHBhY2thZ2UgbG9nZ2luZwogCmRpZmYgLS1naXQgYS9s
+    b2dnaW5nL2xvZ2dpbmdfcmlzY3Y2NC5nbyBiL2xvZ2dpbmcvbG9nZ2luZ19yaXNjdjY0LmdvCm5l
+    dyBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4IDAwMDAwMDAuLjViMjY5YjEKLS0tIC9kZXYvbnVsbAor
+    KysgYi9sb2dnaW5nL2xvZ2dpbmdfcmlzY3Y2NC5nbwpAQCAtMCwwICsxLDEyIEBACisvLyArYnVp
+    bGQgIWZyZWVic2QscmlzY3Y2NAorCitwYWNrYWdlIGxvZ2dpbmcKKworaW1wb3J0ICgKKwkib3Mi
+    CisJInN5c2NhbGwiCispCisKK2Z1bmMgc3RkZXJyVG9Mb2dmaWxlKGxvZ2ZpbGUgKm9zLkZpbGUp
+    IHsKKwlzeXNjYWxsLkR1cDMoaW50KGxvZ2ZpbGUuRmQoKSksIDIsIDApCit9Ci0tIAoyLjMyLjAK
+    Cg==' | base64 -d | patch -p1
     fi
 
 install: gow -X main.Version=v$PACKAGE_VERSION -X main.BuildDate=$(date +%Y%m%dT%H%M%S) ./cmd/gotop

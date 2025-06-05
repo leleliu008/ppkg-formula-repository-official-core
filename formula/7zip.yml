@@ -1,0 +1,9 @@
+summary: A file archiver with a high compression ratio
+web-url: https://7-zip.org/
+src-url: https://github.com/ip7z/7zip/archive/refs/tags/24.09.tar.gz
+src-sha: e4757b307925227724a2044651193664ba3d04e9ac13b8e631f1667896014bbf
+license: LGPL-2.1-or-later BSD-3-Clause
+bscript: CPP/7zip/Bundles/Alone2
+install: |
+    gmakew -f ../../cmpl_gcc.mak DISABLE_RAR=1 CC="'$CC $CFLAGS $LDFLAGS -D_GNU_SOURCE'" CXX="'$CXX $CXXFLAGS $LDFLAGS -D_GNU_SOURCE'"
+    install_bins b/g/7zz

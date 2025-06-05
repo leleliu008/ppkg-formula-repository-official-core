@@ -1,0 +1,12 @@
+summary: View and edit files in hexadecimal or ASCII
+web-url: https://rigaux.org/hexedit.html
+src-url: https://github.com/pixel/hexedit/archive/refs/tags/1.6.tar.gz
+src-sha: 598906131934f88003a6a937fab10542686ce5f661134bc336053e978c4baae3
+license: GPL-2.0-or-later
+dep-pkg: libncurses
+bsystem: autotools
+binbstd: 1
+
+dopatch: |
+    gsed -i '/rm -rf /s|$(PRODUCT).1||' Makefile.in
+    gsed -i -e 's|-lcurses|-lncurses|' -e 's|-ltinfo|-lncurses|' configure.ac
