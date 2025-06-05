@@ -23,6 +23,6 @@ dopatch: |
 
         for f in $LIST
         do
-            patch -p1 < "$f"
+            patch -p1 --binary < "$f"
         done
     fi
