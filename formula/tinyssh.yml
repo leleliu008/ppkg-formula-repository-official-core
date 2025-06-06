@@ -1,0 +1,9 @@
+summary: A minimalistic SSH server which implements only a subset of SSHv2 features
+web-url: https://tinyssh.org/
+src-url: https://github.com/janmojzis/tinyssh/archive/refs/tags/20250501.tar.gz
+src-sha: f3ae622c765db4e0d791ea90a9feba39d7f693ef9cb949a797f7ad6b404a2d61
+license: MIT
+install: |
+    gmakew clean
+    gmakew
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
