@@ -1,0 +1,7 @@
+summary: An experimental terminal multiplexer that aims to be a simple, modern, and ergonomic alternative to tmux
+src-url: https://github.com/cfoust/cy/archive/refs/tags/v1.5.1.tar.gz
+src-sha: 5a538c7823c2465b8e1d0bc47ccf435c79b1dac334e9c313a6370bff0d277f88
+license: Apache-2.0
+dep-pkg: xorg-libx11
+prepare: export CGO_ENABLED=1
+install: gow ./cmd/cy/
