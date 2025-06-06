@@ -1,0 +1,10 @@
+summary: A sandbox built to safely run untrusted executables, like programs submitted by competitors in a programming contest
+src-url: https://github.com/ioi/isolate/archive/refs/tags/v2.0.tar.gz
+src-sha: 17364f1b0f5d3d59fc917e1520f9a16d2b85bcb175b2615ab0dbfce09ab893f1
+dep-pkg: libcap
+
+install: |
+    gsed -i '/^CFLAGS=/s|$| $(CFLAGS_EXTRA)|' Makefile
+    gmakew clean
+    gmakew isolate CC="$CC" CFLAGS_EXTRA="'$CFLAGS $CPPFLAGS'"
+    install_bins isolate
