@@ -2,8 +2,23 @@ summary: A networking analysis tool using eBPF
 src-url: https://github.com/hengyoush/kyanos/archive/refs/tags/v1.5.0.tar.gz
 src-sha: e262ea0b5f529601edf83ff969a91abdfc3362231b027b6dce72e3fbf127ca76
 license: Apache-2.0
+dep-pkg: libbpf
 bsystem: go
 
+dopatch: gsed -i "s|-D ARCH_|$CPPFLAGS -v -D ARCH_|" bpf/gen.go
+
 prepare: |
+    # https://github.com/cilium/ebpf/blob/main/cmd/bpf2go/main.go
+    unset BPF2GO_CC
+    unset BPF2GO_STRIP
+    unset BPF2GO_CFLAGS
+    unset BPF2GO_MAKEBASE
+    unset GOFILE
+    unset GOPACKAGE
+
+    export BPF2GO_STRIP=true
+
     run TARGET=amd64 go generate ./bpf/
     run TARGET=arm64 go generate ./bpf/
+
+    export CGO_ENABLED=1
