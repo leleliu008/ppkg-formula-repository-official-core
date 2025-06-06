@@ -5,7 +5,8 @@ license: LGPL-2.1-or-later
 dep-pkg: libfuse libopenssl
 
 dopatch: |
-    gsed -i 's|link_with : libcomposefs|link_with : libcomposefs.get_static_lib()|' tools/meson.build tests/meson.build
+    gsed -i 's|link_with : libcomposefs|link_with : libcomposefs.get_static_lib()|' tools/meson.build
+    gsed -i "/subdir('tests')/d" meson.build
 
 install: mesonw -Dfuse=enabled
 
