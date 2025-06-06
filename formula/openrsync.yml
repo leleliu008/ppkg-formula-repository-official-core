@@ -1,0 +1,8 @@
+summary: BSD-licensed implementation of rsync
+git-url: https://github.com/kristapsdz/openrsync
+license: ISC
+install: |
+    run ./configure PREFIX="$PACKAGE_INSTALL_DIR"
+    gmakew clean
+    gmakew CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'"
+    gmakew install
