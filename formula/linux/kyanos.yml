@@ -16,8 +16,6 @@ prepare: |
     unset GOFILE
     unset GOPACKAGE
 
-    export BPF2GO_STRIP=true
-
     run TARGET=amd64 go generate ./bpf/
     run TARGET=arm64 go generate ./bpf/
 
