@@ -49,6 +49,8 @@ install: |
         --disable-echo
 
 dotweak: |
+    ln -s ncursesw include/ncurses
+
     for f in curses.h ncurses.h form.h menu.h panel.h term.h termcap.h
     do
         ln -s "ncursesw/$f" "include/$f"
