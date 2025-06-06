@@ -1,0 +1,6 @@
+summary: Setuid instead of FUSE for mounting squashfs files
+src-url: https://github.com/eth-cscs/squashfs-mount/archive/refs/tags/v1.1.0.tar.gz
+src-sha: 5dcea85d15f42ae6628895fe1fd61afe6fa37141951f66442e47059bcced2d00
+license: BSD-3-Clause
+dep-pkg: libmount
+bsystem: meson
