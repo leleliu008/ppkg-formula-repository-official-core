@@ -3,5 +3,6 @@ summary: Data Plane Development Kit
 src-url: https://github.com/DPDK/dpdk/archive/refs/tags/v23.11.4.tar.gz
 src-sha: 7d3a89929dde421f9b75731e20c709b51b1696ee67623c65747929582051fdc8
 dep-pkg: libfdt libnuma libisal libpcap libjansson libarchive libopenssl
+dep-res: sys/queue.h
 dep-pym: pyelftools
 install: mesonw -Ddefault_library=shared
