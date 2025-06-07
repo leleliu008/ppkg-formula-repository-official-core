@@ -1,0 +1,7 @@
+summary: A  networking performance tool for Linux
+git-url: https://github.com/google/neper
+license: Apache-2.0
+install: |
+    gmakew clean
+    gmakew CFLAGS="'$CFLAGS -D_GNU_SOURCE -DNO_LIBNUMA'"
+    install_bins tcp_rr tcp_stream tcp_crr udp_rr udp_stream psp_stream psp_crr psp_rr
