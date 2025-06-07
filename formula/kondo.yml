@@ -1,0 +1,5 @@
+summary: Save disk space by cleaning non-essential files from software projects
+src-url: https://github.com/tbillington/kondo/archive/refs/tags/v0.8.tar.gz
+src-sha: 4054c90e679a379a735b3166df4633fb86a33725175ebe23d7b659dcb7155b26
+license: MIT
+install: cargow install --path kondo
