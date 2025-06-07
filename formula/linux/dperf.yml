@@ -1,0 +1,10 @@
+summary: DPDK based 100Gbps network performance and load testing software
+src-url: https://github.com/baidu/dperf/archive/refs/tags/v1.8.0.tar.gz
+src-sha: cbd425e19abf9d40886506b6662db5cd89e5425ea03168c56426a53c809a16ab
+license: Apache-2.0
+dep-pkg: dpdk
+
+install: |
+    gmakew clean
+    gmakew
+    install_bins build/dperf
