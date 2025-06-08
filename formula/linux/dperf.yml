@@ -5,6 +5,8 @@ license: Apache-2.0
 dep-pkg: dpdk
 dep-res: sys/queue.h
 
+dopatch: gsed -i 's|-O3 -g|$(CPPFLAGS)|' Makefile
+
 install: |
     gmakew clean
     gmakew
