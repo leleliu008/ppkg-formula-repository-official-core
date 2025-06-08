@@ -1,0 +1,5 @@
+summary: A command-line interface for qBittorrent written in Go
+src-url: https://github.com/ludviglundgren/qbittorrent-cli/archive/refs/tags/v2.2.0.tar.gz
+src-sha: 66b082b4b1653aae785b0f12bc00d7ac4dd8f17028d99e3feafac8aded931957
+license: MIT
+install: gow -X main.version=$PACKAGE_VERSION -X main.date=$(date -u +'%Y-%m-%dT%H:%M:%SZ') -o qbt ./cmd/qbt

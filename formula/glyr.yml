@@ -3,20 +3,15 @@ web-url: https://github.com/sahib/glyr
 src-url: https://github.com/sahib/glyr/archive/refs/tags/1.0.10.tar.gz
 src-sha: 77e8da60221c8d27612e4a36482069f26f8ed74a1b2768ebc373c8144ca806e8
 license: LGPL-3.0-or-later
-dep-pkg: glib libsqlite3 libcurl libexecinfo
+dep-pkg: glib libsqlite3 libcurl
+dep-res: libexecinfo
 bsystem: cmake
 
 dopatch: |
     gsed -i 's|FIND_PACKAGE(CURL|PKG_CHECK_MODULES(CURL libcurl|' CMakeLists.txt
-    gsed -i 's|CURL_LIBRARY|CURL_LIBRARIES|' lib/CMakeLists.txt
-    gsed -i 's|SHARED|STATIC|' lib/CMakeLists.txt
+    gsed -i -e 's|CURL_LIBRARY|CURL_LIBRARIES|' -e 's|SHARED|STATIC|' lib/CMakeLists.txt
 
 prepare: |
-    # https://www.gnu.org/software/gnulib/manual/html_node/execinfo_002eh.html
-    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
-        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -L$libexecinfo_LIBRARY_DIR -lexecinfo"
-    fi
-
     # # https://man.netbsd.org/backtrace.3
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lexecinfo"

@@ -1,0 +1,13 @@
+summary: A HTTP benchmarking tool
+src-url: https://github.com/wg/wrk/archive/refs/tags/4.2.0.tar.gz
+src-sha: e255f696bff6e329f5d19091da6b06164b8d59d62cb9e673625bdcd27fe7bdad
+dep-pkg: libluajit libopenssl
+dep-upp: luajit
+parallel: 0
+
+dopatch: gsed -i 's|-I$(WITH_LUAJIT)/include|-I$(WITH_LUAJIT)/include/luajit-2.1|' Makefile
+
+install: |
+    gmakew clean
+    gmakew VER="$PACKAGE_VERSION" WITH_LUAJIT="$libluajit_INSTALL_DIR" WITH_OPENSSL="$libopenssl_INSTALL_DIR"
+    install_bins wrk
