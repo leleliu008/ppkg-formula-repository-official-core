@@ -63,12 +63,6 @@ int main(int argc, char* argv[]) {
 
     ////////////////////////////////////////////////////
 
-    const char * const s1 = "../lib/bear/libexec.dylib";
-    const char * const s2 = "../lib/bear/wrapper";
-    const char * const s3 = "../lib/bear/wrapper.d";
-
-    ////////////////////////////////////////////////////
-
     char libexecFilePath[slashIndex + 30];
 
     for (int i = 0; i <= slashIndex; i++) {
@@ -77,12 +71,17 @@ int main(int argc, char* argv[]) {
 
     char * p = libexecFilePath + slashIndex + 1;
 
-    for (int i = 0; ; i++) {
-        p[i] = s1[i];
+    const char * s = "../lib/bear/libexec.so";
 
-        if (s1[i] == '\0') {
+    for (;;) {
+        p[0] = s[0];
+
+        if (p[0] == '\0') {
             break;
         }
+
+        p++;
+        s++;
     }
 
     ////////////////////////////////////////////////////
@@ -95,12 +94,17 @@ int main(int argc, char* argv[]) {
 
     p = wrapperFilePath + slashIndex + 1;
 
-    for (int i = 0; ; i++) {
-        p[i] = s2[i];
+    s = "../lib/bear/wrapper";
 
-        if (s2[i] == '\0') {
+    for (;;) {
+        p[0] = s[0];
+
+        if (p[0] == '\0') {
             break;
         }
+
+        p++;
+        s++;
     }
 
     ////////////////////////////////////////////////////
@@ -113,12 +117,17 @@ int main(int argc, char* argv[]) {
 
     p = wrapperdFilePath + slashIndex + 1;
 
-    for (int i = 0; ; i++) {
-        p[i] = s3[i];
+    s = "../lib/bear/wrapper.d";
 
-        if (s3[i] == '\0') {
+    for (;;) {
+        p[0] = s[0];
+
+        if (p[0] == '\0') {
             break;
         }
+
+        p++;
+        s++;
     }
 
     ////////////////////////////////////////////////////
@@ -138,8 +147,8 @@ int main(int argc, char* argv[]) {
     ////////////////////////////////////////////////////
 
 #if defined(__linux__) && defined(__USE_DYNAMIC_LOADER__)
-    const char * dynamicLoaderName = "DYNAMIC_LOADER_FILENAME";
-    const char * libraryPathRelativeToSelfExePath = "/LIBRARY_PATH_RELATIVE_TO_SELF_EXE_PATH";
+    const char * const dynamicLoaderName = "DYNAMIC_LOADER_FILENAME";
+    const char * const libraryPathRelativeToSelfExePath = "LIBRARY_PATH_RELATIVE_TO_SELF_EXE_PATH";
 
     ////////////////////////////////////////////////////
 
@@ -149,10 +158,12 @@ int main(int argc, char* argv[]) {
         libraryPath[i] = selfExePath[i];
     }
 
-    for (int i = 1; ; i++) {
-        libraryPath[slashIndex + i] = libraryPathRelativeToSelfExePath[i];
+    p = libraryPath + slashIndex + 1;
 
-        if (libraryPathRelativeToSelfExePath[i] == '\\0') {
+    for (int i = 0; ; i++) {
+        p[i] = libraryPathRelativeToSelfExePath[i];
+
+        if (p[i] == '\0') {
             break;
         }
     }
