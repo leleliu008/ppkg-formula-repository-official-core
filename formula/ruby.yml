@@ -1,4 +1,4 @@
-exetype: ~static
+linkage: shared
 summary: Powerful, clean, object-oriented scripting language
 git-url: https://github.com/ruby/ruby
 web-url: https://www.ruby-lang.org/

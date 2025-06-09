@@ -1,4 +1,4 @@
-exetype: ~static
+linkage: shared
 summary: Interpreted, interactive, object-oriented programming language
 git-url: https://github.com/python/cpython
 web-url: https://www.python.org/

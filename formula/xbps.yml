@@ -1,4 +1,4 @@
-exetype: ~static
+linkage: shared
 summary: A binary package system designed and implemented from scratch
 git-url: https://github.com/void-linux/xbps
 dep-pkg: libarchive

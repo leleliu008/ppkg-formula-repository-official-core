@@ -1,4 +1,4 @@
-exetype: ~static
+linkage: shared
 summary: Compile and build packages suitable for installation with pacman
 web-url: https://wiki.archlinux.org/index.php/makepkg
 git-url: https://gitlab.archlinux.org/pacman/pacman

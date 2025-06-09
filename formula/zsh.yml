@@ -1,4 +1,4 @@
-exetype: ~static
+linkage: shared
 summary: Z Shell
 web-url: https://www.zsh.org
 git-url: https://github.com/zsh-users/zsh

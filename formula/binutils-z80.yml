@@ -1,4 +1,4 @@
-exetype: ~static
+linkage: shared
 summary: GNU binary tools for Z80 development
 git-url: https://sourceware.org/git/binutils-gdb
 web-url: https://www.gnu.org/software/binutils/binutils.html

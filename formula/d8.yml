@@ -1,4 +1,4 @@
-exetype: ~static
+linkage: shared
 summary: A high-performance JavaScript and WebAssembly Engine powered by Google
 web-url: https://v8.dev/
 src-url: https://github.com/v8/v8/archive/refs/tags/12.7.224.16.tar.gz

@@ -1,4 +1,4 @@
-exetype: ~static
+linkage: shared
 summary: Next-gen compiler infrastructure
 web-url: https://llvm.org/
 src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/llvm-project-17.0.6.src.tar.xz

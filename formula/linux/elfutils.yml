@@ -1,4 +1,4 @@
-exetype: ~static
+linkage: shared
 summary: A collection of utilities to read, create and modify ELF binary files
 git-url: git://sourceware.org/git/elfutils.git
 web-url: https://sourceware.org/elfutils

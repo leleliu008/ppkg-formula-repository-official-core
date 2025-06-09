@@ -1,4 +1,3 @@
-exetype: ~static ~static-most
 summary: An open source RDP server
 web-url: https://www.xrdp.org/
 license: Apache-2.0
@@ -8,6 +7,7 @@ dep-pkg: libopus libjpeg-turbo libopenssl libpam libfuse xorg-libxfixes xorg-lib
 dep-lib: xrandr xfixes -lm
 dep-upp: libtool nasm
 bsystem: autotools
+linkage: shared/most
 
 dopatch: gsed -i 's|-Werror||g' configure.ac
 

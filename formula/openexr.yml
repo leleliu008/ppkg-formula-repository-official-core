@@ -1,4 +1,4 @@
-exetype: ~static
+linkage: shared
 summary: High dynamic-range image file format
 web-url: https://www.openexr.com/
 src-url: https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.3.2.tar.gz
