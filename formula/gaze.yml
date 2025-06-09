@@ -1,0 +1,5 @@
+summary: Execute commands for you
+src-url: https://github.com/wtetsu/gaze/archive/refs/tags/v1.2.1.tar.gz
+src-sha: ba2878f5b0ddd385afbe6c8b3fcf92acdcd722113b97e52d2fafc53ee3cef918
+license: MIT
+install: gow ./cmd/gaze/
