@@ -1,5 +1,5 @@
 summary: A terminal navigator
-src-url: https://github.com/antonmedv/walk/archive/refs/tags/v1.7.0.tar.gz
-src-sha: b657523d637727cfa408040e9816f45ae868c5192fb3962c32a0edab9d9b00dd
+src-url: https://github.com/antonmedv/walk/archive/refs/tags/v1.13.0.tar.gz
+src-sha: 9f62377438908757fcb2210bd08bf346391858f21d0ef664d7998abf635880cb
 license: MIT
 bsystem: go

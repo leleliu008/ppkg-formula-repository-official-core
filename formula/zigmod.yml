@@ -1,7 +1,7 @@
 summary: A package manager for the Zig programming language
 web-url: https://nektro.github.io/zigmod/
-src-url: https://github.com/nektro/zigmod/archive/refs/tags/r93.tar.gz
-src-sha: 302162e6ba66ee8abe028b5d61fe1c474ec50eadfb6481dc782702126fddb639
+src-url: https://github.com/nektro/zigmod/archive/refs/tags/r98.tar.gz
+src-sha: a7fc24e2784bf35660e7736b92f63049cbd6c98693724c930a1755284c20cabc
 license: MIT
 bsystem: zig@0.13
 
