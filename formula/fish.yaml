@@ -1,0 +1,9 @@
+linkage: static/pie
+summary: A smart and user-friendly command line shell for Linux, macOS, and the rest of the family
+web-url: https://fishshell.com/
+src-url: https://github.com/fish-shell/fish-shell/releases/download/4.0.2/fish-4.0.2.tar.xz
+src-sha: 6e1ecdb164285fc057b2f35acbdc20815c1623099e7bb47bbfc011120adf7e83
+license: GPL-2.0-or-later
+
+install: |
+        cargow install
