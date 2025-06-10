@@ -1,7 +1,7 @@
 summary: Terminal multiplexer
 web-url: https://tmux.github.io
-src-url: https://github.com/tmux/tmux/releases/download/3.4/tmux-3.4.tar.gz
-src-sha: 551ab8dea0bf505c0ad6b7bb35ef567cdde0ccb84357df142c254f35a23e19aa
+src-url: https://github.com/tmux/tmux/releases/download/3.5a/tmux-3.5a.tar.gz
+src-sha: 16216bd0877170dfcc64157085ba9013610b12b082548c7c9542cc0103198951
 license: ISC
 dep-pkg: libncurses libevent libutf8proc
 dep-upp: bison

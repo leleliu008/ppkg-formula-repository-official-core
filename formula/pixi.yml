@@ -1,7 +1,7 @@
 summary: Package management made easy
 web-url: https://pixi.sh
-src-url: https://github.com/prefix-dev/pixi/archive/refs/tags/v0.37.0.tar.gz
-src-sha: 326f0326839672d84d4e5efe8ba56e743e84d88693686e5b9fdd64e5ca9dc876
+src-url: https://github.com/prefix-dev/pixi/archive/refs/tags/v0.48.0.tar.gz
+src-sha: 008d49f5adfece6a0cb8b4cdf2a44b0577c9d3760fdd64b466ae54923077562e
 license: BSD-3-Clause
 dep-pkg: libbz2 liblzma libopenssl
 bsystem: cargo cmake

@@ -1,7 +1,7 @@
 summary: Hybrid lossless audio compression
 git-url: https://github.com/dbry/WavPack
 web-url: https://www.wavpack.com/
-src-url: https://www.wavpack.com/wavpack-5.7.0.tar.bz2
-src-sha: 8944b237968a1b3976a1eb47cd556916e041a2aa8917495db65f82c3fcc2a225
+src-url: https://www.wavpack.com/wavpack-5.8.1.tar.bz2
+src-sha: 7bd540ed92d2d1bf412213858a9e4f1dfaf6d9a614f189b0622060a432e77bbf
 license: BSD-3-Clause
 bsystem: configure

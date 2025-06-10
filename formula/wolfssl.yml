@@ -1,7 +1,7 @@
 summary: A lightweight, portable SSL library written in C
 web-url: https://www.wolfssl.com
-src-url: https://github.com/wolfSSL/wolfssl/archive/refs/tags/v5.7.0-stable.tar.gz
-src-sha: 2de93e8af588ee856fe67a6d7fce23fc1b226b74d710b0e3946bc8061f6aa18f
+src-url: https://github.com/wolfSSL/wolfssl/archive/refs/tags/v5.8.0-stable.tar.gz
+src-sha: f90f18c7f12913a0b351b1f4305e768697ea1380794df1f2984b9452ab0aeeaf
 license: GPL-2.0-or-later
 dep-upp: libtool
 bsystem: autogen
