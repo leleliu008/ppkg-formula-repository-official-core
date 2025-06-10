@@ -16,7 +16,7 @@ install: |
         -DENABLE_UNIT_TESTS=OFF \
         -DENABLE_FUNC_TESTS=OFF
 
-dotweak: run mv "$PACKAGE_WORKING_DIR/res/bear.c" bin/bear.c
+dotweak: run mv "$PACKAGE_WORKING_DIR/res/c996351aa9a3336819d517967a03db6413c3447337f085c078ccca0378ad7f75.c" bin/bear.c
 
 res-url: https://raw.githubusercontent.com/leleliu008/ppkg-formula-repository-official-core/refs/heads/master/wrappers/bear.c
 res-sha: c996351aa9a3336819d517967a03db6413c3447337f085c078ccca0378ad7f75
