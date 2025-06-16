@@ -1,0 +1,20 @@
+summary: Alpine Package Keeper - package manager for alpine
+git-url: https://gitlab.alpinelinux.org/alpine/apk-tools
+src-url: https://gitlab.alpinelinux.org/alpine/apk-tools/-/archive/v2.14.10/apk-tools-v2.14.10.tar.gz
+src-sha: 5d888d95cf41e68288bd4342938e05767ff76c83f1d25830088fc6d4ccc42793
+license: GPL-2.0-only
+dep-pkg: libz libzstd libopenssl
+
+dopatch: |
+    gsed -i '/^LDFLAGS_apk\.static/c LDFLAGS_apk.static =' src/Makefile
+
+prepare: |
+    GMAKE_EXTRA_ARGS="LUA=no STATIC=y VERBOSE=1 CROSS_COMPILE= CC=$CC LD=$CC AR=$AR"
+
+install: |
+    gmakew clean LUA=no
+    gmakew VERBOSE=1 LUA=no STATIC=y CROSS_COMPILE= "CC=$CC" "LD=$CC" "AR=$AR"
+    run mv src/apk.static apk
+    install_bins apk
+
+    #install: mesonw -Dzstd=true -Dtests=disabled -Dpython=disabled -Dlua=disabled -Ddocs=disabled -Dhelp=disabled -Dcrypto_backend=openssl
