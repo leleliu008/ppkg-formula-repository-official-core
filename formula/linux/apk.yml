@@ -3,18 +3,32 @@ git-url: https://gitlab.alpinelinux.org/alpine/apk-tools
 src-url: https://gitlab.alpinelinux.org/alpine/apk-tools/-/archive/v2.14.10/apk-tools-v2.14.10.tar.gz
 src-sha: 5d888d95cf41e68288bd4342938e05767ff76c83f1d25830088fc6d4ccc42793
 license: GPL-2.0-only
-dep-pkg: libz libzstd libopenssl
-
-dopatch: |
-    gsed -i '/^LDFLAGS_apk\.static/c LDFLAGS_apk.static =' src/Makefile
+dep-pkg: libz libopenssl
 
 prepare: |
-    GMAKE_EXTRA_ARGS="LUA=no STATIC=y VERBOSE=1 CROSS_COMPILE= CC=$CC LD=$CC AR=$AR"
+    printf '#define NO_HELP\n' > src/help.h
+
+    cat > src/Makefile <<EOF
+    progs-y		+= apk
+    apk-objs	:= apk.o help.o \
+                   app_add.o app_del.o app_fix.o app_update.o app_upgrade.o \
+                   app_info.o app_list.o app_search.o app_manifest.o \
+                   app_policy.o app_stats.o \
+                   app_cache.o app_version.o \
+                   app_index.o app_fetch.o app_verify.o app_dot.o \
+                   app_audit.o \
+                   common.o database.o package.o commit.o solver.o \
+                   version.o atom.o blob.o hash.o print.o io.o io_url.o io_gunzip.o io_archive.o
+
+    LIBS_apk	:= libfetch/libfetch.a -lz -lssl -lcrypto
+
+    CFLAGS_ALL		+= -D_ATFILE_SOURCE -Ilibfetch
+    CFLAGS_apk.o	:= -DAPK_VERSION=\"$PACKAGE_VERSION\"
+    EOF
 
 install: |
     gmakew clean LUA=no
-    gmakew VERBOSE=1 LUA=no STATIC=y CROSS_COMPILE= "CC=$CC" "LD=$CC" "AR=$AR"
-    run mv src/apk.static apk
-    install_bins apk
+    gmakew VERBOSE=1 LUA=no CROSS_COMPILE= "CC=$CC" "LD=$CC" "AR=$AR"
+    install_bins src/apk
 
     #install: mesonw -Dzstd=true -Dtests=disabled -Dpython=disabled -Dlua=disabled -Ddocs=disabled -Dhelp=disabled -Dcrypto_backend=openssl
