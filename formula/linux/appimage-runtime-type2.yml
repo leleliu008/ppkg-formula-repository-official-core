@@ -1,0 +1,14 @@
+summary: type2 AppImage runtime
+git-url: https://github.com/AppImage/type2-runtime
+license: MIT
+dep-pkg: libsquashfuse
+ccflags: -std=gnu99 -Wall -Werror -Wno-error=unused-result
+ppflags: -D_FILE_OFFSET_BITS=64
+ldflags: -T data_sections.ld
+bscript: src/runtime
+binbstd: 1
+install: |
+    CFLAGS2="$(pkg-config --cflags squashfuse_ll)"
+    LIBS="$(pkg-config --libs-only-l squashfuse_ll)"
+    run $CC $CFLAGS $CPPFLAGS $CFLAGS2 -DGIT_COMMIT="\\\"$PACKAGE_GIT_SHA\\\"" $LDFLAGS -o appimage-runtime-type2 runtime.c $LIBS
+    install_bins appimage-runtime-type2

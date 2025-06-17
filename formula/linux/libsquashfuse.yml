@@ -1,0 +1,8 @@
+summary: FUSE filesystem to mount squashfs archives
+src-url: https://github.com/vasi/squashfuse/releases/download/0.5.2/squashfuse-0.5.2.tar.gz
+src-sha: 54e4baaa20796e86a214a1f62bab07c7c361fb7a598375576d585712691178f5
+license: BSD-2-Clause
+dep-pkg: libfuse liblz4 liblzo libzstd liblzma libz
+install: configure && install_incs :squashfuse fuseprivate.h
+binbstd: 1
+dotweak: gsed -i '/^Requires:/s|$| fuse3 liblz4 lzo2 libzstd liblzma libz|' lib/pkgconfig/squashfuse*.pc
