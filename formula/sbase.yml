@@ -1,0 +1,22 @@
+summary: A collection of portable unix tools
+web-url: https://core.suckless.org/sbase/
+git-url: git://git.suckless.org/sbase
+version: 0.1
+license: MIT
+
+prepare: |
+    cat > config.mk <<EOF
+    VERSION=$PACKAGE_VERSION
+    PREFIX=$PACKAGE_INSTALL_DIR
+    MANPREFIX=$PACKAGE_INSTALL_DIR/share/man
+    CC=$CC
+    AR=$AR
+    RANLIB=$RANLIB
+    CFLAGS=$CFLAGS $LDFLAGS
+    LDFLAGS=$LDFLAGS
+    EOF
+
+install: |
+    gmakew clean
+    gmakew
+    gmakew install
