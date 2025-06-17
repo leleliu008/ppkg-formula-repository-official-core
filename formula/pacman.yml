@@ -1,0 +1,17 @@
+summary: Arch Linux Package Management Utility
+web-url: https://www.archlinux.org/pacman/
+git-url: https://gitlab.archlinux.org/pacman/pacman
+src-url: https://gitlab.archlinux.org/pacman/pacman/-/releases/v7.0.0/downloads/pacman-7.0.0.tar.xz
+src-sha: 61cbd445d1381b4b184bc7c4e2791f07a79f0f2807b7c600399d0d08e8cd28cf
+dep-pkg: libcurl libarchive libgpgme
+license: GPL-2.0-or-later
+
+install: |
+    mesonw \
+        -Dcurl=enabled \
+        -Dgpgme=enabled \
+        -Di18n=false \
+        -Ddoc=disabled \
+        -Ddoxygen=disabled \
+        -Dsysconfdir="$PACKAGE_INSTALL_DIR/etc" \
+        -Dlocalstatedir=$PACKAGE_INSTALL_DIR/var
