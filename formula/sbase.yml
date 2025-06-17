@@ -1,5 +1,6 @@
 summary: A collection of portable unix tools
 web-url: https://core.suckless.org/sbase/
+web-uri: https://git.suckless.org/sbase/
 git-url: git://git.suckless.org/sbase
 version: 0.1
 license: MIT
