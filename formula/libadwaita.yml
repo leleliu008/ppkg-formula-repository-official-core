@@ -1,8 +1,9 @@
 summary: Building blocks for modern adaptive GNOME applications
 web-url: https://gnome.pages.gitlab.gnome.org/libadwaita/
 git-url: https://gitlab.gnome.org/GNOME/libadwaita
-src-url: https://download.gnome.org/sources/libadwaita/1.6/libadwaita-1.6.2.tar.xz
-src-sha: 7542f8354e6808dd4e9a31551bbdfc0170735e4af4d1b3e69186500ccb9c01eb
+src-url: https://download.gnome.org/sources/libadwaita/1.7/libadwaita-1.7.4.tar.xz
+src-sha: a012bef97ac0d726b969b18099f75fc5eee9e92c012af9672b827350d53ae970
 license: LGPL-2.1-or-later
-dep-pkg: gtk4 libappstream
-install: mesonw -Dtests=false -Dexamples=false -Dgtk_doc=false -Dvapi=true -Dprofiling=false -Dintrospection=disabled
+dep-pkg: gtk4 glib-gir vala libsass libappstream
+dep-upp: sassc
+install: mesonw -Dtests=false -Dexamples=false -Ddocumentation=false -Dvapi=true -Dprofiling=false -Dintrospection=enabled

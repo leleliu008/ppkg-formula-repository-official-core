@@ -1,0 +1,7 @@
+summary: GObject wrapper around SQLite
+web-url: https://wiki.gnome.org/Projects/Gom
+src-url: https://download.gnome.org/sources/gom/0.5/gom-0.5.3.tar.xz
+src-sha: 069d0909fbdc6b4d27edf7a879366194e3ab508b03548bf5b89ff63546d20177
+license: LGPL-2.1-or-later
+dep-pkg: libgdk-pixbuf libsqlite3
+install: mesonw -Denable-gtk-doc=false -Denable-introspection=false

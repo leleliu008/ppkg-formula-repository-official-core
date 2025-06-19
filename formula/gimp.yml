@@ -3,5 +3,6 @@ web-url: https://www.gimp.org/
 src-url: https://download.gimp.org/gimp/v3.0/gimp-3.0.4.tar.xz
 src-sha: 8caa2ec275bf09326575654ac276afc083f8491e7cca45d19cf29e696aecab25
 license: GPL-3.0-or-later
-dep-pkg: libappstream-glib libgegl
+dep-pkg: libappstream-glib libgegl libgexiv2 libpoppler gtk4
+dep-upp: desktop-file-utils intltool
 bsystem: meson

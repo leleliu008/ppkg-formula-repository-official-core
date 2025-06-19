@@ -1,7 +1,7 @@
 summary: Tools and libraries to work with AppStream metadata
 web-url: https://www.freedesktop.org/wiki/Distributions/AppStream/
-src-url: https://github.com/ximion/appstream/archive/refs/tags/v1.0.4.tar.gz
-src-sha: dff6efa67d9ea4797870d70e3370b9e3fa66ce3c749aba68e6b10222473463cf
+src-url: https://github.com/ximion/appstream/archive/refs/tags/v1.0.5.tar.gz
+src-sha: dd33b1375ba4221ffee060e2778c478e8150d7b1108c6309148f5fb1ca6e90c0
 license: LGPL-2.1-or-later
 dep-pkg: libxmlb libxml2 libyaml libcurl
 dep-upp: gettext-tools itstool xsltproc docbook-xsl gperf
@@ -17,3 +17,5 @@ install: |
         -Ddocs=false \
         -Dapidocs=false \
         -Dinstall-docs=false
+
+dotweak: gsed -i '/Requires:/s|$| xmlb libxml-2.0 yaml-0.1 libcurl|' lib/pkgconfig/appstream.pc

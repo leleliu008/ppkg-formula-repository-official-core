@@ -1,9 +1,8 @@
-pkgtype: lib
 summary: GObject wrapper around the Exiv2 photo metadata library
 web-url: https://wiki.gnome.org/Projects/gexiv2
+git-url: https://gitlab.gnome.org/GNOME/gexiv2
 src-url: https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.5.tar.xz
 src-sha: 0913c53daabab1f1ab586afd55bb55370796f2b8abcc6e37640ab7704ad99ce1
 license: GPL-2.0-or-later
 dep-pkg: vala libexiv2
-dep-pym: PyGObject
-install: mesonw -Dcpp_std=c++11
+install: mesonw -Dcpp_std=c++11 -Dpython3=false -Dtools=false -Dtests=false -Dgtk_doc=false -Dintrospection=true -Dvapi=true

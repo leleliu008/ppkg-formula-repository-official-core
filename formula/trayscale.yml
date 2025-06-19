@@ -1,15 +1,15 @@
-summary: An unofficial GUI wrapper around the Tailscale CLI client
-src-url: https://github.com/DeedleFake/trayscale/archive/refs/tags/v0.14.1.tar.gz
-src-sha: 860fe136b02140a6956a38be025de43c0f579707e8f21e94e8270cb6b98adcfe
-license: MIT
-dep-pkg: libadwaita gobject-introspection
-dep-lib: libcurl libxml-2.0 yaml-0.1 xmlb
-bsystem: go
-
 linkage: shared/most
+summary: An unofficial GUI wrapper around the Tailscale CLI client
+src-url: https://github.com/DeedleFake/trayscale/archive/refs/tags/v0.18.0.tar.gz
+src-sha: a230e3bbd25f149bb3f651b33f07d9da888577652c38a0a7ecc28e06f19a2d8c
+license: MIT
+dep-pkg: libadwaita
+bsystem: go
 
 install: |
     export CGO_LDFLAGS="-L$PACKAGE_WORKING_DIR/lib -L$libintl_LIBRARY_DIR -L$libiconv_LIBRARY_DIR -L$libbz2_LIBRARY_DIR -L$libcurl_LIBRARY_DIR -L$libxml2_LIBRARY_DIR -L$libxmlb_LIBRARY_DIR -L$libyaml_LIBRARY_DIR -L$libopenssl_LIBRARY_DIR -L$libnghttp2_LIBRARY_DIR"
+
     export CGO_ENABLED=1
+
     run ./dist.sh build "$PACKAGE_VERSION"
     run ./dist.sh install "$PACKAGE_INSTALL_DIR"
