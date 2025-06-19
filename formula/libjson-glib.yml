@@ -1,4 +1,3 @@
-pkgtype: lib
 summary: Library for JSON, based on GLib
 web-url: https://wiki.gnome.org/Projects/JsonGlib
 git-url: https://gitlab.gnome.org/GNOME/json-glib

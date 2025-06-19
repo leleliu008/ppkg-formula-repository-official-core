@@ -1,0 +1,13 @@
+summary: Graph based image processing framework
+web-url: https://www.gegl.org/
+git-url: https://gitlab.gnome.org/GNOME/gegl
+src-url: https://download.gimp.org/pub/gegl/0.4/gegl-0.4.62.tar.xz
+src-sha: 5887576371ebf1d9e90797d10e4b9a7f1658228d4827583e79e1db3d94505c6c
+license: LGPL-3.0-or-later GPL-3.0-or-later BSD-3-Clause MIT
+dep-pkg: libbabl libjson-glib glib-gir
+install: |
+    mesonw \
+        -Ddocs=false \
+        -Djasper=disabled \
+        -Dumfpack=disabled \
+        -Dlibspiro=disabled
