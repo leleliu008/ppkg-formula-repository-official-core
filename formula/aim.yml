@@ -2,4 +2,5 @@ summary: A command line download/upload tool with resume
 src-url: https://github.com/mihaigalos/aim/archive/refs/tags/1.8.6.tar.gz
 src-sha: 1f6b7bce494106e0503024eecbc75b449c9bd30a12f3286a9c44bd0dfdd2c3fb
 license: MIT
+dep-pkg: libopenssl
 bsystem: cargo
