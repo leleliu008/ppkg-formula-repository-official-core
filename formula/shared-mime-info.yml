@@ -4,7 +4,8 @@ git-url: https://gitlab.freedesktop.org/xdg/shared-mime-info
 src-url: https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.4/shared-mime-info-2.4.tar.bz2
 src-sha: 32dc32ae39ff1c1bf8434dd3b36770b48538a1772bc0298509d034f057005992
 license: GPL-2.0-only
-dep-upp: gettext-tools
-dep-pkg: glib libxml2
-dopatch: gsed -i 's|xmlto.found()|false|' data/meson.build
-install: mesonw -Dbuild-tools=true -Dbuild-tests=false -Dbuild-translations=false -Dupdate-mimedb=false
+dep-upp: gettext-tools xmlutils update-mime-database
+
+dopatch: gsed -i -e '/install_man/d' -e 's|xmlto\.found()|false|' data/meson.build
+
+install: mesonw -Dbuild-tools=false -Dbuild-tests=false -Dbuild-translations=false -Dupdate-mimedb=true

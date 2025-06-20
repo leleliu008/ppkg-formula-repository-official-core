@@ -1,0 +1,10 @@
+summary: encoding data for the poppler PDF rendering library
+web-url: https://poppler.freedesktop.org/
+src-url: https://poppler.freedesktop.org/poppler-data-0.4.12.tar.gz
+src-sha: c835b640a40ce357e1b83666aabd95edffa24ddddd49b8daff63adb851cdab74
+license: GPL-2.0-or-later BSD-3-Clause MIT
+install: |
+    unset DESTDIR
+    gmakew clean
+    gmakew
+    gmakew install prefix="$PACKAGE_INSTALL_DIR"

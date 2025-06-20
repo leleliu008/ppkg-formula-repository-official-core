@@ -1,0 +1,15 @@
+summary: GNOME Javascript bindings
+git-url: https://gitlab.gnome.org/GNOME/gjs
+src-url: https://download.gnome.org/sources/gjs/1.82/gjs-1.82.1.tar.xz
+src-sha: fb39aa5636576de0e5a1171f56a1a5825e2bd1a69972fb120ba78bd109b5693c
+license: LGPL-2.0-or-later MIT
+dep-pkg: libreadline libcairo libffi spidermonkey
+
+install: |
+    mesonw \
+        -Dprofiler=disabled \
+        -Dreadline=enabled \
+        -Dinstalled_tests=false 
+        -Dbsymbolic_functions=false \
+        -Dskip_dbus_tests=true \
+        -Dskip_gtk_tests=true

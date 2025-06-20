@@ -1,0 +1,28 @@
+pkgtype: lib
+summary: GNOME Toolkit for creating GUI Apps
+web-url: https://gtk.org/
+git-url: https://gitlab.gnome.org/GNOME/gtk
+src-url: https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.43.tar.xz
+src-sha: 7e04f0648515034b806b74ae5d774d87cffb1a2a96c468cb5be476d51bf2f3c7
+license: LGPL-2.0-or-later
+dep-pkg: libcups libgdk-pixbuf libpango libepoxy libxkbcommon xorg-libxcursor at-spi2-core hicolor-icon-theme iso-codes
+dep-upp: gettext-tools docbook-xsl xsltproc sassc
+
+dopatch: |
+    cat > ../bin/gdk-pixbuf-pixdata <<EOF
+    #!/bin/sh
+    unset XDG_DATA_DIRS
+    exec "$libgdk_pixbuf_INSTALL_DIR/bin/gdk-pixbuf-pixdata" "\$@"
+    EOF
+    chmod +x ../bin/gdk-pixbuf-pixdata
+
+prepare: export DESTDIR=/
+
+install: |
+    mesonw \
+        -Dtests=false \
+        -Ddemos=false \
+        -Dexamples=false \
+        -Dgtk_doc=false \
+        -Dman=true \
+        -Dintrospection=true

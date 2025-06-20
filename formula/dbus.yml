@@ -2,19 +2,17 @@ pkgtype: lib
 summary: Message bus system, providing inter-application communication
 git-url: https://gitlab.freedesktop.org/dbus/dbus
 web-url: https://wiki.freedesktop.org/www/Software/dbus
-src-url: https://dbus.freedesktop.org/releases/dbus/dbus-1.14.10.tar.xz
-src-sha: ba1f21d2bd9d339da2d4aa8780c09df32fea87998b73da24f49ab9df1e36a50f
-license: GPL-2.0-or-later
+src-url: https://dbus.freedesktop.org/releases/dbus/dbus-1.16.2.tar.xz
+src-sha: 0ba2a1a4b16afe7bceb2c07e9ce99a8c2c3508e5dec290dbb643384bd6beb7e2
+license: GPL-2.0-or-later AFL-2.1
 dep-pkg: libexpat
 
-# https://bugs.freedesktop.org/show_bug.cgi?id=94494
-fix-url: https://raw.githubusercontent.com/Homebrew/formula-patches/0a8a55872e/d-bus/org.freedesktop.dbus-session.plist.osx.diff
-fix-sha: a8aa6fe3f2d8f873ad3f683013491f5362d551bf5d4c3b469f1efbc5459a20dc
+prepare: export TMPDIR=/tmp
 
 install: |
-    export TMPDIR=/tmp
-    configure \
-        --disable-tests \
-        --disable-xml-docs \
-        --disable-doxygen-docs \
-        --without-x
+    mesonw \
+        -Dsysconfdir=etc \
+        -Dlocalstatedir=var \
+        -Dxml_docs=disabled \
+        -Ddoxygen_docs=disabled \
+        -Dmodular_tests=disabled

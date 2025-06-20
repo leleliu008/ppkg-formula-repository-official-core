@@ -1,8 +1,9 @@
+pkgtype: lib
 summary: Protocol definitions and daemon for D-Bus at-spi
 web-url: https://www.freedesktop.org/wiki/Accessibility/AT-SPI2/
-src-url: https://download.gnome.org/sources/at-spi2-core/2.54/at-spi2-core-2.54.0.tar.xz
-src-sha: d7eee7e75beddcc272cedc2b60535600f3aae6e481589ebc667afc437c0a6079
+src-url: https://download.gnome.org/sources/at-spi2-core/2.56/at-spi2-core-2.56.2.tar.xz
+src-sha: e1b1c9836a8947852f7440c32e23179234c76bd98cd9cc4001f376405f8b783b
 license: LGPL-2.1-or-later
 dep-upp: gettext-tools
-dep-pkg: glib libxml2 dbus xorg-libxtst
-install: mesonw -Dintrospection=disabled -Dx11=enabled
+dep-pkg: glib-gir libxml2 dbus xorg-libxtst
+install: mesonw -Dintrospection=enabled -Dx11=enabled

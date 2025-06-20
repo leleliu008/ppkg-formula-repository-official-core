@@ -4,4 +4,7 @@ src-sha: 741754f293f6b7668f941506da07cd7725629a793108bb31633fb6c3eae5315f
 license: ISC
 dep-pkg: libjson-c glib
 dep-upp: intltool gettext-tools
+
+prepare: export CPPFLAGS="$CPPFLAGS -I$glib_INCLUDE_DIR/glib-2.0 -I$glib_LIBRARY_DIR/glib-2.0/include"
+
 install: configure --disable-introspection

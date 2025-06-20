@@ -1,8 +1,15 @@
+linkage: shared/most
 summary: GNU Image Manipulation Program
 web-url: https://www.gimp.org/
 src-url: https://download.gimp.org/gimp/v3.0/gimp-3.0.4.tar.xz
 src-sha: 8caa2ec275bf09326575654ac276afc083f8491e7cca45d19cf29e696aecab25
 license: GPL-3.0-or-later
-dep-pkg: libappstream-glib libgegl libgexiv2 libpoppler gtk4
+dep-pkg: libappstream-glib librsvg libheif libexif libgegl libgexiv2 libpoppler gtk+3 glib-networking poppler-data mypaint-brushes@1 xorg-libxmu
 dep-upp: desktop-file-utils intltool
+#dep-pym: PyGObject
 bsystem: meson
+
+prepare: |
+    # https://docs.gtk.org/gio/overview.html#running-gio-applications
+    export GIO_MODULE_DIR="$glib_networking_INSTALL_DIR/lib/gio/modules"
+    #export GIO_USE_TLS=openssl

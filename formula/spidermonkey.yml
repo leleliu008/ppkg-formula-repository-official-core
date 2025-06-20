@@ -1,0 +1,37 @@
+summary: A JavaScript and WebAssembly Engine powered by Mozilla and used by Firefox
+web-url: https://spidermonkey.dev
+src-url: https://archive.mozilla.org/pub/firefox/releases/128.11.0esr/source/firefox-128.11.0esr.source.tar.xz
+src-sha: f2ed90374a670fe5eccfd5bf36d2e311affd955d1f3507861c738b9aa7a1ffec
+version: 128.11.0
+license: MPL-2.0
+dep-pkg: nspr libz libicu libreadline
+dep-upp: cbindgen gm4 python3
+bsystem: gmake cargo
+parallel: 0
+
+install: |
+    export PROXIED_CC_ARGS="$PROXIED_CC_ARGS $CFLAGS $CPPFLAGS $LDFLAGS -lncurses"
+
+    run ln -s /home/leleliu008/Downloads/llvm+clang-18.1.8-linux-glibc-x86_64.release/bin/llvm-objdump ../bin/
+
+    # https://bugzilla.redhat.com/show_bug.cgi?id=2184743
+    unset RUSTFLAGS
+
+    run cd _
+    run ../js/src/configure \
+        --enable-hardening \
+        --enable-optimize \
+        --enable-readline \
+        --enable-release \
+        --enable-rust-simd \
+        --enable-shared-js \
+        --disable-bootstrap \
+        --disable-debug \
+        --disable-jemalloc \
+        --with-intl-api \
+        --with-system-icu \
+        --with-system-nspr \
+        --with-system-zlib \
+        --prefix="$PACKAGE_INSTALL_DIR"
+    gmakew
+    gmakew install
