@@ -1,4 +1,5 @@
 summary: Library for accessing the direct rendering manager
+git-url: https://gitlab.freedesktop.org/mesa/libdrm
 web-url: https://dri.freedesktop.org/
 src-url: https://dri.freedesktop.org/libdrm/libdrm-2.4.124.tar.xz
 src-sha: ac36293f61ca4aafaf4b16a2a7afff312aa4f5c37c9fbd797de9e3c0863ca379

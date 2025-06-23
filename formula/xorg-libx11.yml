@@ -1,7 +1,7 @@
 summary: X.Org protocol client library
 web-url: https://www.x.org/
-src-url: https://www.x.org/archive/individual/lib/libX11-1.8.7.tar.gz
-src-sha: 793ebebf569f12c864b77401798d38814b51790fce206e01a431e5feb982e20b
+src-url: https://www.x.org/archive/individual/lib/libX11-1.8.12.tar.gz
+src-sha: 220fbcf54b6e4d8dc40076ff4ab87954358019982490b33c7802190b62d89ce1
 license: MIT
 dep-pkg: xorg-xtrans xorg-libxcb
 

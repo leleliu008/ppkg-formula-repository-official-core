@@ -1,0 +1,7 @@
+summary: GDI+-compatible API on non-Windows operating systems
+web-url: https://www.mono-project.com/docs/gui/libgdiplus/
+src-url: https://dl.winehq.org/mono/sources/libgdiplus/libgdiplus-6.2.tar.gz
+src-sha: 683adb7d99d03f6ee7985173a206a2243f76632682334ced4cae2fcd20c83bc9
+license: MIT
+dep-pkg: libpango libexif libjpeg-turbo libtiff libgif
+install: configure --with-pango

@@ -1,0 +1,14 @@
+summary: MNG/JNG reference library
+web-url: https://sourceforge.net/projects/libmng/
+src-url: https://downloads.sourceforge.net/project/libmng/libmng-devel/2.0.3/libmng-2.0.3.tar.gz
+src-sha: cf112a1fb02f5b1c0fce5cab11ea8243852c139e669c44014125874b14b7dfaa
+license: Zlib
+dep-pkg: libz liblcms2 libjpeg-turbo
+dep-upp: libtool
+bsystem: autotools
+binbstd: 1
+install: |
+    configure \
+        --with-zlib \
+        --with-jpeg \
+        --with-lcms2

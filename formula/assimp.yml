@@ -1,0 +1,7 @@
+summary: A command line utilitiy that allows interaction with 3D models
+web-url: https://www.assimp.org/
+src-url: https://github.com/assimp/assimp/archive/refs/tags/v6.0.1.tar.gz
+src-sha: 0c6ec0e601cab4700019c1e60b5cd332cc6355e63e59c11344693623c08a7d38
+license: BSD-3-Clause CC-PDDC MIT BSL-1.0 Unlicense Zlib
+dep-pkg: libz
+install: cmakew -DASSIMP_BUILD_TESTS=OFF -DASSIMP_BUILD_ASSIMP_TOOLS=ON -DBUILD_SHARED_LIBS=OFF --components=assimp-bin

@@ -1,8 +1,8 @@
 pkgtype: lib
 summary: Video processing framework with simplicity in mind
 web-url: https://www.vapoursynth.com
-src-url: https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R70.11.tar.gz
-src-sha: 41af974964a20aec670f5d2b235e043cb9c3a68db90fa39cc57c609c7d8baa91
+src-url: https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R72.tar.gz
+src-sha: 650f77feebfd08842b521273f59e0c88f7ba9d7cb5f151d89b79b8dfdd4ce633
 license: LGPL-2.1-or-later
 dep-pym: cython
 dep-pkg: libzimg

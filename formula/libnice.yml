@@ -1,7 +1,8 @@
 summary: GLib ICE implementation
 web-url: https://wiki.freedesktop.org/nice/
-src-url: https://nice.freedesktop.org/releases/libnice-0.1.21.tar.gz
-src-sha: 72e73a2acf20f59093e21d5601606e405873503eb35f346fa621de23e99b3b39
+src-url: https://nice.freedesktop.org/releases/libnice-0.1.22.tar.gz
+src-sha: a5f724cf09eae50c41a7517141d89da4a61ec9eaca32da4a0073faed5417ad7e
 license: LGPL-2.1-only MPL-1.1
-dep-pkg: gstreamer libgnutls intltool
-bsystem: meson
+dep-pkg: gstreamer libgnutls
+dep-upp: intltool
+install: mesonw -Dgstreamer=enabled

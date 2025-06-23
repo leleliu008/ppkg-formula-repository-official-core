@@ -1,9 +1,17 @@
 pkgtype: lib
 summary: Cross platform, open source .NET development framework
 web-url: https://www.mono-project.com/
-git-url: https://github.com/mono/mono
-git-sha: 0cbf0e290c31adb476f9de0fa44b1d8829affa40
-version: 6.12.0.206
+git-url: https://gitlab.winehq.org/mono/mono
+src-url: https://dl.winehq.org/mono/sources/mono/mono-6.14.1.tar.xz
+src-sha: 3024c97c0bc8cbcd611c401d5f994528704108ceb31f31b28dea4783004d0820
+license: Apache-2.0
 dep-pkg: libz libkrb5.a
-dep-upp: libtool python3 unzip
-bsystem: autotools
+dep-upp: libtool cmake python3 unzip
+bsystem: autogen
+binbstd: 1
+
+dopatch: |
+    run cd external/bdwgc/
+    run gmake distclean
+
+install: configure --disable-nls

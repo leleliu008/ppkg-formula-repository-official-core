@@ -1,6 +1,6 @@
 summary: tools to create and extract Squashfs filesystems
 src-url: https://github.com/plougher/squashfs-tools/archive/refs/tags/4.6.1.tar.gz
-src-sha: 94201754b36121a9f022a190c75f718441df15402df32c2b520ca331a107511c
+src-sha: 9c4974e07c61547dae14af4ed1f358b7d04618ae194e54d6be72ee126f0d2f53
 license: GPL-2.0-or-later
 dep-pkg: liblz4 liblzo libzstd liblzma libz
 dep-upp: help2man
