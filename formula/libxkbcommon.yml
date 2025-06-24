@@ -4,5 +4,5 @@ src-url: https://github.com/xkbcommon/libxkbcommon/archive/refs/tags/xkbcommon-1
 src-sha: 0427585a4d6ca17c9fc1ac4b539bf303348e9080af70c5ea402503bc370a9631
 license: MIT
 dep-upp: gm4 bison
-dep-pkg: libxml2 xorg-libx11 xorg-libxcb xkeyboard-config
+dep-pkg: libxml2 xorg-libx11 xkeyboard-config
 install: mesonw -Denable-x11=true -Denable-wayland=false -Denable-docs=false

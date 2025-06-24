@@ -7,7 +7,7 @@ src-sha: 999d0a854f43864fc098266aaf25600ce7961318a1e2e358bff94a7f53580e30
 license: MIT
 dep-pym: Mako PyYAML ply
 dep-upp: gm4 flex bison cbindgen
-dep-pkg: xorg-libxdamage xorg-libxrandr xorg-libxxf86vm xorg-libxvmc xorg-libxshmfence xorg-libxpresent wayland-protocols libvdpau libva libdrm libclc liblua libsensors libarchive glslang bindgen
+dep-pkg: xorg-libxdamage xorg-libxxf86vm xorg-libxvmc xorg-libxshmfence xorg-libxpresent wayland-protocols libvdpau libva libclc liblua libsensors libarchive glslang bindgen
 
 # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10739
 dopatch: |
