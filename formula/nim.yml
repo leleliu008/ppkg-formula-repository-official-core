@@ -5,7 +5,14 @@ src-url: https://nim-lang.org/download/nim-2.2.4.tar.xz
 src-sha: f82b419750fcce561f3f897a0486b180186845d76fb5d99f248ce166108189c7
 license: MIT
 dep-pkg: libpcre libsqlite3 libopenssl
+bsystem: custom
 binbstd: 1
+
+prepare: |
+    cat >> config/nim.cfg <<EOF
+    passC%="$CFLAGS $CPPFLAGS"
+    passL%="$LDFLAGS"
+    EOF
 
 install: |
     run sh build.sh
