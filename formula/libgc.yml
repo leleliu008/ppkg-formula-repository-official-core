@@ -1,11 +1,12 @@
-pkgtype: lib
 summary: Garbage collector for C and C++
 web-url: https://www.hboehm.info/gc/
 src-url: https://github.com/ivmai/bdwgc/releases/download/v8.2.8/gc-8.2.8.tar.gz
 src-sha: 7649020621cb26325e1fb5c8742590d92fb48ce5c259b502faf7d9fb5dabb160
 license: MIT
-dep-pkg: libatomic_ops
+
 install: |
-    configure \
-        --enable-cplusplus \
-        --enable-large-config
+    cmakew 2 \
+        -Denable_cplusplus=ON \
+        -Denable_large_config=ON \
+        -Dwithout_libatomic_ops=OFF \
+        -Dwith_libatomic_ops=OFF
