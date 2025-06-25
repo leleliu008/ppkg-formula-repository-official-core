@@ -1,0 +1,17 @@
+summary: Fast and statically typed, compiled language with Ruby-like syntax
+web-url: https://crystal-lang.org/
+src-url: https://github.com/crystal-lang/crystal/archive/refs/tags/1.16.3.tar.gz
+src-sha: eb222af4d2aa269ed0f6c731661431a4fd97713de13f2f0a7c71e26140ca9d23
+license: Apache-2.0
+dep-pkg: libgc libgmp libyaml libpcre2 libevent llvm+clang@18
+dep-upp: crystal@1.15.1
+
+prepare: |
+    export CRYSTAL_CONFIG_VERSION="$PACKAGE_VERSION"
+    export CRYSTAL_CACHE_DIR="$PACKAGE_BCACHED_DIR"
+    export LLVM_CONFIG="$llvm_clang_18_INSTALL_DIR/bin/llvm-config"
+
+install: |
+    gmakew clean
+    gmakew crystal interpreter=1 release=1 static= debug= stats= check= target= verbose=1 order=random threads=$BUILD_NJOBS
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
