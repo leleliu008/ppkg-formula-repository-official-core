@@ -1,5 +1,8 @@
 summary: NUMA support for Linux
 src-url: https://github.com/numactl/numactl/releases/download/v2.0.19/numactl-2.0.19.tar.gz
 src-sha: f2672a0381cb59196e9c246bf8bcc43d5568bc457700a697f1a1df762b9af884
-license: GPL-2.0-or-later
-bsystem: configure
+license: GPL-2.1-or-later
+dep-upp: libtool
+bsystem: autotools
+
+dopatch: gsed -i 's|bin_PROGRAMS|noinst_PROGRAMS|' Makefile.am
