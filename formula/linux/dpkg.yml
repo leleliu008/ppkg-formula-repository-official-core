@@ -4,5 +4,5 @@ src-url: https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.22.20.tar.xz
 src-sha: f21bd89cca601500a7ecc446160be72413d822fe09b4ea155c9593b46321d5e4
 license: GPL-2.0-only
 dep-upp: gettext-tools perl patch gtar
-dep-pkg: libmd liblzma libbz2 libz
+dep-pkg: libmd liblzma libbz2 libz libncurses
 install: configure --disable-shared
