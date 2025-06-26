@@ -1,0 +1,5 @@
+summary: A slightly quackers Docker TUI based on k9s
+src-url: https://github.com/robertpsoane/ducker/archive/refs/tags/v0.3.0.tar.gz
+src-sha: 122026ec9d835ded2f623993918e25ef60f753a7e1210d73d3d1d3728836ecb8
+license: MIT
+bsystem: cargo

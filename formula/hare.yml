@@ -1,0 +1,14 @@
+summary: The Hare programming language runtime
+web-url: https://harelang.org/
+src-url: https://git.sr.ht/~sircmpwn/hare/archive/0.25.2.tar.gz
+src-sha: d0baf74f4e20a3a875ddd8e2b299032ada4e5de17d8413053cad0f709446348e
+license: GPL-3.0-only
+dep-pkg: harec
+dep-upp: scdoc
+
+prepare: run ln -s configs/$TARGET_PLATFORM_NAME.mk config.mk
+
+install: |
+    gmakew clean
+    gmakew "AS=$AS" "LD=$LD" ASFLAGS= LDLINKFLAGS=
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"

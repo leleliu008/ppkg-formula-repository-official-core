@@ -1,0 +1,33 @@
+summary: The Hare compiler
+web-url: https://harelang.org/
+src-url: https://git.sr.ht/~sircmpwn/harec/archive/0.25.2.tar.gz
+src-sha: e2038a6feeadcd6d4dfd7d7ab000bec91f32617720632829f5658916cd3cb17a
+license: GPL-3.0-only
+dep-pkg: qbe
+bsystem: gmake
+
+prepare: |
+    export CFLAGS="$CFLAGS -std=c11 -D_XOPEN_SOURCE=700 $CPPFLAGS -Iinclude"
+
+    cat > config.mk <<EOF
+    PREFIX = $PACKAGE_INSTALL_DIR
+    BINDIR = \$(PREFIX)/bin
+    VERSION = $PACKAGE_VERSION
+    PLATFORM = $TARGET_PLATFORM_NAME
+    ARCH = $TARGET_PLATFORM_ARCH
+    DEFAULT_TARGET = $TARGET_PLATFORM_ARCH
+
+    HAREFLAGS =
+    HARECFLAGS =
+    QBEFLAGS =
+    ASFLAGS =
+
+    HAREC = harec
+    QBE = qbe
+    AS = $CC
+    LD = $CC
+    SCDOC = scdoc
+
+    HARECACHE = _
+    BINOUT = _
+    EOF

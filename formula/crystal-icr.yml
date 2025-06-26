@@ -1,0 +1,9 @@
+summary: Interactive console for Crystal programming language
+src-url: https://github.com/crystal-community/icr/archive/refs/tags/v0.9.0.tar.gz
+src-sha: 2530293e94b60d69919a79b49e83270f1462058499ad37a762233df8d6e5992c
+license: MIT
+dep-pkg: libreadline crystal
+binbstd: 1
+install: |
+    run crystal build --release -o crystal-icr src/icr/cli.cr
+    install_bins crystal-icr
