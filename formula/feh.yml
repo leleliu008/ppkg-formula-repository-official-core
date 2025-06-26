@@ -1,0 +1,18 @@
+linkage: shared
+summary: A fast and light image viewer
+git-url: https://github.com/derf/feh
+web-url: https://feh.finalrewind.org/
+src-url: https://feh.finalrewind.org/feh-3.10.3.tar.bz2
+src-sha: 5426e2799770217af1e01c2e8c182d9ca8687d84613321d8ab4a66fe4041e9c8
+license: MIT-feh
+dep-pkg: libmagic libcurl libexif imlib2 xorg-libxt xorg-libxinerama
+dep-lib: libcurl imlib2
+
+prepare: |
+    export CFLAGS="$CFLAGS $CPPFLAGS"
+    unset ICON_PREFIX
+
+install: |
+    gmakew clean
+    gmakew PREFIX="$PACKAGE_INSTALL_DIR" exif=1 curl=1 magic=1 xinerama=1 help=1 mkstemps=1 verscmp=1 debug=0 app=0
+    gmakew PREFIX="$PACKAGE_INSTALL_DIR" install

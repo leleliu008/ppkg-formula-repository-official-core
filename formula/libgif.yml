@@ -17,3 +17,17 @@ install: |
     gmakew clean UNAME="$UNAME"
     gmakew libgif.a libgif$SHARED_LIBRARY_SUFFIX UNAME=$UNAME CC="$CC" AR="$AR" CFLAGS="'$CFLAGS'"
     gmakew install-include install-lib UNAME=$UNAME PREFIX="$PACKAGE_INSTALL_DIR"
+
+dotweak: |
+    writepc libgif <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include
+
+    Name: libgif
+    Description: $PACKAGE_SUMMARY
+    Version: $PACKAGE_VERSION
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lgif
+    EOF

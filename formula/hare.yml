@@ -6,6 +6,7 @@ license: GPL-3.0-only
 dep-pkg: harec
 dep-upp: scdoc
 
+# https://harelang.org/documentation/install/bootstrap.html
 prepare: run ln -s configs/$TARGET_PLATFORM_NAME.mk config.mk
 
 install: |

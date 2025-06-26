@@ -4,7 +4,7 @@ git-url: https://gitlab.gnome.org/GNOME/librsvg
 src-url: https://download.gnome.org/sources/librsvg/2.60/librsvg-2.60.0.tar.xz
 src-sha: 0b6ffccdf6e70afc9876882f5d2ce9ffcf2c713cbaaf1ad90170daa752e1eec3
 license: LGPL-2.1-or-later
-dep-pkg: libgdk-pixbuf libpango
+dep-pkg: libgdk-pixbuf libpango libxml2
 dep-upp: cargo-c
 bsystem: meson cargo
 install: mesonw -Dintrospection=disabled -Dpixbuf=enabled -Dpixbuf-loader=enabled
