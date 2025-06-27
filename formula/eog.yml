@@ -1,0 +1,8 @@
+summary: Eye of GNOME. An image viewer for GNOME
+web-url: https://wiki.gnome.org/Apps/EyeOfGnome
+git-url: https://gitlab.gnome.org/GNOME/eog.git
+src-url: https://download.gnome.org/sources/eog/47/eog-47.0.tar.xz
+src-sha: db5edbf5224d75126a7b7d8ee4e9272a2f30a953331d5baf6d3f3c0ce0cbde66
+license: GPL-2.0-or-later
+dep-pkg: librsvg libexif liblcms2 libexempi
+install: mesonw -Dcms=true -Dxmp=true -Dlibexif=true -Dlibrsvg=true -Dlibjpeg=true -Dlibportal=false -Dgtk_doc=false -Dintrospection=false

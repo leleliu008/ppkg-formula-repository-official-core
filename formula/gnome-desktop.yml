@@ -1,0 +1,8 @@
+pkgtype: lib
+summary: GNOME desktop core libraries
+git-url: https://gitlab.gnome.org/GNOME/gnome-desktop
+src-url: https://download.gnome.org/sources/gnome-desktop/44/gnome-desktop-44.3.tar.xz
+src-sha: 40efa9aa8d50effed9227a3d70671e32e9dc35e20f331cab3b562975978f4f8d
+license: GPL-2.0-or-later LGPL-2.1-or-later
+dep-pkg: gtk+3 gtk4 gsettings-desktop-schemas libseccomp
+install: mesonw -Dudev=disabled -Dsystemd=disabled -Dintrospection=false -Dgtk_doc=false -Dbuild_gtk4=true -Dlegacy_library=true -Ddebug_tools=true

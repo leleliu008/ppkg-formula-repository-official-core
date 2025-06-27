@@ -1,0 +1,10 @@
+summary: C library to read whole-slide images (a.k.a. virtual slides)
+web-url: https://openslide.org/
+src-url: https://github.com/openslide/openslide/releases/download/v4.0.0/openslide-4.0.0.tar.xz
+src-sha: cc227c44316abb65fb28f1c967706eb7254f91dbfab31e9ae6a48db6cf4ae562
+license: LGPL-2.1-only
+dep-pkg: libcairo libgdk-pixbuf libopenjpeg libdicom libxml2 libsqlite3
+bsystem: meson
+
+fix-url: https://raw.githubusercontent.com/easybuilders/easybuild-easyconfigs/refs/heads/develop/easybuild/easyconfigs/o/OpenSlide/OpenSlide-4.0.0_fix-poison.patch
+fix-sha: d77fa93ea5dd34e10f9e3aa28fcd19370a2de3d833cedfcb4ac0f60361535b61
