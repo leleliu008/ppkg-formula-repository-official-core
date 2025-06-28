@@ -2,14 +2,21 @@ summary: Like neofetch, but much faster because written mostly in C
 src-url: https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.46.0.tar.gz
 src-sha: 7e4e4ab8d3e0e2ad896f97effc58df4c8d23bb88273bbdf1221bd8f0a4beb736
 license: MIT
-dep-pkg: libchafa libsqlite3
+dep-pkg: libchafa libopencl libvulkan libsqlite3
 dep-upp: python3
+
 install: |
     cmakew \
         -DENABLE_FREETYPE=ON \
         -DENABLE_SQLITE3=ON \
+        -DENABLE_WAYLAND=ON \
+        -DENABLE_XCB_RANDR=ON \
+        -DENABLE_XRANDR=ON \
+        -DENABLE_OPENCL=ON \
+        -DENABLE_VULKAN=ON \
         -DENABLE_CHAFA=ON \
         -DENABLE_ZLIB=ON \
+        -DENABLE_RPM=OFF \
         -DENABLE_LTO=OFF \
         -DENABLE_ASAN=OFF \
         -DBUILD_TESTS=OFF

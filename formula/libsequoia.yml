@@ -1,0 +1,4 @@
+summary: An OpenPGP backend for rpm using Sequoia PGP
+git-url: https://github.com/rpm-software-management/rpm-sequoia
+dep-pkg: libnettle
+install: cargow build
