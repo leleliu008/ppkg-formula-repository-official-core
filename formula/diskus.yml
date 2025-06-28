@@ -1,0 +1,5 @@
+summary: A minimal, fast alternative to du -sh
+src-url: https://github.com/sharkdp/diskus/archive/refs/tags/v0.8.0.tar.gz
+src-sha: 9733570d64a1eafcf96fe233fd978ec3855c77705005037ad253c49a188fdf51
+license: Apache-2.0 MIT
+install: cargow install && install_mans doc/diskus.1
