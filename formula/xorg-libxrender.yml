@@ -1,7 +1,7 @@
 summary: X.Org Library for the Render Extension to the X11 protocol
 web-url: https://www.x.org/
-src-url: https://www.x.org/archive/individual/lib/libXrender-0.9.11.tar.gz
-src-sha: 6aec3ca02e4273a8cbabf811ff22106f641438eb194a12c0ae93c7e08474b667
+src-url: https://www.x.org/archive/individual/lib/libXrender-0.9.12.tar.gz
+src-sha: 0fff64125819c02d1102b6236f3d7d861a07b5216d8eea336c3811d31494ecf7
 license: MIT
 dep-pkg: xorg-libx11
 install: configure
