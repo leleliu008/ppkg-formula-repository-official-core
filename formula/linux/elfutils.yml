@@ -5,7 +5,8 @@ web-url: https://sourceware.org/elfutils
 src-url: https://sourceware.org/elfutils/ftp/0.193/elfutils-0.193.tar.bz2
 src-sha: 7857f44b624f4d8d421df851aaae7b1402cfe6bcdd2d8049f15fc07d3dde7635
 license: GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-only
-dep-pkg: libzstd liblzma libbz2 libz libargp musl-obstack musl-fts
+dep-pkg: libzstd liblzma libbz2 libz
+dep-pkg-musl: libfts libargp libobstack
 dep-upp: gm4
 ccflags: -Wno-error
 

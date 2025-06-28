@@ -1,4 +1,4 @@
-summary: A  networking performance tool for Linux
+summary: A networking performance tool for Linux
 git-url: https://github.com/google/neper
 license: Apache-2.0
 install: |
