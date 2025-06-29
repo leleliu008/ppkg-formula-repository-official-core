@@ -1,0 +1,5 @@
+summary: Cargo plugin to generate list of all licenses for a crate
+src-url: https://github.com/EmbarkStudios/cargo-about/archive/refs/tags/0.7.1.tar.gz
+src-sha: 5b090871bda2c2cf645de826c219b41486c36ffe0b474ad9f6ecba7e21d279a0
+license: Apache-2.0 MIT
+bsystem: cargo

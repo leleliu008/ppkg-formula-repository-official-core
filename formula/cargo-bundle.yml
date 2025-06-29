@@ -1,0 +1,5 @@
+summary: Wrap rust executables in OS-specific app bundles
+src-url: https://github.com/burtonageo/cargo-bundle/archive/refs/tags/v0.7.0.tar.gz
+src-sha: 0655b249c7c31047d2d0cb2e9b4923a2fb394e7a09a2300fc533de4e38d68d03
+license: Apache-2.0 MIT
+bsystem: cargo

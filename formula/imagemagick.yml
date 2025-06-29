@@ -2,25 +2,32 @@ pkgtype: exe+lib
 summary: Tools and libraries to manipulate images in many formats
 git-url: https://github.com/ImageMagick/ImageMagick
 web-url: https://imagemagick.org/
-src-url: https://imagemagick.org/archive/releases/ImageMagick-7.1.1-43.tar.xz
-src-sha: fa79401342b409b9b7f7d3146bd6595787373811e72be1669c39b58d1489da4f
-version: 7.1.1.43
+src-url: https://imagemagick.org/archive/releases/ImageMagick-7.1.1-47.tar.xz
+src-sha: 2396cd3c4237cfbc09a89d31d1cee157ee11fbc8ec1e540530e10175cb707160
+version: 7.1.1.47
 license: ImageMagick
-dep-pkg: ghostscript-dev libheif liblqr libtool
+dep-pkg: libgs libpango libxml2 libfftw3 libraw liblqr libheif libltdl
 
 install: |
     configure \
-        --with-freetype=yes \
+        --with-freetype \
         --with-gvc=no \
         --with-modules \
+        --with-threads \
         --with-openjp2 \
         --with-openexr \
-        --with-webp=yes \
-        --with-heic=yes \
         --with-gslib \
         --with-pango \
+        --with-hdri \
+        --with-fftw \
+        --with-heic \
+        --with-rsvg \
+        --with-tiff \
+        --with-webp \
+        --with-png \
         --with-lqr \
-        --without-x \
+        --with-xml \
+        --with-x \
         --without-wmf \
         --without-fftw \
         --disable-opencl

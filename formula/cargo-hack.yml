@@ -1,0 +1,5 @@
+summary: Cargo subcommand to provide options for testing and continuous integration
+src-url: https://github.com/taiki-e/cargo-hack/archive/refs/tags/v0.6.36.tar.gz
+src-sha: c3784af50b23a663bc3ac9afe65171125fce9d4931e69fd5ba10baf76fa49068
+license: Apache-2.0 MIT
+bsystem: cargo

@@ -1,12 +1,11 @@
 summary: The ultimate library for managing PDF documents
-git-url: git://git.ghostscript.com/mupdf.git
+git-url: https://github.com/ArtifexSoftware/mupdf
 web-url: https://mupdf.com/
-src-url: https://mupdf.com/downloads/archive/mupdf-1.23.11-source.tar.gz
-src-sha: 478f2a167feae2a291c8b8bc5205f2ce2f09f09b574a6eb0525bfad95a3cfe66
+src-url: https://mupdf.com/downloads/archive/mupdf-1.26.2-source.tar.gz
+src-sha: 2a5e1fc84f67bc593ba1d4d9d49f8782e8b12241e2eec904a65a25e4322c72a9
 license: AGPL-3.0-or-later
-dep-pkg: libopenssl libopenjpeg libjpeg-turbo libjbig2dec libharfbuzz libgumbo libmujs
+dep-pkg: libopenssl libtesseract libjbig2dec libharfbuzz libgumbo libmujs
 
-dep-upp: patch
 dopatch: |
     for item in $(find thirdparty -maxdepth 1 -mindepth 1 -type d)
     do
@@ -15,17 +14,14 @@ dopatch: |
         run rm -rf "$item"
     done
 
-    #gsed -i 's|-lfreetype2|-lfreetype|' Makerules
-
-    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        wfetch https://raw.githubusercontent.com/NetBSD/pkgsrc/trunk/print/mupdf/patches/patch-source_fitz_crypt-sha2.c
-        patch -p0 < patch-source_fitz_crypt-sha2.c
-    fi
+    rm pyproject.toml
+    rm setup.py
+    gsed -i "s/HAVE_OBJCOPY := yes/HAVE_OBJCOPY := no/g" Makerules
 
 prepare: |
     unset GMAKE_EXTRA_ARGS
 
-    for KV in FREETYPE:freetype2 HARFBUZZ:harfbuzz OPENJPEG:libopenjp2 GUMBO:gumbo
+    for KV in FREETYPE:freetype2 HARFBUZZ:harfbuzz TESSERACT:tesseract LEPTONICA:lept OPENJPEG:libopenjp2 LIBJPEG:libjpeg GUMBO:gumbo
     do
         K="${KV%:*}"
         V="${KV#*:}"
@@ -39,11 +35,13 @@ prepare: |
 install: |
     gmakew clean
     gmakew install-libs \
-        build=release \
+        build=$PROFILE \
         shared=yes \
         verbose=yes \
+        tesseract=yes \
         prefix=$PACKAGE_INSTALL_DIR \
         CC=$CC \
+        LD=$LD \
         AR=$AR \
         RANLIB=$RANLIB \
         XCFLAGS="'$CFLAGS $CPPFLAGS'" \

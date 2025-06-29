@@ -1,0 +1,6 @@
+summary: A beautiful and reliable code formatter for Typst
+web-url: https://enter-tainer.github.io/typstyle/
+src-url: https://github.com/Enter-tainer/typstyle/archive/refs/tags/v0.13.11.tar.gz
+src-sha: 7a7bff0980f00f468dfadc04e2c26531ea7d2301b2909bf2cb24116c97902ec7
+license: Apache-2.0
+install: cargow install --path crates/typstyle

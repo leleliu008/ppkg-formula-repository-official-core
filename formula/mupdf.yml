@@ -1,12 +1,11 @@
-summary: Lightweight PDF and XPS viewer
-git-url: git://git.ghostscript.com/mupdf.git
+summary: A lightweight PDF, XPS, and ePub viewer
+git-url: https://github.com/ArtifexSoftware/mupdf
 web-url: https://mupdf.com/
-src-url: https://mupdf.com/downloads/archive/mupdf-1.25.4-source.tar.gz
-src-sha: 74b943038fe81594bf7fc5621c60bca588b2847f0d46fb2e99652a21fa0d9491
+src-url: https://mupdf.com/downloads/archive/mupdf-1.26.2-source.tar.gz
+src-sha: 2a5e1fc84f67bc593ba1d4d9d49f8782e8b12241e2eec904a65a25e4322c72a9
 license: AGPL-3.0-or-later
 dep-pkg: libopenssl libtesseract libjbig2dec libharfbuzz libgumbo libmujs
 
-dep-upp: patch
 dopatch: |
     for item in $(find thirdparty -maxdepth 1 -mindepth 1 -type d)
     do
@@ -15,16 +14,11 @@ dopatch: |
         run rm -rf "$item"
     done
 
-    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        wfetch https://raw.githubusercontent.com/NetBSD/pkgsrc/trunk/print/mupdf/patches/patch-source_fitz_crypt-sha2.c
-        patch -p0 < patch-source_fitz_crypt-sha2.c
-    fi
+    rm pyproject.toml
+    rm setup.py
+    gsed -i "s/HAVE_OBJCOPY := yes/HAVE_OBJCOPY := no/g" Makerules
 
 prepare: |
-    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lstdc++"
-    fi
-
     unset GMAKE_EXTRA_ARGS
 
     for KV in FREETYPE:freetype2 HARFBUZZ:harfbuzz TESSERACT:tesseract LEPTONICA:lept OPENJPEG:libopenjp2 LIBJPEG:libjpeg GUMBO:gumbo
@@ -47,6 +41,7 @@ install: |
         tesseract=yes \
         prefix=$PACKAGE_INSTALL_DIR \
         CC=$CC \
+        LD=$LD \
         AR=$AR \
         RANLIB=$RANLIB \
         XCFLAGS="'$CFLAGS $CPPFLAGS'" \

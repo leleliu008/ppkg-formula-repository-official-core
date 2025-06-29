@@ -1,0 +1,6 @@
+summary: Next-generation test runner for Rust
+web-url: https://nexte.st
+src-url: https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.99.tar.gz
+src-sha: 3a75e2c0bbf4da7a3218c772e8a178939fbf7fea830f6edbd9d37fe023a3cbe9
+license: Apache-2.0
+install: cargow install --no-default-features --features default-no-update --path cargo-nextest

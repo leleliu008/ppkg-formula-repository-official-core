@@ -1,0 +1,57 @@
+summary: An interpreter for PostScript and PDF
+web-url: https://www.ghostscript.com/
+src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostpdl-10.04.0.tar.xz
+src-sha: 0603f5629bc6f567b454911d104cd96702489c9e70e577787843f480b23d4a77
+license: AGPL-3.0-or-later
+dep-pkg: libidn libexpat liblcms2 libjbig2dec libfreetype libtesseract
+dep-upp: libz
+xxflags: -std=c++11
+
+dopatch: |
+    rm -rf tesseract/ freetype/ jbig2dec/ openjpeg/ lcms2mt/ libpng/ expat/ jpeg/ tiff/ zlib/
+
+    gsed -i 's|-g -o|$(LDFLAGS) -o|' base/unix-dll.mak
+
+    if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
+        gsed -i 's|DO_NOT_USE_SPRINTF|sprintf|' base/stdio_.h
+    fi
+
+prepare: |
+    if isCrossBuild ; then
+        export CCAUX="$CC_FOR_BUILD"
+        export CFLAGSAUX="$CFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD"
+        export CPPFLAGSAUX="$CPPFLAGS_FOR_BUILD"
+        export LDFLAGSAUX="$LDFLAGS_FOR_BUILD"
+    else
+        export CCAUX="$CC $CFLAGS $CPPFLAGS $LDFLAGS"
+        export CFLAGSAUX="$CFLAGS $LDFLAGS"
+        export CPPFLAGSAUX="$CPPFLAGS"
+        export LDFLAGSAUX="$LDFLAGS"
+    fi
+
+install: |
+    configure \
+        --disable-compile-inits \
+        --disable-cups \
+        --disable-gtk \
+        --with-system-libtiff \
+        --without-x
+    gmakew install-so-gs
+    gmakew libgs
+    run mv bin/gs.a libgs.a
+    install_libs    libgs.a
+
+dotweak: |
+    writepc libgs <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include
+
+    Name: libgs
+    Description: $PACKAGE_SUMMARY
+    Version: $PACKAGE_VERSION
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lgs
+    Requires: fontconfig tesseract jbig2dec lcms2 libidn
+    EOF

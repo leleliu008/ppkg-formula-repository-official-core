@@ -1,30 +1,54 @@
-summary: Lightweight PDF and XPS viewer
-git-url: git://git.ghostscript.com/mupdf.git
+summary: A lightweight PDF, XPS, and ePub viewer
+git-url: https://github.com/ArtifexSoftware/mupdf
 web-url: https://mupdf.com/
-src-url: https://mupdf.com/downloads/archive/mupdf-1.23.11-source.tar.gz
-src-sha: 478f2a167feae2a291c8b8bc5205f2ce2f09f09b574a6eb0525bfad95a3cfe66
+src-url: https://mupdf.com/downloads/archive/mupdf-1.26.2-source.tar.gz
+src-sha: 2a5e1fc84f67bc593ba1d4d9d49f8782e8b12241e2eec904a65a25e4322c72a9
 license: AGPL-3.0-or-later
-dep-pkg: libmujs libopenssl libopenjpeg libjpeg-turbo libjbig2dec libharfbuzz libgumbo libglut
-dep-lib: glut
+dep-pkg: libopenssl libtesseract libjbig2dec libharfbuzz libgumbo libmujs libglu xorg-xinput xorg-libxxf86vm
+dep-lib: -lgomp
 
 dopatch: |
     for item in $(find thirdparty -maxdepth 1 -mindepth 1 -type d)
     do
         [ "$item" = thirdparty/extract ] && continue
         [ "$item" = thirdparty/lcms2 ]   && continue
+        [ "$item" = thirdparty/freeglut ] && continue
         run rm -rf "$item"
+    done
+
+    rm pyproject.toml
+    rm setup.py
+    gsed -i "s/HAVE_OBJCOPY := yes/HAVE_OBJCOPY := no/g" Makerules
+
+prepare: |
+    unset GMAKE_EXTRA_ARGS
+
+    for KV in FREETYPE:freetype2 HARFBUZZ:harfbuzz TESSERACT:tesseract LEPTONICA:lept OPENJPEG:libopenjp2 LIBJPEG:libjpeg GUMBO:gumbo
+    do
+        K="${KV%:*}"
+        V="${KV#*:}"
+
+        A="$(pkg-config --cflags "$V")"
+        B="$(pkg-config --libs   "$V")"
+
+        GMAKE_EXTRA_ARGS="$GMAKE_EXTRA_ARGS SYS_${K}_CFLAGS='$A' SYS_${K}_LIBS='$B'"
     done
 
 install: |
     gmakew clean
-    gmakew install \
-        build=release \
-        shared=yes \
+    gmakew install-apps install-docs \
+        build=$PROFILE \
+        shared=no \
         verbose=yes \
+        tesseract=yes \
         prefix=$PACKAGE_INSTALL_DIR \
         CC=$CC \
+        LD=$LD \
         AR=$AR \
         RANLIB=$RANLIB \
         XCFLAGS="'$CFLAGS $CPPFLAGS'" \
         USE_SYSTEM_LIBS=yes \
-        USE_SYSTEM_MUJS=yes
+        USE_SYSTEM_MUJS=yes \
+        USE_SYSTEM_GLUT=no \
+        HAVE_SYS_LEPTONICA=yes \
+        $GMAKE_EXTRA_ARGS

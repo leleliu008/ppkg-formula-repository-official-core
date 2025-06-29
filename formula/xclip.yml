@@ -3,18 +3,8 @@ src-url: https://github.com/astrand/xclip/archive/refs/tags/0.13.tar.gz
 src-sha: ca5b8804e3c910a66423a882d79bf3c9450b875ac8528791fb60ec9de667f758
 license: GPL-2.0-or-later
 dep-pkg: xorg-libxmu
+dep-lib: xmu
 bsystem: autotools
 binbstd: 1
 
-dopatch: |
-    [ "$TARGET_PLATFORM_NAME" = macos ] && return 0
-
-    rm  ../lib/libX11.a
-    rm  ../lib/libXt.a
-
-    printf 'INPUT(%s %s)\n' "$xorg_libx11_LIBRARY_DIR/libX11.a" "$(pkg-config --libs-only-l x11 | sed 's|-lX11||g')" > ../lib/libX11.a
-    printf 'INPUT(%s %s)\n' "$xorg_libxt_LIBRARY_DIR/libXt.a"   "$(pkg-config --libs-only-l xt  | sed 's|-lXt||g')"  > ../lib/libXt.a
-
-prepare: |
-    export CFLAGS="$CFLAGS $CPPFLAGS"
-    export LIBS="$(pkg-config --libs xmu)"
+prepare: export CFLAGS="$CFLAGS $CPPFLAGS"
