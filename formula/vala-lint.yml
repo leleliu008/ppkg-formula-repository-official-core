@@ -1,0 +1,9 @@
+summary: A small command-line tool for checking Vala code files for code-style errors
+git-url: https://github.com/vala-lang/vala-lint
+license: GPL-2.0-or-later
+dep-pkg: vala libjson-glib
+bsystem: meson
+
+    #dopatch: gsed -i 's|shared_library|library|' lib/meson.build
+linkage: shared/most
+prepare: export VALAFLAGS="--vapidir=$vala_INSTALL_DIR/share/vala/vapi"

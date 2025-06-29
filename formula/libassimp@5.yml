@@ -1,0 +1,10 @@
+summary: Portable library for importing many well-known 3D model formats
+web-url: https://www.assimp.org/
+src-url: https://github.com/assimp/assimp/archive/refs/tags/v5.4.3.tar.gz
+src-sha: 66dfbaee288f2bc43172440a55d0235dfc7bf885dda6435c038e8000e79582cb
+license: BSD-3-Clause CC-PDDC MIT BSL-1.0 Unlicense Zlib
+dep-pkg: libz
+install: |
+    cmakew 2 \
+        -DASSIMP_BUILD_TESTS=OFF \
+        -DASSIMP_BUILD_ASSIMP_TOOLS=OFF

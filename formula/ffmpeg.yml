@@ -5,6 +5,7 @@ src-url: https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz
 src-sha: 733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1
 license: GPL-2.0-or-later
 dep-pkg: libtesseract librubberband libbluray libaribb24 libass libarchive libvidstab libopencore-amr libSvtAv1 libmp3lame libtheora libspeex librav1e libdav1d libx264 libx265 libxvid libvpx libaom libsdl2 libzimg libzmq libssh libsrt librist xorg-libxv
+dep-pkg-linux: libva
 dep-lib: tesseract -lstdc++ -lgomp -lm
 dep-upp: nasm
 bsystem: gmake
@@ -52,6 +53,7 @@ install: |
         --arch="$TARGET_PLATFORM_ARCH" \
         --target-os="$TARGET_OS" \
         --enable-pic \
+        --enable-vaapi \
         --enable-static \
         --disable-shared \
         --enable-ffplay \

@@ -1,8 +1,8 @@
 summary: An open source graphics library that implements OpenGL, OpenGL ES, Vulkan, OpenCL, and more
 web-url: https://www.mesa3d.org/
 git-url: https://gitlab.freedesktop.org/mesa/mesa
-src-url: https://mesa.freedesktop.org/archive/mesa-24.2.8.tar.xz
-src-sha: 999d0a854f43864fc098266aaf25600ce7961318a1e2e358bff94a7f53580e30
+src-url: https://mesa.freedesktop.org/archive/mesa-25.1.4.tar.xz
+src-sha: 164872a5e792408aa72fecd52b7be6409724c4ad81700798675a7d801d976704
 license: MIT
 dep-pym: Mako MarkupSafe
 dep-upp: gm4 flex bison
