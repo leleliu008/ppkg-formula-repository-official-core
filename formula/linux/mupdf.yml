@@ -5,7 +5,7 @@ src-url: https://mupdf.com/downloads/archive/mupdf-1.26.2-source.tar.gz
 src-sha: 2a5e1fc84f67bc593ba1d4d9d49f8782e8b12241e2eec904a65a25e4322c72a9
 license: AGPL-3.0-or-later
 dep-pkg: libopenssl libtesseract libjbig2dec libharfbuzz libgumbo libmujs libglu xorg-xinput xorg-libxxf86vm
-dep-lib: -lgomp
+ldflags: -lgomp
 
 dopatch: |
     for item in $(find thirdparty -maxdepth 1 -mindepth 1 -type d)

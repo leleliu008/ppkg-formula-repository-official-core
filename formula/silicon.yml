@@ -3,13 +3,6 @@ src-url: https://github.com/Aloxaf/silicon/archive/refs/tags/v0.5.3.tar.gz
 src-sha: 56e7f3be4118320b64e37a174cc2294484e27b019c59908c0a96680a5ae3ad58
 license: MIT
 dep-pkg: libharfbuzz
+dep-lib: xcb
 dep-upp: python3
 bsystem: cargo cmake+gmake
-
-dopatch: |
-    if [ "$TARGET_PLATFORM_NAME" != macos ] ; then
-        if [ -e ../lib/libxcb.a ] ; then
-            rm  ../lib/libxcb.a
-            printf 'INPUT(%s %s)\n' "$xorg_libxcb_LIBRARY_DIR/libxcb.a" "$(pkg-config --libs-only-l xcb | sed 's|-lxcb||g')" > ../lib/libxcb.a
-        fi
-    fi

@@ -13,7 +13,7 @@ dopatch: |
     fi
 
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lpthread"
+        add_ldflags -lpthread
     fi
 
     MINIZIP_LIBRARIES="$(pkg-config --libs-only-l minizip-ng)"

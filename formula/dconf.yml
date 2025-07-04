@@ -1,0 +1,9 @@
+summary: A command-line tool to read and write values in the dconf database
+web-url: https://wiki.gnome.org/Projects/dconf
+git-url: https://gitlab.gnome.org/GNOME/dconf/
+src-url: https://download.gnome.org/sources/dconf/0.40/dconf-0.40.0.tar.xz
+src-sha: cf7f22a4c9200421d8d3325c5c1b8b93a36843650c9f95d6451e20f0bcb24533
+license: LGPL-2.1-or-later
+dep-pkg: dbus vala
+dep-upp: xsltproc
+install: mesonw -Dbash_completion=false -Dgtk_doc=false -Dman=false -Dvapi=true

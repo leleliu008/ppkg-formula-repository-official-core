@@ -5,8 +5,8 @@ src-sha: 8cbf4296e373cfd0cedfe9d978760b5b05c58fdc4048b4e2bcaf0a61ac8f5011
 license: BSD-3-Clause
 dep-pkg: libopenssl libz libbz2 libpcre2
 dep-res: sys/queue.h
-dep-lib: -lpthread
 dep-upp: libtool
+ldflags: -lpthread
 bsystem: autogen
 
 install: |

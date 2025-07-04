@@ -10,7 +10,7 @@ dep-pkg: libfontconfig libpixman liblzo glib xorg-libxext xorg-libxrender
 prepare: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         # https://man.netbsd.org/backtrace.3
-        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lexecinfo"
+        add_ldflags -lexecinfo
     fi
 
 install: |

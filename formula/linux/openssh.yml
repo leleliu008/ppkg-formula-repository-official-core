@@ -6,7 +6,7 @@ src-sha: b343fbcdbff87f15b1986e6e15d6d4fc9a7d36066be6b7fb507087ba8f966c02
 version: 9.9.1
 license: SSH-OpenSSH
 dep-pkg: libfido2 libldns libkrb5.a libpam
-dep-lib: -lresolv
+ldflags: -lresolv
 
 dosetup:: |
     if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then

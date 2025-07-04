@@ -7,6 +7,6 @@ src-sha: f0a90df8694fb34685ecdd45d97db28b88046c15c95e7b0700596028bd8bc0f9
 license: GPL-2.0-only GPL-2.0-or-later GPL-3.0-or-later
 dep-upp: gettext-tools xz
 dep-pkg: libreadline
-dep-lib: -lncursesw
+ldflags: -lncursesw
 bsystem: autotools
 dopatch: gsed -i 's|inline int|int|' database.c

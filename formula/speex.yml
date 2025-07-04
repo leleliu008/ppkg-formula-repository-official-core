@@ -10,5 +10,5 @@ bsystem: autogen
 prepare: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
         # https://mail-index.netbsd.org/tech-pkg/2003/08/08/0007.html
-        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lossaudio"
+        add_ldflags -lossaudio
     fi

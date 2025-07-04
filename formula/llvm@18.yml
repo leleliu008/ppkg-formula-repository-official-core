@@ -5,8 +5,8 @@ src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/l
 src-sha: 0b58557a6d32ceee97c8d533a59b9212d87e0fc4d2833924eb6c611247db2f2a
 license: Apache-2.0 with LLVM-exception
 dep-pkg: binutils-dev libelf libedit libffi libxml2 liblzma libz3.a
-dep-lib: -lncurses
 dep-upp: python3 perl swig
+ldflags: -lncurses
 bscript: llvm
 
 dopatch: |

@@ -14,5 +14,5 @@ dopatch: |
 prepare: |
     # # https://man.netbsd.org/backtrace.3
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lexecinfo"
+        add_ldflags -lexecinfo
     fi

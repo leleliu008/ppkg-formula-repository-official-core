@@ -7,7 +7,9 @@ license: MPL-2.0
 dep-pkg: nspr libsqlite3 libz
 bscript: nss
 
-prepare: export PROXIED_CC_ARGS="$PROXIED_CC_ARGS $CPPFLAGS $CFLAGS $LDFLAGS"
+prepare: |
+    export WRAPPER_TARGET_CCFLAGS="$WRAPPER_TARGET_CCFLAGS $CPPFLAGS $CFLAGS -Wno-error=maybe-uninitialized"
+    export WRAPPER_TARGET_LDFLAGS="$WRAPPER_TARGET_LDFLAGS $LDFLAGS -lm"
 
 install: |
     gmakew clean USE_64=1

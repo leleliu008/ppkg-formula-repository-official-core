@@ -1,10 +1,11 @@
 summary: A free and open source distributed version control system with speed and efficiency
 web-url: https://git-scm.com/
 git-url: https://github.com/git/git
-src-url: https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.xz
-src-sha: 1c5d545f5dc1eb51e95d2c50d98fdf88b1a36ba1fa30e9ae5d5385c6024f82ad
+src-url: https://www.kernel.org/pub/software/scm/git/git-2.50.0.tar.xz
+src-sha: dff3c000e400ace3a63b8a6f8b3b76b88ecfdffd4504a04aba4248372cdec045
 license: GPL-2.0-only
 dep-pkg: libpcre2 libexpat libcurl libintl libz
+dep-lib: libcurl
 dep-upp: gettext-tools
 binbstd: 1
 
@@ -22,22 +23,6 @@ prepare: |
 
         if [ "$TARGET_PLATFORM_NAME" = freebsd ] ; then
             gsed -i '/-DHAVE_SYSINFO/d' config.mak.uname
-        fi
-    fi
-
-    export ac_cv_lib_curl_curl_global_init=yes
-
-    export ac_cv_prog_CURL_CONFIG="$libcurl_INSTALL_DIR/bin/curl-config"
-
-    LIBCURL_LIBS="$(pkg-config --libs libcurl)"
-    printf 'LIBCURL_LIBS=%s\n' "$LIBCURL_LIBS"
-
-    export LDFLAGS="$LDFLAGS $LIBCURL_LIBS"
-
-    if [ "$TARGET_PLATFORM_NAME" != macos ] ; then
-        if [ -f ../lib/libcurl.a ] ; then
-            rm  ../lib/libcurl.a
-            printf 'INPUT(%s %s)\n' "$libcurl_LIBRARY_DIR/libcurl.a" "$(pkg-config --libs-only-l libcurl | sed 's|-lcurl||g')" > ../lib/libcurl.a
         fi
     fi
 

@@ -15,5 +15,5 @@ install: |
 
 prepare: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        export PROXIED_CC_ARGS="$PROXIED_CC_ARGS -lpthread"
+        add_ldflags -lpthread
     fi

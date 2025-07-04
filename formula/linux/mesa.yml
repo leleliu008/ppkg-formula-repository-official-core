@@ -14,8 +14,11 @@ dep-pkg: xorg-libxdamage xorg-libxxf86vm xorg-libxvmc xorg-libxshmfence xorg-lib
 # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10739
 dopatch: |
     gsed -i "/clangBasic/a cpp.find_library('clangAPINotes', dirs : llvm_libdir)," src/gallium/targets/opencl/meson.build
+    gsed -i 's|shared_library|library|' src/glx/meson.build src/egl/meson.build src/gbm/meson.build src/gallium/targets/dri/meson.build
+    gsed -i 's|libgallium_dri\.full_path|libgallium_dri.get_shared_lib().full_path|' src/gallium/targets/dri/meson.build
+    gsed -i '/name_suffix/d' src/gallium/targets/dri/meson.build
 
-dosetup:: |
+prepare: |
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export CPPFLAGS="$CPPFLAGS -Doff64_t=off_t"
     fi
@@ -47,3 +50,4 @@ install: |
         -Dvideo-codecs=all \
         -Dtools=drm-shim,etnaviv,freedreno,glsl,nir,nouveau,lima \
         -Db_ndebug=true
+        #install_libs src/gallium/targets/dri/libgallium.a

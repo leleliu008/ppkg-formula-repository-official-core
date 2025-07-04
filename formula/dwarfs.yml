@@ -4,7 +4,7 @@ src-sha: 352d13a3c7d9416e0a7d0d959306a25908b58d1ff47fb97e30a7c8490fcff259
 license: GPL-3.0-or-later
 dep-pkg: libfolly libflac libxxhash libbrotli libarchive utfcpp nlohmann-json parallel-hashmap howard-hinnant-date range-v3 googletest
 dep-upp: python3
-dep-lib: -lgflags
+ldflags: -lgflags
 
 install: |
     cmakew \
