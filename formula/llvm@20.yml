@@ -1,8 +1,8 @@
 linkage: shared
 summary: Next-gen compiler infrastructure
 web-url: https://llvm.org/
-src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/llvm-project-19.1.7.src.tar.xz
-src-sha: 82401fea7b79d0078043f7598b835284d6650a75b93e64b6f761ea7b63097501
+src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/llvm-project-20.1.7.src.tar.xz
+src-sha: cd8fd55d97ad3e360b1d5aaf98388d1f70dfffb7df36beee478be3b839ff9008
 license: Apache-2.0 with LLVM-exception
 dep-pkg: python3 binutils-dev libelf libedit libffi libxml2 liblzma libz3.a
 dep-upp: perl swig patch
@@ -13,7 +13,7 @@ dopatch: |
     gsed -i '/add_optional_dependency(LLDB_ENABLE_LIBXML2/c find_package(LibXml2 CONFIG REQUIRED)' ../lldb/cmake/modules/LLDBConfig.cmake
     gsed -i '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)'                                      ../lldb/cmake/modules/LLDBConfig.cmake
 
-    LIBELF_LIBRARIES="$(pkg-config --libs-only-l libelf)"
+    #LIBELF_LIBRARIES="$(pkg-config --libs-only-l libelf)"
     #gsed -i "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
 
 # https://llvm.org/docs/CMake.html
@@ -26,11 +26,11 @@ install: |
         -DLLVM_ENABLE_PROJECTS="'clang;clang-tools-extra;lld;lldb;mlir;polly;openmp'" \
         -DLLVM_ENABLE_RUNTIMES="'compiler-rt;libcxx;libcxxabi;libunwind'" \
         -DLLVM_ENABLE_EH=ON \
+        -DLLVM_ENABLE_RTTI=ON \
         -DLLVM_ENABLE_PIC=ON \
         -DLLVM_ENABLE_FFI=ON \
         -DLLVM_ENABLE_ZLIB=ON \
         -DLLVM_ENABLE_ZSTD=ON \
-        -DLLVM_ENABLE_RTTI=ON \
         -DLLVM_ENABLE_LIBXML2=OFF \
         -DLLVM_ENABLE_TERMINFO=OFF \
         -DLLVM_ENABLE_SPHINX=OFF \
