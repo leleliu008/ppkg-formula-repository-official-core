@@ -6,6 +6,6 @@ dep-upp: gm4 flex bison
 dep-lib: -lsframe -lz -lzstd openssl
 install: cmakew -DUSE_SYSTEM_BPF_BCC=ON
 
-dosetup: |
+prepare: |
     find "$llvm_clang_18_LIBRARY_DIR" -type f -name 'libLLVM*.a' | tr '\n' ' ' > libllvm.rsp
     export WRAPPER_TARGET_CXXFLAGS="$WRAPPER_TARGET_CXXFLAGS @$PWD/libllvm.rsp" 
