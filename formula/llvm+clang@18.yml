@@ -12,17 +12,19 @@ bscript: llvm
 dopatch: printf 'set(Z3_LIBRARIES z3)\n' >> cmake/modules/FindZ3.cmake
 
 # https://llvm.org/docs/CMake.html
+# https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
+# https://llvm.org/devmtg/2023-10/slides/tutorials/Hosek-UnderstandingtheLLVMbuild.pdf
 install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \
         -DLLVM_TARGETS_TO_BUILD=all \
         -DLLVM_ENABLE_PROJECTS=clang \
         -DLLVM_ENABLE_EH=ON \
+        -DLLVM_ENABLE_RTTI=ON \
         -DLLVM_ENABLE_PIC=ON \
         -DLLVM_ENABLE_FFI=ON \
         -DLLVM_ENABLE_ZLIB=ON \
         -DLLVM_ENABLE_ZSTD=ON \
-        -DLLVM_ENABLE_RTTI=ON \
         -DLLVM_ENABLE_LIBXML2=OFF \
         -DLLVM_ENABLE_TERMINFO=OFF \
         -DLLVM_ENABLE_SPHINX=OFF \
@@ -44,7 +46,3 @@ install: |
         -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
         -DCLANG_BUILD_TOOLS=ON \
         -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF
-
-dotweak: |
-    #gsed -i -e 's|zstd::libzstd_static|zstd|' -e "s|$PACKAGE_WORKING_DIR/lib/libz3\.a|z3|" lib/cmake/llvm/LLVMExports.cmake
-    run cat lib/cmake/llvm/LLVMExports.cmake

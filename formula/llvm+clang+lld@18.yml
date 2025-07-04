@@ -9,9 +9,11 @@ dep-upp: python3 perl swig
 ldflags: -lncurses
 bscript: llvm
 
+dopatch: printf 'set(Z3_LIBRARIES z3)\n' >> cmake/modules/FindZ3.cmake
+
 # https://llvm.org/docs/CMake.html
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
-# https://lldb.llvm.org/resources/build.html
+# https://llvm.org/devmtg/2023-10/slides/tutorials/Hosek-UnderstandingtheLLVMbuild.pdf
 install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \
@@ -36,6 +38,7 @@ install: |
         -DLLVM_BUILD_EXAMPLES=OFF \
         -DLLVM_BUILD_LLVM_DYLIB=ON \
         -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
+        -DLLVM_STATIC_LINK_CXX_STDLIB=OFF \
         -DLLVM_LINK_LLVM_DYLIB=ON \
         -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
         -DLLVM_INSTALL_UTILS=ON \
