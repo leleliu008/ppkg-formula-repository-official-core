@@ -3,8 +3,8 @@ web-url: https://llvm.org/
 src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/llvm-project-14.0.6.src.tar.xz
 src-sha: 8b3cfd7bc695bd6cea0f37f53f0981f34f87496e79e2529874fd03a2f9dd3a8a
 license: Apache-2.0 with LLVM-exception
-dep-pkg: binutils-dev libelf libedit libffi libxml2 liblzma libz3.a
-dep-upp: python3 perl swig patch
+dep-pkg: binutils-dev libelf libffi libxml2 liblzma libedit libz3.a
+dep-upp: python3 perl swig
 bscript: llvm
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=2128646

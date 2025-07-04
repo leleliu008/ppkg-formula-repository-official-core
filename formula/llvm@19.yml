@@ -4,7 +4,7 @@ web-url: https://llvm.org/
 src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/llvm-project-19.1.7.src.tar.xz
 src-sha: 82401fea7b79d0078043f7598b835284d6650a75b93e64b6f761ea7b63097501
 license: Apache-2.0 with LLVM-exception
-dep-pkg: python3 binutils-dev libelf libedit libffi libxml2 liblzma libz3.a
+dep-pkg: python3 binutils-dev libelf libffi libxml2 liblzma libedit libz3.a
 dep-upp: perl swig patch
 ldflags: -lncurses
 bscript: llvm
