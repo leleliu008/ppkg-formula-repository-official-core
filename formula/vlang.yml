@@ -1,0 +1,22 @@
+summary: V programming language compiler
+web-url: https://vlang.io
+src-url: https://github.com/vlang/v/archive/refs/tags/0.4.11.tar.gz
+src-sha: 7662e2977cbc2b3ce7918c0c19c8c0127d1fbf38ffc09edc9cd68187a80b528a
+res-url: https://github.com/vlang/vc/archive/a17f1105aa18b604ed8dac8fa5ca9424362c6e15.tar.gz
+res-sha: 90ab6634b4242a39931d2fcd7eabe7d708c8d893970c4db8e3e490242d69e9cb
+license: MIT
+bsystem: no
+binbstd: 1
+
+install: |
+    run $CC -std=gnu11 -w -o v1 ../res/v.c -lm -lpthread
+    run ./v1 -no-parallel -o v2 cmd/v
+    run ./v2 -prod -o v cmd/v
+
+    run install -d "$PACKAGE_INSTALL_DIR/libexec/vlang/"
+    run install -d "$PACKAGE_INSTALL_DIR/share/vlang/"
+
+    run cp -r vlib cmd thirdparty v.mod v "$PACKAGE_INSTALL_DIR/libexec/vlang/"
+    run cp -r examples                    "$PACKAGE_INSTALL_DIR/share/vlang/"
+
+dotweak: run install -d bin/ && run ln -s ../libexec/vlang/v bin/v
