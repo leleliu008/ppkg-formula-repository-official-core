@@ -2,6 +2,36 @@ summary: A command-line tool to diagnose issues with power consumption and power
 src-url: https://github.com/fenrus75/powertop/archive/refs/tags/v2.15.tar.gz
 src-sha: e58ab3fd7b8ff5f4dd0d17f11848817e7d83c0a6918145ac81de03b5dccf8f49
 license: GPL-2.0-only
-dep-pkg: gettext-runtime libncurses libpci libnl autoconf-archive
-dep-upp: gettext-tools libtool
+dep-pkg: gettext-runtime libncurses libpci libnl
+dep-upp: gettext-tools libtool autoconf-archive
 bsystem: autotools
+install: configure --disable-nls
+
+prepare: |
+    tee cxx.c <<EOF
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <unistd.h>
+
+    int main(int argc, char* argv[]) {
+        char arg0[] = "$CXX";
+        char arg1[] = "-L$PACKAGE_WORKING_DIR/lib";
+
+        char* args[argc + 2];
+
+        args[0] = arg0;
+        args[1] = arg1;
+
+        for (int i = 1; i < argc; i++) {
+            args[i + 1] = argv[i];
+        }
+
+        args[argc + 1] = NULL;
+
+        execv (arg0, args);
+        perror(arg0);
+        return 255;
+    }
+    EOF
+    run $CC_FOR_BUILD $CFLAGS_FOR_BUILD $LDFLAGS_FOR_BUILD -o cxx-for-target cxx.c
+    export CXX="$PWD/cxx-for-target"

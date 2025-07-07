@@ -26,6 +26,12 @@ prepare: |
 
     export LDCONFIG=true
 
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        EXTRA_CONFIGURE_ARGS=
+    else
+        EXTRA_CONFIGURE_ARGS='--with-terminfo-dirs=/etc/terminfo:/lib/terminfo:/usr/share/terminfo'
+    fi
+
 install: |
     configure \
         --with-pkg-config-libdir="$PACKAGE_INSTALL_DIR/lib/pkgconfig" \
@@ -46,7 +52,7 @@ install: |
         --disable-assertions \
         --disable-gnat-projects \
         --disable-db-install \
-        --disable-echo
+        --disable-echo "$EXTRA_CONFIGURE_ARGS"
 
 dotweak: |
     ln -s ncursesw include/ncurses
