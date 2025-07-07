@@ -6,29 +6,36 @@ src-sha: 19f917d42d530f98815ac824d90c7eaf648e9d9a50e4f309c812457ffa5496b5
 license: BSD-2-Clause
 dep-pkg: liblz4 liblzo libzstd liblzma libbz2 libz libiconv libexpat libopenssl
 
-install: |
-    configure \
-        --enable-acl \
-        --enable-xattr \
-        --enable-bsdtar \
-        --enable-bsdcat \
-        --enable-bsdcpio \
-        --enable-bsdunzip \
-        --enable-static \
-        --disable-shared \
-        --without-mbedtls \
-        --without-nettle \
-        --without-libb2 \
-        --without-xml2 \
-        --without-cng \
-        --with-openssl \
-        --with-expat \
-        --with-zlib \
-        --with-lzma \
-        --with-bz2lib \
-        --with-lz4 \
-        --with-lzo2 \
-        --with-zstd \
-        --with-iconv
+dopatch: |
+    gsed -i '/CreatePkgConfigFile/d' CMakeLists.txt
+    gsed -i 's|ENABLE_INSTALL|FALSE|' libarchive/CMakeLists.txt
 
-dotweak: rm -rf include/ lib/ share/man/man[35]/
+install: |
+    cmakew \
+        -DENABLE_TEST=OFF \
+        -DENABLE_ACL=ON \
+        -DENABLE_XATTR=ON \
+        -DENABLE_TAR=ON \
+        -DENABLE_CAT=ON \
+        -DENABLE_CPIO=ON \
+        -DENABLE_UNZIP=ON \
+        -DENABLE_TAR_SHARED=OFF \
+        -DENABLE_CAT_SHARED=OFF \
+        -DENABLE_CPIO_SHARED=OFF \
+        -DENABLE_UNZIP_SHARED=OFF \
+        -DENABLE_CNG=OFF \
+        -DENABLE_LIBB2=OFF \
+        -DENABLE_NETTLE=OFF \
+        -DENABLE_MBEDTLS=OFF \
+        -DENABLE_LIBXML2=OFF \
+        -DENABLE_LZ4=ON \
+        -DENABLE_LZO=ON \
+        -DENABLE_ZLIB=ON \
+        -DENABLE_LZMA=ON \
+        -DENABLE_ZSTD=ON \
+        -DENABLE_BZip2=ON \
+        -DENABLE_ICONV=ON \
+        -DENABLE_EXPAT=ON \
+        -DENABLE_OPENSSL=ON \
+        -DENABLE_INSTALL=ON \
+        -DBUILD_SHARED_LIBS=OFF

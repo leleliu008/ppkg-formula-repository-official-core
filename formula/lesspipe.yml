@@ -1,0 +1,10 @@
+summary: A input filter for the pager less
+web-url: https://www-zeuthen.desy.de/~friebel/unix/lesspipe.html
+src-url: https://github.com/wofr06/lesspipe/archive/refs/tags/v2.18.tar.gz
+src-sha: a78c5c2841771adb5cdc7eb918ca8e4865be88cb9f7a53622ca3fa064d5ec5bc
+license: GPL-2.0-only
+binbstd: 1
+install: |
+    run ./configure --all-completions --prefix=$PACKAGE_INSTALL_DIR
+    gmakew
+    gmakew install
