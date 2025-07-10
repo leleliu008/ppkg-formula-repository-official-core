@@ -1,8 +1,8 @@
 summary: A command-line tool for transferring data from/to an HTTP, HTTPS or FTP server
 git-url: https://github.com/curl/curl
 web-url: https://curl.haxx.se/
-src-url: https://curl.haxx.se/download/curl-8.9.1.tar.bz2
-src-sha: b57285d9e18bf12a5f2309fc45244f6cf9cb14734e7454121099dd0a83d669a3
+src-url: https://curl.haxx.se/download/curl-8.14.1.tar.bz2
+src-sha: 5760ed3c1a6aac68793fc502114f35c3e088e8cd5c084c2d044abdf646ee48fb
 license: curl
 dep-upp: perl
 dep-pkg: libnghttp2 libopenssl libbrotli libzstd libz
@@ -19,6 +19,8 @@ install: |
     configure \
         --enable-optimize \
         --enable-pthreads \
+        --enable-static \
+        --disable-shared \
         --with-default-ssl-backend=openssl \
         --with-ssl="$libopenssl_INSTALL_DIR" \
         --with-nghttp2 \
@@ -29,7 +31,4 @@ install: |
         --without-librtmp \
         --without-libidn2
 
-dotweak: |
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        gsed -i '/^Libs:/s|$| -framework CoreFoundation -framework SystemConfiguration|' lib/pkgconfig/libcurl.pc
-    fi
+dotweak: run rm -rf include/ lib/ share/aclocal/ share/man/man3/ share/man/man1/curl-config.1 bin/curl-config
