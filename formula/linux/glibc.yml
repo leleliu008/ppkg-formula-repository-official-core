@@ -1,8 +1,8 @@
 pkgtype: lib
 summary: GNU C Library
 web-url: https://www.gnu.org/software/libc/
-src-url: https://ftp.gnu.org/gnu/glibc/glibc-2.40.tar.gz
-src-sha: 2abc038f5022949cb67e996c3cae0e7764f99b009f0b9b7fd954dfc6577b599e
+src-url: https://ftp.gnu.org/gnu/glibc/glibc-2.41.tar.gz
+src-sha: c7be6e25eeaf4b956f5d4d56a04d23e4db453fc07760f872903bb61a49519b80
 license: GPL-2.0-or-later LGPL-2.1-or-later
 dep-upp: gm4 bison python3
 install: configure --without-selinux
