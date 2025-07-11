@@ -1,8 +1,8 @@
 summary: GNU compiler collection
 web-url: https://gcc.gnu.org/
 git-url: https://gcc.gnu.org/git/gcc.git
-src-url: https://ftp.gnu.org/gnu/gcc/gcc-13.4.0/gcc-13.4.0.tar.xz
-src-sha: 9c4ce6dbb040568fdc545588ac03c5cbc95a8dbf0c7aa490170843afb59ca8f5
+src-url: https://ftp.gnu.org/gnu/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz
+src-sha: e2b09ec21660f01fecffb715e0120265216943f038d0e48a9868713e54f06cea
 license: GPL-3.0-or-later
 dep-pkg: libisl libmpc libzstd linux-headers
 

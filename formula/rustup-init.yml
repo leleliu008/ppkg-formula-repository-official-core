@@ -1,6 +1,6 @@
 summary: Rust toolchain installer
-src-url: https://github.com/rust-lang/rustup/archive/refs/tags/1.27.1.tar.gz
-src-sha: f5ba37f2ba68efec101198dca1585e6e7dd7640ca9c526441b729a79062d3b77
+src-url: https://github.com/rust-lang/rustup/archive/refs/tags/1.28.2.tar.gz
+src-sha: 5987dcb828068a4a5e29ba99ab26f2983ac0c6e2e4dc3e5b3a3c0fafb69abbc0
 license: Apache-2.0 MIT
 dep-pkg: libopenssl
 bsystem: cargo

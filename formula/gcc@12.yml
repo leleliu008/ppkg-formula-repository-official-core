@@ -1,8 +1,8 @@
 summary: GNU compiler collection
 web-url: https://gcc.gnu.org/
 git-url: https://gcc.gnu.org/git/gcc.git
-src-url: https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz
-src-sha: e549cf9cf3594a00e27b6589d4322d70e0720cdd213f39beb4181e06926230ff
+src-url: https://ftp.gnu.org/gnu/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz
+src-sha: 704f652604ccbccb14bdabf3478c9511c89788b12cb3bbffded37341916a9175
 dep-pkg: libisl libmpc libz linux-headers
 dep-upp: rsync
 license: GPL-3.0-or-later

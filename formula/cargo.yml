@@ -1,0 +1,6 @@
+summary: The Rust package manager
+src-url: https://github.com/rust-lang/cargo/archive/refs/tags/0.89.0.tar.gz
+src-sha: 53bce6e8c8ed046054ecc87514cbfba38cc782589629db792f9b74fd16cf9b37
+license: Apache-2.0
+dep-pkg: libcurl libz
+bsystem: cargo
