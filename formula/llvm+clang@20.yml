@@ -4,27 +4,21 @@ web-url: https://llvm.org/
 src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/llvm-project-20.1.8.src.tar.xz
 src-sha: 6898f963c8e938981e6c4a302e83ec5beb4630147c7311183cf61069af16333d
 license: Apache-2.0 with LLVM-exception
-dep-pkg: python3 binutils-dev libelf libffi libxml2 liblzma libedit libz3.a
-dep-upp: perl swig patch
+dep-pkg: binutils-dev libelf libffi libxml2 libedit libz3.a
+dep-upp: python3 perl swig
 ldflags: -lncurses
 bscript: llvm
 
-dopatch: |
-    gsed -i '/add_optional_dependency(LLDB_ENABLE_LIBXML2/c find_package(LibXml2 CONFIG REQUIRED)' ../lldb/cmake/modules/LLDBConfig.cmake
-    gsed -i '/find_package(LibXml2/a set(LIBXML2_FOUND TRUE)'                                      ../lldb/cmake/modules/LLDBConfig.cmake
-
-    #LIBELF_LIBRARIES="$(pkg-config --libs-only-l libelf)"
-    #gsed -i "/set(LIBOMPTARGET_DEP_LIBELF_INCLUDE_DIRS/a set(LIBOMPTARGET_DEP_LIBELF_LIBRARIES $LIBELF_LIBRARIES)" ../openmp/libomptarget/cmake/Modules/LibomptargetGetDependencies.cmake
+dopatch: printf 'set(Z3_LIBRARIES z3)\n' >> cmake/modules/FindZ3.cmake
 
 # https://llvm.org/docs/CMake.html
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
-# https://lldb.llvm.org/resources/build.html
+# https://llvm.org/devmtg/2023-10/slides/tutorials/Hosek-UnderstandingtheLLVMbuild.pdf
 install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \
         -DLLVM_TARGETS_TO_BUILD=all \
-        -DLLVM_ENABLE_PROJECTS="'clang;clang-tools-extra;lld;lldb;mlir;polly;openmp'" \
-        -DLLVM_ENABLE_RUNTIMES="'compiler-rt;libcxx;libcxxabi;libunwind'" \
+        -DLLVM_ENABLE_PROJECTS=clang \
         -DLLVM_ENABLE_EH=ON \
         -DLLVM_ENABLE_RTTI=ON \
         -DLLVM_ENABLE_PIC=ON \
@@ -50,14 +44,4 @@ install: |
         -DLLVM_OPTIMIZED_TABLEGEN=ON \
         -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
         -DCLANG_BUILD_TOOLS=ON \
-        -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF \
-        -DLLD_BUILD_TOOLS=ON \
-        -DLLDB_USE_SYSTEM_DEBUGSERVER=ON \
-        -DLLDB_USE_SYSTEM_SIX=OFF \
-        -DLLDB_ENABLE_LUA=OFF \
-        -DLLDB_ENABLE_PYTHON=OFF \
-        -DLLDB_ENABLE_CURSES=ON \
-        -DLLDB_ENABLE_LIBEDIT=ON \
-        -DLLDB_ENABLE_LIBXML2=ON \
-        -DLLDB_ENABLE_LZMA=ON \
-        -DLIBOMP_INSTALL_ALIASES=OFF
+        -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF
