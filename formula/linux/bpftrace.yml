@@ -3,9 +3,8 @@ src-url: https://github.com/bpftrace/bpftrace/archive/refs/tags/v0.21.3.tar.gz
 src-sha: 704335490c90fb997c50b1e86772be57b374b389ece8ed87471d713bbed9f7f8
 dep-pkg: libbcc libpcap cereal
 dep-upp: gm4 flex bison
-dep-lib: -lsframe -lz -lzstd openssl
-install: cmakew -DUSE_SYSTEM_BPF_BCC=ON
+dep-lib: openssl libbpf
 
-prepare: |
-    find "$llvm_clang_18_LIBRARY_DIR" -type f -name 'libLLVM*.a' | tr '\n' ' ' > libllvm.rsp
-    export WRAPPER_TARGET_CXXFLAGS="$WRAPPER_TARGET_CXXFLAGS @$PWD/libllvm.rsp" 
+prepare: add_ldflags -lsframe $(llvm-config --libs --system-libs --link-static)
+
+install: cmakew -DUSE_SYSTEM_BPF_BCC=ON

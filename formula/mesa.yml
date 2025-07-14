@@ -6,7 +6,7 @@ src-sha: 164872a5e792408aa72fecd52b7be6409724c4ad81700798675a7d801d976704
 license: MIT
 dep-pym: Mako MarkupSafe
 dep-upp: gm4 flex bison
-dep-pkg: llvm+clang@18 xorg-libxdamage xorg-libxrandr xorg-libxvmc
+dep-pkg: llvm+clang@20 xorg-libxdamage xorg-libxrandr xorg-libxvmc
 
 install: |
     mesonw \

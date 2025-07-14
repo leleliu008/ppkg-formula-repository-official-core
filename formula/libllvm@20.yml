@@ -3,8 +3,8 @@ web-url: https://llvm.org/
 src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/llvm-project-20.1.8.src.tar.xz
 src-sha: 6898f963c8e938981e6c4a302e83ec5beb4630147c7311183cf61069af16333d
 license: Apache-2.0 with LLVM-exception
-dep-pkg: binutils-dev libelf libffi libxml2 libedit libz3
-dep-upp: python3 perl swig
+dep-pkg: binutils-dev libz3 libffi libedit
+dep-upp: python3 perl
 bscript: llvm
 
 dopatch: |

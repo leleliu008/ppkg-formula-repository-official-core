@@ -1,12 +1,11 @@
-linkage: shared
+linkage: shared/most
 summary: Next-gen compiler infrastructure
 web-url: https://llvm.org/
 src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/llvm-project-20.1.8.src.tar.xz
 src-sha: 6898f963c8e938981e6c4a302e83ec5beb4630147c7311183cf61069af16333d
 license: Apache-2.0 with LLVM-exception
-dep-pkg: binutils-dev libelf libffi libxml2 libedit libz3.a
-dep-upp: python3 perl swig
-ldflags: -lncurses
+dep-pkg: binutils-dev libffi libxml2 libedit libz3.a
+dep-upp: python3 perl
 bscript: llvm
 
 dopatch: printf 'set(Z3_LIBRARIES z3)\n' >> cmake/modules/FindZ3.cmake
@@ -38,6 +37,7 @@ install: |
         -DLLVM_BUILD_EXAMPLES=OFF \
         -DLLVM_BUILD_LLVM_DYLIB=ON \
         -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
+        -DLLVM_STATIC_LINK_CXX_STDLIB=OFF \
         -DLLVM_LINK_LLVM_DYLIB=ON \
         -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
         -DLLVM_INSTALL_UTILS=ON \
@@ -45,3 +45,5 @@ install: |
         -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
         -DCLANG_BUILD_TOOLS=ON \
         -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF
+
+dotweak: gsed -i 's|zstd::libzstd_shared|zstd|' lib/cmake/llvm/LLVMExports.cmake

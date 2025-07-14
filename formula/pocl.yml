@@ -6,6 +6,7 @@ src-sha: de9710223fc1855f833dbbf42ea2681e06aa8ec0464f0201104dc80a74dfd1f2
 license: MIT
 dep-pkg: libopencl libhwloc llvm+clang@18
 dep-upp: python3 patch
+
 install: |
     cmakew \
         -DENABLE_LLVM=ON \

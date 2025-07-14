@@ -1,7 +1,7 @@
 summary: Implementation of the library requirements of the OpenCL C programming language
 web-url: https://libclc.llvm.org/
-src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.2/libclc-18.1.2.src.tar.xz
-src-sha: 13465a087f2f13d4f0e0adab7dfd9c538c242f631a8c4571ed85e4e50f8c2570
+src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/libclc-20.1.8.src.tar.xz
+src-sha: ecd83a52859742f71f4c332538f8bee54a6743374a233b5a85017de22d75c227
 license: Apache-2.0
 dep-pkg: spirv-llvm-translator
 dep-upp: python3
