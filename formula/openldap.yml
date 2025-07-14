@@ -1,8 +1,10 @@
 summary: Open source suite of directory software
 web-url: https://www.openldap.org/software/
-src-url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.6.tgz
-src-sha: 082e998cf542984d43634442dbe11da860759e510907152ea579bdc42fe39ea0
+src-url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.10.tgz
+src-sha: c065f04aad42737aebd60b2fe4939704ac844266bc0aeaa1609f0cad987be516
 license: OLDAP-2.8
 dep-pkg: libopenssl
+
 dopatch: gsed -i '/SUBDIRS=/s|doc||' Makefile.in
+
 install: configure --without-systemd

@@ -3,24 +3,27 @@ web-url: https://llvm.org/
 src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/llvm-project-18.1.8.src.tar.xz
 src-sha: 0b58557a6d32ceee97c8d533a59b9212d87e0fc4d2833924eb6c611247db2f2a
 license: Apache-2.0 with LLVM-exception
-dep-pkg: binutils-dev libelf libedit libffi libxml2 libzstd libz3.a
+dep-pkg: binutils-dev libelf libffi libxml2 libedit libz3
 dep-upp: python3 perl swig
-ldflags: -lncurses
 bscript: llvm
+
+dopatch: |
+    gsed -i -e 's|NOT LLVM_BUILD_TOOLS|NOT name STREQUAL "llvm-config"|' -e 's|LLVM_BUILD_TOOLS|name STREQUAL "llvm-config"|' cmake/modules/AddLLVM.cmake
+    printf 'set(Z3_LIBRARIES z3)\n' >> cmake/modules/FindZ3.cmake
 
 # https://llvm.org/docs/CMake.html
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
-# https://lldb.llvm.org/resources/build.html
+# https://llvm.org/devmtg/2023-10/slides/tutorials/Hosek-UnderstandingtheLLVMbuild.pdf
 install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \
-        -DLLVM_TARGETS_TO_BUILD=host \
+        -DLLVM_TARGETS_TO_BUILD=all \
         -DLLVM_ENABLE_EH=ON \
+        -DLLVM_ENABLE_RTTI=ON \
         -DLLVM_ENABLE_PIC=ON \
         -DLLVM_ENABLE_FFI=ON \
         -DLLVM_ENABLE_ZLIB=ON \
         -DLLVM_ENABLE_ZSTD=ON \
-        -DLLVM_ENABLE_RTTI=ON \
         -DLLVM_ENABLE_LIBXML2=OFF \
         -DLLVM_ENABLE_TERMINFO=OFF \
         -DLLVM_ENABLE_SPHINX=OFF \
@@ -32,12 +35,14 @@ install: |
         -DLLVM_BUILD_TESTS=OFF \
         -DLLVM_BUILD_TOOLS=OFF \
         -DLLVM_BUILD_EXAMPLES=OFF \
-        -DLLVM_BUILD_LLVM_DYLIB=OFF \
+        -DLLVM_BUILD_LLVM_DYLIB=ON \
         -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
-        -DLLVM_LINK_LLVM_DYLIB=OFF \
+        -DLLVM_STATIC_LINK_CXX_STDLIB=OFF \
+        -DLLVM_LINK_LLVM_DYLIB=ON \
         -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
         -DLLVM_INSTALL_UTILS=ON \
         -DLLVM_OPTIMIZED_TABLEGEN=ON \
-        -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF
+        -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
+        -DLLVM_BINUTILS_INCDIR="$binutils_dev_INCLUDE_DIR"
 
-dotweak: gsed -i -e 's|zstd::libzstd_static|zstd|' -e "s|$PACKAGE_WORKING_DIR/lib/libz3\.a|z3|" lib/cmake/llvm/LLVMExports.cmake
+dotweak: gsed -i 's|zstd::libzstd_shared|zstd|' lib/cmake/llvm/LLVMExports.cmake

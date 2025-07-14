@@ -1,15 +1,15 @@
-linkage: shared
 summary: Next-gen compiler infrastructure
 web-url: https://llvm.org/
-src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/llvm-project-18.1.8.src.tar.xz
-src-sha: 0b58557a6d32ceee97c8d533a59b9212d87e0fc4d2833924eb6c611247db2f2a
+src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/llvm-project-20.1.8.src.tar.xz
+src-sha: 6898f963c8e938981e6c4a302e83ec5beb4630147c7311183cf61069af16333d
 license: Apache-2.0 with LLVM-exception
-dep-pkg: binutils-dev libelf libffi libxml2 libedit libz3.a
+dep-pkg: binutils-dev libelf libffi libxml2 libedit libz3
 dep-upp: python3 perl swig
-ldflags: -lncurses
 bscript: llvm
 
-dopatch: printf 'set(Z3_LIBRARIES z3)\n' >> cmake/modules/FindZ3.cmake
+dopatch: |
+    gsed -i -e 's|NOT LLVM_BUILD_TOOLS|NOT name STREQUAL "llvm-config"|' -e 's|LLVM_BUILD_TOOLS|name STREQUAL "llvm-config"|' cmake/modules/AddLLVM.cmake
+    printf 'set(Z3_LIBRARIES z3)\n' >> cmake/modules/FindZ3.cmake
 
 # https://llvm.org/docs/CMake.html
 # https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
@@ -18,7 +18,6 @@ install: |
     cmakew \
         -DBUILD_SHARED_LIBS=OFF \
         -DLLVM_TARGETS_TO_BUILD=all \
-        -DLLVM_ENABLE_PROJECTS=clang \
         -DLLVM_ENABLE_EH=ON \
         -DLLVM_ENABLE_RTTI=ON \
         -DLLVM_ENABLE_PIC=ON \
@@ -34,15 +33,16 @@ install: |
         -DLLVM_INCLUDE_TESTS=OFF \
         -DLLVM_BUILD_DOCS=OFF \
         -DLLVM_BUILD_TESTS=OFF \
-        -DLLVM_BUILD_TOOLS=ON \
+        -DLLVM_BUILD_TOOLS=OFF \
         -DLLVM_BUILD_EXAMPLES=OFF \
-        -DLLVM_BUILD_LLVM_DYLIB=OFF \
+        -DLLVM_BUILD_LLVM_DYLIB=ON \
         -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
         -DLLVM_STATIC_LINK_CXX_STDLIB=OFF \
-        -DLLVM_LINK_LLVM_DYLIB=OFF \
+        -DLLVM_LINK_LLVM_DYLIB=ON \
         -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
         -DLLVM_INSTALL_UTILS=ON \
         -DLLVM_OPTIMIZED_TABLEGEN=ON \
         -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
-        -DCLANG_BUILD_TOOLS=ON \
-        -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF
+        -DLLVM_BINUTILS_INCDIR="$binutils_dev_INCLUDE_DIR"
+
+dotweak: gsed -i 's|zstd::libzstd_shared|zstd|' lib/cmake/llvm/LLVMExports.cmake
