@@ -1,9 +1,11 @@
 summary: SMB/CIFS file, print, and login server for UNIX
 web-url: https://www.samba.org/
-src-url: https://download.samba.org/pub/samba/stable/samba-4.21.2.tar.gz
-src-sha: bde66be3d2025cb949de38518ad2652f3795f824c7fa89d4e443ede1ae828ea6
+git-url: https://gitlab.com/samba-team/samba
+src-url: https://download.samba.org/pub/samba/stable/samba-4.22.3.tar.gz
+src-sha: 8fd7092629a3596d935cd7567d934979f94272918ec3affd0cc807934ecf22ba
 license: GPL-3.0-or-later
-dep-pkg: libgnutls libz liblmdb libtdb libtevent libxcrypt libcups libtirpc libpopt libreadline libicu
+dep-pkg: libicu libtdb liblmdb libcups libpopt libtevent libxcrypt libgnutls libreadline
+dep-pkg-linux: libtirpc
 dep-upp: gm4 flex bison perl python3
 dep-plm: Parse::Yapp
 bsystem: gmake
@@ -11,26 +13,27 @@ ldflags: -lncurses
 
 install: |
     run ./configure \
-            --bundled-libraries=NONE \
-            --private-libraries=!ldb \
-            --disable-cephfs \
-            --enable-cups \
-            --disable-iprint \
-            --disable-glusterfs \
-            --disable-python \
-            --without-acl-support \
-            --without-ad-dc \
-            --without-ads \
-            --without-ldap \
-            --without-libarchive \
-            --without-json \
-            --without-pam \
-            --without-regedit \
-            --without-syslog \
-            --without-utmp \
-            --without-winbind \
-            --with-shared-modules=!vfs_snapper \
-            --prefix=$PACKAGE_INSTALL_DIR
+        --prefix="$PACKAGE_INSTALL_DIR" \
+        --sysconfdir=/etc \
+        --bundled-libraries=NONE \
+        --private-libraries=!ldb \
+        --enable-cups \
+        --disable-cephfs \
+        --disable-iprint \
+        --disable-python \
+        --disable-glusterfs \
+        --without-acl-support \
+        --without-ad-dc \
+        --without-ads \
+        --without-pam \
+        --without-ldap \
+        --without-json \
+        --without-utmp \
+        --without-syslog \
+        --without-regedit \
+        --without-winbind \
+        --without-libarchive \
+        --with-shared-modules=!vfs_snapper
     gmakew
     gmakew install
 

@@ -1,10 +1,13 @@
 summary: Event system based on the talloc memory management library
 web-url: https://tevent.samba.org
-src-url: https://www.samba.org/ftp/tevent/tevent-0.16.1.tar.gz
-src-sha: 362971e0f32dc1905f6fe4736319c4b8348c22dc85aa6c3f690a28efe548029e
+src-url: https://www.samba.org/ftp/tevent/tevent-0.17.0.tar.gz
+src-sha: 7702fb373b69da2960b86134b6a9ec6fa0b949a01756fec00a4a6a43575c8361
 license: LGPL-3.0-or-later
 dep-pkg: libtalloc cmocka
 dep-upp: python3
 install: |
     run ./configure --prefix=$PACKAGE_INSTALL_DIR --bundled-libraries=NONE --disable-python --disable-rpath
-    gmakew install
+    gmakew install V=1
+    run cd bin/default/
+    run "$AR" crs libtevent.a lib/replace/replace.c.2.o tevent.c.1.o tevent_debug.c.1.o tevent_fd.c.1.o tevent_immediate.c.1.o tevent_queue.c.1.o tevent_req.c.1.o tevent_wrapper.c.1.o tevent_poll.c.1.o tevent_threads.c.1.o tevent_signal.c.1.o tevent_standard.c.1.o tevent_timed.c.1.o tevent_util.c.1.o tevent_wakeup.c.1.o tevent_epoll.c.1.o
+    install_libs  libtevent.a
