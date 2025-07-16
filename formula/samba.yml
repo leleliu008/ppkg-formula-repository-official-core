@@ -14,7 +14,7 @@ ldflags: -lncurses
 install: |
     run ./configure \
         --prefix="$PACKAGE_INSTALL_DIR" \
-        --sysconfdir=/etc \
+        --sysconfdir=/etc/samba \
         --bundled-libraries=NONE \
         --private-libraries=!ldb \
         --enable-cups \

@@ -1,0 +1,5 @@
+summary: Binary editor written in Go
+src-url: https://github.com/itchyny/bed/archive/refs/tags/v0.2.8.tar.gz
+src-sha: 2515fd65c718f7aaa549bf9a98cf514102d2ea5f3b1c0437bbcf8bd26fae4d0a
+license: MIT
+install: gow -X main.revision=$PACKAGE_VERSION ./cmd/bed
