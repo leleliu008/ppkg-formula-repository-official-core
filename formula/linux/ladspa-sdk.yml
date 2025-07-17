@@ -1,5 +1,5 @@
 pkgtype: lib
-summary: Linux Audio Developer Simple Plugin
+summary: Linux Audio Developer Simple Plugin API
 web-url: https://www.ladspa.org
 src-url: https://www.ladspa.org/download/ladspa_sdk_1.17.tgz
 src-sha: 27d24f279e4b81bd17ecbdcc38e4c42991bb388826c0b200067ce0eb59d3da5b
