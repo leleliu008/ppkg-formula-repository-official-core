@@ -6,6 +6,13 @@ src-sha: 9fbf5e28ef86c69858f6d3d34eccc32e911c1a28b4120ff3e84aaa70cfbf1e30
 license: MIT
 bscript: src
 
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        export LDFLAGS="$LDFLAGS -Wl,-install_name,liblua.dylib"
+    else
+        export LDFLAGS="$LDFLAGS -Wl,-soname,liblua.so"
+    fi
+
 install: |
     gmakew clean
     gmakew liblua.a PLAT=generic CC="$CC" AR="'$AR crs'" RANLIB="$RANLIB" CFLAGS="'$CFLAGS -std=c99 -DLUA_COMPAT_5_3 $CPPFLAGS'"

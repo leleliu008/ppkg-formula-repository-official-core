@@ -146,9 +146,9 @@ int main(int argc, char* argv[]) {
 
     ////////////////////////////////////////////////////
 
-#if defined(__linux__) && defined(__USE_DYNAMIC_LOADER__)
-    const char * const dynamicLoaderName = "DYNAMIC_LOADER_FILENAME";
-    const char * const libraryPathRelativeToSelfExePath = "LIBRARY_PATH_RELATIVE_TO_SELF_EXE_PATH";
+#if defined(__linux__) && defined(DYNAMIC_LOADER_FILENAME)
+    const char * const dynamicLoaderName = "" DYNAMIC_LOADER_FILENAME;
+    const char * const libraryPathRelativeToSelfExePath = "" LIBRARY_PATH_RELATIVE_TO_SELF_EXE_PATH;
 
     ////////////////////////////////////////////////////
 
