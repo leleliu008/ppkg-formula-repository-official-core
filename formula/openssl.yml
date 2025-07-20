@@ -1,8 +1,8 @@
 summary: Cryptography and SSL/TLS Toolkit
 git-url: https://github.com/openssl/openssl
 web-url: https://www.openssl.org/
-src-url: https://www.openssl.org/source/openssl-3.3.1.tar.gz
-src-sha: 777cd596284c883375a2a7a11bf5d2786fc5413255efab20c50d6ffe6d020b7e
+src-url: https://www.openssl.org/source/openssl-3.5.1.tar.gz
+src-sha: 529043b15cffa5f36077a4d0af83f3de399807181d607441d734196d889b641f
 license: Apache-2.0
 dep-upp: perl
 bsystem: gmake
@@ -45,9 +45,9 @@ install: |
     fi
 
     # https://github.com/openssl/openssl/blob/master/INSTALL.md
-    run "$CMD" no-shared no-tests no-ssl3 no-ssl3-method no-zlib --libdir=lib --openssldir=/etc/ssl --prefix="$PACKAGE_INSTALL_DIR" "$OS_COMPILER"
+    run "$CMD" no-shared no-tests no-ssl3 no-ssl3-method no-zlib no-legacy --libdir=lib --openssldir=/etc/ssl --prefix="$PACKAGE_INSTALL_DIR" "$OS_COMPILER"
     gmakew clean
     gmakew CROSS_COMPILE=
-    gmakew CROSS_COMPILE= install
+    gmakew CROSS_COMPILE= install_sw
 
-dotweak: gsed -i '/Libs:/s|-lcrypto|-lcrypto -lpthread -ldl|' lib/pkgconfig/libcrypto.pc
+dotweak: run rm -rf include/ lib/

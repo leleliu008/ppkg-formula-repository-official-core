@@ -5,13 +5,9 @@ src-url: https://rsync.samba.org/ftp/rsync/rsync-3.4.1.tar.gz
 src-sha: 2924bcb3a1ed8b551fc101f740b9f0fe0a202b115027647cf69850d65fd88c52
 license: GPL-3.0-or-later
 dep-pkg: libopenssl libpopt libz liblz4 libzstd libxxhash libiconv
+ldflags: -lpthread
 install: configure --disable-simd --enable-ipv6 --with-included-popt=no --with-included-zlib=no
 
 fix-url: https://download.samba.org/pub/rsync/src/rsync-patches-3.4.1.tar.gz
 fix-sha: f56566e74cfa0f68337f7957d8681929f9ac4c55d3fb92aec0d743db590c9a88
 dopatch: patch -p1 < ../fix/patches/fileflags.diff
-
-prepare: |
-    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        add_ldflags -lpthread
-    fi
