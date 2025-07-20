@@ -5,6 +5,8 @@ src-sha: a6d2eb1ebeb99130dfe63ef5a340c3fdb11431cce3d7ca148524c125924cea68
 license: BSD-3-Clause
 dep-pkg: libncurses libopenssl
 
+dopatch: gsed -i 's|USE_LIBIDN2 ON|USE_LIBIDN2 OFF|' Utilities/cmcurl/CMakeLists.txt
+
 install: |
     cmakew \
         -DCMAKE_USE_SYSTEM_LIBRARIES=OFF \
