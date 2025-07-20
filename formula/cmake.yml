@@ -5,7 +5,7 @@ src-sha: a6d2eb1ebeb99130dfe63ef5a340c3fdb11431cce3d7ca148524c125924cea68
 license: BSD-3-Clause
 dep-pkg: libncurses libopenssl
 
-dopatch: gsed -i -e 's|USE_LIBIDN2 ON|USE_LIBIDN2 OFF|' -e '/option(USE_LIBIDN2 /d' Utilities/cmcurl/CMakeLists.txt
+dopatch: gsed -i -e '/find_package(Libidn2/c set(LIBIDN2_FOUND FALSE)' Utilities/cmcurl/CMakeLists.txt
 
 install: |
     cmakew \
