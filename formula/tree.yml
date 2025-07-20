@@ -6,9 +6,5 @@ license: GPL-2.0-or-later
 
 install: |
     gmakew clean
-    gmakew install \
-        PREFIX="$PACKAGE_INSTALL_DIR" \
-        MANDIR="$PACKAGE_INSTALL_DIR/share/man" \
-        CC="'$CC'" \
-        CFLAGS="'$CFLAGS $CPPFLAGS'" \
-        LDFLAGS="'$LDFLAGS'"
+    gmakew
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" MANDIR="$PACKAGE_INSTALL_DIR/share/man"
