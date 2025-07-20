@@ -7,8 +7,8 @@ license: GPL-3.0-or-later
 
 prepare: |
     # https://savannah.gnu.org/bugs/?64441
-    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
-        export LDFLAGS="$LDFLAGS -liconv"
+    if [ "$TARGET_PLATFORM_NAME" = macos ] || [ "$TARGET_PLATFORM_NAME" = freebsd ] ; then
+        add_ldflags -liconv
     fi
 
 install: |
