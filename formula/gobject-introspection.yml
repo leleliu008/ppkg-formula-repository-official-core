@@ -2,9 +2,9 @@ pkgtype: lib
 summary: A middleware layer between C libraries (using GObject) and language bindings
 web-url: https://gi.readthedocs.io
 git-url: https://gitlab.gnome.org/GNOME/gobject-introspection
-src-url: https://download.gnome.org/sources/gobject-introspection/1.82/gobject-introspection-1.82.0.tar.xz
-src-uri: https://distfiles.macports.org/gobject-introspection/gobject-introspection-1.82.0.tar.xz
-src-sha: 0f5a4c1908424bf26bc41e9361168c363685080fbdb87a196c891c8401ca2f09
+src-url: https://download.gnome.org/sources/gobject-introspection/1.84/gobject-introspection-1.84.0.tar.xz
+src-uri: https://distfiles.macports.org/gobject-introspection/gobject-introspection-1.84.0.tar.xz
+src-sha: 945b57da7ec262e5c266b89e091d14be800cc424277d82a02872b7d794a84779
 license: MIT
 dep-pkg: glib
 dep-upp: gm4 flex bison
