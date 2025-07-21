@@ -8,6 +8,15 @@ license: LGPL-2.1-or-later
 dep-pkg: libpcre2 libintl libffi libz
 dep-upp: gettext-tools
 
+# genviron.c:(.text+0x3f4): undefined reference to `environ'
+# https://github.com/drobilla/zix/issues/9
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = freebsd ] ; then
+        MESON_EXTRA_ARGS='-Db_lundef=false'
+    else
+        MESON_EXTRA_ARGS=
+    fi
+
 install: |
     mesonw \
         -Dintrospection=disabled \
@@ -24,7 +33,7 @@ install: |
         -Dxattr=false \
         -Dtests=false \
         -Dinstalled_tests=false \
-        -Dbsymbolic_functions=false
+        -Dbsymbolic_functions=false $MESON_EXTRA_ARGS
 
 dotweak: |
     gsed -i 's|libiconv|libintl libffi libz|' lib/pkgconfig/glib-2.0.pc
