@@ -8,9 +8,16 @@ dep-pkg: glib-gir libjpeg-turbo libtiff libpng libgif
 
 dopatch: gsed -i '/shared_mime_dep/d' meson.build
 
+prepare: |
+    case $TARGET_PLATFORM_NAME in
+        linux|macos)
+            MESON_EXTRA_ARGS='-Drelocatable=true'
+            ;;
+        *)  MESON_EXTRA_ARGS=
+    esac
+
 install: |
-    mesonw \
-        -Drelocatable=true \
+    mesonw $MESON_EXTRA_ARGS \
         -Dnative_windows_loaders=false \
         -Dinstalled_tests=false \
         -Dgtk_doc=false \
