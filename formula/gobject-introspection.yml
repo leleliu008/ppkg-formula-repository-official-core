@@ -10,3 +10,10 @@ dep-pkg: glib
 dep-upp: gm4 flex bison
 dep-pym: Mako MarkupSafe 'setuptools<65'
 bsystem: meson
+
+dotweak: |
+    # FreeBSD
+    if [    -d libdata/pkgconfig ] ; then
+        run mv libdata/pkgconfig lib/
+        run rm libdata/
+    fi
