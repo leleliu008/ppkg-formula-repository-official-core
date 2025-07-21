@@ -15,5 +15,5 @@ dotweak: |
     # FreeBSD
     if [    -d libdata/pkgconfig ] ; then
         run mv libdata/pkgconfig lib/
-        run rm libdata/
+        run rm -rf libdata/
     fi
