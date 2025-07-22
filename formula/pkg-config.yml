@@ -4,5 +4,7 @@ src-url: https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz
 src-sha: 6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
 license: GPL-2.0-or-later
 dep-pkg: libiconv
+
 dopatch: gsed -i 's|with_libiconv=maybe|with_libiconv=gnu|g' glib/configure
+
 install: configure --with-internal-glib --disable-host-tool
