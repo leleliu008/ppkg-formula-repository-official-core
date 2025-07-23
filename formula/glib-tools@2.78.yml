@@ -6,6 +6,7 @@ src-uri: https://distfiles.macports.org/glib2/glib-2.78.4.tar.xz
 src-sha: 24b8e0672dca120cc32d394bccb85844e732e04fe75d18bb0573b2dbc7548f63
 license: LGPL-2.1-or-later
 dep-pkg: libpcre2 libintl libffi libz
+dep-pym: meson 'setuptools<65'
 
 dopatch: |
     gsed -i "s|cc.find_library('resolv')|declare_dependency(link_args : ['-lresolv'])|" gio/meson.build
