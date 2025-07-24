@@ -7,5 +7,5 @@ license: GPL-3.0-or-later
 dep-upp: texinfo
 dep-pkg: gettext
 binbstd: 1
-install: configure --program-prefix=g LIBS="'-lintl -liconv'"
+install: configure --program-prefix=g LIBS="'-lintl -liconv -lpthread'"
 dotweak: ln -s gindent bin/indent
