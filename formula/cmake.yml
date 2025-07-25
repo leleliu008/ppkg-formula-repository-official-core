@@ -4,6 +4,7 @@ src-url: https://github.com/Kitware/CMake/releases/download/v3.31.7/cmake-3.31.7
 src-sha: a6d2eb1ebeb99130dfe63ef5a340c3fdb11431cce3d7ca148524c125924cea68
 license: BSD-3-Clause
 dep-pkg: libncurses libopenssl
+ldflags: -lpthread
 
 install: |
     cmakew \
