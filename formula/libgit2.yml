@@ -19,4 +19,4 @@ install: |
         -DUSE_BUNDLED_ZLIB=OFF \
         -DREGEX_BACKEND=pcre2
 
-dotweak: gsed -i -e '/Libs.private:/d' -e '/^Requires/s|openssl|libssh2|' -e '/^Requires/s|zlib|libiconv|' lib/pkgconfig/libgit2.pc
+dotweak: gsed -i -e '/Libs.private:/d' -e '/^Requires/s|openssl|libssh2 libiconv|' lib/pkgconfig/libgit2.pc
