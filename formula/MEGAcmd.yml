@@ -1,0 +1,17 @@
+summary: A command-line tool to access to MEGA services
+    #src-url: https://github.com/meganz/MEGAcmd/archive/refs/tags/2.1.1_Linux.tar.gz
+    #src-sha: 20718f3ffbe8825ad1407a346d0ef4b867a75407e67c9653378a19977f4b3baa
+git-url: https://github.com/meganz/MEGAcmd
+git-sha: 7fe3e1eb651ba247cf52083d698fcada4704ace0
+version: 2.1.1
+
+dopatch: |
+    gsed -i '/CMAKE_TOOLCHAIN_FILE /c set(VCPKG_CHAINLOAD_TOOLCHAIN_FILE ${CMAKE_TOOLCHAIN_FILE})\nset(CMAKE_TOOLCHAIN_FILE  ${VCPKG_TOOLCHAIN_PATH})' sdk/cmake/modules/vcpkg_management.cmake
+
+prepare: |
+    git_checkout https://github.com/microsoft/vcpkg.git --depth=0 -C vcpkg
+    run vcpkg/bootstrap-vcpkg.sh
+    export VCPKG_ROOT="$PWD/vcpkg"
+    export PATH="$VCPKG_ROOT:$PATH"
+
+install: cmakew -DVCPKG_ROOT="$VCPKG_ROOT"
