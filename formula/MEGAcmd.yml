@@ -8,7 +8,7 @@ version: 2.1.1
 dopatch: |
     gsed -i '/CMAKE_TOOLCHAIN_FILE /c set(VCPKG_CHAINLOAD_TOOLCHAIN_FILE ${CMAKE_TOOLCHAIN_FILE})\nset(CMAKE_TOOLCHAIN_FILE  ${VCPKG_TOOLCHAIN_PATH})' sdk/cmake/modules/vcpkg_management.cmake
 
-dep-upp: zip unzip gtar gmake perl
+dep-upp: zip unzip gtar gmake perl python3
 prepare: |
     git_checkout https://github.com/microsoft/vcpkg.git --depth=0 -C vcpkg
     run vcpkg/bootstrap-vcpkg.sh
