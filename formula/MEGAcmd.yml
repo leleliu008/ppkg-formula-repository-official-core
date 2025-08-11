@@ -5,6 +5,8 @@ git-url: https://github.com/meganz/MEGAcmd
 git-sha: 7fe3e1eb651ba247cf52083d698fcada4704ace0
 version: 2.1.1
 
+dep-pkg: libfuse
+
 dopatch: |
     gsed -i '/CMAKE_TOOLCHAIN_FILE /c set(VCPKG_CHAINLOAD_TOOLCHAIN_FILE ${CMAKE_TOOLCHAIN_FILE})\nset(CMAKE_TOOLCHAIN_FILE  ${VCPKG_TOOLCHAIN_PATH})' sdk/cmake/modules/vcpkg_management.cmake
 
