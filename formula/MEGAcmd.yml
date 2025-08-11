@@ -11,8 +11,7 @@ dep-pkg: libfuse2
 dopatch: |
     gsed -i '/CMAKE_TOOLCHAIN_FILE /c set(VCPKG_CHAINLOAD_TOOLCHAIN_FILE ${CMAKE_TOOLCHAIN_FILE})\nset(CMAKE_TOOLCHAIN_FILE  ${VCPKG_TOOLCHAIN_PATH})' sdk/cmake/modules/vcpkg_management.cmake
 
-bsystem: cmake
-install2: |
+install: |
     cmakew \
         -DFUSE_INCLUDE_DIR="$libfuse2_INCLUDE_DIR" \
         -DFUSE_LIBRARY="$libfuse2_LIBRARY_DIR/libfuse.a"
