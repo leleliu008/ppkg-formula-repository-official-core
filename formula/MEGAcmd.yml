@@ -10,6 +10,7 @@ dep-pkg: libfuse2
 
 dopatch: |
     gsed -i '/CMAKE_TOOLCHAIN_FILE /c set(VCPKG_CHAINLOAD_TOOLCHAIN_FILE ${CMAKE_TOOLCHAIN_FILE})\nset(CMAKE_TOOLCHAIN_FILE  ${VCPKG_TOOLCHAIN_PATH})' sdk/cmake/modules/vcpkg_management.cmake
+    gsed -i 's|26|30|' sdk/src/fuse/supported/posix/mega/fuse/platform/library.h
 
 install: |
     cmakew \
