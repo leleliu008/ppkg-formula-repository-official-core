@@ -5,16 +5,13 @@ git-url: https://github.com/meganz/MEGAcmd
 git-sha: 7fe3e1eb651ba247cf52083d698fcada4704ace0
 version: 2.1.1
 
+dep-upp: zip unzip gtar gmake autoconf-archive autoconf automake python3 nasm
 dep-pkg: libfuse
 
 dopatch: |
     gsed -i '/CMAKE_TOOLCHAIN_FILE /c set(VCPKG_CHAINLOAD_TOOLCHAIN_FILE ${CMAKE_TOOLCHAIN_FILE})\nset(CMAKE_TOOLCHAIN_FILE  ${VCPKG_TOOLCHAIN_PATH})' sdk/cmake/modules/vcpkg_management.cmake
 
-dep-upp: zip unzip gtar gmake autoconf-archive autoconf automake python3 nasm
-prepare: |
-    git_checkout https://github.com/microsoft/vcpkg.git --depth=0 -C vcpkg
-    run vcpkg/bootstrap-vcpkg.sh
-    export VCPKG_ROOT="$PWD/vcpkg"
-    export PATH="$VCPKG_ROOT:$PATH"
-
-install: cmakew -DVCPKG_ROOT="$VCPKG_ROOT"
+install: |
+    cmakew \
+        -DFUSE_INCLUDE_DIR="$libfuse_INCLUDE_DIR/fuse3" \
+        -DFUSE_LIBRARY="$libfuse_LIBRARY_DIR/libfuse3.a"
