@@ -2,7 +2,7 @@ summary: The reliability of disk images, the flexibility of files
 src-url: https://github.com/composefs/composefs/archive/refs/tags/v1.0.8.tar.gz
 src-sha: 2b2b11f9a25744c82e9e12b098eefd0ab42d56ae6322634c15f966b3a64926ef
 license: LGPL-2.1-or-later
-dep-pkg: libfuse libopenssl
+dep-pkg: libfuse3 libopenssl
 
 dopatch: |
     gsed -i 's|link_with : libcomposefs|link_with : libcomposefs.get_static_lib()|' tools/meson.build

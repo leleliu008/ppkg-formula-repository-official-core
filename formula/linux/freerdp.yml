@@ -3,7 +3,7 @@ web-url: https://www.freerdp.com/
 src-url: https://github.com/FreeRDP/FreeRDP/releases/download/3.12.0/freerdp-3.12.0.tar.gz
 src-sha: b08c1bfe867cde0feb3e51f72f32ee3fa3a37acbd20d6fdeb5a0f614b549f5cb
 license: Apache-2.0
-dep-pkg: wayland ffmpeg-dev libicu libusb libcups libfuse libkrb5 libsdl2_ttf libpkcs11-helper libxkbcommon xorg-libxv
+dep-pkg: wayland ffmpeg-dev libicu libusb libcups libfuse3 libkrb5 libsdl2_ttf libpkcs11-helper libxkbcommon xorg-libxv
 dep-lib: xcb libavcodec SDL2_ttf -lffi -lgomp -lstdc++
 
 prepare: export CPPFLAGS="$CPPFLAGS -I$libsdl2_ttf_INCLUDE_DIR/SDL2"

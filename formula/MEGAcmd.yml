@@ -6,13 +6,13 @@ git-sha: 7fe3e1eb651ba247cf52083d698fcada4704ace0
 version: 2.1.1
 
 dep-upp: zip unzip gtar gmake autoconf-archive autoconf automake python3 nasm
-dep-pkg: libfuse
+dep-pkg: libfuse2
 
 dopatch: |
     gsed -i '/CMAKE_TOOLCHAIN_FILE /c set(VCPKG_CHAINLOAD_TOOLCHAIN_FILE ${CMAKE_TOOLCHAIN_FILE})\nset(CMAKE_TOOLCHAIN_FILE  ${VCPKG_TOOLCHAIN_PATH})' sdk/cmake/modules/vcpkg_management.cmake
-    gsed -i 's|fuse/|fuse3/|' sdk/src/fuse/supported/posix/mega/fuse/platform/library.h
 
-install: |
+bsystem: cmake
+install2: |
     cmakew \
-        -DFUSE_INCLUDE_DIR="$libfuse_INCLUDE_DIR/fuse3" \
-        -DFUSE_LIBRARY="$libfuse_LIBRARY_DIR/libfuse3.a"
+        -DFUSE_INCLUDE_DIR="$libfuse2_INCLUDE_DIR" \
+        -DFUSE_LIBRARY="$libfuse2_LIBRARY_DIR/libfuse.a"

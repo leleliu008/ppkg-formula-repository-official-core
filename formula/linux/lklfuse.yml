@@ -2,7 +2,7 @@ summary: Mount any Linux filesystem without root
 src-url: https://github.com/lkl/linux/archive/699f87c5ee5f2302e615f5e7dae671fc959adf80.zip
 src-sha: decc9aed5e867c42a9192618798c0adadf14f1d1c75087ea208591b052c870c0
 version: 1
-dep-pkg: liblkl libfuse
+dep-pkg: liblkl libfuse3
 dep-upp: bison
 bscript: tools/lkl
 binbstd: 1

@@ -1,0 +1,16 @@
+summary: Reference implementation of the Linux FUSE interface
+src-url: https://github.com/libfuse/libfuse/releases/download/fuse-2.9.9/fuse-2.9.9.tar.gz
+src-sha: d0e69d5d608cc22ff4843791ad097f554dd32540ddc9bed7638cc6fea7c1b4b5
+license: LGPL-2.1-only
+dep-upp: gettext-tools libtool
+bsystem: autotools
+install: configure --enable-lib --enable-util --disable-example
+
+prepare: |
+    export INIT_D_PATH="$PACKAGE_INSTALL_DIR/etc/init.d"
+    export UDEV_RULES_PATH="$PACKAGE_INSTALL_DIR/etc/udev/rules.d"
+    export MOUNT_FUSE_PATH="$PACKAGE_INSTALL_DIR/bin"
+
+patches: |
+    94d5c6d9785471147506851b023cb111ef2081d1c0e695728037bbf4f64ce30a|https://github.com/libfuse/libfuse/commit/5a43d0f724c56f8836f3f92411e0de1b5f82db32.patch?full_index=1
+    97360b7353903f3968aa10c9fd95ee42372049fea748d2be78f1c054e750bed0|https://github.com/libfuse/libfuse/commit/914871b20a901e3e1e981c92bc42b1c93b7ab81b.patch?full_index=1
