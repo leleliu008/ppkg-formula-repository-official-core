@@ -14,5 +14,5 @@ dopatch: |
 
 install: |
     cmakew \
-        -DFUSE_INCLUDE_DIR="$libfuse2_INCLUDE_DIR" \
+        -DFUSE_INCLUDE_DIR="$libfuse2_INCLUDE_DIR/fuse" \
         -DFUSE_LIBRARY="$libfuse2_LIBRARY_DIR/libfuse.a"
