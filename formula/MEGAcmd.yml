@@ -16,3 +16,8 @@ install: |
     cmakew \
         -DFUSE_INCLUDE_DIR="$libfuse2_INCLUDE_DIR/fuse" \
         -DFUSE_LIBRARY="$libfuse2_LIBRARY_DIR/libfuse.a"
+
+dotweak: |
+    run mv opt/megacmd/lib/ .
+    run mv usr/bin/ .
+    run rm -rf /usr/ /opt/
