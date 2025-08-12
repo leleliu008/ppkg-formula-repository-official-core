@@ -20,4 +20,4 @@ install: |
 dotweak: |
     run mv opt/megacmd/lib/ .
     run mv usr/bin/ .
-    run rm -rf /usr/ /opt/
+    run rm -rf usr/ opt/
