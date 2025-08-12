@@ -1,6 +1,6 @@
 summary: A small build system with a focus on speed
 web-url: https://ninja-build.org/
-src-url: https://github.com/ninja-build/ninja/archive/refs/tags/v1.12.1.tar.gz
-src-sha: 821bdff48a3f683bc4bb3b6f0b5fe7b2d647cf65d52aeb63328c91a6c6df285a
+src-url: https://github.com/ninja-build/ninja/archive/refs/tags/v1.13.1.tar.gz
+src-sha: f0055ad0369bf2e372955ba55128d000cfcc21777057806015b45e4accbebf23
 license: Apache-2.0
 bsystem: cmake
