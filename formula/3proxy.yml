@@ -1,0 +1,12 @@
+summary: A tiny free proxy server
+web-url: https://3proxy.org/
+src-url: https://github.com/3proxy/3proxy/archive/refs/tags/0.9.5.tar.gz
+src-sha: 6f6da51d9bba93231e12acd707bb6cf86a1ab9491dc6dd0c79750cb3641541a3
+license: Apache-2.0 GPL-2.0-or-later LGPL-2.1-or-later
+
+prepare: run ln -s Makefile.Linux Makefile
+
+install: |
+    gmakew clean
+    gmakew CC="$CC" LDFLAGS="'$LDFLAGS'"
+    gmakew install DESTDIR="$PACKAGE_INSTALL_DIR" man_prefix=/share
