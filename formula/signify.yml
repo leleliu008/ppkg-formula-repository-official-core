@@ -3,6 +3,13 @@ src-url: https://github.com/aperezdc/signify/archive/refs/tags/v32.tar.gz
 src-sha: 48cfd7bfe55be01909b37e78045f240b950ea51c954bab205bcdcddc0492dca4
 license: ISC
 dep-pkg: libbsd
+
+dopatch: |
+    gsed -i \
+         -e '/signify\.h/a extern int b64_ntop(unsigned char const *src, size_t srclength, char *target, size_t targsize);' \
+         -e '/signify\.h/a extern int b64_pton(char const *src, unsigned char *target, size_t targsize);' \
+         signify.c
+
 install: |
     gmakew clean
     gmakew EXTRA_CFLAGS="'$CFLAGS $CPPFLAGS'" EXTRA_LDFLAGS="'$LDFLAGS'" LTO=1
