@@ -1,8 +1,8 @@
 summary: Tool for generating GNU Standards-compliant Makefiles
 git-url: https://git.savannah.gnu.org/git/automake.git
 web-url: https://www.gnu.org/software/automake
-src-url: https://ftp.gnu.org/gnu/automake/automake-1.17.tar.xz
-src-sha: 8920c1fc411e13b90bf704ef9db6f29d540e76d232cb3b2c9f4dc4cc599bd990
+src-url: https://ftp.gnu.org/gnu/automake/automake-1.18.1.tar.xz
+src-sha: 168aa363278351b89af56684448f525a5bce5079d0b6842bd910fdd3f1646887
 license: GPL-2.0-or-later
 dep-pkg: autoconf
 dep-upp: gm4
