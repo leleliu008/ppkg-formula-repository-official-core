@@ -1,0 +1,5 @@
+summary: A free multithreaded file transfer client for *NIX
+git-url: https://github.com/masneyb/gftp
+license: MIT
+dep-pkg: glib libopenssl
+install: mesonw -Dgtk3=false -Dgtk2=false -Dgtkport=false -Dtextport=true -Dssl=true
