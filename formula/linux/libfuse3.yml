@@ -8,4 +8,7 @@ install: |
         --sysconfdir=$PACKAGE_INSTALL_DIR/etc \
         -Dinitscriptdir=$PACKAGE_INSTALL_DIR/etc/init.d \
         -Dudevrulesdir=$PACKAGE_INSTALL_DIR/etc/udev/rules.d \
-        -Duseroot=false
+        -Duseroot=false \
+        -Dtests=false \
+        -Dutils=true \
+        -Dexamples=false
