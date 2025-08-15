@@ -1,0 +1,6 @@
+summary: A text editor in less than 1000 LOC with syntax highlight and search
+git-url: https://github.com/antirez/kilo
+license: BSD-2-Clause
+install: |
+    run "$CC" -std=c99 "$CFLAGS" "$LDFLAGS" -o kilo ../kilo.c
+    install_bins kilo
