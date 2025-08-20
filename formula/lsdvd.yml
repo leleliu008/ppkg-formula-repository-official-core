@@ -1,7 +1,6 @@
 summary: Read the content info of a DVD
 web-url: https://sourceforge.net/projects/lsdvd/
 src-url: https://downloads.sourceforge.net/project/lsdvd/lsdvd/lsdvd-0.17.tar.gz
-src-uri: https://distfiles.macports.org/lsdvd/lsdvd-0.17.tar.gz
 src-sha: 7d2c5bd964acd266b99a61d9054ea64e01204e8e3e1a107abe41b1274969e488
 license: GPL-2.0-only
 dep-pkg: libdvdread

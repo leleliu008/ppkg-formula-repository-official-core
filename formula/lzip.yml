@@ -1,7 +1,6 @@
 summary: LZMA-based compression program similar to gzip or bzip2
 web-url: https://www.nongnu.org/lzip
-src-url: https://mirrors.aliyun.com/macports/distfiles/lzip/lzip-1.24.1.tar.gz
-src-uri: https://download-mirror.savannah.gnu.org/releases/lzip/lzip-1.24.1.tar.gz
+src-url: https://download-mirror.savannah.gnu.org/releases/lzip/lzip-1.24.1.tar.gz
 src-sha: 30c9cb6a0605f479c496c376eb629a48b0a1696d167e3c1e090c5defa481b162
 license: GPL-2.0-or-later
 bsystem: configure

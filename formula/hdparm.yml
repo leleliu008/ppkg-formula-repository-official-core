@@ -1,0 +1,10 @@
+summary: A command-line tool for manipulating IDE device parameters
+web-url: https://sourceforge.net/projects/hdparm/
+src-url: https://downloads.sourceforge.net/sourceforge/hdparm/hdparm-9.65.tar.gz
+src-sha: d14929f910d060932e717e9382425d47c2e7144235a53713d55a94f7de535a4b
+license: BSD-2-Clause GPL-2.0-only
+ccflags: -D_GNU_SOURCE
+install: |
+    gmakew clean
+    gmakew hdparm
+    gmakew install DESTDIR="$PACKAGE_INSTALL_DIR" manprefix=

@@ -1,7 +1,6 @@
 summary: GNU Emacs text editor
 web-url: https://www.gnu.org/software/emacs/
 src-url: https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz
-src-uri: https://ftpmirror.gnu.org/emacs/emacs-30.1.tar.xz
 src-sha: 6ccac1ae76e6af93c6de1df175e8eb406767c23da3dd2a16aa67e3124a6f138f
 license: GPL-3.0-or-later
 dep-pkg: libgnutls libxml2 libncurses libtree-sitter

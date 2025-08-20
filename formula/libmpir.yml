@@ -1,9 +1,6 @@
 summary: Multiple Precision Integers and Rationals (fork of GMP)
 git-url: https://github.com/wbhart/mpir
 version: 3.0.0
-    #src-url: https://distfiles.macports.org/mpir/mpir-3.0.0.tar.gz
-    #src-uri: https://mirrors.aliyun.com/macports/distfiles/mpir/mpir-3.0.0.tar.gz
-    #src-sha: b0a4088134fb25f25725a04243f83039897c51139a0b5f1dcac1395963483c38
 license: GPL-3.0-or-later
 dep-upp: yasm gm4 libtool texinfo
 bsystem: autotools

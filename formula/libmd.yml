@@ -2,7 +2,6 @@ summary: library provides message digest functions found on BSD systems
 web-url: https://www.hadrons.org/software/libmd
 git-url: https://git.hadrons.org/git/libmd.git
 src-url: https://libbsd.freedesktop.org/releases/libmd-1.1.0.tar.xz
-src-uri: https://distfiles.macports.org/libmd/libmd-1.1.0.tar.xz
 src-sha: 1bd6aa42275313af3141c7cf2e5b964e8b1fd488025caf2f971f43b00776b332
 license: BSD-3-Clause
 bsystem: configure

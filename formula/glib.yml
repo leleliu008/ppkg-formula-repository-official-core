@@ -2,7 +2,6 @@ summary: A general-purpose, portable utility library which provides many useful 
 web-url: https://developer.gnome.org/glib
 git-url: https://github.com/GNOME/glib
 src-url: https://download.gnome.org/sources/glib/2.84/glib-2.84.3.tar.xz
-src-uri: https://distfiles.macports.org/glib2/glib-2.84.3.tar.xz
 src-sha: aa4f87c3225bf57ca85f320888f7484901a17934ca37023c3bd8435a72db863e
 license: LGPL-2.1-or-later
 dep-pkg: libpcre2 libintl libffi libz
