@@ -1,27 +1,38 @@
 summary: A toolkit for manipulation of graphic images, including conversion of images between a variety of different formats
 web-url: http://netpbm.sourceforge.net/
-src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.40/netpbm-10.86.40.tgz
-src-sha: 7098c0926474303c6fe2d17c0dfb88f24622d1b3a590b6d75495d62ea933b324
+src-url: https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.47/netpbm-10.86.47.tgz
+src-sha: 4c7575dc0f38521e75917438835f19c07651523fa87f6d63492fa2a97d1ab21f
 license: GPL-3.0-or-later
 dep-pkg: libjasper libtiff libpng libxml2
 dep-upp: gm4 flex perl
-
 parallel: 0
 
 dopatch: |
-    # https://stackoverflow.com/questions/9168150/implicit-declaration-using-std-c99
-    gsed -i 's|$(CFLAGS)|-D_DARWIN_C_SOURCE|' buildtools/Makefile
-    gsed -i '/^CFLAGS_SHLIB =/c CFLAGS_SHLIB = -fPIC' config.mk.in
-    gsed -i '/^STRIPFLAG =/c STRIPFLAG = ' config.mk.in
-    gsed -i '/^INSTALL =/c INSTALL = install' config.mk.in
-    gsed -i '/^LDSHLIB =/c LDSHLIB = -shared ' config.mk.in
+    gsed -i \
+         -e '/^CFLAGS_SHLIB =/c CFLAGS_SHLIB = -fPIC' \
+         -e '/^STRIPFLAG =/c STRIPFLAG = ' \
+         -e '/^INSTALL =/c INSTALL = install' \
+         -e '/^LDSHLIB =/c LDSHLIB = -shared ' config.mk.in
+
     gsed -i 's/mkdir $(PKGDIR)/install -d $(PKGDIR)/' GNUmakefile
+
+    gsed -i 's|$(CFLAGS)|-D_DARWIN_C_SOURCE|' buildtools/Makefile
+
     run cp config.mk.in config.mk
+
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        export CPPFLAGS="$CPPFLAGS -D_DARWIN_C_SOURCE"
+
+        GMAKE_EXTRA_FLAGS='NETPBMLIBTYPE=dylib NETPBMLIBSUFFIX=dylib'
+    else
+        GMAKE_EXTRA_FLAGS='NETPBMLIBTYPE=unixshared NETPBMLIBSUFFIX=so'
+    fi
 
 install: |
     gmakew clean
-    gmakew CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" TIFFLIB="'-ltiff -lzstd -llzma -lpthread'" JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz JASPERLIB="'$(pkg-config --libs-only-l jasper)'" JASPERHDR_DIR="$libjasper_INCLUDE_DIR/jasper"
-    gmakew package pkgdir=$PACKAGE_INSTALL_DIR SONAME=libnetpbm.so
+    gmakew CC="$CC" AR="$AR" RANLIB="$RANLIB" CC_FOR_BUILD="$CC_FOR_BUILD" LD_FOR_BUILD="$CC_FOR_BUILD" CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD $CPPFLAGS_FOR_BUILD'" LDFLAGS_FOR_BUILD="'$LDFLAGS_FOR_BUILD'" TIFFLIB="'-ltiff -lzstd -llzma'" JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz JASPERLIB="'$(pkg-config --libs-only-l jasper)'" JASPERHDR_DIR="$libjasper_INCLUDE_DIR/jasper" "$GMAKE_EXTRA_FLAGS"
+    gmakew package "pkgdir=$PACKAGE_INSTALL_DIR" "$GMAKE_EXTRA_FLAGS"
 
 dotweak: |
     run mv staticlink/libnetpbm.a lib/
