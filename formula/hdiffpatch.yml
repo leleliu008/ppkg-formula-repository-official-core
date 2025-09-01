@@ -1,10 +1,6 @@
 summary: A command-line tools for diff & patch
-    #src-url: https://github.com/sisong/HDiffPatch/archive/refs/tags/v4.8.0.tar.gz
-    #src-sha: 01c526132a183e31b62b435cf80e769e44be6ac1e827e0ee405786e6cf48f013
-
-git-url: https://github.com/sisong/HDiffPatch
-git-ref: refs/heads/dev
-
+src-url: https://github.com/sisong/HDiffPatch/archive/refs/tags/v4.11.1.tar.gz
+src-sha: be036f19921e99b8b333f139ec78c841acc7a717e2c7783484faf358b00069a4
 license: MIT
 
 prepare: |
