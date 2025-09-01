@@ -1,4 +1,4 @@
-summary: Utility that provides fast incremental file transfer
+summary: A command-line tool for synchronizing files
 git-url: https://github.com/RsyncProject/rsync
 web-url: https://rsync.samba.org/
 src-url: https://rsync.samba.org/ftp/rsync/rsync-3.4.1.tar.gz
