@@ -4,6 +4,8 @@ src-url: https://github.com/akheron/jansson/releases/download/v2.14.1/jansson-2.
 src-sha: 2521cd51a9641d7a4e457f7215a4cd5bb176f690bc11715ddeec483e85d9e2b3
 license: MIT
 
+dopatch: gsed -i '1c cmake_minimum_required(VERSION 3.15)' CMakeLists.txt
+
 install: |
     cmakew \
         -DJANSSON_BUILD_SHARED_LIBS=OFF \
