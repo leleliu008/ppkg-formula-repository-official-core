@@ -1,8 +1,8 @@
 summary: A command-line tool to analyze how space is allocated inside an SQLite file
 web-url: https://www.sqlite.org/
-src-url: https://www.sqlite.org/2024/sqlite-src-3460000.zip
-src-sha: 070362109beb6899f65797571b98b8824c8f437f5b2926f88ee068d98ef368ec
-version: 3.46.0
+src-url: https://www.sqlite.org/2025/sqlite-src-3500400.zip
+src-sha: b7b4dc060f36053902fb65b344bbbed592e64b2291a26ac06fe77eec097850e9
+version: 3.50.4
 license: blessing
 dep-pkg: libtcl
 

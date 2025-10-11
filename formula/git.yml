@@ -10,6 +10,10 @@ dep-upp: gettext-tools
 binbstd: 1
 
 prepare: |
+    export NO_FINK=1
+    export NO_DARWIN_PORTS=1
+    export NO_INSTALL_HARDLINKS=1
+
     if [ "$TARGET_PLATFORM_VERS" = musl ] ; then
         export ac_cv_c_regex_with_reg_startend=no
     fi
