@@ -1,13 +1,13 @@
 summary: HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 git-url: https://github.com/nginx/nginx
 web-url: https://nginx.org/
-src-url: https://nginx.org/download/nginx-1.25.4.tar.gz
-src-sha: 760729901acbaa517996e681ee6ea259032985e37c2768beef80df3a877deed9
+src-url: https://nginx.org/download/nginx-1.29.3.tar.gz
+src-sha: 9befcced12ee09c2f4e1385d7e8e21c91f1a5a63b196f78f897c2d044b8c9312
 license: BSD-2-Clause
-dep-pkg: libopenssl libpcre2 libz
+dep-pkg: libopenssl libxcrypt libpcre2 libz
 
 bsystem: gmake
-binbstd: 1
+
 install: |
     run ./configure \
         --prefix=$PACKAGE_INSTALL_DIR \
