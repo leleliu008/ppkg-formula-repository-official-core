@@ -1,0 +1,6 @@
+summary: A command-line tool to analyze ELF binaries
+web-url: https://binsider.dev/
+src-url: https://github.com/orhun/binsider/archive/refs/tags/v0.2.1.tar.gz
+src-sha: a3bc10379677b19656436924f478798f205b371bc703feab938c1b2512f39500
+license: Apache-2.0 MIT
+install: cargow install --no-default-features
