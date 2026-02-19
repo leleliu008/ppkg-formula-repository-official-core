@@ -4,5 +4,4 @@ git-url: https://github.com/leleliu008/xcpkg
 license: Apache-2.0
 dep-pkg: libcurl libgit2 libarchive libyaml libjansson
 bsystem: cmake
-bscript: c
 dopatch: PACKAGE_VERSION=$(sed -n '/project(xcpkg VERSION /p' CMakeLists.txt | sed 's|project(xcpkg VERSION \([0-9.]*\) .*)|\1|')
