@@ -1,7 +1,7 @@
 summary: An Open Source Implementation of the Actor Model in C++
 web-url: https://www.actor-framework.org/
-src-url: https://github.com/actor-framework/actor-framework/archive/refs/tags/1.0.1.tar.gz
-src-sha: 635bdd6e3b70886f1d9aa75c48e5bdb4084afae1f159bbfe5ea91f99b0460f6b
+src-url: https://github.com/actor-framework/actor-framework/archive/refs/tags/1.1.0.tar.gz
+src-sha: 9febd85d3a4f50dac760592043028a36bea62bba50c3ee2fc1eace954dd8ae27
 license: BSD-3-Clause
 dep-pkg: libopenssl
 xxflags: -std=c++17

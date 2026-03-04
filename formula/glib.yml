@@ -35,6 +35,8 @@ install: |
         -Dbsymbolic_functions=false $MESON_EXTRA_ARGS
 
 dotweak: |
+    run rm -rf share/gdb/
+
     gsed -i 's|libiconv|libintl libffi libz|' lib/pkgconfig/glib-2.0.pc
 
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
