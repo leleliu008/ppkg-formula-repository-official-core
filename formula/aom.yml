@@ -1,7 +1,9 @@
 summary: Codec library for encoding and decoding AV1 video streams
 web-url: https://aomedia.googlesource.com/aom
-src-url: https://storage.googleapis.com/aom-releases/libaom-3.12.1.tar.gz
-src-sha: 9e9775180dec7dfd61a79e00bda3809d43891aee6b2e331ff7f26986207ea22e
+git-url: https://aomedia.googlesource.com/aom.git
+git-ref: refs/tags/v3.12.1
+src-url: https://storage.googleapis.com/aom-releases/libaom-3.13.1.tar.gz
+src-sha: 19e45a5a7192d690565229983dad900e76b513a02306c12053fb9a262cbeca7d
 license: BSD-2-Clause
 dep-pkg: libjxl libvmaf
 dep-upp: nasm perl
@@ -13,5 +15,6 @@ install: |
         -DENABLE_TESTDATA=OFF \
         -DENABLE_TOOLS=ON \
         -DENABLE_EXAMPLES=ON \
+        -DCONFIG_TUNE_VMAF=1 \
         -DCONFIG_RUNTIME_CPU_DETECT=0 \
         -DBUILD_SHARED_LIBS=OFF
