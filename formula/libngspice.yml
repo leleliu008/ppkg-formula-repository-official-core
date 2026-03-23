@@ -1,8 +1,8 @@
 summary: Spice circuit simulator as shared library
 web-url: https://ngspice.sourceforge.io/
 git-url: https://git.code.sf.net/p/ngspice/ngspice.git
-src-url: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/44.2/ngspice-44.2.tar.gz
-src-sha: e7dadfb7bd5474fd22409c1e5a67acdec19f77e597df68e17c5549bc1390d7fd
+src-url: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/45.2/ngspice-45.2.tar.gz
+src-sha: ba8345f4c3774714c10f33d7da850d361cec7d14b3a295d0dc9fd96f7423812d
 dep-upp: gm4 flex bison
 
 install: |
