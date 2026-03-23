@@ -1,7 +1,7 @@
 summary: Debian package management system
 web-url: https://wiki.debian.org/Teams/Dpkg
-src-url: https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.22.21.tar.xz
-src-sha: 57e6cc8408d8ebe08ef22f72149c2bf6b0f2ad62eea13db88e0b23bfd73303db
+src-url: https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.23.7.tar.xz
+src-sha: 60fe2be72e5f0a4bb0ac7baff3b1697ebc5cfaac1885f66649521571a97440ad
 license: GPL-2.0-only
 dep-upp: gettext-tools perl patch gtar
 dep-pkg: libmd liblzma libbz2 libz libncurses
