@@ -1,12 +1,11 @@
 summary: Library and utilities for processing GIFs
 web-url: https://giflib.sourceforge.io
 git-url: https://git.code.sf.net/p/giflib/code
-src-url: https://downloads.sourceforge.net/project/giflib/giflib-5.2.1.tar.gz
-src-sha: 31da5562f44c5f15d63340a09a4fd62b48c45620cd302f77a6d9acf0077879bd
-
-parallel: 0
+src-url: https://downloads.sourceforge.net/project/giflib/giflib-5.2.2.tar.gz
+src-uri: https://mirrors.omnios.org/libgif/giflib-5.2.2.tar.gz
+src-sha: be7ffbd057cadebe2aa144542fd90c6838c6a083b5e8a9048b8ee3b66b29d5fb
 
 install: |
-    gsed -i 's#$(MAKE) -C doc#@mkdir -p doc \&\& ([ -f doc/giflib.1 ] || touch doc/giflib.1)#' Makefile
     gmakew clean
-    gmakew install PREFIX=$PACKAGE_INSTALL_DIR CC=$CC AR=$AR CFLAGS="'$CFLAGS'"
+    gmakew all CC="$CC" AR="$AR" CFLAGS="'$CFLAGS'"
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
