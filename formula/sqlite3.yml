@@ -2,7 +2,7 @@ summary: A command-line tool for interacting with SQLite databases
 git-url: https://github.com/sqlite/sqlite
 web-url: https://sqlite.org/
 src-url: https://sqlite.org/2026/sqlite-amalgamation-3510200.zip
-src-sha: 6cebd1d8403fc58c30e93939b246f3e6e58d0765a5cd50546f16c00fd805d2c3
+src-sha: 6e2a845a493026bdbad0618b2b5a0cf48584faab47384480ed9f592d912f23ec
 version: 3.51.2
 license: blessing
 dep-pkg: libreadline libz
