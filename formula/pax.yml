@@ -1,7 +1,7 @@
 summary: Portable Archive Interchange archive tool
-web-url: http://www.mirbsd.org/pax.htm
-src-url: http://www.mirbsd.org/MirOS/dist/mir/cpio/paxmirabilis-20201030.tgz
-src-sha: 1cc892c9c8ce265d28457bab4225eda71490d93def0a1d2271430c2863b728dc
+web-url: https://mbsd.evolvis.org/pax.htm
+src-url: https://mbsd.evolvis.org/MirOS/dist/mir/cpio/paxmirabilis-20240817.tgz
+src-sha: e955d5d3af97aede0a3f463a9a59b83e8d1083aaf142eb6f388c549a7d182e6b
 license: MirOS
 
 dep-pkg-musl: libfts
