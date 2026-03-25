@@ -5,38 +5,35 @@ src-url: https://downloads.sourceforge.net/project/infozip/Zip%203.x%20%28latest
 src-sha: f0e8bb1f9b7eb0b01285495a2699df3a4b766784c1765a8f1aeedf63c0806369
 
 # https://packages.debian.org/sid/zip
-fix-url: https://deb.debian.org/debian/pool/main/z/zip/zip_3.0-11.debian.tar.xz
-fix-sha: c5c0714a88592f9e02146bfe4a8d26cd9bd97e8d33b1efc8b37784997caa40ed
+fix-url: https://deb.debian.org/debian/pool/main/z/zip/zip_3.0-13.debian.tar.xz
+fix-sha: 4f5aca2d9f6021d2fd73f2fc16e9a392ab98673a940b44cf78fe38b8cdec1ab9
 
 res-url: https://raw.githubusercontent.com/Homebrew/formula-patches/d2b59930/zip/xcode15.diff
 res-sha: 99cb7eeeb6fdb8df700f40bfffbc30516c94774cbf585f725d81c3224a2c530c
 
-version: 3.0.11
+version: 3.0.13
 
 license: Info-ZIP
 dep-pkg: libbz2
+binbstd: 1
 
 dopatch: |
     for patchfile in $(cat ../fix/patches/series)
     do  
-        patch -p1 < ../fix/patches/$patchfile || return 1
+        patch -p1 < ../fix/patches/$patchfile
     done
 
     patch -p1 < ../res/99cb7eeeb6fdb8df700f40bfffbc30516c94774cbf585f725d81c3224a2c530c.diff
-
-    gsed -i -e '/-DNO_DIR/c true' -e '/-DZMEM/c true' -e "/^LFLAGS2=/c LFLAGS2='$LDFLAGS'" unix/configure
-
-    run ln -s "$libbz2_INCLUDE_DIR/bzlib.h"  bzip2/
-    run ln -s "$libbz2_LIBRARY_DIR/libbz2.a" bzip2/
 
 install: |
     gmakew -f unix/Makefile clean
     gmakew -f unix/Makefile generic \
         CC="$CC" \
+        CPP="'$CPP'" \
         AS="$AS" \
-        LD="'$CC'" \
-        STRIP=true \
-        LOCAL_ZIP="'$CFLAGS $CPPFLAGS'"
+        AR="$AR" \
+        LOCAL_ZIP="'$CFLAGS $CPPFLAGS'" \
+        LFLAGS2="'$LDFLAGS'"
     gmakew -f unix/Makefile install \
         prefix="$PACKAGE_INSTALL_DIR" \
         MANDIR="$PACKAGE_INSTALL_DIR/share/man/man1"
