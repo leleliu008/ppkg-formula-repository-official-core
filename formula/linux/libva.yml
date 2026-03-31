@@ -2,7 +2,7 @@ summary: Hardware accelerated video processing library
 src-url: https://github.com/intel/libva/releases/download/2.22.0/libva-2.22.0.tar.bz2
 src-sha: e3da2250654c8d52b3f59f8cb3f3d8e7fb1a2ee64378dbc400fbc5663de7edb8
 license: MIT
-dep-pkg: wayland libdrm xorg-libxfixes xorg-libxext
+dep-pkg: wayland libdrm libxfixes libxext
 install: |
     configure \
         --enable-drm \

@@ -4,7 +4,7 @@ web-url: https://ffmpeg.org/
 src-url: https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz
 src-sha: 40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6
 license: GPL-2.0-or-later
-dep-pkg: libtesseract librubberband libbluray libaribb24 libass libarchive libvidstab libopencore-amr libSvtAv1 libmp3lame libtheora libspeex librav1e libdav1d libx264 libx265 libxvid libvpx libaom libsdl2 libzimg libzmq libssh libsrt librist xorg-libxv
+dep-pkg: libtesseract librubberband libbluray libaribb24 libass libarchive libvidstab libopencore-amr libSvtAv1 libmp3lame libtheora libspeex librav1e libdav1d libx264 libx265 libxvid libvpx libaom libsdl2 libzimg libzmq libssh libsrt librist libxv
 dep-pkg-linux: libva
 dep-upp: nasm
 bsystem: gmake

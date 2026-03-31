@@ -4,7 +4,7 @@ web-url: https://dri.freedesktop.org/
 src-url: https://dri.freedesktop.org/libdrm/libdrm-2.4.124.tar.xz
 src-sha: ac36293f61ca4aafaf4b16a2a7afff312aa4f5c37c9fbd797de9e3c0863ca379
 license: MIT
-dep-pkg: xorg-libpciaccess
+dep-pkg: libpciaccess
 install: mesonw -Dtests=false -Dcairo-tests=disabled -Dvalgrind=disabled
 
 # https://gitlab.freedesktop.org/mesa/drm/-/merge_requests/273

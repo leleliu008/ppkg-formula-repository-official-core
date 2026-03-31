@@ -1,4 +1,4 @@
-summary: Hyperfast web frontend for Git repositories written in C
+summary: A hyperfast web frontend for Git repositories written in C
 web-url: https://git.zx2c4.com/cgit
 src-url: https://git.zx2c4.com/cgit/snapshot/cgit-1.2.3.tar.xz
 src-sha: e46d150883b66f653fd98ebf9dd4a4ec01094d4cc92b4c5d987686d72bb08e4c

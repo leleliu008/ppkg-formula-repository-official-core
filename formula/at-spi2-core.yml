@@ -5,5 +5,5 @@ src-url: https://download.gnome.org/sources/at-spi2-core/2.56/at-spi2-core-2.56.
 src-sha: e1b1c9836a8947852f7440c32e23179234c76bd98cd9cc4001f376405f8b783b
 license: LGPL-2.1-or-later
 dep-upp: gettext-tools
-dep-pkg: glib-gir libxml2 dbus xorg-libxtst
+dep-pkg: glib-gir libxml2 dbus libxtst
 install: mesonw -Dintrospection=enabled -Dx11=enabled

@@ -4,7 +4,7 @@ web-url: https://cairographics.org/
 src-url: https://cairographics.org/releases/cairo-1.18.4.tar.xz
 src-sha: 445ed8208a6e4823de1226a74ca319d3600e83f6369f99b14265006599c32ccb
 license: LGPL-2.1-or-later MPL-1.1
-dep-pkg: libfontconfig libpixman liblzo glib xorg-libxext xorg-libxrender
+dep-pkg: libfontconfig libpixman liblzo glib libxext libxrender
 
 prepare: |
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then

@@ -1,8 +1,0 @@
-summary: X.Org Protocol Headers
-web-url: https://www.x.org/
-src-url: https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2022.2.tar.gz
-src-sha: da351a403d07a7006d7bdc8dcfc14ddc1b588b38fb81adab9989a8eef605757b
-license: MIT
-dep-pkg: xorg-util-macros
-install: configure
-dotweak: install -d lib/ && mv share/pkgconfig lib/

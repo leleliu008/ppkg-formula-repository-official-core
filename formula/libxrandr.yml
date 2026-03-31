@@ -1,0 +1,7 @@
+summary: X.Org X Resize, Rotate and Reflection extension library
+web-url: https://www.x.org/
+src-url: https://www.x.org/archive/individual/lib/libXrandr-1.5.3.tar.xz
+src-sha: 897639014a78e1497704d669c5dd5682d721931a4452c89a7ba62676064eb428
+license: MIT
+dep-pkg: libxrender libxext
+bsystem: configure

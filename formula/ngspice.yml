@@ -3,7 +3,7 @@ web-url: https://ngspice.sourceforge.io/
 git-url: https://git.code.sf.net/p/ngspice/ngspice.git
 src-url: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/46/ngspice-46.tar.gz
 src-sha: a0d1699af1940b06649276dcd6ff5a566c8c0cad01b2f7b5e99dedbb4d64c19b
-dep-pkg: libreadline libfftw3 xorg-libxaw xorg-libxft
+dep-pkg: libreadline libfftw3 libxaw libxft
 dep-upp: gm4 flex bison
 install: |
     configure \

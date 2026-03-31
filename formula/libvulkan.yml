@@ -2,6 +2,6 @@ summary: Vulkan ICD Loader
 src-url: https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.4.319.tar.gz
 src-sha: 6f0bd0079c56518db0243854db822e39ba25602fd24cac34b6f43b75c764e743
 license: Apache-2.0
-dep-pkg: vulkan-headers wayland xorg-libxrandr
+dep-pkg: vulkan-headers wayland libxrandr
 dep-upp: python3
 bsystem: cmake

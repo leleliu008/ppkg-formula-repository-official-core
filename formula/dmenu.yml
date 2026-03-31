@@ -4,7 +4,7 @@ web-url: https://tools.suckless.org/dmenu/
 src-url: https://dl.suckless.org/tools/dmenu-5.3.tar.gz
 src-sha: 1a8f53e6fd2d749839ec870c5e27b3e14da5c3eeacbfcb945d159e1d5433795f
 license: MIT
-dep-pkg: libfontconfig xorg-libxft xorg-libxinerama
+dep-pkg: libfontconfig libxft libxinerama
 dep-lib: fontconfig xft xinerama
 
 dopatch: |

@@ -4,7 +4,7 @@ web-url: https://sourceforge.net/projects/enlightenment/
 src-url: https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.12.5/imlib2-1.12.5.tar.gz
 src-sha: 097d40aee4cf4a349187615b796b37db1652fcc84bb0e8d5c0b380ab651d9095
 license: Imlib2
-dep-pkg: libwebp librsvg libid3tag xorg-libxext
+dep-pkg: libwebp librsvg libid3tag libxext
 
 install: |
     configure \

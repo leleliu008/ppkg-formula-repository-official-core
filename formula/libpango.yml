@@ -4,7 +4,7 @@ git-url: https://gitlab.gnome.org/GNOME/pango
 src-url: https://download.gnome.org/sources/pango/1.56/pango-1.56.3.tar.xz
 src-sha: 2606252bc25cd8d24e1b7f7e92c3a272b37acd6734347b73b47a482834ba2491
 license: LGPL-2.0-or-later
-dep-pkg: libfribidi libharfbuzz xorg-libxft
+dep-pkg: libfribidi libharfbuzz libxft
 dep-upp: glib-tools
 
 install: |

@@ -3,7 +3,7 @@ web-url: https://www.libsdl.org/
 src-url: https://github.com/libsdl-org/SDL/releases/download/release-2.32.2/SDL2-2.32.2.tar.gz
 src-sha: c5f30c427fd8107ee4a400c84d4447dd211352512eaf0b6e89cc6a50a2821922
 license: Zlib
-dep-pkg: pulseaudio xorg-xinput xorg-libice xorg-libxcursor xorg-libxscrnsaver xorg-libxxf86vm
+dep-pkg: pulseaudio xinput libice libxcursor libxscrnsaver libxxf86vm
 
 prepare: |
     case $TARGET_PLATFORM_ARCH in
