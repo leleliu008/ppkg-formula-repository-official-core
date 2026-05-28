@@ -1,8 +1,8 @@
 summary: A POSIX-compliant implementation of /bin/sh that aims to be as small as possible
-git-url: https://git.kernel.org/pub/scm/utils/dash/dash
+git-url: https://git.kernel.org/pub/scm/utils/dash/dash.git
 web-url: http://gondor.apana.org.au/~herbert/dash
-src-url: http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz
-src-sha: 6a474ac46e8b0b32916c4c60df694c82058d3297d8b385b74508030ca4a8f28a
+src-url: http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.13.4.tar.gz
+src-sha: d10dfd41cda59165560db39ca915c2c4a7636fff04281d8d2df77ad92c753e2b
 license: BSD-3-Clause
 dep-pkg: libedit
 
