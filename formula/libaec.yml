@@ -1,6 +1,6 @@
 summary: Adaptive Entropy Coding implementing Golomb-Rice algorithm
-git-url: https://gitlab.dkrz.de/k202009/libaec
-src-url: https://gitlab.dkrz.de/k202009/libaec/-/archive/v1.1.7/libaec-v1.1.7.tar.bz2
+git-url: https://gitlab.dkrz.de/dkrz-sw/libaec
+src-url: https://gitlab.dkrz.de/dkrz-sw/libaec/-/archive/v1.1.7/libaec-v1.1.7.tar.bz2
 src-sha: 7cf0034eca8f53449252f2fab863d855aedc0520ceb8d3f3fcd3bd601ce4c85e
 license: BSD-2-Clause
 bsystem: cmake
