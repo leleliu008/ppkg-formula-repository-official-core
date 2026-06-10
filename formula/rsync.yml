@@ -1,8 +1,8 @@
 summary: A command-line tool for synchronizing files
 git-url: https://github.com/RsyncProject/rsync
 web-url: https://rsync.samba.org/
-src-url: https://rsync.samba.org/ftp/rsync/rsync-3.4.3.tar.gz
-src-sha: c72e63ca3021cbc80ba86ec30102773f4c5631fbc492b52e773b3958f82a53d3
+src-url: https://rsync.samba.org/ftp/rsync/rsync-3.4.4.tar.gz
+src-sha: bd88cf82fa653da32314fb229136407c5c90f80d1758d8f4b091767877d8fa96
 license: GPL-3.0-or-later
 dep-pkg: libopenssl libpopt libz liblz4 libzstd libxxhash libiconv
 install: configure --disable-simd --enable-ipv6 --with-included-popt=no --with-included-zlib=no
