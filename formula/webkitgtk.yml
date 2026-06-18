@@ -1,0 +1,20 @@
+summary: GTK interface to WebKit
+web-url: https://webkitgtk.org
+src-url: https://webkitgtk.org/releases/webkitgtk-2.52.0.tar.xz
+src-sha: b31c55f18194ac83ba08c9b93bbeffef57a7ecff7f41c874d17a9e7853dca19f
+license: GPL-3.0-or-later
+dep-upp: gperf
+dep-pkg: gtk+3
+install: |
+    cmakew \
+        -DPORT=GTK \
+        -DENABLE_BUBBLEWRAP_SANDBOX=OFF \
+        -DENABLE_DOCUMENTATION=OFF \
+        -DENABLE_GAMEPAD=OFF \
+        -DENABLE_MINIBROWSER=ON \
+        -DENABLE_SPEECH_SYNTHESIS=OFF \
+        -DUSE_AVIF=ON \
+        -DUSE_GTK4=OFF \
+        -DUSE_JPEGXL=ON \
+        -DUSE_LIBBACKTRACE=OFF \
+        -DUSE_LIBHYPHEN=OFF

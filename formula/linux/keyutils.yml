@@ -1,0 +1,18 @@
+summary: Linux key management utilities
+git-url: https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/keyutils.git
+src-url: https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/keyutils.git/snapshot/keyutils-1.6.3.tar.gz
+src-sha: a61d5706136ae4c05bd48f86186bcfdbd88dd8bd5107e3e195c924cfc1b39bb4
+license: GPL-2.0-or-later LGPL-2.0-or-later
+install: |
+    gmakew clean
+    gmakew install \
+        CFLAGS="'$CFLAGS'" \
+        CXXFLAGS="'$CXXFLAGS'" \
+        INCLUDEDIR=$PACKAGE_INSTALL_DIR/include \
+        LIBDIR=$PACKAGE_INSTALL_DIR/lib \
+        BINDIR=$PACKAGE_INSTALL_DIR/bin \
+        ETCDIR=$PACKAGE_INSTALL_DIR/etc \
+        MANDIR=$PACKAGE_INSTALL_DIR/man \
+        SBINDIR=$PACKAGE_INSTALL_DIR/sbin \
+        SHAREDIR=$PACKAGE_INSTALL_DIR/share \
+        USRLIBDIR=$PACKAGE_INSTALL_DIR/lib

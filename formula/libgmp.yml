@@ -6,6 +6,9 @@ license: LGPL-3.0-or-later
 dep-upp: libtool gm4
 bsystem: autotools
 
+fix-url: https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/gmp/gcc15.patch
+fix-sha: fd0f1b48dbe72413efbd9c45f1ca7013d555f46c578446ce3ba202e3a9b96c6c
+
 prepare: |
     cd ../bin
 

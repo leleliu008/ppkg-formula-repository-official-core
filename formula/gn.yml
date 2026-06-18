@@ -4,7 +4,7 @@ git-nth: 0
 dep-upp: python3 git
 binbstd: 1
 bsystem: ninja
-xxflags: -Wno-error
+xxflags: -Wno-comment
 
 dopatch: |
     # c++: error: unrecognized command line option '-Wextra-semi'

@@ -1,8 +1,8 @@
 summary: X.Org XML-XCB protocol descriptions for libxcb code generation
 web-url: https://www.x.org/
-src-url: https://xorg.freedesktop.org/archive/individual/proto/xcb-proto-1.15.2.tar.xz
-src-sha: 7072beb1f680a2fe3f9e535b797c146d22528990c72f63ddb49d2f350a3653ed
+src-url: https://xorg.freedesktop.org/archive/individual/proto/xcb-proto-1.17.0.tar.xz
+src-sha: 2c1bacd2110f4799f74de6ebb714b94cf6f80fb112316b1219480fd22562148c
 license: MIT
 dep-upp: python3
 bsystem: configure
-dotweak: mv -v share/pkgconfig lib/
+    #dotweak: mv -v share/pkgconfig lib/

@@ -1,0 +1,7 @@
+summary: General-purpose library for WPE WebKit
+web-url: https://wpewebkit.org/
+src-url: https://github.com/WebPlatformForEmbedded/libwpe/releases/download/1.16.3/libwpe-1.16.3.tar.xz
+src-sha: c880fa8d607b2aa6eadde7d6d6302b1396ebc38368fe2332fa20e193c7ee1420
+license: BSD-2-Clause
+dep-pkg: libxkbcommon mesa
+bsystem: meson

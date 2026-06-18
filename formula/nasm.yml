@@ -5,6 +5,9 @@ src-url: https://www.nasm.us/pub/nasm/releasebuilds/3.01/nasm-3.01.tar.xz
 src-sha: b7324cbe86e767b65f26f467ed8b12ad80e124e3ccb89076855c98e43a9eddd4
 license: BSD-2-Clause
 
+fix-url: https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/nasm/cast-to-bool.patch
+fix-sha: 43242be0f2b70fef2add272f9e10fcd14625931c8121dbff06f3595a61b617d1
+
 install: |
     configure \
         --disable-profiling \

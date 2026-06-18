@@ -4,5 +4,10 @@ web-url: https://www.gnu.org/software/make
 src-url: https://ftp.gnu.org/gnu/make/make-4.4.1.tar.lz
 src-sha: 8814ba072182b605d156d7589c19a43b89fc58ea479b9355146160946f8cf6e9
 license: GPL-3.0-or-later
+
+fix-url: https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/make/getopt-gcc15.patch
+fix-sha: 54a9713fa5ecf7626342d271d389f2483a293322f2fafad8ad206a7db4d83f5d
+
 install: configure --program-prefix=g --without-guile --without-dmalloc
+
 dotweak: ln -s gmake bin/make

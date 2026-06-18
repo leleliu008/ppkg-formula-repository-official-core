@@ -1,8 +1,9 @@
 summary: HTTP/2 C Library
 web-url: https://nghttp2.org/
-src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.64.0/nghttp2-1.64.0.tar.gz
-src-sha: 20e73f3cf9db3f05988996ac8b3a99ed529f4565ca91a49eb0550498e10621e8
-dep-pkg: libevent libev libcares libnghttp2 libnghttp3 libjansson libxml2 libbrotli cunit
+src-url: https://github.com/nghttp2/nghttp2/releases/download/v1.69.0/nghttp2-1.69.0.tar.gz
+src-sha: c866b7477cbb7512ab6863a685027adbb1bb8da8fc3bab7429ed43d3281d5aa9
+dep-pkg: libevent libev libcares libngtcp2 libnghttp2 libnghttp3 libjansson libxml2 libbrotli cunit
+ldflags: -liconv
 license: MIT
 
 dopatch: |

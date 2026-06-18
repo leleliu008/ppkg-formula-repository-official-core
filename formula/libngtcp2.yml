@@ -1,5 +1,8 @@
 summary: QUIC library written in C
-git-url: https://github.com/ngtcp2/ngtcp2
+src-url: https://github.com/ngtcp2/ngtcp2/releases/download/v1.23.0/ngtcp2-1.23.0.tar.xz
+src-sha: 59d5b4211e96970f2d3d5e6876f73dce03414800ba04aa56835b132fce8de730
+license: MIT
+dep-pkg: libopenssl
 
 install: |
     cmakew \
@@ -7,7 +10,7 @@ install: |
         -DENABLE_DEBUG=OFF \
         -DENABLE_WERROR=OFF \
         -DENABLE_GNUTLS=OFF \
-        -DENABLE_OPENSSL=OFF \
+        -DENABLE_OPENSSL=ON \
         -DENABLE_WOLFSSL=OFF \
         -DENABLE_PICOTLS=OFF \
         -DENABLE_BORINGSSL=OFF \
