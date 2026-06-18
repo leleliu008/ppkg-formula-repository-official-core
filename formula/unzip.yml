@@ -10,6 +10,7 @@ res-sha: 14043e5ea351c02b3bc8676e1e6d20d79b9a690b6d7520e8138ac629cc048417
 version: 6.0.29
 license: Info-ZIP
 dep-pkg: libbz2
+dep-upp: patch
 
 dopatch: |
     for patchfile in $(cat ../res/patches/series)

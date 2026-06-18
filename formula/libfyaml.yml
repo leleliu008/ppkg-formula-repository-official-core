@@ -2,4 +2,5 @@ summary: Fully feature complete YAML parser and emitter
 src-url: https://github.com/pantoniou/libfyaml/releases/download/v0.9.6/libfyaml-0.9.6.tar.gz
 src-sha: a59cc3331e2eb903ec36933ad52a45888041cac31e44f553a00511131242c483
 license: MIT
+dep-upp: gm4
 bsystem: configure
