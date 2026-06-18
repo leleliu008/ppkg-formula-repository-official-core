@@ -21,6 +21,7 @@ install: |
         -Dgir=false \
         -Ddocs=false \
         -Dapidocs=false \
-        -Dinstall-docs=false
+        -Dinstall-docs=false \
+        -Dbash-completion=false
 
 dotweak: run rm -rf include/ lib/
