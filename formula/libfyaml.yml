@@ -4,3 +4,5 @@ src-sha: a59cc3331e2eb903ec36933ad52a45888041cac31e44f553a00511131242c483
 license: MIT
 dep-upp: gm4
 bsystem: configure
+
+dotweak: gsed -i '/^Libs:/s|none required||' lib/pkgconfig/libfyaml.pc
