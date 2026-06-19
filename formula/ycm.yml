@@ -4,7 +4,7 @@ license: GPL-v3
 dep-pkg: vim
 movable: 0
 binbstd: 1
-
+bsystem: cmake+gmake
 install: |
     run install -d "$PACKAGE_INSTALL_DIR/"
     run mv * "$PACKAGE_INSTALL_DIR/"

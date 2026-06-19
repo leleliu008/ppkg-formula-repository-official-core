@@ -1,8 +1,8 @@
 summary: A free and open source distributed version control system with speed and efficiency
 web-url: https://git-scm.com/
 git-url: https://github.com/git/git
-src-url: https://www.kernel.org/pub/software/scm/git/git-2.50.0.tar.xz
-src-sha: dff3c000e400ace3a63b8a6f8b3b76b88ecfdffd4504a04aba4248372cdec045
+src-url: https://www.kernel.org/pub/software/scm/git/git-2.54.0.tar.xz
+src-sha: f689162364c10de79ef89aa8dbf48731eb057e34edbbd20aca510ce0154681a3
 license: GPL-2.0-only
 dep-pkg: libpcre2 libexpat libcurl libintl libz
 dep-lib: libcurl

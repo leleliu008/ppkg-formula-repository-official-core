@@ -13,7 +13,7 @@ ltoable: 0
 # configure: error: cross build not supported for x86_64-apple-darwin
 # https://bugs.python.org/issue46749
 
-install: |
+prepare: |
     unset PYTHONHOME
     unset PYTHONPATH
 
@@ -34,6 +34,7 @@ install: |
 
     export LIBS='-lm'
 
+install: |
     configure \
         --build=$($PACKAGE_BSCRIPT_DIR/config.guess) \
         --with-system-expat \

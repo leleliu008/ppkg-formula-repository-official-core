@@ -2,8 +2,8 @@ linkage: shared
 summary: Interpreted, interactive, object-oriented programming language
 git-url: https://github.com/python/cpython
 web-url: https://www.python.org/
-src-url: https://www.python.org/ftp/python/3.9.21/Python-3.9.21.tar.xz
-src-sha: 3126f59592c9b0d798584755f2bf7b081fa1ca35ce7a6fea980108d752a05bb1
+src-url: https://www.python.org/ftp/python/3.9.25/Python-3.9.25.tar.xz
+src-sha: 00e07d7c0f2f0cc002432d1ee84d2a40dae404a99303e3f97701c10966c91834
 license: Python-2.0
 dep-pkg: libncurses libopenssl libsqlite3 libexpat libgdbm libffi liblzma libbz2 libz
 
