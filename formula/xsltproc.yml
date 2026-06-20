@@ -1,8 +1,8 @@
 summary: A command line tool for applying XSLT stylesheets to XML documents
 web-url: http://xmlsoft.org/XSLT
 git-url: https://github.com/GNOME/libxslt
-src-url: https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.42.tar.xz
-src-sha: 85ca62cac0d41fc77d3f6033da9df6fd73d20ea2fc18b0a3609ffb4110e1baeb
+src-url: https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.45.tar.xz
+src-sha: 9acfe68419c4d06a45c550321b3212762d92f41465062ca4ea19e632ee5d216e
 license: X11
 dep-pkg: libxml2
 
@@ -22,11 +22,4 @@ install: |
         --with-profiler \
         --with-plugins LIBS=-ldl
 
-dotweak: |
-    rm -rfv bin/xslt-config
-    rm -rfv include
-    rm -rfv lib
-    rm -rfv share/man/man3
-    rm -rfv share/aclocal
-    rm -rfv share/doc
-    rm -rfv share/gtk-doc
+dotweak: run rm -rf bin/xslt-config include/ lib/ share/man/man3/ share/aclocal/ share/doc/ share/gtk-doc/

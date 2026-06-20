@@ -20,3 +20,11 @@ install: |
         --disable-acl \
         --enable-xattr \
         --enable-threads=posix
+
+dotweak: |
+    if [ "$PACKAGE_CREATE_FULLY_STATICALLY_LINKED_EXECUTABLE" = 1 ] ; then
+        run rm bin/stdbuf
+        run rm libexec/coreutils/libstdbuf.so
+        run rmdir libexec/coreutils/
+        run rmdir libexec/
+    fi
