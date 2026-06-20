@@ -40,7 +40,7 @@ install: |
         --with-libpcre2="$libpcre2_INSTALL_DIR" \
         --without-tcltk
 
-bindenv: |
+bindenv2: |
     GIT_EXEC_PATH=%s/libexec/git-core
     GIT_TEMPLATE_DIR=%s/share/git-core/templates
     GIT_CONFIG_NOSYSTEM=1
