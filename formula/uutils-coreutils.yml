@@ -6,4 +6,4 @@ license: MIT
 bsystem: gmake cargo
 install: |
     gmakew clean
-    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" PROFILE="$PROFILE" MULTICALL=y COMPLETIONS=y MANPAGES=y
+    gmakew install PREFIX="$PACKAGE_INSTALL_DIR" PROFILE="$PROFILE" MULTICALL=y COMPLETIONS=y MANPAGES=y SKIP_UTILS=stdbuf
