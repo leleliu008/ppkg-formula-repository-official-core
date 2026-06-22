@@ -1,0 +1,17 @@
+linkage: shared
+summary: The LLVM Linker
+web-url: https://lld.llvm.org/
+src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/llvm-project-21.1.8.src.tar.xz
+src-sha: 4633a23617fa31a3ea51242586ea7fb1da7140e426bd62fc164261fe036aa142
+license: Apache-2.0 with LLVM-exception
+dep-pkg: libllvm@21
+bscript: lld
+
+install: |
+    cmakew \
+        -DLLVM_INCLUDE_TESTS=OFF \
+        -DLLVM_USE_SYMLINKS=ON \
+        -DLLVM_ENABLE_LTO=ON \
+        -DLLD_BUILD_TOOLS=ON \
+        -DLLD_BUILT_STANDALONE=ON \
+        -DBUILD_SHARED_LIBS=OFF

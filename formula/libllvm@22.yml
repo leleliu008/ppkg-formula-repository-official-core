@@ -1,0 +1,58 @@
+summary: Next-gen compiler infrastructure
+web-url: https://llvm.org/
+src-url: https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz
+src-sha: 922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888
+license: Apache-2.0 with LLVM-exception
+dep-pkg: binutils-dev libz3 libffi libedit
+dep-upp: python3 perl
+bscript: llvm
+
+dopatch: |
+    gsed -i -e 's|NOT LLVM_BUILD_TOOLS|NOT name STREQUAL "llvm-config"|' -e 's|LLVM_BUILD_TOOLS|name STREQUAL "llvm-config"|' cmake/modules/AddLLVM.cmake
+    printf 'set(Z3_LIBRARIES z3)\n' >> cmake/modules/FindZ3.cmake
+
+# https://llvm.org/docs/CMake.html
+# https://llvm.org/docs/GettingStarted.html#local-llvm-configuration
+# https://llvm.org/devmtg/2023-10/slides/tutorials/Hosek-UnderstandingtheLLVMbuild.pdf
+install: |
+    cmakew \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DLLVM_TARGETS_TO_BUILD=all \
+        -DLLVM_ENABLE_EH=ON \
+        -DLLVM_ENABLE_RTTI=ON \
+        -DLLVM_ENABLE_PIC=ON \
+        -DLLVM_ENABLE_FFI=ON \
+        -DLLVM_ENABLE_ZLIB=ON \
+        -DLLVM_ENABLE_ZSTD=ON \
+        -DLLVM_ENABLE_LIBXML2=OFF \
+        -DLLVM_ENABLE_LIBEDIT=ON \
+        -DLLVM_ENABLE_TERMINFO=OFF \
+        -DLLVM_ENABLE_Z3_SOLVER=ON \
+        -DLLVM_ENABLE_SPHINX=OFF \
+        -DLLVM_ENABLE_DOXYGEN=OFF \
+        -DLLVM_ENABLE_PLUGINS=ON \
+        -DLLVM_ENABLE_BINDINGS=ON \
+        -DLLVM_BUILD_DOCS=OFF \
+        -DLLVM_BUILD_TESTS=OFF \
+        -DLLVM_BUILD_TOOLS=OFF \
+        -DLLVM_BUILD_EXAMPLES=OFF \
+        -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
+        -DLLVM_BUILD_LLVM_DYLIB=ON \
+        -DLLVM_LINK_LLVM_DYLIB=ON \
+        -DLLVM_INCLUDE_DOCS=OFF \
+        -DLLVM_INCLUDE_TESTS=OFF \
+        -DLLVM_INCLUDE_TOOLS=ON \
+        -DLLVM_INCLUDE_UTILS=OFF \
+        -DLLVM_INCLUDE_RUNTIMES=ON \
+        -DLLVM_INCLUDE_EXAMPLES=OFF \
+        -DLLVM_INCLUDE_BENCHMARKS=OFF \
+        -DLLVM_INSTALL_UTILS=OFF \
+        -DLLVM_INSTALL_TOOLCHAIN_ONLY=OFF \
+        -DLLVM_INSTALL_BINUTILS_SYMLINKS=OFF \
+        -DLLVM_STATIC_LINK_CXX_STDLIB=OFF \
+        -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
+        -DLLVM_OPTIMIZED_TABLEGEN=ON \
+        -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF \
+        -DLLVM_BINUTILS_INCDIR="$binutils_dev_INCLUDE_DIR"
+
+dotweak: gsed -i 's|zstd::libzstd_shared|zstd|' lib/cmake/llvm/LLVMExports.cmake

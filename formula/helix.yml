@@ -1,7 +1,7 @@
 summary: A post-modern modal text editor
 web-url: https://helix-editor.com/
-src-url: https://github.com/helix-editor/helix/releases/download/25.01.1/helix-25.01.1-source.tar.xz
-src-sha: 12508c4f5b9ae6342299bd40d281cd9582d3b51487bffe798f3889cb8f931609
+src-url: https://github.com/helix-editor/helix/releases/download/25.07.1/helix-25.07.1-source.tar.xz
+src-sha: 2d0cf264ac77f8c25386a636e2b3a09a23dec555568cc9a5b2927f84322f544e
 license: MPL-2.0
 dep-upp: git
 
