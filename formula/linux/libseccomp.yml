@@ -1,6 +1,6 @@
 summary: Library provides an easy to use, platform independent, interface to the Linux Kernel syscall filtering mechanism
-src-url: https://github.com/seccomp/libseccomp/releases/download/v2.5.5/libseccomp-2.5.5.tar.gz
-src-sha: 248a2c8a4d9b9858aa6baf52712c34afefcf9c9e94b76dce02c1c9aa25fb3375
+src-url: https://github.com/seccomp/libseccomp/releases/download/v2.6.0/libseccomp-2.6.0.tar.gz
+src-sha: 83b6085232d1588c379dc9b9cae47bb37407cf262e6e74993c61ba72d2a784dc
 license: LGPL-2.1-only
 dep-upp: gperf
 install: configure --disable-code-coverage --disable-python
