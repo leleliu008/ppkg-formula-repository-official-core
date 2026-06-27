@@ -1,7 +1,7 @@
 summary: DCE compatible Universally Unique Identifier library
 git-url: https://github.com/util-linux/util-linux
-src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.4.tar.xz
-src-sha: 5c1daf733b04e9859afdc3bd87cc481180ee0f88b5c0946b16fdec931975fb79
+src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.2.tar.xz
+src-sha: 03a05d3adf9602ef128f2da05b84b3205ce60c351e5737c0370f74000679ce8a
 license: GPL-2.0-or-later
 dep-upp: automake libtool
 
@@ -23,5 +23,5 @@ install: |
 
 dotweak: rm -rf bin/ sbin/ share/man/man[158]/
 
-fix-url: https://github.com/util-linux/util-linux/commit/9445f477cfcfb3615ffde8f93b1b98c809ee4eca.patch?full_index=1
-fix-sha: 7a7fe4d32806e59f90ca0eb33a9b4eb306e59c9c148493cd6a57f0dea3eafc64
+    #fix-url: https://github.com/util-linux/util-linux/commit/9445f477cfcfb3615ffde8f93b1b98c809ee4eca.patch?full_index=1
+    #fix-sha: 7a7fe4d32806e59f90ca0eb33a9b4eb306e59c9c148493cd6a57f0dea3eafc64
