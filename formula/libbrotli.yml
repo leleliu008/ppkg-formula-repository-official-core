@@ -6,3 +6,6 @@ license: MIT
 dopatch: gsed -i 's/RUNTIME DESTINATION/RUNTIME EXCLUDE_FROM_ALL DESTINATION/' CMakeLists.txt
 
 install: cmakew 2
+
+fix-url: https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/brotli/fix-lp64.patch
+fix-sha: 5e8d058bc4a37b06f36004e9b0d890978059f598abd6855dbce9a82a61617857
