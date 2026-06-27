@@ -4,7 +4,6 @@ src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-l
 src-sha: 03a05d3adf9602ef128f2da05b84b3205ce60c351e5737c0370f74000679ce8a
 license: GPL-2.0-or-later
 dep-pkg: libreadline libsqlite3 libz
-dep-upp: automake libtool
 
 dopatch: |
     if [ ! -f /bin/bash ] ; then
@@ -20,13 +19,10 @@ dopatch: |
     fi
 
 prepare: |
-    export AUTOMAKE="$(command -v automake)"
-    export ACLOCAL="$(command -v aclocal)"
-
     unset EXTRA_CONFIGURE_ARGS
 
     case $TARGET_PLATFORM_NAME in
-        macos) EXTRA_CONFIGURE_ARGS='--disable-libmount --disable-ipcrm --disable-ipcs --disable-wall' ;;
+        macos) EXTRA_CONFIGURE_ARGS='--disable-liblastlog2 --disable-libmount --disable-ipcrm --disable-ipcs --disable-bits --disable-wall' ;;
     esac
 
 install: |
@@ -40,6 +36,7 @@ install: |
         --disable-login \
         --disable-su \
         --disable-runuser \
+        --disable-asciidoc \
         --disable-makeinstall-chown \
         --disable-makeinstall-setuid \
         $EXTRA_CONFIGURE_ARGS
