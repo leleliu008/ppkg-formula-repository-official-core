@@ -1,5 +1,4 @@
 summary: A schema-based YAML parsing and serialisation library for C
-web-url: https://github.com/tlsa/libcyaml
 src-url: https://github.com/tlsa/libcyaml/archive/refs/tags/v1.4.1.tar.gz
 src-sha: 8dbd216e1fce90f9f7cca341e5178710adc76ee360a7793ef867edb28f3e4130
 license: ISC
