@@ -2,4 +2,8 @@ summary: A command-line fuzzy finder written in Go
 src-url: https://github.com/junegunn/fzf/archive/refs/tags/v0.73.1.tar.gz
 src-sha: ae4f49f8606a7d28498208fa1b93c5d3b890719eea97e02559e66160138b750c
 license: MIT
-install: gow -X main.version=$PACKAGE_VERSION -X main.revision=ppkg
+
+install: |
+    gow -X main.version=$PACKAGE_VERSION -X main.revision=ppkg
+    install_mans man/man1/fzf.1 man/man1/fzf-tmux.1
+    install_bins bin/fzf-tmux

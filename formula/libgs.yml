@@ -1,7 +1,7 @@
 summary: An interpreter for PostScript and PDF
 web-url: https://www.ghostscript.com/
-src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostpdl-10.04.0.tar.xz
-src-sha: 0603f5629bc6f567b454911d104cd96702489c9e70e577787843f480b23d4a77
+src-url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10071/ghostpdl-10.07.1.tar.xz
+src-sha: 56f6a82907c3a73bba95de1319e029adf16477e34df2dea180d390e71e7c4053
 license: AGPL-3.0-or-later
 dep-pkg: libidn libexpat liblcms2 libjbig2dec libfreetype libtesseract
 dep-upp: libz

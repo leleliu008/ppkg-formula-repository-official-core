@@ -1,8 +1,8 @@
 summary: Automatic configure script builder
 git-url: https://github.com/autotools-mirror/autoconf
 web-url: https://www.gnu.org/software/autoconf
-src-url: https://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.gz
-src-sha: afb181a76e1ee72832f6581c0eddf8df032b83e2e0239ef79ebedc4467d92d6e
+src-url: https://ftp.gnu.org/gnu/autoconf/autoconf-2.73.tar.gz
+src-sha: 259ddfa3bddc799cfb81489cc0f17dfdf1bd6d1505dda53c0f45ff60d6a4f9a7
 license: GPL-2.0-or-later
 dep-upp: gm4 perl
 bsystem: configure

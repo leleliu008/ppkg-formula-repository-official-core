@@ -8,8 +8,8 @@ binbstd: 1
 # https://www.haskell.org/ghcup/install/
 
 onstart: |
-    case $NATIVE_PLATFORM_KIND in
-        darwin)
+    case $NATIVE_PLATFORM_TYPE in
+        macos)
             case $NATIVE_PLATFORM_ARCH in
                 x86_64)
                     PACKAGE_SRC_URL='https://downloads.haskell.org/~ghc/9.8.2/ghc-9.8.2-x86_64-apple-darwin.tar.xz'
