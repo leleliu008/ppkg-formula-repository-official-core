@@ -37,6 +37,7 @@ case $1 in
     gindent)  printf '%s\n' 'gnu-indent';;
 
     d8)       printf '%s\n' 'v8'        ;;
+    mc)       printf '%s\n' 'midnight-commander' ;;
     bit)      printf '%s\n' 'bit-git'   ;;
     xxd)      printf '%s\n' 'vim'       ;;
     tcl)      printf '%s\n' 'tcl-tk'    ;;
