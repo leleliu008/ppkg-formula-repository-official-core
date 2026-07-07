@@ -1,6 +1,6 @@
 summary: Run multiple commands in parallel
 src-url: https://github.com/pvolok/dekit/archive/refs/tags/v0.9.6.tar.gz
-src-sha: 62488726fc5539772a41863428026f51b4c03d5ac27c56191775e5a721ae90c2
+src-sha: 294fa02bfec7c73bc29448c55497ac46deda8b82bec259e492c51cfb67330c2d
 license: MIT
 dep-upp: python3
 install: cargow install --path src
