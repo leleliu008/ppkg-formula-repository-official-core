@@ -1,5 +1,6 @@
 summary: Run multiple commands in parallel
-src-url: https://github.com/pvolok/mprocs/archive/refs/tags/v0.7.3.tar.gz
-src-sha: a058a2806319a0a1ab644158b741e9a54be28540c88d15d213b820b3f97a65da
+src-url: https://github.com/pvolok/dekit/archive/refs/tags/v0.9.6.tar.gz
+src-sha: 62488726fc5539772a41863428026f51b4c03d5ac27c56191775e5a721ae90c2
 license: MIT
+dep-upp: python3
 install: cargow install --path src
