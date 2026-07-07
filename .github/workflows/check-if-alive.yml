@@ -25,6 +25,6 @@ jobs:
       - run: |
           for item in $(./ppkg ls-available)
           do
-            printf '\n%b\n' "\033[0;31m==>>> $item\033[0m"
+            printf '\n%b\n' "\033[0;31m==> $item\033[0m"
             ./ppkg fetch "$item"
           done
