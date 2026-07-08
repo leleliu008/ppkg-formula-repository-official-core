@@ -6,9 +6,9 @@ license: LGPL-2.1-or-later
 dep-pkg: libxmlb libxml2 libfyaml libcurl
 dep-upp: gettext-tools itstool xsltproc docbook-xsl gperf
 
-dopatch: gsed -i '/tests/d' meson.build
-
 dopatch: |
+    gsed -i '/tests/d' meson.build
+
     if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
         export LDFLAGS="$LDFLAGS -framework CoreFoundation -framework SystemConfiguration"
     fi

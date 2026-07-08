@@ -27,7 +27,7 @@ dopatch: |
     +++ src/CMakeLists.txt	2024-08-09 20:39:02
     @@ -258,10 +258,10 @@
      endif()
-     
+
      if( EXIV2_ENABLE_INIH )
     -  target_link_libraries( exiv2lib_int PRIVATE inih::libinih )
        target_link_libraries( exiv2lib_int PRIVATE inih::inireader )

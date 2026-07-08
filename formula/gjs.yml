@@ -9,7 +9,7 @@ install: |
     mesonw \
         -Dprofiler=disabled \
         -Dreadline=enabled \
-        -Dinstalled_tests=false 
+        -Dinstalled_tests=false \ 
         -Dbsymbolic_functions=false \
         -Dskip_dbus_tests=true \
         -Dskip_gtk_tests=true

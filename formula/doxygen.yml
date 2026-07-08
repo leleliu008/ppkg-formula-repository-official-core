@@ -6,6 +6,6 @@ src-sha: fa4c3dd78785abc11ccc992bc9c01e7a8c3120fe14b8a8dfd7cefa7014530814
 license: GPL-2.0-only
 dep-upp: gm4 flex bison python3
 dep-pkg: libiconv
-ldflags:  -liconv
+ldflags: -liconv
 
 install: cmakew -DBUILD_SHARED_LIBS=OFF

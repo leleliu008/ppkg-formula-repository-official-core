@@ -5,5 +5,5 @@ src-sha: 64280d86cd38ad5ebc1c6415b17eb09ee292078d772176b90e16287687191efe
 license: Unlicense MIT public_domain
 install: |
     gmakew clean
-    gmakew 
+    gmakew
     gmakew install PREFIX="$PACKAGE_INSTALL_DIR"
