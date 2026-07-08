@@ -14,7 +14,7 @@ install: |
     export LSOF_RANLIB="$RANLIB"
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
     export LSOF_CFGL="$LDFLAGS"
-    
+
     run ./Configure -clean
     run ./Configure -n darwin
     gmakew

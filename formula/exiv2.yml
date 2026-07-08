@@ -37,7 +37,7 @@ dopatch: |
     +  target_link_libraries( exiv2lib PRIVATE inih::libinih )
        list(APPEND requires_private_list "INIReader")
      endif()
-     
+
     EOF
 
 install: |
