@@ -1,0 +1,19 @@
+name: check yaml files
+
+on:
+  push:
+    branches: [ master,dev ]
+  pull_request:
+    branches: [ master,dev ]
+
+jobs:
+  check:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - run: pip install --user yamllint
+
+      - run: yamllint formula
