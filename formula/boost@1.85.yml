@@ -9,7 +9,7 @@ binbstd: 1
 
 do12345: run ./bootstrap.sh
 
-install: | 
+install: |
     run ./b2 install \
         -q \
         -d+2 \

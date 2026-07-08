@@ -14,7 +14,7 @@ install: |
     export LSOF_RANLIB="$RANLIB"
     export LSOF_CFGF="$CFLAGS $CPPFLAGS"
     export LSOF_CFGL="$LDFLAGS"
-    
+
     gsed -i '1c #!/bin/sh' lib/dialects/linux/Mksrc
 
     run ./Configure -clean

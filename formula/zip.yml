@@ -19,7 +19,7 @@ binbstd: 1
 
 dopatch: |
     for patchfile in $(cat ../fix/patches/series)
-    do  
+    do
         patch -p1 < ../fix/patches/$patchfile
     done
 

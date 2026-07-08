@@ -11,7 +11,7 @@ bscript: trunk
 
 install: |
     export SRS_EXTRA_FLAGS="$CFLAGS $CPPFLAGS"
-    
+
     case $TARGET_PLATFORM_NAME in
         macos)
             CONFIGURE_EXTRA_ARGS='--osx'
