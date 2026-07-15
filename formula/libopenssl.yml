@@ -4,19 +4,21 @@ src-url: https://github.com/openssl/openssl/releases/download/openssl-3.6.2/open
 src-sha: aaf51a1fe064384f811daeaeb4ec4dce7340ec8bd893027eee676af31e83a04f
 license: Apache-2.0
 dep-upp: perl
-bsystem: gmake
 
 prepare: |
-    if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
-        gsed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
+    case "$TARGET_PLATFORM_NAME" in
+        openbsd)
+            gsed -i 's|-Wl,-z,defs||' Configurations/shared-info.pl
 
-        if isCrossBuild ; then
-            export LDFLAGS="$LDFLAGS -fuse-ld=lld"
-            CONFIG_ARGS="$CONFIG_ARGS no-devcryptoeng"
-        fi
-    fi
+            if isCrossBuild ; then
+                export LDFLAGS="$LDFLAGS -fuse-ld=lld"
+                CONFIG_ARGS="$CONFIG_ARGS no-devcryptoeng"
+            fi
+            ;;
+        midnightbsd)
+            gsed -i -e 's|dragonfly|midnightbsd|g' -e 's|DragonFly|MidnightBSD|g' util/perl/OpenSSL/config.pm
+    esac
 
-install: |
     unset OS_COMPILER
 
     if isCrossBuild ; then
@@ -45,6 +47,8 @@ install: |
 
     # https://github.com/openssl/openssl/blob/master/INSTALL.md
     run "$CMD" no-tests no-ssl3 no-ssl3-method no-zlib --libdir=lib --openssldir=/etc/ssl --prefix="$PACKAGE_INSTALL_DIR" "$OS_COMPILER"
+
+install: |
     gmakew clean
     gmakew build_libs
     gmakew install_dev
