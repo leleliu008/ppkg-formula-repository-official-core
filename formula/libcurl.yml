@@ -15,7 +15,9 @@ dopatch: |
         gsed -i '/tst_links_getifaddrs=/c tst_links_getifaddrs=no' configure
     fi
 
-    sed -i '/unknown unknown unknown unknown/i command -v wc || echo "command not found: wc"' configure
+    if [ "$TARGET_PLATFORM_NAME" = netbsd ] && [ "$TARGET_PLATFORM_VERS" = '10.0' ] ; then
+        gsed -i '/unknown unknown unknown unknown/i set -x; command -v wc || echo "command not found: wc"' configure
+    fi
 
 install: |
     configure \
