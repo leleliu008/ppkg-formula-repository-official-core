@@ -15,6 +15,8 @@ dopatch: |
         gsed -i '/tst_links_getifaddrs=/c tst_links_getifaddrs=no' configure
     fi
 
+    sed -i '/unknown unknown unknown unknown/i command -v wc || echo "command not found: wc"' configure
+
 install: |
     configure \
         --enable-optimize \
