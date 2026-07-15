@@ -17,6 +17,7 @@ dopatch: |
 
     if [ "$TARGET_PLATFORM_NAME" = netbsd ] && [ "$TARGET_PLATFORM_VERS" = '10.0' ] ; then
         gsed -i '/unknown unknown unknown unknown/i set -x; command -v wc || echo "command not found: wc"' configure
+        gsed -i 's|x4)|*)|' configure
     fi
 
 install: |
