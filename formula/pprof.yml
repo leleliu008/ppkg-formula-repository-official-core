@@ -1,0 +1,4 @@
+summary: A tool for visualization and analysis of profiling data
+git-url: https://github.com/google/pprof
+license: Apache-2.0
+bsystem: go
