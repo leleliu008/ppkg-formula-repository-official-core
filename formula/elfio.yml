@@ -1,0 +1,6 @@
+summary: Header-only C++ library for reading and generating ELF files
+web-url: https://serge1.github.io/ELFIO
+src-url: https://github.com/serge1/ELFIO/archive/refs/tags/Release_3.12.tar.gz
+src-sha: e4ebc9ce3d6916461bc3e7765bb45e6210f0a9b93978bf91e59b05388c024489
+license: MIT
+bsystem: cmake
