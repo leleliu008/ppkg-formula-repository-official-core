@@ -1,0 +1,6 @@
+summary: A simple editor for simple needs powered by Microsoft
+src-url: https://github.com/microsoft/edit/archive/refs/tags/v2.0.0.tar.gz
+src-sha: f35da309c5f3d92b10e5c4b2267e4d5e29d809b2aa460e80326b11f7feba72a5
+license: MIT
+prepare: export RUSTC_BOOTSTRAP=1
+install: cargow install --path crates/edit
