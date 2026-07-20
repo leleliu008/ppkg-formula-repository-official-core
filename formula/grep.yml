@@ -1,6 +1,4 @@
 summary: GNU grep, egrep and fgrep
-git-url: https://git.savannah.gnu.org/git/grep.git
-web-url: https://www.gnu.org/software/grep
 src-url: https://ftp.gnu.org/gnu/grep/grep-3.12.tar.xz
 src-sha: 2649b27c0e90e632eadcd757be06c6e9a4f48d941de51e7c0f83ff76408a07b9
 license: GPL-3.0-or-later

@@ -1,24 +1,27 @@
 summary: Bourne-Again SHell, a UNIX command interpreter
-git-url: https://git.savannah.gnu.org/git/bash.git
-web-url: https://www.gnu.org/software/bash
-src-url: https://ftp.gnu.org/gnu/bash/bash-5.2.37.tar.gz
-src-sha: 9599b22ecd1d5787ad7d3b7bf0c59f312b3396d1e281175dd1f8a4014da621ff
+src-url: https://ftp.gnu.org/gnu/bash/bash-5.3.tar.gz
+src-sha: 0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba
+version: 5.3.9
 license: GPL-3.0-or-later
 dep-pkg: libreadline
-ccflags: -std=gnu17
-
-prepare: |
-    export CFLAGS_FOR_BUILD="$CFLAGS_FOR_BUILD -std=gnu17"
-
-    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
-        export ac_cv_lib_dl_dlopen=no
-    fi
 
 install: |
     configure \
+        --with-curses \
         --without-bash-malloc \
+        --disable-static-link \
         --disable-profiling \
         --enable-readline \
-        --enable-history \
         --enable-select \
-        CFLAGS_FOR_BUILD="'$CFLAGS_FOR_BUILD -std=gnu17'"
+        --enable-history
+
+patches: |
+    1f608434364af86b9b45c8b0ea3fb3b165fb830d27697e6cdfc7ac17dee3287f|https://mirrors.kernel.org/gnu/bash/bash-5.3-patches/bash53-001||-p0
+    e385548a00130765ec7938a56fbdca52447ab41fabc95a25f19ade527e282001|https://mirrors.kernel.org/gnu/bash/bash-5.3-patches/bash53-002||-p0
+    f245d9c7dc3f5a20d84b53d249334747940936f09dc97e1dcb89fc3ab37d60ed|https://mirrors.kernel.org/gnu/bash/bash-5.3-patches/bash53-003||-p0
+    9591d245045529f32f0812f94180b9d9ce9023f5a765c039b852e5dfc99747d0|https://mirrors.kernel.org/gnu/bash/bash-5.3-patches/bash53-004||-p0
+    cca1ef52dbbf433bc98e33269b64b2c814028efe2538be1e2c9a377da90bc99d|https://mirrors.kernel.org/gnu/bash/bash-5.3-patches/bash53-005||-p0
+    29119addefed8eff91ae37fd51822c31780ee30d4a28376e96002706c995ff10|https://mirrors.kernel.org/gnu/bash/bash-5.3-patches/bash53-006||-p0
+    c0976bbfffa1453c7cfdd62058f206a318568ff2d690f5d4fa048793fa3eb299|https://mirrors.kernel.org/gnu/bash/bash-5.3-patches/bash53-007||-p0
+    097cd723cbfb8907674ac32214063a3fd85282657ec5b4e544d2c0f719653fb4|https://mirrors.kernel.org/gnu/bash/bash-5.3-patches/bash53-008||-p0
+    eee30fe78a4b0cb2fe20e010e00308899cfc613e0774ebb3c8557a1552f24f8c|https://mirrors.kernel.org/gnu/bash/bash-5.3-patches/bash53-009||-p0

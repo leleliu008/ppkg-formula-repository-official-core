@@ -16,5 +16,4 @@ install: |
         LIBS=-liconv
 
 dotweak: |
-    gsed -i 's|-lunistring||'          lib/pkgconfig/libidn2.pc
-    printf 'Requires: libunistring' >> lib/pkgconfig/libidn2.pc
+    gsed -i -e 's|-lunistring||' -e '$a Requires: libunistring' lib/pkgconfig/libidn2.pc

@@ -1,7 +1,6 @@
 linkage: shared
 summary: GNU binary tools for Z80 development
 git-url: https://sourceware.org/git/binutils-gdb
-web-url: https://www.gnu.org/software/binutils/binutils.html
 src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.xz
 src-uri: https://sourceware.org/pub/binutils/releases/binutils-2.43.1.tar.xz
 src-sha: 13f74202a3c4c51118b797a39ea4200d3f6cfbe224da6d1d95bb938480132dfd

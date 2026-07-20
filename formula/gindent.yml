@@ -1,11 +1,14 @@
 summary: C code prettifier
-git-url: https://git.savannah.gnu.org/git/indent.git
-web-url: https://www.gnu.org/software/indent/
 src-url: https://ftp.gnu.org/gnu/indent/indent-2.2.13.tar.gz
 src-sha: 9e64634fc4ce6797b204bcb8897ce14fdd0ab48ca57696f78767c59cae578095
 license: GPL-3.0-or-later
 dep-upp: texinfo
-dep-pkg: gettext
+dep-pkg: libintl
+dep-lib: libintl
 binbstd: 1
-install: configure --program-prefix=g LIBS="'-lintl -liconv -lpthread'"
+
+dopatch: gsed -i 's|_XOPEN_SOURCE 500|_XOPEN_SOURCE 600|' src/args.c
+
+install: configure --program-prefix=g
+
 dotweak: ln -s gindent bin/indent

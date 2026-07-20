@@ -1,11 +1,9 @@
-summary: Internet file retriever
-git-url: https://git.savannah.gnu.org/git/wget.git
-web-url: https://www.gnu.org/software/wget
+summary: A free, open-source, command-line tool that is used to download files from web servers using HTTP, HTTPS, FTP protocols
 src-url: https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz
 src-sha: 766e48423e79359ea31e41db9e5c289675947a7fcf2efdcedb726ac9d0da3784
 license: GPL-3.0-or-later
-dep-pkg: libopenssl libidn2
-dep-upp: perl
+dep-pkg: libopenssl libz libidn2
+
 install: |
     configure \
         --disable-pcre \

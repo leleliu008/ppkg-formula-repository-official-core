@@ -1,6 +1,5 @@
 summary: GNU binutils library
 git-url: https://sourceware.org/git/binutils-gdb
-web-url: https://www.gnu.org/software/binutils/binutils.html
 src-url: https://ftp.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2
 src-sha: 324ed40ada2633a28eaa5d104ca5db165fd3cc3162cc1d48a7b7fa9c932da439
 license: GPL-2.0-or-later

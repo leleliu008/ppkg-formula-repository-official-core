@@ -1,5 +1,4 @@
 summary: Classic UNIX line editor
-web-url: https://www.gnu.org/software/ed/ed.html
 src-url: https://ftp.gnu.org/gnu/ed/ed-1.22.5.tar.lz
 src-sha: 56e107ddc2f29dad6690376c15bf9751509e1ee3b8241710e44edbe5c3a158cc
 license: GPL-3.0-or-later
