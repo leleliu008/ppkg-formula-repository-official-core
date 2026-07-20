@@ -1,6 +1,5 @@
 summary: HTTP client/server library for GNOME
 web-url: https://libsoup.org/
-git-url: https://gitlab.gnome.org/GNOME/libsoup
 src-url: https://download.gnome.org/sources/libsoup/3.6/libsoup-3.6.1.tar.xz
 src-sha: ceb1f1aa2bdd73b2cd8159d3998c96c55ef097ef15e4b4f36029209fa18af838
 license: LGPL-2.0-or-later
