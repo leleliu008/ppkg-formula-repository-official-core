@@ -1,5 +1,4 @@
 summary: X.Org Network Transport layer shared code
-web-url: https://www.x.org/
 src-url: https://www.x.org/archive/individual/lib/xtrans-1.6.0.tar.xz
 src-sha: faafea166bf2451a173d9d593352940ec6404145c5d1da5c213423ce4d359e92
 license: MIT

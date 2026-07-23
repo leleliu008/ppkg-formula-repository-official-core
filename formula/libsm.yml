@@ -1,5 +1,4 @@
 summary: X.Org Session Management Library
-web-url: https://www.x.org/
 src-url: https://www.x.org/archive/individual/lib/libSM-1.2.4.tar.xz
 src-sha: fdcbe51e4d1276b1183da77a8a4e74a137ca203e0bcfb20972dd5f3347e97b84
 license: MIT

@@ -1,5 +1,4 @@
 summary: X.Org Pixmap (XPM) image file format library
-web-url: https://www.x.org/
 src-url: https://www.x.org/archive/individual/lib/libXpm-3.5.19.tar.gz
 src-sha: f241f705c607fba1a53338f7e1c12005d6da326b5cb55a11a10847781b4578c0
 license: MIT

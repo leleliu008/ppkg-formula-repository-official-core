@@ -1,5 +1,4 @@
 summary: X.Org X Video (Xv) extension
-web-url: https://www.x.org/
 src-url: https://www.x.org/archive/individual/lib/libXv-1.0.12.tar.xz
 src-sha: aaf7fa09f689f7a2000fe493c0d64d1487a1210db154053e9e2336b860c63848
 license: MIT

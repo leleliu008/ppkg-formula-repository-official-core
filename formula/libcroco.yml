@@ -5,8 +5,6 @@ license: LGPL-2.0-or-later
 dep-pkg: glib libxml2
 install: |
     configure \
-        --disable-gtk-doc \
-        --disable-Bsymbolic \
         --enable-checks \
-        CROCO_CFLAGS="'$(pkg-config --cflags glib-2.0) $(pkg-config --cflags libxml-2.0)'" \
-        CROCO_LIBS="'$(pkg-config --libs-only-l glib-2.0) $(pkg-config --libs-only-l libxml-2.0)'"
+        --disable-gtk-doc \
+        --disable-Bsymbolic
