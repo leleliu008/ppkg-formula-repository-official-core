@@ -18,6 +18,7 @@ dep-upp: patch
 dopatch: |
     printf 'set(LIBIDN2_FOUND FALSE)\n' > Utilities/cmcurl/CMake/FindLibidn2.cmake
 
+dopatch2: |
     [ "$TARGET_PLATFORM_NAME" = netbsd ] || return 0
 
     LIST='
