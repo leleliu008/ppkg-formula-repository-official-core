@@ -14,13 +14,17 @@ install: |
         -DBUILD_QtDialog=OFF \
         -DBUILD_CursesDialog=ON
 
-dep-upp: patch
-dopatch: |
-    printf 'set(LIBIDN2_FOUND FALSE)\n' > Utilities/cmcurl/CMake/FindLibidn2.cmake
+dopatch: printf 'set(LIBIDN2_FOUND FALSE)\n' > Utilities/cmcurl/CMake/FindLibidn2.cmake
+
+prepare: |
+    # http://mail-index.netbsd.org/pkgsrc-users/2024/12/25/msg040726.html
+    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
+        case "$TARGET_PLATFORM_VERS" in
+            9.*) export CXXFLAGS="$CXXFLAGS -D_NETBSD_SOURCE"
+        esac
+    fi
 
 dopatch2: |
-    [ "$TARGET_PLATFORM_NAME" = netbsd ] || return 0
-
     LIST='
     patch-Auxiliary_CMakeLists.txt
     patch-CMakeLists.txt
