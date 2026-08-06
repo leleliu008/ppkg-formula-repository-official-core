@@ -1,0 +1,6 @@
+summary: A terminal UI for rsync
+web-url: https://lazyrsync.westpoint.io/
+src-url: https://github.com/westpoint-io/lazyrsync/archive/refs/tags/v0.2.0.tar.gz
+src-sha: 4ce106e10a258ccb4fdf8958b49746f7a1f9386592ede441f620a7f41ffb7d75
+license: MIT
+bsystem: cargo
