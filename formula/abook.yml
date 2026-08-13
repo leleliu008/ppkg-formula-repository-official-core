@@ -8,5 +8,6 @@ license: GPL-2.0-only GPL-2.0-or-later GPL-3.0-or-later
 dep-upp: gettext-tools xz
 dep-pkg: libreadline
 ldflags: -lncursesw
+ccflags: -std=gnu17
 bsystem: autotools
 dopatch: gsed -i 's|inline int|int|' database.c

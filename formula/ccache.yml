@@ -1,9 +1,9 @@
 summary: A compiler wrapper to speed up recompilation by caching previous compilations and detecting when the same compilation is being done again
-web-url: https://ccache.dev
-src-url: https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2.tar.xz
-src-sha: c0b85ddfc1a3e77b105ec9ada2d24aad617fa0b447c6a94d55890972810f0f5a
+web-url: https://ccache.dev/
+src-url: https://github.com/ccache/ccache/releases/download/v4.13.6/ccache-4.13.6.tar.xz
+src-sha: a7de667ca08cf67c3c8af9f213f6aa701a1188a2b3163fb74483858ce5e79fbb
 license: GPL-3.0-or-later
-dep-pkg: libhiredis libzstd
+dep-pkg: libhiredis libblake3 libxxhash libzstd libfmt cpp-httplib doctest span-lite tl-expected
 
 install: |
     cmakew \
@@ -12,4 +12,5 @@ install: |
         -DENABLE_IPO=ON \
         -DENABLE_TRACING=OFF \
         -DWARNINGS_AS_ERRORS=OFF \
-        -DZSTD_FROM_INTERNET=OFF
+        -DDEPS=LOCAL \
+        -DREDIS_STORAGE_BACKEND=ON

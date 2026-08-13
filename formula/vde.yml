@@ -5,6 +5,8 @@ license: GPL-2.0-or-later
 bsystem: autotools
 dep-upp: libtool patch
 
+ccflags: -std=gnu17
+
 dopatch: |
     if [ "$TARGET_PLATFORM_VERS" != musl ] ; then
         return 0

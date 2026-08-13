@@ -1,6 +1,6 @@
 summary: A compiler wrapper to avoid compilation when possible
-src-url: https://github.com/mozilla/sccache/archive/refs/tags/v0.10.0.tar.gz
-src-sha: 2c9f82c43ce6a1b1d9b34f029ce6862bedc2f01deff45cde5dffc079deeba801
+src-url: https://github.com/mozilla/sccache/archive/refs/tags/v0.17.0.tar.gz
+src-sha: 49949ad1cf175c49da126dbb0c2e6a56bd9d1f626e8cc0be17b9668b914145c6
 license: Apache-2.0
 dep-pkg: libopenssl
 install: cargow install --features all

@@ -5,3 +5,6 @@ src-sha: bf0b97ec7a65890b8db90ef94c4d6c18de12584c3085031953a10986f5917745
 license: BSD-3-Clause
 dep-upp: libtool
 bsystem: autotools
+
+dopatch: |
+    gsed -i "/^Version: /c Version: $PACKAGE_VERSION" opus.pc.in

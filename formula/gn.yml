@@ -1,5 +1,7 @@
 summary: A meta-build system that generates build files for ninja
-git-url: https://gn.googlesource.com/gn
+web-url: https://gn.googlesource.com/gn
+git-url: https://github.com/cglogic/gn
+git-ref: refs/tags/v2345
 git-nth: 0
 dep-upp: python3 git
 binbstd: 1

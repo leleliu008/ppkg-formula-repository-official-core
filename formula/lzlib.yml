@@ -1,7 +1,7 @@
 summary: Data compression library
 web-url: https://www.nongnu.org/lzip/lzlib.html
-src-url: https://download.savannah.gnu.org/releases/lzip/lzlib/lzlib-1.16.tar.gz
-src-sha: 203228de911780309dad6813e51541d7ea89469784f01cb661edba080ff1b038
+src-url: https://download.savannah.gnu.org/releases/lzip/lzlib/lzlib-1.16.tar.lz
+src-sha: cd2a96fbc685f7e3dc32b9f0e5e34046a77e3c10fcfebe62f9951e317d0a8cf4
 license: BSD-2-Clause
 
 dopatch: gsed -i 's|$(progname_shared)|lib$(libname).so.$(pkgversion)|' Makefile.in
