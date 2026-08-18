@@ -5,6 +5,8 @@ license: GPL-3.0-or-later
 dep-pkg: libiconv
 bscript: gettext-runtime
 
+dopatch: gsed -i '262d' gnulib-lib/progreloc.c
+
 install: |
     configure \
         --with-included-gettext \
