@@ -1,0 +1,31 @@
+summary: Linux key management utilities
+git-url: https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/keyutils.git
+src-url: https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/keyutils.git/snapshot/keyutils-1.6.3.tar.gz
+src-uri: https://sources.voidlinux.org/keyutils-1.6.3/keyutils-1.6.3.tar.gz
+src-sha: a61d5706136ae4c05bd48f86186bcfdbd88dd8bd5107e3e195c924cfc1b39bb4
+license: GPL-2.0-or-later LGPL-2.0-or-later
+
+dopatch: |
+    gsed -i '/^all: keyctl/d' Makefile
+
+install: |
+    gmakew clean
+    gmakew CFLAGS="'$CFLAGS'" CXXFLAGS="'$CXXFLAGS'"
+    install_libs libkeyutils.a libkeyutils.so
+    install_mans man/*.3
+
+dotweak: |
+    ln -s libkeyutils.so lib/libkeyutils.so.1
+
+    writepc libkeyutils <<EOF
+    prefix=\${pcfiledir}/../..
+    exec_prefix=\${prefix}
+    libdir=\${exec_prefix}/lib
+    includedir=\${prefix}/include
+
+    Name: libkeyutils
+    Description: keyutils library
+    Version: $PACKAGE_VERSION
+    Cflags: -I\${includedir}
+    Libs: -L\${libdir} -lkeyutils
+    EOF

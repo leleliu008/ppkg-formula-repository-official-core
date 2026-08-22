@@ -1,0 +1,6 @@
+summary: Robust, modern reimplementation of patchelf based on the LIEF
+src-url: https://github.com/lief-project/LIEF/archive/refs/tags/1.0.0.tar.gz
+src-sha: 2cf412695ff739d82e129db441e5c2025f3bb4873a3d3a1d3dd4cf300b682abd
+license: Apache-2.0
+bscript: tools/lief-patchelf
+bsystem: cargo
