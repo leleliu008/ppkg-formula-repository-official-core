@@ -1,7 +1,6 @@
 summary: A command-line tool to manipulate ELF files
 git-url: https://github.com/leleliu008/elftool
-dep-pkg: libelf
 binbstd: 1
 install: |
-    run "$CC" "$CPPFLAGS" "$CFLAGS" "$LDFLAGS" -o elftool src/*.c -lelf -lz
+    run "$CC" "$CPPFLAGS" "$CFLAGS" "$LDFLAGS" -o elftool src/*.c src/_elf/*.c
     install_bins elftool
