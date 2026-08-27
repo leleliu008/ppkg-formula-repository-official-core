@@ -1,7 +1,7 @@
 summary: Reusable library for GPU-accelerated image/video processing primitives
 git-url: https://code.videolan.org/videolan/libplacebo
-src-url: https://code.videolan.org/videolan/libplacebo/-/archive/v7.351.0/libplacebo-v7.351.0.tar.bz2
-src-sha: d68159280842a7f0482dcea44a440f4c9a8e9403b82eccf185e46394dfc77e6a
+src-url: https://code.videolan.org/videolan/libplacebo/-/archive/v7.360.1/libplacebo-v7.360.1.tar.bz2
+src-sha: 937aa5eeea596798b3274d362de2e3bd32bc537a66d149dd85043349c74dffb6
 license: LGPL-2.1-or-later
 dep-pym: MarkupSafe Jinja2 glad2
 dep-pkg: libshaderc libvulkan liblcms2
