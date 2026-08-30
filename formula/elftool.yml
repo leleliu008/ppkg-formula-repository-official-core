@@ -2,5 +2,10 @@ summary: A command-line tool to manipulate ELF files
 git-url: https://github.com/leleliu008/elftool
 binbstd: 1
 install: |
-    run "$CC" "$CPPFLAGS" "$CFLAGS" "$LDFLAGS" -o elftool -Isrc src/*.c src/_elf/*.c
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        wfetch https://raw.githubusercontent.com/leleliu008/patches/refs/heads/master/elf.h -o elf.h
+        run mv elf.h src/
+    fi
+
+    run "$CC" "$CPPFLAGS" "$CFLAGS" "$LDFLAGS" -o elftool -Isrc src/*.c
     install_bins elftool
