@@ -1,0 +1,7 @@
+summary: Blingful character graphics/TUI library
+web-url: https://nick-black.com/dankwiki/index.php/Notcurses
+src-url: https://github.com/dankamongmen/notcurses/archive/refs/tags/v3.0.17.tar.gz
+src-sha: b0fbe824984fe25b5a16770dbd00b85d44db5d09cc35bd881b95335d0db53128
+license: Apache-2.0
+dep-pkg: libdeflate libunistring libncurses ffmpeg-dev
+bsystem: cmake
