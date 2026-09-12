@@ -13,3 +13,5 @@ install: |
         --with-warnings \
         --enable-static \
         --disable-shared
+
+dotweak: rm -rf include/ lib/
