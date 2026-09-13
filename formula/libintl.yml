@@ -21,6 +21,12 @@ install: |
         --disable-libasprintf
 
 dotweak: |
+    if test -f lib/libintl.a ; then
+        LIBINTL=-lintl
+    else
+        LIBINTL=
+    fi
+
     writepc libintl <<EOF
     prefix=\${pcfiledir}/../..
     exec_prefix=\${prefix}
@@ -31,6 +37,6 @@ dotweak: |
     Description: National Language Support library
     Version: $PACKAGE_VERSION
     Cflags: -I\${includedir}
-    Libs: -L\${libdir} -lintl
+    Libs: -L\${libdir} $LIBINTL
     Requires: libiconv
     EOF
