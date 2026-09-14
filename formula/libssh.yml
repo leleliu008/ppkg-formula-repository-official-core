@@ -9,4 +9,8 @@ dep-pkg: libopenssl libz
 install: cmakew 2 -DWITH_SYMBOL_VERSIONING=OFF -DWITH_EXAMPLES=OFF
 
 dotweak: |
-    gsed -i -e 's|-lssh|-lssh -framework Kerberos|' -e '$i Requires: openssl libz' lib/pkgconfig/libssh.pc
+    gsed -i '$i Requires: openssl libz' lib/pkgconfig/libssh.pc
+
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        gsed -i 's|-lssh|-lssh -framework Kerberos|' lib/pkgconfig/libssh.pc
+    fi
