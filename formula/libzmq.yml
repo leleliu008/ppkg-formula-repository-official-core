@@ -5,3 +5,6 @@ src-sha: 6653ef5910f17954861fe72332e68b03ca6e4d9c7160eb3a8de5a5a913bfab43
 license: LGPL-3.0-or-later
 dep-pkg: libsodium
 install: configure --with-libsodium --disable-libunwind
+
+fix-url: https://raw.githubusercontent.com/leleliu008/patches/refs/heads/master/eromq-4.3.5-rename-sha1.diff
+fix-sha: a5f257b1b58b1a47db81bc1fea8855710198c8abb00fd69621986230a2deed90
