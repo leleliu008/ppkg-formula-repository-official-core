@@ -1,8 +1,8 @@
 summary: Additional Wayland protocols
 web-url: https://wayland.freedesktop.org
 git-url: https://gitlab.freedesktop.org/wayland/wayland-protocols
-src-url: https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.34/downloads/wayland-protocols-1.34.tar.xz
-src-sha: c59b27cacd85f60baf4ee5f80df5c0d15760ead6a2432b00ab7e2e0574dcafeb
+src-url: https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.49/downloads/wayland-protocols-1.49.tar.xz
+src-sha: ec4c8f74942d6dff7ace8b4ce4764f0ef9ff618a935d974ea77edee2ad240b14
 license: MIT
-dep-pkg: wayland
+dep-pkg: libwayland
 bsystem: meson

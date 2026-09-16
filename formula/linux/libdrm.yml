@@ -1,12 +1,8 @@
 summary: Library for accessing the direct rendering manager
 git-url: https://gitlab.freedesktop.org/mesa/libdrm
 web-url: https://dri.freedesktop.org/
-src-url: https://dri.freedesktop.org/libdrm/libdrm-2.4.124.tar.xz
-src-sha: ac36293f61ca4aafaf4b16a2a7afff312aa4f5c37c9fbd797de9e3c0863ca379
+src-url: https://dri.freedesktop.org/libdrm/libdrm-2.4.134.tar.xz
+src-sha: ac5e74d157830eb8bee44c6a6bf3ad49774ef0dd2a72bdad74a8f20308b52a95
 license: MIT
 dep-pkg: libpciaccess
 install: mesonw -Dtests=false -Dcairo-tests=disabled -Dvalgrind=disabled
-
-# https://gitlab.freedesktop.org/mesa/drm/-/merge_requests/273
-fix-url: https://raw.githubusercontent.com/leleliu008/ppkg-formula-repository-official-core/refs/heads/master/patches/libdrm-2.4.124.patch
-fix-sha: c0af4e6a60891b1ccb765565f1845b7c573e1e3d9339ee9e09d3d941c1da2c90
