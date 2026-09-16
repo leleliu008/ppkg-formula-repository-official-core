@@ -21,9 +21,9 @@ install: |
         -Dlua=luajit
 
 dotweak: |
-    run cp -r "$libfontconfig_INSTALL_DIR/etc/fonts" etc/
-    run cp -r "$libdrm_INSTALL_DIR/share/libdrm" share/
+    run cp -L -r "$libfontconfig_INSTALL_DIR/etc/fonts" etc/
+    run cp -L -r "$libdrm_INSTALL_DIR/share/libdrm" share/
 
 bindenv: |
-    FONTCONFIG_FILE=%s/etc/fonts/fonts.conf
+    FONTCONFIG_FILE=%s/etc/fonts.conf
     AMDGPU_ASIC_ID_TABLE_PATH=%s/share/libdrm/amdgpu.ids
