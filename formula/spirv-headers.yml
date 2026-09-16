@@ -1,7 +1,7 @@
 summary: SPIRV Headers
-src-url: https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-1.4.341.0.tar.gz
-src-sha: cab0a654c4917e16367483296b44cdb1d614e3120c721beafcd37e3a8580486c
-license: Apache-2.0
+src-url: https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-1.4.357.0.tar.gz
+src-sha: 4d703067a7e06331ccb37bdfed3f9b7879cc61969a2689ae95c95db34a47ff07
+license: MIT
 install: |
     cmakew \
         -DSPIRV_HEADERS_ENABLE_TESTS=OFF \
