@@ -13,7 +13,6 @@ install: |
         -Dtests=false \
         -Dlibmpv=false \
         -Dcplayer=true \
-        -Dsdl2=enabled \
         -Dvulkan=enabled \
         -Duchardet=enabled \
         -Dlibbluray=enabled \

@@ -1,7 +1,7 @@
 summary: Media player based on MPlayer and mplayer2
 web-url: https://mpv.io
-src-url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.39.0.tar.gz
-src-sha: 2ca92437affb62c2b559b4419ea4785c70d023590500e8a52e95ea3ab4554683
+src-url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.41.0.tar.gz
+src-sha: ee21092a5ee427353392360929dc64645c54479aefdb5babc5cfbb5fad626209
 dep-pkg: libplacebo libluajit libmujs libuchardet ffmpeg-dev mesa
 
 dopatch: |
@@ -12,7 +12,6 @@ install: |
         -Dtests=false \
         -Dlibmpv=true \
         -Dcplayer=false \
-        -Dsdl2=enabled \
         -Dvulkan=enabled \
         -Duchardet=enabled \
         -Dlibbluray=enabled \
