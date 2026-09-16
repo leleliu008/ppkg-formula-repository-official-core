@@ -1,6 +1,6 @@
 summary: API and commands for processing SPIR-V modules
-src-url: https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/vulkan-sdk-1.4.341.0.tar.gz
-src-sha: 15bfb678138cdf9cd1480dfb952547bbb66b763a735b6d5582578572f5c2e6f9
+src-url: https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/vulkan-sdk-1.4.357.0.tar.gz
+src-sha: d31e7109b6ef3559067e53e520870eafed7c9534d00db9728814b6df03fa4a5e
 license: Apache-2.0
 dep-upp: python3
 dep-pkg: spirv-headers
