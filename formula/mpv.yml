@@ -26,4 +26,4 @@ dotweak: |
 
 bindenv: |
     FONTCONFIG_FILE=%s/etc/fonts.conf
-    AMDGPU_ASIC_ID_TABLE_PATH=%s/share/libdrm/amdgpu.ids
+    AMDGPU_ASIC_ID_TABLE_PATHS=%s/share/libdrm
