@@ -1,6 +1,7 @@
 summary: Alpine Package Keeper - package manager for alpine
 git-url: https://gitlab.alpinelinux.org/alpine/apk-tools
 src-url: https://gitlab.alpinelinux.org/alpine/apk-tools/-/archive/v2.14.10/apk-tools-v2.14.10.tar.gz
+src-uri: https://sources.voidlinux.org/apk-tools-2.14.10/apk-tools-v2.14.10.tar.gz
 src-sha: 5d888d95cf41e68288bd4342938e05767ff76c83f1d25830088fc6d4ccc42793
 license: GPL-2.0-only
 dep-pkg: libz libopenssl
