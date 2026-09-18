@@ -1,24 +1,28 @@
 summary: OpenGL Shading Language compiler
-src-url: https://github.com/google/shaderc/archive/refs/tags/v2025.1.tar.gz
-src-sha: 358f9fa87b503bc7a3efe1575fbf581fca7f16dbc6d502ea2b02628d2d0d4014
+src-url: https://github.com/google/shaderc/archive/refs/tags/v2026.4.tar.gz
+src-sha: f06ce5bcca94e5df7f34e115743597d0ad2e13c5fe9213c67dc8c76031241947
 license: Apache-2.0
 dep-upp: python3
 
 dopatch: |
-    gsed -i 's|(SHADERC_ENABLE_INSTALL)|(OFF)|' CMakeLists.txt libshaderc/CMakeLists.txt
+    gsed -i -e 's|${SHADERC_SKIP_INSTALL}|ON|' -e '/GLSLANG_ENABLE_INSTALL/c set(GLSLANG_ENABLE_INSTALL )' third_party/CMakeLists.txt
 
 prepare: |
-    git_checkout https://github.com/KhronosGroup/SPIRV-Headers --ref-from=54a521dd130ae1b2f38fef79b09515702d135bdd -C third_party/spirv-headers
-    git_checkout https://github.com/KhronosGroup/SPIRV-Tools   --ref-from=f289d047f49fb60488301ec62bafab85573668cc -C third_party/spirv-tools
-    git_checkout https://github.com/KhronosGroup/glslang       --ref-from=8b822ee8ac2c3e52926820f46ad858532a895951 -C third_party/glslang
+    git_checkout https://github.com/KhronosGroup/SPIRV-Headers --ref-from=04fd3caa1e8267e4d95c806cad901181728e1006 -C third_party/spirv-headers
+    git_checkout https://github.com/KhronosGroup/SPIRV-Tools   --ref-from=ef96ed763b43b59b33b31b362f09a02b729fa1c9 -C third_party/spirv-tools
+    git_checkout https://github.com/KhronosGroup/glslang       --ref-from=e1b562a8bed273a02f30b59b66a5d499793cede5 -C third_party/glslang
 
 install: |
     cmakew \
         -DSHADERC_SKIP_TESTS=ON \
+        -DSHADERC_SKIP_EXAMPLES=ON \
+        -DSHADERC_SKIP_EXECUTABLES=OFF \
         -DSHADERC_SKIP_INSTALL=OFF \
-        -DSHADERC_SKIP_EXAMPLES=OFF \
         -DSHADERC_ENABLE_WGSL_OUTPUT=OFF \
         -DSHADERC_ENABLE_WERROR_COMPILE=ON \
+        -DSKIP_GLSLANG_INSTALL=ON \
+        -DSKIP_SPIRV_TOOLS_INSTALL=ON \
+        -DSKIP_GOOGLETEST_INSTALL=ON \
         -DBUILD_SHARED_LIBS=OFF
 
 dotweak: run rm -rf include/ lib/
