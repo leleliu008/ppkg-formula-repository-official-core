@@ -165,7 +165,7 @@ jobs:
       - run: tar xf ubuntu-base-*.tar.gz -C ubuntu-rootfs
 
       - run: cp -p /etc/resolv.conf ubuntu-rootfs/etc/
-      - run: mv ppkg run.sh formulat ubuntu-rootfs/
+      - run: mv ppkg run.sh formula ubuntu-rootfs/
 
       - run: sudo mount -t proc  none ubuntu-rootfs/proc
       - run: sudo mount -t sysfs none ubuntu-rootfs/sys
