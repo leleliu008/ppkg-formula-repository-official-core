@@ -1,11 +1,11 @@
 summary: A command-line tool for transferring data from/to an HTTP, HTTPS or FTP server
 git-url: https://github.com/curl/curl
 web-url: https://curl.se/
-src-url: https://curl.se/download/curl-8.20.0.tar.bz2
-src-sha: 4be48e69cf467246cb97d369b85d78a08528f2b37cffef2418ee16e6a4eb596e
+src-url: https://curl.se/download/curl-8.22.0.tar.bz2
+src-sha: 5d956a6a22b3c279f50c421ee5d3c9e9d660cb6f115dcf881b579e952130549c
 license: curl
+dep-pkg: libnghttp3 libnghttp2 libngtcp2 libcares libpsl libbrotli libzstd libz
 dep-upp: perl
-dep-pkg: libnghttp2 libopenssl libbrotli libzstd libz
 
 dopatch: |
     gsed -i 's|-lbrotlidec|-lbrotlidec -lbrotlicommon|' configure
@@ -19,16 +19,16 @@ install: |
     configure \
         --enable-optimize \
         --enable-pthreads \
-        --enable-static \
-        --disable-shared \
+        --enable-ares \
         --with-default-ssl-backend=openssl \
         --with-ssl="$libopenssl_INSTALL_DIR" \
+        --with-nghttp3 \
         --with-nghttp2 \
-        --without-nghttp3 \
-        --without-ngtcp2 \
-        --without-quiche \
-        --without-libpsl \
+        --with-ngtcp2 \
+        --with-libpsl \
+        --with-libidn2 \
+        --without-libssh2 \
         --without-librtmp \
-        --without-libidn2
+        --without-quiche
 
-dotweak: run rm -rf include/ lib/ share/aclocal/ share/man/man3/ share/man/man1/curl-config.1 bin/curl-config
+dotweak: rm -rf bin/curl-config include/ lib/ share/aclocal/ share/man/man3/ share/man/man1/curl-config.1
