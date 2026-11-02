@@ -1,5 +1,5 @@
 summary: Find files with SQL-like queries
-src-url: https://github.com/jhspetersson/fselect/archive/refs/tags/0.8.5.tar.gz
-src-sha: e5742da80606630e310bb1567f2d72d7874f0b2537440e2800507abd786d912d
+src-url: https://github.com/jhspetersson/fselect/archive/refs/tags/0.10.3.tar.gz
+src-sha: e2dc2d40c58c273a6e9efece80ad14dc05f07ad01bbafd0fba5da3ebd73464e1
 license: MIT
-bsystem: cargo
+bsystem: cargo cmake
