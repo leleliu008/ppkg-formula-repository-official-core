@@ -1,0 +1,125 @@
+name: update package version with brew
+
+on:
+  workflow_dispatch:
+
+jobs:
+  find-upgradable-packages:
+
+    runs-on: macos-latest
+
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - run: brew update
+
+      - uses: actions/checkout@v5
+
+      - run: curl -LO https://github.com/leleliu008/test/releases/download/2023.10.08/xcpkg-0.30.0-macos-15.0-arm64.release.tar.xz
+      - run: /usr/bin/bsdtar xf *.tar.xz --strip-components=1
+      - run: rm *.tar.xz
+      - run: mv bin/xcpkg .
+
+      - run: ./xcpkg about
+      - run: ./xcpkg sysinfo
+
+      - run: ./compare-package-version-with-brew --upgrade
+
+      - run: mv formula/upgrade .
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: upgradable-packages-${{ github.sha }}
+          path: upgrade/
+
+      - id: upgradable-packages
+        run: |
+          set -ex
+          NAMES="$(cd upgrade && ls | jq -Rnc '[inputs]')"
+          printf 'names=%s\n' "$NAMES" >> $GITHUB_OUTPUT
+
+    outputs:
+      names: ${{ steps.upgradable-packages.outputs.names }}
+
+
+  upgrade:
+
+    needs: find-upgradable-packages
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        pkg: ${{ fromJson(needs.find-upgradable-packages.outputs.names) }}
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      ############################################################
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: upgradable-packages-${{ github.sha }}
+          path: upgrade
+
+      - id: upgrade-info
+        run: cat upgrade/${{ matrix.pkg }} >> "$GITHUB_OUTPUT"
+
+      ############################################################
+
+      - run: |
+          sed -i \
+              -e '/^version: /c version: ${{ steps.upgrade-info.outputs.VERSION_NEW }}' \
+              -e '/^src-url: /c src-url: ${{ steps.upgrade-info.outputs.SRC_URL_NEW }}' \
+              -e '/^src-sha: /c src-sha: ${{ steps.upgrade-info.outputs.SRC_SHA_NEW }}' \
+              -e '/^git-sha: /c git-sha: ${{ steps.upgrade-info.outputs.GIT_SHA_NEW }}' \
+              -e '/^git-tag: /c git-tag: ${{ steps.upgrade-info.outputs.GIT_TAG_NEW }}' \
+              -e '/^src-uri: /s|${{ steps.upgrade-info.outputs.VERSION_OLD }}|${{ steps.upgrade-info.outputs.VERSION_NEW }}' \
+              formula/${{ matrix.pkg }}.yml
+
+      ############################################################
+
+      - run: git diff
+
+      ############################################################
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg
+      - run: chmod +x ppkg
+
+      - run: ./ppkg setup
+      - run: ./ppkg sysinfo
+
+      - run: ./ppkg install ${{ matrix.pkg }} -I formula
+      - run: ./ppkg bundle  ${{ matrix.pkg }} .tar.xz 
+
+      ############################################################
+
+      - id: bundle-filename
+        run: printf 'BUNDLE_FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.bundle-filename.outputs.BUNDLE_FILENAME }}
+          path: ${{ steps.bundle-filename.outputs.BUNDLE_FILENAME }}
+
+      ############################################################
+
+      - run: git config --global user.name  leleliu008
+      - run: git config --global user.email leleliu008@gmail.com
+
+      - run: git add formula/${{ matrix.pkg }}.yml
+      - run: git commit -m 'update package ${{ matrix.pkg }} ${{ steps.upgrade-info.outputs.VERSION_OLD }} -> ${{ steps.upgrade-info.outputs.VERSION_NEW }}'
+      - run: git pull --rebase=true
+      - run: git push origin master

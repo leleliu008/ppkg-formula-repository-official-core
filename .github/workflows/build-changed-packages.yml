@@ -1,0 +1,274 @@
+name: build changed packages
+
+on:
+  push:
+    branches: [ master,dev ]
+    paths:
+      - 'formula/*.yml'
+
+  pull_request:
+    branches: [ master,dev ]
+    paths:
+      - 'formula/*.yml'
+
+jobs:
+
+  find-changed-packages:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - id: changed-files
+        uses: tj-actions/changed-files@v47
+        with:
+          files: 'formula/*.yml'
+          json: true
+
+      - id: changed-packages
+        run: |
+          NAMES=$(printf '%s\n' ${{ steps.changed-files.outputs.all_changed_files }} | jq -c '
+            map(
+              sub("^formula/"; "")
+              | sub("\\.yml$"; "")
+            )
+          ')
+          printf 'names=%s\n' "$NAMES" >> $GITHUB_OUTPUT
+
+    outputs:
+      names: ${{ steps.changed-packages.outputs.names }}
+
+
+  macos:
+
+    needs: find-changed-packages
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        runner: [macos-26, macos-15]
+        pkg: ${{ fromJson(needs.find-changed-packages.outputs.names) }}
+
+    runs-on: ${{ matrix.runner }}
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg
+      - run: chmod +x ppkg
+
+      - run: ppkg setup
+      - run: ppkg sysinfo
+      - run: ppkg install ${{ matrix.pkg }} -I formula
+      - run: ppkg bundle  ${{ matrix.pkg }} .tar.xz 
+
+      - id: filename
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.filename.outputs.FILENAME }}
+          path: ${{ steps.filename.outputs.FILENAME }}
+
+
+  ubuntu-x86_64:
+
+    needs: find-changed-packages
+
+    runs-on: ubuntu-latest
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        ubuntu-version: ['22.04', '24.04', '26.04']
+        pkg: ${{ fromJson(needs.find-changed-packages.outputs.names) }}
+
+    container: ubuntu:${{ matrix.ubuntu-version }}
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg
+      - run: chmod +x ppkg
+
+      - run: ppkg setup
+      - run: ppkg sysinfo
+      - run: ppkg install ${{ matrix.pkg }} -I formula
+      - run: ppkg bundle  ${{ matrix.pkg }} .tar.xz 
+
+      - id: filename
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.filename.outputs.FILENAME }}
+          path: ${{ steps.filename.outputs.FILENAME }}
+
+
+  ubuntu-chroot-qemu:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        target-arch: [aarch64, riscv64, ppc64le, s390x]
+        pkg: ${{ fromJson(needs.find-changed-packages.outputs.names) }}
+
+    steps:
+      - run: |
+          cat > run.sh <<EOF
+          set -ex
+          uname -a
+          id
+          pwd
+
+          export GITHUB_ACTIONS=true
+
+          ./ppkg setup
+          ./ppkg update
+          ./ppkg install ${{ matrix.pkg }} -I formula
+          ./ppkg bundle  ${{ matrix.pkg }} .tar.xz 
+          EOF
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg
+      - run: chmod a+x ppkg
+
+      - id: arch
+        run: |
+          case ${{ matrix.target-arch }} in
+            aarch64) X=arm64 ;;
+            ppc64le) X=ppc64el ;;
+            *)       X=${{ matrix.target-arch }}
+          esac
+          printf 'ARCH=%s\n' "$X" >> "$GITHUB_OUTPUT"
+
+      - run: curl -LO https://cdimage.ubuntu.com/ubuntu-base/releases/24.04/release/ubuntu-base-24.04.4-base-${{ steps.arch.outputs.ARCH }}.tar.gz
+
+      - run: install -d ubuntu-rootfs
+      - run: tar xf ubuntu-base-*.tar.gz -C ubuntu-rootfs
+
+      - run: cp -p /etc/resolv.conf ubuntu-rootfs/etc/
+      - run: mv ppkg run.sh ubuntu-rootfs/
+
+      - run: sudo mount -t proc  none ubuntu-rootfs/proc
+      - run: sudo mount -t sysfs none ubuntu-rootfs/sys
+      - run: sudo mount -t tmpfs none ubuntu-rootfs/tmp
+
+      - run: sudo mount --rbind    /dev ubuntu-rootfs/dev
+      - run: sudo mount --make-rprivate ubuntu-rootfs/dev
+
+      - run: sudo apt-get -y update
+      - run: sudo apt-get -y install qemu-user-static
+
+      - run: sudo install -g `id -g` -o `id -u` /usr/bin/qemu-${{ matrix.target-arch }}-static ubuntu-rootfs/
+
+      - run: sudo chroot ubuntu-rootfs /qemu-${{ matrix.target-arch }}-static /bin/sh run.sh
+
+      - run: mv ubuntu-rootfs/*.tar.xz .
+
+      - id: filename
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.filename.outputs.FILENAME }}
+          path: ${{ steps.filename.outputs.FILENAME }}
+
+
+  alpine-x86_64:
+
+    needs: find-changed-packages
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: ['3.24', '3.23', '3.22', '3.21', '3.20']
+        pkg: ${{ fromJson(needs.find-changed-packages.outputs.names) }}
+
+    container: alpine:${{ matrix.tag }}
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg
+      - run: chmod +x ppkg
+
+      - run: ppkg setup
+      - run: ppkg sysinfo
+      - run: ppkg install ${{ matrix.pkg }} -I formula
+      - run: ppkg bundle  ${{ matrix.pkg }} .tar.xz 
+
+      - id: filename
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.filename.outputs.FILENAME }}
+          path: ${{ steps.filename.outputs.FILENAME }}
+
+
+  alpine-chroot-qemu:
+
+    needs: find-changed-packages
+
+    runs-on: ubuntu-latest
+
+    strategy:
+
+      fail-fast: false
+
+      matrix:
+        target-arch: [loongarch64, aarch64, ppc64le, riscv64, s390x]
+        pkg: ${{ fromJson(needs.find-changed-packages.outputs.names) }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - run: |
+          cat > run.sh <<EOF
+          set -ex
+
+          run() {
+            printf "\033[0;35m==>\033[0m \033[0;32m%b\n\033[0m" "\$*"
+            eval "\$@"
+          }
+
+          run ppkg setup
+          run ppkg sysinfo
+          run ppkg install ${{ matrix.pkg }} -I formula --static
+          run ppkg bundle  ${{ matrix.pkg }} .tar.xz 
+
+
+      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg
+      - run: chmod +x ppkg
+
+      - run: curl -LO https://raw.githubusercontent.com/alpinelinux/alpine-chroot-install/master/alpine-chroot-install
+      - run: chmod +x alpine-chroot-install
+
+      - run: |
+          sed -i -e '/APK_TOOLS_URI:=/c APK_TOOLS_URI=https://gitlab.alpinelinux.org/api/v4/projects/5/packages/generic/v3.0.7/x86_64/apk.static' \
+                 -e '/APK_TOOLS_SHA256:=/c APK_TOOLS_SHA256=c07bf5356eacc9dd7a8c56bc537f46702f007170287403299d52a04264e74b3c' \
+                 alpine-chroot-install
+
+      - run: sudo ./alpine-chroot-install -d /alpine -a ${{ matrix.target-arch }}
+      - run: /alpine/enter-chroot sh run.sh
+
+      - id: filename
+        run: printf 'FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ${{ steps.filename.outputs.FILENAME }}
+          path: ${{ steps.filename.outputs.FILENAME }}
