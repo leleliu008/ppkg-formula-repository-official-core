@@ -1,6 +1,6 @@
 summary: QUIC library written in C
-src-url: https://github.com/ngtcp2/ngtcp2/releases/download/v1.23.0/ngtcp2-1.23.0.tar.xz
-src-sha: 59d5b4211e96970f2d3d5e6876f73dce03414800ba04aa56835b132fce8de730
+src-url: https://github.com/ngtcp2/ngtcp2/releases/download/v1.25.0/ngtcp2-1.25.0.tar.xz
+src-sha: 2a34d2484ba17847a5d11965704e9dd0fac4c6d8efc75ffe1ec7de66d8c6b6fb
 license: MIT
 dep-pkg: libopenssl
 
