@@ -16,4 +16,4 @@ install: |
         -DCRYPTO_BACKEND=OpenSSL \
         -DLINT=OFF
 
-dotweak: gsed -i 's|libcrypto,|openssl |' lib/pkgconfig/libssh2.pc
+dotweak: gsed -i '/^Libs.private:/d' lib/pkgconfig/libssh2.pc
