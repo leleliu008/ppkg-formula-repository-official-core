@@ -130,6 +130,8 @@ jobs:
         pkg: ${{ fromJson(needs.find-changed-packages.outputs.names) }}
 
     steps:
+      - uses: actions/checkout@v5
+
       - run: |
           cat > run.sh <<EOF
           set -ex
