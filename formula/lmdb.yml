@@ -1,12 +1,22 @@
-pkgtype: exe+lib
 summary: An extraordinarily fast, memory-efficient, memory-mapped, key-value database
 web-url: https://symas.com/lmdb
-src-url: https://github.com/LMDB/lmdb/archive/refs/tags/LMDB_0.9.35.tar.gz
-src-sha: 18b021fd589d30cc08860a9550a30ae51637117451385e9581616da751326632
+src-url: https://github.com/LMDB/lmdb/archive/refs/tags/LMDB_1.0.2.tar.gz
+src-sha: 17e4cb8e80874fccc1ff6f7d5fdb62f029624967d001ff40c47c0fb7a5b42d7d
 license: OLDAP-2.8
 
 bscript: libraries/liblmdb
 
+prepare: |
+    unset BINs
+
+    for f in *.1
+    do
+        BINs="$BINs ${f%.1}"
+    done
+
 install: |
     gmakew clean
-    gmakew install prefix=$PACKAGE_INSTALL_DIR CC=$CC XCFLAGS="'$CFLAGS $CPPFLAGS'" LDFLAGS="'$LDFLAGS'" AR=$AR SOEXT=$SHARED_LIBRARY_SUFFIX
+    gmakew $BINs AR=$AR CC=$CC CFLAGS="'$CFLAGS'" LDFLAGS="'$LDFLAGS'"
+
+    install_bins $BINs
+    install_mans *.1
