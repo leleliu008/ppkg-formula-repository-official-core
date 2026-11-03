@@ -1,7 +1,6 @@
 summary: A JSON parser for C
-version: 0.17
-src-url: https://github.com/json-c/json-c/archive/refs/tags/json-c-0.17-20230812.tar.gz
-src-sha: 024d302a3aadcbf9f78735320a6d5aedf8b77876c8ac8bbb95081ca55054c7eb
+src-url: https://github.com/json-c/json-c/releases/download/json-c-0.19-20260627/json-c-0.19.tar.gz
+src-sha: 37ad0249902e301bd9052bf712e511fcc6acff4ecaad4b5900aad9ce564e26de
 license: MIT
 
 install: |
