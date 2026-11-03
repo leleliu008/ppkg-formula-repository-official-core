@@ -1,11 +1,12 @@
 summary: Simple markdown translator
 web-url: https://kristaps.bsd.lv/lowdown/
-src-url: https://github.com/kristapsdz/lowdown/archive/refs/tags/VERSION_2_0_2.tar.gz
-src-sha: 9718c0f6c99a2cef923357feced0e0f86d8047260238c5c37fd2b51ca620e373
+src-url: https://github.com/kristapsdz/lowdown/archive/refs/tags/VERSION_3_2_1.tar.gz
+src-sha: 8501a5efb35b61dc73eabb54a099e21ac1dfaec347bb9c8090660233bcf36dea
 license: ISC
 dep-upp: bmake
 binbstd: 1
-install: |
+
+prepare: |
     cat > configure.local <<EOF
     HAVE_SANDBOX_INIT=0
     EOF
@@ -19,6 +20,7 @@ install: |
         LINKER_SONAME=-soname
     fi
 
+install: |
     run ./configure LINKER_SONAME=$LINKER_SONAME PREFIX="$PACKAGE_INSTALL_DIR"
-    run "$BMAKE"
-    run "$BMAKE" install_libs
+    run bmake
+    run bmake install_libs
