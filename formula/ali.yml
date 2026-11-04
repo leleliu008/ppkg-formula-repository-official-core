@@ -1,5 +1,5 @@
 summary: Generate HTTP load and plot the results in real-time
-src-url: https://github.com/nakabonne/ali/archive/refs/tags/v0.7.5.tar.gz
-src-sha: 3eed2d7cbdf8365cad78833362e99138e7c0945d6dbc19e1253f8e0438a72f81
+src-url: https://github.com/nakabonne/ali/archive/refs/tags/v0.8.0.tar.gz
+src-sha: faf94ef7e0daa6d51b7064dd9757d4216168b19ed03c145ebf30e18f99fc81ad
 license: MIT
 install: gow -X main.version=$PACKAGE_NAME -X main.commit= -X main.date="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
