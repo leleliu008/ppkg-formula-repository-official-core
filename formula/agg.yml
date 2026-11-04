@@ -1,5 +1,5 @@
 summary: Asciicast to GIF converter
-src-url: https://github.com/asciinema/agg/archive/refs/tags/v1.4.3.tar.gz
-src-sha: 1089e47a8e6ca7f147f74b2347e6b29d94311530a8b817c2f30f19744e4549c1
+src-url: https://github.com/asciinema/agg/archive/refs/tags/v1.9.0.tar.gz
+src-sha: 8170119502ad2c1c697e5cd4d050d87c425ecee726c5f6c3c2140703bcb31bb3
 license: Apache-2.0
 bsystem: cargo
