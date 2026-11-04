@@ -1,7 +1,7 @@
 summary: Simple, modern, secure file encryption
 web-url: https://filippo.io/age
-src-url: https://github.com/FiloSottile/age/archive/v1.1.1.tar.gz
-src-sha: f1f3dbade631976701cd295aa89308681318d73118f5673cced13f127a91178c
+src-url: https://github.com/FiloSottile/age/archive/refs/tags/v1.3.2.tar.gz
+src-sha: b07c28c6c4bdafa272073a310b75bc22c49da8904585a89c30e5ca4233e63843
 license: BSD-3-Clause
 
 bsystem: go
