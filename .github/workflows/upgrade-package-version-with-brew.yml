@@ -89,7 +89,7 @@ jobs:
               -e '/^src-sha: /c src-sha: ${{ steps.upgrade-info.outputs.SRC_SHA_NEW }}' \
               -e '/^git-sha: /c git-sha: ${{ steps.upgrade-info.outputs.GIT_SHA_NEW }}' \
               -e '/^git-tag: /c git-tag: ${{ steps.upgrade-info.outputs.GIT_TAG_NEW }}' \
-              -e '/^src-uri: /s|${{ steps.upgrade-info.outputs.VERSION_OLD }}|${{ steps.upgrade-info.outputs.VERSION_NEW }}' \
+              -e '/^src-uri: /s|${{ steps.upgrade-info.outputs.VERSION_OLD }}|${{ steps.upgrade-info.outputs.VERSION_NEW }}|' \
               formula/${{ matrix.pkg }}.yml
 
       ############################################################
