@@ -1,6 +1,6 @@
 summary: A source code indenter, formatter, and beautifier for the C, C++, Objective-C, C# and Java
 web-url: https://astyle.sourceforge.net/
-src-url: https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.6/astyle-3.6.15.tar.bz2
-src-sha: 5b4077d68b5941608916cd8a263046a3561f97593703c04831c730b230a81ae9
+src-url: https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.6/astyle-3.6.21.tar.bz2
+src-sha: 2723e43bc0fb453942a394133683222fd85b1143ee6ae0b1f7b5b1db38df31cd
 license: MIT
 bsystem: cmake
