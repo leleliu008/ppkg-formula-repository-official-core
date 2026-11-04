@@ -101,21 +101,69 @@ jobs:
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg
       - run: chmod +x ppkg
 
-      - run: ./ppkg setup
-      - run: ./ppkg sysinfo
+      ############################################################
 
-      - run: ./ppkg install ${{ matrix.pkg }} -I formula
-      - run: ./ppkg bundle  ${{ matrix.pkg }} .tar.xz 
+      - run: |
+          cat > run.sh <<EOF
+          set -ex
+
+          run() {
+            printf "\033[0;35m==>\033[0m \033[0;32m%b\n\033[0m" "\$*"
+            eval "\$@"
+          }
+
+          if [ -f  /sbin/apk ] ; then
+            run    /sbin/apk update
+            run    /sbin/apk add llvm clang clang-dev linux-headers
+
+            PPKG_INSTALL_ARGS=--static
+          else
+            command -v curl > /dev/null || {
+              run apt -y update
+              run apt -y install curl
+            }
+
+            PPKG_INSTALL_ARGS=
+          fi
+
+          export GITHUB_ACTIONS=true
+
+          run ./ppkg setup
+          run ./ppkg sysinfo
+          run ./ppkg install ${{ matrix.pkg }} -I formula "\$PPKG_INSTALL_ARGS"
+          run ./ppkg bundle  ${{ matrix.pkg }} .tar.xz
+          EOF
 
       ############################################################
 
-      - id: bundle-filename
-        run: printf 'BUNDLE_FILENAME=%s\n' "$(ls *.tar.xz)" >> "$GITHUB_OUTPUT"
+      - run: docker run --rm -v $PWD:/home/leleliu008/w -w /home/leleliu008/w alpine       /bin/sh run.sh
+      - run: docker run --rm -v $PWD:/home/leleliu008/w -w /home/leleliu008/w ubuntu:26.04 /bin/sh run.sh
+      - run: docker run --rm -v $PWD:/home/leleliu008/w -w /home/leleliu008/w ubuntu:24.04 /bin/sh run.sh
+      - run: docker run --rm -v $PWD:/home/leleliu008/w -w /home/leleliu008/w ubuntu:22.04 /bin/sh run.sh
 
-      - uses: actions/upload-artifact@v6
-        with:
-          name: ${{ steps.bundle-filename.outputs.BUNDLE_FILENAME }}
-          path: ${{ steps.bundle-filename.outputs.BUNDLE_FILENAME }}
+      ############################################################
+
+      - run: curl -LO https://raw.githubusercontent.com/alpinelinux/alpine-chroot-install/master/alpine-chroot-install
+      - run: chmod +x alpine-chroot-install
+
+      - run: |
+          sed -i -e '/APK_TOOLS_URI:=/c APK_TOOLS_URI=https://gitlab.alpinelinux.org/api/v4/projects/5/packages/generic/v3.0.7/x86_64/apk.static' \
+                 -e '/APK_TOOLS_SHA256:=/c APK_TOOLS_SHA256=c07bf5356eacc9dd7a8c56bc537f46702f007170287403299d52a04264e74b3c' \
+                 -e 's|qemu-user-static|qemu-user-binfmt|' \
+                 -e 's|qemu_arch-static|qemu_arch|' \
+                 alpine-chroot-install
+
+      - run: sudo ./alpine-chroot-install -d /alpine-loongarch64 -a loongarch64
+      - run: /alpine-loongarch64/enter-chroot sh run.sh
+
+      - run: sudo ./alpine-chroot-install -d /alpine-aarch64 -a aarch64
+      - run: /alpine-aarch64/enter-chroot sh run.sh
+
+      - run: sudo ./alpine-chroot-install -d /alpine-ppc64le -a ppc64le
+      - run: /alpine-ppc64le/enter-chroot sh run.sh
+
+      - run: sudo ./alpine-chroot-install -d /alpine-s390x -a s390x
+      - run: /alpine-s390x/enter-chroot sh run.sh
 
       ############################################################
 

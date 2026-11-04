@@ -260,7 +260,7 @@ jobs:
           run ./ppkg sysinfo
           run ./ppkg install ${{ matrix.pkg }} -I formula --static
           run ./ppkg bundle  ${{ matrix.pkg }} .tar.xz
-
+          EOF
 
       - run: curl -LO https://raw.githubusercontent.com/leleliu008/ppkg/${{ github.ref_name }}/ppkg
       - run: chmod +x ppkg
