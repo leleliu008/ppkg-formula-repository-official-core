@@ -1,5 +1,5 @@
 summary: A command-line utility for displaying current network utilization by process, connection and remote IP/hostname
-src-url: https://github.com/imsnif/bandwhich/archive/refs/tags/v0.23.0.tar.gz
-src-sha: 58b94588ec919fd802fc25cd209084ecc9acdfd99d5478d5ec76670774ff5886
+src-url: https://github.com/imsnif/bandwhich/archive/refs/tags/v0.23.1.tar.gz
+src-sha: aafb96d059cf9734da915dca4f5940c319d2e6b54e2ffb884332e9f5e820e6d7
 license: MIT
 bsystem: cargo
