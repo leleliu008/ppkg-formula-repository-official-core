@@ -3,6 +3,10 @@ src-url: https://github.com/besser82/libxcrypt/releases/download/v4.5.2/libxcryp
 src-sha: 71513a31c01a428bccd5367a32fd95f115d6dac50fb5b60c779d5c7942aec071
 license: LGPL-2.1-or-later
 dep-upp: perl
+
+# https://github.com/besser82/libxcrypt/commit/174c24d6e87aeae631bc0a7bb1ba983cf8def4de
+dopatch: gsed -i '/ strchr /s|const char|char|' lib/crypt-sm3-yescrypt.c lib/crypt-gost-yescrypt.c
+
 install: |
     configure \
         --disable-obsolete-api \
