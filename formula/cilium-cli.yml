@@ -1,5 +1,5 @@
 summary: CLI to install, manage & troubleshoot Kubernetes clusters running Cilium
-src-url: https://github.com/cilium/cilium-cli/archive/refs/tags/v0.16.15.tar.gz
-src-sha: 2c3da085574d038c5d456425140177d290c36ccb4dcdb2941357b867876aa48a
+src-url: https://github.com/cilium/cilium-cli/archive/refs/tags/v0.20.2.tar.gz
+src-sha: 78d4442defa00b91538dd784f96fbc957d48fb3622f9e784af9667a2974f124c
 license: Apache-2.0
 install: gow -X github.com/cilium/cilium-cli/defaults.CLIVersion="$PACKAGE_VERSION" ./cmd/cilium
