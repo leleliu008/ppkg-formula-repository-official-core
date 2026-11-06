@@ -1,6 +1,6 @@
 summary: The C reference implementation of CommonMark
 web-url: https://commonmark.org/
-src-url: https://github.com/commonmark/cmark/archive/refs/tags/0.31.0.tar.gz
-src-sha: bbcb8f8c03b5af33fcfcf11a74e9499f20a9043200b8552f78a6e8ba76e04d11
+src-url: https://github.com/commonmark/cmark/archive/refs/tags/0.31.2.tar.gz
+src-sha: f9bc5ca38bcb0b727f0056100fac4d743e768872e3bacec7746de28f5700d697
 license: BSD-2-Clause
 bsystem: cmake
