@@ -1,5 +1,5 @@
 summary: A simple command line notebook for programmers
 web-url: https://www.getdnote.com
-src-url: https://github.com/dnote/dnote/archive/refs/tags/cli-v0.15.1.tar.gz
-src-sha: 257d5f2374507b2790b31a314d7434bfe84b3178724ef73fdc4775c391220f93
+src-url: https://github.com/dnote/dnote/archive/refs/tags/cli-v0.17.0.tar.gz
+src-sha: 29a15bc4e397a1c02117adc1e5a35ff8f6bd35d50cb36f570144a3d10c2ed0bc
 install: gow -o dnote ./pkg/cli
