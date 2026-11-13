@@ -2,8 +2,8 @@ pkgtype: lib
 summary: Message bus system, providing inter-application communication
 git-url: https://gitlab.freedesktop.org/dbus/dbus
 web-url: https://wiki.freedesktop.org/www/Software/dbus
-src-url: https://dbus.freedesktop.org/releases/dbus/dbus-1.16.2.tar.xz
-src-sha: 0ba2a1a4b16afe7bceb2c07e9ce99a8c2c3508e5dec290dbb643384bd6beb7e2
+src-url: https://dbus.freedesktop.org/releases/dbus/dbus-1.16.4.tar.xz
+src-sha: d08b05526c2cb7966a5fb79210d6112b1aca3d135f315c1b302e14b4b0297dac
 license: GPL-2.0-or-later AFL-2.1
 dep-pkg: libexpat
 
