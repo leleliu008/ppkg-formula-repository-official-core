@@ -1,0 +1,22 @@
+summary: core utils for ndk-pkg
+git-url: https://github.com/leleliu008/ppkg
+license: Apache-2.0
+
+binbstd: 1
+install: |
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        wfetch https://raw.githubusercontent.com/leleliu008/patches/refs/heads/master/elf.h -o elf.h
+        run mv elf.h core/
+    fi
+
+    for d in core wrappers
+    do
+        cd "$d"
+
+        for f in *.c
+        do
+            o="${f%.c}"
+            run $CC $CCFLAGS $CPPFLAGS $LDFLAGS -o "$o" "$f"
+            install_bins "$o"
+        done
+    done
