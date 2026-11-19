@@ -1,6 +1,6 @@
 summary: Syntax-highlighting pager for git and diff output
-src-url: https://github.com/dandavison/delta/archive/refs/tags/0.20.1.tar.gz
-src-sha: d9d502396e3595ee8fd926f1ed2e54ac9935baabd3569a3753efab36304f90fa
+src-url: https://github.com/dandavison/delta/archive/refs/tags/0.21.1.tar.gz
+src-sha: 2fc82657d692dec135fce408b3f20c9ab6c23198ed35a983e79a04c5fb133f04
 license: MIT
 dep-pkg: libz
 bsystem: cargo
