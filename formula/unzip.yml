@@ -4,10 +4,10 @@ web-url: https://infozip.sourceforge.io/UnZip.html
 src-url: https://downloads.sourceforge.net/project/infozip/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz
 src-sha: 036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
 
-res-url: https://deb.debian.org/debian/pool/main/u/unzip/unzip_6.0-29.debian.tar.xz
-res-sha: 14043e5ea351c02b3bc8676e1e6d20d79b9a690b6d7520e8138ac629cc048417
+res-url: https://deb.debian.org/debian/pool/main/u/unzip/unzip_6.0-32.debian.tar.xz
+res-sha: b84bd393d0ff68740a013b9f82d4538cefaa6f293ae2741c143d0feff2a136f4
 
-version: 6.0.29
+version: 6.0.32
 license: Info-ZIP
 dep-pkg: libbz2
 dep-upp: patch
