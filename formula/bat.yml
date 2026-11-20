@@ -2,10 +2,17 @@ summary: Clone of cat(1) with syntax highlighting and Git integration
 src-url: https://github.com/sharkdp/bat/archive/refs/tags/v0.26.1.tar.gz
 src-sha: 4474de87e084953eefc1120cf905a79f72bbbf85091e30cf37c9214eafcaa9c9
 license: Apache-2.0
+dep-pkg: libz
 
 install: |
     cargow install
-    install_mans                target/$RUST_TARGET/release/build/bat-*/out/assets/manual/bat.1
-    install_completion bash bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.bash
-    install_completion fish bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.fish
-    install_completion  zsh bat target/$RUST_TARGET/release/build/bat-*/out/assets/completions/bat.zsh
+
+    run cd "target/$RUST_TARGET/$PROFILE/build"
+
+    MAN1PATH="$(find . -name 'bat.1')"
+
+    install_mans "$MAN1PATH"
+
+    run cd "${MAN1PATH%'/manual/bat.1'}/completions"
+
+    install_files bat.*sh
