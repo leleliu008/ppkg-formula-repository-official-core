@@ -11,6 +11,10 @@ dopatch: |
     gsed -i '/CreatePkgConfigFile/d' CMakeLists.txt
     gsed -i 's|ENABLE_INSTALL|FALSE|' libarchive/CMakeLists.txt
 
+    if [ "$TARGET_PLATFORM_NAME" = netbsd ] ; then
+        gsed -i -e 's|be32dec|cpio_be32dec|g' -e 's|le32dec|cpio_le32dec|g' libarchive/archive_read_support_format_cpio.c
+    fi
+
 install: |
     cmakew \
         -DENABLE_TEST=OFF \
