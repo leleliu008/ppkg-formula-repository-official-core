@@ -4,5 +4,5 @@ src-url: https://github.com/RsyncProject/rsync/releases/download/v3.5.2/rsync-3.
 src-sha: a10d591825251e070f74c98df3daad195def4ed81b4a2de16169026aea33f6c8
 license: GPL-3.0-or-later
 dep-pkg: libopenssl libidn2 libpopt libz liblz4 libzstd libxxhash
-dep-lib: libidn2
+dep-lib: libidn2 -lpthread
 install: configure --disable-simd --enable-ipv6 --with-rrsync=yes --with-included-popt=no --with-included-zlib=no
