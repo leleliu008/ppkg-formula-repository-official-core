@@ -7,7 +7,12 @@ dep-pkg: libintl
 dep-lib: libintl
 binbstd: 1
 
-dopatch: gsed -i 's|_XOPEN_SOURCE 500|_XOPEN_SOURCE 600|' src/args.c
+dopatch: gsed -i 's|_XOPEN_SOURCE 500|_XOPEN_SOURCE 700|' src/args.c
+
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        export LDFLAGS="$LDFLAGS -framework CoreFoundation"
+    fi
 
 install: configure --program-prefix=g
 
