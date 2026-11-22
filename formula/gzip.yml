@@ -1,7 +1,13 @@
 summary: A popular data compression program developed by GNU
-src-url: https://ftp.gnu.org/gnu/gzip/gzip-1.14.tar.gz
-src-sha: 613d6ea44f1248d7370c7ccdeee0dd0017a09e6c39de894b3c6f03f981191c6b
+src-url: https://ftp.gnu.org/gnu/gzip/gzip-1.15.tar.gz
+src-sha: 545886cf57fa88a65e967fbf705903d7fcb2567c82c7342493e82e8d7b1a210b
 license: GPL-3.0-or-later
 bsystem: configure
 
-dopatch: gsed -i 's|@GREP@|grep|' zgrep.in
+dopatch: |
+    gsed -i 's|@GREP@|grep|' zgrep.in
+
+    # https://gitlab.alpinelinux.org/alpine/aports/-/blob/master/main/gzip/0001-build-avoid-failure-to-build-on-linux-aarch64.patch
+    if [ "$TARGET_PLATFORM_NAME" = linux ] && [ "$TARGET_PLATFORM_ARCH" = aarch64 ] ; then
+        gsed -i -e '/gzip\.h/d' -e '/ifndef MAX_PATH_LEN/i \#include "gzip.h"' gzip.c
+    fi
