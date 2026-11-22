@@ -6,6 +6,11 @@ dep-pkg: libncurses libiconv
 
 dopatch: gsed -i '262d' gettext-runtime/gnulib-lib/progreloc.c gettext-tools/gnulib-lib/progreloc.c
 
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = openbsd ] ; then
+        add_ldflags -lpthread
+    fi
+
 install: |
     configure \
         --with-included-regex \
