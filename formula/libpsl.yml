@@ -1,18 +1,7 @@
 summary: C library for the Public Suffix List
 web-url: https://rockdaboot.github.io/libpsl
-src-url: https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz
-src-sha: 1dcc9ceae8b128f3c0b3f654decd0e1e891afc6ff81098f227ef260449dae208
+src-url: https://github.com/rockdaboot/libpsl/releases/download/0.23.3/libpsl-0.23.3.tar.gz
+src-sha: 93941f85a1e7bd593fa94f299233cb5dfc91cd144fd9a78a6ceb75001c5b03be
 license: MIT
 dep-pkg: libidn2
-
-dopatch: |
-    gsed -i "/libidn2_dep =/c libidn2_dep = cc.find_library('idn2', static : true, dirs: ['$libidn2_LIBRARY_DIR'])" meson.build
-    gsed -i "/libiconv_dep =/c libiconv_dep = cc.find_library('iconv', static : true, dirs: ['$libiconv_LIBRARY_DIR'])" meson.build
-    gsed -i "/libunistring =/c libunistring = cc.find_library('unistring', static : true, dirs: ['$libunistring_LIBRARY_DIR'])" meson.build
-    gsed -i 's|link_with : libpsl|link_with : libpsl.get_static_lib()|' src/meson.build
-
-install: mesonw -Druntime=libidn2 -Dtests=false -Ddocs=false
-
-dotweak: |
-    gsed -i 's|-liconv||'         lib/pkgconfig/libpsl.pc
-    printf 'Requires: libidn2' >> lib/pkgconfig/libpsl.pc
+install: mesonw -Druntime=libidn2 -Dbuiltin=true
