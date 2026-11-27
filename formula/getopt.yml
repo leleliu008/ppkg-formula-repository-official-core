@@ -4,6 +4,11 @@ src-url: https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-l
 src-sha: fbd62a100ab7bb8746ba0661255c3c48185b1e9021507c624da01fbc696330ec
 license: GPL-2.0-or-later
 
+dopatch: |
+    if [ "$TARGET_PLATFORM_NAME" = freebsd ] ; then
+        gsed -i 's|__APPLE__|__FreeBSD__|' lib/c_strtod.c
+    fi
+
 install: |
     configure only --disable-liblastlog2
     gmakew getopt
