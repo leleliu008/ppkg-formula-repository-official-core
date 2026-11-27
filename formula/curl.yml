@@ -30,5 +30,3 @@ install: |
         --without-libssh2 \
         --without-librtmp \
         --without-quiche
-
-dotweak: rm -rf bin/curl-config include/ lib/ share/aclocal/ share/man/man3/ share/man/man1/curl-config.1
