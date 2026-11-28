@@ -1,8 +1,27 @@
 summary: Savoury implementation of the QUIC transport protocol and HTTP/3
-src-url: https://github.com/cloudflare/quiche/archive/refs/tags/0.30.0.tar.gz
-src-sha: 5ef0e72c2c4047d2bfe9a6ba2b5b5f1ff11d22d77b6c0be3e931c755c7b329dd
+src-url: https://github.com/cloudflare/quiche/archive/refs/tags/0.30.1.tar.gz
+src-sha: c2c55d42677f0f1f42045e4c3e31469dc2107059bb519551b4c1c5a42f662a51
 license: BSD-2-Clause
+dep-pkg: libfontconfig
 bsystem: cargo cmake
+
+prepare: |
+    if [ "$NATIVE_PLATFORM_TYPE" = linux ] ; then
+        if test -x    /sbin/apk ; then
+            run $sudo /sbin/apk update
+            run $sudo /sbin/apk add llvm21-dev clang21-dev
+
+            export LLVM_CONFIG_PATH=/usr/lib/llvm21/bin/llvm-config
+            export LIBCLANG_PATH=/usr/lib/libclang.so
+
+            return 0
+        fi
+
+        if test -x    /usr/bin/apt ; then
+            run $sudo /usr/bin/apt -y update
+            run $sudo /usr/bin/apt -y install libclang-dev
+        fi
+    fi
 
 install: |
     cargow build --lib --features ffi,pkg-config-meta
