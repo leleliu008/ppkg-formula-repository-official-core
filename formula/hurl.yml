@@ -4,16 +4,28 @@ src-url: https://github.com/Orange-OpenSource/hurl/archive/refs/tags/8.1.0.tar.g
 src-sha: 2e45678806a8a1c7307d4b4298b11aab6d947799bdce986c67fd9c693dac98a5
 license: Apache-2.0
 dep-pkg: libcurl libxml2
+dep-lib: libcurl libxml-2.0
 
 # https://github.com/KWARC/rust-libxml
-dopatch: |
+prepare: |
+    if [ "$TARGET_PLATFORM_NAME" = macos ] ; then
+        export RUSTFLAGS="$RUSTFLAGS -Clink-arg=-framework -Clink-arg=SystemConfiguration"
+    fi
+
     if [ "$NATIVE_PLATFORM_TYPE" = linux ] ; then
-        if [ "$NATIVE_PLATFORM_LIBC" = musl ] ; then
+        if test -x    /sbin/apk ; then
             run $sudo /sbin/apk update
             run $sudo /sbin/apk add llvm21-dev clang21-dev
 
             export LLVM_CONFIG_PATH=/usr/lib/llvm21/bin/llvm-config
             export LIBCLANG_PATH=/usr/lib/libclang.so
+
+            return 0
+        fi
+
+        if test -x    /usr/bin/apt ; then
+            run $sudo /usr/bin/apt -y update
+            run $sudo /usr/bin/apt -y install libclang-dev
         fi
     fi
 
